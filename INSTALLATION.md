@@ -28,12 +28,14 @@ https://github.com/toolsthatwork/JasperProfile
 4. Install:
    - `Jasper_WHM_Events`
    - `Jasper_WHM_Timeline`
+   - `Jasper_WAR_Events`
+   - `Jasper_WAR_Timeline`
 
 ## Select the Profiles
 
 1. Return to the main reactions panel.
-2. Under `Event Profiles`, select `Jasper/Jasper_WHM_Events`.
-3. Under `Timeline Profiles`, select `Jasper/Jasper_WHM_Timeline`.
+2. Under `Event Profiles`, select the Jasper event profile for your current job.
+3. Under `Timeline Profiles`, select the Jasper timeline profile for your current job.
 4. Keep `Enable reactions` enabled.
 5. Keep `Link to Assist` enabled if you want the profile tied to Assist.
 
@@ -42,11 +44,14 @@ https://github.com/toolsthatwork/JasperProfile
 - White Mage event reactions
 - White Mage timeline reactions
 - White Mage opener file
+- Warrior event reactions
+- Warrior timeline reactions
+- Warrior opener file
 
-The opener does not use potions. Dungeons and routine duties are primarily handled by event reactions; the timeline profile provides passive duty coverage and healing-safe timeline logic.
+Openers do not use potions. Dungeons and routine duties are primarily handled by event reactions; timeline profiles provide broad duty coverage without forcing potion, weave-toggle, or DPS actions.
 
 ## Troubleshooting
 
 If the profiles do not appear after adding the repository, refresh the GitHub source, then check the `Browse` tab again.
 
-If the selected profile does not update immediately in the main panel, refresh the event and timeline profile lists or switch jobs once and return to White Mage.
+If the selected profile does not update immediately in the main panel, refresh the event and timeline profile lists or switch jobs once and return to the job you are setting up.
