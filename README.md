@@ -1,5 +1,9 @@
 # JasperProfile
 
+<p align="center">
+  <img src="assets/jasperprofile-avatar.png" alt="JasperProfile" width="180">
+</p>
+
 General-purpose White Mage profiles for xSalice AIO.
 
 This package includes:
