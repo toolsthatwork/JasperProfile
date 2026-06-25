@@ -4,30 +4,21 @@
   <img src="assets/jasperprofile-avatar.png" alt="JasperProfile" width="180">
 </p>
 
-General-purpose PvE profiles for xSalice AIO.
+General-purpose PvE reaction, timeline, and opener profiles for xSalice AIO.
 
-Currently available:
-- White Mage
-- Warrior
-- Summoner
+Currently available for all combat jobs:
+- Tanks: Dark Knight, Gunbreaker, Paladin, Warrior
+- Healers: Astrologian, Sage, Scholar, White Mage
+- Melee DPS: Dragoon, Monk, Ninja, Reaper, Samurai, Viper
+- Physical ranged DPS: Bard, Dancer, Machinist
+- Magical ranged DPS: Black Mage, Pictomancer, Red Mage, Summoner
 
-This package includes:
-- `events/WhiteMage/Jasper_WHM_Events.json`
-- `timelines/WhiteMage/Jasper_WHM_Timeline.json`
-- `openers/WhiteMage/Jasper_WHM_DPS_Opener.json`
-- `events/Warrior/Jasper_WAR_Events.json`
-- `timelines/Warrior/Jasper_WAR_Timeline.json`
-- `openers/Warrior/Jasper_WAR_DPS_Opener.json`
-- `events/Summoner/Jasper_SMN_Events.json`
-- `timelines/Summoner/Jasper_SMN_Timeline.json`
-- `openers/Summoner/Jasper_SMN_DPS_Opener.json`
+This package includes event reactions, timeline shells, and opener files for each supported combat job.
 
 Installation instructions are available in [INSTALLATION.md](INSTALLATION.md).
 
-White Mage is healing-first for general PvE, with raise, MP, movement, and damage-when-safe behavior. Dungeons and routine duties are primarily event-driven. The timeline profile covers standard 4/8/24-player PvE duties, including Normal, Hard, Extreme, Unreal, Savage, Alliance, and Chaotic entries, while excluding Ultimate.
+White Mage is healing-first for general PvE, with raise, MP, movement, DRK invulnerability recovery handling, and damage-when-safe behavior. Warrior and the other tank baselines include event-driven dungeon mitigation, emergency invuln support, raidwide and tankbuster mitigation, and optional co-tank support where available. DPS baselines focus on safe event automation such as mitigation, self-healing, reset toggles, optional cooldown holds, and movement quality-of-life.
 
-Warrior is the first tank baseline. It includes event-driven dungeon mitigation, Bloodwhetting recovery, emergency Holmgang, raidwide and tankbuster mitigation, optional co-tank support, and passive timeline coverage.
+Timeline profiles cover standard duty content for dungeons, trials, raids, alliance raids, Unreal, Extreme trials, Normal raids, Savage raids, and Chaotic alliance duties where available. Ultimate, PvP, Deep Dungeons, Treasure Hunt, Variant/Criterion/Another, field content, Gold Saucer, BLU-only Carnivale, and solo quest battles are excluded.
 
-Summoner is the first caster baseline. It includes automatic Addle and Radiant Aegis support, reset/on-wipe toggles, Rekindle support, optional cooldown holds for low-health targets, and passive timeline coverage.
-
-Openers do not use potions. Timeline profiles do not force potion, weave-toggle, or DPS actions.
+Openers do not use potions. Most starter opener files are intentionally empty until job-specific openers are validated in-game. Timeline profiles do not force potion, weave-toggle, or DPS actions.

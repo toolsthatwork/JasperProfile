@@ -25,13 +25,7 @@ https://github.com/toolsthatwork/JasperProfile
 1. Go to `GitHub`.
 2. Open `Browse`.
 3. Click `Refresh` if the profile list is not current.
-4. Install:
-   - `Jasper_WHM_Events`
-   - `Jasper_WHM_Timeline`
-   - `Jasper_WAR_Events`
-   - `Jasper_WAR_Timeline`
-   - `Jasper_SMN_Events`
-   - `Jasper_SMN_Timeline`
+4. Install the Jasper event and timeline profile for your current job.
 
 ## Select the Profiles
 
@@ -43,15 +37,9 @@ https://github.com/toolsthatwork/JasperProfile
 
 ## Included
 
-- White Mage event reactions
-- White Mage timeline reactions
-- White Mage opener file
-- Warrior event reactions
-- Warrior timeline reactions
-- Warrior opener file
-- Summoner event reactions
-- Summoner timeline reactions
-- Summoner opener file
+- Event reactions for all combat jobs
+- Passive timeline profiles for all combat jobs
+- Potion-free opener files for all combat jobs
 
 Openers do not use potions. Dungeons and routine duties are primarily handled by event reactions; timeline profiles provide broad duty coverage without forcing potion, weave-toggle, or DPS actions.
 
