@@ -3,7 +3,7 @@
   "Name": "Jasper WHM Events",
   "Description": "Healing-first general-purpose White Mage event profile. Keeps stable recovery behavior and allows damage through normal ACR priorities when safe.",
   "CreatedAt": "2026-06-25T00:31:21.892963Z",
-  "ModifiedAt": "2026-06-25T00:36:19.326Z",
+  "ModifiedAt": "2026-06-25T01:26:12.211Z",
   "Events": [
     {
       "Id": "whm-event-01",
@@ -11242,5 +11242,5 @@
       "6da1e96f-4302-4942-8d76-88ad4842f270": true
     }
   },
-  "Version": "1.0.11"
+  "Version": "1.0.14"
 }
