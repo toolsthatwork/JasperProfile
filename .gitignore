@@ -1,0 +1,9 @@
+Backup/
+*.bak
+*.tmp
+desktop.ini
+.DS_Store
+AI-*.md
+NOTES-*.md
+WORKFLOW.md
+.private/
