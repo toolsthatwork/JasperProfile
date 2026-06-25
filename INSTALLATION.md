@@ -30,6 +30,8 @@ https://github.com/toolsthatwork/JasperProfile
    - `Jasper_WHM_Timeline`
    - `Jasper_WAR_Events`
    - `Jasper_WAR_Timeline`
+   - `Jasper_SMN_Events`
+   - `Jasper_SMN_Timeline`
 
 ## Select the Profiles
 
@@ -47,6 +49,9 @@ https://github.com/toolsthatwork/JasperProfile
 - Warrior event reactions
 - Warrior timeline reactions
 - Warrior opener file
+- Summoner event reactions
+- Summoner timeline reactions
+- Summoner opener file
 
 Openers do not use potions. Dungeons and routine duties are primarily handled by event reactions; timeline profiles provide broad duty coverage without forcing potion, weave-toggle, or DPS actions.
 
