@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_WHM_Timeline",
   "Name": "Jasper WHM Timeline",
-  "Description": "Jasper WHM full timeline profile. General PvE coverage with healing-safe timeline logic; no potion or weave-toggle actions.",
-  "Version": "1.1.8",
+  "Description": "Jasper WHM passive timeline coverage for general PvE. Dungeons stay event-driven; timelines provide duty coverage and healing-safe logic only, with no forced potion, weave-toggle, or DPS actions.",
+  "Version": "1.1.9",
   "AIOTimelineVersion": "2.0",
   "Timelines": {
     "142": {
@@ -17315,7 +17315,7 @@
     }
   ],
   "CreatedAt": "2026-06-24T05:11:38.5752849Z",
-  "ModifiedAt": "2026-06-25T01:14:28.795Z",
+  "ModifiedAt": "2026-06-25T02:20:00.000Z",
   "ActionSequences": [],
   "LogicSequences": []
 }

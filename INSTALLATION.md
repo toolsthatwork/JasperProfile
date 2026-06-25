@@ -43,7 +43,7 @@ https://github.com/toolsthatwork/JasperProfile
 - White Mage timeline reactions
 - White Mage opener file
 
-The opener does not use potions.
+The opener does not use potions. Dungeons and routine duties are primarily handled by event reactions; the timeline profile provides passive duty coverage and healing-safe timeline logic.
 
 ## Troubleshooting
 
