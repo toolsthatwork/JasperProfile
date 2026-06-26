@@ -189,8 +189,8 @@
     },
     {
       "Id": "7b40e31b-cb13-4075-9cb6-7e6583968814",
-      "Name": "Stance",
-      "Description": "",
+      "Name": "[OnWipe] Stance OT",
+      "Description": "Optional off-tank stance release. Disabled by default.",
       "EventType": "OnWipe",
       "LogicId": "62f479f7-9a5f-4d78-9b8c-6c6a2b1ceb60",
       "ThrottleSameEvent": 0.5,
@@ -199,7 +199,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-03T23:17:59.8902273Z",
-      "ModifiedAt": "2026-06-25T02:45:00.000Z"
+      "ModifiedAt": "2026-06-26T11:05:00.000Z"
     },
     {
       "Id": "72510d39-8a10-4784-a025-4d7880118358",
@@ -298,6 +298,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T10:20:00.000Z",
       "ModifiedAt": "2026-06-26T10:20:00.000Z"
+    },
+    {
+      "Id": "jps-war-event-stance-mt",
+      "Name": "[OnWipe] Stance MT",
+      "Description": "Main-tank stance setup for dungeons and roulettes.",
+      "EventType": "OnWipe",
+      "LogicId": "jps-war-logic-stance-mt",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T11:05:00.000Z",
+      "ModifiedAt": "2026-06-26T11:05:00.000Z"
     }
   ],
   "Conditions": [
@@ -5490,8 +5504,8 @@
     },
     {
       "Id": "249a8ed2-49a5-4fac-b71b-072a4e8c749d",
-      "Name": "Stance",
-      "Description": "",
+      "Name": "Always",
+      "Description": "Always true stance helper gate.",
       "SubConditions": [
         {
           "Id": "d83c3544-16a4-4b71-9b7e-6195779d4ef4",
@@ -5691,7 +5705,7 @@
         }
       ],
       "CreatedAt": "2026-01-03T23:17:12.68934Z",
-      "ModifiedAt": "2026-01-03T23:17:19.6144208Z",
+      "ModifiedAt": "2026-06-26T11:05:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -8303,8 +8317,8 @@
     },
     {
       "Id": "62f479f7-9a5f-4d78-9b8c-6c6a2b1ceb60",
-      "Name": "Stance",
-      "Description": "",
+      "Name": "Stance OT",
+      "Description": "Optional off-tank stance release. Disabled by default.",
       "LogicType": 0,
       "ConditionIds": [
         "249a8ed2-49a5-4fac-b71b-072a4e8c749d"
@@ -8362,9 +8376,9 @@
         }
       ],
       "CreatedAt": "2026-01-03T23:16:32.700873Z",
-      "ModifiedAt": "2026-06-25T02:45:00.000Z",
+      "ModifiedAt": "2026-06-26T11:05:00.000Z",
       "ExecuteFirstOnly": false,
-      "Category": ""
+      "Category": "Toggle Management"
     },
     {
       "Id": "f7147b34-a586-4934-8da8-6fc3a8adcf44",
@@ -8640,6 +8654,71 @@
       "ModifiedAt": "2026-06-26T10:20:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Mitigation"
+    },
+    {
+      "Id": "jps-war-logic-stance-mt",
+      "Name": "Stance MT",
+      "Description": "Main-tank stance setup for dungeons and roulettes.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "249a8ed2-49a5-4fac-b71b-072a4e8c749d"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-war-trigger-stance-mt-toggle",
+          "ActionId": 0,
+          "SkillbarId": "TankStance",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-war-trigger-stance-mt-action",
+          "ActionId": 48,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 17,
+          "TargetType": 0,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 91,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T11:05:00.000Z",
+      "ModifiedAt": "2026-06-26T11:05:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Toggle Management"
     }
   ],
   "QTBarConfig": {
@@ -8811,7 +8890,7 @@
           "7b40e31b-cb13-4075-9cb6-7e6583968814"
         ],
         "Enabled": true,
-        "Position": 15
+        "Position": 16
       },
       {
         "Id": "366f7219-a969-4371-a44a-5c3a2393ec7a",
@@ -8821,7 +8900,7 @@
           "9cd8885c-cd2d-4a19-8796-cbd02a30fd38"
         ],
         "Enabled": true,
-        "Position": 16
+        "Position": 17
       },
       {
         "Id": "4c7aedd3-441d-417f-93c4-a9d12f7ab128",
@@ -8831,7 +8910,7 @@
           "4a055ecd-3859-40b8-8b7b-aa0bae7dfdac"
         ],
         "Enabled": true,
-        "Position": 17
+        "Position": 18
       },
       {
         "Id": "8e8ed715-37bf-5a02-ac28-adf8dd192c1a",
@@ -8841,7 +8920,7 @@
           "a1ab7d6e-333b-5d19-9f0b-9b30f27fe8c1"
         ],
         "Enabled": true,
-        "Position": 18
+        "Position": 19
       },
       {
         "Id": "667aee03-347a-45dc-b89b-d0c67380b46b",
@@ -8851,7 +8930,17 @@
           "b0373abb-c4d5-4594-9f26-0083ad8855f5"
         ],
         "Enabled": true,
-        "Position": 19
+        "Position": 20
+      },
+      {
+        "Id": "jps-war-qt-stance-mt",
+        "Name": "Stance MT",
+        "Description": "Main-tank stance setup for dungeons and roulettes.",
+        "EventIds": [
+          "jps-war-event-stance-mt"
+        ],
+        "Enabled": true,
+        "Position": 15
       }
     ],
     "ToggleStates": {
@@ -8874,8 +8963,9 @@
       "366f7219-a969-4371-a44a-5c3a2393ec7a": true,
       "4c7aedd3-441d-417f-93c4-a9d12f7ab128": true,
       "667aee03-347a-45dc-b89b-d0c67380b46b": false,
-      "8e8ed715-37bf-5a02-ac28-adf8dd192c1a": true
+      "8e8ed715-37bf-5a02-ac28-adf8dd192c1a": true,
+      "jps-war-qt-stance-mt": true
     }
   },
-  "Version": "0.1.5"
+  "Version": "0.1.6"
 }
