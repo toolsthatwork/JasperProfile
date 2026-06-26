@@ -3,7 +3,7 @@
   "Name": "Jasper WHM Events",
   "Description": "Damage-forward White Mage event profile for general PvE. Lets ACR DPS flow, then uses oGCDs and emergency GCD heals when recovery is actually needed.",
   "CreatedAt": "2026-06-25T00:31:21.892963Z",
-  "ModifiedAt": "2026-06-27T00:30:00.000Z",
+  "ModifiedAt": "2026-06-27T03:20:00.000Z",
   "Events": [
     {
       "Id": "whm-event-01",
@@ -582,7 +582,7 @@
     {
       "Id": "jps-whm-event-reset-toggles",
       "Name": "Reset Toggles",
-      "Description": "",
+      "Description": "Restores normal White Mage ACR toggles while safely out of combat.",
       "EventType": "OnTick",
       "LogicId": "jps-whm-logic-reset-toggles",
       "ThrottleSameEvent": 0.5,
@@ -592,6 +592,34 @@
       "Filters": {},
       "CreatedAt": "2026-06-27T00:30:00.000Z",
       "ModifiedAt": "2026-06-27T00:30:00.000Z"
+    },
+    {
+      "Id": "jps-whm-event-reset-zone",
+      "Name": "Reset Toggles Zone Change",
+      "Description": "Restores default White Mage toggles after zone changes.",
+      "EventType": "OnZoneChange",
+      "LogicId": "jps-whm-logic-reset-toggles",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T03:20:00.000Z",
+      "ModifiedAt": "2026-06-27T03:20:00.000Z"
+    },
+    {
+      "Id": "jps-whm-event-reset-wipe",
+      "Name": "Reset Toggles Wipe",
+      "Description": "Restores default White Mage toggles after wipes.",
+      "EventType": "OnWipe",
+      "LogicId": "jps-whm-logic-reset-toggles",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T03:20:00.000Z",
+      "ModifiedAt": "2026-06-27T03:20:00.000Z"
     }
   ],
   "Conditions": [
@@ -14077,7 +14105,9 @@
         "Name": "Reset Toggles",
         "Description": "",
         "EventIds": [
-          "jps-whm-event-reset-toggles"
+          "jps-whm-event-reset-toggles",
+          "jps-whm-event-reset-zone",
+          "jps-whm-event-reset-wipe"
         ],
         "Enabled": true,
         "Position": 8
@@ -14095,5 +14125,5 @@
       "jps-whm-qt-reset-toggles": true
     }
   },
-  "Version": "1.0.28"
+  "Version": "1.0.29"
 }
