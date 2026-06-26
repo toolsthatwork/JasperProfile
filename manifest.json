@@ -47,7 +47,7 @@
   "events/Reaper/Jasper_RPR_Events.json": "0.1.10",
   "timelines/Reaper/Jasper_RPR_Timeline.json": "0.1.0",
   "openers/Reaper/Jasper_RPR_Starter_Opener.json": "0.1.0",
-  "events/RedMage/Jasper_RDM_Events.json": "0.1.8",
+  "events/RedMage/Jasper_RDM_Events.json": "0.1.9",
   "timelines/RedMage/Jasper_RDM_Timeline.json": "0.1.0",
   "openers/RedMage/Jasper_RDM_Starter_Opener.json": "0.1.0",
   "events/Sage/Jasper_SGE_Events.json": "0.1.8",

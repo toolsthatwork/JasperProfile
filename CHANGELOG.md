@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added a conservative Red Mage self Vercure emergency branch at low HP to improve solo/roulette recovery without changing normal damage flow.
 - Cleaned stale public profile labels and descriptions across tanks plus selected healer/caster utilities, including corrected Dark Knight Oblation support text and clearer cooldown-hold/reset toggle wording.
 - Added White Mage wipe/zone reset hooks so the reference profile uses the same reset scaffolding as the broader public profile set.
 - Polished Summoner and Reaper reset consistency: Summoner now restores defaults after wipes, and Reaper gained zone-change reset coverage plus refreshed public profile metadata.
