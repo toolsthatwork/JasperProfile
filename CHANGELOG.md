@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Added Paladin emergency self-Clemency support between 16% and 35% HP for roulette-safe tank recovery without overlapping the Hallowed Ground panic floor.
+- Added Scholar main-tank Lustrate emergency recovery below 50% HP so Aetherflow can cover sudden tank dips after Excogitation windows.
 - Added Leg Sweep stun utility to Dragoon, Monk, Ninja, Samurai, Reaper, and Viper using casting/range/combat guards for roulette-safe melee dungeon support.
 - Raised Reaper's Second Wind recovery threshold to 50% HP to match the other melee public recovery defaults.
 - Added explicit tank Interject interrupt events for Warrior, Dark Knight, Gunbreaker, and Paladin using existing cast/range/combat guards.
