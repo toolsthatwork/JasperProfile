@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added Leg Sweep stun utility to Dragoon, Monk, Ninja, Samurai, Reaper, and Viper using casting/range/combat guards for roulette-safe melee dungeon support.
 - Raised Reaper's Second Wind recovery threshold to 50% HP to match the other melee public recovery defaults.
 - Added explicit tank Interject interrupt events for Warrior, Dark Knight, Gunbreaker, and Paladin using existing cast/range/combat guards.
 - Added a conservative Red Mage self Vercure emergency branch at low HP to improve solo/roulette recovery without changing normal damage flow.
