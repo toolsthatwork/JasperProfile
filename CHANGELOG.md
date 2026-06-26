@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added conservative Arm's Length emergency self-defense to melee and physical ranged DPS when stationary, low on HP, and holding multiple mobs.
 - Added Paladin emergency self-Clemency support between 16% and 35% HP for roulette-safe tank recovery without overlapping the Hallowed Ground panic floor.
 - Added Scholar main-tank Lustrate emergency recovery below 50% HP so Aetherflow can cover sudden tank dips after Excogitation windows.
 - Added Leg Sweep stun utility to Dragoon, Monk, Ninja, Samurai, Reaper, and Viper using casting/range/combat guards for roulette-safe melee dungeon support.
