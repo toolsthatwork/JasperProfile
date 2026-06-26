@@ -2,7 +2,7 @@
   "Id": "Jasper_VPR_Events",
   "Name": "Jasper VPR Events",
   "Description": "General-purpose Viper event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.3",
+  "Version": "0.1.4",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -1445,12 +1445,12 @@
     },
     {
       "Id": "8f59b567-c3f9-418a-8f77-f78f7868ee07",
-      "Name": "Self HP <30%",
+      "Name": "Second Wind <= 40%",
       "Description": "",
       "SubConditions": [
         {
           "Id": "f92bac94-ffe8-42df-8ad1-c64a315d8538",
-          "Name": "30",
+          "Name": "Second Wind <= 40%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -1473,7 +1473,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 30,
+              "Percentage": 40,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -1651,12 +1651,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-05-09T06:00:15.9301584Z",
-          "ModifiedAt": "2026-05-09T06:00:15.9301585Z",
+          "ModifiedAt": "2026-06-27T00:05:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-27T00:05:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -3719,7 +3719,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T19:30:00.000Z",
+  "ModifiedAt": "2026-06-27T00:05:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

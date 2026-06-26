@@ -2,7 +2,7 @@
   "Id": "Jasper_RPR_Events",
   "Name": "Jasper RPR Events",
   "Description": "General-purpose Reaper event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.6",
+  "Version": "0.1.7",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -1065,12 +1065,12 @@
     },
     {
       "Id": "2deb9cfc-deb8-4619-9dff-5d393fa4cf36",
-      "Name": "Second Wind",
+      "Name": "Second Wind <= 40%",
       "Description": "",
       "SubConditions": [
         {
           "Id": "38066d92-462e-421d-812d-a8d53d4c03d5",
-          "Name": "Second Wind",
+          "Name": "Second Wind <= 40%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -1093,7 +1093,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 25.3,
+              "Percentage": 40,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -1271,12 +1271,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2025-12-18T11:19:23.6924934Z",
-          "ModifiedAt": "2025-12-18T11:19:23.6924935Z",
+          "ModifiedAt": "2026-06-27T00:05:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-27T00:05:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -5983,7 +5983,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T22:30:00.000Z",
+  "ModifiedAt": "2026-06-27T00:05:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
