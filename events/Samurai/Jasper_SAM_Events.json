@@ -2,7 +2,7 @@
   "Id": "Jasper_SAM_Events",
   "Name": "Jasper SAM Events",
   "Description": "General-purpose Samurai event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.0",
+  "Version": "0.1.1",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -31,7 +31,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T15:00:00.000Z"
     },
     {
       "Id": "7b3857d9-5452-4ef8-af7a-26e09c771a8d",
@@ -45,7 +45,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T15:00:00.000Z"
     },
     {
       "Id": "53acb57b-6cad-4031-9857-f5183db1a93f",
@@ -4410,7 +4410,8 @@
       "Description": "",
       "LogicType": 0,
       "ConditionIds": [
-        "2deb9cfc-deb8-4619-9dff-5d393fa4cf36"
+        "2deb9cfc-deb8-4619-9dff-5d393fa4cf36",
+        "87584ab8-e847-4d6e-b3d4-b8881894894e"
       ],
       "ActionTriggers": [
         {
@@ -4440,7 +4441,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T15:00:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Mitigation"
     },
@@ -4450,7 +4451,8 @@
       "Description": "",
       "LogicType": 0,
       "ConditionIds": [
-        "b635c655-1351-487a-9042-6b4ed9b363ec"
+        "b635c655-1351-487a-9042-6b4ed9b363ec",
+        "87584ab8-e847-4d6e-b3d4-b8881894894e"
       ],
       "ActionTriggers": [
         {
@@ -4480,7 +4482,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T15:00:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Mitigation"
     },
@@ -4960,7 +4962,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-25T07:45:00.000Z",
+  "ModifiedAt": "2026-06-26T15:00:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

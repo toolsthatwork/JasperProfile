@@ -2,7 +2,7 @@
   "Id": "Jasper_AST_Events",
   "Name": "Jasper AST Events",
   "Description": "General-purpose Astrologian event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.2",
+  "Version": "0.1.3",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -45,7 +45,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T15:00:00.000Z"
     },
     {
       "Id": "fb9cd99e-d156-4638-b25a-8bf68f808999",
@@ -59,7 +59,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T15:00:00.000Z"
     },
     {
       "Id": "d741a2a7-2a4b-4114-97f2-883b67e1e5c8",
@@ -297,7 +297,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T15:00:00.000Z"
     },
     {
       "Id": "c1e8a704-b043-42a9-a446-105fefc39046",
@@ -311,7 +311,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T15:00:00.000Z"
     },
     {
       "Id": "c3ed6500-66c4-4ec4-b925-5edb070a9d35",
@@ -325,7 +325,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T15:00:00.000Z"
     },
     {
       "Id": "ee08d73d-173b-449e-bb01-7d0c28446d42",
@@ -339,7 +339,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T15:00:00.000Z"
     },
     {
       "Id": "d01ea1e3-96d5-4f9a-ab92-f9088854d3b4",
@@ -353,7 +353,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T15:00:00.000Z"
     },
     {
       "Id": "27561b83-90df-4d3d-a21c-221dfea710cd",
@@ -367,7 +367,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T15:00:00.000Z"
     },
     {
       "Id": "190b62d0-0a12-48c9-a9ba-398003abeb34",
@@ -381,7 +381,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T15:00:00.000Z"
     },
     {
       "Id": "jps-ast-event-esuna",
@@ -6593,7 +6593,8 @@
       "LogicType": 1,
       "ConditionIds": [
         "d3c1d14b-f1fc-4655-8bb6-d376d30972d2",
-        "33695823-303d-44ab-a817-85c3ab339cd7"
+        "33695823-303d-44ab-a817-85c3ab339cd7",
+        "958d055a-815f-485d-bb98-b5b7348da94c"
       ],
       "ActionTriggers": [
         {
@@ -6623,7 +6624,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T15:00:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Conditional"
     },
@@ -6634,7 +6635,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "120e92ff-11b1-4e61-bd14-68fcf650de16",
-        "1b09115c-fc88-43f4-bc9b-1e5273a6ddd8"
+        "1b09115c-fc88-43f4-bc9b-1e5273a6ddd8",
+        "958d055a-815f-485d-bb98-b5b7348da94c"
       ],
       "ActionTriggers": [
         {
@@ -6664,7 +6666,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T15:00:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Conditional"
     },
@@ -6674,7 +6676,8 @@
       "Description": "",
       "LogicType": 0,
       "ConditionIds": [
-        "120e92ff-11b1-4e61-bd14-68fcf650de16"
+        "120e92ff-11b1-4e61-bd14-68fcf650de16",
+        "958d055a-815f-485d-bb98-b5b7348da94c"
       ],
       "ActionTriggers": [
         {
@@ -6704,7 +6707,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T15:00:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "AOE Heal"
     },
@@ -6965,7 +6968,8 @@
       "ConditionIds": [
         "eeb6622f-7da4-4dd3-824a-c51ffa0aa7e2",
         "33695823-303d-44ab-a817-85c3ab339cd7",
-        "fd5815a9-8c38-476e-acbb-b67275d39e32"
+        "fd5815a9-8c38-476e-acbb-b67275d39e32",
+        "958d055a-815f-485d-bb98-b5b7348da94c"
       ],
       "ActionTriggers": [
         {
@@ -6995,7 +6999,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T15:00:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Cards"
     },
@@ -7216,7 +7220,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "33695823-303d-44ab-a817-85c3ab339cd7",
-        "eeb6622f-7da4-4dd3-824a-c51ffa0aa7e2"
+        "eeb6622f-7da4-4dd3-824a-c51ffa0aa7e2",
+        "958d055a-815f-485d-bb98-b5b7348da94c"
       ],
       "ActionTriggers": [
         {
@@ -7246,7 +7251,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T15:00:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "AOE Heal"
     },
@@ -7340,7 +7345,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "eeb6622f-7da4-4dd3-824a-c51ffa0aa7e2",
-        "d3c1d14b-f1fc-4655-8bb6-d376d30972d2"
+        "d3c1d14b-f1fc-4655-8bb6-d376d30972d2",
+        "958d055a-815f-485d-bb98-b5b7348da94c"
       ],
       "ActionTriggers": [
         {
@@ -7370,7 +7376,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T15:00:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "AOE Heal"
     },
@@ -7381,7 +7387,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "522f8c70-cbc9-401e-bd59-a061244487c6",
-        "eeb6622f-7da4-4dd3-824a-c51ffa0aa7e2"
+        "eeb6622f-7da4-4dd3-824a-c51ffa0aa7e2",
+        "958d055a-815f-485d-bb98-b5b7348da94c"
       ],
       "ActionTriggers": [
         {
@@ -7411,7 +7418,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T15:00:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "AOE Heal"
     },
@@ -7422,7 +7429,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "522f8c70-cbc9-401e-bd59-a061244487c6",
-        "eeb6622f-7da4-4dd3-824a-c51ffa0aa7e2"
+        "eeb6622f-7da4-4dd3-824a-c51ffa0aa7e2",
+        "958d055a-815f-485d-bb98-b5b7348da94c"
       ],
       "ActionTriggers": [
         {
@@ -7452,7 +7460,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T15:00:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "AOE Heal"
     },
@@ -7463,7 +7471,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "41a9c68e-9d79-4110-b3b3-4521d898e901",
-        "eeb6622f-7da4-4dd3-824a-c51ffa0aa7e2"
+        "eeb6622f-7da4-4dd3-824a-c51ffa0aa7e2",
+        "958d055a-815f-485d-bb98-b5b7348da94c"
       ],
       "ActionTriggers": [
         {
@@ -7493,7 +7502,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T15:00:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "AOE Heal"
     },
@@ -7703,7 +7712,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T13:00:00.000Z",
+  "ModifiedAt": "2026-06-26T15:00:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

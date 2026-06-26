@@ -2,7 +2,7 @@
   "Id": "Jasper_SCH_Events",
   "Name": "Jasper SCH Events",
   "Description": "General-purpose Scholar event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.1",
+  "Version": "0.1.2",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -17,7 +17,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T15:00:00.000Z"
     },
     {
       "Id": "0f46cd44-3476-49ac-8a06-19ab6e6ebbd3",
@@ -115,7 +115,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T15:00:00.000Z"
     },
     {
       "Id": "57ac668f-bc4d-4dda-bb18-0e41c3b91bea",
@@ -283,7 +283,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T15:00:00.000Z"
     },
     {
       "Id": "44eaa3b9-934f-4ecf-82d3-ba12498a2fcb",
@@ -6744,7 +6744,8 @@
       "ConditionIds": [
         "9437ab7f-4322-4fb8-93fe-10d9eefd5405",
         "956d5286-de84-472c-8b3f-fa8dd1a0267c",
-        "a0474a29-8d9e-4d51-a92b-29268cba0211"
+        "a0474a29-8d9e-4d51-a92b-29268cba0211",
+        "958d055a-815f-485d-bb98-b5b7348da94c"
       ],
       "ActionTriggers": [
         {
@@ -6774,7 +6775,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T15:00:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Faerie"
     },
@@ -6828,7 +6829,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "96226940-776b-44c2-a4dd-dfbc790db24c",
-        "07594338-67ee-44b6-b86f-903c201ae27d"
+        "07594338-67ee-44b6-b86f-903c201ae27d",
+        "958d055a-815f-485d-bb98-b5b7348da94c"
       ],
       "ActionTriggers": [
         {
@@ -6883,7 +6885,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T15:00:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Aetherflow"
     },
@@ -7421,7 +7423,8 @@
       "Description": "",
       "LogicType": 0,
       "ConditionIds": [
-        "33695823-303d-44ab-a817-85c3ab339cd7"
+        "33695823-303d-44ab-a817-85c3ab339cd7",
+        "958d055a-815f-485d-bb98-b5b7348da94c"
       ],
       "ActionTriggers": [
         {
@@ -7501,7 +7504,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T15:00:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "GCDs"
     },
@@ -7840,7 +7843,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T09:35:00.000Z",
+  "ModifiedAt": "2026-06-26T15:00:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
