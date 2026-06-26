@@ -5,7 +5,7 @@
 Use this repository URL:
 
 ```text
-https://github.com/fr3nchygamingdev/JasperProfile
+https://github.com/toolsthatwork/JasperProfile
 ```
 
 ## Add the Repository
@@ -15,7 +15,7 @@ https://github.com/fr3nchygamingdev/JasperProfile
 3. Open `Sources`.
 4. Click `Add Repository`.
 5. Enter:
-   - `Repository URL`: `https://github.com/fr3nchygamingdev/JasperProfile`
+   - `Repository URL`: `https://github.com/toolsthatwork/JasperProfile`
    - `Developer Name`: `Jasper`
    - `Branch`: `main`
 6. Click `Add`.
