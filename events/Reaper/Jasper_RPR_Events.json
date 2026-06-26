@@ -2,7 +2,7 @@
   "Id": "Jasper_RPR_Events",
   "Name": "Jasper RPR Events",
   "Description": "General-purpose Reaper event profile for PvE. Keeps Feint/Arcane Crest support, proactive self-heal recovery, optional cooldown holds, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
-  "Version": "0.1.10",
+  "Version": "0.1.11",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -1079,12 +1079,12 @@
     },
     {
       "Id": "2deb9cfc-deb8-4619-9dff-5d393fa4cf36",
-      "Name": "Second Wind <= 40%",
-      "Description": "",
+      "Name": "Second Wind <= 50%",
+      "Description": "Self HP threshold for Second Wind use.",
       "SubConditions": [
         {
           "Id": "38066d92-462e-421d-812d-a8d53d4c03d5",
-          "Name": "Second Wind <= 40%",
+          "Name": "Second Wind <= 50%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -1107,7 +1107,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 40,
+              "Percentage": 50,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
