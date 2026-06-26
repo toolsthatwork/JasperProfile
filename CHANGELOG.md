@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Polished Bard, Machinist, and Dancer recovery/reset behavior with earlier Second Wind and wipe/zone reset scaffolding.
 - Polished Samurai and Viper recovery/reset behavior with earlier Second Wind, more proactive Bloodbath, and wipe/zone reset scaffolding.
 - Polished Dragoon, Monk, and Ninja recovery/reset behavior with earlier Second Wind, more proactive Bloodbath, and wipe/zone reset scaffolding.
 - Added caster reset polish for Black Mage, Red Mage, and Pictomancer with wipe/zone-change reset events, and deduplicated internal profile trigger IDs for cleaner imports.

@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_DNC_Events",
   "Name": "Jasper DNC Events",
-  "Description": "General-purpose Dancer event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.5",
+  "Description": "General-purpose Dancer event profile for PvE. Keeps Shield Samba/Curing Waltz support, earlier self-heal recovery, Head Graze interrupts, optional cooldown holds, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
+  "Version": "0.1.6",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -130,6 +130,34 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T18:00:00.000Z",
       "ModifiedAt": "2026-06-26T19:15:00.000Z"
+    },
+    {
+      "Id": "jps-dnc-event-reset-zone",
+      "Name": "Reset Toggles Zone Change",
+      "Description": "Restores default Dancer toggles after zone changes.",
+      "EventType": "OnZoneChange",
+      "LogicId": "b8cdcf95-0c6e-50ec-aac7-b78407a8968b",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T00:45:00.000Z",
+      "ModifiedAt": "2026-06-27T00:45:00.000Z"
+    },
+    {
+      "Id": "jps-dnc-event-reset-wipe",
+      "Name": "Reset Toggles Wipe",
+      "Description": "Restores default Dancer toggles after wipes.",
+      "EventType": "OnWipe",
+      "LogicId": "b8cdcf95-0c6e-50ec-aac7-b78407a8968b",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T00:45:00.000Z",
+      "ModifiedAt": "2026-06-27T00:45:00.000Z"
     },
     {
       "Id": "jps-dnc-event-curing-waltz-emergency",
@@ -391,12 +419,12 @@
     },
     {
       "Id": "5f48d8d0-3847-4a85-b6ed-506191f01b27",
-      "Name": "Self HP <40",
-      "Description": "",
+      "Name": "Self HP <= 50%",
+      "Description": "Self HP threshold for Second Wind use.",
       "SubConditions": [
         {
           "Id": "38066d92-462e-421d-812d-a8d53d4c03d5",
-          "Name": "Second Wind",
+          "Name": "Self HP <= 50%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -419,7 +447,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 40,
+              "Percentage": 50,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -3415,12 +3443,12 @@
     },
     {
       "Id": "2deb9cfc-deb8-4619-9dff-5d393fa4cf36",
-      "Name": "Second Wind <= 40%",
-      "Description": "",
+      "Name": "Second Wind <= 50%",
+      "Description": "Self HP threshold for Second Wind use.",
       "SubConditions": [
         {
           "Id": "3a024c93-9f8d-4416-9942-db08f12c1ebe",
-          "Name": "Second Wind <= 40%",
+          "Name": "Second Wind <= 50%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -3443,7 +3471,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 40,
+              "Percentage": 50,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -5444,7 +5472,9 @@
         "Name": "Reset Toggles",
         "Description": "",
         "EventIds": [
-          "cd312eaa-3ae4-59c7-94d9-c54f45504656"
+          "cd312eaa-3ae4-59c7-94d9-c54f45504656",
+          "jps-dnc-event-reset-zone",
+          "jps-dnc-event-reset-wipe"
         ],
         "Enabled": true,
         "Position": 2

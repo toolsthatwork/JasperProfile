@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_BRD_Events",
   "Name": "Jasper BRD Events",
-  "Description": "General-purpose Bard event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.8",
+  "Description": "General-purpose Bard event profile for PvE. Keeps Troubadour/Minne support, Warden's Paean cleanse support, earlier self-heal recovery, Head Graze interrupts, optional cooldown holds, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
+  "Version": "0.1.9",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -172,6 +172,34 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T18:00:00.000Z",
       "ModifiedAt": "2026-06-26T19:15:00.000Z"
+    },
+    {
+      "Id": "jps-brd-event-reset-zone",
+      "Name": "Reset Toggles Zone Change",
+      "Description": "Restores default Bard toggles after zone changes.",
+      "EventType": "OnZoneChange",
+      "LogicId": "27953790-e12c-5bd0-8f0a-e1c4180cfa56",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T00:45:00.000Z",
+      "ModifiedAt": "2026-06-27T00:45:00.000Z"
+    },
+    {
+      "Id": "jps-brd-event-reset-wipe",
+      "Name": "Reset Toggles Wipe",
+      "Description": "Restores default Bard toggles after wipes.",
+      "EventType": "OnWipe",
+      "LogicId": "27953790-e12c-5bd0-8f0a-e1c4180cfa56",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T00:45:00.000Z",
+      "ModifiedAt": "2026-06-27T00:45:00.000Z"
     },
     {
       "Id": "jps-brd-event-minne-tb",
@@ -879,12 +907,12 @@
     },
     {
       "Id": "009192b6-1f6a-4a03-9c70-04c5284c0ab5",
-      "Name": "Second Wind <= 40%",
-      "Description": "",
+      "Name": "Second Wind <= 50%",
+      "Description": "Self HP threshold for Second Wind use.",
       "SubConditions": [
         {
           "Id": "fd67ee0e-1f60-41c4-ba37-da352acd32b1",
-          "Name": "Second Wind <= 40%",
+          "Name": "Second Wind <= 50%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -907,7 +935,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 40,
+              "Percentage": 50,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -6307,7 +6335,9 @@
         "Name": "Reset Toggles",
         "Description": "",
         "EventIds": [
-          "f938d1a9-786e-534b-ad8f-cfab52eb5cfd"
+          "f938d1a9-786e-534b-ad8f-cfab52eb5cfd",
+          "jps-brd-event-reset-zone",
+          "jps-brd-event-reset-wipe"
         ],
         "Enabled": true,
         "Position": 2

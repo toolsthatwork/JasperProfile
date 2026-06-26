@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_MCH_Events",
   "Name": "Jasper MCH Events",
-  "Description": "General-purpose Machinist event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.7",
+  "Description": "General-purpose Machinist event profile for PvE. Keeps Tactician/Dismantle support, earlier self-heal recovery, Head Graze interrupts, optional cooldown holds, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
+  "Version": "0.1.8",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -116,6 +116,34 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T18:00:00.000Z",
       "ModifiedAt": "2026-06-26T19:15:00.000Z"
+    },
+    {
+      "Id": "jps-mch-event-reset-zone",
+      "Name": "Reset Toggles Zone Change",
+      "Description": "Restores default Machinist toggles after zone changes.",
+      "EventType": "OnZoneChange",
+      "LogicId": "cc38a4e9-644e-5b89-a866-3b522456b5d4",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T00:45:00.000Z",
+      "ModifiedAt": "2026-06-27T00:45:00.000Z"
+    },
+    {
+      "Id": "jps-mch-event-reset-wipe",
+      "Name": "Reset Toggles Wipe",
+      "Description": "Restores default Machinist toggles after wipes.",
+      "EventType": "OnWipe",
+      "LogicId": "cc38a4e9-644e-5b89-a866-3b522456b5d4",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T00:45:00.000Z",
+      "ModifiedAt": "2026-06-27T00:45:00.000Z"
     },
     {
       "Id": "jps-mch-event-dismantle-tb",
@@ -373,12 +401,12 @@
     },
     {
       "Id": "5f48d8d0-3847-4a85-b6ed-506191f01b27",
-      "Name": "Self HP <40",
-      "Description": "",
+      "Name": "Self HP <= 50%",
+      "Description": "Self HP threshold for Second Wind use.",
       "SubConditions": [
         {
           "Id": "38066d92-462e-421d-812d-a8d53d4c03d5",
-          "Name": "Second Wind",
+          "Name": "Self HP <= 50%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -401,7 +429,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 40,
+              "Percentage": 50,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -2533,12 +2561,12 @@
     },
     {
       "Id": "2deb9cfc-deb8-4619-9dff-5d393fa4cf36",
-      "Name": "Second Wind <= 40%",
-      "Description": "",
+      "Name": "Second Wind <= 50%",
+      "Description": "Self HP threshold for Second Wind use.",
       "SubConditions": [
         {
           "Id": "56aeba31-a9a7-4ff4-8bd1-908c89b2cae0",
-          "Name": "Second Wind <= 40%",
+          "Name": "Second Wind <= 50%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -2561,7 +2589,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 40,
+              "Percentage": 50,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -4644,7 +4672,9 @@
         "Name": "Reset Toggles",
         "Description": "",
         "EventIds": [
-          "3b4dd2bb-8d4d-55d0-90af-614d6d4bf4b8"
+          "3b4dd2bb-8d4d-55d0-90af-614d6d4bf4b8",
+          "jps-mch-event-reset-zone",
+          "jps-mch-event-reset-wipe"
         ],
         "Enabled": true,
         "Position": 2
