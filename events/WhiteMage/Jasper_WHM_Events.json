@@ -3,7 +3,7 @@
   "Name": "Jasper WHM Events",
   "Description": "Damage-forward White Mage event profile for general PvE. Lets ACR DPS flow, then uses oGCDs and emergency GCD heals when recovery is actually needed.",
   "CreatedAt": "2026-06-25T00:31:21.892963Z",
-  "ModifiedAt": "2026-06-26T18:30:00.000Z",
+  "ModifiedAt": "2026-06-26T21:30:00.000Z",
   "Events": [
     {
       "Id": "whm-event-01",
@@ -273,8 +273,8 @@
     },
     {
       "Id": "dfd8585f-c5bd-4e3c-93bd-ef14267356f2",
-      "Name": "[19] Afflatus Rapture (Misery Ready)",
-      "Description": "Uses Afflatus Rapture directly when healing is needed, even if Afflatus Misery is ready.",
+      "Name": "[19] Misery -> Afflatus Rapture",
+      "Description": "Spends Afflatus Misery before the matching Rapture branch when Blood Lily is ready.",
       "EventType": "OnTick",
       "LogicId": "6efec16e-b4f0-418e-9e53-11f97f03333b",
       "ThrottleSameEvent": 2.5,
@@ -283,7 +283,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-02T21:38:36.6442328Z",
-      "ModifiedAt": "2026-06-26T14:00:00.000Z"
+      "ModifiedAt": "2026-06-26T21:30:00.000Z"
     },
     {
       "Id": "whm-event-19",
@@ -315,8 +315,8 @@
     },
     {
       "Id": "6b03390f-7efa-4f33-b480-fa97520c4904",
-      "Name": "[21] Afflatus Solace (MT, Misery Ready)",
-      "Description": "Tank HP < 60% AND Tetragrammaton on cooldown; heal immediately even when Misery is ready.",
+      "Name": "[21] Misery -> Afflatus Solace (MT)",
+      "Description": "Spends Afflatus Misery before the matching MT Solace branch when Blood Lily is ready.",
       "EventType": "OnTick",
       "LogicId": "5ab3c9e9-88cd-4295-b898-a9837ce4e379",
       "ThrottleSameEvent": 2.5,
@@ -325,7 +325,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-02T21:38:58.3138215Z",
-      "ModifiedAt": "2026-06-26T11:10:00.000Z"
+      "ModifiedAt": "2026-06-26T21:30:00.000Z"
     },
     {
       "Id": "whm-event-21",
@@ -12475,8 +12475,8 @@
     },
     {
       "Id": "6efec16e-b4f0-418e-9e53-11f97f03333b",
-      "Name": "[19] Afflatus Rapture (Misery Ready)",
-      "Description": "Healing-first Rapture branch for Misery-ready state.",
+      "Name": "[19] Misery Before rapture",
+      "Description": "Blood Lily spend before the matching Rapture branch.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
@@ -12487,13 +12487,13 @@
       "ActionTriggers": [
         {
           "Id": "b219245e-6d03-449a-a4c6-494c63d62383",
-          "ActionId": 16534,
+          "ActionId": 16535,
           "SkillbarId": "",
           "TTSText": "",
           "TriggerType": 0,
           "LogicOperator": 0,
-          "TargetType": 0,
-          "TargetSelectionStrategy": 0,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
           "SkipBuffId": 0,
           "TargetOperation": 0,
           "TargetDataId": 0,
@@ -12512,7 +12512,7 @@
         }
       ],
       "CreatedAt": "2026-01-02T21:33:40.8980032Z",
-      "ModifiedAt": "2026-06-26T14:00:00.000Z",
+      "ModifiedAt": "2026-06-26T21:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": ""
     },
@@ -12604,8 +12604,8 @@
     },
     {
       "Id": "5ab3c9e9-88cd-4295-b898-a9837ce4e379",
-      "Name": "[21] Afflatus Solace (MT, Misery Ready)",
-      "Description": "Tank HP < 60% AND Tetragrammaton on cooldown; heal immediately even when Misery is ready.",
+      "Name": "[21] Misery Before Afflatus Solace (MT)",
+      "Description": "Blood Lily spend before the matching MT Solace branch.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
@@ -12617,13 +12617,13 @@
       "ActionTriggers": [
         {
           "Id": "ee6ff95d-a1c0-48f4-9474-aaa5ced0f3a3",
-          "ActionId": 16531,
+          "ActionId": 16535,
           "SkillbarId": "",
           "TTSText": "",
           "TriggerType": 0,
           "LogicOperator": 0,
-          "TargetType": 3,
-          "TargetSelectionStrategy": 0,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
           "SkipBuffId": 0,
           "TargetOperation": 0,
           "TargetDataId": 0,
@@ -12642,7 +12642,7 @@
         }
       ],
       "CreatedAt": "2026-01-02T21:35:26.3660632Z",
-      "ModifiedAt": "2026-06-26T11:10:00.000Z",
+      "ModifiedAt": "2026-06-26T21:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": ""
     },
@@ -13505,5 +13505,5 @@
       "ac53d867-c3ab-400e-a0b9-48e3888eafba": false
     }
   },
-  "Version": "1.0.24"
+  "Version": "1.0.25"
 }

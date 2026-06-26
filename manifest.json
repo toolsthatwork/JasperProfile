@@ -1,5 +1,5 @@
 {
-  "events/WhiteMage/Jasper_WHM_Events.json": "1.0.24",
+  "events/WhiteMage/Jasper_WHM_Events.json": "1.0.25",
   "timelines/WhiteMage/Jasper_WHM_Timeline.json": "1.1.13",
   "openers/WhiteMage/Jasper_WHM_DPS_Opener.json": "1.0.0",
   "events/Warrior/Jasper_WAR_Events.json": "0.1.4",
@@ -44,7 +44,7 @@
   "events/Pictomancer/Jasper_PCT_Events.json": "0.1.3",
   "timelines/Pictomancer/Jasper_PCT_Timeline.json": "0.1.0",
   "openers/Pictomancer/Jasper_PCT_Starter_Opener.json": "0.1.0",
-  "events/Reaper/Jasper_RPR_Events.json": "0.1.3",
+  "events/Reaper/Jasper_RPR_Events.json": "0.1.4",
   "timelines/Reaper/Jasper_RPR_Timeline.json": "0.1.0",
   "openers/Reaper/Jasper_RPR_Starter_Opener.json": "0.1.0",
   "events/RedMage/Jasper_RDM_Events.json": "0.1.4",
