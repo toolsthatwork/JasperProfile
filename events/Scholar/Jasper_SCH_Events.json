@@ -649,7 +649,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "eb796a49-f4de-46dc-8b45-90efdb17589a",
+          "Id": "f53468fe-1fa6-4978-93b7-ccbdec62d1cd",
           "Name": "HP <= 80% ",
           "Description": "",
           "TargetType": 14,
@@ -1297,7 +1297,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "2bfad18b-bbe3-4ed7-a4bf-76e730114ee9",
+          "Id": "8d44646d-7f8a-47a9-a126-aad19681094f",
           "Name": "50% or lower",
           "Description": "",
           "TargetType": 5,
@@ -3457,7 +3457,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "f4f31c6e-6668-4805-9827-908cb5747865",
+          "Id": "2a6e6561-ac01-4652-a546-18cc4ad0f28a",
           "Name": "Faerie Gauge",
           "Description": "",
           "TargetType": 0,
@@ -7486,7 +7486,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "9ebd4733-1b98-4924-96f4-cf83a18c2978",
+          "Id": "bf713d20-32fb-4cef-abe9-bb8c936c18a5",
           "ActionId": 185,
           "SkillbarId": "",
           "TTSText": "",
@@ -7526,7 +7526,7 @@
       ],
       "ActionTriggers": [
         {
-          "Id": "9ebd4733-1b98-4924-96f4-cf83a18c2978",
+          "Id": "ce47c8e0-753c-4e01-ae27-6649d7669273",
           "ActionId": 185,
           "SkillbarId": "",
           "TTSText": "",

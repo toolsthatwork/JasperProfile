@@ -1897,7 +1897,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "0e1f215f-65bf-4c5f-9e65-68a1c3cd6404",
+          "Id": "04bf83cc-facf-4df0-b4d2-3d97ac7dfa15",
           "Name": "Has No Blood Lily",
           "Description": "",
           "TargetType": 0,
@@ -4047,7 +4047,7 @@
       "Description": "For Divine Benison before AOE",
       "SubConditions": [
         {
-          "Id": "7893abc5-f6e6-4ef6-b4a4-53ee3bf3c6d9",
+          "Id": "9c393c5a-7e00-451a-b8cc-186a61180423",
           "Name": "MT <= 80%",
           "Description": "",
           "TargetType": 3,
@@ -8170,7 +8170,7 @@
       "Description": "Main Tank does NOT have Regen buff",
       "SubConditions": [
         {
-          "Id": "b3b65aba-9c7a-483f-a41d-132a002113ea",
+          "Id": "5aa870b0-fb8d-430e-92da-296edb831ea2",
           "Name": "No Regen",
           "Description": "",
           "TargetType": 5,
@@ -12542,7 +12542,7 @@
       ],
       "ActionTriggers": [
         {
-          "Id": "at-20",
+          "Id": "jps-whm-trigger-solace-st-overcap",
           "ActionId": 16531,
           "SkillbarId": "",
           "TTSText": "",
@@ -12718,7 +12718,7 @@
       ],
       "ActionTriggers": [
         {
-          "Id": "at-22",
+          "Id": "jps-whm-trigger-solace-st-misery-ready",
           "ActionId": 16531,
           "SkillbarId": "",
           "TTSText": "",

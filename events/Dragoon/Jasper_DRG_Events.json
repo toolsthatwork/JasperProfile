@@ -369,7 +369,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "48d035e2-9636-4b60-8ff3-4f0c9fcd8cfa",
+          "Id": "45bc415d-08b7-41a3-8b56-d051cd71c508",
           "Name": "Boss 15HP%",
           "Description": "",
           "TargetType": 1,
@@ -801,7 +801,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "16370776-c944-48e3-a03d-d850357a0d1c",
+          "Id": "a30c1ee0-d3a5-48d1-9f8f-030aeeb5cb1a",
           "Name": "40HP%",
           "Description": "",
           "TargetType": 1,

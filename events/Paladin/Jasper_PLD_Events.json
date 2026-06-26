@@ -2078,7 +2078,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "6eee28ef-bde2-49a7-b50f-95ca31c047fe",
+          "Id": "da58fe29-965a-4a2d-b0d0-8469de27330c",
           "Name": ">= 2 Mob Aggro",
           "Description": "",
           "TargetType": 0,
@@ -2294,7 +2294,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "6eee28ef-bde2-49a7-b50f-95ca31c047fe",
+          "Id": "707edb1d-333e-4c1c-900a-f2d3430ed55e",
           "Name": ">= 3 Mob Aggro",
           "Description": "",
           "TargetType": 0,
@@ -2510,7 +2510,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "6eee28ef-bde2-49a7-b50f-95ca31c047fe",
+          "Id": "8f6eb3f9-da92-43ca-9be5-0eeab15dc670",
           "Name": ">= 4 Mob Aggro",
           "Description": "",
           "TargetType": 0,
@@ -4244,7 +4244,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "a1ca1553-7e1e-47ee-a221-c34737280da0",
+          "Id": "66681717-7abe-4e4a-bb84-703273c52489",
           "Name": "Does not have Veil",
           "Description": "",
           "TargetType": 0,
@@ -5111,7 +5111,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "e73e011b-10a7-448f-a74e-06f645fc8d86",
+          "Id": "55a2812b-eb48-4840-8647-34b1b1b47ad0",
           "Name": "Moving",
           "Description": "",
           "TargetType": 0,
@@ -6623,7 +6623,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "48d035e2-9636-4b60-8ff3-4f0c9fcd8cfa",
+          "Id": "a2a2d194-06cb-420c-ad30-df238dd9b7ec",
           "Name": "Boss 15HP%",
           "Description": "",
           "TargetType": 1,
@@ -7358,7 +7358,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "cb19cc67-76ff-4e7c-bfac-cff0c2d06b65",
+          "Id": "7fd36916-faa4-44db-838f-42f11c37ee22",
           "ActionId": 7531,
           "SkillbarId": "",
           "TTSText": "",
@@ -7476,7 +7476,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "cb19cc67-76ff-4e7c-bfac-cff0c2d06b65",
+          "Id": "7cc42157-2049-400f-98c0-403795096251",
           "ActionId": 7531,
           "SkillbarId": "",
           "TTSText": "",

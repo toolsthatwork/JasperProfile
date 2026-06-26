@@ -1123,7 +1123,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "eb796a49-f4de-46dc-8b45-90efdb17589a",
+          "Id": "390a5c1d-83df-4056-9623-0eb84f418bdb",
           "Name": "HP <= 60% ",
           "Description": "",
           "TargetType": 14,
@@ -1339,7 +1339,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "eb796a49-f4de-46dc-8b45-90efdb17589a",
+          "Id": "5d645903-b85b-441f-8c02-638367cd7a51",
           "Name": "HP <= 80% ",
           "Description": "",
           "TargetType": 14,
@@ -2203,7 +2203,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "3b3cdebf-124b-488f-a4ca-c005fef31f9e",
+          "Id": "92f821de-8c1b-4b96-8e54-7ee2ddfb78b4",
           "Name": "Bole Useable",
           "Description": "",
           "TargetType": 0,
@@ -2635,7 +2635,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "3b3cdebf-124b-488f-a4ca-c005fef31f9e",
+          "Id": "9f69eb67-6eeb-4e1b-ba44-ecf9ce2fa54b",
           "Name": "Spire Usable",
           "Description": "",
           "TargetType": 0,
@@ -3735,7 +3735,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "aff6aeec-9be5-4b33-88a5-e2d873ecd3cc",
+          "Id": "dbc0461d-adf6-4171-bbc9-b59dd6115284",
           "Name": "<= 50% Tank",
           "Description": "",
           "TargetType": 3,
@@ -4167,7 +4167,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "4ef16739-1060-4134-970a-12745b707d90",
+          "Id": "d9d9d2d3-4122-4ad8-8776-e3d0db48f235",
           "Name": "Astral Draw CD Almost off CD",
           "Description": "",
           "TargetType": 0,

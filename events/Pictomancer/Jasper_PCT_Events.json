@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_PCT_Events",
   "Name": "Jasper PCT Events",
-  "Description": "General-purpose Pictomancer event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.6",
+  "Description": "General-purpose Pictomancer event profile for PvE. Keeps Addle/Tempera Coat support, optional cooldown holds, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
+  "Version": "0.1.7",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -102,6 +102,34 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T18:00:00.000Z",
       "ModifiedAt": "2026-06-26T19:15:00.000Z"
+    },
+    {
+      "Id": "jps-pct-event-reset-zone",
+      "Name": "Reset Toggles Zone Change",
+      "Description": "Restores default Pictomancer toggles after zone changes.",
+      "EventType": "OnZoneChange",
+      "LogicId": "800110c7-6bdf-5a91-b93c-d0861e532851",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T00:45:00.000Z",
+      "ModifiedAt": "2026-06-27T00:45:00.000Z"
+    },
+    {
+      "Id": "jps-pct-event-reset-wipe",
+      "Name": "Reset Toggles Wipe",
+      "Description": "Restores default Pictomancer toggles after wipes.",
+      "EventType": "OnWipe",
+      "LogicId": "800110c7-6bdf-5a91-b93c-d0861e532851",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T00:45:00.000Z",
+      "ModifiedAt": "2026-06-27T00:45:00.000Z"
     },
     {
       "Id": "jps-pct-event-addle-tb",
@@ -3839,7 +3867,9 @@
         "Name": "Reset Toggles",
         "Description": "",
         "EventIds": [
-          "51ae44cf-7a89-5abf-92d0-af7ecd09f9b2"
+          "51ae44cf-7a89-5abf-92d0-af7ecd09f9b2",
+          "jps-pct-event-reset-zone",
+          "jps-pct-event-reset-wipe"
         ],
         "Enabled": true,
         "Position": 2

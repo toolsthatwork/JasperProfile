@@ -2869,7 +2869,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "a1ca1553-7e1e-47ee-a221-c34737280da0",
+          "Id": "9f5ea826-baa6-4ced-be68-8f420ac81672",
           "Name": "Does not have Shake",
           "Description": "",
           "TargetType": 0,
@@ -3285,7 +3285,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "48d035e2-9636-4b60-8ff3-4f0c9fcd8cfa",
+          "Id": "dc1433a6-5c79-43e6-ac14-a20b98184279",
           "Name": "Boss 15HP",
           "Description": "",
           "TargetType": 1,
@@ -6576,7 +6576,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "6eee28ef-bde2-49a7-b50f-95ca31c047fe",
+          "Id": "4b9f88ab-592f-4147-8b8a-d8892c3fe6b1",
           "Name": ">= 4 Mob Aggro",
           "Description": "",
           "TargetType": 0,
@@ -8569,7 +8569,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "cb19cc67-76ff-4e7c-bfac-cff0c2d06b65",
+          "Id": "d2635615-e894-4010-8c6d-6932affbddd6",
           "ActionId": 7531,
           "SkillbarId": "",
           "TTSText": "",
@@ -8638,7 +8638,7 @@
       ],
       "ActionTriggers": [
         {
-          "Id": "205270e7-1d42-4b5f-a58d-02726a2392a2",
+          "Id": "1f6b9776-72e9-4d1e-b757-0ad1b5ab20f3",
           "ActionId": 7535,
           "SkillbarId": "",
           "TTSText": "",
@@ -8688,7 +8688,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "cb19cc67-76ff-4e7c-bfac-cff0c2d06b65",
+          "Id": "bf454932-23b0-4fca-bfa8-d72c1e496974",
           "ActionId": 7531,
           "SkillbarId": "",
           "TTSText": "",

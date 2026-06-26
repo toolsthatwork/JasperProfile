@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_RDM_Events",
   "Name": "Jasper RDM Events",
-  "Description": "General-purpose RedMage event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.7",
+  "Description": "General-purpose Red Mage event profile for PvE. Keeps Addle/Magick Barrier support, conservative emergency Vercure, optional cooldown holds, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
+  "Version": "0.1.8",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -74,6 +74,34 @@
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
       "ModifiedAt": "2026-06-26T19:15:00.000Z"
+    },
+    {
+      "Id": "jps-rdm-event-reset-zone",
+      "Name": "Reset Toggles Zone Change",
+      "Description": "Restores default Red Mage toggles after zone changes.",
+      "EventType": "OnZoneChange",
+      "LogicId": "f2edb669-a487-46fb-b893-9bbe587caadb",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T00:45:00.000Z",
+      "ModifiedAt": "2026-06-27T00:45:00.000Z"
+    },
+    {
+      "Id": "jps-rdm-event-reset-wipe",
+      "Name": "Reset Toggles Wipe",
+      "Description": "Restores default Red Mage toggles after wipes.",
+      "EventType": "OnWipe",
+      "LogicId": "f2edb669-a487-46fb-b893-9bbe587caadb",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T00:45:00.000Z",
+      "ModifiedAt": "2026-06-27T00:45:00.000Z"
     },
     {
       "Id": "8806e218-3db4-4d05-962a-32b278f297c5",
@@ -4612,7 +4640,9 @@
         "Name": "Reset Toggles",
         "Description": "",
         "EventIds": [
-          "1c451d36-4a20-4090-90e5-61340b085928"
+          "1c451d36-4a20-4090-90e5-61340b085928",
+          "jps-rdm-event-reset-zone",
+          "jps-rdm-event-reset-wipe"
         ],
         "Enabled": true,
         "Position": 3

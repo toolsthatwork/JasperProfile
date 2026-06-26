@@ -1241,7 +1241,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "5d964700-2315-4c2d-9fd3-420b35cc30c7",
+          "Id": "8756deeb-25e7-4e8c-a3e9-2be2edeabcdb",
           "Name": "40HP%",
           "Description": "",
           "TargetType": 1,
@@ -1673,7 +1673,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "4a346530-88ce-49c5-bc13-8e8a7c0595c2",
+          "Id": "1c807299-a406-4804-b079-74c7b306da8a",
           "Name": "Boss 15HP%",
           "Description": "",
           "TargetType": 1,
@@ -2537,7 +2537,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "38066d92-462e-421d-812d-a8d53d4c03d5",
+          "Id": "56aeba31-a9a7-4ff4-8bd1-908c89b2cae0",
           "Name": "Second Wind <= 40%",
           "Description": "",
           "TargetType": 0,

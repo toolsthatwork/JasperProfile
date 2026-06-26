@@ -795,7 +795,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "247b302a-4fe1-4666-9556-80af4d7be79a",
+          "Id": "1054ad9a-9ec2-4631-bc93-dbbf2a2f9762",
           "Name": "Party <= 50% HP",
           "Description": "",
           "TargetType": 14,
@@ -1011,7 +1011,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "247b302a-4fe1-4666-9556-80af4d7be79a",
+          "Id": "330f5ef7-8f0a-4db0-b1ec-f89dfd01a598",
           "Name": "Party <= 30% HP",
           "Description": "",
           "TargetType": 14,
@@ -1443,7 +1443,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "d7505384-2f21-4f59-a7b6-cf89e8a02e71",
+          "Id": "8959250e-e459-49e0-b138-3935e3796b40",
           "Name": "MT <= 50%",
           "Description": "",
           "TargetType": 3,

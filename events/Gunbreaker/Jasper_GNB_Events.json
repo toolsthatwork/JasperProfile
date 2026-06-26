@@ -811,7 +811,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "c399b337-32f1-4135-a890-2a0d1c0fbfb4",
+          "Id": "ff83664f-1771-4681-9c3a-272a7efc1748",
           "Name": "Has 1 Mit",
           "Description": "",
           "TargetType": 0,
@@ -3427,7 +3427,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "a1ca1553-7e1e-47ee-a221-c34737280da0",
+          "Id": "c2d67393-b05f-4655-bbaa-e29a06c34d89",
           "Name": "Does not have HoL",
           "Description": "",
           "TargetType": 0,
@@ -4078,7 +4078,7 @@
       "Description": "Condition requiring tank partner to be in combat with you.",
       "SubConditions": [
         {
-          "Id": "1692e7ad-1b3c-41c2-981c-ba9fb7585bac",
+          "Id": "dea9d138-76dd-485d-a4eb-5261df4474a0",
           "Name": "TP HP Check",
           "Description": "",
           "TargetType": 2,
@@ -7966,7 +7966,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "48d035e2-9636-4b60-8ff3-4f0c9fcd8cfa",
+          "Id": "9a64ad46-9e61-4fe9-aa8d-25ae285d5036",
           "Name": "Boss 15HP%",
           "Description": "",
           "TargetType": 1,
@@ -8182,7 +8182,7 @@
       "Description": "Always true stance helper gate.",
       "SubConditions": [
         {
-          "Id": "d83c3544-16a4-4b71-9b7e-6195779d4ef4",
+          "Id": "685a5371-af50-4171-8399-e440f2a13b0a",
           "Name": "Stance Off",
           "Description": "",
           "TargetType": 0,
@@ -8592,7 +8592,7 @@
       ],
       "ActionTriggers": [
         {
-          "Id": "8ccb424b-4d5d-485f-baec-195eec2c1ee8",
+          "Id": "3e1002dd-68e4-42d3-a54e-2904b48a0af1",
           "ActionId": 25758,
           "SkillbarId": "",
           "TTSText": "",
@@ -8617,7 +8617,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "205270e7-1d42-4b5f-a58d-02726a2392a2",
+          "Id": "f24ca628-db07-4c05-89c1-ce4e42e67b94",
           "ActionId": 7535,
           "SkillbarId": "",
           "TTSText": "",
@@ -8642,7 +8642,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "602400f1-1e81-4551-8c2a-1b21f4cff807",
+          "Id": "ba11d1b7-5a78-48c8-9721-409344350896",
           "ActionId": 16140,
           "SkillbarId": "",
           "TTSText": "",
@@ -8667,7 +8667,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "cb19cc67-76ff-4e7c-bfac-cff0c2d06b65",
+          "Id": "473843dc-b487-48e1-8077-28aac4eea847",
           "ActionId": 7531,
           "SkillbarId": "",
           "TTSText": "",
@@ -8692,7 +8692,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "552baa0e-9789-4520-a8f7-f70fa00f4fb3",
+          "Id": "2dcd1835-d2a7-42c5-a2c9-5385a8bcce3e",
           "ActionId": 36935,
           "SkillbarId": "",
           "TTSText": "",
@@ -8736,7 +8736,7 @@
       ],
       "ActionTriggers": [
         {
-          "Id": "8ccb424b-4d5d-485f-baec-195eec2c1ee8",
+          "Id": "e4c6b4f0-f333-4463-97fb-6cffaa8f19fb",
           "ActionId": 25758,
           "SkillbarId": "",
           "TTSText": "",
@@ -8761,7 +8761,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "205270e7-1d42-4b5f-a58d-02726a2392a2",
+          "Id": "6c4183ce-41d8-48ea-b23f-ba9332781845",
           "ActionId": 7535,
           "SkillbarId": "",
           "TTSText": "",
@@ -8786,7 +8786,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "cb19cc67-76ff-4e7c-bfac-cff0c2d06b65",
+          "Id": "da6f3f0b-8065-44b2-8f05-90b05a9df655",
           "ActionId": 7531,
           "SkillbarId": "",
           "TTSText": "",
@@ -8811,7 +8811,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "602400f1-1e81-4551-8c2a-1b21f4cff807",
+          "Id": "13ee7978-32a6-4326-9337-c23a7d92d1ee",
           "ActionId": 16140,
           "SkillbarId": "",
           "TTSText": "",
@@ -8836,7 +8836,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "552baa0e-9789-4520-a8f7-f70fa00f4fb3",
+          "Id": "2c8ba205-89f5-4560-af1c-2e05798a582f",
           "ActionId": 36935,
           "SkillbarId": "",
           "TTSText": "",
@@ -8964,7 +8964,7 @@
       ],
       "ActionTriggers": [
         {
-          "Id": "8ccb424b-4d5d-485f-baec-195eec2c1ee8",
+          "Id": "92a11523-c3ff-4648-a228-5cbb485e68c9",
           "ActionId": 25758,
           "SkillbarId": "",
           "TTSText": "",
@@ -8989,7 +8989,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "205270e7-1d42-4b5f-a58d-02726a2392a2",
+          "Id": "c34cd444-58c5-4bf5-a5ef-621851301f90",
           "ActionId": 7535,
           "SkillbarId": "",
           "TTSText": "",
@@ -9014,7 +9014,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "602400f1-1e81-4551-8c2a-1b21f4cff807",
+          "Id": "5d079b0b-0efd-48e0-99c8-173bfa684d9d",
           "ActionId": 16140,
           "SkillbarId": "",
           "TTSText": "",
@@ -9039,7 +9039,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "cb19cc67-76ff-4e7c-bfac-cff0c2d06b65",
+          "Id": "1c08653e-e660-49bf-9713-04a307a00bd5",
           "ActionId": 7531,
           "SkillbarId": "",
           "TTSText": "",
@@ -9064,7 +9064,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "552baa0e-9789-4520-a8f7-f70fa00f4fb3",
+          "Id": "8240f80f-7f2b-4159-8a93-d0cce495ebf7",
           "ActionId": 36935,
           "SkillbarId": "",
           "TTSText": "",

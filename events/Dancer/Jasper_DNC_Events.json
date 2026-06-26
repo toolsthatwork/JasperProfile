@@ -3419,7 +3419,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "38066d92-462e-421d-812d-a8d53d4c03d5",
+          "Id": "3a024c93-9f8d-4416-9942-db08f12c1ebe",
           "Name": "Second Wind <= 40%",
           "Description": "",
           "TargetType": 0,

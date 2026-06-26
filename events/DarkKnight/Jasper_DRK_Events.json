@@ -714,7 +714,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "a1ca1553-7e1e-47ee-a221-c34737280da0",
+          "Id": "3a696bdb-b9f0-4d66-a5b3-5e4c11016d0d",
           "Name": "Has No Dark Missionary",
           "Description": "",
           "TargetType": 0,
@@ -2700,7 +2700,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "33f2a9ec-8c75-4c40-ad04-ed4fe3806ff2",
+          "Id": "c4b228e4-f0e2-4dad-a6d1-a7eced796827",
           "Name": "<= 5 Yalms",
           "Description": "",
           "TargetType": 1,
@@ -4446,7 +4446,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "bb05eb5a-9f6b-48b6-9212-be4cf2bf34ec",
+          "Id": "81b896aa-b467-4dca-83bb-7eb13a2ce077",
           "Name": "Isnt Moving",
           "Description": "",
           "TargetType": 0,
@@ -4662,7 +4662,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "37d22a9c-988d-4551-9a4f-d681a270a6f5",
+          "Id": "4737606d-cf03-43a8-a386-a1dd6bd137d8",
           "Name": "In Combat",
           "Description": "",
           "TargetType": 0,
@@ -6606,7 +6606,7 @@
       "Description": "",
       "SubConditions": [
         {
-          "Id": "48d035e2-9636-4b60-8ff3-4f0c9fcd8cfa",
+          "Id": "979c559c-126d-4ece-b836-ac61288a691a",
           "Name": "Boss 15HP%",
           "Description": "",
           "TargetType": 1,
@@ -7276,7 +7276,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "cb19cc67-76ff-4e7c-bfac-cff0c2d06b65",
+          "Id": "0b2653a1-6931-4ad8-93da-7ad5f22ae698",
           "ActionId": 7531,
           "SkillbarId": "",
           "TTSText": "",
@@ -7421,7 +7421,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "cb19cc67-76ff-4e7c-bfac-cff0c2d06b65",
+          "Id": "9962215c-3c8e-46f7-a450-52621c711b0b",
           "ActionId": 7531,
           "SkillbarId": "",
           "TTSText": "",
@@ -7700,7 +7700,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "cb19cc67-76ff-4e7c-bfac-cff0c2d06b65",
+          "Id": "3aac89de-3278-4436-a8e4-745b4cf922da",
           "ActionId": 7531,
           "SkillbarId": "",
           "TTSText": "",
@@ -8405,7 +8405,7 @@
       ],
       "ActionTriggers": [
         {
-          "Id": "14dd57a0-ac98-48f8-8654-809f23cf2c04",
+          "Id": "614eadec-3278-48fa-bc17-01a96b58a912",
           "ActionId": 7535,
           "SkillbarId": "",
           "TTSText": "",
