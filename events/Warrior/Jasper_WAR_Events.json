@@ -3,7 +3,7 @@
   "Name": "Jasper WAR Events",
   "Description": "General-purpose Warrior event profile for PvE. Event-driven dungeon mitigation, Bloodwhetting recovery, emergency Holmgang, raidwide/tankbuster mitigation, and optional co-tank support.",
   "CreatedAt": "2026-06-25T02:45:00.000Z",
-  "ModifiedAt": "2026-06-26T19:30:00.000Z",
+  "ModifiedAt": "2026-06-26T23:15:00.000Z",
   "Events": [
     {
       "Id": "f2daaf1d-c477-42b2-9db1-baa49330bfe3",
@@ -7415,7 +7415,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "d2859eb1-badb-4baf-9898-36452e6bd3da",
-        "a5f16623-4bb1-4d16-a42b-96cd9bccb5aa"
+        "a5f16623-4bb1-4d16-a42b-96cd9bccb5aa",
+        "309a790a-240d-4e2f-a0b3-7282cf6b717a"
       ],
       "ActionTriggers": [
         {
@@ -7545,7 +7546,7 @@
         }
       ],
       "CreatedAt": "2025-08-12T20:24:49.3210173Z",
-      "ModifiedAt": "2026-06-25T02:45:00.000Z",
+      "ModifiedAt": "2026-06-26T23:15:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
     },
@@ -7930,7 +7931,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "96978d8a-a2ba-4c92-9a43-a3040d6fad0b",
-        "151fa217-58a8-4665-a1ce-d3b3e8cb40a0"
+        "151fa217-58a8-4665-a1ce-d3b3e8cb40a0",
+        "309a790a-240d-4e2f-a0b3-7282cf6b717a"
       ],
       "ActionTriggers": [
         {
@@ -7960,7 +7962,7 @@
         }
       ],
       "CreatedAt": "2025-08-14T02:35:13.7551734Z",
-      "ModifiedAt": "2026-06-25T02:45:00.000Z",
+      "ModifiedAt": "2026-06-26T23:15:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Mitigation"
     },
@@ -8967,5 +8969,5 @@
       "jps-war-qt-stance-mt": true
     }
   },
-  "Version": "0.1.6"
+  "Version": "0.1.7"
 }

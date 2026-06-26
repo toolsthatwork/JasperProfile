@@ -2,7 +2,7 @@
   "Id": "Jasper_SCH_Events",
   "Name": "Jasper SCH Events",
   "Description": "General-purpose Scholar event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.5",
+  "Version": "0.1.6",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -249,20 +249,6 @@
       "Description": "",
       "EventType": "OnAllAOE",
       "LogicId": "a32125cd-8383-483f-9135-3ed86fcd3580",
-      "ThrottleSameEvent": 0.5,
-      "ThrottleAllEvents": 0.1,
-      "Timeout": 5,
-      "RecheckDuration": 0,
-      "Filters": {},
-      "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
-    },
-    {
-      "Id": "0e064410-342e-4c86-8892-e3bb6992aae1",
-      "Name": "[ST] Fey Union",
-      "Description": "",
-      "EventType": "OnTick",
-      "LogicId": "bfba7b57-39bd-490d-b8df-2c90b6cf029d",
       "ThrottleSameEvent": 0.5,
       "ThrottleAllEvents": 0.1,
       "Timeout": 5,
@@ -8002,7 +7988,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T19:30:00.000Z",
+  "ModifiedAt": "2026-06-26T23:15:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
@@ -8055,8 +8041,7 @@
           "6735f0a2-cfdb-4110-a479-dee403f8c395",
           "57ac668f-bc4d-4dda-bb18-0e41c3b91bea",
           "dcc21180-b06c-4cb9-96f7-aa478bbfa78f",
-          "7fc16b9d-0d67-447c-9199-67bcc15a91f9",
-          "0e064410-342e-4c86-8892-e3bb6992aae1"
+          "7fc16b9d-0d67-447c-9199-67bcc15a91f9"
         ],
         "Enabled": true,
         "Position": 2

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Tightened the tank/healer rerun: Warrior mitigation helpers now require combat, White Mage lily heals no longer spend Misery first when healing is needed, Astrologian gained in-combat MT regen support, and Scholar no longer duplicates Fey Union triggers.
 - Added low-HP personal shield safety events for Reaper, Black Mage, Summoner, and Pictomancer.
 - Added Bard Nature's Minne tankbuster support for main-tank recovery windows.
 - Re-ran the full job smoke and action-coverage pass across every combat job profile.
