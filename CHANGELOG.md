@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Changed White Mage's Misery-ready Afflatus Rapture branch to cast Rapture directly when party healing is needed.
+- Lowered Summoner Rekindle MT automation to 70% HP so it is less likely to spend on light tank damage.
 - Promoted all combat jobs to working beta coverage while keeping White Mage as the reference-tested profile.
 - Added optional out-of-combat Sprint quality-of-life toggles to White Mage, Astrologian, Sage, and Reaper.
 - Polished Reaper baseline toggles with enabled mitigation, Arcane Crest naming, OnWipe opener labeling, and reset toggle cleanup.

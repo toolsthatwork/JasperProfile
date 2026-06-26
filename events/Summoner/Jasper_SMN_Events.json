@@ -2,7 +2,7 @@
   "Id": "Jasper_SMN_Events",
   "Name": "Jasper SMN Events",
   "Description": "General-purpose Summoner event profile for PvE. Keeps automatic Addle/Radiant Aegis support, reset/on-wipe toggles, optional dungeon cooldown holds, Rekindle support, and optional out-of-combat Sprint.",
-  "Version": "0.1.1",
+  "Version": "0.1.2",
   "AIOEventVersion": 1,
   "Events": [
     {
@@ -105,8 +105,8 @@
     },
     {
       "Id": "815e56f3-03bc-4769-83d0-8cfde286f778",
-      "Name": "Rekindle MT (Low HP)",
-      "Description": "Uses Rekindle on the main tank only after HP drops below the safety threshold.",
+      "Name": "Rekindle MT (<=70% HP)",
+      "Description": "Avoids spending Rekindle on light tank chip damage.",
       "EventType": "OnTick",
       "LogicId": "97d344c7-3f39-4ef0-ae8e-ddb2ce34e6c4",
       "ThrottleSameEvent": 2.5,
@@ -115,7 +115,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T04:30:00.000Z",
-      "ModifiedAt": "2026-06-26T12:00:00.000Z"
+      "ModifiedAt": "2026-06-26T14:00:00.000Z"
     },
     {
       "Id": "0cf0081a-914a-4ccd-81c9-1562f042b5f5",
@@ -3179,12 +3179,12 @@
     },
     {
       "Id": "smn-cond-mt-hp-80",
-      "Name": "MT HP <= 80%",
-      "Description": "Main tank is at or below 80% HP.",
+      "Name": "MT HP <= 70%",
+      "Description": "Main tank is at or below 70% HP.",
       "SubConditions": [
         {
           "Id": "smn-subcond-mt-hp-80",
-          "Name": "MT <= 80%",
+          "Name": "MT <= 70%",
           "Description": "",
           "TargetType": 3,
           "ConditionType": 1,
@@ -3207,7 +3207,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 80,
+              "Percentage": 70,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -3385,12 +3385,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-06-26T12:00:00.000Z",
-          "ModifiedAt": "2026-06-26T12:00:00.000Z",
+          "ModifiedAt": "2026-06-26T14:00:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-26T12:00:00.000Z",
-      "ModifiedAt": "2026-06-26T12:00:00.000Z",
+      "ModifiedAt": "2026-06-26T14:00:00.000Z",
       "ExcludeFromTargetAccumulation": false
     }
   ],
@@ -3842,8 +3842,8 @@
     },
     {
       "Id": "97d344c7-3f39-4ef0-ae8e-ddb2ce34e6c4",
-      "Name": "Rekindle MT (Low HP)",
-      "Description": "Uses Rekindle on the main tank only after HP drops below the safety threshold.",
+      "Name": "Rekindle MT (<=70% HP)",
+      "Description": "Targets the main tank once damage is meaningful.",
       "LogicType": 0,
       "ConditionIds": [
         "b702ada1-facb-4cd3-906f-e1c29c1f390c",
@@ -3877,7 +3877,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T04:30:00.000Z",
-      "ModifiedAt": "2026-06-26T12:00:00.000Z",
+      "ModifiedAt": "2026-06-26T14:00:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
     },
@@ -4015,7 +4015,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T04:30:00.000Z",
-  "ModifiedAt": "2026-06-26T12:00:00.000Z",
+  "ModifiedAt": "2026-06-26T14:00:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
@@ -4051,7 +4051,7 @@
       {
         "Id": "6d63594b-b0b6-40f2-9cc1-929a687417b1",
         "Name": "Rekindle MT",
-        "Description": "Uses Rekindle on the main tank below 80% HP.",
+        "Description": "Uses Rekindle on the main tank below 70% HP.",
         "EventIds": [
           "815e56f3-03bc-4769-83d0-8cfde286f778"
         ],
