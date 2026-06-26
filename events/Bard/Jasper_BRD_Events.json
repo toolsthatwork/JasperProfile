@@ -2,7 +2,7 @@
   "Id": "Jasper_BRD_Events",
   "Name": "Jasper BRD Events",
   "Description": "General-purpose Bard event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.1",
+  "Version": "0.1.2",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -63,8 +63,8 @@
     },
     {
       "Id": "e4f2d0f2-a124-4b81-a528-e0370a523760",
-      "Name": "Warden's Paean",
-      "Description": "",
+      "Name": "Warden's Paean (Self)",
+      "Description": "Cleanses self when Warden's Paean can help.",
       "EventType": "OnTick",
       "LogicId": "a61546e5-750e-4dfd-8f69-5a7e256a7b4a",
       "ThrottleSameEvent": 0.5,
@@ -73,7 +73,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T16:00:00.000Z"
     },
     {
       "Id": "8f171d37-5954-422d-b04e-9c134168a97a",
@@ -144,6 +144,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
       "ModifiedAt": "2026-06-25T07:45:00.000Z"
+    },
+    {
+      "Id": "f6deb9da-ed47-4855-8ccf-4d6c78c421dd",
+      "Name": "Warden's Paean (Party)",
+      "Description": "Cleanses party members when Warden's Paean can help.",
+      "EventType": "OnTick",
+      "LogicId": "a4b17098-28aa-461e-99a2-6aa66e1835bb",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T16:00:00.000Z",
+      "ModifiedAt": "2026-06-26T16:00:00.000Z"
     }
   ],
   "Conditions": [
@@ -4703,13 +4717,12 @@
     },
     {
       "Id": "a61546e5-750e-4dfd-8f69-5a7e256a7b4a",
-      "Name": "Warden's Paean",
-      "Description": "Prioritizes self, then takes care of party members.",
+      "Name": "Warden's Paean (Self)",
+      "Description": "Self cleanse branch.",
       "LogicType": 0,
       "ConditionIds": [
-        "a9323893-617e-4a85-9236-b1efcaa4377f",
-        "b38231b8-8597-4485-b5a7-a396626acf57",
-        "3e2d3d25-40f5-4845-a292-6e4afc6c3fe0"
+        "3e2d3d25-40f5-4845-a292-6e4afc6c3fe0",
+        "b38231b8-8597-4485-b5a7-a396626acf57"
       ],
       "ActionTriggers": [
         {
@@ -4736,37 +4749,12 @@
           "VariableStringValue": "",
           "VariableNumberValue": 0,
           "VariableOperation": 0
-        },
-        {
-          "Id": "55bf767c-4c1b-4818-bce5-9b6e21f99e5d",
-          "ActionId": 3561,
-          "SkillbarId": "",
-          "TTSText": "",
-          "TriggerType": 0,
-          "LogicOperator": 1,
-          "TargetType": 20,
-          "TargetSelectionStrategy": 6,
-          "SkipBuffId": 0,
-          "TargetOperation": 0,
-          "TargetDataId": 0,
-          "TargetName": "",
-          "TargetX": 0,
-          "TargetY": 0,
-          "TargetZ": 0,
-          "OverlayText": "",
-          "OverlayDuration": 3,
-          "VariableName": "",
-          "VariableType": 0,
-          "VariableBoolValue": true,
-          "VariableStringValue": "",
-          "VariableNumberValue": 0,
-          "VariableOperation": 0
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T16:00:00.000Z",
       "ExecuteFirstOnly": true,
-      "Category": "QOL"
+      "Category": "Cleanse"
     },
     {
       "Id": "d12e2b20-4fbc-4038-990a-f6fcca7d9049",
@@ -4899,10 +4887,51 @@
       "ModifiedAt": "2026-06-25T07:45:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "DOTs"
+    },
+    {
+      "Id": "a4b17098-28aa-461e-99a2-6aa66e1835bb",
+      "Name": "Warden's Paean (Party)",
+      "Description": "Party cleanse branch.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "a9323893-617e-4a85-9236-b1efcaa4377f",
+        "b38231b8-8597-4485-b5a7-a396626acf57"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "6ce4dede-a41b-41c8-b13d-1a03988dbc01",
+          "ActionId": 3561,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 1,
+          "TargetType": 20,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T16:00:00.000Z",
+      "ModifiedAt": "2026-06-26T16:00:00.000Z",
+      "ExecuteFirstOnly": true,
+      "Category": "Cleanse"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T13:00:00.000Z",
+  "ModifiedAt": "2026-06-26T16:00:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
@@ -4942,8 +4971,7 @@
         "Name": "QOL Tweaks",
         "Description": "",
         "EventIds": [
-          "8f171d37-5954-422d-b04e-9c134168a97a",
-          "e4f2d0f2-a124-4b81-a528-e0370a523760"
+          "8f171d37-5954-422d-b04e-9c134168a97a"
         ],
         "Enabled": true,
         "Position": 2
@@ -4958,13 +4986,25 @@
         ],
         "Enabled": true,
         "Position": 3
+      },
+      {
+        "Id": "afb60d16-ef98-4d02-9193-7e683e682c8f",
+        "Name": "Cleanse",
+        "Description": "",
+        "EventIds": [
+          "e4f2d0f2-a124-4b81-a528-e0370a523760",
+          "f6deb9da-ed47-4855-8ccf-4d6c78c421dd"
+        ],
+        "Enabled": true,
+        "Position": 4
       }
     ],
     "ToggleStates": {
       "337fef87-2254-452f-8c15-0272955971df": true,
       "de2aaf70-6db9-4ed8-aaa9-7436c95483d6": false,
       "1674b68d-2214-4d37-b994-dc6b40fd016b": false,
-      "beffa640-b20b-42db-8a6b-799aecfc0236": true
+      "beffa640-b20b-42db-8a6b-799aecfc0236": true,
+      "afb60d16-ef98-4d02-9193-7e683e682c8f": true
     }
   }
 }

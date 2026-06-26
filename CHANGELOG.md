@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Split Bard Warden's Paean into default-on self and party cleanse branches, and removed the single-target gate from Red Mage, Pictomancer, and Summoner raidwide mitigation helpers.
 - Tightened role defaults after the full job smoke pass: Gunbreaker mitigation now has explicit combat guards, healer fallback heals avoid out-of-combat spending, and Reaper/Samurai self-heals require combat.
 - Changed White Mage's Misery-ready Afflatus Rapture branch to cast Rapture directly when party healing is needed.
 - Lowered Summoner Rekindle MT automation to 70% HP so it is less likely to spend on light tank damage.
