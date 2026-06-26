@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_RPR_Events",
   "Name": "Jasper RPR Events",
-  "Description": "General-purpose Reaper event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.9",
+  "Description": "General-purpose Reaper event profile for PvE. Keeps Feint/Arcane Crest support, proactive self-heal recovery, optional cooldown holds, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
+  "Version": "0.1.10",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -77,17 +77,17 @@
     },
     {
       "Id": "6a2935af-82b0-41f0-a5c7-abc61f52eacb",
-      "Name": "Reset Toggles",
-      "Description": "",
+      "Name": "Reset Toggles Wipe",
+      "Description": "Restores default Reaper toggles after wipes.",
       "EventType": "OnWipe",
       "LogicId": "ede20970-ebb9-4c97-a2b4-b2a154dd300b",
-      "ThrottleSameEvent": 60,
-      "ThrottleAllEvents": 60,
-      "Timeout": 60,
-      "RecheckDuration": 60,
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-27T03:00:00.000Z"
     },
     {
       "Id": "f226eba3-c083-4051-8d71-8cdb9cf3b2a2",
@@ -116,6 +116,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T19:15:00.000Z",
       "ModifiedAt": "2026-06-26T19:15:00.000Z"
+    },
+    {
+      "Id": "jps-rpr-event-reset-zone",
+      "Name": "Reset Toggles Zone Change",
+      "Description": "Restores default Reaper toggles after zone changes.",
+      "EventType": "OnZoneChange",
+      "LogicId": "5d7a4498-43f5-578c-9738-da13b0714ef0",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T03:00:00.000Z",
+      "ModifiedAt": "2026-06-27T03:00:00.000Z"
     },
     {
       "Id": "2d4749d2-d3ce-5199-8fee-1d5132fea885",
@@ -6033,7 +6047,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-27T01:15:00.000Z",
+  "ModifiedAt": "2026-06-27T03:00:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
@@ -6047,7 +6061,7 @@
       {
         "Id": "9f51548a-d631-41a0-9fa3-7e2b093f4399",
         "Name": "Mitigation",
-        "Description": "",
+        "Description": "Feint, Arcane Crest, and personal recovery.",
         "EventIds": [
           "b1f3010e-2c9f-49fa-b595-9c6554f543d2",
           "494fbe18-927f-43f0-875e-435fece4051e",
@@ -6087,7 +6101,8 @@
         "Description": "",
         "EventIds": [
           "6a2935af-82b0-41f0-a5c7-abc61f52eacb",
-          "d888a382-f099-5b4e-86dd-421e0fcd4c2b"
+          "d888a382-f099-5b4e-86dd-421e0fcd4c2b",
+          "jps-rpr-event-reset-zone"
         ],
         "Enabled": true,
         "Position": 3
