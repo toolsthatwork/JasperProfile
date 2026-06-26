@@ -2,7 +2,7 @@
   "Id": "Jasper_AST_Events",
   "Name": "Jasper AST Events",
   "Description": "General-purpose Astrologian event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.3",
+  "Version": "0.1.4",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -17,7 +17,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "aa7cade6-dd7d-4db2-87be-fa8eba8bc885",
@@ -31,7 +31,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "bfd70c65-185e-4169-84fc-92496f85ff52",
@@ -269,7 +269,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "a6b1851d-2344-44f8-b001-c7a56005019d",
@@ -6511,7 +6511,8 @@
       "Description": "",
       "LogicType": 0,
       "ConditionIds": [
-        "41a9c68e-9d79-4110-b3b3-4521d898e901"
+        "41a9c68e-9d79-4110-b3b3-4521d898e901",
+        "958d055a-815f-485d-bb98-b5b7348da94c"
       ],
       "ActionTriggers": [
         {
@@ -6541,7 +6542,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "AOE Heal"
     },
@@ -6552,7 +6553,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "ddb1613b-92c7-4912-ab4b-ea31967f3768",
-        "1b09115c-fc88-43f4-bc9b-1e5273a6ddd8"
+        "1b09115c-fc88-43f4-bc9b-1e5273a6ddd8",
+        "958d055a-815f-485d-bb98-b5b7348da94c"
       ],
       "ActionTriggers": [
         {
@@ -6582,7 +6584,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Conditional"
     },
@@ -7513,7 +7515,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "3201f0a2-cee1-4abe-81ac-e5ac20bc8a59",
-        "9437ab7f-4322-4fb8-93fe-10d9eefd5405"
+        "9437ab7f-4322-4fb8-93fe-10d9eefd5405",
+        "958d055a-815f-485d-bb98-b5b7348da94c"
       ],
       "ActionTriggers": [
         {
@@ -7543,7 +7546,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Main Tank"
     },
@@ -7712,7 +7715,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T15:00:00.000Z",
+  "ModifiedAt": "2026-06-26T19:30:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

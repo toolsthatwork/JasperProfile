@@ -2,7 +2,7 @@
   "Id": "Jasper_SCH_Events",
   "Name": "Jasper SCH Events",
   "Description": "General-purpose Scholar event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.3",
+  "Version": "0.1.4",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -353,7 +353,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "3842c258-1131-41f7-8962-e52d8b8878b1",
@@ -367,7 +367,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "jps-sch-event-esuna",
@@ -409,7 +409,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-26T18:00:00.000Z"
+      "ModifiedAt": "2026-06-26T19:15:00.000Z"
     }
   ],
   "Conditions": [
@@ -6491,7 +6491,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "cc8a3a2d-70dc-41b7-a02b-68961e8343e1",
-        "38ce1fd1-b676-4e2e-b2da-bec972d3fa67"
+        "38ce1fd1-b676-4e2e-b2da-bec972d3fa67",
+        "958d055a-815f-485d-bb98-b5b7348da94c"
       ],
       "ActionTriggers": [
         {
@@ -6546,7 +6547,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -6624,7 +6625,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "6ada0ed6-0485-4724-a997-777f7ee932f7",
-        "e713a3ae-1521-4a49-bd80-cf5cfe671bb8"
+        "e713a3ae-1521-4a49-bd80-cf5cfe671bb8",
+        "958d055a-815f-485d-bb98-b5b7348da94c"
       ],
       "ActionTriggers": [
         {
@@ -6679,7 +6681,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -7859,10 +7861,9 @@
       "Id": "f4585998-2f40-5751-821b-8b6a999a9de8",
       "Name": "Reset Toggles",
       "Description": "Restores normal Scholar ACR toggles while safely out of combat.",
-      "LogicType": 1,
+      "LogicType": 0,
       "ConditionIds": [
-        "9437ab7f-4322-4fb8-93fe-10d9eefd5405",
-        "956d5286-de84-472c-8b3f-fa8dd1a0267c"
+        "9437ab7f-4322-4fb8-93fe-10d9eefd5405"
       ],
       "ActionTriggers": [
         {
@@ -7942,13 +7943,13 @@
         }
       ],
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T19:15:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T18:00:00.000Z",
+  "ModifiedAt": "2026-06-26T19:30:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

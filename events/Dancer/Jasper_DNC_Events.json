@@ -2,7 +2,7 @@
   "Id": "Jasper_DNC_Events",
   "Name": "Jasper DNC Events",
   "Description": "General-purpose Dancer event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.1",
+  "Version": "0.1.2",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -49,7 +49,7 @@
     },
     {
       "Id": "b777fcc6-8bba-4be2-8773-158a6ac1a609",
-      "Name": "OOC Sprint",
+      "Name": "Sprint OOC",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "bfda8a79-14a1-49e7-ae2f-2cf0f342078d",
@@ -59,7 +59,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:15:00.000Z"
     },
     {
       "Id": "ccb4b0d3-f64e-4946-ae04-7b8946760953",
@@ -101,7 +101,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "91c8677f-9790-4a78-b9fa-8fbb83903f6a",
@@ -115,7 +115,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "cd312eaa-3ae4-59c7-94d9-c54f45504656",
@@ -129,7 +129,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-26T18:00:00.000Z"
+      "ModifiedAt": "2026-06-26T19:15:00.000Z"
     }
   ],
   "Conditions": [
@@ -3610,7 +3610,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "2110cb69-21d8-4643-b4f5-f20c977bf7a3",
-        "6887f81f-80ad-467e-b42e-b42bfb9a1aac"
+        "6887f81f-80ad-467e-b42e-b42bfb9a1aac",
+        "2754cead-1b3b-4b63-b6a9-be369288fb38"
       ],
       "ActionTriggers": [
         {
@@ -3715,7 +3716,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -3860,7 +3861,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "b128c7b1-b2e8-4d1d-b25b-039aae32969d",
-        "99ec5da5-fb01-4634-9dab-c08c664988dc"
+        "99ec5da5-fb01-4634-9dab-c08c664988dc",
+        "2754cead-1b3b-4b63-b6a9-be369288fb38"
       ],
       "ActionTriggers": [
         {
@@ -3965,7 +3967,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -4063,7 +4065,7 @@
     },
     {
       "Id": "bfda8a79-14a1-49e7-ae2f-2cf0f342078d",
-      "Name": "OOC Sprint",
+      "Name": "Sprint OOC",
       "Description": "",
       "LogicType": 0,
       "ConditionIds": [
@@ -4098,7 +4100,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:15:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "QOL"
     },
@@ -4189,10 +4191,9 @@
       "Id": "b8cdcf95-0c6e-50ec-aac7-b78407a8968b",
       "Name": "Reset Toggles",
       "Description": "Restores normal Dancer ACR toggles while safely out of combat.",
-      "LogicType": 1,
+      "LogicType": 0,
       "ConditionIds": [
-        "284fb006-ebab-4c48-98b6-21a671379d61",
-        "2110cb69-21d8-4643-b4f5-f20c977bf7a3"
+        "284fb006-ebab-4c48-98b6-21a671379d61"
       ],
       "ActionTriggers": [
         {
@@ -4297,13 +4298,13 @@
         }
       ],
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T19:15:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T18:00:00.000Z",
+  "ModifiedAt": "2026-06-26T19:30:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

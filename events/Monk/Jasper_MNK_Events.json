@@ -2,7 +2,7 @@
   "Id": "Jasper_MNK_Events",
   "Name": "Jasper MNK Events",
   "Description": "General-purpose Monk event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.2",
+  "Version": "0.1.3",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -129,7 +129,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "58828ee8-1c90-4cf3-bd73-e7c170cb6adc",
@@ -143,7 +143,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "386f189d-be32-5e81-ac93-01c87d7e872c",
@@ -157,7 +157,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-26T18:00:00.000Z"
+      "ModifiedAt": "2026-06-26T19:15:00.000Z"
     }
   ],
   "Conditions": [
@@ -3416,7 +3416,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "a700db1c-8bed-44d8-9584-91887563d413",
-        "89cbed0e-30be-4e19-9c9a-e6607862841f"
+        "89cbed0e-30be-4e19-9c9a-e6607862841f",
+        "7fd80584-4e12-4209-a7c6-1bfb2faa43b3"
       ],
       "ActionTriggers": [
         {
@@ -3521,7 +3522,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -3649,7 +3650,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "c8033a6f-5236-4f2a-aa8e-41043726f372",
-        "728f1a78-052b-4a67-99c4-50ff93798faa"
+        "728f1a78-052b-4a67-99c4-50ff93798faa",
+        "7fd80584-4e12-4209-a7c6-1bfb2faa43b3"
       ],
       "ActionTriggers": [
         {
@@ -3754,7 +3756,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -4000,7 +4002,7 @@
     },
     {
       "Id": "e56911c4-6f17-4e8c-8b12-af11bec08cd3",
-      "Name": "OOC Sprint",
+      "Name": "Sprint OOC",
       "Description": "",
       "LogicType": 0,
       "ConditionIds": [
@@ -4035,7 +4037,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:15:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "QOL"
     },
@@ -4149,10 +4151,9 @@
       "Id": "eafe043b-aa17-5301-ba32-2124cc2a3128",
       "Name": "Reset Toggles",
       "Description": "Restores normal Monk ACR toggles while safely out of combat.",
-      "LogicType": 1,
+      "LogicType": 0,
       "ConditionIds": [
-        "34651e59-5df2-4098-84f0-e1305142c3bc",
-        "c8033a6f-5236-4f2a-aa8e-41043726f372"
+        "34651e59-5df2-4098-84f0-e1305142c3bc"
       ],
       "ActionTriggers": [
         {
@@ -4257,13 +4258,13 @@
         }
       ],
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T19:15:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T18:00:00.000Z",
+  "ModifiedAt": "2026-06-26T19:30:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

@@ -2,7 +2,7 @@
   "Id": "Jasper_BRD_Events",
   "Name": "Jasper BRD Events",
   "Description": "General-purpose Bard event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.3",
+  "Version": "0.1.4",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -129,7 +129,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "1f74093e-4731-4a06-b097-603d93f8c6e4",
@@ -143,7 +143,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "f6deb9da-ed47-4855-8ccf-4d6c78c421dd",
@@ -171,7 +171,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-26T18:00:00.000Z"
+      "ModifiedAt": "2026-06-26T19:15:00.000Z"
     }
   ],
   "Conditions": [
@@ -4129,7 +4129,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "50ac3ef9-6466-42bc-968f-77e3ece74a27",
-        "dafcbb35-b2f7-40b5-9fe9-58e47cfc10fe"
+        "dafcbb35-b2f7-40b5-9fe9-58e47cfc10fe",
+        "b38231b8-8597-4485-b5a7-a396626acf57"
       ],
       "ActionTriggers": [
         {
@@ -4259,7 +4260,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -4412,7 +4413,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "4a3355a6-f920-4858-b34d-bb3011c2982a",
-        "bcd3ed61-e032-4d80-a62b-bbb4dbbedd04"
+        "bcd3ed61-e032-4d80-a62b-bbb4dbbedd04",
+        "b38231b8-8597-4485-b5a7-a396626acf57"
       ],
       "ActionTriggers": [
         {
@@ -4542,7 +4544,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -4947,10 +4949,9 @@
       "Id": "27953790-e12c-5bd0-8f0a-e1c4180cfa56",
       "Name": "Reset Toggles",
       "Description": "Restores normal Bard ACR toggles while safely out of combat.",
-      "LogicType": 1,
+      "LogicType": 0,
       "ConditionIds": [
-        "701a6c61-ab1b-4799-a551-0f866790a426",
-        "4a3355a6-f920-4858-b34d-bb3011c2982a"
+        "701a6c61-ab1b-4799-a551-0f866790a426"
       ],
       "ActionTriggers": [
         {
@@ -5130,13 +5131,13 @@
         }
       ],
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T19:15:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T18:00:00.000Z",
+  "ModifiedAt": "2026-06-26T19:30:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

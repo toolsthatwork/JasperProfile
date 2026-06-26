@@ -2,7 +2,7 @@
   "Id": "Jasper_SMN_Events",
   "Name": "Jasper SMN Events",
   "Description": "General-purpose Summoner event profile for PvE. Keeps automatic Addle/Radiant Aegis support, reset/on-wipe toggles, optional dungeon cooldown holds, Rekindle support, and optional out-of-combat Sprint.",
-  "Version": "0.1.4",
+  "Version": "0.1.5",
   "AIOEventVersion": 1,
   "Events": [
     {
@@ -129,7 +129,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T04:30:00.000Z",
-      "ModifiedAt": "2026-06-25T04:30:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "7ded2bec-379e-4bfc-9adf-00e51f13217e",
@@ -143,7 +143,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T04:30:00.000Z",
-      "ModifiedAt": "2026-06-25T04:30:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     }
   ],
   "Conditions": [
@@ -3889,7 +3889,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "24a1b406-1f08-4d97-bc68-43f422048935",
-        "7e126f94-5bd0-424a-a996-ea8dc0c194a2"
+        "7e126f94-5bd0-424a-a996-ea8dc0c194a2",
+        "b702ada1-facb-4cd3-906f-e1c29c1f390c"
       ],
       "ActionTriggers": [
         {
@@ -3944,7 +3945,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T04:30:00.000Z",
-      "ModifiedAt": "2026-06-25T04:30:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -3955,7 +3956,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "40fa13d4-0879-4ff4-aebe-031a3bced66c",
-        "b3975eb6-46a0-42af-9f0f-3b2d2f2fc268"
+        "b3975eb6-46a0-42af-9f0f-3b2d2f2fc268",
+        "b702ada1-facb-4cd3-906f-e1c29c1f390c"
       ],
       "ActionTriggers": [
         {
@@ -4010,13 +4012,13 @@
         }
       ],
       "CreatedAt": "2026-06-25T04:30:00.000Z",
-      "ModifiedAt": "2026-06-25T04:30:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     }
   ],
   "CreatedAt": "2026-06-25T04:30:00.000Z",
-  "ModifiedAt": "2026-06-26T18:30:00.000Z",
+  "ModifiedAt": "2026-06-26T19:30:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

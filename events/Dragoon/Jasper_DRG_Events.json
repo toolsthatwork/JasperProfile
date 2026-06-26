@@ -2,7 +2,7 @@
   "Id": "Jasper_DRG_Events",
   "Name": "Jasper DRG Events",
   "Description": "General-purpose Dragoon event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.1",
+  "Version": "0.1.2",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -17,7 +17,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "7764b049-de59-4f7e-ad7b-4aefc9f5b84d",
@@ -45,7 +45,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "f0b1c14c-d207-4841-9a1d-1c1ec04f3c95",
@@ -129,7 +129,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-26T18:00:00.000Z"
+      "ModifiedAt": "2026-06-26T19:15:00.000Z"
     }
   ],
   "Conditions": [
@@ -2740,7 +2740,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "8b380a73-07c7-4495-b935-f2939aa87607",
-        "5325e079-f4ce-4dd0-bf24-00d081bb6c2d"
+        "5325e079-f4ce-4dd0-bf24-00d081bb6c2d",
+        "7fd80584-4e12-4209-a7c6-1bfb2faa43b3"
       ],
       "ActionTriggers": [
         {
@@ -2820,7 +2821,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -2923,7 +2924,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "6db44b0c-adb7-4664-8cf2-3e7233515a32",
-        "a0e16326-6ac1-4f20-a0dc-0874d85020cd"
+        "a0e16326-6ac1-4f20-a0dc-0874d85020cd",
+        "7fd80584-4e12-4209-a7c6-1bfb2faa43b3"
       ],
       "ActionTriggers": [
         {
@@ -3003,7 +3005,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -3224,7 +3226,7 @@
     },
     {
       "Id": "e56911c4-6f17-4e8c-8b12-af11bec08cd3",
-      "Name": "OOC Sprint",
+      "Name": "Sprint OOC",
       "Description": "",
       "LogicType": 0,
       "ConditionIds": [
@@ -3259,7 +3261,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:15:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "QOL"
     },
@@ -3267,10 +3269,9 @@
       "Id": "d92e691d-0c06-5932-8704-70cd5e7158db",
       "Name": "Reset Toggles",
       "Description": "Restores normal Dragoon ACR toggles while safely out of combat.",
-      "LogicType": 1,
+      "LogicType": 0,
       "ConditionIds": [
-        "34651e59-5df2-4098-84f0-e1305142c3bc",
-        "6db44b0c-adb7-4664-8cf2-3e7233515a32"
+        "34651e59-5df2-4098-84f0-e1305142c3bc"
       ],
       "ActionTriggers": [
         {
@@ -3350,13 +3351,13 @@
         }
       ],
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T19:15:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T18:00:00.000Z",
+  "ModifiedAt": "2026-06-26T19:30:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

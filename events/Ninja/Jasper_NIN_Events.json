@@ -2,7 +2,7 @@
   "Id": "Jasper_NIN_Events",
   "Name": "Jasper NIN Events",
   "Description": "General-purpose Ninja event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.1",
+  "Version": "0.1.2",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -17,7 +17,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "7764b049-de59-4f7e-ad7b-4aefc9f5b84d",
@@ -45,7 +45,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "f0b1c14c-d207-4841-9a1d-1c1ec04f3c95",
@@ -143,7 +143,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-26T18:00:00.000Z"
+      "ModifiedAt": "2026-06-26T19:15:00.000Z"
     }
   ],
   "Conditions": [
@@ -2970,7 +2970,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "8b8fc275-b784-4413-8449-323c68c4af33",
-        "62fc702b-f9eb-4dd8-bedb-df7d268b5902"
+        "62fc702b-f9eb-4dd8-bedb-df7d268b5902",
+        "7fd80584-4e12-4209-a7c6-1bfb2faa43b3"
       ],
       "ActionTriggers": [
         {
@@ -3175,7 +3176,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -3403,7 +3404,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "955b65e9-5834-47c5-85d8-5d4b30c14b27",
-        "a0e16326-6ac1-4f20-a0dc-0874d85020cd"
+        "a0e16326-6ac1-4f20-a0dc-0874d85020cd",
+        "7fd80584-4e12-4209-a7c6-1bfb2faa43b3"
       ],
       "ActionTriggers": [
         {
@@ -3608,7 +3610,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -3954,7 +3956,7 @@
     },
     {
       "Id": "e56911c4-6f17-4e8c-8b12-af11bec08cd3",
-      "Name": "OOC Sprint",
+      "Name": "Sprint OOC",
       "Description": "",
       "LogicType": 0,
       "ConditionIds": [
@@ -3989,7 +3991,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:15:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "QOL"
     },
@@ -4037,10 +4039,9 @@
       "Id": "33125d62-e1fd-57d8-8482-5beeda158d0d",
       "Name": "Reset Toggles",
       "Description": "Restores normal Ninja ACR toggles while safely out of combat.",
-      "LogicType": 1,
+      "LogicType": 0,
       "ConditionIds": [
-        "34651e59-5df2-4098-84f0-e1305142c3bc",
-        "8b8fc275-b784-4413-8449-323c68c4af33"
+        "34651e59-5df2-4098-84f0-e1305142c3bc"
       ],
       "ActionTriggers": [
         {
@@ -4245,13 +4246,13 @@
         }
       ],
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T19:15:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T18:00:00.000Z",
+  "ModifiedAt": "2026-06-26T19:30:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

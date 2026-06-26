@@ -2,7 +2,7 @@
   "Id": "Jasper_PLD_Events",
   "Name": "Jasper PLD Events",
   "Description": "General-purpose Paladin event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.2",
+  "Version": "0.1.3",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -101,7 +101,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "08c75b56-6f6e-4b0c-88f7-7f58282253c4",
@@ -143,7 +143,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "78f2c611-1379-41d2-a2bd-26f59e78abb9",
@@ -189,7 +189,7 @@
     },
     {
       "Id": "f2cf7f39-da49-47fe-9abc-f42d72bc6a03",
-      "Name": "OOC Sprint",
+      "Name": "Sprint OOC",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "661b624b-0785-4336-8c52-4112b59e1559",
@@ -199,7 +199,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:15:00.000Z"
     },
     {
       "Id": "732a7c9a-5487-474b-bb80-91bf92cd7e74",
@@ -241,7 +241,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "4d074361-b17a-4ea5-8a21-20a477294696",
@@ -255,7 +255,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "jps-pld-event-stance",
@@ -283,7 +283,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-26T18:00:00.000Z"
+      "ModifiedAt": "2026-06-26T19:15:00.000Z"
     }
   ],
   "Conditions": [
@@ -7432,7 +7432,8 @@
       "ConditionIds": [
         "d2859eb1-badb-4baf-9898-36452e6bd3da",
         "887a22c3-db4b-4035-8eb1-cdc569878b07",
-        "a5f16623-4bb1-4d16-a42b-96cd9bccb5aa"
+        "a5f16623-4bb1-4d16-a42b-96cd9bccb5aa",
+        "2b47e9e7-c7f3-42a3-a397-718b14200121"
       ],
       "ActionTriggers": [
         {
@@ -7537,7 +7538,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
     },
@@ -7630,7 +7631,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "91279a2b-af3e-4b97-a64a-f69792211f89",
-        "079c4d60-2232-4083-ba97-85cc057ec3b3"
+        "079c4d60-2232-4083-ba97-85cc057ec3b3",
+        "2b47e9e7-c7f3-42a3-a397-718b14200121"
       ],
       "ActionTriggers": [
         {
@@ -7685,7 +7687,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -7764,7 +7766,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "6bbe06a6-2b6b-4939-a845-284fea9dee25",
-        "5fd86e1f-d588-4261-99be-af39bfec4b3f"
+        "5fd86e1f-d588-4261-99be-af39bfec4b3f",
+        "2b47e9e7-c7f3-42a3-a397-718b14200121"
       ],
       "ActionTriggers": [
         {
@@ -7819,7 +7822,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -7897,7 +7900,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "a00d6ae0-e111-45d7-ac9d-a1fcfe855423",
-        "66d6c626-0514-4c85-a7d0-e4b5abe7cef7"
+        "66d6c626-0514-4c85-a7d0-e4b5abe7cef7",
+        "2b47e9e7-c7f3-42a3-a397-718b14200121"
       ],
       "ActionTriggers": [
         {
@@ -7977,7 +7981,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -8304,10 +8308,9 @@
       "Id": "4d659241-53e4-5150-840a-ebc81e1a285b",
       "Name": "Reset Toggles",
       "Description": "Restores normal Paladin ACR toggles while safely out of combat.",
-      "LogicType": 1,
+      "LogicType": 0,
       "ConditionIds": [
-        "2f32695f-a200-43cd-8f8b-386ad31e5ba1",
-        "6bbe06a6-2b6b-4939-a845-284fea9dee25"
+        "2f32695f-a200-43cd-8f8b-386ad31e5ba1"
       ],
       "ActionTriggers": [
         {
@@ -8387,13 +8390,13 @@
         }
       ],
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T19:15:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T18:00:00.000Z",
+  "ModifiedAt": "2026-06-26T19:30:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

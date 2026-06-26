@@ -3,7 +3,7 @@
   "Name": "Jasper WAR Events",
   "Description": "General-purpose Warrior event profile for PvE. Event-driven dungeon mitigation, Bloodwhetting recovery, emergency Holmgang, raidwide/tankbuster mitigation, and optional co-tank support.",
   "CreatedAt": "2026-06-25T02:45:00.000Z",
-  "ModifiedAt": "2026-06-26T18:30:00.000Z",
+  "ModifiedAt": "2026-06-26T19:30:00.000Z",
   "Events": [
     {
       "Id": "f2daaf1d-c477-42b2-9db1-baa49330bfe3",
@@ -87,7 +87,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2025-10-06T20:54:10.239536Z",
-      "ModifiedAt": "2026-06-25T02:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "5a47325b-00d5-4e36-8843-040393757b89",
@@ -101,7 +101,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2025-11-29T20:46:01.621465Z",
-      "ModifiedAt": "2026-06-25T02:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "f97dfcaf-0ec7-4a05-aa20-89d26a48e419",
@@ -115,7 +115,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2025-11-29T20:48:00.0845001Z",
-      "ModifiedAt": "2026-06-25T02:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "78f2c611-1379-41d2-a2bd-26f59e78abb9",
@@ -171,7 +171,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-03T20:19:19.9377126Z",
-      "ModifiedAt": "2026-06-25T02:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "4a1a57d1-548b-493e-b997-a5f4834de436",
@@ -185,7 +185,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-03T20:20:18.3895338Z",
-      "ModifiedAt": "2026-06-25T02:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "7b40e31b-cb13-4075-9cb6-7e6583968814",
@@ -213,7 +213,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-08T00:57:01.7615289Z",
-      "ModifiedAt": "2026-06-25T02:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "234d97cf-7897-447a-9f17-846f4e8b23d3",
@@ -7726,7 +7726,8 @@
       "Description": "Automatically reenables cooldowns when detecting an enemy with nearly full HP.\nSet to 90% default.",
       "LogicType": 0,
       "ConditionIds": [
-        "9b3df71d-1a8a-45d3-9066-9c755d71f3d8"
+        "9b3df71d-1a8a-45d3-9066-9c755d71f3d8",
+        "309a790a-240d-4e2f-a0b3-7282cf6b717a"
       ],
       "ActionTriggers": [
         {
@@ -7756,7 +7757,7 @@
         }
       ],
       "CreatedAt": "2025-10-30T20:14:09.9004962Z",
-      "ModifiedAt": "2026-06-25T02:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -7767,7 +7768,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "175f2319-de23-405e-97fe-304957c004ff",
-        "66d6c626-0514-4c85-a7d0-e4b5abe7cef7"
+        "66d6c626-0514-4c85-a7d0-e4b5abe7cef7",
+        "309a790a-240d-4e2f-a0b3-7282cf6b717a"
       ],
       "ActionTriggers": [
         {
@@ -7797,7 +7799,7 @@
         }
       ],
       "CreatedAt": "2025-11-29T07:21:27.9692004Z",
-      "ModifiedAt": "2026-06-25T02:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -7807,7 +7809,8 @@
       "Description": "",
       "LogicType": 0,
       "ConditionIds": [
-        "a51afdf9-328b-4531-87db-fd6d07e6b89a"
+        "a51afdf9-328b-4531-87db-fd6d07e6b89a",
+        "309a790a-240d-4e2f-a0b3-7282cf6b717a"
       ],
       "ActionTriggers": [
         {
@@ -7837,7 +7840,7 @@
         }
       ],
       "CreatedAt": "2025-11-29T20:44:52.0510154Z",
-      "ModifiedAt": "2026-06-25T02:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -7847,7 +7850,8 @@
       "Description": "",
       "LogicType": 0,
       "ConditionIds": [
-        "26b174f1-06da-4092-bb49-4af3a1491564"
+        "26b174f1-06da-4092-bb49-4af3a1491564",
+        "309a790a-240d-4e2f-a0b3-7282cf6b717a"
       ],
       "ActionTriggers": [
         {
@@ -7877,7 +7881,7 @@
         }
       ],
       "CreatedAt": "2025-11-29T20:47:33.6923885Z",
-      "ModifiedAt": "2026-06-25T02:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -8032,7 +8036,8 @@
       "Description": "",
       "LogicType": 0,
       "ConditionIds": [
-        "887a22c3-db4b-4035-8eb1-cdc569878b07"
+        "887a22c3-db4b-4035-8eb1-cdc569878b07",
+        "309a790a-240d-4e2f-a0b3-7282cf6b717a"
       ],
       "ActionTriggers": [
         {
@@ -8062,7 +8067,7 @@
         }
       ],
       "CreatedAt": "2026-01-05T23:14:07.7045013Z",
-      "ModifiedAt": "2026-06-25T02:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Mitigation"
     },
@@ -8137,7 +8142,8 @@
       "Description": "",
       "LogicType": 0,
       "ConditionIds": [
-        "b19ceaea-3470-4c60-a91b-abfa5131958b"
+        "b19ceaea-3470-4c60-a91b-abfa5131958b",
+        "309a790a-240d-4e2f-a0b3-7282cf6b717a"
       ],
       "ActionTriggers": [
         {
@@ -8167,7 +8173,7 @@
         }
       ],
       "CreatedAt": "2026-01-08T00:57:01.7615218Z",
-      "ModifiedAt": "2026-06-25T02:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": ""
     },
@@ -8599,5 +8605,5 @@
       "8e8ed715-37bf-5a02-ac28-adf8dd192c1a": true
     }
   },
-  "Version": "0.1.3"
+  "Version": "0.1.4"
 }

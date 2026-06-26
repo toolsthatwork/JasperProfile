@@ -2,7 +2,7 @@
   "Id": "Jasper_VPR_Events",
   "Name": "Jasper VPR Events",
   "Description": "General-purpose Viper event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.1",
+  "Version": "0.1.2",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -101,7 +101,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "0ed50be0-38fe-457a-b724-e08939dd42c4",
@@ -115,7 +115,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "97bb2683-fdb4-5970-8d7f-f980774eafa8",
@@ -129,7 +129,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-26T18:00:00.000Z"
+      "ModifiedAt": "2026-06-26T19:15:00.000Z"
     }
   ],
   "Conditions": [
@@ -3172,7 +3172,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "aeab6e00-716a-4e74-a462-abc79a2721ce",
-        "43eb0d62-d099-4d40-862e-0941fd139bce"
+        "43eb0d62-d099-4d40-862e-0941fd139bce",
+        "7fd80584-4e12-4209-a7c6-1bfb2faa43b3"
       ],
       "ActionTriggers": [
         {
@@ -3227,7 +3228,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -3305,7 +3306,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "651e27f3-a999-494a-bfb8-3972dd289608",
-        "b5476a77-8b11-4e23-8dae-938c7c1abe4e"
+        "b5476a77-8b11-4e23-8dae-938c7c1abe4e",
+        "7fd80584-4e12-4209-a7c6-1bfb2faa43b3"
       ],
       "ActionTriggers": [
         {
@@ -3360,7 +3362,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -3556,7 +3558,7 @@
     },
     {
       "Id": "e56911c4-6f17-4e8c-8b12-af11bec08cd3",
-      "Name": "OOC Sprint",
+      "Name": "Sprint OOC",
       "Description": "",
       "LogicType": 0,
       "ConditionIds": [
@@ -3591,7 +3593,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:15:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "QOL"
     },
@@ -3599,10 +3601,9 @@
       "Id": "0bd68794-b33c-585d-8f13-3f801e889b9a",
       "Name": "Reset Toggles",
       "Description": "Restores normal Viper ACR toggles while safely out of combat.",
-      "LogicType": 1,
+      "LogicType": 0,
       "ConditionIds": [
-        "34651e59-5df2-4098-84f0-e1305142c3bc",
-        "651e27f3-a999-494a-bfb8-3972dd289608"
+        "34651e59-5df2-4098-84f0-e1305142c3bc"
       ],
       "ActionTriggers": [
         {
@@ -3657,13 +3658,13 @@
         }
       ],
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T19:15:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T18:00:00.000Z",
+  "ModifiedAt": "2026-06-26T19:30:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

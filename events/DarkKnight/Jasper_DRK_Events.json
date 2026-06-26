@@ -2,7 +2,7 @@
   "Id": "Jasper_DRK_Events",
   "Name": "Jasper DRK Events",
   "Description": "General-purpose DarkKnight event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.2",
+  "Version": "0.1.3",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -161,7 +161,7 @@
     },
     {
       "Id": "2dce96a2-4c3e-4e4f-a3ff-69dcc051b02e",
-      "Name": "OOC Sprint",
+      "Name": "Sprint OOC",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "6545d528-735b-4db3-9dcd-be1bb825b8d6",
@@ -171,7 +171,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:15:00.000Z"
     },
     {
       "Id": "20780a45-6bb6-4a3f-a44d-0580317a0057",
@@ -213,7 +213,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "ccd73bfa-72f2-458d-94db-dca3803d825f",
@@ -227,7 +227,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "jps-drk-event-stance",
@@ -255,7 +255,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-26T18:00:00.000Z"
+      "ModifiedAt": "2026-06-26T19:15:00.000Z"
     }
   ],
   "Conditions": [
@@ -7748,7 +7748,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "f0fd98b9-1df6-462e-baee-7998b68e2745",
-        "354913d8-617b-4288-94df-9b60562a3432"
+        "354913d8-617b-4288-94df-9b60562a3432",
+        "e24876d3-fc3c-4a91-a500-a430fa934d9b"
       ],
       "ActionTriggers": [
         {
@@ -7853,7 +7854,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -7982,7 +7983,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "7030b489-be13-4c9a-b98d-295dd68d4514",
-        "71f15bfe-c023-4b44-9447-11231a2e0c61"
+        "71f15bfe-c023-4b44-9447-11231a2e0c61",
+        "e24876d3-fc3c-4a91-a500-a430fa934d9b"
       ],
       "ActionTriggers": [
         {
@@ -8087,7 +8089,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -8488,10 +8490,9 @@
       "Id": "a29875b0-5ffa-5b21-878d-77cbdcceae99",
       "Name": "Reset Toggles",
       "Description": "Restores normal Dark Knight ACR toggles while safely out of combat.",
-      "LogicType": 1,
+      "LogicType": 0,
       "ConditionIds": [
-        "92bd4493-23db-456b-afef-9baa15ba41db",
-        "7030b489-be13-4c9a-b98d-295dd68d4514"
+        "92bd4493-23db-456b-afef-9baa15ba41db"
       ],
       "ActionTriggers": [
         {
@@ -8596,13 +8597,13 @@
         }
       ],
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T19:15:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T18:00:00.000Z",
+  "ModifiedAt": "2026-06-26T19:30:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

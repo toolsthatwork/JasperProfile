@@ -2,7 +2,7 @@
   "Id": "Jasper_MCH_Events",
   "Name": "Jasper MCH Events",
   "Description": "General-purpose Machinist event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.2",
+  "Version": "0.1.3",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -17,7 +17,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "dc6834a8-5eec-4bbe-ba02-2856e3b501ce",
@@ -45,7 +45,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:30:00.000Z"
     },
     {
       "Id": "fece004c-2a6a-4379-b434-db3ae90c35e3",
@@ -91,7 +91,7 @@
     },
     {
       "Id": "b777fcc6-8bba-4be2-8773-158a6ac1a609",
-      "Name": "OOC Sprint",
+      "Name": "Sprint OOC",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "bfda8a79-14a1-49e7-ae2f-2cf0f342078d",
@@ -101,7 +101,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-26T19:15:00.000Z"
     },
     {
       "Id": "3b4dd2bb-8d4d-55d0-90af-614d6d4bf4b8",
@@ -115,7 +115,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-26T18:00:00.000Z"
+      "ModifiedAt": "2026-06-26T19:15:00.000Z"
     }
   ],
   "Conditions": [
@@ -2728,7 +2728,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "10a98d13-71db-4632-abf0-139a003e4977",
-        "eae11a67-5e60-4738-b207-a0bd0ca03821"
+        "eae11a67-5e60-4738-b207-a0bd0ca03821",
+        "2754cead-1b3b-4b63-b6a9-be369288fb38"
       ],
       "ActionTriggers": [
         {
@@ -2858,7 +2859,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -3011,7 +3012,8 @@
       "LogicType": 0,
       "ConditionIds": [
         "c05c47ed-f02c-400b-9621-9913ab6e80e1",
-        "742a688f-0c61-4dad-b1ff-f029e8df2039"
+        "742a688f-0c61-4dad-b1ff-f029e8df2039",
+        "2754cead-1b3b-4b63-b6a9-be369288fb38"
       ],
       "ActionTriggers": [
         {
@@ -3141,7 +3143,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
     },
@@ -3397,7 +3399,7 @@
     },
     {
       "Id": "bfda8a79-14a1-49e7-ae2f-2cf0f342078d",
-      "Name": "OOC Sprint",
+      "Name": "Sprint OOC",
       "Description": "",
       "LogicType": 0,
       "ConditionIds": [
@@ -3432,7 +3434,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-26T19:15:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "QOL"
     },
@@ -3440,10 +3442,9 @@
       "Id": "cc38a4e9-644e-5b89-a866-3b522456b5d4",
       "Name": "Reset Toggles",
       "Description": "Restores normal Machinist ACR toggles while safely out of combat.",
-      "LogicType": 1,
+      "LogicType": 0,
       "ConditionIds": [
-        "284fb006-ebab-4c48-98b6-21a671379d61",
-        "10a98d13-71db-4632-abf0-139a003e4977"
+        "284fb006-ebab-4c48-98b6-21a671379d61"
       ],
       "ActionTriggers": [
         {
@@ -3573,13 +3574,13 @@
         }
       ],
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T19:15:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T18:00:00.000Z",
+  "ModifiedAt": "2026-06-26T19:30:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
