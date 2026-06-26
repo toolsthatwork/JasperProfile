@@ -2,7 +2,7 @@
   "Id": "Jasper_SAM_Events",
   "Name": "Jasper SAM Events",
   "Description": "General-purpose Samurai event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.4",
+  "Version": "0.1.5",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -134,7 +134,7 @@
     {
       "Id": "9c96814a-014d-483d-89df-721dfb60965b",
       "Name": "Hagakure OOC",
-      "Description": "",
+      "Description": "Uses Hagakure between pulls when out of combat and Sen conditions are met.",
       "EventType": "OnTick",
       "LogicId": "76d52c05-d843-446f-8f34-57f7f845e9f8",
       "ThrottleSameEvent": 0.5,
@@ -143,7 +143,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T19:30:00.000Z"
+      "ModifiedAt": "2026-06-26T12:05:00.000Z"
     },
     {
       "Id": "0bff9343-b6e7-4d06-9a94-398492e4ba0c",
@@ -4956,8 +4956,7 @@
       "ConditionIds": [
         "a6169a92-4e09-4e9a-a6eb-82f6e3cb9bcd",
         "b521435c-8a34-46ae-8d73-5e276d3672e5",
-        "36fa2f28-54dd-40d1-8cb0-dd5943631764",
-        "87584ab8-e847-4d6e-b3d4-b8881894894e"
+        "36fa2f28-54dd-40d1-8cb0-dd5943631764"
       ],
       "ActionTriggers": [
         {
@@ -4987,7 +4986,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T19:30:00.000Z",
+      "ModifiedAt": "2026-06-26T12:05:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "QOL"
     },

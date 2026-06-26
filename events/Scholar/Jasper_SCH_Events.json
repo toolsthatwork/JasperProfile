@@ -2,7 +2,7 @@
   "Id": "Jasper_SCH_Events",
   "Name": "Jasper SCH Events",
   "Description": "General-purpose Scholar event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.4",
+  "Version": "0.1.5",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -274,7 +274,7 @@
     {
       "Id": "7fc16b9d-0d67-447c-9199-67bcc15a91f9",
       "Name": "Dissolve Union",
-      "Description": "",
+      "Description": "Dissolves Fey Union when the target is healthy and the party is between pulls.",
       "EventType": "OnTick",
       "LogicId": "27c69703-ef10-4698-b34d-3ded24842a3a",
       "ThrottleSameEvent": 0.5,
@@ -283,7 +283,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T15:00:00.000Z"
+      "ModifiedAt": "2026-06-26T11:55:00.000Z"
     },
     {
       "Id": "44eaa3b9-934f-4ecf-82d3-ba12498a2fcb",
@@ -410,6 +410,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T18:00:00.000Z",
       "ModifiedAt": "2026-06-26T19:15:00.000Z"
+    },
+    {
+      "Id": "jps-sch-event-protraction-tb",
+      "Name": "[MT] Protraction TB",
+      "Description": "Uses Protraction on the main tank for incoming tankbusters.",
+      "EventType": "OnAllTankBuster",
+      "LogicId": "jps-sch-logic-protraction-tb",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T11:55:00.000Z",
+      "ModifiedAt": "2026-06-26T11:55:00.000Z"
     }
   ],
   "Conditions": [
@@ -6760,8 +6774,7 @@
       "ConditionIds": [
         "9437ab7f-4322-4fb8-93fe-10d9eefd5405",
         "956d5286-de84-472c-8b3f-fa8dd1a0267c",
-        "a0474a29-8d9e-4d51-a92b-29268cba0211",
-        "958d055a-815f-485d-bb98-b5b7348da94c"
+        "a0474a29-8d9e-4d51-a92b-29268cba0211"
       ],
       "ActionTriggers": [
         {
@@ -6791,7 +6804,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T15:00:00.000Z",
+      "ModifiedAt": "2026-06-26T11:55:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Faerie"
     },
@@ -7946,6 +7959,46 @@
       "ModifiedAt": "2026-06-26T19:15:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
+    },
+    {
+      "Id": "jps-sch-logic-protraction-tb",
+      "Name": "[MT] Protraction TB",
+      "Description": "Uses Protraction on the main tank for incoming tankbusters.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "958d055a-815f-485d-bb98-b5b7348da94c"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-sch-trigger-protraction-tb",
+          "ActionId": 25867,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 0,
+          "TargetType": 3,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T11:55:00.000Z",
+      "ModifiedAt": "2026-06-26T11:55:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Mitigation"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
@@ -7987,7 +8040,8 @@
           "4abc81c6-1217-4403-8aec-a8eadb6793af",
           "6bd7312c-25f8-45b0-ad22-978a6cf02717",
           "bdfe97aa-59c4-4f61-a4b0-d5a9f6b859ed",
-          "fc515d9b-421d-478c-9a5d-e58df9d27692"
+          "fc515d9b-421d-478c-9a5d-e58df9d27692",
+          "jps-sch-event-protraction-tb"
         ],
         "Enabled": true,
         "Position": 1

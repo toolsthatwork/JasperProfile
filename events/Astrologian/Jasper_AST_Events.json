@@ -2,7 +2,7 @@
   "Id": "Jasper_AST_Events",
   "Name": "Jasper AST Events",
   "Description": "General-purpose Astrologian event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.4",
+  "Version": "0.1.5",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -260,7 +260,7 @@
     {
       "Id": "76901b77-2e7f-440f-8c81-73b933e512d0",
       "Name": "[ST] Regen MT",
-      "Description": "",
+      "Description": "Keeps Aspected Benefic on the main tank between pulls.",
       "EventType": "OnTick",
       "LogicId": "194f2e2b-db47-4e3e-8268-6ead963d613a",
       "ThrottleSameEvent": 3,
@@ -269,7 +269,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T19:30:00.000Z"
+      "ModifiedAt": "2026-06-26T11:35:00.000Z"
     },
     {
       "Id": "a6b1851d-2344-44f8-b001-c7a56005019d",
@@ -410,6 +410,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T13:00:00.000Z",
       "ModifiedAt": "2026-06-26T13:00:00.000Z"
+    },
+    {
+      "Id": "jps-ast-event-intersection-tb",
+      "Name": "[Mit] Celestial Intersection TB",
+      "Description": "Uses Celestial Intersection on the main tank for incoming tankbusters.",
+      "EventType": "OnAllTankBuster",
+      "LogicId": "jps-ast-logic-intersection-tb",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T11:35:00.000Z",
+      "ModifiedAt": "2026-06-26T11:35:00.000Z"
     }
   ],
   "Conditions": [
@@ -6502,6 +6516,226 @@
       "CreatedAt": "2026-06-26T13:00:00.000Z",
       "ModifiedAt": "2026-06-26T13:00:00.000Z",
       "ExcludeFromTargetAccumulation": false
+    },
+    {
+      "Id": "jps-ast-cond-mt-no-intersection",
+      "Name": "MT No Intersection Buff",
+      "Description": "Main tank does not already have Celestial Intersection shielding.",
+      "SubConditions": [
+        {
+          "Id": "jps-ast-cond-mt-no-intersection-sub",
+          "Name": "MT No Intersection",
+          "Description": "",
+          "TargetType": 3,
+          "ConditionType": 5,
+          "Parameters": {
+            "BuffParams": {
+              "StatusId": 0,
+              "StatusIds": [
+                1888,
+                1889,
+                4040
+              ],
+              "UseMultipleStatuses": true,
+              "StatusLogic": 1,
+              "CheckDuration": false,
+              "MinDuration": 0,
+              "DurationComparison": 3,
+              "CheckStacks": false,
+              "RequiredStacks": 1,
+              "StackComparison": 3,
+              "InvertCheck": true,
+              "RequiredBuffCount": 2,
+              "BuffCountComparison": 3,
+              "StatusTargetOverrides": {},
+              "IsEnabled": true
+            },
+            "HealthParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "DistanceParams": {
+              "Distance": 0,
+              "Comparison": 1,
+              "CheckLineOfSight": false,
+              "IsEnabled": true
+            },
+            "GaugeParams": {
+              "PropertyName": "",
+              "ValueType": 0,
+              "NumericValue": 0,
+              "BooleanValue": false,
+              "StringValue": "",
+              "Comparison": 3,
+              "IsEnabled": true
+            },
+            "MpParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "LastAbilityParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0.5,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "LastGcdParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0.5,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "CooldownParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0,
+              "TimeComparison": 2,
+              "CheckCharges": false,
+              "RequiredCharges": 1,
+              "IsEnabled": true
+            },
+            "ComboParams": {
+              "ComboId": 1,
+              "TimeRemaining": 0,
+              "TimeComparison": 3,
+              "IsEnabled": true
+            },
+            "MovementParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "ChannelingParams": {
+              "IsChanneling": true,
+              "SpecificAbilityId": 0,
+              "IsEnabled": true
+            },
+            "AggroParams": {
+              "HasAggro": true,
+              "AggroPosition": 1,
+              "PositionComparison": 2,
+              "IsEnabled": true
+            },
+            "AlwaysParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "InCombatParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "ActionHighlightedParams": {
+              "ActionId": 1,
+              "IsEnabled": true
+            },
+            "IsCastingParams": {
+              "IsCasting": true,
+              "SpecificActionId": 0,
+              "CheckSpecific": false,
+              "IsEnabled": true
+            },
+            "GcdTimeRemainingParams": {
+              "TimeThreshold": 2.5,
+              "Comparison": 1,
+              "IsEnabled": true
+            },
+            "CanInterruptParams": {
+              "CanInterrupt": true,
+              "IsEnabled": true
+            },
+            "EntityIdParams": {
+              "EntityId": 0,
+              "Comparison": 2,
+              "IsEnabled": true
+            },
+            "PartyHpAverageParams": {
+              "Percentage": 60,
+              "Comparison": 1,
+              "IsEnabled": true
+            },
+            "PartyHpLowestParams": {
+              "Percentage": 60,
+              "Comparison": 1,
+              "LowestMemberCount": 4,
+              "UseLowestMemberPercentage": false,
+              "LowestMemberPercentage": 50,
+              "IsEnabled": true
+            },
+            "PartyHpBandsParams": {
+              "CriticalThreshold": 30,
+              "LowThreshold": 50,
+              "ModerateThreshold": 70,
+              "RequiredCritical": 1,
+              "RequiredLow": 3,
+              "RequiredModerate": 5,
+              "BandLogic": 0,
+              "IsEnabled": true
+            },
+            "ActionChargesParams": {
+              "ActionId": 1,
+              "RequiredCharges": 1,
+              "Comparison": 3,
+              "CheckType": 0,
+              "TimeThreshold": 0,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "AggroCountParams": {
+              "RequiredCount": 1,
+              "CountComparison": 3,
+              "IsEnabled": true
+            },
+            "ShieldParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "PartyShieldAverageParams": {
+              "Percentage": 20,
+              "Comparison": 3,
+              "IsEnabled": true
+            },
+            "VariableParams": {
+              "VariableName": "",
+              "VariableType": 0,
+              "ExpectedBoolValue": true,
+              "ExpectedStringValue": "",
+              "ExpectedNumberValue": 0,
+              "Comparison": 2,
+              "StringComparison": 0,
+              "InvertCheck": false,
+              "CheckExists": false,
+              "IsEnabled": true
+            },
+            "DataIdParams": {
+              "DataId": 0,
+              "Comparison": 2,
+              "IsEnabled": true
+            },
+            "TargetNameParams": {
+              "Name": "",
+              "Comparison": 0,
+              "IsEnabled": true
+            }
+          },
+          "RequiredTargetCount": 1,
+          "TargetCountComparison": 3,
+          "UsePercentageMode": true,
+          "RequiredTargetPercentage": 100,
+          "CreatedAt": "2026-06-26T11:35:00.000Z",
+          "ModifiedAt": "2026-06-26T11:35:00.000Z",
+          "ShouldUseTargetCount": true
+        }
+      ],
+      "CreatedAt": "2026-06-26T11:35:00.000Z",
+      "ModifiedAt": "2026-06-26T11:35:00.000Z",
+      "ExcludeFromTargetAccumulation": false
     }
   ],
   "Logics": [
@@ -7515,8 +7749,7 @@
       "LogicType": 0,
       "ConditionIds": [
         "3201f0a2-cee1-4abe-81ac-e5ac20bc8a59",
-        "9437ab7f-4322-4fb8-93fe-10d9eefd5405",
-        "958d055a-815f-485d-bb98-b5b7348da94c"
+        "9437ab7f-4322-4fb8-93fe-10d9eefd5405"
       ],
       "ActionTriggers": [
         {
@@ -7546,7 +7779,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T19:30:00.000Z",
+      "ModifiedAt": "2026-06-26T11:35:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Main Tank"
     },
@@ -7712,6 +7945,47 @@
       "ModifiedAt": "2026-06-26T13:00:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "QOL"
+    },
+    {
+      "Id": "jps-ast-logic-intersection-tb",
+      "Name": "Celestial Intersection TB",
+      "Description": "Uses Celestial Intersection on the main tank for incoming tankbusters.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "jps-ast-cond-mt-no-intersection",
+        "958d055a-815f-485d-bb98-b5b7348da94c"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-ast-trigger-intersection-tb",
+          "ActionId": 16556,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 0,
+          "TargetType": 3,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T11:35:00.000Z",
+      "ModifiedAt": "2026-06-26T11:35:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Mitigation"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
@@ -7784,7 +8058,8 @@
           "fb9cd99e-d156-4638-b25a-8bf68f808999",
           "d741a2a7-2a4b-4114-97f2-883b67e1e5c8",
           "bfd70c65-185e-4169-84fc-92496f85ff52",
-          "17a17348-f0f5-4c8b-aef6-0f99cb66fa96"
+          "17a17348-f0f5-4c8b-aef6-0f99cb66fa96",
+          "jps-ast-event-intersection-tb"
         ],
         "Enabled": true,
         "Position": 3

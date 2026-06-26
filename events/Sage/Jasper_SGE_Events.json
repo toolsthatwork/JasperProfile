@@ -2,7 +2,7 @@
   "Id": "Jasper_SGE_Events",
   "Name": "Jasper SGE Events",
   "Description": "General-purpose Sage event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.2",
+  "Version": "0.1.3",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -298,6 +298,34 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T13:00:00.000Z",
       "ModifiedAt": "2026-06-26T13:00:00.000Z"
+    },
+    {
+      "Id": "jps-sge-event-haima-tb",
+      "Name": "[TB] Haima",
+      "Description": "Uses Haima on the main tank for incoming tankbusters.",
+      "EventType": "OnAllTankBuster",
+      "LogicId": "jps-sge-logic-haima-tb",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T11:45:00.000Z",
+      "ModifiedAt": "2026-06-26T11:45:00.000Z"
+    },
+    {
+      "Id": "jps-sge-event-taurochole-tb",
+      "Name": "[TB] Taurochole",
+      "Description": "Uses Taurochole on the main tank for incoming tankbusters when Kerachole is not already active.",
+      "EventType": "OnAllTankBuster",
+      "LogicId": "jps-sge-logic-taurochole-tb",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T11:45:00.000Z",
+      "ModifiedAt": "2026-06-26T11:45:00.000Z"
     }
   ],
   "Conditions": [
@@ -5566,6 +5594,87 @@
       "ModifiedAt": "2026-06-26T13:00:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "QOL"
+    },
+    {
+      "Id": "jps-sge-logic-haima-tb",
+      "Name": "[TB] Haima",
+      "Description": "Uses Haima on the main tank for incoming tankbusters.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "72280623-b8cb-4182-a19c-1fd14f3a7608"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-sge-trigger-haima-tb",
+          "ActionId": 24305,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 0,
+          "TargetType": 3,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T11:45:00.000Z",
+      "ModifiedAt": "2026-06-26T11:45:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Mitigation"
+    },
+    {
+      "Id": "jps-sge-logic-taurochole-tb",
+      "Name": "[TB] Taurochole",
+      "Description": "Uses Taurochole on the main tank for incoming tankbusters when Kerachole is not already active.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "244b1416-4a06-435a-98e3-1fa715eac8a1",
+        "72280623-b8cb-4182-a19c-1fd14f3a7608"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-sge-trigger-taurochole-tb",
+          "ActionId": 24303,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 0,
+          "TargetType": 3,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T11:45:00.000Z",
+      "ModifiedAt": "2026-06-26T11:45:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Mitigation"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
@@ -5677,7 +5786,9 @@
         "Name": "[MT] TB Mit",
         "Description": "",
         "EventIds": [
-          "90afbafd-3e3c-4a69-ab60-623bba85eadc"
+          "90afbafd-3e3c-4a69-ab60-623bba85eadc",
+          "jps-sge-event-haima-tb",
+          "jps-sge-event-taurochole-tb"
         ],
         "Enabled": true,
         "Position": 8
