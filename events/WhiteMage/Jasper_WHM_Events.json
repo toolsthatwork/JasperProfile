@@ -3,7 +3,7 @@
   "Name": "Jasper WHM Events",
   "Description": "Damage-forward White Mage event profile for general PvE. Lets ACR DPS flow, then uses oGCDs and emergency GCD heals when recovery is actually needed.",
   "CreatedAt": "2026-06-25T00:31:21.892963Z",
-  "ModifiedAt": "2026-06-26T21:30:00.000Z",
+  "ModifiedAt": "2026-06-26T22:15:00.000Z",
   "Events": [
     {
       "Id": "whm-event-01",
@@ -343,8 +343,8 @@
     },
     {
       "Id": "691f898f-31bb-41cf-ae2b-2a1bef80aae8",
-      "Name": "[22] Afflatus Solace (ST, Misery Ready)",
-      "Description": "Any party member HP < 50% AND Tetragrammaton on cooldown; heal immediately even when Misery is ready.",
+      "Name": "[22] Misery -> Afflatus Solace (ST)",
+      "Description": "Spends Afflatus Misery before the matching ST Solace branch when Blood Lily is ready.",
       "EventType": "OnTick",
       "LogicId": "325c4825-4282-4b9a-8e2f-3524714b8bf1",
       "ThrottleSameEvent": 2.5,
@@ -353,7 +353,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-02T21:39:21.0549217Z",
-      "ModifiedAt": "2026-06-26T11:10:00.000Z"
+      "ModifiedAt": "2026-06-26T22:15:00.000Z"
     },
     {
       "Id": "whm-event-22",
@@ -12692,8 +12692,8 @@
     },
     {
       "Id": "325c4825-4282-4b9a-8e2f-3524714b8bf1",
-      "Name": "[22] Afflatus Solace (ST, Misery Ready)",
-      "Description": "Any party member HP < 50% AND Tetragrammaton on cooldown; heal immediately even when Misery is ready.",
+      "Name": "[22] Misery Before Afflatus Solace (ST)",
+      "Description": "Blood Lily spend before the matching ST Solace branch.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
@@ -12705,7 +12705,7 @@
       "ActionTriggers": [
         {
           "Id": "at-22",
-          "ActionId": 16531,
+          "ActionId": 16535,
           "SkillbarId": "",
           "TTSText": "",
           "TriggerType": 0,
@@ -12730,7 +12730,7 @@
         }
       ],
       "CreatedAt": "2026-01-02T21:37:22.1294574Z",
-      "ModifiedAt": "2026-06-26T11:10:00.000Z",
+      "ModifiedAt": "2026-06-26T22:15:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": ""
     },
@@ -13505,5 +13505,5 @@
       "ac53d867-c3ab-400e-a0b9-48e3888eafba": false
     }
   },
-  "Version": "1.0.25"
+  "Version": "1.0.26"
 }

@@ -2,7 +2,7 @@
   "Id": "Jasper_NIN_Events",
   "Name": "Jasper NIN Events",
   "Description": "General-purpose Ninja event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.2",
+  "Version": "0.1.3",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -144,6 +144,34 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T18:00:00.000Z",
       "ModifiedAt": "2026-06-26T19:15:00.000Z"
+    },
+    {
+      "Id": "jps-nin-event-shade-shift-tb",
+      "Name": "Shade Shift TB",
+      "Description": "Uses Shade Shift for incoming tankbusters.",
+      "EventType": "OnAllTankBuster",
+      "LogicId": "jps-nin-logic-shade-shift-tb",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T10:20:00.000Z",
+      "ModifiedAt": "2026-06-26T10:20:00.000Z"
+    },
+    {
+      "Id": "jps-nin-event-feint-tb",
+      "Name": "Feint TB",
+      "Description": "Uses Feint for incoming tankbusters when the target is not already debuffed.",
+      "EventType": "OnAllTankBuster",
+      "LogicId": "jps-nin-logic-feint-tb",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T10:20:00.000Z",
+      "ModifiedAt": "2026-06-26T10:20:00.000Z"
     }
   ],
   "Conditions": [
@@ -4249,6 +4277,87 @@
       "ModifiedAt": "2026-06-26T19:15:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
+    },
+    {
+      "Id": "jps-nin-logic-shade-shift-tb",
+      "Name": "Shade Shift TB",
+      "Description": "Uses Shade Shift for incoming tankbusters.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "7fd80584-4e12-4209-a7c6-1bfb2faa43b3"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-nin-trigger-shade-shift-tb",
+          "ActionId": 2241,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 0,
+          "TargetType": 0,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T10:20:00.000Z",
+      "ModifiedAt": "2026-06-26T10:20:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Mitigation"
+    },
+    {
+      "Id": "jps-nin-logic-feint-tb",
+      "Name": "Feint TB",
+      "Description": "Uses Feint for incoming tankbusters when the target is not already debuffed.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "7fd80584-4e12-4209-a7c6-1bfb2faa43b3",
+        "a320ee66-d9ab-451a-b573-9c4d49a38636"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-nin-trigger-feint-tb",
+          "ActionId": 7549,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 0,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T10:20:00.000Z",
+      "ModifiedAt": "2026-06-26T10:20:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Mitigation"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
@@ -4271,7 +4380,9 @@
           "950dc890-a9f9-4b75-ba7d-2fc6662fddec",
           "35953639-89ea-47d5-82f7-6641f5e474e9",
           "d482f107-367b-4517-8d69-83797ecd4b74",
-          "8943a0dc-4651-4e84-8a42-78deb1c9463e"
+          "8943a0dc-4651-4e84-8a42-78deb1c9463e",
+          "jps-nin-event-shade-shift-tb",
+          "jps-nin-event-feint-tb"
         ],
         "Enabled": true,
         "Position": 0

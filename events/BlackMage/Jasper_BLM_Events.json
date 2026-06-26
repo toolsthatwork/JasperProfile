@@ -2,7 +2,7 @@
   "Id": "Jasper_BLM_Events",
   "Name": "Jasper BLM Events",
   "Description": "General-purpose BlackMage event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.3",
+  "Version": "0.1.4",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -130,6 +130,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T18:00:00.000Z",
       "ModifiedAt": "2026-06-26T19:15:00.000Z"
+    },
+    {
+      "Id": "jps-blm-event-addle-tb",
+      "Name": "Addle TB",
+      "Description": "Uses Addle for incoming tankbusters when the target is not already debuffed.",
+      "EventType": "OnAllTankBuster",
+      "LogicId": "jps-blm-logic-addle-tb",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T10:20:00.000Z",
+      "ModifiedAt": "2026-06-26T10:20:00.000Z"
     }
   ],
   "Conditions": [
@@ -4343,6 +4357,47 @@
       "ModifiedAt": "2026-06-26T19:15:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
+    },
+    {
+      "Id": "jps-blm-logic-addle-tb",
+      "Name": "Addle TB",
+      "Description": "Uses Addle for incoming tankbusters when the target is not already debuffed.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "b702ada1-facb-4cd3-906f-e1c29c1f390c",
+        "58017851-b41d-4c47-9188-1f8dc32bf896"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-blm-trigger-addle-tb",
+          "ActionId": 7560,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 0,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T10:20:00.000Z",
+      "ModifiedAt": "2026-06-26T10:20:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Mitigation"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
@@ -4362,7 +4417,8 @@
         "Name": "Mitigation",
         "Description": "",
         "EventIds": [
-          "7517acbf-fbca-4f56-aad4-f168daf301ad"
+          "7517acbf-fbca-4f56-aad4-f168daf301ad",
+          "jps-blm-event-addle-tb"
         ],
         "Enabled": true,
         "Position": 0

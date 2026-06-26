@@ -2,7 +2,7 @@
   "Id": "Jasper_RPR_Events",
   "Name": "Jasper RPR Events",
   "Description": "General-purpose Reaper event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.4",
+  "Version": "0.1.5",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -172,6 +172,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T21:30:00.000Z",
       "ModifiedAt": "2026-06-26T21:30:00.000Z"
+    },
+    {
+      "Id": "jps-rpr-event-feint-tb",
+      "Name": "Feint TB",
+      "Description": "Uses Feint for incoming tankbusters when the target is not already debuffed.",
+      "EventType": "OnAllTankBuster",
+      "LogicId": "jps-rpr-logic-feint-tb",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T10:20:00.000Z",
+      "ModifiedAt": "2026-06-26T10:20:00.000Z"
     }
   ],
   "Conditions": [
@@ -5653,6 +5667,47 @@
       "ModifiedAt": "2026-06-26T21:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
+    },
+    {
+      "Id": "jps-rpr-logic-feint-tb",
+      "Name": "Feint TB",
+      "Description": "Uses Feint for incoming tankbusters when the target is not already debuffed.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "762e3654-d518-4e6c-a3d2-b41ad3a2cd2c",
+        "63aeb655-dc76-4402-b9cd-78c96f869ee7"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-rpr-trigger-feint-tb",
+          "ActionId": 7549,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 0,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T10:20:00.000Z",
+      "ModifiedAt": "2026-06-26T10:20:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Mitigation"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
@@ -5675,7 +5730,8 @@
           "b1f3010e-2c9f-49fa-b595-9c6554f543d2",
           "494fbe18-927f-43f0-875e-435fece4051e",
           "63cdfec9-a8cc-45a0-a11d-4903d9381aad",
-          "7b3857d9-5452-4ef8-af7a-26e09c771a8d"
+          "7b3857d9-5452-4ef8-af7a-26e09c771a8d",
+          "jps-rpr-event-feint-tb"
         ],
         "Enabled": true,
         "Position": 0

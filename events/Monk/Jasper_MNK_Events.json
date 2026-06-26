@@ -2,7 +2,7 @@
   "Id": "Jasper_MNK_Events",
   "Name": "Jasper MNK Events",
   "Description": "General-purpose Monk event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.3",
+  "Version": "0.1.4",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -158,6 +158,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T18:00:00.000Z",
       "ModifiedAt": "2026-06-26T19:15:00.000Z"
+    },
+    {
+      "Id": "jps-mnk-event-feint-tb",
+      "Name": "Feint TB",
+      "Description": "Uses Feint for incoming tankbusters when the target is not already debuffed.",
+      "EventType": "OnAllTankBuster",
+      "LogicId": "jps-mnk-logic-feint-tb",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T10:20:00.000Z",
+      "ModifiedAt": "2026-06-26T10:20:00.000Z"
     }
   ],
   "Conditions": [
@@ -4261,6 +4275,47 @@
       "ModifiedAt": "2026-06-26T19:15:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
+    },
+    {
+      "Id": "jps-mnk-logic-feint-tb",
+      "Name": "Feint TB",
+      "Description": "Uses Feint for incoming tankbusters when the target is not already debuffed.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "7fd80584-4e12-4209-a7c6-1bfb2faa43b3",
+        "7c2d2652-f46b-494e-88cd-eb836adcc4ef"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-mnk-trigger-feint-tb",
+          "ActionId": 7549,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 0,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T10:20:00.000Z",
+      "ModifiedAt": "2026-06-26T10:20:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Mitigation"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
@@ -4284,7 +4339,8 @@
           "35953639-89ea-47d5-82f7-6641f5e474e9",
           "d482f107-367b-4517-8d69-83797ecd4b74",
           "001d49ce-3dd3-4ca0-9995-5bd7e599fa20",
-          "166d48b6-c1e5-4b27-b8f5-c4a0c1cb02c2"
+          "166d48b6-c1e5-4b27-b8f5-c4a0c1cb02c2",
+          "jps-mnk-event-feint-tb"
         ],
         "Enabled": true,
         "Position": 0

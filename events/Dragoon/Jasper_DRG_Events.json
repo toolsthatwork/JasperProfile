@@ -2,7 +2,7 @@
   "Id": "Jasper_DRG_Events",
   "Name": "Jasper DRG Events",
   "Description": "General-purpose Dragoon event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.2",
+  "Version": "0.1.3",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -130,6 +130,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T18:00:00.000Z",
       "ModifiedAt": "2026-06-26T19:15:00.000Z"
+    },
+    {
+      "Id": "jps-drg-event-feint-tb",
+      "Name": "Feint TB",
+      "Description": "Uses Feint for incoming tankbusters when the target is not already debuffed.",
+      "EventType": "OnAllTankBuster",
+      "LogicId": "jps-drg-logic-feint-tb",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T10:20:00.000Z",
+      "ModifiedAt": "2026-06-26T10:20:00.000Z"
     }
   ],
   "Conditions": [
@@ -3354,6 +3368,47 @@
       "ModifiedAt": "2026-06-26T19:15:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
+    },
+    {
+      "Id": "jps-drg-logic-feint-tb",
+      "Name": "Feint TB",
+      "Description": "Uses Feint for incoming tankbusters when the target is not already debuffed.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "7fd80584-4e12-4209-a7c6-1bfb2faa43b3",
+        "c009ec2b-ddf3-4b18-9155-c35549c88d58"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-drg-trigger-feint-tb",
+          "ActionId": 7549,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 0,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 1195,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T10:20:00.000Z",
+      "ModifiedAt": "2026-06-26T10:20:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Mitigation"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
@@ -3375,7 +3430,8 @@
         "EventIds": [
           "950dc890-a9f9-4b75-ba7d-2fc6662fddec",
           "35953639-89ea-47d5-82f7-6641f5e474e9",
-          "d482f107-367b-4517-8d69-83797ecd4b74"
+          "d482f107-367b-4517-8d69-83797ecd4b74",
+          "jps-drg-event-feint-tb"
         ],
         "Enabled": true,
         "Position": 0
