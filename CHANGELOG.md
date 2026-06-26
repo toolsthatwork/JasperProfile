@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Retuned White Mage for DPS flow: removed forced GCD-heal timeline calls and made ST Regen/Cure/Cure II emergency-only.
 - Added a level-sync support pass for early leveling through level 100 duty sync.
 - Added Esuna support to White Mage, Astrologian, and Scholar event profiles.
 - Added Scholar low-level Succor emergency fallback before Concitation is learned.
