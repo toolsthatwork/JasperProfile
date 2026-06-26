@@ -2,7 +2,7 @@
   "Id": "Jasper_BRD_Events",
   "Name": "Jasper BRD Events",
   "Description": "General-purpose Bard event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.2",
+  "Version": "0.1.3",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -158,6 +158,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T16:00:00.000Z",
       "ModifiedAt": "2026-06-26T16:00:00.000Z"
+    },
+    {
+      "Id": "f938d1a9-786e-534b-ad8f-cfab52eb5cfd",
+      "Name": "Reset Toggles",
+      "Description": "Restores normal Bard ACR toggles while safely out of combat.",
+      "EventType": "OnTick",
+      "LogicId": "27953790-e12c-5bd0-8f0a-e1c4180cfa56",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T18:00:00.000Z"
     }
   ],
   "Conditions": [
@@ -4928,10 +4942,201 @@
       "ModifiedAt": "2026-06-26T16:00:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Cleanse"
+    },
+    {
+      "Id": "27953790-e12c-5bd0-8f0a-e1c4180cfa56",
+      "Name": "Reset Toggles",
+      "Description": "Restores normal Bard ACR toggles while safely out of combat.",
+      "LogicType": 1,
+      "ConditionIds": [
+        "701a6c61-ab1b-4799-a551-0f866790a426",
+        "4a3355a6-f920-4858-b34d-bb3011c2982a"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "1abb790a-ee1a-5a46-9691-c88b011545ef",
+          "ActionId": 0,
+          "SkillbarId": "LongSong",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 8,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "88c94dee-1cdc-577e-ac4d-cc30323b1a3f",
+          "ActionId": 0,
+          "SkillbarId": "Songs",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "6b5d9c69-7a56-5b86-b5af-79ee6bfdd34c",
+          "ActionId": 0,
+          "SkillbarId": "BattleVoice",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "12db0b8d-f539-5e18-9a55-592c942e4b53",
+          "ActionId": 0,
+          "SkillbarId": "RagingStrike",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "8ea38c6c-77e7-5421-b147-4c174b1b2c7f",
+          "ActionId": 0,
+          "SkillbarId": "Barrage",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "c9b4e484-ca0b-5a19-8849-b9ffd7e1b194",
+          "ActionId": 0,
+          "SkillbarId": "DoTs",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "daac00cf-b80f-51f8-9ba5-63df6f28568c",
+          "ActionId": 0,
+          "SkillbarId": "SmartDot",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T18:00:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Toggles"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T16:00:00.000Z",
+  "ModifiedAt": "2026-06-26T18:00:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
@@ -4967,6 +5172,16 @@
         "Position": 1
       },
       {
+        "Id": "71eb3a66-1798-5cba-95a8-c89c73136011",
+        "Name": "Reset Toggles",
+        "Description": "",
+        "EventIds": [
+          "f938d1a9-786e-534b-ad8f-cfab52eb5cfd"
+        ],
+        "Enabled": true,
+        "Position": 2
+      },
+      {
         "Id": "1674b68d-2214-4d37-b994-dc6b40fd016b",
         "Name": "QOL Tweaks",
         "Description": "",
@@ -4974,7 +5189,7 @@
           "8f171d37-5954-422d-b04e-9c134168a97a"
         ],
         "Enabled": true,
-        "Position": 2
+        "Position": 3
       },
       {
         "Id": "beffa640-b20b-42db-8a6b-799aecfc0236",
@@ -4985,7 +5200,7 @@
           "70462e08-82a7-464a-83df-c5bb709bfc0e"
         ],
         "Enabled": true,
-        "Position": 3
+        "Position": 4
       },
       {
         "Id": "afb60d16-ef98-4d02-9193-7e683e682c8f",
@@ -4996,7 +5211,7 @@
           "f6deb9da-ed47-4855-8ccf-4d6c78c421dd"
         ],
         "Enabled": true,
-        "Position": 4
+        "Position": 5
       }
     ],
     "ToggleStates": {
@@ -5004,7 +5219,8 @@
       "de2aaf70-6db9-4ed8-aaa9-7436c95483d6": false,
       "1674b68d-2214-4d37-b994-dc6b40fd016b": false,
       "beffa640-b20b-42db-8a6b-799aecfc0236": true,
-      "afb60d16-ef98-4d02-9193-7e683e682c8f": true
+      "afb60d16-ef98-4d02-9193-7e683e682c8f": true,
+      "71eb3a66-1798-5cba-95a8-c89c73136011": true
     }
   }
 }

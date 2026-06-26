@@ -3,7 +3,7 @@
   "Name": "Jasper WAR Events",
   "Description": "General-purpose Warrior event profile for PvE. Event-driven dungeon mitigation, Bloodwhetting recovery, emergency Holmgang, raidwide/tankbuster mitigation, and optional co-tank support.",
   "CreatedAt": "2026-06-25T02:45:00.000Z",
-  "ModifiedAt": "2026-06-26T12:00:00.000Z",
+  "ModifiedAt": "2026-06-26T18:00:00.000Z",
   "Events": [
     {
       "Id": "f2daaf1d-c477-42b2-9db1-baa49330bfe3",
@@ -270,6 +270,20 @@
       "Filters": {},
       "CreatedAt": "2026-04-19T19:56:43.5753387Z",
       "ModifiedAt": "2026-06-25T02:45:00.000Z"
+    },
+    {
+      "Id": "a1ab7d6e-333b-5d19-9f0b-9b30f27fe8c1",
+      "Name": "Reset Toggles",
+      "Description": "Restores normal Warrior ACR toggles while safely out of combat.",
+      "EventType": "OnTick",
+      "LogicId": "df490efc-2236-5fdb-8bd7-5e2694f6d5b3",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T18:00:00.000Z"
     }
   ],
   "Conditions": [
@@ -8284,6 +8298,72 @@
       "ModifiedAt": "2026-06-25T02:45:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "QOL"
+    },
+    {
+      "Id": "df490efc-2236-5fdb-8bd7-5e2694f6d5b3",
+      "Name": "Reset Toggles",
+      "Description": "Restores normal Warrior ACR toggles while safely out of combat.",
+      "LogicType": 1,
+      "ConditionIds": [
+        "c46f9224-0233-4302-a1d8-d09d6bd49f2b",
+        "9b3df71d-1a8a-45d3-9066-9c755d71f3d8"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "d09448ea-c3ae-55b9-af2d-884b305c853f",
+          "ActionId": 0,
+          "SkillbarId": "SaveCD",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 8,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "6ec3e04d-9343-511a-87e0-3cbfbe996246",
+          "ActionId": 0,
+          "SkillbarId": "BurnBoss",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 8,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T18:00:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Toggles"
     }
   ],
   "QTBarConfig": {
@@ -8477,6 +8557,16 @@
         "Position": 17
       },
       {
+        "Id": "8e8ed715-37bf-5a02-ac28-adf8dd192c1a",
+        "Name": "Reset Toggles",
+        "Description": "",
+        "EventIds": [
+          "a1ab7d6e-333b-5d19-9f0b-9b30f27fe8c1"
+        ],
+        "Enabled": true,
+        "Position": 18
+      },
+      {
         "Id": "667aee03-347a-45dc-b89b-d0c67380b46b",
         "Name": "Sprint OOC",
         "Description": "Optional out-of-combat Sprint between pulls.",
@@ -8484,7 +8574,7 @@
           "b0373abb-c4d5-4594-9f26-0083ad8855f5"
         ],
         "Enabled": true,
-        "Position": 18
+        "Position": 19
       }
     ],
     "ToggleStates": {
@@ -8506,8 +8596,9 @@
       "cdb8cb17-9aac-49bd-a715-d1ae2279dd43": true,
       "366f7219-a969-4371-a44a-5c3a2393ec7a": true,
       "4c7aedd3-441d-417f-93c4-a9d12f7ab128": true,
-      "667aee03-347a-45dc-b89b-d0c67380b46b": false
+      "667aee03-347a-45dc-b89b-d0c67380b46b": false,
+      "8e8ed715-37bf-5a02-ac28-adf8dd192c1a": true
     }
   },
-  "Version": "0.1.1"
+  "Version": "0.1.2"
 }

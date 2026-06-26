@@ -2,7 +2,7 @@
   "Id": "Jasper_GNB_Events",
   "Name": "Jasper GNB Events",
   "Description": "General-purpose Gunbreaker event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.1",
+  "Version": "0.1.2",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -326,6 +326,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
       "ModifiedAt": "2026-06-25T07:45:00.000Z"
+    },
+    {
+      "Id": "1f7fee8b-014d-568a-9a31-a5fd2d3fc199",
+      "Name": "Reset Toggles",
+      "Description": "Restores normal Gunbreaker ACR toggles while safely out of combat.",
+      "EventType": "OnTick",
+      "LogicId": "94ce5b93-58b4-5353-aed5-2161adfb4a7b",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T18:00:00.000Z"
     }
   ],
   "Conditions": [
@@ -10177,10 +10191,201 @@
       "ModifiedAt": "2026-06-26T15:00:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
+    },
+    {
+      "Id": "94ce5b93-58b4-5353-aed5-2161adfb4a7b",
+      "Name": "Reset Toggles",
+      "Description": "Restores normal Gunbreaker ACR toggles while safely out of combat.",
+      "LogicType": 1,
+      "ConditionIds": [
+        "4570f77b-07e5-42f1-83c8-075f8460ae89",
+        "85d8fbf8-dc3f-440f-b6be-67c0f19fd401"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "eea7d871-f587-5ae3-8fd8-cba56cc6b7a0",
+          "ActionId": 0,
+          "SkillbarId": "SaveCD",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 8,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "9035f993-e251-5391-bd5d-6a0bb7f50a79",
+          "ActionId": 0,
+          "SkillbarId": "BurnBoss",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 8,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "bf9d2ff5-93d6-505d-9f5e-b55da52e425b",
+          "ActionId": 0,
+          "SkillbarId": "NoMercy",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "65310ff8-e715-5920-adab-4b070cd10d5c",
+          "ActionId": 0,
+          "SkillbarId": "Bloodfest",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "ee781090-ddf5-5edc-94d6-a6b7847ee0ba",
+          "ActionId": 0,
+          "SkillbarId": "BowShock",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "70f035bf-b7da-5695-910e-897afb26f795",
+          "ActionId": 0,
+          "SkillbarId": "BlastingZone",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "d63ca2ce-dc92-5973-99a2-258dc3e8f8cc",
+          "ActionId": 0,
+          "SkillbarId": "DoubleDown",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T18:00:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Toggles"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T15:00:00.000Z",
+  "ModifiedAt": "2026-06-26T18:00:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
@@ -10228,6 +10433,16 @@
         "Position": 1
       },
       {
+        "Id": "9424d3f5-62a4-5d07-bd8e-bb66fe0553f2",
+        "Name": "Reset Toggles",
+        "Description": "",
+        "EventIds": [
+          "1f7fee8b-014d-568a-9a31-a5fd2d3fc199"
+        ],
+        "Enabled": true,
+        "Position": 2
+      },
+      {
         "Id": "03c57f58-a312-41cb-9243-d86dd54ca27a",
         "Name": "QOL Tweaks",
         "Description": "Sprint OOC, Aggro Manager",
@@ -10235,7 +10450,7 @@
           "19363f9b-8028-4e73-8a6b-005b9470ce4e"
         ],
         "Enabled": true,
-        "Position": 2
+        "Position": 3
       },
       {
         "Id": "9b0065c5-e840-47be-9e9b-41eb02184f16",
@@ -10248,14 +10463,15 @@
           "b14f1b3c-1603-4c32-bc6f-9759e6b68265"
         ],
         "Enabled": true,
-        "Position": 3
+        "Position": 4
       }
     ],
     "ToggleStates": {
       "550eac98-fe17-4b97-898c-36ad70a9de68": true,
       "87846795-71ca-48e1-a1fd-4230a0787c8c": false,
       "03c57f58-a312-41cb-9243-d86dd54ca27a": false,
-      "9b0065c5-e840-47be-9e9b-41eb02184f16": true
+      "9b0065c5-e840-47be-9e9b-41eb02184f16": true,
+      "9424d3f5-62a4-5d07-bd8e-bb66fe0553f2": true
     }
   }
 }

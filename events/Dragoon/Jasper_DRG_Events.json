@@ -2,7 +2,7 @@
   "Id": "Jasper_DRG_Events",
   "Name": "Jasper DRG Events",
   "Description": "General-purpose Dragoon event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.0",
+  "Version": "0.1.1",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -116,6 +116,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
       "ModifiedAt": "2026-06-25T07:45:00.000Z"
+    },
+    {
+      "Id": "775e0e7d-6b83-58bf-a940-a3800ba82dca",
+      "Name": "Reset Toggles",
+      "Description": "Restores normal Dragoon ACR toggles while safely out of combat.",
+      "EventType": "OnTick",
+      "LogicId": "d92e691d-0c06-5932-8704-70cd5e7158db",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T18:00:00.000Z"
     }
   ],
   "Conditions": [
@@ -3248,10 +3262,101 @@
       "ModifiedAt": "2026-06-25T07:45:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "QOL"
+    },
+    {
+      "Id": "d92e691d-0c06-5932-8704-70cd5e7158db",
+      "Name": "Reset Toggles",
+      "Description": "Restores normal Dragoon ACR toggles while safely out of combat.",
+      "LogicType": 1,
+      "ConditionIds": [
+        "34651e59-5df2-4098-84f0-e1305142c3bc",
+        "6db44b0c-adb7-4664-8cf2-3e7233515a32"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "9c70a488-3365-5c91-a0c9-cba7f1c41e2b",
+          "ActionId": 0,
+          "SkillbarId": "BattleLitany",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "e8b7eaf6-a752-5ffc-9b7d-d3c5bb7694d4",
+          "ActionId": 0,
+          "SkillbarId": "LanceCharge",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "30a2edb6-a8a8-5098-a4ec-abcec073563f",
+          "ActionId": 0,
+          "SkillbarId": "LifeSurge",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T18:00:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Toggles"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-25T07:45:00.000Z",
+  "ModifiedAt": "2026-06-26T18:00:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
@@ -3288,6 +3393,16 @@
         "Position": 1
       },
       {
+        "Id": "1c031d8e-7676-5d12-936d-03f46f61014f",
+        "Name": "Reset Toggles",
+        "Description": "",
+        "EventIds": [
+          "775e0e7d-6b83-58bf-a940-a3800ba82dca"
+        ],
+        "Enabled": true,
+        "Position": 2
+      },
+      {
         "Id": "06450634-9f97-4698-9dff-3124c30781c4",
         "Name": "QOL Tweaks",
         "Description": "",
@@ -3295,13 +3410,14 @@
           "2bdba591-89e8-4217-8bc7-da7dfd8356b0"
         ],
         "Enabled": true,
-        "Position": 2
+        "Position": 3
       }
     ],
     "ToggleStates": {
       "67bca09e-b719-47fb-8c21-fc8342ddc0d9": true,
       "306456fb-643e-4e5c-bde6-84a3c285fb1c": false,
-      "06450634-9f97-4698-9dff-3124c30781c4": false
+      "06450634-9f97-4698-9dff-3124c30781c4": false,
+      "1c031d8e-7676-5d12-936d-03f46f61014f": true
     }
   }
 }

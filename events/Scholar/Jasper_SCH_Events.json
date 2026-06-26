@@ -2,7 +2,7 @@
   "Id": "Jasper_SCH_Events",
   "Name": "Jasper SCH Events",
   "Description": "General-purpose Scholar event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.2",
+  "Version": "0.1.3",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -396,6 +396,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T09:35:00.000Z",
       "ModifiedAt": "2026-06-26T09:35:00.000Z"
+    },
+    {
+      "Id": "2e8adeeb-fbda-5768-a65d-0a8125420882",
+      "Name": "Reset Toggles",
+      "Description": "Restores normal Scholar ACR toggles while safely out of combat.",
+      "EventType": "OnTick",
+      "LogicId": "f4585998-2f40-5751-821b-8b6a999a9de8",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T18:00:00.000Z"
     }
   ],
   "Conditions": [
@@ -7840,10 +7854,101 @@
       "ModifiedAt": "2026-06-26T09:35:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Level Sync"
+    },
+    {
+      "Id": "f4585998-2f40-5751-821b-8b6a999a9de8",
+      "Name": "Reset Toggles",
+      "Description": "Restores normal Scholar ACR toggles while safely out of combat.",
+      "LogicType": 1,
+      "ConditionIds": [
+        "9437ab7f-4322-4fb8-93fe-10d9eefd5405",
+        "956d5286-de84-472c-8b3f-fa8dd1a0267c"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "210b2955-6b6d-5c27-bea8-26239c9cb187",
+          "ActionId": 0,
+          "SkillbarId": "ChainStratagem",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "f0ace06c-3f2e-510e-8ea6-adc347274423",
+          "ActionId": 0,
+          "SkillbarId": "Dissipation",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "4d416ad3-a346-562f-a280-d4e27fc0f8bb",
+          "ActionId": 0,
+          "SkillbarId": "DoTs",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T18:00:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Toggles"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T15:00:00.000Z",
+  "ModifiedAt": "2026-06-26T18:00:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
@@ -7917,6 +8022,16 @@
         "Position": 3
       },
       {
+        "Id": "1acfda39-667c-50d6-880b-0c7ec84424b3",
+        "Name": "Reset Toggles",
+        "Description": "",
+        "EventIds": [
+          "2e8adeeb-fbda-5768-a65d-0a8125420882"
+        ],
+        "Enabled": true,
+        "Position": 4
+      },
+      {
         "Id": "9dde1e60-3f72-4e33-a96d-ddc4e680da4b",
         "Name": "QOL Tweaks",
         "Description": "",
@@ -7925,7 +8040,7 @@
           "1e4dc943-094d-41b1-ae74-6c92d9dc8876"
         ],
         "Enabled": true,
-        "Position": 4
+        "Position": 5
       }
     ],
     "ToggleStates": {
@@ -7933,7 +8048,8 @@
       "a6a17ca1-3406-4044-9924-c29fe24477fa": true,
       "79dbd4b9-7c11-4571-a133-3bb38ee12fe0": true,
       "bf390085-8f14-4732-8683-30421793db34": false,
-      "9dde1e60-3f72-4e33-a96d-ddc4e680da4b": false
+      "9dde1e60-3f72-4e33-a96d-ddc4e680da4b": false,
+      "1acfda39-667c-50d6-880b-0c7ec84424b3": true
     }
   }
 }

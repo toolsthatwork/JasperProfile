@@ -2,7 +2,7 @@
   "Id": "Jasper_SAM_Events",
   "Name": "Jasper SAM Events",
   "Description": "General-purpose Samurai event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.1",
+  "Version": "0.1.2",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -186,6 +186,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
       "ModifiedAt": "2026-06-25T07:45:00.000Z"
+    },
+    {
+      "Id": "b61265b1-4881-5be6-a2ec-70d825afb6ed",
+      "Name": "Reset Toggles",
+      "Description": "Restores normal Samurai ACR toggles while safely out of combat.",
+      "EventType": "OnTick",
+      "LogicId": "d8d6e27f-665b-52ba-8f1a-d5ea00020bcd",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T18:00:00.000Z"
     }
   ],
   "Conditions": [
@@ -4959,10 +4973,101 @@
       "ModifiedAt": "2026-06-25T07:45:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "QOL"
+    },
+    {
+      "Id": "d8d6e27f-665b-52ba-8f1a-d5ea00020bcd",
+      "Name": "Reset Toggles",
+      "Description": "Restores normal Samurai ACR toggles while safely out of combat.",
+      "LogicType": 1,
+      "ConditionIds": [
+        "a6169a92-4e09-4e9a-a6eb-82f6e3cb9bcd",
+        "a7e59c6e-8023-4dde-8adf-0d6c281289c8"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "5c804ab7-d8fb-5c69-8f3d-40f0956c9746",
+          "ActionId": 0,
+          "SkillbarId": "Ikishoten",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "62f0d965-cd03-50b5-8032-74aea60b7575",
+          "ActionId": 0,
+          "SkillbarId": "Meikyo",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "b9a077ae-7f0f-5e3f-abc8-ee5e789facfd",
+          "ActionId": 0,
+          "SkillbarId": "Higanbana",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T18:00:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Toggles"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T15:00:00.000Z",
+  "ModifiedAt": "2026-06-26T18:00:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
@@ -5000,6 +5105,16 @@
         "Position": 1
       },
       {
+        "Id": "1b87d6ce-8242-5240-b8c3-4567d606b5ae",
+        "Name": "Reset Toggles",
+        "Description": "",
+        "EventIds": [
+          "b61265b1-4881-5be6-a2ec-70d825afb6ed"
+        ],
+        "Enabled": true,
+        "Position": 2
+      },
+      {
         "Id": "1824dc02-f999-45ad-9741-7299c26e9400",
         "Name": "QOL Tweaks",
         "Description": "Sprint OOC, Hagakure OOC",
@@ -5008,7 +5123,7 @@
           "fbbc11cd-bc64-48f6-9fd1-cdf8401f0542"
         ],
         "Enabled": true,
-        "Position": 2
+        "Position": 3
       },
       {
         "Id": "2b0cbc22-1918-4704-a9ef-66a700b22d7a",
@@ -5020,14 +5135,15 @@
           "cdccdbe9-31c9-4b13-9dd5-62e347848e48"
         ],
         "Enabled": true,
-        "Position": 3
+        "Position": 4
       }
     ],
     "ToggleStates": {
       "e94b94d2-96c3-464d-b12e-0a9c13c5f593": true,
       "0ff10534-005d-4f07-9b9d-2c57e782690b": false,
       "1824dc02-f999-45ad-9741-7299c26e9400": false,
-      "2b0cbc22-1918-4704-a9ef-66a700b22d7a": true
+      "2b0cbc22-1918-4704-a9ef-66a700b22d7a": true,
+      "1b87d6ce-8242-5240-b8c3-4567d606b5ae": true
     }
   }
 }

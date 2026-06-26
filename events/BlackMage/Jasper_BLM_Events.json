@@ -2,7 +2,7 @@
   "Id": "Jasper_BLM_Events",
   "Name": "Jasper BLM Events",
   "Description": "General-purpose BlackMage event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.1",
+  "Version": "0.1.2",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -116,6 +116,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
       "ModifiedAt": "2026-06-25T07:45:00.000Z"
+    },
+    {
+      "Id": "3f438796-42b5-5e21-9592-4cf688f4bb3b",
+      "Name": "Reset Toggles",
+      "Description": "Restores normal Black Mage ACR toggles while safely out of combat.",
+      "EventType": "OnTick",
+      "LogicId": "49acd59d-d124-53c9-8497-3408ddede4b4",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T18:00:00.000Z"
     }
   ],
   "Conditions": [
@@ -4187,10 +4201,151 @@
       "ModifiedAt": "2026-06-25T07:45:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "DOTs"
+    },
+    {
+      "Id": "49acd59d-d124-53c9-8497-3408ddede4b4",
+      "Name": "Reset Toggles",
+      "Description": "Restores normal Black Mage ACR toggles while safely out of combat.",
+      "LogicType": 1,
+      "ConditionIds": [
+        "2b75c1d7-3894-4f5e-b6ca-c2f0073c09b0",
+        "9af7c68b-e913-432e-a8a6-e3ac19baaf83"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "b43e81af-0a6f-5017-9ad8-d7f5abebc9f5",
+          "ActionId": 0,
+          "SkillbarId": "Amplifier",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "6ca083a7-c9c1-5107-b4de-7877d81237f3",
+          "ActionId": 0,
+          "SkillbarId": "Manafont",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "98fc9b8c-99cf-52e4-b9c4-e59fee1d012b",
+          "ActionId": 0,
+          "SkillbarId": "LeyLines",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "09e26af9-fea0-5f04-b057-d0e6b41cc4e2",
+          "ActionId": 0,
+          "SkillbarId": "DoT",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "004250e1-98a4-552c-a6bc-0f5a99be7287",
+          "ActionId": 0,
+          "SkillbarId": "SmartDot",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T18:00:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Toggles"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T13:00:00.000Z",
+  "ModifiedAt": "2026-06-26T18:00:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
@@ -4225,6 +4380,16 @@
         "Position": 1
       },
       {
+        "Id": "f0ea66f7-f777-5913-9e89-98916807383a",
+        "Name": "Reset Toggles",
+        "Description": "",
+        "EventIds": [
+          "3f438796-42b5-5e21-9592-4cf688f4bb3b"
+        ],
+        "Enabled": true,
+        "Position": 2
+      },
+      {
         "Id": "4d2f85f4-1d67-4375-93da-97ed4539bf55",
         "Name": "QOL Tweaks",
         "Description": "",
@@ -4232,7 +4397,7 @@
           "5eb657d5-4560-46e1-97db-c438b5c75f86"
         ],
         "Enabled": true,
-        "Position": 2
+        "Position": 3
       },
       {
         "Id": "707468a2-0c7b-4da9-93ee-c1474e7fbb6f",
@@ -4243,14 +4408,15 @@
           "e20a719f-9307-46ad-b929-71085da1e9c6"
         ],
         "Enabled": true,
-        "Position": 3
+        "Position": 4
       }
     ],
     "ToggleStates": {
       "e3bffeaf-4251-4d0f-9fc6-27dc6de22e8f": true,
       "4d50d847-9a96-4392-9e67-daa1f27a4494": false,
       "4d2f85f4-1d67-4375-93da-97ed4539bf55": false,
-      "707468a2-0c7b-4da9-93ee-c1474e7fbb6f": true
+      "707468a2-0c7b-4da9-93ee-c1474e7fbb6f": true,
+      "f0ea66f7-f777-5913-9e89-98916807383a": true
     }
   }
 }

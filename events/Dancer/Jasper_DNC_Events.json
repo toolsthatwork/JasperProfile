@@ -2,7 +2,7 @@
   "Id": "Jasper_DNC_Events",
   "Name": "Jasper DNC Events",
   "Description": "General-purpose Dancer event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.0",
+  "Version": "0.1.1",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -116,6 +116,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
       "ModifiedAt": "2026-06-25T07:45:00.000Z"
+    },
+    {
+      "Id": "cd312eaa-3ae4-59c7-94d9-c54f45504656",
+      "Name": "Reset Toggles",
+      "Description": "Restores normal Dancer ACR toggles while safely out of combat.",
+      "EventType": "OnTick",
+      "LogicId": "b8cdcf95-0c6e-50ec-aac7-b78407a8968b",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T18:00:00.000Z"
     }
   ],
   "Conditions": [
@@ -4170,10 +4184,126 @@
       "ModifiedAt": "2026-06-25T07:45:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
+    },
+    {
+      "Id": "b8cdcf95-0c6e-50ec-aac7-b78407a8968b",
+      "Name": "Reset Toggles",
+      "Description": "Restores normal Dancer ACR toggles while safely out of combat.",
+      "LogicType": 1,
+      "ConditionIds": [
+        "284fb006-ebab-4c48-98b6-21a671379d61",
+        "2110cb69-21d8-4643-b4f5-f20c977bf7a3"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "1aea12ed-3dde-54a6-b85d-ba1e6d3f2f90",
+          "ActionId": 0,
+          "SkillbarId": "TechnicalStep",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "174b6349-8bb9-5f91-b446-300f0442dff8",
+          "ActionId": 0,
+          "SkillbarId": "Flourish",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "c1f36ec8-1248-5b22-9d90-532281171a13",
+          "ActionId": 0,
+          "SkillbarId": "Devilment",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "aa7f6761-801f-5be1-a63f-1f20556316b5",
+          "ActionId": 0,
+          "SkillbarId": "BurnCD",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 8,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T18:00:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Toggles"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-25T07:45:00.000Z",
+  "ModifiedAt": "2026-06-26T18:00:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
@@ -4210,6 +4340,16 @@
         "Position": 1
       },
       {
+        "Id": "50f6dc95-ddcb-5495-9813-8e2e3e84677d",
+        "Name": "Reset Toggles",
+        "Description": "",
+        "EventIds": [
+          "cd312eaa-3ae4-59c7-94d9-c54f45504656"
+        ],
+        "Enabled": true,
+        "Position": 2
+      },
+      {
         "Id": "8558277d-5ac9-4c66-94c4-44516e0fb08e",
         "Name": "QOL Tweaks",
         "Description": "",
@@ -4217,13 +4357,14 @@
           "b777fcc6-8bba-4be2-8773-158a6ac1a609"
         ],
         "Enabled": true,
-        "Position": 2
+        "Position": 3
       }
     ],
     "ToggleStates": {
       "d72b14a6-793d-4399-8c48-73e11f2dd138": true,
       "7a6de73f-f077-446a-92ac-0e8ce0a6a919": false,
-      "8558277d-5ac9-4c66-94c4-44516e0fb08e": false
+      "8558277d-5ac9-4c66-94c4-44516e0fb08e": false,
+      "50f6dc95-ddcb-5495-9813-8e2e3e84677d": true
     }
   }
 }

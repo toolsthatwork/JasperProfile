@@ -2,7 +2,7 @@
   "Id": "Jasper_MNK_Events",
   "Name": "Jasper MNK Events",
   "Description": "General-purpose Monk event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.1",
+  "Version": "0.1.2",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -144,6 +144,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
       "ModifiedAt": "2026-06-25T07:45:00.000Z"
+    },
+    {
+      "Id": "386f189d-be32-5e81-ac93-01c87d7e872c",
+      "Name": "Reset Toggles",
+      "Description": "Restores normal Monk ACR toggles while safely out of combat.",
+      "EventType": "OnTick",
+      "LogicId": "eafe043b-aa17-5301-ba32-2124cc2a3128",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T18:00:00.000Z"
     }
   ],
   "Conditions": [
@@ -4130,10 +4144,126 @@
       "ModifiedAt": "2026-06-25T07:45:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
+    },
+    {
+      "Id": "eafe043b-aa17-5301-ba32-2124cc2a3128",
+      "Name": "Reset Toggles",
+      "Description": "Restores normal Monk ACR toggles while safely out of combat.",
+      "LogicType": 1,
+      "ConditionIds": [
+        "34651e59-5df2-4098-84f0-e1305142c3bc",
+        "c8033a6f-5236-4f2a-aa8e-41043726f372"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "e05d203b-02de-5749-b049-af6c5d18ba95",
+          "ActionId": 0,
+          "SkillbarId": "Brotherhood",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "3474dc4c-7b76-5dba-88f2-97512837bbbe",
+          "ActionId": 0,
+          "SkillbarId": "RiddleOfFire",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "3956d4a9-c731-5179-a3ad-015dc376a3b7",
+          "ActionId": 0,
+          "SkillbarId": "PerfectBalance",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "11b2b94f-5254-5b37-8244-4c5231aca6e8",
+          "ActionId": 0,
+          "SkillbarId": "RiddleOfWind",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T18:00:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Toggles"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T13:00:00.000Z",
+  "ModifiedAt": "2026-06-26T18:00:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
@@ -4172,6 +4302,16 @@
         "Position": 1
       },
       {
+        "Id": "c1391e5e-2a3c-5096-8b8c-7bbe3f9b2a93",
+        "Name": "Reset Toggles",
+        "Description": "",
+        "EventIds": [
+          "386f189d-be32-5e81-ac93-01c87d7e872c"
+        ],
+        "Enabled": true,
+        "Position": 2
+      },
+      {
         "Id": "06450634-9f97-4698-9dff-3124c30781c4",
         "Name": "QOL Tweaks",
         "Description": "",
@@ -4179,13 +4319,14 @@
           "2bdba591-89e8-4217-8bc7-da7dfd8356b0"
         ],
         "Enabled": true,
-        "Position": 2
+        "Position": 3
       }
     ],
     "ToggleStates": {
       "67bca09e-b719-47fb-8c21-fc8342ddc0d9": true,
       "306456fb-643e-4e5c-bde6-84a3c285fb1c": false,
-      "06450634-9f97-4698-9dff-3124c30781c4": false
+      "06450634-9f97-4698-9dff-3124c30781c4": false,
+      "c1391e5e-2a3c-5096-8b8c-7bbe3f9b2a93": true
     }
   }
 }

@@ -2,7 +2,7 @@
   "Id": "Jasper_PCT_Events",
   "Name": "Jasper PCT Events",
   "Description": "General-purpose Pictomancer event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.1",
+  "Version": "0.1.2",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -88,6 +88,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
       "ModifiedAt": "2026-06-25T07:45:00.000Z"
+    },
+    {
+      "Id": "51ae44cf-7a89-5abf-92d0-af7ecd09f9b2",
+      "Name": "Reset Toggles",
+      "Description": "Restores normal Pictomancer ACR toggles while safely out of combat.",
+      "EventType": "OnTick",
+      "LogicId": "800110c7-6bdf-5a91-b93c-d0861e532851",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T18:00:00.000Z"
     }
   ],
   "Conditions": [
@@ -3063,10 +3077,76 @@
       "ModifiedAt": "2026-06-25T07:45:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Holds"
+    },
+    {
+      "Id": "800110c7-6bdf-5a91-b93c-d0861e532851",
+      "Name": "Reset Toggles",
+      "Description": "Restores normal Pictomancer ACR toggles while safely out of combat.",
+      "LogicType": 1,
+      "ConditionIds": [
+        "2b75c1d7-3894-4f5e-b6ca-c2f0073c09b0",
+        "84384983-0c72-494d-a614-586441e1c266"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "5c34f47b-c89b-531c-ae7f-07ebe6823e7b",
+          "ActionId": 0,
+          "SkillbarId": "StarryMuse",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "fe0a4dcd-e45a-56e1-bf1a-eef8627f4cdf",
+          "ActionId": 0,
+          "SkillbarId": "Mortifs",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T18:00:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Toggles"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T16:00:00.000Z",
+  "ModifiedAt": "2026-06-26T18:00:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
@@ -3101,6 +3181,16 @@
         "Position": 1
       },
       {
+        "Id": "acca2acd-23fe-51f6-871c-11594ce321ea",
+        "Name": "Reset Toggles",
+        "Description": "",
+        "EventIds": [
+          "51ae44cf-7a89-5abf-92d0-af7ecd09f9b2"
+        ],
+        "Enabled": true,
+        "Position": 2
+      },
+      {
         "Id": "230bb08b-b5ee-4bab-878d-7f4df9d14c74",
         "Name": "QOL Tweaks",
         "Description": "Sprint OOC",
@@ -3108,13 +3198,14 @@
           "5eb657d5-4560-46e1-97db-c438b5c75f86"
         ],
         "Enabled": true,
-        "Position": 2
+        "Position": 3
       }
     ],
     "ToggleStates": {
       "cbcc9a60-3050-4fa6-824f-85feeceb09bf": true,
       "7c2567a6-fc6e-42a7-bfd2-8f87d15eee22": false,
-      "230bb08b-b5ee-4bab-878d-7f4df9d14c74": false
+      "230bb08b-b5ee-4bab-878d-7f4df9d14c74": false,
+      "acca2acd-23fe-51f6-871c-11594ce321ea": true
     }
   }
 }

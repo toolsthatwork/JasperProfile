@@ -2,7 +2,7 @@
   "Id": "Jasper_PLD_Events",
   "Name": "Jasper PLD Events",
   "Description": "General-purpose Paladin event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.1",
+  "Version": "0.1.2",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -270,6 +270,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T09:35:00.000Z",
       "ModifiedAt": "2026-06-26T09:35:00.000Z"
+    },
+    {
+      "Id": "38302ecc-8c9c-5ed9-91b9-177e0b21d6c7",
+      "Name": "Reset Toggles",
+      "Description": "Restores normal Paladin ACR toggles while safely out of combat.",
+      "EventType": "OnTick",
+      "LogicId": "4d659241-53e4-5150-840a-ebc81e1a285b",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T18:00:00.000Z"
     }
   ],
   "Conditions": [
@@ -8285,10 +8299,101 @@
       "ModifiedAt": "2026-06-26T09:35:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "QOL"
+    },
+    {
+      "Id": "4d659241-53e4-5150-840a-ebc81e1a285b",
+      "Name": "Reset Toggles",
+      "Description": "Restores normal Paladin ACR toggles while safely out of combat.",
+      "LogicType": 1,
+      "ConditionIds": [
+        "2f32695f-a200-43cd-8f8b-386ad31e5ba1",
+        "6bbe06a6-2b6b-4939-a845-284fea9dee25"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "70e5e4de-4b8b-5e97-91c9-b06cb2e678eb",
+          "ActionId": 0,
+          "SkillbarId": "BurnBoss",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 8,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "d464d7e6-ee26-5e2a-9f63-96a2545ffad6",
+          "ActionId": 0,
+          "SkillbarId": "FoF",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "b20c02bb-ae6a-59df-8b91-e7e1d94ab221",
+          "ActionId": 0,
+          "SkillbarId": "Requiescat",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T18:00:00.000Z",
+      "ModifiedAt": "2026-06-26T18:00:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Toggles"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T09:35:00.000Z",
+  "ModifiedAt": "2026-06-26T18:00:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
@@ -8334,6 +8439,16 @@
         "Position": 1
       },
       {
+        "Id": "08a2b5a2-aebc-52ac-8283-25aee6d64ccc",
+        "Name": "Reset Toggles",
+        "Description": "",
+        "EventIds": [
+          "38302ecc-8c9c-5ed9-91b9-177e0b21d6c7"
+        ],
+        "Enabled": true,
+        "Position": 2
+      },
+      {
         "Id": "74859376-0103-4a96-b2fe-599fa8dec17d",
         "Name": "QOL Tweaks",
         "Description": "Auto sprint, anti knockback",
@@ -8341,7 +8456,7 @@
           "f2cf7f39-da49-47fe-9abc-f42d72bc6a03"
         ],
         "Enabled": true,
-        "Position": 2
+        "Position": 3
       },
       {
         "Id": "5554032f-a0bd-42e0-9c05-1067d8be0630",
@@ -8352,14 +8467,15 @@
           "jps-pld-event-stance"
         ],
         "Enabled": true,
-        "Position": 3
+        "Position": 4
       }
     ],
     "ToggleStates": {
       "86328401-a96a-4fad-aa31-582aa2753fb2": true,
       "ef8895fc-b837-4c29-80b0-81f4e49dba27": false,
       "74859376-0103-4a96-b2fe-599fa8dec17d": false,
-      "5554032f-a0bd-42e0-9c05-1067d8be0630": true
+      "5554032f-a0bd-42e0-9c05-1067d8be0630": true,
+      "08a2b5a2-aebc-52ac-8283-25aee6d64ccc": true
     }
   }
 }
