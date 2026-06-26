@@ -3,7 +3,7 @@
   "Name": "Jasper WHM Events",
   "Description": "Damage-forward White Mage event profile for general PvE. Lets ACR DPS flow, then uses oGCDs and emergency GCD heals when recovery is actually needed.",
   "CreatedAt": "2026-06-25T00:31:21.892963Z",
-  "ModifiedAt": "2026-06-26T14:00:00.000Z",
+  "ModifiedAt": "2026-06-26T18:30:00.000Z",
   "Events": [
     {
       "Id": "whm-event-01",
@@ -386,7 +386,7 @@
     {
       "Id": "whm-event-24",
       "Name": "[24] Regen",
-      "Description": "Tank <= 40% HP",
+      "Description": "Tank <= 60% HP",
       "EventType": "OnTick",
       "LogicId": "whm-logic-24",
       "ThrottleSameEvent": 2.5,
@@ -5555,12 +5555,12 @@
     },
     {
       "Id": "e260f8a8-58f5-41db-8874-ef7268ad3b24",
-      "Name": "No Divine Benesion",
+      "Name": "No Divine Benison",
       "Description": "",
       "SubConditions": [
         {
           "Id": "ec370086-5b53-411f-94f7-c360abcaa096",
-          "Name": "No Divine Benesion",
+          "Name": "No Divine Benison",
           "Description": "",
           "TargetType": 14,
           "ConditionType": 5,
@@ -12778,7 +12778,7 @@
     {
       "Id": "whm-logic-24",
       "Name": "[24] Regen",
-      "Description": "Tank <= 40% HP",
+      "Description": "Tank <= 60% HP",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
@@ -13505,5 +13505,5 @@
       "ac53d867-c3ab-400e-a0b9-48e3888eafba": false
     }
   },
-  "Version": "1.0.23"
+  "Version": "1.0.24"
 }

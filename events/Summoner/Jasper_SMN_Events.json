@@ -2,7 +2,7 @@
   "Id": "Jasper_SMN_Events",
   "Name": "Jasper SMN Events",
   "Description": "General-purpose Summoner event profile for PvE. Keeps automatic Addle/Radiant Aegis support, reset/on-wipe toggles, optional dungeon cooldown holds, Rekindle support, and optional out-of-combat Sprint.",
-  "Version": "0.1.3",
+  "Version": "0.1.4",
   "AIOEventVersion": 1,
   "Events": [
     {
@@ -63,7 +63,7 @@
     },
     {
       "Id": "5eb657d5-4560-46e1-97db-c438b5c75f86",
-      "Name": "Sprint Out of Combat",
+      "Name": "Sprint OOC",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "1fec4a8c-eb6b-4c06-ba73-f65c5c107ada",
@@ -3668,7 +3668,7 @@
     },
     {
       "Id": "1fec4a8c-eb6b-4c06-ba73-f65c5c107ada",
-      "Name": "Sprint Out of Combat",
+      "Name": "Sprint OOC",
       "Description": "",
       "LogicType": 0,
       "ConditionIds": [
@@ -4016,7 +4016,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T04:30:00.000Z",
-  "ModifiedAt": "2026-06-26T16:00:00.000Z",
+  "ModifiedAt": "2026-06-26T18:30:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
@@ -4029,15 +4029,24 @@
     "Items": [
       {
         "Id": "dedad1cf-a485-4a48-acad-49fb91a8683b",
-        "Name": "Reset Opener",
+        "Name": "Reset Toggles",
         "Description": "",
         "EventIds": [
-          "dc3da58d-3ab3-494e-ae38-326a2cdfdb48",
           "00d16d04-f207-4f24-b009-d93fd5b0e383",
           "cd39fad5-295b-4496-b5fe-c2a95e854171"
         ],
         "Enabled": true,
         "Position": 0
+      },
+      {
+        "Id": "c3a02d42-9e35-46c8-9124-86c4e2a02f8c",
+        "Name": "OnWipe Opener",
+        "Description": "",
+        "EventIds": [
+          "dc3da58d-3ab3-494e-ae38-326a2cdfdb48"
+        ],
+        "Enabled": true,
+        "Position": 1
       },
       {
         "Id": "de77b8fe-ec8b-4d2c-be54-d992580c230c",
@@ -4047,7 +4056,7 @@
           "56bcf09f-5bc9-4227-8b84-614a98bc4cc8"
         ],
         "Enabled": true,
-        "Position": 1
+        "Position": 2
       },
       {
         "Id": "6d63594b-b0b6-40f2-9cc1-929a687417b1",
@@ -4057,7 +4066,7 @@
           "815e56f3-03bc-4769-83d0-8cfde286f778"
         ],
         "Enabled": true,
-        "Position": 2
+        "Position": 3
       },
       {
         "Id": "7e8d3ecd-600a-4b94-becf-75a341a70d0f",
@@ -4070,7 +4079,7 @@
           "7ded2bec-379e-4bfc-9adf-00e51f13217e"
         ],
         "Enabled": true,
-        "Position": 3
+        "Position": 4
       },
       {
         "Id": "82b93425-14ab-4020-97f4-f443d7f0ed85",
@@ -4080,11 +4089,12 @@
           "5eb657d5-4560-46e1-97db-c438b5c75f86"
         ],
         "Enabled": true,
-        "Position": 4
+        "Position": 5
       }
     ],
     "ToggleStates": {
       "dedad1cf-a485-4a48-acad-49fb91a8683b": true,
+      "c3a02d42-9e35-46c8-9124-86c4e2a02f8c": false,
       "de77b8fe-ec8b-4d2c-be54-d992580c230c": true,
       "6d63594b-b0b6-40f2-9cc1-929a687417b1": true,
       "7e8d3ecd-600a-4b94-becf-75a341a70d0f": false,

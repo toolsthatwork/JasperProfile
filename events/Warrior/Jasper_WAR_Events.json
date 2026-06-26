@@ -3,7 +3,7 @@
   "Name": "Jasper WAR Events",
   "Description": "General-purpose Warrior event profile for PvE. Event-driven dungeon mitigation, Bloodwhetting recovery, emergency Holmgang, raidwide/tankbuster mitigation, and optional co-tank support.",
   "CreatedAt": "2026-06-25T02:45:00.000Z",
-  "ModifiedAt": "2026-06-26T18:00:00.000Z",
+  "ModifiedAt": "2026-06-26T18:30:00.000Z",
   "Events": [
     {
       "Id": "f2daaf1d-c477-42b2-9db1-baa49330bfe3",
@@ -259,7 +259,7 @@
     },
     {
       "Id": "b0373abb-c4d5-4594-9f26-0083ad8855f5",
-      "Name": "Sprint Out of Combat",
+      "Name": "Sprint OOC",
       "Description": "Optional out-of-combat Sprint quality-of-life toggle. Disabled by default.",
       "EventType": "OnTick",
       "LogicId": "43418b5d-44c5-4225-a6c1-1bc8b60a812c",
@@ -8260,7 +8260,7 @@
     },
     {
       "Id": "43418b5d-44c5-4225-a6c1-1bc8b60a812c",
-      "Name": "Sprint Out of Combat",
+      "Name": "Sprint OOC",
       "Description": "Optional out-of-combat Sprint quality-of-life toggle. Disabled by default.",
       "LogicType": 0,
       "ConditionIds": [
@@ -8303,10 +8303,9 @@
       "Id": "df490efc-2236-5fdb-8bd7-5e2694f6d5b3",
       "Name": "Reset Toggles",
       "Description": "Restores normal Warrior ACR toggles while safely out of combat.",
-      "LogicType": 1,
+      "LogicType": 0,
       "ConditionIds": [
-        "c46f9224-0233-4302-a1d8-d09d6bd49f2b",
-        "9b3df71d-1a8a-45d3-9066-9c755d71f3d8"
+        "c46f9224-0233-4302-a1d8-d09d6bd49f2b"
       ],
       "ActionTriggers": [
         {
@@ -8600,5 +8599,5 @@
       "8e8ed715-37bf-5a02-ac28-adf8dd192c1a": true
     }
   },
-  "Version": "0.1.2"
+  "Version": "0.1.3"
 }
