@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_PLD_Events",
   "Name": "Jasper PLD Events",
-  "Description": "General-purpose Paladin event profile for PvE. Keeps dungeon mitigation, Sheltron/Intervention support, raidwide/tankbuster mitigation, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
-  "Version": "0.1.8",
+  "Description": "General-purpose Paladin event profile for PvE. Keeps dungeon mitigation, Sheltron/Intervention support, raidwide/tankbuster mitigation, Interject utility, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
+  "Version": "0.1.9",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -172,6 +172,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
       "ModifiedAt": "2026-06-25T07:45:00.000Z"
+    },
+    {
+      "Id": "jps-pld-event-interject",
+      "Name": "Interject Interrupt",
+      "Description": "Uses Interject on interruptible enemy casts in range.",
+      "EventType": "OnTick",
+      "LogicId": "jps-pld-logic-interject",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T01:45:00.000Z",
+      "ModifiedAt": "2026-06-27T01:45:00.000Z"
     },
     {
       "Id": "d52feb04-a7b6-40de-95be-ee550fab81f2",
@@ -8168,6 +8182,48 @@
       "Category": "Mitigation"
     },
     {
+      "Id": "jps-pld-logic-interject",
+      "Name": "Interject Interrupt",
+      "Description": "Uses Interject on interruptible enemy casts in range.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "7c0e7a12-97a2-41c0-88c2-9c79dfa31438",
+        "0d37c625-75ad-4b52-883f-fbf18be36af6",
+        "2b47e9e7-c7f3-42a3-a397-718b14200121"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-pld-trigger-interject",
+          "ActionId": 7538,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 1,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-27T01:45:00.000Z",
+      "ModifiedAt": "2026-06-27T01:45:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Mitigation"
+    },
+    {
       "Id": "661b624b-0785-4336-8c52-4112b59e1559",
       "Name": "Sprint OOC",
       "Description": "",
@@ -8942,6 +8998,7 @@
           "d52feb04-a7b6-40de-95be-ee550fab81f2",
           "f2daaf1d-c477-42b2-9db1-baa49330bfe3",
           "6096b962-0a04-41f7-bfc0-361d76183c83",
+          "jps-pld-event-interject",
           "78f2c611-1379-41d2-a2bd-26f59e78abb9",
           "f5a1dd49-91d4-40ed-8515-2a642235183a",
           "71df048b-a767-46bf-ae48-f6b7ec90e9d5"

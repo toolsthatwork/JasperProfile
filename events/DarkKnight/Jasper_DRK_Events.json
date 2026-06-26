@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_DRK_Events",
   "Name": "Jasper DRK Events",
-  "Description": "General-purpose Dark Knight event profile for PvE. Keeps dungeon mitigation, raidwide/tankbuster mitigation, Living Dead emergency support, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
-  "Version": "0.1.7",
+  "Description": "General-purpose Dark Knight event profile for PvE. Keeps dungeon mitigation, raidwide/tankbuster mitigation, Interject utility, Living Dead emergency support, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
+  "Version": "0.1.8",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -130,6 +130,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
       "ModifiedAt": "2026-06-25T07:45:00.000Z"
+    },
+    {
+      "Id": "jps-drk-event-interject",
+      "Name": "Interject Interrupt",
+      "Description": "Uses Interject on interruptible enemy casts in range.",
+      "EventType": "OnTick",
+      "LogicId": "jps-drk-logic-interject",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T01:45:00.000Z",
+      "ModifiedAt": "2026-06-27T01:45:00.000Z"
     },
     {
       "Id": "791af853-2570-4b4f-a738-2ef9784b5aca",
@@ -8351,6 +8365,48 @@
       "Category": "Mitigation"
     },
     {
+      "Id": "jps-drk-logic-interject",
+      "Name": "Interject Interrupt",
+      "Description": "Uses Interject on interruptible enemy casts in range.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "7c68d44d-39d1-4d88-b265-a4627666ba0d",
+        "e24876d3-fc3c-4a91-a500-a430fa934d9b",
+        "ca91341f-82c8-43f1-9f35-3cdf11c11c9b"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-drk-trigger-interject",
+          "ActionId": 7538,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 1,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-27T01:45:00.000Z",
+      "ModifiedAt": "2026-06-27T01:45:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Mitigation"
+    },
+    {
       "Id": "6545d528-735b-4db3-9dcd-be1bb825b8d6",
       "Name": "Sprint OOC",
       "Description": "",
@@ -9097,6 +9153,7 @@
           "78f2c611-1379-41d2-a2bd-26f59e78abb9",
           "969ee413-5f3f-4ce5-98dc-27d8ca75ed49",
           "cc1d539f-c249-4887-a23f-04a05e600984",
+          "jps-drk-event-interject",
           "791af853-2570-4b4f-a738-2ef9784b5aca",
           "a1877f11-e252-4cbb-a58c-eaed0bc214d7",
           "20780a45-6bb6-4a3f-a44d-0580317a0057",

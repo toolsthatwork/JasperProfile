@@ -1,7 +1,7 @@
 {
   "Id": "Jasper_WAR_Events",
   "Name": "Jasper WAR Events",
-  "Description": "General-purpose Warrior event profile for PvE. Keeps dungeon mitigation, Bloodwhetting recovery, emergency Holmgang support, MT/OT stance controls, wipe/zone reset scaffolding, raidwide/tankbuster mitigation, and optional co-tank support.",
+  "Description": "General-purpose Warrior event profile for PvE. Keeps dungeon mitigation, Bloodwhetting recovery, emergency Holmgang support, MT/OT stance controls, wipe/zone reset scaffolding, raidwide/tankbuster mitigation, Interject utility, and optional co-tank support.",
   "CreatedAt": "2026-06-25T02:45:00.000Z",
   "ModifiedAt": "2026-06-27T02:00:00.000Z",
   "Events": [
@@ -214,6 +214,20 @@
       "Filters": {},
       "CreatedAt": "2026-01-08T00:57:01.7615289Z",
       "ModifiedAt": "2026-06-26T19:30:00.000Z"
+    },
+    {
+      "Id": "jps-war-event-interject",
+      "Name": "Interject Interrupt",
+      "Description": "Uses Interject on interruptible enemy casts in range.",
+      "EventType": "OnTick",
+      "LogicId": "jps-war-logic-interject",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T01:45:00.000Z",
+      "ModifiedAt": "2026-06-27T01:45:00.000Z"
     },
     {
       "Id": "234d97cf-7897-447a-9f17-846f4e8b23d3",
@@ -9354,6 +9368,47 @@
       "Category": ""
     },
     {
+      "Id": "jps-war-logic-interject",
+      "Name": "Interject Interrupt",
+      "Description": "Uses Interject on interruptible enemy casts in range.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "b19ceaea-3470-4c60-a91b-abfa5131958b",
+        "309a790a-240d-4e2f-a0b3-7282cf6b717a"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-war-trigger-interject",
+          "ActionId": 7538,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 1,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-27T01:45:00.000Z",
+      "ModifiedAt": "2026-06-27T01:45:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Mitigation"
+    },
+    {
       "Id": "292957bd-440c-445d-b1d2-d71184a019bc",
       "Name": "Reprisal Mobs",
       "Description": "Uses Reprisal in large dungeon pulls when it is not already active.",
@@ -10244,7 +10299,8 @@
         "Name": "Stun Mob",
         "Description": "Uses low blow in packs, turn off for boss fights.",
         "EventIds": [
-          "72510d39-8a10-4784-a025-4d7880118358"
+          "72510d39-8a10-4784-a025-4d7880118358",
+          "jps-war-event-interject"
         ],
         "Enabled": true,
         "Position": 4
@@ -10440,5 +10496,5 @@
       "jps-war-qt-stance-mt": true
     }
   },
-  "Version": "0.1.10"
+  "Version": "0.1.11"
 }

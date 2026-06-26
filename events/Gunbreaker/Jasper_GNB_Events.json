@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_GNB_Events",
   "Name": "Jasper GNB Events",
-  "Description": "General-purpose Gunbreaker event profile for PvE. Keeps dungeon mitigation, Aurora/Heart of Corundum recovery, raidwide/tankbuster mitigation, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
-  "Version": "0.1.8",
+  "Description": "General-purpose Gunbreaker event profile for PvE. Keeps dungeon mitigation, Aurora/Heart of Corundum recovery, raidwide/tankbuster mitigation, Interject utility, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
+  "Version": "0.1.9",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -228,6 +228,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
       "ModifiedAt": "2026-06-25T07:45:00.000Z"
+    },
+    {
+      "Id": "jps-gnb-event-interject",
+      "Name": "Interject Interrupt",
+      "Description": "Uses Interject on interruptible enemy casts in range.",
+      "EventType": "OnTick",
+      "LogicId": "jps-gnb-logic-interject",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T01:45:00.000Z",
+      "ModifiedAt": "2026-06-27T01:45:00.000Z"
     },
     {
       "Id": "abbafd47-f2d3-497a-927e-dd8525c758df",
@@ -10046,6 +10060,48 @@
       "Category": "Mitigation"
     },
     {
+      "Id": "jps-gnb-logic-interject",
+      "Name": "Interject Interrupt",
+      "Description": "Uses Interject on interruptible enemy casts in range.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "739d1cc0-5ae4-46fe-84c1-5389ad525156",
+        "6809a916-b6e8-4aaa-9849-8bca4cecfc4f",
+        "3c3a3067-0e30-47a8-890c-941d33d1bf88"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-gnb-trigger-interject",
+          "ActionId": 7538,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 1,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-27T01:45:00.000Z",
+      "ModifiedAt": "2026-06-27T01:45:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Mitigation"
+    },
+    {
       "Id": "98fb393d-eda4-444b-b9e4-326aa69ddc36",
       "Name": "HoC Self",
       "Description": "",
@@ -10810,6 +10866,7 @@
           "c3f48c29-96d2-417e-8faa-94b7cdf8bff7",
           "2d9f0cb7-16be-4d7b-ac54-14d8b773c47e",
           "fbc2cea7-a2de-443d-8c3e-17b155de744b",
+          "jps-gnb-event-interject",
           "6e5dc482-9416-446e-b2eb-ac48cb8898de",
           "99ec2b38-d004-4782-bbc9-c950c6241dd6"
         ],
