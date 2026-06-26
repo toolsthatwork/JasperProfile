@@ -10,6 +10,7 @@
 - Added Red Mage very-low-threshold Vercure emergency fallback for synced/general content.
 - Added Paladin and Dark Knight stance helpers using the same on-wipe stance pattern as the existing tank baselines.
 - Added baseline event, timeline, and opener profile files for every combat job.
+- Added public testing status notes: White Mage is the main test profile, Warrior/Summoner/Scholar/Paladin are early test profiles, and the remaining jobs are work-in-progress baselines.
 - Added passive timeline coverage for standard PvE duty content while excluding Ultimate, PvP, Deep Dungeons, Treasure Hunt, Variant/Criterion/Another, field content, Gold Saucer, BLU-only Carnivale, and solo quest battles.
 - Updated White Mage DRK invulnerability handling so Walking Dead remains healable and Undead Rebirth is treated as recovered.
 - Added White Mage low-level emergency Cure and Medica fallbacks for Conjurer and synced-down White Mage content.
