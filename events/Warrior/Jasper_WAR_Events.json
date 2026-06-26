@@ -3,7 +3,7 @@
   "Name": "Jasper WAR Events",
   "Description": "General-purpose Warrior event profile for PvE. Event-driven dungeon mitigation, Bloodwhetting recovery, emergency Holmgang, raidwide/tankbuster mitigation, and optional co-tank support.",
   "CreatedAt": "2026-06-25T02:45:00.000Z",
-  "ModifiedAt": "2026-06-25T02:45:00.000Z",
+  "ModifiedAt": "2026-06-26T12:00:00.000Z",
   "Events": [
     {
       "Id": "f2daaf1d-c477-42b2-9db1-baa49330bfe3",
@@ -147,8 +147,8 @@
     },
     {
       "Id": "6faa69f2-c15d-4fdc-850e-76823035610f",
-      "Name": "Bloodwhetting",
-      "Description": "",
+      "Name": "Bloodwhetting / Raw Intuition",
+      "Description": "Uses Bloodwhetting, with Raw Intuition fallback for synced content.",
       "EventType": "OnTick",
       "LogicId": "2557472d-f661-4368-9eb2-1059343fcf12",
       "ThrottleSameEvent": 0.5,
@@ -157,7 +157,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-03T20:13:35.6221496Z",
-      "ModifiedAt": "2026-06-25T02:45:00.000Z"
+      "ModifiedAt": "2026-06-26T12:00:00.000Z"
     },
     {
       "Id": "2d80ee64-f724-4599-9e89-1e3cc4569aec",
@@ -7949,8 +7949,8 @@
     },
     {
       "Id": "2557472d-f661-4368-9eb2-1059343fcf12",
-      "Name": "Bloodwhetting",
-      "Description": "",
+      "Name": "Bloodwhetting / Raw Intuition",
+      "Description": "Uses Bloodwhetting, with Raw Intuition fallback for synced content.",
       "LogicType": 0,
       "ConditionIds": [
         "5af14793-c6c0-47cd-957c-eb8799f1fb15"
@@ -7980,10 +7980,35 @@
           "VariableStringValue": "",
           "VariableNumberValue": 0,
           "VariableOperation": 0
+        },
+        {
+          "Id": "jps-war-trigger-raw-intuition",
+          "ActionId": 3551,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 1,
+          "TargetType": 0,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
         }
       ],
       "CreatedAt": "2026-01-03T20:08:36.0381395Z",
-      "ModifiedAt": "2026-06-25T02:45:00.000Z",
+      "ModifiedAt": "2026-06-26T12:00:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Mitigation"
     },
@@ -8334,7 +8359,7 @@
       {
         "Id": "56cf3809-9dfd-4c06-a4c8-f6a3378d019c",
         "Name": "Bloodwhetting",
-        "Description": "Bloodwhetting under 85 percent HP",
+        "Description": "Uses Bloodwhetting, with Raw Intuition fallback for synced content.",
         "EventIds": [
           "6faa69f2-c15d-4fdc-850e-76823035610f"
         ],
@@ -8484,5 +8509,5 @@
       "667aee03-347a-45dc-b89b-d0c67380b46b": false
     }
   },
-  "Version": "0.1.0"
+  "Version": "0.1.1"
 }

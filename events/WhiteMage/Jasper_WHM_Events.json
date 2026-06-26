@@ -3,7 +3,7 @@
   "Name": "Jasper WHM Events",
   "Description": "Damage-forward White Mage event profile for general PvE. Lets ACR DPS flow, then uses oGCDs and emergency GCD heals when recovery is actually needed.",
   "CreatedAt": "2026-06-25T00:31:21.892963Z",
-  "ModifiedAt": "2026-06-26T11:10:00.000Z",
+  "ModifiedAt": "2026-06-26T12:00:00.000Z",
   "Events": [
     {
       "Id": "whm-event-01",
@@ -246,7 +246,7 @@
     {
       "Id": "973941fd-edf9-4f15-94dd-9895b2221ebb",
       "Name": "[17.5] Afflatus Solace (Overcap) MT",
-      "Description": "Lily count = 3 AND during downtime/movement (avoid overcap)",
+      "Description": "Lily count = 3 AND main tank HP <= 80%.",
       "EventType": "OnTick",
       "LogicId": "ed78a352-2f54-4da5-8fae-a46f5fe69ce6",
       "ThrottleSameEvent": 2.5,
@@ -255,12 +255,12 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-02T21:43:02.9001535Z",
-      "ModifiedAt": "2026-06-25T00:33:56.711433Z"
+      "ModifiedAt": "2026-06-26T12:00:00.000Z"
     },
     {
       "Id": "whm-event-18",
       "Name": "[18] Afflatus Rapture (Overcap)",
-      "Description": "Lily count = 3 AND during downtime/movement (avoid overcap)",
+      "Description": "Lily count = 3 AND party HP <= 80%.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-18",
       "ThrottleSameEvent": 2.5,
@@ -269,7 +269,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-02T05:48:46.0606518Z",
-      "ModifiedAt": "2026-06-25T00:33:56.7114334Z"
+      "ModifiedAt": "2026-06-26T12:00:00.000Z"
     },
     {
       "Id": "dfd8585f-c5bd-4e3c-93bd-ef14267356f2",
@@ -301,8 +301,8 @@
     },
     {
       "Id": "whm-event-20",
-      "Name": "[20] Afflatus Solace (Overcap)",
-      "Description": "Lily count = 3 AND during downtime/movement (avoid overcap)",
+      "Name": "[20] Afflatus Solace (ST Overcap)",
+      "Description": "Lily count = 3 AND a party member HP <= 60%.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-20",
       "ThrottleSameEvent": 2.5,
@@ -311,7 +311,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-02T05:48:46.0606563Z",
-      "ModifiedAt": "2026-06-25T00:33:56.7114349Z"
+      "ModifiedAt": "2026-06-26T12:00:00.000Z"
     },
     {
       "Id": "6b03390f-7efa-4f33-b480-fa97520c4904",
@@ -11903,7 +11903,7 @@
     {
       "Id": "ed78a352-2f54-4da5-8fae-a46f5fe69ce6",
       "Name": "[17.5] Afflatus Solace (Overcap) MT",
-      "Description": "Lily count = 3 AND during downtime/movement (avoid overcap) if MT low",
+      "Description": "Lily count = 3 AND main tank HP <= 80%.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
@@ -11938,18 +11938,19 @@
         }
       ],
       "CreatedAt": "2026-01-02T21:41:54.227119Z",
-      "ModifiedAt": "2026-01-02T21:42:49.8340493Z",
+      "ModifiedAt": "2026-06-26T12:00:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": ""
     },
     {
       "Id": "whm-logic-18",
       "Name": "[18] Afflatus Rapture (Overcap)",
-      "Description": "Lily count = 3 AND during downtime/movement (avoid overcap)",
+      "Description": "Lily count = 3 AND party HP <= 80%.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
-        "06c5e5d0-3271-4bdc-8231-a012469cc003"
+        "06c5e5d0-3271-4bdc-8231-a012469cc003",
+        "1f90a337-dc92-4d1e-a116-93bcdc6f06ed"
       ],
       "ActionTriggers": [
         {
@@ -11979,7 +11980,7 @@
         }
       ],
       "CreatedAt": "2026-01-02T05:36:33.5920389Z",
-      "ModifiedAt": "2026-01-02T05:36:33.5920389Z",
+      "ModifiedAt": "2026-06-26T12:00:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": ""
     },
@@ -12071,12 +12072,13 @@
     },
     {
       "Id": "whm-logic-20",
-      "Name": "[20] Afflatus Solace (Overcap)",
-      "Description": "Lily count = 3 AND during downtime/movement (avoid overcap)",
+      "Name": "[20] Afflatus Solace (ST Overcap)",
+      "Description": "Lily count = 3 AND a party member HP <= 60%.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
-        "06c5e5d0-3271-4bdc-8231-a012469cc003"
+        "06c5e5d0-3271-4bdc-8231-a012469cc003",
+        "ce4c5ebf-a5da-42e7-988a-eb0c7fb94e92"
       ],
       "ActionTriggers": [
         {
@@ -12086,7 +12088,7 @@
           "TTSText": "",
           "TriggerType": 0,
           "LogicOperator": 0,
-          "TargetType": 3,
+          "TargetType": 18,
           "TargetSelectionStrategy": 0,
           "SkipBuffId": 0,
           "TargetOperation": 0,
@@ -12106,7 +12108,7 @@
         }
       ],
       "CreatedAt": "2026-01-02T05:36:33.5920462Z",
-      "ModifiedAt": "2026-01-02T05:36:33.5920462Z",
+      "ModifiedAt": "2026-06-26T12:00:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": ""
     },
@@ -13005,5 +13007,5 @@
       "6da1e96f-4302-4942-8d76-88ad4842f270": true
     }
   },
-  "Version": "1.0.20"
+  "Version": "1.0.21"
 }

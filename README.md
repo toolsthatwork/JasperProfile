@@ -41,7 +41,7 @@ Installation instructions are available in [INSTALLATION.md](INSTALLATION.md).
 
 Recent profile updates are tracked in [CHANGELOG.md](CHANGELOG.md).
 
-White Mage is healing-first for general PvE, with raise, MP, movement, DRK invulnerability recovery handling, and damage-when-safe behavior. Warrior and the other tank baselines include event-driven dungeon mitigation, emergency invuln support, raidwide and tankbuster mitigation, and optional co-tank support where available. DPS baselines focus on safe event automation such as mitigation, self-healing, reset toggles, optional cooldown holds, and movement quality-of-life.
+White Mage is healing-first for general PvE, with DRK invulnerability recovery handling, cleanse support, synced emergency fallbacks, and damage-when-safe behavior. Warrior and the other tank baselines include event-driven dungeon mitigation, emergency invuln support, raidwide and tankbuster mitigation, and optional co-tank support where available. DPS baselines focus on safe event automation such as mitigation, self-healing, reset toggles, optional cooldown holds, and movement quality-of-life.
 
 Timeline profiles cover standard duty content for dungeons, trials, raids, alliance raids, Unreal, Extreme trials, Normal raids, Savage raids, and Chaotic alliance duties where available. General timelines are passive coverage shells and do not force scripted casts; dungeons, roulettes, and normal duties are handled by event reactions plus normal ACR priorities. Fight-specific scripted timelines should be split out separately when they are validated for Savage or similar content. Ultimate, PvP, Deep Dungeons, Treasure Hunt, Variant/Criterion/Another, field content, Gold Saucer, BLU-only Carnivale, and solo quest battles are excluded.
 

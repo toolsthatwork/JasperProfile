@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Tightened White Mage lily-overcap events so they require real HP recovery targets, and cleaned the WHM passive timeline shell.
+- Added Warrior Raw Intuition fallback to the Bloodwhetting helper for synced content.
+- Gated Summoner Rekindle MT behind main-tank HP so it is not spent immediately on combat start.
 - Polished White Mage emergency healing so Afflatus Solace is used immediately for low tank/party HP even when Afflatus Misery is ready, and restored Divine Caress post-AOE under the AOE mitigation toggle.
 - Converted the WHM general timeline to a passive shell: all remaining scripted timeline sequences were removed so roulettes/general duties rely on events and ACR priorities.
 - Retuned White Mage for DPS flow: removed forced GCD-heal timeline calls and made ST Regen/Cure/Cure II emergency-only.
