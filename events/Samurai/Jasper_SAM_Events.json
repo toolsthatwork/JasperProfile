@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_SAM_Events",
   "Name": "Jasper SAM Events",
-  "Description": "General-purpose Samurai event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.7",
+  "Description": "General-purpose Samurai event profile for PvE. Keeps role mitigation, Tengentsu recovery, conservative self-heal recovery, optional cooldown holds, wipe/zone reset scaffolding, and optional out-of-combat Sprint/Hagakure for roulette-safe play.",
+  "Version": "0.1.8",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -200,6 +200,34 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T18:00:00.000Z",
       "ModifiedAt": "2026-06-26T19:15:00.000Z"
+    },
+    {
+      "Id": "jps-sam-event-reset-zone",
+      "Name": "Reset Toggles Zone Change",
+      "Description": "Restores default Samurai toggles after zone changes.",
+      "EventType": "OnZoneChange",
+      "LogicId": "d8d6e27f-665b-52ba-8f1a-d5ea00020bcd",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T00:45:00.000Z",
+      "ModifiedAt": "2026-06-27T00:45:00.000Z"
+    },
+    {
+      "Id": "jps-sam-event-reset-wipe",
+      "Name": "Reset Toggles Wipe",
+      "Description": "Restores default Samurai toggles after wipes.",
+      "EventType": "OnWipe",
+      "LogicId": "d8d6e27f-665b-52ba-8f1a-d5ea00020bcd",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T00:45:00.000Z",
+      "ModifiedAt": "2026-06-27T00:45:00.000Z"
     },
     {
       "Id": "jps-sam-event-feint-tb",
@@ -668,12 +696,12 @@
     },
     {
       "Id": "2deb9cfc-deb8-4619-9dff-5d393fa4cf36",
-      "Name": "Second Wind <= 40%",
-      "Description": "",
+      "Name": "Second Wind <= 50%",
+      "Description": "Self HP threshold for Second Wind use.",
       "SubConditions": [
         {
           "Id": "38066d92-462e-421d-812d-a8d53d4c03d5",
-          "Name": "Second Wind <= 40%",
+          "Name": "Second Wind <= 50%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -696,7 +724,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 40,
+              "Percentage": 50,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -884,12 +912,12 @@
     },
     {
       "Id": "b635c655-1351-487a-9042-6b4ed9b363ec",
-      "Name": "Bloodbath",
-      "Description": "",
+      "Name": "Self HP <= 70%",
+      "Description": "Self HP threshold for Bloodbath use.",
       "SubConditions": [
         {
           "Id": "774b9c5c-0287-4f46-b369-ce4cacb31022",
-          "Name": "Bloodbath",
+          "Name": "Self HP <= 70%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -912,7 +940,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 60,
+              "Percentage": 70,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -5913,7 +5941,9 @@
         "Name": "Reset Toggles",
         "Description": "",
         "EventIds": [
-          "b61265b1-4881-5be6-a2ec-70d825afb6ed"
+          "b61265b1-4881-5be6-a2ec-70d825afb6ed",
+          "jps-sam-event-reset-zone",
+          "jps-sam-event-reset-wipe"
         ],
         "Enabled": true,
         "Position": 2
