@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Cleaned stale public profile labels and descriptions across tanks plus selected healer/caster utilities, including corrected Dark Knight Oblation support text and clearer cooldown-hold/reset toggle wording.
 - Added White Mage wipe/zone reset hooks so the reference profile uses the same reset scaffolding as the broader public profile set.
 - Polished Summoner and Reaper reset consistency: Summoner now restores defaults after wipes, and Reaper gained zone-change reset coverage plus refreshed public profile metadata.
 - Polished healer recovery/reset handling: Astrologian now prioritizes MT Celestial Intersection and later emergency-only Benefic fallbacks, while Astrologian, Scholar, and Sage gained wipe/zone reset scaffolding.

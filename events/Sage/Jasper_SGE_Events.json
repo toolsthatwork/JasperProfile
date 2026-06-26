@@ -2,7 +2,7 @@
   "Id": "Jasper_SGE_Events",
   "Name": "Jasper SGE Events",
   "Description": "General-purpose Sage event profile for PvE. Keeps Kardia/Addersgall recovery, oGCD-first tank support, emergency GCD fallbacks, roulette-safe mitigation, cleanse support, and wipe/zone reset scaffolding.",
-  "Version": "0.1.7",
+  "Version": "0.1.8",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -2756,7 +2756,7 @@
     },
     {
       "Id": "244b1416-4a06-435a-98e3-1fa715eac8a1",
-      "Name": "No Kerochole",
+      "Name": "No Kerachole",
       "Description": "",
       "SubConditions": [
         {

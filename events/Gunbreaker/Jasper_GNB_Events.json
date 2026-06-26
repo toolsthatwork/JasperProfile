@@ -2,7 +2,7 @@
   "Id": "Jasper_GNB_Events",
   "Name": "Jasper GNB Events",
   "Description": "General-purpose Gunbreaker event profile for PvE. Keeps dungeon mitigation, Aurora/Heart of Corundum recovery, raidwide/tankbuster mitigation, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
-  "Version": "0.1.7",
+  "Version": "0.1.8",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -120,7 +120,7 @@
     {
       "Id": "08c75b56-6f6e-4b0c-88f7-7f58282253c4",
       "Name": "Hold @ 15",
-      "Description": "Holds Cooldowns at 15% boss HP. \nReccomended to use this for the first two dungeon bosses.",
+      "Description": "Holds cooldowns at 15% boss HP.\nRecommended for the first two dungeon bosses.",
       "EventType": "OnTick",
       "LogicId": "32b92184-c156-43a9-a727-ddacf1700a85",
       "ThrottleSameEvent": 0.5,
@@ -134,7 +134,7 @@
     {
       "Id": "5a47325b-00d5-4e36-8843-040393757b89",
       "Name": "Group Hold",
-      "Description": "Holds cooldowns at 40% HP, in packs greater than 3. \nReccomended to toggle this manually before AOE during dungeons for best results.",
+      "Description": "Holds cooldowns at 40% HP in packs of 3 or more enemies.\nRecommended to toggle manually before AoE dungeon pulls.",
       "EventType": "OnTick",
       "LogicId": "dd7b2b9f-2dd9-4727-bb92-aa51f5b78dbe",
       "ThrottleSameEvent": 0.5,
@@ -162,7 +162,7 @@
     {
       "Id": "78f2c611-1379-41d2-a2bd-26f59e78abb9",
       "Name": "HoC OT",
-      "Description": "Automatically gives HOC to cotank at 70%. This HP value is adjustable in conditions.",
+      "Description": "Uses Heart of Corundum on the lowest-health party member at the configured HP threshold.",
       "EventType": "OnTick",
       "LogicId": "3c5df484-39e7-4776-aa19-b24dfad7cf18",
       "ThrottleSameEvent": 0.5,
@@ -176,7 +176,7 @@
     {
       "Id": "b1a53fa1-f7f0-433b-ab95-0a01e86b12dd",
       "Name": "OT Aurora",
-      "Description": "Automatically grants your cotank aurora at 80% or less HP.",
+      "Description": "Uses Aurora on the lowest-health party member at 80% or less HP.",
       "EventType": "OnTick",
       "LogicId": "92c46192-3aab-4221-8b6a-15eab78c8047",
       "ThrottleSameEvent": 0.5,

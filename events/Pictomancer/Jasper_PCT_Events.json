@@ -2,7 +2,7 @@
   "Id": "Jasper_PCT_Events",
   "Name": "Jasper PCT Events",
   "Description": "General-purpose Pictomancer event profile for PvE. Keeps Addle/Tempera Coat support, optional cooldown holds, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
-  "Version": "0.1.7",
+  "Version": "0.1.8",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -3852,7 +3852,7 @@
       {
         "Id": "7c2567a6-fc6e-42a7-bfd2-8f87d15eee22",
         "Name": "Variable Holds",
-        "Description": "Toggle Reset, Group Hold, Boss Hold",
+        "Description": "Optional cooldown holds for dungeon pacing.",
         "EventIds": [
           "81c74a13-6a61-4d32-9186-0f4a32951de6",
           "37856e45-1ff5-4f17-8272-5bd6b9aca0b7",

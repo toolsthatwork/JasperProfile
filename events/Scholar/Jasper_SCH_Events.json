@@ -2,7 +2,7 @@
   "Id": "Jasper_SCH_Events",
   "Name": "Jasper SCH Events",
   "Description": "General-purpose Scholar event profile for PvE. Keeps fairy/Aetherflow recovery, emergency GCD fallbacks for synced content, roulette-safe mitigation, cleanse support, and wipe/zone reset scaffolding.",
-  "Version": "0.1.9",
+  "Version": "0.1.10",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -1974,7 +1974,7 @@
       "SubConditions": [
         {
           "Id": "3a211f18-ba13-4c1d-afbc-7b7c37bea0cd",
-          "Name": "MT Outta Combat",
+          "Name": "MT Out of Combat",
           "Description": "",
           "TargetType": 3,
           "ConditionType": 14,

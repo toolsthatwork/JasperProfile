@@ -2,7 +2,7 @@
   "Id": "Jasper_AST_Events",
   "Name": "Jasper AST Events",
   "Description": "General-purpose Astrologian event profile for PvE. Keeps damage-forward default toggles, oGCD-first single-target recovery, emergency-only GCD heals, roulette-safe mitigation, cleanse support, and wipe/zone reset scaffolding.",
-  "Version": "0.1.10",
+  "Version": "0.1.11",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -5726,7 +5726,7 @@
       "SubConditions": [
         {
           "Id": "3a211f18-ba13-4c1d-afbc-7b7c37bea0cd",
-          "Name": "MT Outta Combat",
+          "Name": "MT Out of Combat",
           "Description": "",
           "TargetType": 3,
           "ConditionType": 14,
@@ -8963,7 +8963,7 @@
       {
         "Id": "64f83670-b596-4bfd-88d0-526690c85f6f",
         "Name": "AOE",
-        "Description": "1ddr",
+        "Description": "AoE recovery and raidwide healing support.",
         "EventIds": [
           "c3ed6500-66c4-4ec4-b925-5edb070a9d35",
           "d01ea1e3-96d5-4f9a-ab92-f9088854d3b4",

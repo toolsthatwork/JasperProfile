@@ -2,7 +2,7 @@
   "Id": "Jasper_DRK_Events",
   "Name": "Jasper DRK Events",
   "Description": "General-purpose Dark Knight event profile for PvE. Keeps dungeon mitigation, raidwide/tankbuster mitigation, Living Dead emergency support, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
-  "Version": "0.1.6",
+  "Version": "0.1.7",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -64,7 +64,7 @@
     {
       "Id": "08c75b56-6f6e-4b0c-88f7-7f58282253c4",
       "Name": "Hold @ 15",
-      "Description": "Holds Cooldowns at 15% boss HP. \nReccomended to use this for the first two dungeon bosses.",
+      "Description": "Holds cooldowns at 15% boss HP.\nRecommended for the first two dungeon bosses.",
       "EventType": "OnTick",
       "LogicId": "32b92184-c156-43a9-a727-ddacf1700a85",
       "ThrottleSameEvent": 0.5,
@@ -78,7 +78,7 @@
     {
       "Id": "5a47325b-00d5-4e36-8843-040393757b89",
       "Name": "Group Hold",
-      "Description": "Holds cooldowns at 40% HP, in packs greater than 3. \nReccomended to toggle this manually before AOE during dungeons for best results.",
+      "Description": "Holds cooldowns at 40% HP in packs of 3 or more enemies.\nRecommended to toggle manually before AoE dungeon pulls.",
       "EventType": "OnTick",
       "LogicId": "dd7b2b9f-2dd9-4727-bb92-aa51f5b78dbe",
       "ThrottleSameEvent": 0.5,
@@ -92,7 +92,7 @@
     {
       "Id": "78f2c611-1379-41d2-a2bd-26f59e78abb9",
       "Name": "Auto Buddymit",
-      "Description": "Automatically gives HOC to cotank at 50%. This HP value is adjustable in conditions.",
+      "Description": "Uses Oblation on the lowest-health party member during support windows.",
       "EventType": "OnTick",
       "LogicId": "3c5df484-39e7-4776-aa19-b24dfad7cf18",
       "ThrottleSameEvent": 0.5,
