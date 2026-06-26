@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_PLD_Events",
   "Name": "Jasper PLD Events",
-  "Description": "General-purpose Paladin event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.6",
+  "Description": "General-purpose Paladin event profile for PvE. Keeps dungeon mitigation, Sheltron/Intervention support, raidwide/tankbuster mitigation, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
+  "Version": "0.1.7",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -286,6 +286,34 @@
       "ModifiedAt": "2026-06-26T19:15:00.000Z"
     },
     {
+      "Id": "jps-pld-event-reset-zone",
+      "Name": "Reset Toggles Zone Change",
+      "Description": "Restores default Paladin toggles after zone changes.",
+      "EventType": "OnZoneChange",
+      "LogicId": "4d659241-53e4-5150-840a-ebc81e1a285b",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T02:00:00.000Z",
+      "ModifiedAt": "2026-06-27T02:00:00.000Z"
+    },
+    {
+      "Id": "jps-pld-event-reset-wipe",
+      "Name": "Reset Toggles Wipe",
+      "Description": "Restores default Paladin toggles after wipes.",
+      "EventType": "OnWipe",
+      "LogicId": "4d659241-53e4-5150-840a-ebc81e1a285b",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T02:00:00.000Z",
+      "ModifiedAt": "2026-06-27T02:00:00.000Z"
+    },
+    {
       "Id": "jps-pld-event-stance-mt",
       "Name": "[OnWipe] Stance MT",
       "Description": "Main-tank stance setup for dungeons and roulettes.",
@@ -298,6 +326,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T10:20:00.000Z",
       "ModifiedAt": "2026-06-26T10:20:00.000Z"
+    },
+    {
+      "Id": "jps-pld-event-stance-mt-zone",
+      "Name": "Stance MT Zone Change",
+      "Description": "Restores main-tank stance setup after zone changes.",
+      "EventType": "OnZoneChange",
+      "LogicId": "jps-pld-logic-stance-mt",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T02:00:00.000Z",
+      "ModifiedAt": "2026-06-27T02:00:00.000Z"
     }
   ],
   "Conditions": [
@@ -8925,7 +8967,9 @@
         "Name": "Reset Toggles",
         "Description": "",
         "EventIds": [
-          "38302ecc-8c9c-5ed9-91b9-177e0b21d6c7"
+          "38302ecc-8c9c-5ed9-91b9-177e0b21d6c7",
+          "jps-pld-event-reset-zone",
+          "jps-pld-event-reset-wipe"
         ],
         "Enabled": true,
         "Position": 2
@@ -8965,7 +9009,8 @@
         "Name": "Stance MT",
         "Description": "Main-tank stance setup for dungeons and roulettes.",
         "EventIds": [
-          "jps-pld-event-stance-mt"
+          "jps-pld-event-stance-mt",
+          "jps-pld-event-stance-mt-zone"
         ],
         "Enabled": true,
         "Position": 5

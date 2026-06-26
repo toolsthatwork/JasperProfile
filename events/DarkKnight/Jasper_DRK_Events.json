@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_DRK_Events",
   "Name": "Jasper DRK Events",
-  "Description": "General-purpose DarkKnight event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.5",
+  "Description": "General-purpose Dark Knight event profile for PvE. Keeps dungeon mitigation, raidwide/tankbuster mitigation, Living Dead emergency support, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
+  "Version": "0.1.6",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -258,6 +258,34 @@
       "ModifiedAt": "2026-06-26T19:15:00.000Z"
     },
     {
+      "Id": "jps-drk-event-reset-zone",
+      "Name": "Reset Toggles Zone Change",
+      "Description": "Restores default Dark Knight toggles after zone changes.",
+      "EventType": "OnZoneChange",
+      "LogicId": "a29875b0-5ffa-5b21-878d-77cbdcceae99",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T02:00:00.000Z",
+      "ModifiedAt": "2026-06-27T02:00:00.000Z"
+    },
+    {
+      "Id": "jps-drk-event-reset-wipe",
+      "Name": "Reset Toggles Wipe",
+      "Description": "Restores default Dark Knight toggles after wipes.",
+      "EventType": "OnWipe",
+      "LogicId": "a29875b0-5ffa-5b21-878d-77cbdcceae99",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T02:00:00.000Z",
+      "ModifiedAt": "2026-06-27T02:00:00.000Z"
+    },
+    {
       "Id": "jps-drk-event-stance-mt",
       "Name": "[OnWipe] Stance MT",
       "Description": "Main-tank stance setup for dungeons and roulettes.",
@@ -270,6 +298,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T11:05:00.000Z",
       "ModifiedAt": "2026-06-26T11:05:00.000Z"
+    },
+    {
+      "Id": "jps-drk-event-stance-mt-zone",
+      "Name": "Stance MT Zone Change",
+      "Description": "Restores main-tank stance setup after zone changes.",
+      "EventType": "OnZoneChange",
+      "LogicId": "jps-drk-logic-stance-mt",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T02:00:00.000Z",
+      "ModifiedAt": "2026-06-27T02:00:00.000Z"
     }
   ],
   "Conditions": [
@@ -9081,7 +9123,9 @@
         "Name": "Reset Toggles",
         "Description": "",
         "EventIds": [
-          "100894a1-4ec8-5776-87ed-2ae0f6d72bd5"
+          "100894a1-4ec8-5776-87ed-2ae0f6d72bd5",
+          "jps-drk-event-reset-zone",
+          "jps-drk-event-reset-wipe"
         ],
         "Enabled": true,
         "Position": 2
@@ -9101,7 +9145,8 @@
         "Name": "Stance MT",
         "Description": "Main-tank stance setup for dungeons and roulettes.",
         "EventIds": [
-          "jps-drk-event-stance-mt"
+          "jps-drk-event-stance-mt",
+          "jps-drk-event-stance-mt-zone"
         ],
         "Enabled": true,
         "Position": 4

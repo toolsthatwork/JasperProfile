@@ -1,9 +1,9 @@
 {
   "Id": "Jasper_WAR_Events",
   "Name": "Jasper WAR Events",
-  "Description": "General-purpose Warrior event profile for PvE. Event-driven dungeon mitigation, Bloodwhetting recovery, emergency Holmgang, raidwide/tankbuster mitigation, and optional co-tank support.",
+  "Description": "General-purpose Warrior event profile for PvE. Keeps dungeon mitigation, Bloodwhetting recovery, emergency Holmgang support, MT/OT stance controls, wipe/zone reset scaffolding, raidwide/tankbuster mitigation, and optional co-tank support.",
   "CreatedAt": "2026-06-25T02:45:00.000Z",
-  "ModifiedAt": "2026-06-27T01:15:00.000Z",
+  "ModifiedAt": "2026-06-27T02:00:00.000Z",
   "Events": [
     {
       "Id": "f2daaf1d-c477-42b2-9db1-baa49330bfe3",
@@ -286,6 +286,34 @@
       "ModifiedAt": "2026-06-26T18:00:00.000Z"
     },
     {
+      "Id": "jps-war-event-reset-zone",
+      "Name": "Reset Toggles Zone Change",
+      "Description": "Restores default Warrior toggles after zone changes.",
+      "EventType": "OnZoneChange",
+      "LogicId": "df490efc-2236-5fdb-8bd7-5e2694f6d5b3",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T02:00:00.000Z",
+      "ModifiedAt": "2026-06-27T02:00:00.000Z"
+    },
+    {
+      "Id": "jps-war-event-reset-wipe",
+      "Name": "Reset Toggles Wipe",
+      "Description": "Restores default Warrior toggles after wipes.",
+      "EventType": "OnWipe",
+      "LogicId": "df490efc-2236-5fdb-8bd7-5e2694f6d5b3",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T02:00:00.000Z",
+      "ModifiedAt": "2026-06-27T02:00:00.000Z"
+    },
+    {
       "Id": "jps-war-event-flash-lowest",
       "Name": "Nascent Flash Lowest",
       "Description": "Optional Nascent Flash support for the lowest-health party member.",
@@ -312,6 +340,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T11:05:00.000Z",
       "ModifiedAt": "2026-06-26T11:05:00.000Z"
+    },
+    {
+      "Id": "jps-war-event-stance-mt-zone",
+      "Name": "Stance MT Zone Change",
+      "Description": "Restores main-tank stance setup after zone changes.",
+      "EventType": "OnZoneChange",
+      "LogicId": "jps-war-logic-stance-mt",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T02:00:00.000Z",
+      "ModifiedAt": "2026-06-27T02:00:00.000Z"
     },
     {
       "Id": "jps-war-event-thrill-emergency",
@@ -10345,7 +10387,9 @@
         "Name": "Reset Toggles",
         "Description": "",
         "EventIds": [
-          "a1ab7d6e-333b-5d19-9f0b-9b30f27fe8c1"
+          "a1ab7d6e-333b-5d19-9f0b-9b30f27fe8c1",
+          "jps-war-event-reset-zone",
+          "jps-war-event-reset-wipe"
         ],
         "Enabled": true,
         "Position": 19
@@ -10365,7 +10409,8 @@
         "Name": "Stance MT",
         "Description": "Main-tank stance setup for dungeons and roulettes.",
         "EventIds": [
-          "jps-war-event-stance-mt"
+          "jps-war-event-stance-mt",
+          "jps-war-event-stance-mt-zone"
         ],
         "Enabled": true,
         "Position": 15
@@ -10395,5 +10440,5 @@
       "jps-war-qt-stance-mt": true
     }
   },
-  "Version": "0.1.9"
+  "Version": "0.1.10"
 }

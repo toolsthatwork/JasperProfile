@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_GNB_Events",
   "Name": "Jasper GNB Events",
-  "Description": "General-purpose Gunbreaker event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.6",
+  "Description": "General-purpose Gunbreaker event profile for PvE. Keeps dungeon mitigation, Aurora/Heart of Corundum recovery, raidwide/tankbuster mitigation, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
+  "Version": "0.1.7",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -342,6 +342,34 @@
       "ModifiedAt": "2026-06-26T19:15:00.000Z"
     },
     {
+      "Id": "jps-gnb-event-reset-zone",
+      "Name": "Reset Toggles Zone Change",
+      "Description": "Restores default Gunbreaker toggles after zone changes.",
+      "EventType": "OnZoneChange",
+      "LogicId": "94ce5b93-58b4-5353-aed5-2161adfb4a7b",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T02:00:00.000Z",
+      "ModifiedAt": "2026-06-27T02:00:00.000Z"
+    },
+    {
+      "Id": "jps-gnb-event-reset-wipe",
+      "Name": "Reset Toggles Wipe",
+      "Description": "Restores default Gunbreaker toggles after wipes.",
+      "EventType": "OnWipe",
+      "LogicId": "94ce5b93-58b4-5353-aed5-2161adfb4a7b",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T02:00:00.000Z",
+      "ModifiedAt": "2026-06-27T02:00:00.000Z"
+    },
+    {
       "Id": "jps-gnb-event-stance-mt",
       "Name": "[OnWipe] Stance MT",
       "Description": "Main-tank stance setup for dungeons and roulettes.",
@@ -354,6 +382,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T11:05:00.000Z",
       "ModifiedAt": "2026-06-26T11:05:00.000Z"
+    },
+    {
+      "Id": "jps-gnb-event-stance-mt-zone",
+      "Name": "Stance MT Zone Change",
+      "Description": "Restores main-tank stance setup after zone changes.",
+      "EventType": "OnZoneChange",
+      "LogicId": "jps-gnb-logic-stance-mt",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T02:00:00.000Z",
+      "ModifiedAt": "2026-06-27T02:00:00.000Z"
     }
   ],
   "Conditions": [
@@ -10793,7 +10835,9 @@
         "Name": "Reset Toggles",
         "Description": "",
         "EventIds": [
-          "1f7fee8b-014d-568a-9a31-a5fd2d3fc199"
+          "1f7fee8b-014d-568a-9a31-a5fd2d3fc199",
+          "jps-gnb-event-reset-zone",
+          "jps-gnb-event-reset-wipe"
         ],
         "Enabled": true,
         "Position": 2
@@ -10835,7 +10879,8 @@
         "Name": "Stance MT",
         "Description": "Main-tank stance setup for dungeons and roulettes.",
         "EventIds": [
-          "jps-gnb-event-stance-mt"
+          "jps-gnb-event-stance-mt",
+          "jps-gnb-event-stance-mt-zone"
         ],
         "Enabled": true,
         "Position": 5
