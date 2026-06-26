@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Converted the WHM general timeline to a passive shell: all remaining scripted timeline sequences were removed so roulettes/general duties rely on events and ACR priorities.
 - Retuned White Mage for DPS flow: removed forced GCD-heal timeline calls and made ST Regen/Cure/Cure II emergency-only.
 - Added a level-sync support pass for early leveling through level 100 duty sync.
 - Added Esuna support to White Mage, Astrologian, and Scholar event profiles.
