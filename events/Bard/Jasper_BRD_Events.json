@@ -2,7 +2,7 @@
   "Id": "Jasper_BRD_Events",
   "Name": "Jasper BRD Events",
   "Description": "General-purpose Bard event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.4",
+  "Version": "0.1.5",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -172,6 +172,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T18:00:00.000Z",
       "ModifiedAt": "2026-06-26T19:15:00.000Z"
+    },
+    {
+      "Id": "jps-brd-event-minne-tb",
+      "Name": "Nature's Minne TB",
+      "Description": "Uses Nature's Minne on the main tank for incoming tankbusters.",
+      "EventType": "OnAllTankBuster",
+      "LogicId": "jps-brd-logic-minne-tb",
+      "ThrottleSameEvent": 2.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T22:30:00.000Z",
+      "ModifiedAt": "2026-06-26T22:30:00.000Z"
     }
   ],
   "Conditions": [
@@ -5134,10 +5148,50 @@
       "ModifiedAt": "2026-06-26T19:15:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
+    },
+    {
+      "Id": "jps-brd-logic-minne-tb",
+      "Name": "Nature's Minne TB",
+      "Description": "Uses Nature's Minne on the main tank for incoming tankbusters.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "b38231b8-8597-4485-b5a7-a396626acf57"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-brd-trigger-minne-tb",
+          "ActionId": 7408,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 0,
+          "TargetType": 3,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T22:30:00.000Z",
+      "ModifiedAt": "2026-06-26T22:30:00.000Z",
+      "ExecuteFirstOnly": true,
+      "Category": "Mitigation"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T19:30:00.000Z",
+  "ModifiedAt": "2026-06-26T22:30:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
@@ -5154,7 +5208,8 @@
         "Description": "",
         "EventIds": [
           "ab339d4e-1ded-46f4-bee3-7a872ac47194",
-          "ca2c12e5-d077-44aa-8e82-2bb82b270656"
+          "ca2c12e5-d077-44aa-8e82-2bb82b270656",
+          "jps-brd-event-minne-tb"
         ],
         "Enabled": true,
         "Position": 0

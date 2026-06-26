@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Added low-HP personal shield safety events for Reaper, Black Mage, Summoner, and Pictomancer.
+- Added Bard Nature's Minne tankbuster support for main-tank recovery windows.
+- Re-ran the full job smoke and action-coverage pass across every combat job profile.
 - Split Red Mage reset handling into its own default-on toggle instead of hiding it behind optional cooldown holds.
 - Split Bard Warden's Paean into default-on self and party cleanse branches, and removed the single-target gate from Red Mage, Pictomancer, and Summoner raidwide mitigation helpers.
 - Tightened role defaults after the full job smoke pass: Gunbreaker mitigation now has explicit combat guards, healer fallback heals avoid out-of-combat spending, and Reaper/Samurai self-heals require combat.
