@@ -2,7 +2,7 @@
   "Id": "Jasper_SGE_Events",
   "Name": "Jasper SGE Events",
   "Description": "General-purpose Sage event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.4",
+  "Version": "0.1.5",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -5700,7 +5700,7 @@
       ],
       "ActionTriggers": [
         {
-          "Id": "jps-sge-reset-useopener-off",
+          "Id": "c3025471-b6d5-a8e5-78c1-3475f580df6d",
           "ActionId": 0,
           "SkillbarId": "UseOpener",
           "TTSText": "",
@@ -5725,7 +5725,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-sge-reset-savecd-off",
+          "Id": "811fad34-1db2-b529-23d7-72279b1a5936",
           "ActionId": 0,
           "SkillbarId": "SaveCD",
           "TTSText": "",
@@ -5750,7 +5750,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-sge-reset-hardraise-off",
+          "Id": "7d7f23de-17f6-3958-fd00-3f4ac8a9fc2e",
           "ActionId": 0,
           "SkillbarId": "HardRaise",
           "TTSText": "",
@@ -5775,7 +5775,32 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-sge-reset-lockface-off",
+          "Id": "bc5c1904-0c09-7166-0b37-94df2a424bfd",
+          "ActionId": 0,
+          "SkillbarId": "IgnoreWeave",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 8,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "945fe5e5-4e1e-226f-beae-52dd93682d88",
           "ActionId": 0,
           "SkillbarId": "LockFace",
           "TTSText": "",
@@ -5800,7 +5825,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-sge-reset-useaoe-on",
+          "Id": "e266dfe6-7f42-43d3-cad3-1c8a606721bd",
           "ActionId": 0,
           "SkillbarId": "UseAOE",
           "TTSText": "",
@@ -5825,7 +5850,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-sge-reset-smartaoe-on",
+          "Id": "85ee0ab5-90a9-f5ca-21d8-3694b2867471",
           "ActionId": 0,
           "SkillbarId": "SmartAOE",
           "TTSText": "",
@@ -5850,7 +5875,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-sge-reset-dots-on",
+          "Id": "78cc85a9-1009-f963-176f-28a0fb7abf6e",
           "ActionId": 0,
           "SkillbarId": "DoTs",
           "TTSText": "",
@@ -5875,7 +5900,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-sge-reset-smartdot-on",
+          "Id": "b75776bc-4c66-8b60-4a96-d4de2993d714",
           "ActionId": 0,
           "SkillbarId": "SmartDot",
           "TTSText": "",
@@ -5900,7 +5925,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-sge-reset-luciddreaming-on",
+          "Id": "58889ef5-4b4f-b72c-f4da-fac7076e19bb",
           "ActionId": 0,
           "SkillbarId": "LucidDreaming",
           "TTSText": "",
@@ -5925,7 +5950,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-sge-reset-swiftraise-on",
+          "Id": "241f0971-aa4d-00d0-24dd-8d68d0cd0d53",
           "ActionId": 0,
           "SkillbarId": "SwiftRaise",
           "TTSText": "",
@@ -5950,7 +5975,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-sge-reset-attack-on",
+          "Id": "6d4a7f45-9603-d116-3763-9867873b81d8",
           "ActionId": 0,
           "SkillbarId": "Attack",
           "TTSText": "",
@@ -5975,7 +6000,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-sge-reset-phlegma-on",
+          "Id": "5ff182fb-d3b6-0721-9c82-86281939b32e",
           "ActionId": 0,
           "SkillbarId": "Phlegma",
           "TTSText": "",
@@ -6000,7 +6025,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-sge-reset-eukrasia-on",
+          "Id": "d0b46709-dd33-6cfe-3b4f-f95a90301290",
           "ActionId": 0,
           "SkillbarId": "Eukrasia",
           "TTSText": "",
@@ -6025,7 +6050,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-sge-reset-toxikon-on",
+          "Id": "310846c3-d580-ddd1-215c-f29db797c1bc",
           "ActionId": 0,
           "SkillbarId": "Toxikon",
           "TTSText": "",
@@ -6050,7 +6075,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-sge-reset-toxikonmovement-on",
+          "Id": "fd49a233-993d-2a06-ade0-fe7e5602ac9f",
           "ActionId": 0,
           "SkillbarId": "ToxikonMovement",
           "TTSText": "",
@@ -6075,7 +6100,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-sge-reset-pneuma-on",
+          "Id": "30433503-3f64-0423-c630-6be16f7ac356",
           "ActionId": 0,
           "SkillbarId": "Pneuma",
           "TTSText": "",
@@ -6100,7 +6125,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-sge-reset-rhizomata-on",
+          "Id": "a08aa43f-9a74-2a92-1942-af448b2565a7",
           "ActionId": 0,
           "SkillbarId": "Rhizomata",
           "TTSText": "",
@@ -6125,7 +6150,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-sge-reset-autokardia-on",
+          "Id": "1c24351d-4adb-fb57-2a05-f526acc8a8c6",
           "ActionId": 0,
           "SkillbarId": "AutoKardia",
           "TTSText": "",
@@ -6150,7 +6175,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-sge-reset-eukrasiamovement-on",
+          "Id": "ae62082a-4985-c096-ee4b-16518eef389b",
           "ActionId": 0,
           "SkillbarId": "EukrasiaMovement",
           "TTSText": "",
@@ -6175,7 +6200,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-sge-reset-dotmovement-on",
+          "Id": "e07a977f-6058-4c71-4607-600bb4140d81",
           "ActionId": 0,
           "SkillbarId": "DotMovement",
           "TTSText": "",
@@ -6200,7 +6225,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-sge-reset-swiftmovement-on",
+          "Id": "a65544ae-a95d-ac2b-5658-b2fdeba2bf21",
           "ActionId": 0,
           "SkillbarId": "SwiftMovement",
           "TTSText": "",
@@ -6225,7 +6250,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-sge-reset-psyche-on",
+          "Id": "b9914af9-af60-24c0-76da-3d1e10c9512a",
           "ActionId": 0,
           "SkillbarId": "Psyche",
           "TTSText": "",
@@ -6251,13 +6276,13 @@
         }
       ],
       "CreatedAt": "2026-06-26T23:45:00.000Z",
-      "ModifiedAt": "2026-06-26T23:45:00.000Z",
+      "ModifiedAt": "2026-06-27T00:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T23:45:00.000Z",
+  "ModifiedAt": "2026-06-27T00:30:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

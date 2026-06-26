@@ -2,7 +2,7 @@
   "Id": "Jasper_AST_Events",
   "Name": "Jasper AST Events",
   "Description": "General-purpose Astrologian event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.7",
+  "Version": "0.1.8",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -8283,7 +8283,7 @@
       ],
       "ActionTriggers": [
         {
-          "Id": "jps-ast-reset-useopener-off",
+          "Id": "c61e9a41-380b-2f31-7e6c-c5aa4f5ff244",
           "ActionId": 0,
           "SkillbarId": "UseOpener",
           "TTSText": "",
@@ -8308,7 +8308,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-ast-reset-savecd-off",
+          "Id": "a1356197-6867-1c7d-499a-c53460c7ad31",
           "ActionId": 0,
           "SkillbarId": "SaveCD",
           "TTSText": "",
@@ -8333,7 +8333,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-ast-reset-hardraise-off",
+          "Id": "4083a54b-48be-8147-4bba-4d5ce739fc0b",
           "ActionId": 0,
           "SkillbarId": "HardRaise",
           "TTSText": "",
@@ -8358,7 +8358,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-ast-reset-lockface-off",
+          "Id": "b8e59f7c-8818-0f4d-24b9-08fdcb20844e",
           "ActionId": 0,
           "SkillbarId": "LockFace",
           "TTSText": "",
@@ -8383,7 +8383,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-ast-reset-useaoe-on",
+          "Id": "b5785175-9ad9-916e-3016-9e2ddbbc04f8",
           "ActionId": 0,
           "SkillbarId": "UseAOE",
           "TTSText": "",
@@ -8408,7 +8408,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-ast-reset-smartaoe-on",
+          "Id": "92e1ea32-c7de-2b6a-a00f-f7baa126105b",
           "ActionId": 0,
           "SkillbarId": "SmartAOE",
           "TTSText": "",
@@ -8433,7 +8433,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-ast-reset-earthlystar-on",
+          "Id": "0aff5ee1-25b0-b2cc-4c45-35ba93a9754e",
           "ActionId": 0,
           "SkillbarId": "EarthlyStar",
           "TTSText": "",
@@ -8458,7 +8458,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-ast-reset-lightspeed-on",
+          "Id": "231efe37-13b4-0a52-10c3-d532f312b515",
           "ActionId": 0,
           "SkillbarId": "Lightspeed",
           "TTSText": "",
@@ -8483,7 +8483,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-ast-reset-draw-on",
+          "Id": "f4c40f40-b3b5-34e8-d6f8-11fc03740585",
           "ActionId": 0,
           "SkillbarId": "Draw",
           "TTSText": "",
@@ -8508,7 +8508,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-ast-reset-dots-on",
+          "Id": "8280f063-6eeb-36f7-fe17-c007fbfed0db",
           "ActionId": 0,
           "SkillbarId": "DoTs",
           "TTSText": "",
@@ -8533,7 +8533,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-ast-reset-smartdot-on",
+          "Id": "e44629b8-4686-7965-fd11-ae152ff66db4",
           "ActionId": 0,
           "SkillbarId": "SmartDot",
           "TTSText": "",
@@ -8558,7 +8558,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-ast-reset-playlord-on",
+          "Id": "a91583c6-b9a7-5103-d641-df02e1abcb47",
           "ActionId": 0,
           "SkillbarId": "PlayLord",
           "TTSText": "",
@@ -8583,7 +8583,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-ast-reset-divination-on",
+          "Id": "5d08a313-0432-6dc0-9603-9eda621694d7",
           "ActionId": 0,
           "SkillbarId": "Divination",
           "TTSText": "",
@@ -8608,7 +8608,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-ast-reset-playcards-on",
+          "Id": "14ae050a-7a88-32ae-78d1-92b520cefe22",
           "ActionId": 0,
           "SkillbarId": "PlayCards",
           "TTSText": "",
@@ -8633,7 +8633,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-ast-reset-burn-on",
+          "Id": "4f81a22f-2230-b581-fa77-fd4ba7decbaf",
           "ActionId": 0,
           "SkillbarId": "Burn",
           "TTSText": "",
@@ -8658,7 +8658,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-ast-reset-luciddreaming-on",
+          "Id": "f8ad0b69-cb17-8906-b91d-f080166ba472",
           "ActionId": 0,
           "SkillbarId": "LucidDreaming",
           "TTSText": "",
@@ -8683,7 +8683,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-ast-reset-swiftraise-on",
+          "Id": "9810226d-102b-a89b-9320-2415ad12a9e9",
           "ActionId": 0,
           "SkillbarId": "SwiftRaise",
           "TTSText": "",
@@ -8708,7 +8708,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-ast-reset-attack-on",
+          "Id": "e7b14f53-f810-b390-3638-85ff66dcacd5",
           "ActionId": 0,
           "SkillbarId": "Attack",
           "TTSText": "",
@@ -8733,7 +8733,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-ast-reset-oracle-on",
+          "Id": "e41967ca-adcf-4c67-2e56-ef9633facce5",
           "ActionId": 0,
           "SkillbarId": "Oracle",
           "TTSText": "",
@@ -8758,7 +8758,7 @@
           "VariableOperation": 0
         },
         {
-          "Id": "jps-ast-reset-swiftmovement-on",
+          "Id": "5b596b50-6585-5cbd-cc83-04fb361f3b25",
           "ActionId": 0,
           "SkillbarId": "SwiftMovement",
           "TTSText": "",
@@ -8784,13 +8784,13 @@
         }
       ],
       "CreatedAt": "2026-06-26T23:45:00.000Z",
-      "ModifiedAt": "2026-06-26T23:45:00.000Z",
+      "ModifiedAt": "2026-06-27T00:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T23:45:00.000Z",
+  "ModifiedAt": "2026-06-27T00:30:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
