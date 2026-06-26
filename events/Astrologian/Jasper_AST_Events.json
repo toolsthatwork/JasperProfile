@@ -2,7 +2,7 @@
   "Id": "Jasper_AST_Events",
   "Name": "Jasper AST Events",
   "Description": "General-purpose Astrologian event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.8",
+  "Version": "0.1.9",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -452,6 +452,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T23:45:00.000Z",
       "ModifiedAt": "2026-06-26T23:45:00.000Z"
+    },
+    {
+      "Id": "jps-ast-event-essential-mt-emergency",
+      "Name": "[MT] Essential Dignity Emergency",
+      "Description": "Uses Essential Dignity on the main tank during low-HP emergency windows.",
+      "EventType": "OnTick",
+      "LogicId": "jps-ast-logic-essential-mt-emergency",
+      "ThrottleSameEvent": 2,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T01:45:00.000Z",
+      "ModifiedAt": "2026-06-27T01:45:00.000Z"
     }
   ],
   "Conditions": [
@@ -8787,10 +8801,51 @@
       "ModifiedAt": "2026-06-27T00:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
+    },
+    {
+      "Id": "jps-ast-logic-essential-mt-emergency",
+      "Name": "[MT] Essential Dignity Emergency",
+      "Description": "Uses Essential Dignity on the main tank below 50 percent HP.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "958d055a-815f-485d-bb98-b5b7348da94c",
+        "de19e6a1-a995-42f9-b6a4-580ea14fcc44"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-ast-trigger-essential-mt-emergency",
+          "ActionId": 3614,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 0,
+          "TargetType": 3,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-27T01:45:00.000Z",
+      "ModifiedAt": "2026-06-27T01:45:00.000Z",
+      "ExecuteFirstOnly": true,
+      "Category": "ST Heal"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-27T00:30:00.000Z",
+  "ModifiedAt": "2026-06-27T01:45:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
@@ -8814,7 +8869,8 @@
           "3672c1c2-3a56-4b10-bbd5-ac9651252d8a",
           "aa7cade6-dd7d-4db2-87be-fa8eba8bc885",
           "jps-ast-event-esuna",
-          "jps-ast-event-regen-mt-combat"
+          "jps-ast-event-regen-mt-combat",
+          "jps-ast-event-essential-mt-emergency"
         ],
         "Enabled": true,
         "Position": 0
