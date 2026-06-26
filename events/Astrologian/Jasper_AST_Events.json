@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_AST_Events",
   "Name": "Jasper AST Events",
-  "Description": "General-purpose Astrologian event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.9",
+  "Description": "General-purpose Astrologian event profile for PvE. Keeps damage-forward default toggles, oGCD-first single-target recovery, emergency-only GCD heals, roulette-safe mitigation, cleanse support, and wipe/zone reset scaffolding.",
+  "Version": "0.1.10",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -246,7 +246,7 @@
     {
       "Id": "c6eb8980-a2bb-486f-94bd-32c5a0f9652d",
       "Name": "[ST] Benefic II",
-      "Description": "",
+      "Description": "Emergency-only GCD fallback after oGCD recovery windows.",
       "EventType": "OnTick",
       "LogicId": "1df1a9b0-890e-475b-8320-77e020a578bc",
       "ThrottleSameEvent": 2.5,
@@ -255,7 +255,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-27T02:30:00.000Z"
     },
     {
       "Id": "76901b77-2e7f-440f-8c81-73b933e512d0",
@@ -274,7 +274,7 @@
     {
       "Id": "a6b1851d-2344-44f8-b001-c7a56005019d",
       "Name": "[ST] Benefic",
-      "Description": "",
+      "Description": "Low-level emergency GCD fallback for synced content.",
       "EventType": "OnTick",
       "LogicId": "acc0d19e-2dff-40e1-83d7-2543241c036c",
       "ThrottleSameEvent": 2.5,
@@ -283,7 +283,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-27T02:30:00.000Z"
     },
     {
       "Id": "f5de0325-125b-427f-99d1-387f3ad02963",
@@ -440,6 +440,20 @@
       "ModifiedAt": "2026-06-26T23:15:00.000Z"
     },
     {
+      "Id": "jps-ast-event-intersection-mt-recovery",
+      "Name": "[MT] Celestial Intersection Recovery",
+      "Description": "Uses Celestial Intersection on the main tank during sustained damage.",
+      "EventType": "OnTick",
+      "LogicId": "jps-ast-logic-intersection-mt-recovery",
+      "ThrottleSameEvent": 2,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T02:30:00.000Z",
+      "ModifiedAt": "2026-06-27T02:30:00.000Z"
+    },
+    {
       "Id": "jps-ast-event-reset-toggles",
       "Name": "Reset Toggles",
       "Description": "Restores normal Astrologian ACR toggles while safely out of combat.",
@@ -452,6 +466,34 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T23:45:00.000Z",
       "ModifiedAt": "2026-06-26T23:45:00.000Z"
+    },
+    {
+      "Id": "jps-ast-event-reset-zone",
+      "Name": "Reset Toggles Zone Change",
+      "Description": "Restores default Astrologian toggles after zone changes.",
+      "EventType": "OnZoneChange",
+      "LogicId": "jps-ast-logic-reset-toggles",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T02:30:00.000Z",
+      "ModifiedAt": "2026-06-27T02:30:00.000Z"
+    },
+    {
+      "Id": "jps-ast-event-reset-wipe",
+      "Name": "Reset Toggles Wipe",
+      "Description": "Restores default Astrologian toggles after wipes.",
+      "EventType": "OnWipe",
+      "LogicId": "jps-ast-logic-reset-toggles",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T02:30:00.000Z",
+      "ModifiedAt": "2026-06-27T02:30:00.000Z"
     },
     {
       "Id": "jps-ast-event-essential-mt-emergency",
@@ -4595,12 +4637,12 @@
     },
     {
       "Id": "20fc1ad8-bab4-4b2a-9eb5-d4c5b91a2f8a",
-      "Name": "<= 50% HP",
-      "Description": "",
+      "Name": "<= 40% HP",
+      "Description": "Emergency GCD fallback threshold.",
       "SubConditions": [
         {
           "Id": "f088bb51-6044-48b9-b6c6-4d3f97790b07",
-          "Name": "<= 50% HP",
+          "Name": "<= 40% HP",
           "Description": "",
           "TargetType": 14,
           "ConditionType": 1,
@@ -4623,7 +4665,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 50,
+              "Percentage": 40,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -4806,7 +4848,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-27T02:30:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -8044,7 +8086,7 @@
     {
       "Id": "1df1a9b0-890e-475b-8320-77e020a578bc",
       "Name": "Benefic II",
-      "Description": "",
+      "Description": "Emergency-only GCD fallback after oGCD recovery windows.",
       "LogicType": 0,
       "ConditionIds": [
         "20fc1ad8-bab4-4b2a-9eb5-d4c5b91a2f8a",
@@ -8078,14 +8120,14 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-27T02:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "ST Heal"
     },
     {
       "Id": "acc0d19e-2dff-40e1-83d7-2543241c036c",
       "Name": "Benefic",
-      "Description": "",
+      "Description": "Low-level emergency GCD fallback for synced content.",
       "LogicType": 0,
       "ConditionIds": [
         "20fc1ad8-bab4-4b2a-9eb5-d4c5b91a2f8a",
@@ -8119,7 +8161,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-27T02:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "ST Heal"
     },
@@ -8284,6 +8326,48 @@
       ],
       "CreatedAt": "2026-06-26T23:15:00.000Z",
       "ModifiedAt": "2026-06-26T23:15:00.000Z",
+      "ExecuteFirstOnly": true,
+      "Category": "Single Target"
+    },
+    {
+      "Id": "jps-ast-logic-intersection-mt-recovery",
+      "Name": "[MT] Celestial Intersection Recovery",
+      "Description": "Uses Celestial Intersection on the main tank below 70 percent HP when shielding is not already active.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "jps-ast-cond-mt-no-intersection",
+        "jps-ast-cond-mt-hp-70",
+        "958d055a-815f-485d-bb98-b5b7348da94c"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-ast-trigger-intersection-mt-recovery",
+          "ActionId": 16556,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 0,
+          "TargetType": 3,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-27T02:30:00.000Z",
+      "ModifiedAt": "2026-06-27T02:30:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Single Target"
     },
@@ -8859,7 +8943,7 @@
       {
         "Id": "fb398c26-789d-4026-9af7-42407e6c4e22",
         "Name": "Single Target",
-        "Description": "",
+        "Description": "oGCD-first recovery with emergency-only GCD fallbacks.",
         "EventIds": [
           "76901b77-2e7f-440f-8c81-73b933e512d0",
           "a6b1851d-2344-44f8-b001-c7a56005019d",
@@ -8870,6 +8954,7 @@
           "aa7cade6-dd7d-4db2-87be-fa8eba8bc885",
           "jps-ast-event-esuna",
           "jps-ast-event-regen-mt-combat",
+          "jps-ast-event-intersection-mt-recovery",
           "jps-ast-event-essential-mt-emergency"
         ],
         "Enabled": true,
@@ -8947,7 +9032,9 @@
         "Name": "Reset Toggles",
         "Description": "",
         "EventIds": [
-          "jps-ast-event-reset-toggles"
+          "jps-ast-event-reset-toggles",
+          "jps-ast-event-reset-zone",
+          "jps-ast-event-reset-wipe"
         ],
         "Enabled": true,
         "Position": 6

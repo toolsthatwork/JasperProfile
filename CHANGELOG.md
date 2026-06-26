@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Polished healer recovery/reset handling: Astrologian now prioritizes MT Celestial Intersection and later emergency-only Benefic fallbacks, while Astrologian, Scholar, and Sage gained wipe/zone reset scaffolding.
 - Polished tank start-of-duty/reset handling: Dark Knight, Gunbreaker, Paladin, and Warrior now restore reset defaults on wipes/zone changes and can reapply main-tank stance setup after zone changes.
 - Polished Bard, Machinist, and Dancer recovery/reset behavior with earlier Second Wind and wipe/zone reset scaffolding.
 - Polished Samurai and Viper recovery/reset behavior with earlier Second Wind, more proactive Bloodbath, and wipe/zone reset scaffolding.

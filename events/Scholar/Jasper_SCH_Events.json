@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_SCH_Events",
   "Name": "Jasper SCH Events",
-  "Description": "General-purpose Scholar event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.8",
+  "Description": "General-purpose Scholar event profile for PvE. Keeps fairy/Aetherflow recovery, emergency GCD fallbacks for synced content, roulette-safe mitigation, cleanse support, and wipe/zone reset scaffolding.",
+  "Version": "0.1.9",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -396,6 +396,34 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T18:00:00.000Z",
       "ModifiedAt": "2026-06-26T19:15:00.000Z"
+    },
+    {
+      "Id": "jps-sch-event-reset-zone",
+      "Name": "Reset Toggles Zone Change",
+      "Description": "Restores default Scholar toggles after zone changes.",
+      "EventType": "OnZoneChange",
+      "LogicId": "f4585998-2f40-5751-821b-8b6a999a9de8",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T02:30:00.000Z",
+      "ModifiedAt": "2026-06-27T02:30:00.000Z"
+    },
+    {
+      "Id": "jps-sch-event-reset-wipe",
+      "Name": "Reset Toggles Wipe",
+      "Description": "Restores default Scholar toggles after wipes.",
+      "EventType": "OnWipe",
+      "LogicId": "f4585998-2f40-5751-821b-8b6a999a9de8",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T02:30:00.000Z",
+      "ModifiedAt": "2026-06-27T02:30:00.000Z"
     },
     {
       "Id": "jps-sch-event-protraction-tb",
@@ -8674,7 +8702,7 @@
       {
         "Id": "b94606b9-58c8-4a03-b809-8b4259e3d274",
         "Name": "GCD Heals",
-        "Description": "",
+        "Description": "Emergency GCD heals and cleanse fallback.",
         "EventIds": [
           "34dafcb2-efac-42d0-a28c-4badcb0cefa6",
           "08a8e01f-f133-4282-956b-9ab0dd6d8717",
@@ -8739,7 +8767,9 @@
         "Name": "Reset Toggles",
         "Description": "",
         "EventIds": [
-          "2e8adeeb-fbda-5768-a65d-0a8125420882"
+          "2e8adeeb-fbda-5768-a65d-0a8125420882",
+          "jps-sch-event-reset-zone",
+          "jps-sch-event-reset-wipe"
         ],
         "Enabled": true,
         "Position": 4

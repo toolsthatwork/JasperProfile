@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_SGE_Events",
   "Name": "Jasper SGE Events",
-  "Description": "General-purpose Sage event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.6",
+  "Description": "General-purpose Sage event profile for PvE. Keeps Kardia/Addersgall recovery, oGCD-first tank support, emergency GCD fallbacks, roulette-safe mitigation, cleanse support, and wipe/zone reset scaffolding.",
+  "Version": "0.1.7",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -340,6 +340,34 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T23:45:00.000Z",
       "ModifiedAt": "2026-06-26T23:45:00.000Z"
+    },
+    {
+      "Id": "jps-sge-event-reset-zone",
+      "Name": "Reset Toggles Zone Change",
+      "Description": "Restores default Sage toggles after zone changes.",
+      "EventType": "OnZoneChange",
+      "LogicId": "jps-sge-logic-reset-toggles",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T02:30:00.000Z",
+      "ModifiedAt": "2026-06-27T02:30:00.000Z"
+    },
+    {
+      "Id": "jps-sge-event-reset-wipe",
+      "Name": "Reset Toggles Wipe",
+      "Description": "Restores default Sage toggles after wipes.",
+      "EventType": "OnWipe",
+      "LogicId": "jps-sge-logic-reset-toggles",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T02:30:00.000Z",
+      "ModifiedAt": "2026-06-27T02:30:00.000Z"
     },
     {
       "Id": "jps-sge-event-druochole-mt-recovery",
@@ -6682,7 +6710,7 @@
       {
         "Id": "6dbb603c-becc-42e2-b8aa-b4bd1cd63059",
         "Name": "GCD Heal",
-        "Description": "",
+        "Description": "Emergency GCD heal fallbacks.",
         "EventIds": [
           "cbe6f267-d9c6-4612-9baa-3810d4f1d97f",
           "f47288a8-0e59-47c3-990b-19a7b06bf92d",
@@ -6718,7 +6746,9 @@
         "Name": "Reset Toggles",
         "Description": "",
         "EventIds": [
-          "jps-sge-event-reset-toggles"
+          "jps-sge-event-reset-toggles",
+          "jps-sge-event-reset-zone",
+          "jps-sge-event-reset-wipe"
         ],
         "Enabled": true,
         "Position": 13
