@@ -3,7 +3,7 @@
   "Name": "Jasper WHM Events",
   "Description": "Healing-first White Mage event profile for general PvE. Handles dungeon and duty recovery through events first, while allowing damage through normal ACR priorities when safe.",
   "CreatedAt": "2026-06-25T00:31:21.892963Z",
-  "ModifiedAt": "2026-06-25T07:15:00.000Z",
+  "ModifiedAt": "2026-06-26T08:30:00.000Z",
   "Events": [
     {
       "Id": "whm-event-01",
@@ -508,6 +508,48 @@
       "Filters": {},
       "CreatedAt": "2026-01-03T00:42:43.494277Z",
       "ModifiedAt": "2026-06-25T00:33:56.7114433Z"
+    },
+    {
+      "Id": "whm-event-33",
+      "Name": "[33] Cure (MT Emergency)",
+      "Description": "Low-level Cure fallback for the main tank.",
+      "EventType": "OnTick",
+      "LogicId": "whm-logic-33",
+      "ThrottleSameEvent": 2.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T08:30:00.000Z",
+      "ModifiedAt": "2026-06-26T08:30:00.000Z"
+    },
+    {
+      "Id": "whm-event-34",
+      "Name": "[34] Cure (ST Emergency)",
+      "Description": "Low-level Cure fallback for the lowest HP party member.",
+      "EventType": "OnTick",
+      "LogicId": "whm-logic-34",
+      "ThrottleSameEvent": 2.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T08:30:00.000Z",
+      "ModifiedAt": "2026-06-26T08:30:00.000Z"
+    },
+    {
+      "Id": "whm-event-35",
+      "Name": "[35] Medica (Low Level Emergency)",
+      "Description": "Low-level Medica fallback for critical party damage.",
+      "EventType": "OnTick",
+      "LogicId": "whm-logic-35",
+      "ThrottleSameEvent": 2.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-26T08:30:00.000Z",
+      "ModifiedAt": "2026-06-26T08:30:00.000Z"
     }
   ],
   "Conditions": [
@@ -5265,7 +5307,7 @@
     {
       "Id": "419a3819-f0a4-4d96-9a9f-e2f6941ff04d",
       "Name": "MT No Tank Invuln",
-      "Description": "Main Tank does not have tank invuln (Hallowed/Holmgang/Superbolide, excludes DRK Living Dead)",
+      "Description": "Main Tank does not have full invuln or DRK Undead Rebirth; Walking Dead remains healable.",
       "SubConditions": [
         {
           "Id": "db13e149-9a41-4f2b-9c21-80ad3d121417",
@@ -5279,7 +5321,8 @@
               "StatusIds": [
                 82,
                 409,
-                1836
+                1836,
+                3255
               ],
               "UseMultipleStatuses": true,
               "StatusLogic": 2,
@@ -5479,7 +5522,7 @@
         }
       ],
       "CreatedAt": "2026-01-02T05:13:04.3219696Z",
-      "ModifiedAt": "2026-01-02T21:15:31.4295141Z",
+      "ModifiedAt": "2026-06-26T08:30:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -9601,6 +9644,654 @@
       "CreatedAt": "2026-01-02T05:13:04.3219702Z",
       "ModifiedAt": "2026-01-02T21:16:03.9991835Z",
       "ExcludeFromTargetAccumulation": false
+    },
+    {
+      "Id": "whm-cond-mt-emergency-35",
+      "Name": "MT <= 35%",
+      "Description": "Low-level Cure emergency for the main tank",
+      "SubConditions": [
+        {
+          "Id": "whm-cond-mt-emergency-35-sub",
+          "Name": "MT <= 35%",
+          "Description": "",
+          "TargetType": 3,
+          "ConditionType": 1,
+          "Parameters": {
+            "BuffParams": {
+              "StatusId": 0,
+              "StatusIds": [],
+              "UseMultipleStatuses": false,
+              "StatusLogic": 1,
+              "CheckDuration": false,
+              "MinDuration": 0,
+              "DurationComparison": 3,
+              "CheckStacks": false,
+              "RequiredStacks": 1,
+              "StackComparison": 3,
+              "InvertCheck": false,
+              "RequiredBuffCount": 2,
+              "BuffCountComparison": 3,
+              "StatusTargetOverrides": {},
+              "IsEnabled": true
+            },
+            "HealthParams": {
+              "Percentage": 35,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "DistanceParams": {
+              "Distance": 0,
+              "Comparison": 1,
+              "CheckLineOfSight": false,
+              "IsEnabled": true
+            },
+            "GaugeParams": {
+              "PropertyName": "",
+              "ValueType": 0,
+              "NumericValue": 0,
+              "BooleanValue": false,
+              "StringValue": "",
+              "Comparison": 3,
+              "IsEnabled": true
+            },
+            "MpParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "LastAbilityParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0.5,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "LastGcdParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0.5,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "CooldownParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0,
+              "TimeComparison": 2,
+              "CheckCharges": false,
+              "RequiredCharges": 1,
+              "IsEnabled": true
+            },
+            "ComboParams": {
+              "ComboId": 1,
+              "TimeRemaining": 0,
+              "TimeComparison": 3,
+              "IsEnabled": true
+            },
+            "MovementParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "ChannelingParams": {
+              "IsChanneling": true,
+              "SpecificAbilityId": 0,
+              "IsEnabled": true
+            },
+            "AggroParams": {
+              "HasAggro": true,
+              "AggroPosition": 1,
+              "PositionComparison": 2,
+              "IsEnabled": true
+            },
+            "AlwaysParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "InCombatParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "ActionHighlightedParams": {
+              "ActionId": 1,
+              "IsEnabled": true
+            },
+            "IsCastingParams": {
+              "IsCasting": true,
+              "SpecificActionId": 0,
+              "CheckSpecific": false,
+              "IsEnabled": true
+            },
+            "GcdTimeRemainingParams": {
+              "TimeThreshold": 2.5,
+              "Comparison": 1,
+              "IsEnabled": true
+            },
+            "CanInterruptParams": {
+              "CanInterrupt": true,
+              "IsEnabled": true
+            },
+            "EntityIdParams": {
+              "EntityId": 0,
+              "Comparison": 2,
+              "IsEnabled": true
+            },
+            "PartyHpAverageParams": {
+              "Percentage": 35,
+              "Comparison": 1,
+              "IsEnabled": true
+            },
+            "PartyHpLowestParams": {
+              "Percentage": 35,
+              "Comparison": 1,
+              "LowestMemberCount": 4,
+              "UseLowestMemberPercentage": false,
+              "LowestMemberPercentage": 35,
+              "IsEnabled": true
+            },
+            "PartyHpBandsParams": {
+              "CriticalThreshold": 30,
+              "LowThreshold": 45,
+              "ModerateThreshold": 70,
+              "RequiredCritical": 1,
+              "RequiredLow": 3,
+              "RequiredModerate": 5,
+              "BandLogic": 0,
+              "IsEnabled": true
+            },
+            "ActionChargesParams": {
+              "ActionId": 1,
+              "RequiredCharges": 1,
+              "Comparison": 3,
+              "CheckType": 0,
+              "TimeThreshold": 0,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "AggroCountParams": {
+              "RequiredCount": 1,
+              "CountComparison": 3,
+              "IsEnabled": true
+            },
+            "ShieldParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "PartyShieldAverageParams": {
+              "Percentage": 20,
+              "Comparison": 3,
+              "IsEnabled": true
+            },
+            "VariableParams": {
+              "VariableName": "",
+              "VariableType": 0,
+              "ExpectedBoolValue": true,
+              "ExpectedStringValue": "",
+              "ExpectedNumberValue": 0,
+              "Comparison": 2,
+              "StringComparison": 0,
+              "InvertCheck": false,
+              "CheckExists": false,
+              "IsEnabled": true
+            },
+            "DataIdParams": {
+              "DataId": 0,
+              "Comparison": 2,
+              "IsEnabled": true
+            },
+            "TargetNameParams": {
+              "Name": "",
+              "Comparison": 0,
+              "IsEnabled": true
+            }
+          },
+          "RequiredTargetCount": 1,
+          "TargetCountComparison": 3,
+          "UsePercentageMode": true,
+          "RequiredTargetPercentage": 50,
+          "CreatedAt": "2026-01-01T00:00:00Z",
+          "ModifiedAt": "2026-06-26T08:30:00.000Z",
+          "ShouldUseTargetCount": false
+        }
+      ],
+      "CreatedAt": "2026-06-26T08:30:00.000Z",
+      "ModifiedAt": "2026-06-26T08:30:00.000Z",
+      "ExcludeFromTargetAccumulation": false
+    },
+    {
+      "Id": "whm-cond-st-emergency-35",
+      "Name": "[ST] <= 35% HP",
+      "Description": "Low-level Cure emergency for the lowest HP party member",
+      "SubConditions": [
+        {
+          "Id": "whm-cond-st-emergency-35-sub",
+          "Name": "[ST] <= 35% HP",
+          "Description": "",
+          "TargetType": 5,
+          "ConditionType": 1,
+          "Parameters": {
+            "BuffParams": {
+              "StatusId": 0,
+              "StatusIds": [],
+              "UseMultipleStatuses": false,
+              "StatusLogic": 1,
+              "CheckDuration": false,
+              "MinDuration": 0,
+              "DurationComparison": 3,
+              "CheckStacks": false,
+              "RequiredStacks": 1,
+              "StackComparison": 3,
+              "InvertCheck": false,
+              "RequiredBuffCount": 2,
+              "BuffCountComparison": 3,
+              "StatusTargetOverrides": {},
+              "IsEnabled": true
+            },
+            "HealthParams": {
+              "Percentage": 35,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "DistanceParams": {
+              "Distance": 0,
+              "Comparison": 1,
+              "CheckLineOfSight": false,
+              "IsEnabled": true
+            },
+            "GaugeParams": {
+              "PropertyName": "",
+              "ValueType": 0,
+              "NumericValue": 0,
+              "BooleanValue": false,
+              "StringValue": "",
+              "Comparison": 3,
+              "IsEnabled": true
+            },
+            "MpParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "LastAbilityParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0.5,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "LastGcdParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0.5,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "CooldownParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0,
+              "TimeComparison": 2,
+              "CheckCharges": false,
+              "RequiredCharges": 1,
+              "IsEnabled": true
+            },
+            "ComboParams": {
+              "ComboId": 1,
+              "TimeRemaining": 0,
+              "TimeComparison": 3,
+              "IsEnabled": true
+            },
+            "MovementParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "ChannelingParams": {
+              "IsChanneling": true,
+              "SpecificAbilityId": 0,
+              "IsEnabled": true
+            },
+            "AggroParams": {
+              "HasAggro": true,
+              "AggroPosition": 1,
+              "PositionComparison": 2,
+              "IsEnabled": true
+            },
+            "AlwaysParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "InCombatParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "ActionHighlightedParams": {
+              "ActionId": 1,
+              "IsEnabled": true
+            },
+            "IsCastingParams": {
+              "IsCasting": true,
+              "SpecificActionId": 0,
+              "CheckSpecific": false,
+              "IsEnabled": true
+            },
+            "GcdTimeRemainingParams": {
+              "TimeThreshold": 2.5,
+              "Comparison": 1,
+              "IsEnabled": true
+            },
+            "CanInterruptParams": {
+              "CanInterrupt": true,
+              "IsEnabled": true
+            },
+            "EntityIdParams": {
+              "EntityId": 0,
+              "Comparison": 2,
+              "IsEnabled": true
+            },
+            "PartyHpAverageParams": {
+              "Percentage": 35,
+              "Comparison": 1,
+              "IsEnabled": true
+            },
+            "PartyHpLowestParams": {
+              "Percentage": 35,
+              "Comparison": 1,
+              "LowestMemberCount": 4,
+              "UseLowestMemberPercentage": false,
+              "LowestMemberPercentage": 35,
+              "IsEnabled": true
+            },
+            "PartyHpBandsParams": {
+              "CriticalThreshold": 30,
+              "LowThreshold": 45,
+              "ModerateThreshold": 70,
+              "RequiredCritical": 1,
+              "RequiredLow": 3,
+              "RequiredModerate": 5,
+              "BandLogic": 0,
+              "IsEnabled": true
+            },
+            "ActionChargesParams": {
+              "ActionId": 1,
+              "RequiredCharges": 1,
+              "Comparison": 3,
+              "CheckType": 0,
+              "TimeThreshold": 0,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "AggroCountParams": {
+              "RequiredCount": 1,
+              "CountComparison": 3,
+              "IsEnabled": true
+            },
+            "ShieldParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "PartyShieldAverageParams": {
+              "Percentage": 20,
+              "Comparison": 3,
+              "IsEnabled": true
+            },
+            "VariableParams": {
+              "VariableName": "",
+              "VariableType": 0,
+              "ExpectedBoolValue": true,
+              "ExpectedStringValue": "",
+              "ExpectedNumberValue": 0,
+              "Comparison": 2,
+              "StringComparison": 0,
+              "InvertCheck": false,
+              "CheckExists": false,
+              "IsEnabled": true
+            },
+            "DataIdParams": {
+              "DataId": 0,
+              "Comparison": 2,
+              "IsEnabled": true
+            },
+            "TargetNameParams": {
+              "Name": "",
+              "Comparison": 0,
+              "IsEnabled": true
+            }
+          },
+          "RequiredTargetCount": 1,
+          "TargetCountComparison": 3,
+          "UsePercentageMode": true,
+          "RequiredTargetPercentage": 50,
+          "CreatedAt": "2026-01-01T00:00:00Z",
+          "ModifiedAt": "2026-06-26T08:30:00.000Z",
+          "ShouldUseTargetCount": false
+        }
+      ],
+      "CreatedAt": "2026-06-26T08:30:00.000Z",
+      "ModifiedAt": "2026-06-26T08:30:00.000Z",
+      "ExcludeFromTargetAccumulation": false
+    },
+    {
+      "Id": "whm-cond-party-emergency-35",
+      "Name": "Party <= 35% HP",
+      "Description": "Low-level Medica emergency for party recovery",
+      "SubConditions": [
+        {
+          "Id": "whm-cond-party-emergency-35-sub",
+          "Name": "Party <= 35% HP",
+          "Description": "",
+          "TargetType": 14,
+          "ConditionType": 20,
+          "Parameters": {
+            "BuffParams": {
+              "StatusId": 0,
+              "StatusIds": [],
+              "UseMultipleStatuses": false,
+              "StatusLogic": 1,
+              "CheckDuration": false,
+              "MinDuration": 0,
+              "DurationComparison": 3,
+              "CheckStacks": false,
+              "RequiredStacks": 1,
+              "StackComparison": 3,
+              "InvertCheck": false,
+              "RequiredBuffCount": 2,
+              "BuffCountComparison": 3,
+              "StatusTargetOverrides": {},
+              "IsEnabled": true
+            },
+            "HealthParams": {
+              "Percentage": 35,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "DistanceParams": {
+              "Distance": 0,
+              "Comparison": 1,
+              "CheckLineOfSight": false,
+              "IsEnabled": true
+            },
+            "GaugeParams": {
+              "PropertyName": "",
+              "ValueType": 0,
+              "NumericValue": 0,
+              "BooleanValue": false,
+              "StringValue": "",
+              "Comparison": 3,
+              "IsEnabled": true
+            },
+            "MpParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "LastAbilityParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0.5,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "LastGcdParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0.5,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "CooldownParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0,
+              "TimeComparison": 2,
+              "CheckCharges": false,
+              "RequiredCharges": 1,
+              "IsEnabled": true
+            },
+            "ComboParams": {
+              "ComboId": 1,
+              "TimeRemaining": 0,
+              "TimeComparison": 3,
+              "IsEnabled": true
+            },
+            "MovementParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "ChannelingParams": {
+              "IsChanneling": true,
+              "SpecificAbilityId": 0,
+              "IsEnabled": true
+            },
+            "AggroParams": {
+              "HasAggro": true,
+              "AggroPosition": 1,
+              "PositionComparison": 2,
+              "IsEnabled": true
+            },
+            "AlwaysParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "InCombatParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "ActionHighlightedParams": {
+              "ActionId": 1,
+              "IsEnabled": true
+            },
+            "IsCastingParams": {
+              "IsCasting": true,
+              "SpecificActionId": 0,
+              "CheckSpecific": false,
+              "IsEnabled": true
+            },
+            "GcdTimeRemainingParams": {
+              "TimeThreshold": 2.5,
+              "Comparison": 1,
+              "IsEnabled": true
+            },
+            "CanInterruptParams": {
+              "CanInterrupt": true,
+              "IsEnabled": true
+            },
+            "EntityIdParams": {
+              "EntityId": 0,
+              "Comparison": 2,
+              "IsEnabled": true
+            },
+            "PartyHpAverageParams": {
+              "Percentage": 35,
+              "Comparison": 1,
+              "IsEnabled": true
+            },
+            "PartyHpLowestParams": {
+              "Percentage": 35,
+              "Comparison": 1,
+              "LowestMemberCount": 4,
+              "UseLowestMemberPercentage": false,
+              "LowestMemberPercentage": 35,
+              "IsEnabled": true
+            },
+            "PartyHpBandsParams": {
+              "CriticalThreshold": 30,
+              "LowThreshold": 45,
+              "ModerateThreshold": 70,
+              "RequiredCritical": 1,
+              "RequiredLow": 3,
+              "RequiredModerate": 5,
+              "BandLogic": 0,
+              "IsEnabled": true
+            },
+            "ActionChargesParams": {
+              "ActionId": 1,
+              "RequiredCharges": 1,
+              "Comparison": 3,
+              "CheckType": 0,
+              "TimeThreshold": 0,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "AggroCountParams": {
+              "RequiredCount": 1,
+              "CountComparison": 3,
+              "IsEnabled": true
+            },
+            "ShieldParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "PartyShieldAverageParams": {
+              "Percentage": 20,
+              "Comparison": 3,
+              "IsEnabled": true
+            },
+            "VariableParams": {
+              "VariableName": "",
+              "VariableType": 0,
+              "ExpectedBoolValue": true,
+              "ExpectedStringValue": "",
+              "ExpectedNumberValue": 0,
+              "Comparison": 2,
+              "StringComparison": 0,
+              "InvertCheck": false,
+              "CheckExists": false,
+              "IsEnabled": true
+            },
+            "DataIdParams": {
+              "DataId": 0,
+              "Comparison": 2,
+              "IsEnabled": true
+            },
+            "TargetNameParams": {
+              "Name": "",
+              "Comparison": 0,
+              "IsEnabled": true
+            }
+          },
+          "RequiredTargetCount": 1,
+          "TargetCountComparison": 3,
+          "UsePercentageMode": true,
+          "RequiredTargetPercentage": 50,
+          "CreatedAt": "2026-01-01T00:00:00Z",
+          "ModifiedAt": "2026-06-26T08:30:00.000Z",
+          "ShouldUseTargetCount": true
+        }
+      ],
+      "CreatedAt": "2026-06-26T08:30:00.000Z",
+      "ModifiedAt": "2026-06-26T08:30:00.000Z",
+      "ExcludeFromTargetAccumulation": false
     }
   ],
   "Logics": [
@@ -11121,6 +11812,131 @@
       "ModifiedAt": "2026-01-03T00:41:47.7329545Z",
       "ExecuteFirstOnly": false,
       "Category": ""
+    },
+    {
+      "Id": "whm-logic-33",
+      "Name": "[33] Cure (MT Emergency)",
+      "Description": "Low-level Cure fallback for Conjurer/White Mage when the main tank is in danger.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
+        "whm-cond-mt-emergency-35",
+        "419a3819-f0a4-4d96-9a9f-e2f6941ff04d"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "at-33",
+          "ActionId": 120,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 0,
+          "TargetType": 3,
+          "TargetSelectionStrategy": 0,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T08:30:00.000Z",
+      "ModifiedAt": "2026-06-26T08:30:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": ""
+    },
+    {
+      "Id": "whm-logic-34",
+      "Name": "[34] Cure (ST Emergency)",
+      "Description": "Low-level Cure fallback for Conjurer/White Mage when a party member is in danger.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
+        "whm-cond-st-emergency-35",
+        "ad4efe13-496b-4428-b3e5-de8928849293"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "at-34",
+          "ActionId": 120,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 0,
+          "TargetType": 18,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T08:30:00.000Z",
+      "ModifiedAt": "2026-06-26T08:30:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": ""
+    },
+    {
+      "Id": "whm-logic-35",
+      "Name": "[35] Medica (Low Level Emergency)",
+      "Description": "Low-level Medica fallback when party HP is critical and lilies are unavailable or not learned.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
+        "whm-cond-party-emergency-35"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "at-35",
+          "ActionId": 124,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 0,
+          "TargetType": 0,
+          "TargetSelectionStrategy": 0,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-26T08:30:00.000Z",
+      "ModifiedAt": "2026-06-26T08:30:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": ""
     }
   ],
   "QTBarConfig": {
@@ -11149,7 +11965,8 @@
           "whm-event-26",
           "whm-event-27",
           "whm-event-29",
-          "whm-event-30"
+          "whm-event-30",
+          "whm-event-35"
         ],
         "Enabled": true,
         "Position": 0
@@ -11167,7 +11984,8 @@
           "whm-event-24",
           "whm-event-28",
           "22e234f0-d558-4328-be41-93012a6941a5",
-          "ae7d8440-d132-42cf-b2b7-5bd984f8387d"
+          "ae7d8440-d132-42cf-b2b7-5bd984f8387d",
+          "whm-event-34"
         ],
         "Enabled": true,
         "Position": 1
@@ -11226,7 +12044,8 @@
           "whm-event-13",
           "973941fd-edf9-4f15-94dd-9895b2221ebb",
           "6b03390f-7efa-4f33-b480-fa97520c4904",
-          "whm-event-21"
+          "whm-event-21",
+          "whm-event-33"
         ],
         "Enabled": true,
         "Position": 6
@@ -11242,5 +12061,5 @@
       "6da1e96f-4302-4942-8d76-88ad4842f270": true
     }
   },
-  "Version": "1.0.16"
+  "Version": "1.0.17"
 }
