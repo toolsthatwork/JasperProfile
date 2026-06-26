@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Focused Warrior, Summoner, and Reaper polish: Warrior gained stronger emergency sustain handling, Summoner gained self-Rekindle emergency support, and Reaper Bloodbath now keys from self HP instead of target HP.
 - Expanded reset/default polish across all combat jobs so profiles restore broader sane ACR baselines out of combat, including White Mage, tanks, healers, ranged, casters, and melee.
 - Added another job-by-job polish pass: Astrologian and Sage now restore sane ACR toggles out of combat, Paladin and Gunbreaker expose separate main-tank stance controls, and Bard/Dancer/Machinist gained Head Graze interrupt support.
 - Deepened job-by-job utility polish for physical DPS and Red Mage: earlier Second Wind thresholds, Ninja Shade Shift emergency use, Monk Riddle of Earth emergency use, Samurai Tengentsu emergency use, Bard Nature's Minne recovery support, Dancer Curing Waltz emergency use, and Red Mage main-tank Vercure emergency support.

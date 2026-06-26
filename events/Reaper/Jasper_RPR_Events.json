@@ -2,7 +2,7 @@
   "Id": "Jasper_RPR_Events",
   "Name": "Jasper RPR Events",
   "Description": "General-purpose Reaper event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.8",
+  "Version": "0.1.9",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -1281,14 +1281,14 @@
     },
     {
       "Id": "b635c655-1351-487a-9042-6b4ed9b363ec",
-      "Name": "Bloodbath",
+      "Name": "Bloodbath Self <= 60%",
       "Description": "",
       "SubConditions": [
         {
           "Id": "774b9c5c-0287-4f46-b369-ce4cacb31022",
-          "Name": "Bloodbath",
+          "Name": "Bloodbath Self <= 60%",
           "Description": "",
-          "TargetType": 1,
+          "TargetType": 0,
           "ConditionType": 1,
           "Parameters": {
             "BuffParams": {
@@ -1309,7 +1309,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 50,
+              "Percentage": 60,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -1487,12 +1487,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2025-12-18T11:21:01.6960751Z",
-          "ModifiedAt": "2025-12-18T11:21:01.6960751Z",
+          "ModifiedAt": "2026-06-27T01:15:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-27T01:15:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -4471,7 +4471,7 @@
     {
       "Id": "f844ec77-e521-4188-bb7b-f1cd6b80e6c0",
       "Name": "Bloodbath",
-      "Description": "",
+      "Description": "Uses Bloodbath when self HP drops below 60 percent while in combat.",
       "LogicType": 0,
       "ConditionIds": [
         "b635c655-1351-487a-9042-6b4ed9b363ec",
@@ -4505,7 +4505,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T15:00:00.000Z",
+      "ModifiedAt": "2026-06-27T01:15:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Auto mit/Heal"
     },
@@ -6033,7 +6033,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-27T00:30:00.000Z",
+  "ModifiedAt": "2026-06-27T01:15:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
