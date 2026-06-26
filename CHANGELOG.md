@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Polished Dragoon, Monk, and Ninja recovery/reset behavior with earlier Second Wind, more proactive Bloodbath, and wipe/zone reset scaffolding.
 - Added caster reset polish for Black Mage, Red Mage, and Pictomancer with wipe/zone-change reset events, and deduplicated internal profile trigger IDs for cleaner imports.
 - Focused healer recovery polish: Scholar gained main-tank Excog recovery, Astrologian gained main-tank Essential Dignity emergency support, and Sage gained main-tank Druochole recovery.
 - Focused Warrior, Summoner, and Reaper polish: Warrior gained stronger emergency sustain handling, Summoner gained self-Rekindle emergency support, and Reaper Bloodbath now keys from self HP instead of target HP.

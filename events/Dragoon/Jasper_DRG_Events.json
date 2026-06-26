@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_DRG_Events",
   "Name": "Jasper DRG Events",
-  "Description": "General-purpose Dragoon event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.5",
+  "Description": "General-purpose Dragoon event profile for PvE. Keeps role mitigation, conservative self-heal recovery, optional cooldown holds, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
+  "Version": "0.1.6",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -130,6 +130,34 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T18:00:00.000Z",
       "ModifiedAt": "2026-06-26T19:15:00.000Z"
+    },
+    {
+      "Id": "jps-drg-event-reset-zone",
+      "Name": "Reset Toggles Zone Change",
+      "Description": "Restores default Dragoon toggles after zone changes.",
+      "EventType": "OnZoneChange",
+      "LogicId": "d92e691d-0c06-5932-8704-70cd5e7158db",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T00:45:00.000Z",
+      "ModifiedAt": "2026-06-27T00:45:00.000Z"
+    },
+    {
+      "Id": "jps-drg-event-reset-wipe",
+      "Name": "Reset Toggles Wipe",
+      "Description": "Restores default Dragoon toggles after wipes.",
+      "EventType": "OnWipe",
+      "LogicId": "d92e691d-0c06-5932-8704-70cd5e7158db",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T00:45:00.000Z",
+      "ModifiedAt": "2026-06-27T00:45:00.000Z"
     },
     {
       "Id": "jps-drg-event-feint-tb",
@@ -1877,12 +1905,12 @@
     },
     {
       "Id": "8f59b567-c3f9-418a-8f77-f78f7868ee07",
-      "Name": "Second Wind <= 40%",
-      "Description": "",
+      "Name": "Second Wind <= 50%",
+      "Description": "Self HP threshold for Second Wind use.",
       "SubConditions": [
         {
           "Id": "f92bac94-ffe8-42df-8ad1-c64a315d8538",
-          "Name": "Second Wind <= 40%",
+          "Name": "Second Wind <= 50%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -1905,7 +1933,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 40,
+              "Percentage": 50,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -2093,12 +2121,12 @@
     },
     {
       "Id": "95e9d77f-89ec-4c64-aed1-ea0adf2b8400",
-      "Name": "Self HP <60%",
-      "Description": "",
+      "Name": "Self HP <= 70%",
+      "Description": "Self HP threshold for Bloodbath use.",
       "SubConditions": [
         {
           "Id": "10782d1e-6b31-47a6-b4a7-aaba1e70e246",
-          "Name": "60",
+          "Name": "Self HP <= 70%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -2121,7 +2149,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 60,
+              "Percentage": 70,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -3904,7 +3932,9 @@
         "Name": "Reset Toggles",
         "Description": "",
         "EventIds": [
-          "775e0e7d-6b83-58bf-a940-a3800ba82dca"
+          "775e0e7d-6b83-58bf-a940-a3800ba82dca",
+          "jps-drg-event-reset-zone",
+          "jps-drg-event-reset-wipe"
         ],
         "Enabled": true,
         "Position": 2

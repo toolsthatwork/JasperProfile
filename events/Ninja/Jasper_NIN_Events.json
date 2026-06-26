@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_NIN_Events",
   "Name": "Jasper NIN Events",
-  "Description": "General-purpose Ninja event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.5",
+  "Description": "General-purpose Ninja event profile for PvE. Keeps role mitigation, Shade Shift recovery, conservative self-heal recovery, optional cooldown holds, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
+  "Version": "0.1.6",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -144,6 +144,34 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T18:00:00.000Z",
       "ModifiedAt": "2026-06-26T19:15:00.000Z"
+    },
+    {
+      "Id": "jps-nin-event-reset-zone",
+      "Name": "Reset Toggles Zone Change",
+      "Description": "Restores default Ninja toggles after zone changes.",
+      "EventType": "OnZoneChange",
+      "LogicId": "33125d62-e1fd-57d8-8482-5beeda158d0d",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T00:45:00.000Z",
+      "ModifiedAt": "2026-06-27T00:45:00.000Z"
+    },
+    {
+      "Id": "jps-nin-event-reset-wipe",
+      "Name": "Reset Toggles Wipe",
+      "Description": "Restores default Ninja toggles after wipes.",
+      "EventType": "OnWipe",
+      "LogicId": "33125d62-e1fd-57d8-8482-5beeda158d0d",
+      "ThrottleSameEvent": 0.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-27T00:45:00.000Z",
+      "ModifiedAt": "2026-06-27T00:45:00.000Z"
     },
     {
       "Id": "jps-nin-event-shade-shift-tb",
@@ -1487,12 +1515,12 @@
     },
     {
       "Id": "8f59b567-c3f9-418a-8f77-f78f7868ee07",
-      "Name": "Second Wind <= 40%",
-      "Description": "",
+      "Name": "Second Wind <= 50%",
+      "Description": "Self HP threshold for Second Wind use.",
       "SubConditions": [
         {
           "Id": "f92bac94-ffe8-42df-8ad1-c64a315d8538",
-          "Name": "Second Wind <= 40%",
+          "Name": "Second Wind <= 50%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -1515,7 +1543,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 40,
+              "Percentage": 50,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -1703,12 +1731,12 @@
     },
     {
       "Id": "95e9d77f-89ec-4c64-aed1-ea0adf2b8400",
-      "Name": "Self HP <60%",
-      "Description": "",
+      "Name": "Self HP <= 70%",
+      "Description": "Self HP threshold for Bloodbath use.",
       "SubConditions": [
         {
           "Id": "10782d1e-6b31-47a6-b4a7-aaba1e70e246",
-          "Name": "60",
+          "Name": "Self HP <= 70%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -1731,7 +1759,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 60,
+              "Percentage": 70,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -5027,7 +5055,9 @@
         "Name": "Reset Toggles",
         "Description": "",
         "EventIds": [
-          "d7e76c53-efab-5be3-9bd4-6174c2dbf395"
+          "d7e76c53-efab-5be3-9bd4-6174c2dbf395",
+          "jps-nin-event-reset-zone",
+          "jps-nin-event-reset-wipe"
         ],
         "Enabled": true,
         "Position": 2
