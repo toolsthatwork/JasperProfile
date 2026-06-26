@@ -6,6 +6,8 @@
 
 General-purpose PvE reaction, timeline, and opener profiles for xSalice AIO.
 
+Profiles are being built for synced duty compatibility from early leveling through level 100. The profiles avoid forcing cap-only damage actions in timelines, and low-level safety fallbacks are added where the job kit changes heavily while leveling.
+
 Currently available for all combat jobs:
 - Tanks: Dark Knight, Gunbreaker, Paladin, Warrior
 - Healers: Astrologian, Sage, Scholar, White Mage
