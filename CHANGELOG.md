@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Polished White Mage emergency healing so Afflatus Solace is used immediately for low tank/party HP even when Afflatus Misery is ready, and restored Divine Caress post-AOE under the AOE mitigation toggle.
 - Converted the WHM general timeline to a passive shell: all remaining scripted timeline sequences were removed so roulettes/general duties rely on events and ACR priorities.
 - Retuned White Mage for DPS flow: removed forced GCD-heal timeline calls and made ST Regen/Cure/Cure II emergency-only.
 - Added a level-sync support pass for early leveling through level 100 duty sync.

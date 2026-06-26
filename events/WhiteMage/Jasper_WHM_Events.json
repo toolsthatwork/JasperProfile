@@ -3,7 +3,7 @@
   "Name": "Jasper WHM Events",
   "Description": "Damage-forward White Mage event profile for general PvE. Lets ACR DPS flow, then uses oGCDs and emergency GCD heals when recovery is actually needed.",
   "CreatedAt": "2026-06-25T00:31:21.892963Z",
-  "ModifiedAt": "2026-06-26T10:25:00.000Z",
+  "ModifiedAt": "2026-06-26T11:10:00.000Z",
   "Events": [
     {
       "Id": "whm-event-01",
@@ -315,8 +315,8 @@
     },
     {
       "Id": "6b03390f-7efa-4f33-b480-fa97520c4904",
-      "Name": "[21] Misery -> Afflatus Solace (MT)",
-      "Description": "Tank HP < 60% AND Tetragrammaton on cooldown",
+      "Name": "[21] Afflatus Solace (MT, Misery Ready)",
+      "Description": "Tank HP < 60% AND Tetragrammaton on cooldown; heal immediately even when Misery is ready.",
       "EventType": "OnTick",
       "LogicId": "5ab3c9e9-88cd-4295-b898-a9837ce4e379",
       "ThrottleSameEvent": 2.5,
@@ -325,7 +325,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-02T21:38:58.3138215Z",
-      "ModifiedAt": "2026-06-25T00:33:56.7114354Z"
+      "ModifiedAt": "2026-06-26T11:10:00.000Z"
     },
     {
       "Id": "whm-event-21",
@@ -343,8 +343,8 @@
     },
     {
       "Id": "691f898f-31bb-41cf-ae2b-2a1bef80aae8",
-      "Name": "[22] Misery -> Afflatus Solace (ST)",
-      "Description": "Any party member HP < 50% AND Tetragrammaton on cooldown",
+      "Name": "[22] Afflatus Solace (ST, Misery Ready)",
+      "Description": "Any party member HP < 50% AND Tetragrammaton on cooldown; heal immediately even when Misery is ready.",
       "EventType": "OnTick",
       "LogicId": "325c4825-4282-4b9a-8e2f-3524714b8bf1",
       "ThrottleSameEvent": 2.5,
@@ -353,7 +353,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-02T21:39:21.0549217Z",
-      "ModifiedAt": "2026-06-25T00:33:56.7114365Z"
+      "ModifiedAt": "2026-06-26T11:10:00.000Z"
     },
     {
       "Id": "whm-event-22",
@@ -12156,8 +12156,8 @@
     },
     {
       "Id": "5ab3c9e9-88cd-4295-b898-a9837ce4e379",
-      "Name": "[21] Misery Before Afflatus Solace (MT)",
-      "Description": "Tank HP < 60% AND Tetragrammaton on cooldown",
+      "Name": "[21] Afflatus Solace (MT, Misery Ready)",
+      "Description": "Tank HP < 60% AND Tetragrammaton on cooldown; heal immediately even when Misery is ready.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
@@ -12169,13 +12169,13 @@
       "ActionTriggers": [
         {
           "Id": "ee6ff95d-a1c0-48f4-9474-aaa5ced0f3a3",
-          "ActionId": 16535,
+          "ActionId": 16531,
           "SkillbarId": "",
           "TTSText": "",
           "TriggerType": 0,
           "LogicOperator": 0,
-          "TargetType": 1,
-          "TargetSelectionStrategy": 6,
+          "TargetType": 3,
+          "TargetSelectionStrategy": 0,
           "SkipBuffId": 0,
           "TargetOperation": 0,
           "TargetDataId": 0,
@@ -12194,7 +12194,7 @@
         }
       ],
       "CreatedAt": "2026-01-02T21:35:26.3660632Z",
-      "ModifiedAt": "2026-01-02T21:35:52.1903139Z",
+      "ModifiedAt": "2026-06-26T11:10:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": ""
     },
@@ -12244,8 +12244,8 @@
     },
     {
       "Id": "325c4825-4282-4b9a-8e2f-3524714b8bf1",
-      "Name": "[22]Misery -> Afflatus Solace (ST)",
-      "Description": "Any party member HP < 50% AND Tetragrammaton on cooldown",
+      "Name": "[22] Afflatus Solace (ST, Misery Ready)",
+      "Description": "Any party member HP < 50% AND Tetragrammaton on cooldown; heal immediately even when Misery is ready.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
@@ -12282,7 +12282,7 @@
         }
       ],
       "CreatedAt": "2026-01-02T21:37:22.1294574Z",
-      "ModifiedAt": "2026-01-02T21:37:34.1915773Z",
+      "ModifiedAt": "2026-06-26T11:10:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": ""
     },
@@ -12974,7 +12974,8 @@
         "EventIds": [
           "whm-event-01",
           "whm-event-02",
-          "whm-event-03"
+          "whm-event-03",
+          "whm-event-16"
         ],
         "Enabled": true,
         "Position": 5
@@ -13004,5 +13005,5 @@
       "6da1e96f-4302-4942-8d76-88ad4842f270": true
     }
   },
-  "Version": "1.0.19"
+  "Version": "1.0.20"
 }
