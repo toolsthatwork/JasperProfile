@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Promoted all combat jobs to working beta coverage while keeping White Mage as the reference-tested profile.
+- Added optional out-of-combat Sprint quality-of-life toggles to White Mage, Astrologian, Sage, and Reaper.
+- Polished Reaper baseline toggles with enabled mitigation, Arcane Crest naming, OnWipe opener labeling, and reset toggle cleanup.
+- Cleaned misleading event labels for Bard, Black Mage, Machinist, Monk, Astrologian, and Sage.
 - Tightened White Mage lily-overcap events so they require real HP recovery targets, and cleaned the WHM passive timeline shell.
 - Added Warrior Raw Intuition fallback to the Bloodwhetting helper for synced content.
 - Gated Summoner Rekindle MT behind main-tank HP so it is not spent immediately on combat start.

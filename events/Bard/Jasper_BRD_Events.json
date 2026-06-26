@@ -2,7 +2,7 @@
   "Id": "Jasper_BRD_Events",
   "Name": "Jasper BRD Events",
   "Description": "General-purpose Bard event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.0",
+  "Version": "0.1.1",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -21,7 +21,7 @@
     },
     {
       "Id": "ca2c12e5-d077-44aa-8e82-2bb82b270656",
-      "Name": "Second wind",
+      "Name": "Second Wind",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "5b2ac3cc-d8d6-4d72-ab98-036032ec6905",
@@ -63,7 +63,7 @@
     },
     {
       "Id": "e4f2d0f2-a124-4b81-a528-e0370a523760",
-      "Name": "Esuna",
+      "Name": "Warden's Paean",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "a61546e5-750e-4dfd-8f69-5a7e256a7b4a",
@@ -809,7 +809,7 @@
     },
     {
       "Id": "009192b6-1f6a-4a03-9c70-04c5284c0ab5",
-      "Name": "Second wind",
+      "Name": "Second Wind",
       "Description": "",
       "SubConditions": [
         {
@@ -4055,7 +4055,7 @@
     },
     {
       "Id": "5b2ac3cc-d8d6-4d72-ab98-036032ec6905",
-      "Name": "Second wind",
+      "Name": "Second Wind",
       "Description": "",
       "LogicType": 0,
       "ConditionIds": [
@@ -4703,7 +4703,7 @@
     },
     {
       "Id": "a61546e5-750e-4dfd-8f69-5a7e256a7b4a",
-      "Name": "Bard Esuna",
+      "Name": "Warden's Paean",
       "Description": "Prioritizes self, then takes care of party members.",
       "LogicType": 0,
       "ConditionIds": [
@@ -4902,7 +4902,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-25T07:45:00.000Z",
+  "ModifiedAt": "2026-06-26T13:00:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

@@ -19,23 +19,12 @@ This package includes event reactions, timeline shells, and opener files for eac
 
 ## Current Testing Status
 
-Main public test profile:
+Reference public test profile:
 - White Mage
 
-Early test profiles:
-- Warrior
-- Summoner
-- Scholar
-- Paladin
+Working beta profiles now exist for every combat job. White Mage remains the reference-tested profile, while the other jobs should be treated as playable beta profiles that still need more duty-by-duty tuning.
 
-Work-in-progress baseline profiles:
-- Tanks: Dark Knight, Gunbreaker
-- Healers: Astrologian, Sage
-- Physical ranged DPS: Bard, Dancer, Machinist
-- Magical ranged DPS: Black Mage, Pictomancer, Red Mage
-- Melee DPS: Dragoon, Monk, Ninja, Reaper, Samurai, Viper
-
-The work-in-progress profiles are present so they can be developed and tested, but they should be treated as baseline builds until they have been validated in synced duties and level 100 content.
+The non-WHM profiles focus on safe event automation: mitigation and emergency self-healing are enabled by default where appropriate, cooldown holds and Sprint quality-of-life toggles stay optional, and general timelines remain passive so normal ACR priorities handle damage flow.
 
 Installation instructions are available in [INSTALLATION.md](INSTALLATION.md).
 

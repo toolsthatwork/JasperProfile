@@ -2,12 +2,12 @@
   "Id": "Jasper_BLM_Events",
   "Name": "Jasper BLM Events",
   "Description": "General-purpose BlackMage event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.0",
+  "Version": "0.1.1",
   "AIOEventVersion": "2.0",
   "Events": [
     {
       "Id": "7517acbf-fbca-4f56-aad4-f168daf301ad",
-      "Name": "Addle",
+      "Name": "Addle & Manaward",
       "Description": "",
       "EventType": "OnAllAOE",
       "LogicId": "920528a4-0b3c-4088-901c-8f4502e6048d",
@@ -1638,7 +1638,7 @@
       "SubConditions": [
         {
           "Id": "63097a2b-c09e-46ad-8e45-c193f29be064",
-          "Name": "Addle",
+          "Name": "Addle & Manaward",
           "Description": "",
           "TargetType": 1,
           "ConditionType": 5,
@@ -3585,7 +3585,7 @@
   "Logics": [
     {
       "Id": "920528a4-0b3c-4088-901c-8f4502e6048d",
-      "Name": "Addle",
+      "Name": "Addle & Manaward",
       "Description": "",
       "LogicType": 0,
       "ConditionIds": [
@@ -4190,7 +4190,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-25T07:45:00.000Z",
+  "ModifiedAt": "2026-06-26T13:00:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

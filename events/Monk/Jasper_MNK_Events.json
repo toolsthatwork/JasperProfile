@@ -2,7 +2,7 @@
   "Id": "Jasper_MNK_Events",
   "Name": "Jasper MNK Events",
   "Description": "General-purpose Monk event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.0",
+  "Version": "0.1.1",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -91,7 +91,7 @@
     },
     {
       "Id": "166d48b6-c1e5-4b27-b8f5-c4a0c1cb02c2",
-      "Name": "Mantra & ROE",
+      "Name": "Mantra & Riddle of Earth",
       "Description": "",
       "EventType": "OnAllAOE",
       "LogicId": "7a08f887-a5e7-472f-b173-3eca0cb90f6c",
@@ -105,7 +105,7 @@
     },
     {
       "Id": "001d49ce-3dd3-4ca0-9995-5bd7e599fa20",
-      "Name": "Earths Reply",
+      "Name": "Earth's Reply",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "337a2313-9962-4843-9c6c-fc3196c27062",
@@ -4092,7 +4092,7 @@
     },
     {
       "Id": "337a2313-9962-4843-9c6c-fc3196c27062",
-      "Name": "Earths Reply",
+      "Name": "Earth's Reply",
       "Description": "",
       "LogicType": 0,
       "ConditionIds": [
@@ -4133,7 +4133,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-25T07:45:00.000Z",
+  "ModifiedAt": "2026-06-26T13:00:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

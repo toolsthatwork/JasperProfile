@@ -2,7 +2,7 @@
   "Id": "Jasper_MCH_Events",
   "Name": "Jasper MCH Events",
   "Description": "General-purpose Machinist event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.0",
+  "Version": "0.1.1",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -63,7 +63,7 @@
     },
     {
       "Id": "dbb199d6-6149-429d-9377-59dd80b6a73d",
-      "Name": "Tactician",
+      "Name": "Tactician + Dismantle",
       "Description": "",
       "EventType": "OnAllAOE",
       "LogicId": "fb87d43c-0d47-4d16-90f2-d8c3bf43047a",
@@ -3133,7 +3133,7 @@
     },
     {
       "Id": "fb87d43c-0d47-4d16-90f2-d8c3bf43047a",
-      "Name": "Tactician & Dismantle",
+      "Name": "Tactician + Dismantle",
       "Description": "",
       "LogicType": 0,
       "ConditionIds": [
@@ -3424,7 +3424,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-25T07:45:00.000Z",
+  "ModifiedAt": "2026-06-26T13:00:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
