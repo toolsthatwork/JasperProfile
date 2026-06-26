@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added another job-by-job polish pass: Astrologian and Sage now restore sane ACR toggles out of combat, Paladin and Gunbreaker expose separate main-tank stance controls, and Bard/Dancer/Machinist gained Head Graze interrupt support.
 - Deepened job-by-job utility polish for physical DPS and Red Mage: earlier Second Wind thresholds, Ninja Shade Shift emergency use, Monk Riddle of Earth emergency use, Samurai Tengentsu emergency use, Bard Nature's Minne recovery support, Dancer Curing Waltz emergency use, and Red Mage main-tank Vercure emergency support.
 - Tightened the tank/healer rerun: Warrior mitigation helpers now require combat, White Mage lily heals no longer spend Misery first when healing is needed, Astrologian gained in-combat MT regen support, and Scholar no longer duplicates Fey Union triggers.
 - Added low-HP personal shield safety events for Reaper, Black Mage, Summoner, and Pictomancer.

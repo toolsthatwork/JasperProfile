@@ -2,7 +2,7 @@
   "Id": "Jasper_GNB_Events",
   "Name": "Jasper GNB Events",
   "Description": "General-purpose Gunbreaker event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.4",
+  "Version": "0.1.5",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -10466,7 +10466,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T19:30:00.000Z",
+  "ModifiedAt": "2026-06-26T23:45:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
@@ -10540,8 +10540,7 @@
         "EventIds": [
           "78f2c611-1379-41d2-a2bd-26f59e78abb9",
           "b1a53fa1-f7f0-433b-ab95-0a01e86b12dd",
-          "0f848527-2363-4851-9ca7-73666e9414b1",
-          "jps-gnb-event-stance-mt"
+          "0f848527-2363-4851-9ca7-73666e9414b1"
         ],
         "Enabled": true,
         "Position": 4
@@ -10554,6 +10553,16 @@
           "b14f1b3c-1603-4c32-bc6f-9759e6b68265"
         ],
         "Enabled": true,
+        "Position": 6
+      },
+      {
+        "Id": "jps-gnb-qt-stance-mt",
+        "Name": "Stance MT",
+        "Description": "Main-tank stance setup for dungeons and roulettes.",
+        "EventIds": [
+          "jps-gnb-event-stance-mt"
+        ],
+        "Enabled": true,
         "Position": 5
       }
     ],
@@ -10563,7 +10572,8 @@
       "03c57f58-a312-41cb-9243-d86dd54ca27a": false,
       "9b0065c5-e840-47be-9e9b-41eb02184f16": true,
       "9424d3f5-62a4-5d07-bd8e-bb66fe0553f2": true,
-      "jps-gnb-qt-stance-ot": false
+      "jps-gnb-qt-stance-ot": false,
+      "jps-gnb-qt-stance-mt": true
     }
   }
 }

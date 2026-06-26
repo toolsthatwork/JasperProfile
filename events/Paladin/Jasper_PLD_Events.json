@@ -2,7 +2,7 @@
   "Id": "Jasper_PLD_Events",
   "Name": "Jasper PLD Events",
   "Description": "General-purpose Paladin event profile for PvE. Broken references and field-content-specific events were removed for stable roulette and raid use.",
-  "Version": "0.1.4",
+  "Version": "0.1.5",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -8475,7 +8475,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-26T19:30:00.000Z",
+  "ModifiedAt": "2026-06-26T23:45:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
@@ -8545,8 +8545,7 @@
         "Name": "Core",
         "Description": "",
         "EventIds": [
-          "f97dfcaf-0ec7-4a05-aa20-89d26a48e419",
-          "jps-pld-event-stance-mt"
+          "f97dfcaf-0ec7-4a05-aa20-89d26a48e419"
         ],
         "Enabled": true,
         "Position": 4
@@ -8559,6 +8558,16 @@
           "jps-pld-event-stance"
         ],
         "Enabled": true,
+        "Position": 6
+      },
+      {
+        "Id": "jps-pld-qt-stance-mt",
+        "Name": "Stance MT",
+        "Description": "Main-tank stance setup for dungeons and roulettes.",
+        "EventIds": [
+          "jps-pld-event-stance-mt"
+        ],
+        "Enabled": true,
         "Position": 5
       }
     ],
@@ -8568,7 +8577,8 @@
       "74859376-0103-4a96-b2fe-599fa8dec17d": false,
       "5554032f-a0bd-42e0-9c05-1067d8be0630": true,
       "08a2b5a2-aebc-52ac-8283-25aee6d64ccc": true,
-      "jps-pld-qt-stance-ot": false
+      "jps-pld-qt-stance-ot": false,
+      "jps-pld-qt-stance-mt": true
     }
   }
 }
