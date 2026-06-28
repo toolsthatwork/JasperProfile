@@ -2,10 +2,11 @@
 
 ## Unreleased
 
+- Corrected Paladin AoE defaults so normal UseAOE remains enabled while ForceAOE stays off by default, preventing forced AoE spam on single-target or low-target situations.
 - Clarified tank cooldown-hold UI copy: renamed Variable Holds to Cooldown Holds and rewrote boss/pack hold descriptions so they read as optional damage-cooldown routing helpers, not mitigation thresholds.
 - Retuned Sage oGCD recovery so general Druochole and main-tank Taurochole fire earlier, while Diagnosis/Eukrasian Diagnosis stay reserved for emergency GCD fallback windows.
 - Retuned Warrior, Dark Knight, and Gunbreaker dungeon-pull safety to match the earlier Paladin mitigation ladder, with invulns no longer waiting for near-death HP and Arm's Length normalized for three-mob pulls where needed.
-- Retuned Paladin dungeon and boss safety: mitigation now starts earlier in pulls, Hallowed Ground/Clemency no longer wait for critical HP, Arm's Length can fire on three-mob pulls, and ForceAOE is restored by default for add pickup.
+- Retuned Paladin dungeon and boss safety: mitigation now starts earlier in pulls, Hallowed Ground/Clemency no longer wait for critical HP, and Arm's Length can fire on three-mob pulls.
 - Added conservative Arm's Length emergency self-defense to melee and physical ranged DPS when stationary, low on HP, and holding multiple mobs.
 - Added Paladin emergency self-Clemency support, now retuned to cover 26% to 55% HP for roulette-safe tank recovery without overlapping the Hallowed Ground panic floor.
 - Added Scholar main-tank Lustrate emergency recovery below 50% HP so Aetherflow can cover sudden tank dips after Excogitation windows.

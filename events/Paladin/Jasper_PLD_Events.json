@@ -2,7 +2,7 @@
   "Id": "Jasper_PLD_Events",
   "Name": "Jasper PLD Events",
   "Description": "General-purpose Paladin event profile for PvE. Keeps earlier dungeon mitigation, Sheltron/Intervention/Clemency support, raidwide/tankbuster mitigation, Interject utility, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
-  "Version": "0.1.12",
+  "Version": "0.1.13",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -9558,7 +9558,7 @@
     {
       "Id": "4d659241-53e4-5150-840a-ebc81e1a285b",
       "Name": "Reset Toggles",
-      "Description": "Restores normal Paladin ACR toggles while safely out of combat, including proactive AoE/add pickup.",
+      "Description": "Restores normal Paladin ACR toggles while safely out of combat. Regular AoE stays enabled, but forced AoE stays off by default.",
       "LogicType": 0,
       "ConditionIds": [
         "2f32695f-a200-43cd-8f8b-386ad31e5ba1"
@@ -9670,7 +9670,7 @@
           "SkillbarId": "ForceAOE",
           "TTSText": "",
           "TriggerType": 1,
-          "LogicOperator": 4,
+          "LogicOperator": 8,
           "TargetType": 1,
           "TargetSelectionStrategy": 6,
           "SkipBuffId": 0,
@@ -10112,7 +10112,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-28T10:25:00.000Z",
+  "ModifiedAt": "2026-06-28T10:40:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
