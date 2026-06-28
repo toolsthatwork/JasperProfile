@@ -3,7 +3,7 @@
   "Name": "Jasper WAR Events",
   "Description": "General-purpose Warrior event profile for PvE. Keeps dungeon mitigation, Bloodwhetting recovery, emergency Holmgang support, MT/OT stance controls, wipe/zone reset scaffolding, raidwide/tankbuster mitigation, Interject utility, and optional co-tank support. Includes earlier dungeon mitigation retuning for public roulette-safe pulls.",
   "CreatedAt": "2026-06-25T02:45:00.000Z",
-  "ModifiedAt": "2026-06-28T09:45:00.000Z",
+  "ModifiedAt": "2026-06-28T10:25:00.000Z",
   "Events": [
     {
       "Id": "f2daaf1d-c477-42b2-9db1-baa49330bfe3",
@@ -77,8 +77,8 @@
     },
     {
       "Id": "08c75b56-6f6e-4b0c-88f7-7f58282253c4",
-      "Name": "Boss Hold",
-      "Description": "Holds Cooldowns at 15% boss HP. \nRecommended to use this for the first two dungeon bosses.",
+      "Name": "Boss Cooldown Hold",
+      "Description": "At low boss HP, saves major damage cooldowns for the next pull or boss. Optional dungeon-routing helper; leave it off for normal play.",
       "EventType": "OnTick",
       "LogicId": "32b92184-c156-43a9-a727-ddacf1700a85",
       "ThrottleSameEvent": 0.5,
@@ -87,12 +87,12 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2025-10-06T20:54:10.239536Z",
-      "ModifiedAt": "2026-06-26T19:30:00.000Z"
+      "ModifiedAt": "2026-06-28T10:25:00.000Z"
     },
     {
       "Id": "5a47325b-00d5-4e36-8843-040393757b89",
-      "Name": "Group Hold",
-      "Description": "Holds cooldowns at 40% HP, in packs greater than 3. \nRecommended to toggle this manually before AoE during dungeons for best results.",
+      "Name": "Pack Cooldown Hold",
+      "Description": "When a trash pack is nearly dead, saves major damage cooldowns for the next pull or boss. Optional dungeon-routing helper; leave it off for normal play.",
       "EventType": "OnTick",
       "LogicId": "dd7b2b9f-2dd9-4727-bb92-aa51f5b78dbe",
       "ThrottleSameEvent": 0.5,
@@ -101,7 +101,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2025-11-29T20:46:01.621465Z",
-      "ModifiedAt": "2026-06-26T19:30:00.000Z"
+      "ModifiedAt": "2026-06-28T10:25:00.000Z"
     },
     {
       "Id": "f97dfcaf-0ec7-4a05-aa20-89d26a48e419",
@@ -162,7 +162,7 @@
     {
       "Id": "2d80ee64-f724-4599-9e89-1e3cc4569aec",
       "Name": "Enable CDs",
-      "Description": "",
+      "Description": "Cooldown hold helper for dungeon routing.",
       "EventType": "OnTick",
       "LogicId": "cdf210ee-6701-4012-b3e5-1be407e197b1",
       "ThrottleSameEvent": 0.5,
@@ -171,7 +171,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-03T20:19:19.9377126Z",
-      "ModifiedAt": "2026-06-26T19:30:00.000Z"
+      "ModifiedAt": "2026-06-28T10:25:00.000Z"
     },
     {
       "Id": "4a1a57d1-548b-493e-b997-a5f4834de436",
@@ -401,12 +401,12 @@
   "Conditions": [
     {
       "Id": "175f2319-de23-405e-97fe-304957c004ff",
-      "Name": "Boss 15HP%",
+      "Name": "[Boss] HP <= 15%",
       "Description": "",
       "SubConditions": [
         {
           "Id": "48d035e2-9636-4b60-8ff3-4f0c9fcd8cfa",
-          "Name": "Boss 15HP%",
+          "Name": "Boss HP <= 15%",
           "Description": "",
           "TargetType": 1,
           "ConditionType": 1,
@@ -607,12 +607,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2025-11-24T02:49:34.4062139Z",
-          "ModifiedAt": "2025-11-24T02:49:34.406214Z",
+          "ModifiedAt": "2026-06-28T10:25:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2025-10-06T04:21:39.3775087Z",
-      "ModifiedAt": "2025-11-24T02:51:40.6009223Z",
+      "ModifiedAt": "2026-06-28T10:25:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -3337,12 +3337,12 @@
     },
     {
       "Id": "66d6c626-0514-4c85-a7d0-e4b5abe7cef7",
-      "Name": "Boss 15HP",
+      "Name": "[Boss] HP <= 15%",
       "Description": "",
       "SubConditions": [
         {
           "Id": "dc1433a6-5c79-43e6-ac14-a20b98184279",
-          "Name": "Boss 15HP",
+          "Name": "Boss HP <= 15%",
           "Description": "",
           "TargetType": 1,
           "ConditionType": 1,
@@ -3533,12 +3533,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2025-11-24T02:49:34.4062139Z",
-          "ModifiedAt": "2025-11-24T02:49:34.406214Z",
+          "ModifiedAt": "2026-06-28T10:25:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2025-11-29T07:20:54.9846048Z",
-      "ModifiedAt": "2026-01-03T07:54:39.4693752Z",
+      "ModifiedAt": "2026-06-28T10:25:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -3749,12 +3749,12 @@
     },
     {
       "Id": "a51afdf9-328b-4531-87db-fd6d07e6b89a",
-      "Name": "Group 40HP%",
+      "Name": "[Pack] Target HP <= 40%",
       "Description": "",
       "SubConditions": [
         {
           "Id": "16370776-c944-48e3-a03d-d850357a0d1c",
-          "Name": "40HP",
+          "Name": "Target HP <= 40%",
           "Description": "",
           "TargetType": 1,
           "ConditionType": 1,
@@ -3945,12 +3945,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2025-11-24T02:53:04.576773Z",
-          "ModifiedAt": "2025-11-24T02:53:04.5767731Z",
+          "ModifiedAt": "2026-06-28T10:25:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2025-11-29T07:21:16.1584628Z",
-      "ModifiedAt": "2026-01-03T23:40:20.4571588Z",
+      "ModifiedAt": "2026-06-28T10:25:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -9360,11 +9360,11 @@
       "CreatedAt": "2025-10-30T20:14:09.9004962Z",
       "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
-      "Category": "Holds"
+      "Category": "Cooldown Holds"
     },
     {
       "Id": "32b92184-c156-43a9-a727-ddacf1700a85",
-      "Name": "Boss Hold",
+      "Name": "Boss Cooldown Hold",
       "Description": "",
       "LogicType": 0,
       "ConditionIds": [
@@ -9400,13 +9400,13 @@
         }
       ],
       "CreatedAt": "2025-11-29T07:21:27.9692004Z",
-      "ModifiedAt": "2026-06-26T19:30:00.000Z",
+      "ModifiedAt": "2026-06-28T10:25:00.000Z",
       "ExecuteFirstOnly": false,
-      "Category": "Holds"
+      "Category": "Cooldown Holds"
     },
     {
       "Id": "dd7b2b9f-2dd9-4727-bb92-aa51f5b78dbe",
-      "Name": "Group Hold",
+      "Name": "Pack Cooldown Hold",
       "Description": "",
       "LogicType": 0,
       "ConditionIds": [
@@ -9441,9 +9441,9 @@
         }
       ],
       "CreatedAt": "2025-11-29T20:44:52.0510154Z",
-      "ModifiedAt": "2026-06-26T19:30:00.000Z",
+      "ModifiedAt": "2026-06-28T10:25:00.000Z",
       "ExecuteFirstOnly": false,
-      "Category": "Holds"
+      "Category": "Cooldown Holds"
     },
     {
       "Id": "2fe93ae9-ec9c-463a-b57f-731c026de339",
@@ -9484,7 +9484,7 @@
       "CreatedAt": "2025-11-29T20:47:33.6923885Z",
       "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
-      "Category": "Holds"
+      "Category": "Cooldown Holds"
     },
     {
       "Id": "3c5df484-39e7-4776-aa19-b24dfad7cf18",
@@ -10668,8 +10668,8 @@
     "Items": [
       {
         "Id": "80e5a42f-7cce-4607-877d-67ca6248a5df",
-        "Name": "Boss Hold",
-        "Description": "Holds cooldowns at 15 percent HP. Toggle for the first two bosses in dungeon.",
+        "Name": "Boss Cooldown Hold",
+        "Description": "At low boss HP, saves major damage cooldowns for the next pull or boss. Optional dungeon-routing helper; leave it off for normal play.",
         "EventIds": [
           "08c75b56-6f6e-4b0c-88f7-7f58282253c4"
         ],
@@ -10678,8 +10678,8 @@
       },
       {
         "Id": "969c86f4-4076-445b-8f68-b16cb511e458",
-        "Name": "Group Hold",
-        "Description": "Holds cooldowns in big pulls. Use while pulling in dungeons, toggle off for a boss fight.",
+        "Name": "Pack Cooldown Hold",
+        "Description": "When a trash pack is nearly dead, saves major damage cooldowns for the next pull or boss. Optional dungeon-routing helper; leave it off for normal play.",
         "EventIds": [
           "5a47325b-00d5-4e36-8843-040393757b89"
         ],
@@ -10908,5 +10908,5 @@
       "jps-war-qt-stance-mt": true
     }
   },
-  "Version": "0.1.12"
+  "Version": "0.1.13"
 }

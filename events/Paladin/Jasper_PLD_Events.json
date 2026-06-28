@@ -2,7 +2,7 @@
   "Id": "Jasper_PLD_Events",
   "Name": "Jasper PLD Events",
   "Description": "General-purpose Paladin event profile for PvE. Keeps earlier dungeon mitigation, Sheltron/Intervention/Clemency support, raidwide/tankbuster mitigation, Interject utility, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
-  "Version": "0.1.11",
+  "Version": "0.1.12",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -119,8 +119,8 @@
     },
     {
       "Id": "08c75b56-6f6e-4b0c-88f7-7f58282253c4",
-      "Name": "Boss Hold",
-      "Description": "Holds cooldowns at 15% boss HP.\nRecommended for the first two dungeon bosses.",
+      "Name": "Boss Cooldown Hold",
+      "Description": "At low boss HP, saves major damage cooldowns for the next pull or boss. Optional dungeon-routing helper; leave it off for normal play.",
       "EventType": "OnTick",
       "LogicId": "32b92184-c156-43a9-a727-ddacf1700a85",
       "ThrottleSameEvent": 0.5,
@@ -129,12 +129,12 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-28T10:25:00.000Z"
     },
     {
       "Id": "5a47325b-00d5-4e36-8843-040393757b89",
-      "Name": "Group Hold",
-      "Description": "Holds cooldowns at 40% HP in packs of 3 or more enemies.\nRecommended to toggle manually before AoE dungeon pulls.",
+      "Name": "Pack Cooldown Hold",
+      "Description": "When a trash pack is nearly dead, saves major damage cooldowns for the next pull or boss. Optional dungeon-routing helper; leave it off for normal play.",
       "EventType": "OnTick",
       "LogicId": "dd7b2b9f-2dd9-4727-bb92-aa51f5b78dbe",
       "ThrottleSameEvent": 0.5,
@@ -143,7 +143,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-28T10:25:00.000Z"
     },
     {
       "Id": "f97dfcaf-0ec7-4a05-aa20-89d26a48e419",
@@ -259,8 +259,8 @@
     },
     {
       "Id": "9d3ae40b-bfcc-4ed3-968c-fb9c49b862fa",
-      "Name": "Boss No Hold",
-      "Description": "",
+      "Name": "Boss Hold Release",
+      "Description": "Re-enables major damage cooldowns after the low-boss-HP hold window ends.",
       "EventType": "OnTick",
       "LogicId": "6b7a7363-2b08-43d0-bee0-99aad764b8d1",
       "ThrottleSameEvent": 0.5,
@@ -269,12 +269,12 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T19:30:00.000Z"
+      "ModifiedAt": "2026-06-28T10:25:00.000Z"
     },
     {
       "Id": "4d074361-b17a-4ea5-8a21-20a477294696",
-      "Name": "Group No Hold",
-      "Description": "",
+      "Name": "Pack Hold Release",
+      "Description": "Re-enables major damage cooldowns after the low-pack-HP hold window ends.",
       "EventType": "OnTick",
       "LogicId": "a7834a16-6cba-4ad4-810a-4f273c35a3b0",
       "ThrottleSameEvent": 0.5,
@@ -283,7 +283,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T19:30:00.000Z"
+      "ModifiedAt": "2026-06-28T10:25:00.000Z"
     },
     {
       "Id": "jps-pld-event-stance",
@@ -3878,12 +3878,12 @@
     },
     {
       "Id": "66d6c626-0514-4c85-a7d0-e4b5abe7cef7",
-      "Name": "[Target] Boss <=15HP",
+      "Name": "[Boss] HP <= 15%",
       "Description": "",
       "SubConditions": [
         {
           "Id": "48d035e2-9636-4b60-8ff3-4f0c9fcd8cfa",
-          "Name": "Boss 15HP",
+          "Name": "Boss HP <= 15%",
           "Description": "",
           "TargetType": 1,
           "ConditionType": 1,
@@ -4084,22 +4084,22 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2025-11-24T02:49:34.4062139Z",
-          "ModifiedAt": "2025-11-24T02:49:34.406214Z",
+          "ModifiedAt": "2026-06-28T10:25:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T10:25:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
       "Id": "a51afdf9-328b-4531-87db-fd6d07e6b89a",
-      "Name": "[Target] Group 40HP",
+      "Name": "[Pack] Target HP <= 40%",
       "Description": "",
       "SubConditions": [
         {
           "Id": "16370776-c944-48e3-a03d-d850357a0d1c",
-          "Name": "40HP",
+          "Name": "Target HP <= 40%",
           "Description": "",
           "TargetType": 1,
           "ConditionType": 1,
@@ -4300,12 +4300,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2025-11-24T02:53:04.576773Z",
-          "ModifiedAt": "2025-11-24T02:53:04.5767731Z",
+          "ModifiedAt": "2026-06-28T10:25:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T10:25:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -6257,12 +6257,12 @@
     },
     {
       "Id": "91279a2b-af3e-4b97-a64a-f69792211f89",
-      "Name": "Target >=15HP%",
+      "Name": "[Boss] HP > 15%",
       "Description": "",
       "SubConditions": [
         {
           "Id": "c84fa2c2-3d1c-4def-a7fd-8aa77069bd7a",
-          "Name": "Boss 15HP%",
+          "Name": "Boss HP > 15%",
           "Description": "",
           "TargetType": 1,
           "ConditionType": 1,
@@ -6463,12 +6463,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2025-11-24T02:49:34.4062139Z",
-          "ModifiedAt": "2025-11-24T02:49:34.406214Z",
+          "ModifiedAt": "2026-06-28T10:25:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T10:25:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -6689,12 +6689,12 @@
     },
     {
       "Id": "6bbe06a6-2b6b-4939-a845-284fea9dee25",
-      "Name": "Target >=40HP%",
+      "Name": "[Pack] Target HP > 40%",
       "Description": "",
       "SubConditions": [
         {
           "Id": "d9c41356-b2f3-4310-97a5-35f00b9e4b49",
-          "Name": "40HP%",
+          "Name": "Target HP > 40%",
           "Description": "",
           "TargetType": 1,
           "ConditionType": 1,
@@ -6895,12 +6895,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2025-11-24T02:53:04.576773Z",
-          "ModifiedAt": "2025-11-24T02:53:04.5767731Z",
+          "ModifiedAt": "2026-06-28T10:25:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T10:25:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -7121,12 +7121,12 @@
     },
     {
       "Id": "175f2319-de23-405e-97fe-304957c004ff",
-      "Name": "Boss 15HP",
+      "Name": "[Boss] HP <= 15%",
       "Description": "",
       "SubConditions": [
         {
           "Id": "a2a2d194-06cb-420c-ad30-df238dd9b7ec",
-          "Name": "Boss 15HP%",
+          "Name": "Boss HP <= 15%",
           "Description": "",
           "TargetType": 1,
           "ConditionType": 1,
@@ -7327,12 +7327,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2025-11-24T02:49:34.4062139Z",
-          "ModifiedAt": "2025-11-24T02:49:34.406214Z",
+          "ModifiedAt": "2026-06-28T10:25:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T10:25:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -8835,8 +8835,8 @@
     },
     {
       "Id": "6b7a7363-2b08-43d0-bee0-99aad764b8d1",
-      "Name": "Boss No Hold",
-      "Description": "",
+      "Name": "Boss Hold Release",
+      "Description": "Re-enables major damage cooldowns after the low-boss-HP hold window ends.",
       "LogicType": 0,
       "ConditionIds": [
         "91279a2b-af3e-4b97-a64a-f69792211f89",
@@ -8896,13 +8896,13 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T19:30:00.000Z",
+      "ModifiedAt": "2026-06-28T10:25:00.000Z",
       "ExecuteFirstOnly": false,
-      "Category": "Holds"
+      "Category": "Cooldown Holds"
     },
     {
       "Id": "32b92184-c156-43a9-a727-ddacf1700a85",
-      "Name": "Boss Hold",
+      "Name": "Boss Cooldown Hold",
       "Description": "",
       "LogicType": 0,
       "ConditionIds": [
@@ -8964,14 +8964,14 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T10:25:00.000Z",
       "ExecuteFirstOnly": false,
-      "Category": "Holds"
+      "Category": "Cooldown Holds"
     },
     {
       "Id": "a7834a16-6cba-4ad4-810a-4f273c35a3b0",
-      "Name": "Group No Hold",
-      "Description": "",
+      "Name": "Pack Hold Release",
+      "Description": "Re-enables major damage cooldowns after the low-pack-HP hold window ends.",
       "LogicType": 0,
       "ConditionIds": [
         "6bbe06a6-2b6b-4939-a845-284fea9dee25",
@@ -9031,13 +9031,13 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T19:30:00.000Z",
+      "ModifiedAt": "2026-06-28T10:25:00.000Z",
       "ExecuteFirstOnly": false,
-      "Category": "Holds"
+      "Category": "Cooldown Holds"
     },
     {
       "Id": "dd7b2b9f-2dd9-4727-bb92-aa51f5b78dbe",
-      "Name": "Group Hold",
+      "Name": "Pack Cooldown Hold",
       "Description": "",
       "LogicType": 0,
       "ConditionIds": [
@@ -9098,9 +9098,9 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T10:25:00.000Z",
       "ExecuteFirstOnly": false,
-      "Category": "Holds"
+      "Category": "Cooldown Holds"
     },
     {
       "Id": "2fe93ae9-ec9c-463a-b57f-731c026de339",
@@ -9192,7 +9192,7 @@
       "CreatedAt": "2026-06-25T07:45:00.000Z",
       "ModifiedAt": "2026-06-26T19:30:00.000Z",
       "ExecuteFirstOnly": false,
-      "Category": "Holds"
+      "Category": "Cooldown Holds"
     },
     {
       "Id": "f1d4dc14-ecaf-4078-980e-f8a3fc9c4c0e",
@@ -10112,7 +10112,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-28T09:15:00.000Z",
+  "ModifiedAt": "2026-06-28T10:25:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
@@ -10148,7 +10148,7 @@
       },
       {
         "Id": "ef8895fc-b837-4c29-80b0-81f4e49dba27",
-        "Name": "Variable Holds",
+        "Name": "Cooldown Holds",
         "Description": "",
         "EventIds": [
           "5a47325b-00d5-4e36-8843-040393757b89",
