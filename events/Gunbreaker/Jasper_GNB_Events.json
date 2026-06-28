@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_GNB_Events",
   "Name": "Jasper GNB Events",
-  "Description": "General-purpose Gunbreaker event profile for PvE. Keeps dungeon mitigation, Aurora/Heart of Corundum recovery, raidwide/tankbuster mitigation, Interject utility, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play. Includes earlier dungeon mitigation retuning for public roulette-safe pulls. ForceAOE is manual-only; this profile does not reset it.",
-  "Version": "0.1.12",
+  "Description": "General-purpose Gunbreaker event profile for PvE. Keeps dungeon mitigation, Aurora/Heart of Corundum recovery, raidwide/tankbuster mitigation, Interject utility, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play. Includes earlier dungeon mitigation retuning for public roulette-safe pulls. ForceAOE is manual-only; this profile does not reset it. Adds earlier Heart of Corundum and Aurora recovery thresholds.",
+  "Version": "0.1.13",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -106,7 +106,7 @@
     {
       "Id": "f6a9ba02-bb93-406b-b7ad-b171fc3aa3d0",
       "Name": "Aurora Self <= 80%",
-      "Description": "",
+      "Description": "Uses Aurora on self around 85 percent HP for smoother sustain before emergency windows.",
       "EventType": "OnTick",
       "LogicId": "81f01a90-0268-4250-8108-620be7a3d630",
       "ThrottleSameEvent": 0.5,
@@ -115,7 +115,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T15:00:00.000Z"
+      "ModifiedAt": "2026-06-28T11:25:00.000Z"
     },
     {
       "Id": "08c75b56-6f6e-4b0c-88f7-7f58282253c4",
@@ -162,7 +162,7 @@
     {
       "Id": "78f2c611-1379-41d2-a2bd-26f59e78abb9",
       "Name": "HoC OT",
-      "Description": "Uses Heart of Corundum on the lowest-health party member at the configured HP threshold.",
+      "Description": "Uses Heart of Corundum on a buddy target around 85 percent HP when support is enabled.",
       "EventType": "OnTick",
       "LogicId": "3c5df484-39e7-4776-aa19-b24dfad7cf18",
       "ThrottleSameEvent": 0.5,
@@ -171,7 +171,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T15:00:00.000Z"
+      "ModifiedAt": "2026-06-28T11:25:00.000Z"
     },
     {
       "Id": "b1a53fa1-f7f0-433b-ab95-0a01e86b12dd",
@@ -246,7 +246,7 @@
     {
       "Id": "abbafd47-f2d3-497a-927e-dd8525c758df",
       "Name": "HoC Self",
-      "Description": "",
+      "Description": "Uses Heart of Corundum on self around 90 percent HP for proactive damage smoothing.",
       "EventType": "OnTick",
       "LogicId": "98fb393d-eda4-444b-b9e4-326aa69ddc36",
       "ThrottleSameEvent": 0.5,
@@ -255,7 +255,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T15:00:00.000Z"
+      "ModifiedAt": "2026-06-28T11:25:00.000Z"
     },
     {
       "Id": "c3f48c29-96d2-417e-8faa-94b7cdf8bff7",
@@ -288,7 +288,7 @@
     {
       "Id": "6e5dc482-9416-446e-b2eb-ac48cb8898de",
       "Name": "HoC Lowest",
-      "Description": "",
+      "Description": "Uses Heart of Corundum on the lowest-health party member around 55 percent HP.",
       "EventType": "OnTick",
       "LogicId": "179e9ab2-48c7-41fb-bed6-db96af772c8d",
       "ThrottleSameEvent": 0.5,
@@ -297,12 +297,12 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T15:00:00.000Z"
+      "ModifiedAt": "2026-06-28T11:25:00.000Z"
     },
     {
       "Id": "99ec2b38-d004-4782-bbc9-c950c6241dd6",
       "Name": "Aurora Lowest",
-      "Description": "",
+      "Description": "Uses Aurora on the lowest-health party member around 65 percent HP.",
       "EventType": "OnTick",
       "LogicId": "11a8dd79-2b4c-47ba-b6ad-e93fc0560bbb",
       "ThrottleSameEvent": 0.5,
@@ -311,7 +311,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T15:00:00.000Z"
+      "ModifiedAt": "2026-06-28T11:25:00.000Z"
     },
     {
       "Id": "6a4390ec-d0b2-4ca3-9470-1f7fd21bbcb8",
@@ -1095,12 +1095,12 @@
     },
     {
       "Id": "432d91a0-4b2f-4925-a825-7d54566cc917",
-      "Name": "HP <= 85%",
+      "Name": "HP <= 90%",
       "Description": "",
       "SubConditions": [
         {
           "Id": "59cd3191-e6f1-49c3-8cae-39700e6fe9ae",
-          "Name": "HP <= 85%",
+          "Name": "HP <= 90%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -1123,7 +1123,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 85,
+              "Percentage": 90,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -1301,12 +1301,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-01-10T23:24:56.8044606Z",
-          "ModifiedAt": "2026-01-10T23:24:56.8044607Z",
+          "ModifiedAt": "2026-06-28T11:25:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T11:25:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -3263,12 +3263,12 @@
     },
     {
       "Id": "f3641db3-1950-4c1b-bd18-66bb46c1659d",
-      "Name": "HP <= 80%",
+      "Name": "HP <= 85%",
       "Description": "",
       "SubConditions": [
         {
           "Id": "4cd0349a-c046-4dfd-9247-9353ffb2ec71",
-          "Name": "<= 80%",
+          "Name": "HP <= 85%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -3291,7 +3291,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 80,
+              "Percentage": 85,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -3469,12 +3469,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2025-08-13T05:48:25.4370078Z",
-          "ModifiedAt": "2025-08-13T05:48:25.4370078Z",
+          "ModifiedAt": "2026-06-28T11:25:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T11:25:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -3914,12 +3914,12 @@
     },
     {
       "Id": "69ba955d-d002-4fb9-9c86-c1c9deca1d59",
-      "Name": "Auto Buddymit",
+      "Name": "Auto Buddymit <= 85%",
       "Description": "Condition requiring tank partner to be in combat with you.",
       "SubConditions": [
         {
           "Id": "1692e7ad-1b3c-41c2-981c-ba9fb7585bac",
-          "Name": "TP HP Check",
+          "Name": "Target HP <= 85%",
           "Description": "",
           "TargetType": 2,
           "ConditionType": 1,
@@ -3942,7 +3942,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 80,
+              "Percentage": 85,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -4120,12 +4120,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-01-03T00:02:16.3085689Z",
-          "ModifiedAt": "2026-01-03T00:02:16.3085689Z",
+          "ModifiedAt": "2026-06-28T11:25:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T11:25:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -6506,12 +6506,12 @@
     },
     {
       "Id": "72214096-c8a7-4fe5-8ab4-5cac4796f758",
-      "Name": "Aurora Lowest",
+      "Name": "Aurora Lowest <= 65%",
       "Description": "",
       "SubConditions": [
         {
           "Id": "192bbd14-9f94-4f93-bc09-09c1e69cee0f",
-          "Name": "Lowest Ally",
+          "Name": "Lowest Ally <= 65%",
           "Description": "",
           "TargetType": 5,
           "ConditionType": 1,
@@ -6534,7 +6534,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 50,
+              "Percentage": 65,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -6712,22 +6712,22 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-05-07T20:25:09.8926352Z",
-          "ModifiedAt": "2026-05-07T20:25:09.8926353Z",
+          "ModifiedAt": "2026-06-28T11:25:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T11:25:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
       "Id": "4aab63bf-71ca-4f24-81e6-bd5e2470e674",
-      "Name": "HoC Lowest",
+      "Name": "HoC Lowest <= 55%",
       "Description": "",
       "SubConditions": [
         {
           "Id": "49cd7cd6-3d49-4ad8-b825-85b76bba2144",
-          "Name": "Lowest Ally",
+          "Name": "Lowest Ally <= 55%",
           "Description": "",
           "TargetType": 5,
           "ConditionType": 1,
@@ -6750,7 +6750,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 30,
+              "Percentage": 55,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -6928,12 +6928,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-05-07T20:25:33.5257339Z",
-          "ModifiedAt": "2026-05-07T20:25:33.5257339Z",
+          "ModifiedAt": "2026-06-28T11:25:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T11:25:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -9801,7 +9801,7 @@
     {
       "Id": "81f01a90-0268-4250-8108-620be7a3d630",
       "Name": "Aurora",
-      "Description": "Aurora <= 80%",
+      "Description": "Uses Aurora on self around 85 percent HP for smoother sustain before emergency windows.",
       "LogicType": 0,
       "ConditionIds": [
         "62629a8c-a9c0-47c2-8912-d978d77c1a2a",
@@ -9836,7 +9836,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T15:00:00.000Z",
+      "ModifiedAt": "2026-06-28T11:25:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Mitigation"
     },
@@ -10479,7 +10479,7 @@
     {
       "Id": "3c5df484-39e7-4776-aa19-b24dfad7cf18",
       "Name": "Auto Buddymit",
-      "Description": "",
+      "Description": "Uses Heart of Corundum on a buddy target around 85 percent HP when support is enabled.",
       "LogicType": 0,
       "ConditionIds": [
         "69ba955d-d002-4fb9-9c86-c1c9deca1d59",
@@ -10513,7 +10513,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T15:00:00.000Z",
+      "ModifiedAt": "2026-06-28T11:25:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Mitigation"
     },
@@ -10752,7 +10752,7 @@
     {
       "Id": "98fb393d-eda4-444b-b9e4-326aa69ddc36",
       "Name": "HoC Self",
-      "Description": "",
+      "Description": "Uses Heart of Corundum on self around 90 percent HP for proactive damage smoothing.",
       "LogicType": 0,
       "ConditionIds": [
         "432d91a0-4b2f-4925-a825-7d54566cc917",
@@ -10786,7 +10786,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T15:00:00.000Z",
+      "ModifiedAt": "2026-06-28T11:25:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Mitigation"
     },
@@ -10876,7 +10876,7 @@
     {
       "Id": "179e9ab2-48c7-41fb-bed6-db96af772c8d",
       "Name": "HoC Lowest",
-      "Description": "",
+      "Description": "Uses Heart of Corundum on the lowest-health party member around 55 percent HP.",
       "LogicType": 0,
       "ConditionIds": [
         "4aab63bf-71ca-4f24-81e6-bd5e2470e674",
@@ -10910,14 +10910,14 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T15:00:00.000Z",
+      "ModifiedAt": "2026-06-28T11:25:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
     },
     {
       "Id": "11a8dd79-2b4c-47ba-b6ad-e93fc0560bbb",
       "Name": "Aurora Lowest",
-      "Description": "",
+      "Description": "Uses Aurora on the lowest-health party member around 65 percent HP.",
       "LogicType": 0,
       "ConditionIds": [
         "72214096-c8a7-4fe5-8ab4-5cac4796f758",
@@ -10951,7 +10951,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T15:00:00.000Z",
+      "ModifiedAt": "2026-06-28T11:25:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
     },
@@ -11462,7 +11462,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-28T11:05:00.000Z",
+  "ModifiedAt": "2026-06-28T11:25:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

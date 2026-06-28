@@ -1,9 +1,9 @@
 {
   "Id": "Jasper_WAR_Events",
   "Name": "Jasper WAR Events",
-  "Description": "General-purpose Warrior event profile for PvE. Keeps dungeon mitigation, Bloodwhetting recovery, emergency Holmgang support, MT/OT stance controls, wipe/zone reset scaffolding, raidwide/tankbuster mitigation, Interject utility, and optional co-tank support. Includes earlier dungeon mitigation retuning for public roulette-safe pulls. ForceAOE is manual-only; this profile does not reset it.",
+  "Description": "General-purpose Warrior event profile for PvE. Keeps dungeon mitigation, Bloodwhetting recovery, emergency Holmgang support, MT/OT stance controls, wipe/zone reset scaffolding, raidwide/tankbuster mitigation, Interject utility, and optional co-tank support. Includes earlier dungeon mitigation retuning for public roulette-safe pulls. ForceAOE is manual-only; this profile does not reset it. Adds earlier Equilibrium, Thrill, Shake, and optional Nascent support thresholds.",
   "CreatedAt": "2026-06-25T02:45:00.000Z",
-  "ModifiedAt": "2026-06-28T11:05:00.000Z",
+  "ModifiedAt": "2026-06-28T11:25:00.000Z",
   "Events": [
     {
       "Id": "f2daaf1d-c477-42b2-9db1-baa49330bfe3",
@@ -176,7 +176,7 @@
     {
       "Id": "4a1a57d1-548b-493e-b997-a5f4834de436",
       "Name": "Panic Heal",
-      "Description": "",
+      "Description": "Uses Equilibrium around 65 percent HP as an oGCD recovery layer before emergency-only windows.",
       "EventType": "OnTick",
       "LogicId": "ab041c02-24ba-4078-8ec5-66cea860df61",
       "ThrottleSameEvent": 0.5,
@@ -185,7 +185,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-03T20:20:18.3895338Z",
-      "ModifiedAt": "2026-06-26T19:30:00.000Z"
+      "ModifiedAt": "2026-06-28T11:25:00.000Z"
     },
     {
       "Id": "7b40e31b-cb13-4075-9cb6-7e6583968814",
@@ -330,7 +330,7 @@
     {
       "Id": "jps-war-event-flash-lowest",
       "Name": "Nascent Flash Lowest",
-      "Description": "Optional Nascent Flash support for the lowest-health party member.",
+      "Description": "Optional Nascent Flash support for the lowest-health party member around 50 percent HP.",
       "EventType": "OnTick",
       "LogicId": "jps-war-logic-flash-lowest",
       "ThrottleSameEvent": 0.5,
@@ -339,7 +339,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-26T10:20:00.000Z",
-      "ModifiedAt": "2026-06-26T10:20:00.000Z"
+      "ModifiedAt": "2026-06-28T11:25:00.000Z"
     },
     {
       "Id": "jps-war-event-stance-mt",
@@ -372,7 +372,7 @@
     {
       "Id": "jps-war-event-thrill-emergency",
       "Name": "Thrill Emergency",
-      "Description": "Uses Thrill of Battle when HP drops in combat outside scripted tankbuster handling.",
+      "Description": "Uses Thrill of Battle around 70 percent HP as a proactive sustain layer when no invuln is active.",
       "EventType": "OnTick",
       "LogicId": "jps-war-logic-thrill-emergency",
       "ThrottleSameEvent": 1.5,
@@ -381,12 +381,12 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-27T01:15:00.000Z",
-      "ModifiedAt": "2026-06-27T01:15:00.000Z"
+      "ModifiedAt": "2026-06-28T11:25:00.000Z"
     },
     {
       "Id": "jps-war-event-shake-emergency",
       "Name": "Shake Emergency",
-      "Description": "Uses Shake It Off when HP drops in combat outside scripted raidwide handling.",
+      "Description": "Uses Shake It Off around 65 percent HP as a sustain shield when no invuln is active.",
       "EventType": "OnTick",
       "LogicId": "jps-war-logic-shake-emergency",
       "ThrottleSameEvent": 1.5,
@@ -395,7 +395,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-27T01:15:00.000Z",
-      "ModifiedAt": "2026-06-27T01:15:00.000Z"
+      "ModifiedAt": "2026-06-28T11:25:00.000Z"
     }
   ],
   "Conditions": [
@@ -7276,12 +7276,12 @@
     },
     {
       "Id": "a1692a33-812e-4593-a0cb-3771dd33c179",
-      "Name": "Teammate Low",
+      "Name": "Teammate HP <= 50%",
       "Description": "",
       "SubConditions": [
         {
           "Id": "6e2b12eb-f02e-4445-bfd0-52967e5493a8",
-          "Name": "<= 30 HP",
+          "Name": "Ally HP <= 50%",
           "Description": "",
           "TargetType": 5,
           "ConditionType": 1,
@@ -7304,7 +7304,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 30,
+              "Percentage": 50,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -7482,22 +7482,22 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-04-19T21:05:11.6956709Z",
-          "ModifiedAt": "2026-04-19T21:05:11.6956709Z",
+          "ModifiedAt": "2026-06-28T11:25:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-04-19T21:04:55.0078173Z",
-      "ModifiedAt": "2026-04-19T21:05:13.4335326Z",
+      "ModifiedAt": "2026-06-28T11:25:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
       "Id": "jps-war-cond-self-hp-50",
-      "Name": "Self HP <= 50%",
+      "Name": "Self HP <= 65%",
       "Description": "",
       "SubConditions": [
         {
           "Id": "jps-war-cond-self-hp-50-sub",
-          "Name": "Self HP <= 50%",
+          "Name": "Self HP <= 65%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -7520,7 +7520,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 50,
+              "Percentage": 65,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -7698,22 +7698,22 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-06-27T01:15:00.000Z",
-          "ModifiedAt": "2026-06-27T01:15:00.000Z",
+          "ModifiedAt": "2026-06-28T11:25:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-27T01:15:00.000Z",
-      "ModifiedAt": "2026-06-27T01:15:00.000Z",
+      "ModifiedAt": "2026-06-28T11:25:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
       "Id": "jps-war-cond-self-hp-55",
-      "Name": "Self HP <= 55%",
+      "Name": "Self HP <= 65%",
       "Description": "",
       "SubConditions": [
         {
           "Id": "jps-war-cond-self-hp-55-sub",
-          "Name": "Self HP <= 55%",
+          "Name": "Self HP <= 65%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -7736,7 +7736,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 55,
+              "Percentage": 65,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -7914,22 +7914,22 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-06-27T01:15:00.000Z",
-          "ModifiedAt": "2026-06-27T01:15:00.000Z",
+          "ModifiedAt": "2026-06-28T11:25:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-27T01:15:00.000Z",
-      "ModifiedAt": "2026-06-27T01:15:00.000Z",
+      "ModifiedAt": "2026-06-28T11:25:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
       "Id": "jps-war-cond-self-hp-60",
-      "Name": "Self HP <= 60%",
+      "Name": "Self HP <= 70%",
       "Description": "",
       "SubConditions": [
         {
           "Id": "jps-war-cond-self-hp-60-sub",
-          "Name": "Self HP <= 60%",
+          "Name": "Self HP <= 70%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -7952,7 +7952,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 60,
+              "Percentage": 70,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -8130,12 +8130,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-06-27T01:15:00.000Z",
-          "ModifiedAt": "2026-06-27T01:15:00.000Z",
+          "ModifiedAt": "2026-06-28T11:25:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-27T01:15:00.000Z",
-      "ModifiedAt": "2026-06-27T01:15:00.000Z",
+      "ModifiedAt": "2026-06-28T11:25:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -9635,7 +9635,7 @@
     {
       "Id": "ab041c02-24ba-4078-8ec5-66cea860df61",
       "Name": "Panic Heal",
-      "Description": "Uses Equilibrium under 50 percent HP.",
+      "Description": "Uses Equilibrium around 65 percent HP as an oGCD recovery layer before emergency-only windows.",
       "LogicType": 0,
       "ConditionIds": [
         "jps-war-cond-self-hp-50",
@@ -9669,7 +9669,7 @@
         }
       ],
       "CreatedAt": "2026-01-05T23:14:07.7045013Z",
-      "ModifiedAt": "2026-06-27T01:15:00.000Z",
+      "ModifiedAt": "2026-06-28T11:25:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Mitigation"
     },
@@ -10441,7 +10441,7 @@
     {
       "Id": "jps-war-logic-flash-lowest",
       "Name": "Nascent Flash Lowest",
-      "Description": "Optional Nascent Flash support for the lowest-health party member.",
+      "Description": "Optional Nascent Flash support for the lowest-health party member around 50 percent HP.",
       "LogicType": 0,
       "ConditionIds": [
         "a1692a33-812e-4593-a0cb-3771dd33c179",
@@ -10475,7 +10475,7 @@
         }
       ],
       "CreatedAt": "2026-06-26T10:20:00.000Z",
-      "ModifiedAt": "2026-06-26T10:20:00.000Z",
+      "ModifiedAt": "2026-06-28T11:25:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Mitigation"
     },
@@ -10547,7 +10547,7 @@
     {
       "Id": "jps-war-logic-thrill-emergency",
       "Name": "Thrill Emergency",
-      "Description": "Uses Thrill of Battle as a general emergency sustain layer.",
+      "Description": "Uses Thrill of Battle around 70 percent HP as a proactive sustain layer when no invuln is active.",
       "LogicType": 0,
       "ConditionIds": [
         "309a790a-240d-4e2f-a0b3-7282cf6b717a",
@@ -10583,14 +10583,14 @@
         }
       ],
       "CreatedAt": "2026-06-27T01:15:00.000Z",
-      "ModifiedAt": "2026-06-27T01:15:00.000Z",
+      "ModifiedAt": "2026-06-28T11:25:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
     },
     {
       "Id": "jps-war-logic-shake-emergency",
       "Name": "Shake Emergency",
-      "Description": "Uses Shake It Off as a general emergency sustain layer.",
+      "Description": "Uses Shake It Off around 65 percent HP as a sustain shield when no invuln is active.",
       "LogicType": 0,
       "ConditionIds": [
         "309a790a-240d-4e2f-a0b3-7282cf6b717a",
@@ -10626,7 +10626,7 @@
         }
       ],
       "CreatedAt": "2026-06-27T01:15:00.000Z",
-      "ModifiedAt": "2026-06-27T01:15:00.000Z",
+      "ModifiedAt": "2026-06-28T11:25:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
     }
@@ -10883,5 +10883,5 @@
       "jps-war-qt-stance-mt": true
     }
   },
-  "Version": "0.1.14"
+  "Version": "0.1.15"
 }

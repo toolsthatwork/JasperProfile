@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_PLD_Events",
   "Name": "Jasper PLD Events",
-  "Description": "General-purpose Paladin event profile for PvE. Keeps earlier dungeon mitigation, Sheltron/Intervention/Clemency support, raidwide/tankbuster mitigation, Interject utility, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only; this profile does not reset it.",
-  "Version": "0.1.14",
+  "Description": "General-purpose Paladin event profile for PvE. Keeps earlier dungeon mitigation, Sheltron/Intervention/Clemency support, raidwide/tankbuster mitigation, Interject utility, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only; this profile does not reset it. Adds smoother Holy Sheltron and Intervention recovery thresholds.",
+  "Version": "0.1.15",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -36,7 +36,7 @@
     {
       "Id": "d13864d8-c2b5-4368-8159-019c3ea3b188",
       "Name": "Sheltron",
-      "Description": "Uses Holy Sheltron under 85% HP when gauge is near cap. Disable if you prefer manual buddy mitigation.",
+      "Description": "Uses Holy Sheltron around 90 percent HP when Oath gauge is near cap, smoothing tank damage before panic windows.",
       "EventType": "OnTick",
       "LogicId": "f1d4dc14-ecaf-4078-980e-f8a3fc9c4c0e",
       "ThrottleSameEvent": 0.5,
@@ -45,7 +45,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-28T11:25:00.000Z"
     },
     {
       "Id": "71df048b-a767-46bf-ae48-f6b7ec90e9d5",
@@ -162,7 +162,7 @@
     {
       "Id": "78f2c611-1379-41d2-a2bd-26f59e78abb9",
       "Name": "Auto Buddymit",
-      "Description": "Uses Intervention on the lowest-health party member at the configured HP threshold.",
+      "Description": "Uses Intervention on the lowest-health party member around 55 percent HP for earlier buddy mitigation support.",
       "EventType": "OnTick",
       "LogicId": "3c5df484-39e7-4776-aa19-b24dfad7cf18",
       "ThrottleSameEvent": 0.5,
@@ -171,7 +171,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-28T11:25:00.000Z"
     },
     {
       "Id": "6096b962-0a04-41f7-bfc0-361d76183c83",
@@ -1064,12 +1064,12 @@
     },
     {
       "Id": "e64a791d-71ee-4587-8b4e-a10af7185f5b",
-      "Name": "[Self] HP <= 85",
+      "Name": "[Self] HP <= 90",
       "Description": "",
       "SubConditions": [
         {
           "Id": "32f2567f-704b-4bf1-9c7e-58d55a39f76e",
-          "Name": "85",
+          "Name": "HP <= 90%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -1092,7 +1092,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 85,
+              "Percentage": 90,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -1270,12 +1270,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-05-12T22:57:05.6741827Z",
-          "ModifiedAt": "2026-05-12T22:57:05.6741827Z",
+          "ModifiedAt": "2026-06-28T11:25:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T11:25:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -5825,12 +5825,12 @@
     },
     {
       "Id": "0bfb1251-fcd4-47b6-9447-fba8bd6afba6",
-      "Name": "[Misc] Low HP Ally",
+      "Name": "[Ally] HP <= 55",
       "Description": "",
       "SubConditions": [
         {
           "Id": "f9689965-c757-4a5c-8d13-736c3bd76aea",
-          "Name": "40",
+          "Name": "Ally HP <= 55%",
           "Description": "",
           "TargetType": 5,
           "ConditionType": 1,
@@ -5853,7 +5853,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 40,
+              "Percentage": 55,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -6031,12 +6031,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-05-12T06:53:07.0650031Z",
-          "ModifiedAt": "2026-05-12T06:53:07.0650032Z",
+          "ModifiedAt": "2026-06-28T11:25:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T11:25:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -9197,7 +9197,7 @@
     {
       "Id": "f1d4dc14-ecaf-4078-980e-f8a3fc9c4c0e",
       "Name": "Auto Sheltron",
-      "Description": "",
+      "Description": "Uses Holy Sheltron around 90 percent HP when Oath gauge is near cap, smoothing tank damage before panic windows.",
       "LogicType": 0,
       "ConditionIds": [
         "5af14793-c6c0-47cd-957c-eb8799f1fb15",
@@ -9232,14 +9232,14 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T11:25:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Mitigation"
     },
     {
       "Id": "3c5df484-39e7-4776-aa19-b24dfad7cf18",
       "Name": "Intervention Lowest",
-      "Description": "",
+      "Description": "Uses Intervention on the lowest-health party member around 55 percent HP for earlier buddy mitigation support.",
       "LogicType": 0,
       "ConditionIds": [
         "0bfb1251-fcd4-47b6-9447-fba8bd6afba6",
@@ -9273,7 +9273,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T11:25:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
     },
@@ -10087,7 +10087,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-28T11:05:00.000Z",
+  "ModifiedAt": "2026-06-28T11:25:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
