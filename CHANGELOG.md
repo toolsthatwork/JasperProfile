@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Retuned Sage oGCD recovery so general Druochole and main-tank Taurochole fire earlier, while Diagnosis/Eukrasian Diagnosis stay reserved for emergency GCD fallback windows.
 - Retuned Warrior, Dark Knight, and Gunbreaker dungeon-pull safety to match the earlier Paladin mitigation ladder, with invulns no longer waiting for near-death HP and Arm's Length normalized for three-mob pulls where needed.
 - Retuned Paladin dungeon and boss safety: mitigation now starts earlier in pulls, Hallowed Ground/Clemency no longer wait for critical HP, Arm's Length can fire on three-mob pulls, and ForceAOE is restored by default for add pickup.
 - Added conservative Arm's Length emergency self-defense to melee and physical ranged DPS when stationary, low on HP, and holding multiple mobs.

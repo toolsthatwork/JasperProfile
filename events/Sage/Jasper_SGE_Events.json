@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_SGE_Events",
   "Name": "Jasper SGE Events",
-  "Description": "General-purpose Sage event profile for PvE. Keeps Kardia/Addersgall recovery, oGCD-first tank support, emergency GCD fallbacks, roulette-safe mitigation, cleanse support, and wipe/zone reset scaffolding.",
-  "Version": "0.1.8",
+  "Description": "General-purpose Sage event profile for PvE. Keeps Kardia/Addersgall recovery, earlier oGCD-first tank and party recovery, emergency GCD fallbacks, roulette-safe mitigation, cleanse support, and wipe/zone reset scaffolding.",
+  "Version": "0.1.9",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -232,7 +232,7 @@
     {
       "Id": "7cbcf3c9-a892-415e-b152-613eaa7d9199",
       "Name": "[MT] Taurochole",
-      "Description": "",
+      "Description": "Uses Taurochole on the main tank around 65 percent HP so the mitigation-heal lands before panic recovery.",
       "EventType": "OnTick",
       "LogicId": "448f7e43-3dbf-4bcf-a789-6bbb7329dbd8",
       "ThrottleSameEvent": 0.5,
@@ -241,12 +241,12 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T15:00:00.000Z"
+      "ModifiedAt": "2026-06-28T10:05:00.000Z"
     },
     {
       "Id": "8dc400a8-adf3-4567-87d6-118790db9551",
       "Name": "[ST] Druochole",
-      "Description": "",
+      "Description": "Uses Druochole on any low party member around 60 percent HP before GCD fallbacks.",
       "EventType": "OnTick",
       "LogicId": "2317a8bd-ba5a-401c-88dd-cf3f0d1746f0",
       "ThrottleSameEvent": 2.5,
@@ -255,7 +255,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T15:00:00.000Z"
+      "ModifiedAt": "2026-06-28T10:05:00.000Z"
     },
     {
       "Id": "9049f92f-66d2-4d85-8853-6bf59d4333af",
@@ -1467,12 +1467,12 @@
     },
     {
       "Id": "c730821c-9f63-4df2-affc-d1016de4c615",
-      "Name": "MT <= 50%",
+      "Name": "MT <= 65%",
       "Description": "",
       "SubConditions": [
         {
           "Id": "8959250e-e459-49e0-b138-3935e3796b40",
-          "Name": "MT <= 50%",
+          "Name": "MT <= 65%",
           "Description": "",
           "TargetType": 3,
           "ConditionType": 1,
@@ -1495,7 +1495,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 50,
+              "Percentage": 65,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -1673,12 +1673,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2025-08-17T01:40:25.4446542Z",
-          "ModifiedAt": "2025-08-17T01:40:25.4446542Z",
+          "ModifiedAt": "2026-06-28T10:05:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T10:05:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -4940,6 +4940,222 @@
       "CreatedAt": "2026-06-27T01:45:00.000Z",
       "ModifiedAt": "2026-06-27T01:45:00.000Z",
       "ExcludeFromTargetAccumulation": false
+    },
+    {
+      "Id": "jps-sge-cond-st-hp-60",
+      "Name": "[ST] <= 60 hp",
+      "Description": "",
+      "SubConditions": [
+        {
+          "Id": "jps-sge-cond-st-hp-60-sub",
+          "Name": "<= 60% hp",
+          "Description": "",
+          "TargetType": 5,
+          "ConditionType": 1,
+          "Parameters": {
+            "BuffParams": {
+              "StatusId": 0,
+              "StatusIds": [],
+              "UseMultipleStatuses": false,
+              "StatusLogic": 1,
+              "CheckDuration": false,
+              "MinDuration": 0,
+              "DurationComparison": 3,
+              "CheckStacks": false,
+              "RequiredStacks": 1,
+              "StackComparison": 3,
+              "InvertCheck": false,
+              "RequiredBuffCount": 2,
+              "BuffCountComparison": 3,
+              "StatusTargetOverrides": {},
+              "IsEnabled": true
+            },
+            "HealthParams": {
+              "Percentage": 60,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "DistanceParams": {
+              "Distance": 0,
+              "Comparison": 1,
+              "CheckLineOfSight": false,
+              "IsEnabled": true
+            },
+            "GaugeParams": {
+              "PropertyName": "",
+              "ValueType": 0,
+              "NumericValue": 0,
+              "BooleanValue": false,
+              "StringValue": "",
+              "Comparison": 3,
+              "IsEnabled": true
+            },
+            "MpParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "LastAbilityParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0.5,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "LastGcdParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0.5,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "CooldownParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0,
+              "TimeComparison": 2,
+              "CheckCharges": false,
+              "RequiredCharges": 1,
+              "IsEnabled": true
+            },
+            "ComboParams": {
+              "ComboId": 1,
+              "TimeRemaining": 0,
+              "TimeComparison": 3,
+              "IsEnabled": true
+            },
+            "MovementParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "ChannelingParams": {
+              "IsChanneling": true,
+              "SpecificAbilityId": 0,
+              "IsEnabled": true
+            },
+            "AggroParams": {
+              "HasAggro": true,
+              "AggroPosition": 1,
+              "PositionComparison": 2,
+              "IsEnabled": true
+            },
+            "AlwaysParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "InCombatParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "ActionHighlightedParams": {
+              "ActionId": 1,
+              "IsEnabled": true
+            },
+            "IsCastingParams": {
+              "IsCasting": true,
+              "SpecificActionId": 0,
+              "CheckSpecific": false,
+              "IsEnabled": true
+            },
+            "GcdTimeRemainingParams": {
+              "TimeThreshold": 2.5,
+              "Comparison": 1,
+              "IsEnabled": true
+            },
+            "CanInterruptParams": {
+              "CanInterrupt": true,
+              "IsEnabled": true
+            },
+            "EntityIdParams": {
+              "EntityId": 0,
+              "Comparison": 2,
+              "IsEnabled": true
+            },
+            "PartyHpAverageParams": {
+              "Percentage": 50,
+              "Comparison": 1,
+              "IsEnabled": true
+            },
+            "PartyHpLowestParams": {
+              "Percentage": 50,
+              "Comparison": 1,
+              "LowestMemberCount": 4,
+              "UseLowestMemberPercentage": false,
+              "LowestMemberPercentage": 50,
+              "IsEnabled": true
+            },
+            "PartyHpBandsParams": {
+              "CriticalThreshold": 30,
+              "LowThreshold": 50,
+              "ModerateThreshold": 70,
+              "RequiredCritical": 1,
+              "RequiredLow": 3,
+              "RequiredModerate": 5,
+              "BandLogic": 0,
+              "IsEnabled": true
+            },
+            "ActionChargesParams": {
+              "ActionId": 1,
+              "RequiredCharges": 1,
+              "Comparison": 3,
+              "CheckType": 0,
+              "TimeThreshold": 0,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "AggroCountParams": {
+              "RequiredCount": 1,
+              "CountComparison": 3,
+              "IsEnabled": true
+            },
+            "ShieldParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "PartyShieldAverageParams": {
+              "Percentage": 20,
+              "Comparison": 3,
+              "IsEnabled": true
+            },
+            "VariableParams": {
+              "VariableName": "",
+              "VariableType": 0,
+              "ExpectedBoolValue": true,
+              "ExpectedStringValue": "",
+              "ExpectedNumberValue": 0,
+              "Comparison": 2,
+              "StringComparison": 0,
+              "InvertCheck": false,
+              "CheckExists": false,
+              "IsEnabled": true
+            },
+            "DataIdParams": {
+              "DataId": 0,
+              "Comparison": 2,
+              "IsEnabled": true
+            },
+            "TargetNameParams": {
+              "Name": "",
+              "Comparison": 0,
+              "IsEnabled": true
+            }
+          },
+          "RequiredTargetCount": 1,
+          "TargetCountComparison": 3,
+          "UsePercentageMode": true,
+          "RequiredTargetPercentage": 50,
+          "CreatedAt": "2026-06-28T10:05:00.000Z",
+          "ModifiedAt": "2026-06-28T10:05:00.000Z",
+          "ShouldUseTargetCount": false
+        }
+      ],
+      "CreatedAt": "2026-06-28T10:05:00.000Z",
+      "ModifiedAt": "2026-06-28T10:05:00.000Z",
+      "ExcludeFromTargetAccumulation": false
     }
   ],
   "Logics": [
@@ -5559,7 +5775,7 @@
     {
       "Id": "448f7e43-3dbf-4bcf-a789-6bbb7329dbd8",
       "Name": "[MT] Taurochole",
-      "Description": "",
+      "Description": "Uses Taurochole on the main tank around 65 percent HP so the mitigation-heal lands before panic recovery.",
       "LogicType": 0,
       "ConditionIds": [
         "c730821c-9f63-4df2-affc-d1016de4c615",
@@ -5593,17 +5809,17 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T15:00:00.000Z",
+      "ModifiedAt": "2026-06-28T10:05:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": ""
     },
     {
       "Id": "2317a8bd-ba5a-401c-88dd-cf3f0d1746f0",
       "Name": "[ST] Druochole",
-      "Description": "",
+      "Description": "Uses Druochole on any low party member around 60 percent HP before GCD fallbacks.",
       "LogicType": 0,
       "ConditionIds": [
-        "c8065c73-5a41-4238-8ad9-77db1383fe03",
+        "jps-sge-cond-st-hp-60",
         "72280623-b8cb-4182-a19c-1fd14f3a7608"
       ],
       "ActionTriggers": [
@@ -5634,7 +5850,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T15:00:00.000Z",
+      "ModifiedAt": "2026-06-28T10:05:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": ""
     },
@@ -6581,7 +6797,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-27T01:45:00.000Z",
+  "ModifiedAt": "2026-06-28T10:05:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
