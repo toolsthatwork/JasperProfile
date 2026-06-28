@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_GNB_Events",
   "Name": "Jasper GNB Events",
-  "Description": "General-purpose Gunbreaker event profile for PvE. Keeps dungeon mitigation, Aurora/Heart of Corundum recovery, raidwide/tankbuster mitigation, Interject utility, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play. Includes earlier dungeon mitigation retuning for public roulette-safe pulls.",
-  "Version": "0.1.11",
+  "Description": "General-purpose Gunbreaker event profile for PvE. Keeps dungeon mitigation, Aurora/Heart of Corundum recovery, raidwide/tankbuster mitigation, Interject utility, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play. Includes earlier dungeon mitigation retuning for public roulette-safe pulls. ForceAOE is manual-only; this profile does not reset it.",
+  "Version": "0.1.12",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -10958,7 +10958,7 @@
     {
       "Id": "94ce5b93-58b4-5353-aed5-2161adfb4a7b",
       "Name": "Reset Toggles",
-      "Description": "Restores normal Gunbreaker ACR toggles while safely out of combat.",
+      "Description": "Restores normal Gunbreaker ACR toggles while safely out of combat. Regular UseAOE stays enabled; ForceAOE is manual-only and is never changed by this profile.",
       "LogicType": 0,
       "ConditionIds": [
         "4570f77b-07e5-42f1-83c8-075f8460ae89"
@@ -11018,31 +11018,6 @@
           "Id": "01cd05c5-41a9-3dca-8946-592ae41c2e65",
           "ActionId": 0,
           "SkillbarId": "LockFace",
-          "TTSText": "",
-          "TriggerType": 1,
-          "LogicOperator": 8,
-          "TargetType": 1,
-          "TargetSelectionStrategy": 6,
-          "SkipBuffId": 0,
-          "TargetOperation": 0,
-          "TargetDataId": 0,
-          "TargetName": "",
-          "TargetX": 0,
-          "TargetY": 0,
-          "TargetZ": 0,
-          "OverlayText": "",
-          "OverlayDuration": 3,
-          "VariableName": "",
-          "VariableType": 0,
-          "VariableBoolValue": true,
-          "VariableStringValue": "",
-          "VariableNumberValue": 0,
-          "VariableOperation": 0
-        },
-        {
-          "Id": "2d4e525a-1bb8-7618-39cb-075da13250bb",
-          "ActionId": 0,
-          "SkillbarId": "ForceAOE",
           "TTSText": "",
           "TriggerType": 1,
           "LogicOperator": 8,
@@ -11416,7 +11391,7 @@
         }
       ],
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-27T00:30:00.000Z",
+      "ModifiedAt": "2026-06-28T11:05:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
     },
@@ -11487,7 +11462,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-28T10:25:00.000Z",
+  "ModifiedAt": "2026-06-28T11:05:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

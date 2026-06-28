@@ -1,9 +1,9 @@
 {
   "Id": "Jasper_WAR_Events",
   "Name": "Jasper WAR Events",
-  "Description": "General-purpose Warrior event profile for PvE. Keeps dungeon mitigation, Bloodwhetting recovery, emergency Holmgang support, MT/OT stance controls, wipe/zone reset scaffolding, raidwide/tankbuster mitigation, Interject utility, and optional co-tank support. Includes earlier dungeon mitigation retuning for public roulette-safe pulls.",
+  "Description": "General-purpose Warrior event profile for PvE. Keeps dungeon mitigation, Bloodwhetting recovery, emergency Holmgang support, MT/OT stance controls, wipe/zone reset scaffolding, raidwide/tankbuster mitigation, Interject utility, and optional co-tank support. Includes earlier dungeon mitigation retuning for public roulette-safe pulls. ForceAOE is manual-only; this profile does not reset it.",
   "CreatedAt": "2026-06-25T02:45:00.000Z",
-  "ModifiedAt": "2026-06-28T10:25:00.000Z",
+  "ModifiedAt": "2026-06-28T11:05:00.000Z",
   "Events": [
     {
       "Id": "f2daaf1d-c477-42b2-9db1-baa49330bfe3",
@@ -9951,7 +9951,7 @@
     {
       "Id": "df490efc-2236-5fdb-8bd7-5e2694f6d5b3",
       "Name": "Reset Toggles",
-      "Description": "Restores normal Warrior ACR toggles while safely out of combat.",
+      "Description": "Restores normal Warrior ACR toggles while safely out of combat. Regular UseAOE stays enabled; ForceAOE is manual-only and is never changed by this profile.",
       "LogicType": 0,
       "ConditionIds": [
         "c46f9224-0233-4302-a1d8-d09d6bd49f2b"
@@ -10061,31 +10061,6 @@
           "Id": "384e91a3-3fb6-60cb-0fae-f5205201c39e",
           "ActionId": 0,
           "SkillbarId": "LockFace",
-          "TTSText": "",
-          "TriggerType": 1,
-          "LogicOperator": 8,
-          "TargetType": 1,
-          "TargetSelectionStrategy": 6,
-          "SkipBuffId": 0,
-          "TargetOperation": 0,
-          "TargetDataId": 0,
-          "TargetName": "",
-          "TargetX": 0,
-          "TargetY": 0,
-          "TargetZ": 0,
-          "OverlayText": "",
-          "OverlayDuration": 3,
-          "VariableName": "",
-          "VariableType": 0,
-          "VariableBoolValue": true,
-          "VariableStringValue": "",
-          "VariableNumberValue": 0,
-          "VariableOperation": 0
-        },
-        {
-          "Id": "e5855a66-c314-35df-6579-4f848027722e",
-          "ActionId": 0,
-          "SkillbarId": "ForceAOE",
           "TTSText": "",
           "TriggerType": 1,
           "LogicOperator": 8,
@@ -10459,7 +10434,7 @@
         }
       ],
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-27T00:30:00.000Z",
+      "ModifiedAt": "2026-06-28T11:05:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
     },
@@ -10908,5 +10883,5 @@
       "jps-war-qt-stance-mt": true
     }
   },
-  "Version": "0.1.13"
+  "Version": "0.1.14"
 }

@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_PLD_Events",
   "Name": "Jasper PLD Events",
-  "Description": "General-purpose Paladin event profile for PvE. Keeps earlier dungeon mitigation, Sheltron/Intervention/Clemency support, raidwide/tankbuster mitigation, Interject utility, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
-  "Version": "0.1.13",
+  "Description": "General-purpose Paladin event profile for PvE. Keeps earlier dungeon mitigation, Sheltron/Intervention/Clemency support, raidwide/tankbuster mitigation, Interject utility, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only; this profile does not reset it.",
+  "Version": "0.1.14",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -9558,7 +9558,7 @@
     {
       "Id": "4d659241-53e4-5150-840a-ebc81e1a285b",
       "Name": "Reset Toggles",
-      "Description": "Restores normal Paladin ACR toggles while safely out of combat. Regular AoE stays enabled, but forced AoE stays off by default.",
+      "Description": "Restores normal Paladin ACR toggles while safely out of combat. Regular UseAOE stays enabled; ForceAOE is manual-only and is never changed by this profile.",
       "LogicType": 0,
       "ConditionIds": [
         "2f32695f-a200-43cd-8f8b-386ad31e5ba1"
@@ -9643,31 +9643,6 @@
           "Id": "bc300a77-6cf1-84fb-53b4-348accc6697d",
           "ActionId": 0,
           "SkillbarId": "LockFace",
-          "TTSText": "",
-          "TriggerType": 1,
-          "LogicOperator": 8,
-          "TargetType": 1,
-          "TargetSelectionStrategy": 6,
-          "SkipBuffId": 0,
-          "TargetOperation": 0,
-          "TargetDataId": 0,
-          "TargetName": "",
-          "TargetX": 0,
-          "TargetY": 0,
-          "TargetZ": 0,
-          "OverlayText": "",
-          "OverlayDuration": 3,
-          "VariableName": "",
-          "VariableType": 0,
-          "VariableBoolValue": true,
-          "VariableStringValue": "",
-          "VariableNumberValue": 0,
-          "VariableOperation": 0
-        },
-        {
-          "Id": "8df68b9b-a124-c46d-c9bc-62b4fd701246",
-          "ActionId": 0,
-          "SkillbarId": "ForceAOE",
           "TTSText": "",
           "TriggerType": 1,
           "LogicOperator": 8,
@@ -10041,7 +10016,7 @@
         }
       ],
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-28T09:15:00.000Z",
+      "ModifiedAt": "2026-06-28T11:05:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
     },
@@ -10112,7 +10087,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-28T10:40:00.000Z",
+  "ModifiedAt": "2026-06-28T11:05:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

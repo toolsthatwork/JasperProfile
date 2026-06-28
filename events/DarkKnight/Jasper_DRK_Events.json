@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_DRK_Events",
   "Name": "Jasper DRK Events",
-  "Description": "General-purpose Dark Knight event profile for PvE. Keeps dungeon mitigation, raidwide/tankbuster mitigation, Interject utility, Living Dead emergency support, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play. Includes earlier dungeon mitigation retuning for public roulette-safe pulls.",
-  "Version": "0.1.10",
+  "Description": "General-purpose Dark Knight event profile for PvE. Keeps dungeon mitigation, raidwide/tankbuster mitigation, Interject utility, Living Dead emergency support, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play. Includes earlier dungeon mitigation retuning for public roulette-safe pulls. ForceAOE is manual-only; this profile does not reset it.",
+  "Version": "0.1.11",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -9249,7 +9249,7 @@
     {
       "Id": "a29875b0-5ffa-5b21-878d-77cbdcceae99",
       "Name": "Reset Toggles",
-      "Description": "Restores normal Dark Knight ACR toggles while safely out of combat.",
+      "Description": "Restores normal DarkKnight ACR toggles while safely out of combat. Regular UseAOE stays enabled; ForceAOE is manual-only and is never changed by this profile.",
       "LogicType": 0,
       "ConditionIds": [
         "92bd4493-23db-456b-afef-9baa15ba41db"
@@ -9359,31 +9359,6 @@
           "Id": "0263f79e-673a-9e62-a4b7-e637a4177cab",
           "ActionId": 0,
           "SkillbarId": "LockFace",
-          "TTSText": "",
-          "TriggerType": 1,
-          "LogicOperator": 8,
-          "TargetType": 1,
-          "TargetSelectionStrategy": 6,
-          "SkipBuffId": 0,
-          "TargetOperation": 0,
-          "TargetDataId": 0,
-          "TargetName": "",
-          "TargetX": 0,
-          "TargetY": 0,
-          "TargetZ": 0,
-          "OverlayText": "",
-          "OverlayDuration": 3,
-          "VariableName": "",
-          "VariableType": 0,
-          "VariableBoolValue": true,
-          "VariableStringValue": "",
-          "VariableNumberValue": 0,
-          "VariableOperation": 0
-        },
-        {
-          "Id": "d0efefdf-ec9d-8db5-f434-903647a719d1",
-          "ActionId": 0,
-          "SkillbarId": "ForceAOE",
           "TTSText": "",
           "TriggerType": 1,
           "LogicOperator": 8,
@@ -9707,7 +9682,7 @@
         }
       ],
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-27T00:30:00.000Z",
+      "ModifiedAt": "2026-06-28T11:05:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
     },
@@ -9778,7 +9753,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-28T10:25:00.000Z",
+  "ModifiedAt": "2026-06-28T11:05:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

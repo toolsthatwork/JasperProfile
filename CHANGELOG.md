@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Removed ForceAOE from all tank reset toggles so Jasper profiles never turn forced AoE on before pulls; regular UseAOE remains enabled and ForceAOE is manual-only.
 - Corrected Paladin AoE defaults so normal UseAOE remains enabled while ForceAOE stays off by default, preventing forced AoE spam on single-target or low-target situations.
 - Clarified tank cooldown-hold UI copy: renamed Variable Holds to Cooldown Holds and rewrote boss/pack hold descriptions so they read as optional damage-cooldown routing helpers, not mitigation thresholds.
 - Retuned Sage oGCD recovery so general Druochole and main-tank Taurochole fire earlier, while Diagnosis/Eukrasian Diagnosis stay reserved for emergency GCD fallback windows.
