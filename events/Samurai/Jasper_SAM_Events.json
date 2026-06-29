@@ -2,7 +2,7 @@
   "Id": "Jasper_SAM_Events",
   "Name": "Jasper SAM Events",
   "Description": "General-purpose Samurai event profile for PvE. Keeps role mitigation, Tengentsu recovery, conservative self-heal recovery, optional cooldown holds, Leg Sweep/Arm's Length utility, wipe/zone reset scaffolding, and optional out-of-combat Sprint/Hagakure for roulette-safe play.",
-  "Version": "0.1.10",
+  "Version": "0.1.11",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -22,7 +22,7 @@
     {
       "Id": "63cdfec9-a8cc-45a0-a11d-4903d9381aad",
       "Name": "Second Wind",
-      "Description": "",
+      "Description": "Uses Second Wind at 60 percent HP for earlier self-recovery.",
       "EventType": "OnTick",
       "LogicId": "faea22ca-5c00-47b0-8cf7-17f4b37957bf",
       "ThrottleSameEvent": 0.5,
@@ -31,7 +31,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T15:00:00.000Z"
+      "ModifiedAt": "2026-06-28T12:45:00.000Z"
     },
     {
       "Id": "jps-sam-event-leg-sweep",
@@ -64,7 +64,7 @@
     {
       "Id": "7b3857d9-5452-4ef8-af7a-26e09c771a8d",
       "Name": "Bloodbath",
-      "Description": "",
+      "Description": "Uses Bloodbath around 70 percent HP for steadier melee recovery.",
       "EventType": "OnTick",
       "LogicId": "f844ec77-e521-4188-bb7b-f1cd6b80e6c0",
       "ThrottleSameEvent": 0.5,
@@ -73,7 +73,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T15:00:00.000Z"
+      "ModifiedAt": "2026-06-28T12:45:00.000Z"
     },
     {
       "Id": "53acb57b-6cad-4031-9857-f5183db1a93f",
@@ -724,12 +724,12 @@
     },
     {
       "Id": "2deb9cfc-deb8-4619-9dff-5d393fa4cf36",
-      "Name": "Second Wind <= 50%",
-      "Description": "Self HP threshold for Second Wind use.",
+      "Name": "Second Wind <= 60%",
+      "Description": "Self HP threshold for earlier Second Wind recovery.",
       "SubConditions": [
         {
           "Id": "38066d92-462e-421d-812d-a8d53d4c03d5",
-          "Name": "Second Wind <= 50%",
+          "Name": "Second Wind <= 60%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -752,7 +752,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 50,
+              "Percentage": 60,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -854,16 +854,16 @@
               "IsEnabled": true
             },
             "PartyHpAverageParams": {
-              "Percentage": 50,
+              "Percentage": 60,
               "Comparison": 1,
               "IsEnabled": true
             },
             "PartyHpLowestParams": {
-              "Percentage": 50,
+              "Percentage": 60,
               "Comparison": 1,
               "LowestMemberCount": 4,
               "UseLowestMemberPercentage": false,
-              "LowestMemberPercentage": 50,
+              "LowestMemberPercentage": 60,
               "IsEnabled": true
             },
             "PartyHpBandsParams": {
@@ -930,12 +930,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2025-12-18T11:19:23.6924934Z",
-          "ModifiedAt": "2026-06-27T00:05:00.000Z",
+          "ModifiedAt": "2026-06-28T12:45:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-27T00:05:00.000Z",
+      "ModifiedAt": "2026-06-28T12:45:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -5584,7 +5584,7 @@
     {
       "Id": "faea22ca-5c00-47b0-8cf7-17f4b37957bf",
       "Name": "Second Wind",
-      "Description": "",
+      "Description": "Uses Second Wind at 60 percent HP for earlier self-recovery.",
       "LogicType": 0,
       "ConditionIds": [
         "2deb9cfc-deb8-4619-9dff-5d393fa4cf36",
@@ -5618,14 +5618,14 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T15:00:00.000Z",
+      "ModifiedAt": "2026-06-28T12:45:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Mitigation"
     },
     {
       "Id": "f844ec77-e521-4188-bb7b-f1cd6b80e6c0",
       "Name": "Bloodbath",
-      "Description": "",
+      "Description": "Uses Bloodbath around 70 percent HP for steadier melee recovery.",
       "LogicType": 0,
       "ConditionIds": [
         "b635c655-1351-487a-9042-6b4ed9b363ec",
@@ -5659,7 +5659,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-26T15:00:00.000Z",
+      "ModifiedAt": "2026-06-28T12:45:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Mitigation"
     },
@@ -6872,7 +6872,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-27T03:52:00.000Z",
+  "ModifiedAt": "2026-06-28T12:45:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

@@ -2,7 +2,7 @@
   "Id": "Jasper_VPR_Events",
   "Name": "Jasper VPR Events",
   "Description": "General-purpose Viper event profile for PvE. Keeps role mitigation, conservative self-heal recovery, optional cooldown holds, Leg Sweep/Arm's Length utility, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
-  "Version": "0.1.8",
+  "Version": "0.1.9",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -64,7 +64,7 @@
     {
       "Id": "950dc890-a9f9-4b75-ba7d-2fc6662fddec",
       "Name": "Bloodbath",
-      "Description": "",
+      "Description": "Uses Bloodbath around 70 percent HP for steadier melee recovery.",
       "EventType": "OnTick",
       "LogicId": "780726b0-b3b9-4627-8b4f-6fd0ee06a28c",
       "ThrottleSameEvent": 0.5,
@@ -73,12 +73,12 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-28T12:45:00.000Z"
     },
     {
       "Id": "35953639-89ea-47d5-82f7-6641f5e474e9",
       "Name": "Second Wind",
-      "Description": "",
+      "Description": "Uses Second Wind at 60 percent HP for earlier self-recovery.",
       "EventType": "OnTick",
       "LogicId": "434eb29d-7abe-466b-bd66-d47151266b42",
       "ThrottleSameEvent": 0.5,
@@ -87,7 +87,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-28T12:45:00.000Z"
     },
     {
       "Id": "jps-vpr-event-leg-sweep",
@@ -1501,12 +1501,12 @@
     },
     {
       "Id": "8f59b567-c3f9-418a-8f77-f78f7868ee07",
-      "Name": "Second Wind <= 50%",
-      "Description": "Self HP threshold for Second Wind use.",
+      "Name": "Second Wind <= 60%",
+      "Description": "Self HP threshold for earlier Second Wind recovery.",
       "SubConditions": [
         {
           "Id": "f92bac94-ffe8-42df-8ad1-c64a315d8538",
-          "Name": "Second Wind <= 50%",
+          "Name": "Second Wind <= 60%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -1529,7 +1529,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 50,
+              "Percentage": 60,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -1631,16 +1631,16 @@
               "IsEnabled": true
             },
             "PartyHpAverageParams": {
-              "Percentage": 50,
+              "Percentage": 60,
               "Comparison": 1,
               "IsEnabled": true
             },
             "PartyHpLowestParams": {
-              "Percentage": 50,
+              "Percentage": 60,
               "Comparison": 1,
               "LowestMemberCount": 4,
               "UseLowestMemberPercentage": false,
-              "LowestMemberPercentage": 50,
+              "LowestMemberPercentage": 60,
               "IsEnabled": true
             },
             "PartyHpBandsParams": {
@@ -1707,12 +1707,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-05-09T06:00:15.9301584Z",
-          "ModifiedAt": "2026-06-27T00:05:00.000Z",
+          "ModifiedAt": "2026-06-28T12:45:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-27T00:05:00.000Z",
+      "ModifiedAt": "2026-06-28T12:45:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -4401,7 +4401,7 @@
     {
       "Id": "780726b0-b3b9-4627-8b4f-6fd0ee06a28c",
       "Name": "Bloodbath",
-      "Description": "",
+      "Description": "Uses Bloodbath around 70 percent HP for steadier melee recovery.",
       "LogicType": 0,
       "ConditionIds": [
         "7fd80584-4e12-4209-a7c6-1bfb2faa43b3",
@@ -4435,14 +4435,14 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T12:45:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
     },
     {
       "Id": "434eb29d-7abe-466b-bd66-d47151266b42",
       "Name": "Second Wind",
-      "Description": "",
+      "Description": "Uses Second Wind at 60 percent HP for earlier self-recovery.",
       "LogicType": 0,
       "ConditionIds": [
         "7fd80584-4e12-4209-a7c6-1bfb2faa43b3",
@@ -4476,7 +4476,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T12:45:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
     },
@@ -5013,7 +5013,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-27T03:45:00.000Z",
+  "ModifiedAt": "2026-06-28T12:45:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

@@ -2,7 +2,7 @@
   "Id": "Jasper_MCH_Events",
   "Name": "Jasper MCH Events",
   "Description": "General-purpose Machinist event profile for PvE. Keeps Tactician/Dismantle support, earlier self-heal recovery, Head Graze interrupts, Arm's Length self-defense, optional cooldown holds, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
-  "Version": "0.1.9",
+  "Version": "0.1.10",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -78,7 +78,7 @@
     {
       "Id": "d86f996b-32dc-47a1-8853-a1326deb7331",
       "Name": "Second Wind",
-      "Description": "",
+      "Description": "Uses Second Wind at 60 percent HP for earlier self-recovery.",
       "EventType": "OnTick",
       "LogicId": "3b335e22-eda0-4a2c-b368-912c93fbb5e0",
       "ThrottleSameEvent": 0.5,
@@ -87,7 +87,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-28T12:45:00.000Z"
     },
     {
       "Id": "b777fcc6-8bba-4be2-8773-158a6ac1a609",
@@ -415,12 +415,12 @@
     },
     {
       "Id": "5f48d8d0-3847-4a85-b6ed-506191f01b27",
-      "Name": "Self HP <= 50%",
-      "Description": "Self HP threshold for Second Wind use.",
+      "Name": "Self HP <= 60%",
+      "Description": "Self HP threshold for earlier Second Wind recovery.",
       "SubConditions": [
         {
           "Id": "38066d92-462e-421d-812d-a8d53d4c03d5",
-          "Name": "Self HP <= 50%",
+          "Name": "Self HP <= 60%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -443,7 +443,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 50,
+              "Percentage": 60,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -545,16 +545,16 @@
               "IsEnabled": true
             },
             "PartyHpAverageParams": {
-              "Percentage": 50,
+              "Percentage": 60,
               "Comparison": 1,
               "IsEnabled": true
             },
             "PartyHpLowestParams": {
-              "Percentage": 50,
+              "Percentage": 60,
               "Comparison": 1,
               "LowestMemberCount": 4,
               "UseLowestMemberPercentage": false,
-              "LowestMemberPercentage": 50,
+              "LowestMemberPercentage": 60,
               "IsEnabled": true
             },
             "PartyHpBandsParams": {
@@ -621,12 +621,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2025-12-18T11:19:23.6924934Z",
-          "ModifiedAt": "2025-12-18T11:19:23.6924935Z",
+          "ModifiedAt": "2026-06-28T12:45:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T12:45:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -2575,12 +2575,12 @@
     },
     {
       "Id": "2deb9cfc-deb8-4619-9dff-5d393fa4cf36",
-      "Name": "Second Wind <= 50%",
-      "Description": "Self HP threshold for Second Wind use.",
+      "Name": "Second Wind <= 60%",
+      "Description": "Self HP threshold for earlier Second Wind recovery.",
       "SubConditions": [
         {
           "Id": "56aeba31-a9a7-4ff4-8bd1-908c89b2cae0",
-          "Name": "Second Wind <= 50%",
+          "Name": "Second Wind <= 60%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -2603,7 +2603,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 50,
+              "Percentage": 60,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -2705,16 +2705,16 @@
               "IsEnabled": true
             },
             "PartyHpAverageParams": {
-              "Percentage": 50,
+              "Percentage": 60,
               "Comparison": 1,
               "IsEnabled": true
             },
             "PartyHpLowestParams": {
-              "Percentage": 50,
+              "Percentage": 60,
               "Comparison": 1,
               "LowestMemberCount": 4,
               "UseLowestMemberPercentage": false,
-              "LowestMemberPercentage": 50,
+              "LowestMemberPercentage": 60,
               "IsEnabled": true
             },
             "PartyHpBandsParams": {
@@ -2781,12 +2781,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2025-12-18T11:19:23.6924934Z",
-          "ModifiedAt": "2026-06-27T00:05:00.000Z",
+          "ModifiedAt": "2026-06-28T12:45:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-27T00:05:00.000Z",
+      "ModifiedAt": "2026-06-28T12:45:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -4380,7 +4380,7 @@
     {
       "Id": "3b335e22-eda0-4a2c-b368-912c93fbb5e0",
       "Name": "Second Wind",
-      "Description": "",
+      "Description": "Uses Second Wind at 60 percent HP for earlier self-recovery.",
       "LogicType": 0,
       "ConditionIds": [
         "2deb9cfc-deb8-4619-9dff-5d393fa4cf36",
@@ -4415,7 +4415,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T12:45:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Mitigation"
     },
@@ -5343,7 +5343,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-27T03:45:00.000Z",
+  "ModifiedAt": "2026-06-28T12:45:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
