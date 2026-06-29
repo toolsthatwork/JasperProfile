@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_RDM_Events",
   "Name": "Jasper RDM Events",
-  "Description": "General-purpose Red Mage event profile for PvE. Keeps Addle/Magick Barrier support, slightly earlier self/party/MT emergency Vercure, optional cooldown holds, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
-  "Version": "0.1.10",
+  "Description": "General-purpose Red Mage event profile for PvE. Keeps Addle/Magick Barrier support, earlier self/party/MT emergency Vercure, optional cooldown holds, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
+  "Version": "0.1.11",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -134,7 +134,7 @@
     {
       "Id": "jps-rdm-event-vercure-self-emergency",
       "Name": "Vercure Self Emergency",
-      "Description": "Uses Vercure on self at 45 percent HP for solo and public-duty recovery.",
+      "Description": "Uses Vercure on self at 50 percent HP for solo and public-duty recovery.",
       "EventType": "OnTick",
       "LogicId": "jps-rdm-logic-vercure-self-emergency",
       "ThrottleSameEvent": 2.5,
@@ -143,12 +143,12 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-27T01:30:00.000Z",
-      "ModifiedAt": "2026-06-28T12:15:00.000Z"
+      "ModifiedAt": "2026-06-28T13:05:00.000Z"
     },
     {
       "Id": "jps-rdm-event-vercure-emergency",
       "Name": "Vercure Emergency",
-      "Description": "Emergency Vercure for synced/general content when a party member is critical.",
+      "Description": "Emergency Vercure for synced/general content when a party member is critical; ACR damage remains primary.",
       "EventType": "OnTick",
       "LogicId": "jps-rdm-logic-vercure-emergency",
       "ThrottleSameEvent": 2.5,
@@ -157,7 +157,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-26T09:35:00.000Z",
-      "ModifiedAt": "2026-06-28T12:15:00.000Z"
+      "ModifiedAt": "2026-06-28T13:05:00.000Z"
     },
     {
       "Id": "jps-rdm-event-addle-tb",
@@ -176,7 +176,7 @@
     {
       "Id": "jps-rdm-event-vercure-mt-emergency",
       "Name": "Vercure MT Emergency",
-      "Description": "Uses Vercure on the main tank at 45 percent HP if public-duty recovery is needed.",
+      "Description": "Uses Vercure on the main tank at 50 percent HP when healer recovery is behind.",
       "EventType": "OnTick",
       "LogicId": "jps-rdm-logic-vercure-mt-emergency",
       "ThrottleSameEvent": 2.5,
@@ -185,7 +185,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-27T00:05:00.000Z",
-      "ModifiedAt": "2026-06-28T12:15:00.000Z"
+      "ModifiedAt": "2026-06-28T13:05:00.000Z"
     }
   ],
   "Conditions": [
@@ -2783,12 +2783,12 @@
     },
     {
       "Id": "jps-rdm-cond-party-emergency-25",
-      "Name": "[ST] <= 30% HP",
+      "Name": "[ST] <= 35% HP",
       "Description": "Single-target party emergency threshold for Vercure support.",
       "SubConditions": [
         {
           "Id": "jps-rdm-cond-party-emergency-25-sub",
-          "Name": "[ST] <= 30% HP",
+          "Name": "[ST] <= 35% HP",
           "Description": "",
           "TargetType": 5,
           "ConditionType": 1,
@@ -2811,7 +2811,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 30,
+              "Percentage": 35,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -2913,16 +2913,16 @@
               "IsEnabled": true
             },
             "PartyHpAverageParams": {
-              "Percentage": 30,
+              "Percentage": 35,
               "Comparison": 1,
               "IsEnabled": true
             },
             "PartyHpLowestParams": {
-              "Percentage": 30,
+              "Percentage": 35,
               "Comparison": 1,
               "LowestMemberCount": 4,
               "UseLowestMemberPercentage": false,
-              "LowestMemberPercentage": 30,
+              "LowestMemberPercentage": 35,
               "IsEnabled": true
             },
             "PartyHpBandsParams": {
@@ -2989,22 +2989,22 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-05-12T04:00:53.4883674Z",
-          "ModifiedAt": "2026-06-28T12:15:00.000Z",
+          "ModifiedAt": "2026-06-28T13:05:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-26T09:35:00.000Z",
-      "ModifiedAt": "2026-06-28T12:15:00.000Z",
+      "ModifiedAt": "2026-06-28T13:05:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
       "Id": "jps-rdm-cond-self-emergency-40",
-      "Name": "Self HP <= 45%",
+      "Name": "Self HP <= 50%",
       "Description": "Self HP threshold for conservative emergency Vercure.",
       "SubConditions": [
         {
           "Id": "jps-rdm-cond-self-emergency-40-sub-1",
-          "Name": "Self HP <= 45%",
+          "Name": "Self HP <= 50%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -3027,7 +3027,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 45,
+              "Percentage": 50,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -3129,16 +3129,16 @@
               "IsEnabled": true
             },
             "PartyHpAverageParams": {
-              "Percentage": 45,
+              "Percentage": 50,
               "Comparison": 1,
               "IsEnabled": true
             },
             "PartyHpLowestParams": {
-              "Percentage": 45,
+              "Percentage": 50,
               "Comparison": 1,
               "LowestMemberCount": 4,
               "UseLowestMemberPercentage": false,
-              "LowestMemberPercentage": 45,
+              "LowestMemberPercentage": 50,
               "IsEnabled": true
             },
             "PartyHpBandsParams": {
@@ -3205,12 +3205,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-06-27T01:30:00.000Z",
-          "ModifiedAt": "2026-06-28T12:15:00.000Z",
+          "ModifiedAt": "2026-06-28T13:05:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-27T01:30:00.000Z",
-      "ModifiedAt": "2026-06-28T12:15:00.000Z",
+      "ModifiedAt": "2026-06-28T13:05:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -3437,12 +3437,12 @@
     },
     {
       "Id": "jps-rdm-cond-mt-emergency-35",
-      "Name": "MT <= 45%",
+      "Name": "MT <= 50%",
       "Description": "Main tank emergency threshold for Vercure support.",
       "SubConditions": [
         {
           "Id": "jps-rdm-cond-mt-emergency-35-sub-1",
-          "Name": "MT <= 45%",
+          "Name": "MT <= 50%",
           "Description": "",
           "TargetType": 3,
           "ConditionType": 1,
@@ -3465,7 +3465,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 45,
+              "Percentage": 50,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -3567,16 +3567,16 @@
               "IsEnabled": true
             },
             "PartyHpAverageParams": {
-              "Percentage": 45,
+              "Percentage": 50,
               "Comparison": 1,
               "IsEnabled": true
             },
             "PartyHpLowestParams": {
-              "Percentage": 45,
+              "Percentage": 50,
               "Comparison": 1,
               "LowestMemberCount": 4,
               "UseLowestMemberPercentage": false,
-              "LowestMemberPercentage": 45,
+              "LowestMemberPercentage": 50,
               "IsEnabled": true
             },
             "PartyHpBandsParams": {
@@ -3643,12 +3643,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-06-27T00:05:00.000Z",
-          "ModifiedAt": "2026-06-28T12:15:00.000Z",
+          "ModifiedAt": "2026-06-28T13:05:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-27T00:05:00.000Z",
-      "ModifiedAt": "2026-06-28T12:15:00.000Z",
+      "ModifiedAt": "2026-06-28T13:05:00.000Z",
       "ExcludeFromTargetAccumulation": false
     }
   ],
@@ -4696,7 +4696,7 @@
     {
       "Id": "jps-rdm-logic-vercure-self-emergency",
       "Name": "Vercure Self Emergency",
-      "Description": "Uses Vercure on self at 45 percent HP for solo and public-duty recovery.",
+      "Description": "Uses Vercure on self at 50 percent HP for solo and public-duty recovery.",
       "LogicType": 0,
       "ConditionIds": [
         "b702ada1-facb-4cd3-906f-e1c29c1f390c",
@@ -4730,14 +4730,14 @@
         }
       ],
       "CreatedAt": "2026-06-27T01:30:00.000Z",
-      "ModifiedAt": "2026-06-28T12:15:00.000Z",
+      "ModifiedAt": "2026-06-28T13:05:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Level Sync"
     },
     {
       "Id": "jps-rdm-logic-vercure-emergency",
       "Name": "Vercure Emergency",
-      "Description": "Low-threshold level-sync emergency heal; ACR damage remains primary.",
+      "Description": "Emergency Vercure for synced/general content when a party member is critical; ACR damage remains primary.",
       "LogicType": 0,
       "ConditionIds": [
         "b702ada1-facb-4cd3-906f-e1c29c1f390c",
@@ -4771,7 +4771,7 @@
         }
       ],
       "CreatedAt": "2026-06-26T09:35:00.000Z",
-      "ModifiedAt": "2026-06-28T12:15:00.000Z",
+      "ModifiedAt": "2026-06-28T13:05:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Level Sync"
     },
@@ -4819,7 +4819,7 @@
     {
       "Id": "jps-rdm-logic-vercure-mt-emergency",
       "Name": "Vercure MT Emergency",
-      "Description": "Uses Vercure on the main tank at 45 percent HP when healer recovery is behind.",
+      "Description": "Uses Vercure on the main tank at 50 percent HP when healer recovery is behind.",
       "LogicType": 0,
       "ConditionIds": [
         "b702ada1-facb-4cd3-906f-e1c29c1f390c",
@@ -4853,13 +4853,13 @@
         }
       ],
       "CreatedAt": "2026-06-27T00:05:00.000Z",
-      "ModifiedAt": "2026-06-28T12:15:00.000Z",
+      "ModifiedAt": "2026-06-28T13:05:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-28T12:15:00.000Z",
+  "ModifiedAt": "2026-06-28T13:05:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

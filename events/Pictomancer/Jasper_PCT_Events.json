@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_PCT_Events",
   "Name": "Jasper PCT Events",
-  "Description": "General-purpose Pictomancer event profile for PvE. Keeps Addle/Tempera Coat support, optional cooldown holds, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
-  "Version": "0.1.8",
+  "Description": "General-purpose Pictomancer event profile for PvE. Keeps Addle/Tempera Coat support, earlier personal shielding, optional cooldown holds, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
+  "Version": "0.1.9",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -148,7 +148,7 @@
     {
       "Id": "jps-pct-event-tempera-coat-emergency",
       "Name": "Tempera Coat Emergency",
-      "Description": "Uses Tempera Coat when self HP drops low outside scripted raidwide handling.",
+      "Description": "Uses Tempera Coat around 75 percent HP for earlier personal safety outside scripted raidwide handling.",
       "EventType": "OnTick",
       "LogicId": "jps-pct-logic-tempera-coat-emergency",
       "ThrottleSameEvent": 2.5,
@@ -157,7 +157,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-26T22:30:00.000Z",
-      "ModifiedAt": "2026-06-26T22:30:00.000Z"
+      "ModifiedAt": "2026-06-28T13:05:00.000Z"
     }
   ],
   "Conditions": [
@@ -2761,12 +2761,12 @@
     },
     {
       "Id": "jps-pct-cond-self-hp-70",
-      "Name": "Self HP <= 70%",
+      "Name": "Self HP <= 75%",
       "Description": "Self HP safety threshold for personal mitigation.",
       "SubConditions": [
         {
           "Id": "jps-pct-cond-self-hp-70-sub-1",
-          "Name": "Self HP <= 70%",
+          "Name": "Self HP <= 75%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -2789,7 +2789,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 70,
+              "Percentage": 75,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -2891,16 +2891,16 @@
               "IsEnabled": true
             },
             "PartyHpAverageParams": {
-              "Percentage": 50,
+              "Percentage": 75,
               "Comparison": 1,
               "IsEnabled": true
             },
             "PartyHpLowestParams": {
-              "Percentage": 50,
+              "Percentage": 75,
               "Comparison": 1,
               "LowestMemberCount": 4,
               "UseLowestMemberPercentage": false,
-              "LowestMemberPercentage": 50,
+              "LowestMemberPercentage": 75,
               "IsEnabled": true
             },
             "PartyHpBandsParams": {
@@ -2967,12 +2967,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-06-26T22:30:00.000Z",
-          "ModifiedAt": "2026-06-26T22:30:00.000Z",
+          "ModifiedAt": "2026-06-28T13:05:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-26T22:30:00.000Z",
-      "ModifiedAt": "2026-06-26T22:30:00.000Z",
+      "ModifiedAt": "2026-06-28T13:05:00.000Z",
       "ExcludeFromTargetAccumulation": false
     }
   ],
@@ -3786,7 +3786,7 @@
     {
       "Id": "jps-pct-logic-tempera-coat-emergency",
       "Name": "Tempera Coat Emergency",
-      "Description": "Uses Tempera Coat when self HP drops low outside scripted raidwide handling.",
+      "Description": "Uses Tempera Coat around 75 percent HP for earlier personal safety outside scripted raidwide handling.",
       "LogicType": 0,
       "ConditionIds": [
         "b702ada1-facb-4cd3-906f-e1c29c1f390c",
@@ -3820,13 +3820,13 @@
         }
       ],
       "CreatedAt": "2026-06-26T22:30:00.000Z",
-      "ModifiedAt": "2026-06-26T22:30:00.000Z",
+      "ModifiedAt": "2026-06-28T13:05:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-27T00:30:00.000Z",
+  "ModifiedAt": "2026-06-28T13:05:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

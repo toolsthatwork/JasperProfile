@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Polished caster public-duty survival: Black Mage, Pictomancer, and Summoner personal shields now start at 75% HP, Summoner self Rekindle starts at 60% HP, and Red Mage emergency Vercure support starts earlier while remaining DPS-first.
 - Standardized physical DPS public-duty recovery: Bard, Machinist, Dragoon, Monk, Ninja, Samurai, Reaper, and Viper now use Second Wind at 60% HP, and Reaper Bloodbath now matches the 70% melee recovery standard.
 - Ultra-polished White Mage, Paladin, Red Mage, and Dancer public safety: White Mage now adds Aquaveil support during 3+ mob pulls and starts tank rescue earlier, Paladin Holy Sheltron no longer waits for near-cap Oath, Red Mage emergency Vercure no longer waits as deep, and Dancer personal recovery starts sooner.
 - Polished tank recovery toward the White Mage-style oGCD-first standard: Paladin Sheltron/Intervention, Warrior Equilibrium/Thrill/Shake/Nascent, Dark Knight Oblation/self-TBN, and Gunbreaker HoC/Aurora now respond earlier without touching ForceAOE.
