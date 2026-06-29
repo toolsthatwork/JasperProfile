@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Added a White Mage dungeon-trash Holy nudge so stationary 3+ enemy pulls use Holy as the AoE GCD instead of falling into long Glare stretches, without touching ForceAOE.
+- Retuned White Mage tank recovery so Regen and two-charge Divine Benison start at 85% HP, while Tetragrammaton, Afflatus Solace, and Cure II fallback now start at 70% HP.
 - Added Reaper as the focused melee DPS ultra-polish follow-up: Arcane Crest now waits for actual damage at 90% HP instead of firing at full HP, while the lower emergency Crest fallback remains available.
 - Retuned healer oGCD rescue timing: Astrologian main-tank Essential Dignity and Scholar main-tank Lustrate now start at 60% HP, while Sage main-tank Taurochole and Druochole start at 70% HP with emergency GCD fallbacks unchanged.
 - Polished caster public-duty survival: Black Mage, Pictomancer, and Summoner personal shields now start at 75% HP, Summoner self Rekindle starts at 60% HP, and Red Mage emergency Vercure support starts earlier while remaining DPS-first.

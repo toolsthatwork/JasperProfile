@@ -3,7 +3,7 @@
   "Name": "Jasper WHM Events",
   "Description": "Damage-forward White Mage event profile for general PvE. Lets ACR DPS flow, then uses earlier oGCD tank support, dungeon-pull shielding, and emergency GCD heals when recovery is actually needed.",
   "CreatedAt": "2026-06-25T00:31:21.892963Z",
-  "ModifiedAt": "2026-06-28T12:15:00.000Z",
+  "ModifiedAt": "2026-06-29T18:00:00.000Z",
   "Events": [
     {
       "Id": "whm-event-01",
@@ -120,7 +120,7 @@
     {
       "Id": "whm-event-09",
       "Name": "[09] Divine Benison (2 Charges)",
-      "Description": "Use on tank if in combat and 2 charges are available",
+      "Description": "Use on tank at 85% HP if in combat and 2 charges are available",
       "EventType": "OnTick",
       "LogicId": "whm-logic-09",
       "ThrottleSameEvent": 0.5,
@@ -176,7 +176,7 @@
     {
       "Id": "whm-event-13",
       "Name": "[13] Tetragrammaton (MT)",
-      "Description": "Tank HP < 60% & does not have tank invuln",
+      "Description": "Tank HP < 70% and does not have tank invuln",
       "EventType": "OnTick",
       "LogicId": "whm-logic-13",
       "ThrottleSameEvent": 0.5,
@@ -316,7 +316,7 @@
     {
       "Id": "6b03390f-7efa-4f33-b480-fa97520c4904",
       "Name": "[21] Afflatus Solace (MT, Misery Ready)",
-      "Description": "Uses Afflatus Solace on the main tank even when Afflatus Misery is ready.",
+      "Description": "Uses Afflatus Solace on the main tank at 70% HP even when Afflatus Misery is ready.",
       "EventType": "OnTick",
       "LogicId": "5ab3c9e9-88cd-4295-b898-a9837ce4e379",
       "ThrottleSameEvent": 2.5,
@@ -330,7 +330,7 @@
     {
       "Id": "whm-event-21",
       "Name": "[21] Afflatus Solace (MT)",
-      "Description": "Tank HP < 60% AND Tetragrammaton on cooldown",
+      "Description": "Tank HP < 70% AND Tetragrammaton on cooldown",
       "EventType": "OnTick",
       "LogicId": "whm-logic-21",
       "ThrottleSameEvent": 2.5,
@@ -386,7 +386,7 @@
     {
       "Id": "whm-event-24",
       "Name": "[24] Regen",
-      "Description": "Tank <= 60% HP",
+      "Description": "Tank <= 85% HP and missing Regen",
       "EventType": "OnTick",
       "LogicId": "whm-logic-24",
       "ThrottleSameEvent": 2.5,
@@ -442,7 +442,7 @@
     {
       "Id": "whm-event-28",
       "Name": "[28] Cure II",
-      "Description": "ONLY if Lily = 0 AND Tetragrammaton on CD AND Tank HP < 60% AND no mitigation",
+      "Description": "ONLY if Lily = 0 AND Tetragrammaton on CD AND Tank HP < 70% AND no mitigation",
       "EventType": "OnTick",
       "LogicId": "whm-logic-28",
       "ThrottleSameEvent": 2.5,
@@ -564,6 +564,20 @@
       "Filters": {},
       "CreatedAt": "2026-06-26T09:35:00.000Z",
       "ModifiedAt": "2026-06-26T09:35:00.000Z"
+    },
+    {
+      "Id": "jps-whm-event-holy-trash",
+      "Name": "[36] Holy (3+ Enemies)",
+      "Description": "Uses Holy on stationary 3+ enemy pulls without touching ForceAOE.",
+      "EventType": "OnTick",
+      "LogicId": "jps-whm-logic-holy-trash",
+      "ThrottleSameEvent": 2.5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-29T18:00:00.000Z",
+      "ModifiedAt": "2026-06-29T18:00:00.000Z"
     },
     {
       "Id": "3ebc1edd-7f5e-4f7a-9e40-d4fc451d8be4",
@@ -11906,6 +11920,438 @@
       "CreatedAt": "2026-06-28T12:15:00.000Z",
       "ModifiedAt": "2026-06-28T12:15:00.000Z",
       "ExcludeFromTargetAccumulation": false
+    },
+    {
+      "Id": "jps-whm-cond-mt-hp-85",
+      "Name": "MT <= 85%",
+      "Description": "Main tank HP threshold for earlier Regen and Benison upkeep.",
+      "SubConditions": [
+        {
+          "Id": "jps-whm-subcond-mt-hp-85",
+          "Name": "MT <= 85%",
+          "Description": "",
+          "TargetType": 3,
+          "ConditionType": 1,
+          "Parameters": {
+            "BuffParams": {
+              "StatusId": 0,
+              "StatusIds": [],
+              "UseMultipleStatuses": false,
+              "StatusLogic": 1,
+              "CheckDuration": false,
+              "MinDuration": 0,
+              "DurationComparison": 3,
+              "CheckStacks": false,
+              "RequiredStacks": 1,
+              "StackComparison": 3,
+              "InvertCheck": false,
+              "RequiredBuffCount": 2,
+              "BuffCountComparison": 3,
+              "StatusTargetOverrides": {},
+              "IsEnabled": true
+            },
+            "HealthParams": {
+              "Percentage": 85,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "DistanceParams": {
+              "Distance": 0,
+              "Comparison": 1,
+              "CheckLineOfSight": false,
+              "IsEnabled": true
+            },
+            "GaugeParams": {
+              "PropertyName": "",
+              "ValueType": 0,
+              "NumericValue": 0,
+              "BooleanValue": false,
+              "StringValue": "",
+              "Comparison": 3,
+              "IsEnabled": true
+            },
+            "MpParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "LastAbilityParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0.5,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "LastGcdParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0.5,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "CooldownParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0,
+              "TimeComparison": 2,
+              "CheckCharges": false,
+              "RequiredCharges": 1,
+              "IsEnabled": true
+            },
+            "ComboParams": {
+              "ComboId": 1,
+              "TimeRemaining": 0,
+              "TimeComparison": 3,
+              "IsEnabled": true
+            },
+            "MovementParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "ChannelingParams": {
+              "IsChanneling": true,
+              "SpecificAbilityId": 0,
+              "IsEnabled": true
+            },
+            "AggroParams": {
+              "HasAggro": true,
+              "AggroPosition": 1,
+              "PositionComparison": 2,
+              "IsEnabled": true
+            },
+            "AlwaysParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "InCombatParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "ActionHighlightedParams": {
+              "ActionId": 1,
+              "IsEnabled": true
+            },
+            "IsCastingParams": {
+              "IsCasting": true,
+              "SpecificActionId": 0,
+              "CheckSpecific": false,
+              "IsEnabled": true
+            },
+            "GcdTimeRemainingParams": {
+              "TimeThreshold": 2.5,
+              "Comparison": 1,
+              "IsEnabled": true
+            },
+            "CanInterruptParams": {
+              "CanInterrupt": true,
+              "IsEnabled": true
+            },
+            "EntityIdParams": {
+              "EntityId": 0,
+              "Comparison": 2,
+              "IsEnabled": true
+            },
+            "PartyHpAverageParams": {
+              "Percentage": 50,
+              "Comparison": 1,
+              "IsEnabled": true
+            },
+            "PartyHpLowestParams": {
+              "Percentage": 50,
+              "Comparison": 1,
+              "LowestMemberCount": 4,
+              "UseLowestMemberPercentage": false,
+              "LowestMemberPercentage": 50,
+              "IsEnabled": true
+            },
+            "PartyHpBandsParams": {
+              "CriticalThreshold": 30,
+              "LowThreshold": 50,
+              "ModerateThreshold": 70,
+              "RequiredCritical": 1,
+              "RequiredLow": 3,
+              "RequiredModerate": 5,
+              "BandLogic": 0,
+              "IsEnabled": true
+            },
+            "ActionChargesParams": {
+              "ActionId": 1,
+              "RequiredCharges": 1,
+              "Comparison": 3,
+              "CheckType": 0,
+              "TimeThreshold": 0,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "AggroCountParams": {
+              "RequiredCount": 1,
+              "CountComparison": 3,
+              "IsEnabled": true
+            },
+            "ShieldParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "PartyShieldAverageParams": {
+              "Percentage": 20,
+              "Comparison": 3,
+              "IsEnabled": true
+            },
+            "VariableParams": {
+              "VariableName": "",
+              "VariableType": 0,
+              "ExpectedBoolValue": true,
+              "ExpectedStringValue": "",
+              "ExpectedNumberValue": 0,
+              "Comparison": 2,
+              "StringComparison": 0,
+              "InvertCheck": false,
+              "CheckExists": false,
+              "IsEnabled": true
+            },
+            "DataIdParams": {
+              "DataId": 0,
+              "Comparison": 2,
+              "IsEnabled": true
+            },
+            "TargetNameParams": {
+              "Name": "",
+              "Comparison": 0,
+              "IsEnabled": true
+            }
+          },
+          "RequiredTargetCount": 1,
+          "TargetCountComparison": 3,
+          "UsePercentageMode": true,
+          "RequiredTargetPercentage": 50,
+          "CreatedAt": "2026-01-01T00:00:00Z",
+          "ModifiedAt": "2026-01-01T00:00:00Z",
+          "ShouldUseTargetCount": false
+        }
+      ],
+      "CreatedAt": "2026-01-02T21:42:23.5081988Z",
+      "ModifiedAt": "2026-01-02T21:42:53.573194Z",
+      "ExcludeFromTargetAccumulation": false
+    },
+    {
+      "Id": "jps-whm-cond-stationary",
+      "Name": "Not Moving",
+      "Description": "Player is stationary for cast-time actions.",
+      "SubConditions": [
+        {
+          "Id": "jps-whm-subcond-stationary",
+          "Name": "Not Moving",
+          "Description": "",
+          "TargetType": 0,
+          "ConditionType": 13,
+          "Parameters": {
+            "BuffParams": {
+              "StatusId": 0,
+              "StatusIds": [],
+              "UseMultipleStatuses": false,
+              "StatusLogic": 1,
+              "CheckDuration": false,
+              "MinDuration": 0,
+              "DurationComparison": 3,
+              "CheckStacks": false,
+              "RequiredStacks": 1,
+              "StackComparison": 3,
+              "InvertCheck": false,
+              "RequiredBuffCount": 2,
+              "BuffCountComparison": 3,
+              "StatusTargetOverrides": {},
+              "IsEnabled": true
+            },
+            "HealthParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "DistanceParams": {
+              "Distance": 0,
+              "Comparison": 1,
+              "CheckLineOfSight": false,
+              "IsEnabled": true
+            },
+            "GaugeParams": {
+              "PropertyName": "",
+              "ValueType": 0,
+              "NumericValue": 0,
+              "BooleanValue": false,
+              "StringValue": "",
+              "Comparison": 3,
+              "IsEnabled": true
+            },
+            "MpParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "LastAbilityParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0.5,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "LastGcdParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0.5,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "CooldownParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0,
+              "TimeComparison": 2,
+              "CheckCharges": false,
+              "RequiredCharges": 1,
+              "IsEnabled": true
+            },
+            "ComboParams": {
+              "ComboId": 1,
+              "TimeRemaining": 0,
+              "TimeComparison": 3,
+              "IsEnabled": true
+            },
+            "MovementParams": {
+              "ExpectedState": false,
+              "IsEnabled": true
+            },
+            "ChannelingParams": {
+              "IsChanneling": true,
+              "SpecificAbilityId": 0,
+              "IsEnabled": true
+            },
+            "AggroParams": {
+              "HasAggro": true,
+              "AggroPosition": 1,
+              "PositionComparison": 2,
+              "IsEnabled": true
+            },
+            "AlwaysParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "InCombatParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "ActionHighlightedParams": {
+              "ActionId": 1,
+              "IsEnabled": true
+            },
+            "IsCastingParams": {
+              "IsCasting": true,
+              "SpecificActionId": 0,
+              "CheckSpecific": false,
+              "IsEnabled": true
+            },
+            "GcdTimeRemainingParams": {
+              "TimeThreshold": 2.5,
+              "Comparison": 1,
+              "IsEnabled": true
+            },
+            "CanInterruptParams": {
+              "CanInterrupt": true,
+              "IsEnabled": true
+            },
+            "EntityIdParams": {
+              "EntityId": 0,
+              "Comparison": 2,
+              "IsEnabled": true
+            },
+            "PartyHpAverageParams": {
+              "Percentage": 50,
+              "Comparison": 1,
+              "IsEnabled": true
+            },
+            "PartyHpLowestParams": {
+              "Percentage": 50,
+              "Comparison": 1,
+              "LowestMemberCount": 4,
+              "UseLowestMemberPercentage": false,
+              "LowestMemberPercentage": 50,
+              "IsEnabled": true
+            },
+            "PartyHpBandsParams": {
+              "CriticalThreshold": 30,
+              "LowThreshold": 50,
+              "ModerateThreshold": 70,
+              "RequiredCritical": 1,
+              "RequiredLow": 3,
+              "RequiredModerate": 5,
+              "BandLogic": 0,
+              "IsEnabled": true
+            },
+            "ActionChargesParams": {
+              "ActionId": 1,
+              "RequiredCharges": 1,
+              "Comparison": 3,
+              "CheckType": 0,
+              "TimeThreshold": 0,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "AggroCountParams": {
+              "RequiredCount": 1,
+              "CountComparison": 3,
+              "IsEnabled": true
+            },
+            "ShieldParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "PartyShieldAverageParams": {
+              "Percentage": 20,
+              "Comparison": 3,
+              "IsEnabled": true
+            },
+            "VariableParams": {
+              "VariableName": "",
+              "VariableType": 0,
+              "ExpectedBoolValue": true,
+              "ExpectedStringValue": "",
+              "ExpectedNumberValue": 0,
+              "Comparison": 2,
+              "StringComparison": 0,
+              "InvertCheck": false,
+              "CheckExists": false,
+              "IsEnabled": true
+            },
+            "DataIdParams": {
+              "DataId": 0,
+              "Comparison": 2,
+              "IsEnabled": true
+            },
+            "TargetNameParams": {
+              "Name": "",
+              "Comparison": 0,
+              "IsEnabled": true
+            }
+          },
+          "RequiredTargetCount": 1,
+          "TargetCountComparison": 3,
+          "UsePercentageMode": true,
+          "RequiredTargetPercentage": 50,
+          "CreatedAt": "2026-06-29T18:00:00.000Z",
+          "ModifiedAt": "2026-06-29T18:00:00.000Z",
+          "ShouldUseTargetCount": false
+        }
+      ],
+      "CreatedAt": "2026-06-29T18:00:00.000Z",
+      "ModifiedAt": "2026-06-29T18:00:00.000Z",
+      "ExcludeFromTargetAccumulation": false
     }
   ],
   "Logics": [
@@ -12245,13 +12691,13 @@
     {
       "Id": "whm-logic-09",
       "Name": "[09] Divine Benison (2 Charges)",
-      "Description": "Use on tank if in combat and 2 charges are available",
+      "Description": "Use on tank at 85% HP if in combat and 2 charges are available",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
         "ba4a2a3c-c0bd-4aad-a5d7-96c30994595e",
         "ada40875-cdb8-4f7d-a425-63818cb8a667",
-        "02ae717d-df5d-40b8-93c4-95cff3a05a68"
+        "jps-whm-cond-mt-hp-85"
       ],
       "ActionTriggers": [
         {
@@ -12412,11 +12858,11 @@
     {
       "Id": "whm-logic-13",
       "Name": "[13] Tetragrammaton (MT)",
-      "Description": "Tank HP < 60% & does not have tank invuln",
+      "Description": "Tank HP < 70% and does not have tank invuln",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
-        "b0b523f5-ed85-42fa-bf43-a25a719d9d4e",
+        "02ae717d-df5d-40b8-93c4-95cff3a05a68",
         "419a3819-f0a4-4d96-9a9f-e2f6941ff04d"
       ],
       "ActionTriggers": [
@@ -12833,12 +13279,12 @@
     {
       "Id": "whm-logic-21",
       "Name": "[21.1] Afflatus Solace (MT)",
-      "Description": "Tank HP < 60% AND Tetragrammaton on cooldown",
+      "Description": "Tank HP < 70% AND Tetragrammaton on cooldown",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
         "a4ca2c78-863b-4205-907e-f4df3d8c284f",
-        "b0b523f5-ed85-42fa-bf43-a25a719d9d4e",
+        "02ae717d-df5d-40b8-93c4-95cff3a05a68",
         "c5124ed3-822e-417b-b66e-7084be14e81a",
         "0949cc70-c6fb-4520-a886-df59fac158a3"
       ],
@@ -12877,12 +13323,12 @@
     {
       "Id": "5ab3c9e9-88cd-4295-b898-a9837ce4e379",
       "Name": "[21] Afflatus Solace (MT, Misery Ready)",
-      "Description": "Uses Afflatus Solace on the main tank even when Afflatus Misery is ready.",
+      "Description": "Uses Afflatus Solace on the main tank at 70% HP even when Afflatus Misery is ready.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
         "a4ca2c78-863b-4205-907e-f4df3d8c284f",
-        "b0b523f5-ed85-42fa-bf43-a25a719d9d4e",
+        "02ae717d-df5d-40b8-93c4-95cff3a05a68",
         "c5124ed3-822e-417b-b66e-7084be14e81a",
         "f764ce3b-de9f-473a-8ffd-86839d2cb265"
       ],
@@ -13050,12 +13496,12 @@
     {
       "Id": "whm-logic-24",
       "Name": "[24] Regen",
-      "Description": "Tank <= 60% HP",
+      "Description": "Keeps Regen on the main tank earlier during active combat.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
         "bd3585cd-b6a8-4ec1-9b5e-21516952fbb0",
-        "b0b523f5-ed85-42fa-bf43-a25a719d9d4e"
+        "jps-whm-cond-mt-hp-85"
       ],
       "ActionTriggers": [
         {
@@ -13221,13 +13667,13 @@
     {
       "Id": "whm-logic-28",
       "Name": "[28] Cure II",
-      "Description": "ONLY if Lily = 0 AND Tetragrammaton on CD AND Tank HP < 60% AND no mitigation on Tank",
+      "Description": "ONLY if Lily = 0 AND Tetragrammaton on CD AND Tank HP < 70% AND no mitigation on Tank",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
         "d34ecc4f-b2a7-43c1-9f14-a9a3d008c16b",
         "c5124ed3-822e-417b-b66e-7084be14e81a",
-        "b0b523f5-ed85-42fa-bf43-a25a719d9d4e",
+        "02ae717d-df5d-40b8-93c4-95cff3a05a68",
         "546d0e4a-1025-4bef-a9f1-de122cffff14"
       ],
       "ActionTriggers": [
@@ -13599,6 +14045,48 @@
       "ModifiedAt": "2026-06-26T09:35:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Level Sync"
+    },
+    {
+      "Id": "jps-whm-logic-holy-trash",
+      "Name": "[36] Holy (3+ Enemies)",
+      "Description": "Direct Holy nudge for 3+ aggro packs while stationary so White Mage uses AoE GCDs instead of long Glare stretches.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
+        "97ede2e5-d6c7-48cb-ae30-d786cada1cb2",
+        "jps-whm-cond-stationary"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-whm-trigger-holy-trash",
+          "ActionId": 139,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 0,
+          "TargetType": 0,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-29T18:00:00.000Z",
+      "ModifiedAt": "2026-06-29T18:00:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Damage"
     },
     {
       "Id": "04072cd9-6969-46da-a6d0-4cf277889775",
@@ -14398,5 +14886,5 @@
       "jps-whm-qt-reset-toggles": true
     }
   },
-  "Version": "1.0.30"
+  "Version": "1.0.32"
 }
