@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Retuned healer oGCD rescue timing: Astrologian main-tank Essential Dignity and Scholar main-tank Lustrate now start at 60% HP, while Sage main-tank Taurochole and Druochole start at 70% HP with emergency GCD fallbacks unchanged.
 - Polished caster public-duty survival: Black Mage, Pictomancer, and Summoner personal shields now start at 75% HP, Summoner self Rekindle starts at 60% HP, and Red Mage emergency Vercure support starts earlier while remaining DPS-first.
 - Standardized physical DPS public-duty recovery: Bard, Machinist, Dragoon, Monk, Ninja, Samurai, Reaper, and Viper now use Second Wind at 60% HP, and Reaper Bloodbath now matches the 70% melee recovery standard.
 - Ultra-polished White Mage, Paladin, Red Mage, and Dancer public safety: White Mage now adds Aquaveil support during 3+ mob pulls and starts tank rescue earlier, Paladin Holy Sheltron no longer waits for near-cap Oath, Red Mage emergency Vercure no longer waits as deep, and Dancer personal recovery starts sooner.

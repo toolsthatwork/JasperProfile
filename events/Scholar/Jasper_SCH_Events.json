@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_SCH_Events",
   "Name": "Jasper SCH Events",
-  "Description": "General-purpose Scholar event profile for PvE. Keeps fairy/Aetherflow recovery, emergency GCD fallbacks for synced content, roulette-safe mitigation, cleanse support, and wipe/zone reset scaffolding.",
-  "Version": "0.1.11",
+  "Description": "General-purpose Scholar event profile for PvE. Keeps fairy/Aetherflow recovery, earlier main-tank oGCD rescue, emergency GCD fallbacks for synced content, roulette-safe mitigation, cleanse support, and wipe/zone reset scaffolding.",
+  "Version": "0.1.12",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -456,7 +456,7 @@
     {
       "Id": "jps-sch-event-lustrate-mt-emergency",
       "Name": "[MT] Lustrate Emergency",
-      "Description": "Uses Lustrate on the main tank during low-HP emergency windows.",
+      "Description": "Uses Lustrate on the main tank below 60 percent HP when Aetherflow is available.",
       "EventType": "OnTick",
       "LogicId": "jps-sch-logic-lustrate-mt-emergency",
       "ThrottleSameEvent": 0.5,
@@ -465,7 +465,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-27T03:10:00.000Z",
-      "ModifiedAt": "2026-06-27T03:10:00.000Z"
+      "ModifiedAt": "2026-06-28T13:25:00.000Z"
     }
   ],
   "Conditions": [
@@ -6756,12 +6756,12 @@
     },
     {
       "Id": "jps-sch-cond-mt-hp-50",
-      "Name": "MT <= 50%",
-      "Description": "",
+      "Name": "MT <= 60%",
+      "Description": "Main tank HP threshold for Lustrate emergency recovery.",
       "SubConditions": [
         {
           "Id": "jps-sch-cond-mt-hp-50-sub",
-          "Name": "MT <= 50%",
+          "Name": "MT <= 60%",
           "Description": "",
           "TargetType": 3,
           "ConditionType": 1,
@@ -6784,7 +6784,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 50,
+              "Percentage": 60,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -6886,16 +6886,16 @@
               "IsEnabled": true
             },
             "PartyHpAverageParams": {
-              "Percentage": 50,
+              "Percentage": 60,
               "Comparison": 1,
               "IsEnabled": true
             },
             "PartyHpLowestParams": {
-              "Percentage": 50,
+              "Percentage": 60,
               "Comparison": 1,
               "LowestMemberCount": 4,
               "UseLowestMemberPercentage": false,
-              "LowestMemberPercentage": 50,
+              "LowestMemberPercentage": 60,
               "IsEnabled": true
             },
             "PartyHpBandsParams": {
@@ -6962,12 +6962,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-06-27T03:10:00.000Z",
-          "ModifiedAt": "2026-06-27T03:10:00.000Z",
+          "ModifiedAt": "2026-06-28T13:25:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-27T03:10:00.000Z",
-      "ModifiedAt": "2026-06-27T03:10:00.000Z",
+      "ModifiedAt": "2026-06-28T13:25:00.000Z",
       "ExcludeFromTargetAccumulation": false
     }
   ],
@@ -8919,7 +8919,7 @@
     {
       "Id": "jps-sch-logic-lustrate-mt-emergency",
       "Name": "[MT] Lustrate Emergency",
-      "Description": "Uses Lustrate on the main tank below 50 percent HP when Aetherflow is available.",
+      "Description": "Uses Lustrate on the main tank below 60 percent HP when Aetherflow is available.",
       "LogicType": 0,
       "ConditionIds": [
         "958d055a-815f-485d-bb98-b5b7348da94c",
@@ -8954,13 +8954,13 @@
         }
       ],
       "CreatedAt": "2026-06-27T03:10:00.000Z",
-      "ModifiedAt": "2026-06-27T03:10:00.000Z",
+      "ModifiedAt": "2026-06-28T13:25:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Aetherflow"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-27T03:10:00.000Z",
+  "ModifiedAt": "2026-06-28T13:25:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
@@ -8999,9 +8999,9 @@
           "6bd7312c-25f8-45b0-ad22-978a6cf02717",
           "bdfe97aa-59c4-4f61-a4b0-d5a9f6b859ed",
           "fc515d9b-421d-478c-9a5d-e58df9d27692",
-        "jps-sch-event-protraction-tb",
-        "jps-sch-event-excog-mt-recovery",
-        "jps-sch-event-lustrate-mt-emergency"
+          "jps-sch-event-protraction-tb",
+          "jps-sch-event-excog-mt-recovery",
+          "jps-sch-event-lustrate-mt-emergency"
         ],
         "Enabled": true,
         "Position": 1

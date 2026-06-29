@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_AST_Events",
   "Name": "Jasper AST Events",
-  "Description": "General-purpose Astrologian event profile for PvE. Keeps damage-forward default toggles, oGCD-first single-target recovery, emergency-only GCD heals, roulette-safe mitigation, cleanse support, and wipe/zone reset scaffolding.",
-  "Version": "0.1.11",
+  "Description": "General-purpose Astrologian event profile for PvE. Keeps damage-forward default toggles, earlier oGCD-first single-target recovery, emergency-only GCD heals, roulette-safe mitigation, cleanse support, and wipe/zone reset scaffolding.",
+  "Version": "0.1.12",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -498,7 +498,7 @@
     {
       "Id": "jps-ast-event-essential-mt-emergency",
       "Name": "[MT] Essential Dignity Emergency",
-      "Description": "Uses Essential Dignity on the main tank during low-HP emergency windows.",
+      "Description": "Uses Essential Dignity on the main tank below 60 percent HP.",
       "EventType": "OnTick",
       "LogicId": "jps-ast-logic-essential-mt-emergency",
       "ThrottleSameEvent": 2,
@@ -507,7 +507,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-27T01:45:00.000Z",
-      "ModifiedAt": "2026-06-27T01:45:00.000Z"
+      "ModifiedAt": "2026-06-28T13:25:00.000Z"
     }
   ],
   "Conditions": [
@@ -3773,12 +3773,12 @@
     },
     {
       "Id": "de19e6a1-a995-42f9-b6a4-580ea14fcc44",
-      "Name": "MT <= 50",
-      "Description": "",
+      "Name": "MT <= 60",
+      "Description": "Main tank HP threshold for Essential Dignity recovery.",
       "SubConditions": [
         {
           "Id": "dbc0461d-adf6-4171-bbc9-b59dd6115284",
-          "Name": "<= 50% Tank",
+          "Name": "MT <= 60",
           "Description": "",
           "TargetType": 3,
           "ConditionType": 1,
@@ -3801,7 +3801,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 50,
+              "Percentage": 60,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -3912,7 +3912,7 @@
               "Comparison": 1,
               "LowestMemberCount": 4,
               "UseLowestMemberPercentage": false,
-              "LowestMemberPercentage": 50,
+              "LowestMemberPercentage": 60,
               "IsEnabled": true
             },
             "PartyHpBandsParams": {
@@ -3979,12 +3979,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2025-06-08T02:18:26.0935452Z",
-          "ModifiedAt": "2025-06-08T02:18:26.0935453Z",
+          "ModifiedAt": "2026-06-28T13:25:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T13:25:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -8889,7 +8889,7 @@
     {
       "Id": "jps-ast-logic-essential-mt-emergency",
       "Name": "[MT] Essential Dignity Emergency",
-      "Description": "Uses Essential Dignity on the main tank below 50 percent HP.",
+      "Description": "Uses Essential Dignity on the main tank below 60 percent HP.",
       "LogicType": 0,
       "ConditionIds": [
         "958d055a-815f-485d-bb98-b5b7348da94c",
@@ -8923,13 +8923,13 @@
         }
       ],
       "CreatedAt": "2026-06-27T01:45:00.000Z",
-      "ModifiedAt": "2026-06-27T01:45:00.000Z",
+      "ModifiedAt": "2026-06-28T13:25:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "ST Heal"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-27T01:45:00.000Z",
+  "ModifiedAt": "2026-06-28T13:25:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

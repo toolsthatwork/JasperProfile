@@ -2,7 +2,7 @@
   "Id": "Jasper_SGE_Events",
   "Name": "Jasper SGE Events",
   "Description": "General-purpose Sage event profile for PvE. Keeps Kardia/Addersgall recovery, earlier oGCD-first tank and party recovery, emergency GCD fallbacks, roulette-safe mitigation, cleanse support, and wipe/zone reset scaffolding.",
-  "Version": "0.1.9",
+  "Version": "0.1.10",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -232,7 +232,7 @@
     {
       "Id": "7cbcf3c9-a892-415e-b152-613eaa7d9199",
       "Name": "[MT] Taurochole",
-      "Description": "Uses Taurochole on the main tank around 65 percent HP so the mitigation-heal lands before panic recovery.",
+      "Description": "Uses Taurochole on the main tank around 70 percent HP so the mitigation-heal lands before panic recovery.",
       "EventType": "OnTick",
       "LogicId": "448f7e43-3dbf-4bcf-a789-6bbb7329dbd8",
       "ThrottleSameEvent": 0.5,
@@ -241,7 +241,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-28T10:05:00.000Z"
+      "ModifiedAt": "2026-06-28T13:25:00.000Z"
     },
     {
       "Id": "8dc400a8-adf3-4567-87d6-118790db9551",
@@ -372,7 +372,7 @@
     {
       "Id": "jps-sge-event-druochole-mt-recovery",
       "Name": "[MT] Druochole Recovery",
-      "Description": "Uses Druochole on the main tank during sustained damage outside scripted tankbusters.",
+      "Description": "Uses Druochole on the main tank below 70 percent HP.",
       "EventType": "OnTick",
       "LogicId": "jps-sge-logic-druochole-mt-recovery",
       "ThrottleSameEvent": 2,
@@ -381,7 +381,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-27T01:45:00.000Z",
-      "ModifiedAt": "2026-06-27T01:45:00.000Z"
+      "ModifiedAt": "2026-06-28T13:25:00.000Z"
     }
   ],
   "Conditions": [
@@ -1467,12 +1467,12 @@
     },
     {
       "Id": "c730821c-9f63-4df2-affc-d1016de4c615",
-      "Name": "MT <= 65%",
-      "Description": "",
+      "Name": "MT <= 70%",
+      "Description": "Main tank HP threshold for Taurochole mitigation-heal recovery.",
       "SubConditions": [
         {
           "Id": "8959250e-e459-49e0-b138-3935e3796b40",
-          "Name": "MT <= 65%",
+          "Name": "MT <= 70%",
           "Description": "",
           "TargetType": 3,
           "ConditionType": 1,
@@ -1495,7 +1495,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 65,
+              "Percentage": 70,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -1597,16 +1597,16 @@
               "IsEnabled": true
             },
             "PartyHpAverageParams": {
-              "Percentage": 50,
+              "Percentage": 70,
               "Comparison": 1,
               "IsEnabled": true
             },
             "PartyHpLowestParams": {
-              "Percentage": 50,
+              "Percentage": 70,
               "Comparison": 1,
               "LowestMemberCount": 4,
               "UseLowestMemberPercentage": false,
-              "LowestMemberPercentage": 50,
+              "LowestMemberPercentage": 70,
               "IsEnabled": true
             },
             "PartyHpBandsParams": {
@@ -1673,12 +1673,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2025-08-17T01:40:25.4446542Z",
-          "ModifiedAt": "2026-06-28T10:05:00.000Z",
+          "ModifiedAt": "2026-06-28T13:25:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-28T10:05:00.000Z",
+      "ModifiedAt": "2026-06-28T13:25:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -4727,12 +4727,12 @@
     },
     {
       "Id": "jps-sge-cond-mt-hp-65",
-      "Name": "MT <= 65%",
-      "Description": "",
+      "Name": "MT <= 70%",
+      "Description": "Main tank HP threshold for Druochole recovery.",
       "SubConditions": [
         {
           "Id": "jps-sge-cond-mt-hp-65-sub",
-          "Name": "MT <= 65%",
+          "Name": "MT <= 70%",
           "Description": "",
           "TargetType": 3,
           "ConditionType": 1,
@@ -4755,7 +4755,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 65,
+              "Percentage": 70,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -4857,16 +4857,16 @@
               "IsEnabled": true
             },
             "PartyHpAverageParams": {
-              "Percentage": 50,
+              "Percentage": 70,
               "Comparison": 1,
               "IsEnabled": true
             },
             "PartyHpLowestParams": {
-              "Percentage": 50,
+              "Percentage": 70,
               "Comparison": 1,
               "LowestMemberCount": 4,
               "UseLowestMemberPercentage": false,
-              "LowestMemberPercentage": 50,
+              "LowestMemberPercentage": 70,
               "IsEnabled": true
             },
             "PartyHpBandsParams": {
@@ -4933,12 +4933,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-06-27T01:45:00.000Z",
-          "ModifiedAt": "2026-06-27T01:45:00.000Z",
+          "ModifiedAt": "2026-06-28T13:25:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-27T01:45:00.000Z",
-      "ModifiedAt": "2026-06-27T01:45:00.000Z",
+      "ModifiedAt": "2026-06-28T13:25:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -5775,7 +5775,7 @@
     {
       "Id": "448f7e43-3dbf-4bcf-a789-6bbb7329dbd8",
       "Name": "[MT] Taurochole",
-      "Description": "Uses Taurochole on the main tank around 65 percent HP so the mitigation-heal lands before panic recovery.",
+      "Description": "Uses Taurochole on the main tank around 70 percent HP so the mitigation-heal lands before panic recovery.",
       "LogicType": 0,
       "ConditionIds": [
         "c730821c-9f63-4df2-affc-d1016de4c615",
@@ -5809,7 +5809,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-28T10:05:00.000Z",
+      "ModifiedAt": "2026-06-28T13:25:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": ""
     },
@@ -6757,7 +6757,7 @@
     {
       "Id": "jps-sge-logic-druochole-mt-recovery",
       "Name": "[MT] Druochole Recovery",
-      "Description": "Uses Druochole on the main tank below 65 percent HP.",
+      "Description": "Uses Druochole on the main tank below 70 percent HP.",
       "LogicType": 0,
       "ConditionIds": [
         "72280623-b8cb-4182-a19c-1fd14f3a7608",
@@ -6791,13 +6791,13 @@
         }
       ],
       "CreatedAt": "2026-06-27T01:45:00.000Z",
-      "ModifiedAt": "2026-06-27T01:45:00.000Z",
+      "ModifiedAt": "2026-06-28T13:25:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "ST Heal"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-28T10:05:00.000Z",
+  "ModifiedAt": "2026-06-28T13:25:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
