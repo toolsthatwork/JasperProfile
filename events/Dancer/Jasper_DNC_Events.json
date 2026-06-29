@@ -2,7 +2,7 @@
   "Id": "Jasper_DNC_Events",
   "Name": "Jasper DNC Events",
   "Description": "General-purpose Dancer event profile for PvE. Keeps Shield Samba/Curing Waltz support, earlier self-heal recovery, Head Graze interrupts, Arm's Length self-defense, optional cooldown holds, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play.",
-  "Version": "0.1.7",
+  "Version": "0.1.8",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -36,7 +36,7 @@
     {
       "Id": "d86f996b-32dc-47a1-8853-a1326deb7331",
       "Name": "Second Wind",
-      "Description": "",
+      "Description": "Uses Second Wind at 60 percent HP for earlier self-recovery.",
       "EventType": "OnTick",
       "LogicId": "3b335e22-eda0-4a2c-b368-912c93fbb5e0",
       "ThrottleSameEvent": 0.5,
@@ -45,7 +45,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-28T12:15:00.000Z"
     },
     {
       "Id": "b777fcc6-8bba-4be2-8773-158a6ac1a609",
@@ -64,7 +64,7 @@
     {
       "Id": "ccb4b0d3-f64e-4946-ae04-7b8946760953",
       "Name": "Curing Waltz",
-      "Description": "",
+      "Description": "Uses Curing Waltz for nearby party recovery when HP is already slipping.",
       "EventType": "OnTick",
       "LogicId": "c1c0dad1-d853-4297-a8f1-193ebe67f243",
       "ThrottleSameEvent": 0.5,
@@ -73,7 +73,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z"
+      "ModifiedAt": "2026-06-28T12:15:00.000Z"
     },
     {
       "Id": "457f3b4b-18f9-4e4c-9d02-bcaedd925d4f",
@@ -162,7 +162,7 @@
     {
       "Id": "jps-dnc-event-curing-waltz-emergency",
       "Name": "Curing Waltz Emergency",
-      "Description": "Uses Curing Waltz when self HP drops low outside scripted raidwide handling.",
+      "Description": "Uses Curing Waltz for self-pressure around 75 percent HP without forcing damage cooldowns.",
       "EventType": "OnTick",
       "LogicId": "jps-dnc-logic-curing-waltz-emergency",
       "ThrottleSameEvent": 2.5,
@@ -171,7 +171,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-27T00:05:00.000Z",
-      "ModifiedAt": "2026-06-27T00:05:00.000Z"
+      "ModifiedAt": "2026-06-28T12:15:00.000Z"
     },
     {
       "Id": "jps-dnc-event-head-graze",
@@ -433,12 +433,12 @@
     },
     {
       "Id": "5f48d8d0-3847-4a85-b6ed-506191f01b27",
-      "Name": "Self HP <= 50%",
-      "Description": "Self HP threshold for Second Wind use.",
+      "Name": "Self HP <= 60%",
+      "Description": "Self HP threshold for earlier Second Wind recovery.",
       "SubConditions": [
         {
           "Id": "38066d92-462e-421d-812d-a8d53d4c03d5",
-          "Name": "Self HP <= 50%",
+          "Name": "Self HP <= 60%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -461,7 +461,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 50,
+              "Percentage": 60,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -563,16 +563,16 @@
               "IsEnabled": true
             },
             "PartyHpAverageParams": {
-              "Percentage": 50,
+              "Percentage": 60,
               "Comparison": 1,
               "IsEnabled": true
             },
             "PartyHpLowestParams": {
-              "Percentage": 50,
+              "Percentage": 60,
               "Comparison": 1,
               "LowestMemberCount": 4,
               "UseLowestMemberPercentage": false,
-              "LowestMemberPercentage": 50,
+              "LowestMemberPercentage": 60,
               "IsEnabled": true
             },
             "PartyHpBandsParams": {
@@ -639,12 +639,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2025-12-18T11:19:23.6924934Z",
-          "ModifiedAt": "2025-12-18T11:19:23.6924935Z",
+          "ModifiedAt": "2026-06-28T12:15:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T12:15:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -3457,12 +3457,12 @@
     },
     {
       "Id": "2deb9cfc-deb8-4619-9dff-5d393fa4cf36",
-      "Name": "Second Wind <= 50%",
-      "Description": "Self HP threshold for Second Wind use.",
+      "Name": "Second Wind <= 60%",
+      "Description": "Self HP threshold for earlier Second Wind recovery.",
       "SubConditions": [
         {
           "Id": "3a024c93-9f8d-4416-9942-db08f12c1ebe",
-          "Name": "Second Wind <= 50%",
+          "Name": "Second Wind <= 60%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -3485,7 +3485,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 50,
+              "Percentage": 60,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -3587,16 +3587,16 @@
               "IsEnabled": true
             },
             "PartyHpAverageParams": {
-              "Percentage": 50,
+              "Percentage": 60,
               "Comparison": 1,
               "IsEnabled": true
             },
             "PartyHpLowestParams": {
-              "Percentage": 50,
+              "Percentage": 60,
               "Comparison": 1,
               "LowestMemberCount": 4,
               "UseLowestMemberPercentage": false,
-              "LowestMemberPercentage": 50,
+              "LowestMemberPercentage": 60,
               "IsEnabled": true
             },
             "PartyHpBandsParams": {
@@ -3663,22 +3663,22 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2025-12-18T11:19:23.6924934Z",
-          "ModifiedAt": "2026-06-27T00:05:00.000Z",
+          "ModifiedAt": "2026-06-28T12:15:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-27T00:05:00.000Z",
+      "ModifiedAt": "2026-06-28T12:15:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
       "Id": "jps-dnc-cond-self-hp-70",
-      "Name": "Self HP <= 70%",
+      "Name": "Self HP <= 75%",
       "Description": "Self HP threshold for Curing Waltz emergency use.",
       "SubConditions": [
         {
           "Id": "jps-dnc-cond-self-hp-70-sub-1",
-          "Name": "Self HP <= 70%",
+          "Name": "Self HP <= 75%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -3701,7 +3701,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 70,
+              "Percentage": 75,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -3803,16 +3803,16 @@
               "IsEnabled": true
             },
             "PartyHpAverageParams": {
-              "Percentage": 50,
+              "Percentage": 75,
               "Comparison": 1,
               "IsEnabled": true
             },
             "PartyHpLowestParams": {
-              "Percentage": 50,
+              "Percentage": 75,
               "Comparison": 1,
               "LowestMemberCount": 4,
               "UseLowestMemberPercentage": false,
-              "LowestMemberPercentage": 50,
+              "LowestMemberPercentage": 75,
               "IsEnabled": true
             },
             "PartyHpBandsParams": {
@@ -3879,12 +3879,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-06-27T00:05:00.000Z",
-          "ModifiedAt": "2026-06-27T00:05:00.000Z",
+          "ModifiedAt": "2026-06-28T12:15:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-27T00:05:00.000Z",
-      "ModifiedAt": "2026-06-27T00:05:00.000Z",
+      "ModifiedAt": "2026-06-28T12:15:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -4991,7 +4991,7 @@
     {
       "Id": "3b335e22-eda0-4a2c-b368-912c93fbb5e0",
       "Name": "Second Wind",
-      "Description": "",
+      "Description": "Uses Second Wind at 60 percent HP for earlier self-recovery.",
       "LogicType": 0,
       "ConditionIds": [
         "2deb9cfc-deb8-4619-9dff-5d393fa4cf36",
@@ -5026,7 +5026,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T12:15:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
     },
@@ -5283,7 +5283,7 @@
     {
       "Id": "c1c0dad1-d853-4297-a8f1-193ebe67f243",
       "Name": "Curing Waltz",
-      "Description": "",
+      "Description": "Uses Curing Waltz for nearby party recovery when HP is already slipping.",
       "LogicType": 0,
       "ConditionIds": [
         "2754cead-1b3b-4b63-b6a9-be369288fb38",
@@ -5318,7 +5318,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T12:15:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
     },
@@ -5806,7 +5806,7 @@
     {
       "Id": "jps-dnc-logic-curing-waltz-emergency",
       "Name": "Curing Waltz Emergency",
-      "Description": "Uses Curing Waltz when self HP drops low outside scripted raidwide handling.",
+      "Description": "Uses Curing Waltz for self-pressure around 75 percent HP without forcing damage cooldowns.",
       "LogicType": 0,
       "ConditionIds": [
         "2754cead-1b3b-4b63-b6a9-be369288fb38",
@@ -5840,7 +5840,7 @@
         }
       ],
       "CreatedAt": "2026-06-27T00:05:00.000Z",
-      "ModifiedAt": "2026-06-27T00:05:00.000Z",
+      "ModifiedAt": "2026-06-28T12:15:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
     },
@@ -5930,7 +5930,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-27T03:45:00.000Z",
+  "ModifiedAt": "2026-06-28T12:15:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_PLD_Events",
   "Name": "Jasper PLD Events",
-  "Description": "General-purpose Paladin event profile for PvE. Keeps earlier dungeon mitigation, Sheltron/Intervention/Clemency support, raidwide/tankbuster mitigation, Interject utility, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only; this profile does not reset it. Adds smoother Holy Sheltron and Intervention recovery thresholds.",
-  "Version": "0.1.15",
+  "Description": "General-purpose Paladin event profile for PvE. Keeps early dungeon mitigation, Holy Sheltron/Intervention/Clemency support, raidwide/tankbuster mitigation, Interject utility, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only; this profile does not reset it. Tuned for steadier public-duty tank survival without taking over AoE mode.",
+  "Version": "0.1.16",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -36,7 +36,7 @@
     {
       "Id": "d13864d8-c2b5-4368-8159-019c3ea3b188",
       "Name": "Sheltron",
-      "Description": "Uses Holy Sheltron around 90 percent HP when Oath gauge is near cap, smoothing tank damage before panic windows.",
+      "Description": "Uses Holy Sheltron around 90 percent HP as soon as Oath is available, smoothing tank damage before panic windows.",
       "EventType": "OnTick",
       "LogicId": "f1d4dc14-ecaf-4078-980e-f8a3fc9c4c0e",
       "ThrottleSameEvent": 0.5,
@@ -45,7 +45,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-28T11:25:00.000Z"
+      "ModifiedAt": "2026-06-28T12:25:00.000Z"
     },
     {
       "Id": "71df048b-a767-46bf-ae48-f6b7ec90e9d5",
@@ -4526,12 +4526,12 @@
     },
     {
       "Id": "5af14793-c6c0-47cd-957c-eb8799f1fb15",
-      "Name": "[Self] Sheltron Gauge",
-      "Description": "",
+      "Name": "[Self] Oath Gauge >= 50",
+      "Description": "Holy Sheltron is available at 50 Oath gauge.",
       "SubConditions": [
         {
           "Id": "2ccf6780-0a7b-4e51-bba0-a186f6de5775",
-          "Name": "Gauge Check",
+          "Name": "[Self] Oath Gauge >= 50",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 4,
@@ -4569,7 +4569,7 @@
             "GaugeParams": {
               "PropertyName": "OathGauge",
               "ValueType": 0,
-              "NumericValue": 75,
+              "NumericValue": 50,
               "BooleanValue": false,
               "StringValue": "",
               "Comparison": 3,
@@ -4732,12 +4732,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-01-03T19:29:29.6566537Z",
-          "ModifiedAt": "2026-01-03T19:29:29.6566537Z",
+          "ModifiedAt": "2026-06-28T12:25:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-25T07:45:00.000Z",
+      "ModifiedAt": "2026-06-28T12:25:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -9197,7 +9197,7 @@
     {
       "Id": "f1d4dc14-ecaf-4078-980e-f8a3fc9c4c0e",
       "Name": "Auto Sheltron",
-      "Description": "Uses Holy Sheltron around 90 percent HP when Oath gauge is near cap, smoothing tank damage before panic windows.",
+      "Description": "Uses Holy Sheltron around 90 percent HP as soon as Oath is available, smoothing tank damage before panic windows.",
       "LogicType": 0,
       "ConditionIds": [
         "5af14793-c6c0-47cd-957c-eb8799f1fb15",
@@ -9232,7 +9232,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-28T11:25:00.000Z",
+      "ModifiedAt": "2026-06-28T12:25:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Mitigation"
     },
@@ -10087,7 +10087,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-28T11:25:00.000Z",
+  "ModifiedAt": "2026-06-28T12:25:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
