@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- Tightened Warrior gauge management so Beast Gauge at 80+ releases Save CD/Save 1 Jump and re-enables spender toggles, while 3+ pulls also restore normal UseAOE without touching ForceAOE.
 
 - Polished Black Mage, Pictomancer, and Summoner with default damage-toggle safety, normal 2+ target AoE/helper release without ForceAOE, compact manual quick-toggle controls, and preserved optional burst cooldown holds.
 - Tightened caster support controls so Addle, personal shields, Rekindle, DOT helpers, and sprint are exposed cleanly while reset/safety helpers run quietly.
