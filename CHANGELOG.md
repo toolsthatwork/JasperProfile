@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Retuned Dark Knight and Gunbreaker dungeon tanking so first mitigation starts around 80% HP instead of 90%, second mitigation stays around 65%, invuln panic starts around 30%, and both tanks use compact manual quick-toggle controls.
+- Added tank toggle-safety polish for Dark Knight and Gunbreaker so normal AoE/ranged-pull/helper toggles recover in combat without ForceAOE or overriding optional burst cooldown holds.
+- Added Dark Knight Abyssal Drain pack recovery around 80% HP on 3+ mob pulls for stronger dungeon self-sustain.
 - Polished Viper with default damage-toggle safety, normal 2+ target AoE/helper release without ForceAOE, earlier Second Wind recovery, and compact manual quick-toggle controls.
 - Polished Dancer with AutoPartner/default damage-toggle safety, normal 2+ target AoE release without ForceAOE, earlier Second Wind recovery, and compact manual quick-toggle controls.
 - Hardened Warrior spender recovery so 3+ enemy pulls also re-enable Inner Release, Infuriate, Upheaval, Onslaught, and primal spender toggles while forcing Save CD/Save 1 Jump off, reducing Beast Gauge overcap from bad local toggle state.

@@ -1,14 +1,14 @@
 {
   "Id": "Jasper_GNB_Events",
   "Name": "Jasper GNB Events",
-  "Description": "General-purpose Gunbreaker event profile for PvE. Keeps dungeon mitigation, Aurora/Heart of Corundum recovery, raidwide/tankbuster mitigation, Interject utility, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play. Includes earlier dungeon mitigation retuning for public roulette-safe pulls. ForceAOE is manual-only; this profile does not reset it. Adds earlier Heart of Corundum and Aurora recovery thresholds.",
-  "Version": "0.1.13",
+  "Description": "General-purpose Gunbreaker event profile for PvE. Keeps staggered 80/65 dungeon mitigation, Aurora/Heart of Corundum recovery, raidwide/tankbuster mitigation, Interject utility, Superbolide emergency support around 30 percent HP, MT/OT stance controls, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile.",
+  "Version": "0.1.14",
   "AIOEventVersion": "2.0",
   "Events": [
     {
       "Id": "f2daaf1d-c477-42b2-9db1-baa49330bfe3",
-      "Name": "Emergency Bolide",
-      "Description": "Uses Superbolide before lethal low-HP windows.",
+      "Name": "Emergency Bolide <= 30%",
+      "Description": "Uses Superbolide if HP falls into the panic floor.",
       "EventType": "OnTick",
       "LogicId": "b5bbb2da-d7e4-4af7-ac76-6737828c6c62",
       "ThrottleSameEvent": 0.5,
@@ -17,7 +17,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-28T09:35:00.000Z"
+      "ModifiedAt": "2026-06-30T17:40:00.000Z"
     },
     {
       "Id": "732a7c9a-5487-474b-bb80-91bf92cd7e74",
@@ -77,8 +77,8 @@
     },
     {
       "Id": "1b066cf9-12d8-450d-866e-677d61da153d",
-      "Name": "1 Mit <= 90% HP, >= 3 mobs",
-      "Description": "Starts dungeon mitigation early on three-or-more enemy pulls instead of waiting for emergency HP.",
+      "Name": "1 Mit <= 80% HP, >= 3 mobs",
+      "Description": "Starts the first dungeon-pull mitigation layer around 80 percent HP on 3+ mob pulls.",
       "EventType": "OnTick",
       "LogicId": "b7d72611-1464-4b11-ab8a-1902d092d9e1",
       "ThrottleSameEvent": 2,
@@ -87,7 +87,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-28T09:35:00.000Z"
+      "ModifiedAt": "2026-06-30T17:40:00.000Z"
     },
     {
       "Id": "a6cdc6d2-6171-4f55-8f53-dbde09c85e86",
@@ -245,8 +245,8 @@
     },
     {
       "Id": "abbafd47-f2d3-497a-927e-dd8525c758df",
-      "Name": "HoC Self",
-      "Description": "Uses Heart of Corundum on self around 90 percent HP for proactive damage smoothing.",
+      "Name": "HoC Self <= 80%",
+      "Description": "Uses Heart of Corundum for self-recovery around 80 percent HP.",
       "EventType": "OnTick",
       "LogicId": "98fb393d-eda4-444b-b9e4-326aa69ddc36",
       "ThrottleSameEvent": 0.5,
@@ -255,7 +255,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-28T11:25:00.000Z"
+      "ModifiedAt": "2026-06-30T17:40:00.000Z"
     },
     {
       "Id": "c3f48c29-96d2-417e-8faa-94b7cdf8bff7",
@@ -410,6 +410,38 @@
       "Filters": {},
       "CreatedAt": "2026-06-27T02:00:00.000Z",
       "ModifiedAt": "2026-06-27T02:00:00.000Z"
+    },
+    {
+      "Id": "jps-gnb-event-dps-toggle-safety",
+      "Name": "DPS Toggle Safety",
+      "Description": "Keeps GNB AoE, ranged pull, ammo, and helper toggles sane in combat without enabling ForceAOE.",
+      "EventType": "OnTick",
+      "LogicId": "jps-gnb-logic-dps-toggle-safety",
+      "ThrottleSameEvent": 1,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-30T17:40:00.000Z",
+      "ModifiedAt": "2026-06-30T17:40:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Toggles"
+    },
+    {
+      "Id": "jps-gnb-event-pack-aoe-release",
+      "Name": "AoE Pack Toggle Release",
+      "Description": "Keeps normal GNB AoE/helper toggles active on 3+ enemy pulls without enabling ForceAOE.",
+      "EventType": "OnTick",
+      "LogicId": "jps-gnb-logic-pack-aoe-release",
+      "ThrottleSameEvent": 1,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-30T17:40:00.000Z",
+      "ModifiedAt": "2026-06-30T17:40:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Toggles"
     }
   ],
   "Conditions": [
@@ -1095,12 +1127,12 @@
     },
     {
       "Id": "432d91a0-4b2f-4925-a825-7d54566cc917",
-      "Name": "HP <= 90%",
-      "Description": "",
+      "Name": "Heart of Corundum <= 80%",
+      "Description": "Self Heart of Corundum recovery threshold.",
       "SubConditions": [
         {
           "Id": "59cd3191-e6f1-49c3-8cae-39700e6fe9ae",
-          "Name": "HP <= 90%",
+          "Name": "Heart of Corundum <= 80%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -1123,7 +1155,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 90,
+              "Percentage": 80,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -1301,12 +1333,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-01-10T23:24:56.8044606Z",
-          "ModifiedAt": "2026-06-28T11:25:00.000Z",
+          "ModifiedAt": "2026-06-30T17:40:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-28T11:25:00.000Z",
+      "ModifiedAt": "2026-06-30T17:40:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -1743,12 +1775,12 @@
     },
     {
       "Id": "bbe2306a-5240-45a6-a4e7-8cb66a47095a",
-      "Name": "[Self] HP <= 25",
-      "Description": "",
+      "Name": "[Self] HP <= 30",
+      "Description": "Emergency Superbolide threshold.",
       "SubConditions": [
         {
           "Id": "2ed9608a-73eb-46de-8e3b-4b8d5638c46b",
-          "Name": "HP <= 25%",
+          "Name": "HP <= 30",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -1771,7 +1803,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 25,
+              "Percentage": 30,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -1949,12 +1981,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2025-08-12T19:55:56.107224Z",
-          "ModifiedAt": "2026-06-28T09:35:00.000Z",
+          "ModifiedAt": "2026-06-30T17:40:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-28T09:35:00.000Z",
+      "ModifiedAt": "2026-06-30T17:40:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -8450,12 +8482,12 @@
     },
     {
       "Id": "jps-gnb-cond-self-hp-90",
-      "Name": "[Self] HP <= 90",
-      "Description": "",
+      "Name": "[Self] HP <= 80",
+      "Description": "First dungeon-pull mitigation threshold.",
       "SubConditions": [
         {
           "Id": "jps-gnb-cond-self-hp-90-sub",
-          "Name": "HP <= 90%",
+          "Name": "HP <= 80",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -8478,7 +8510,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 90,
+              "Percentage": 80,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -8656,12 +8688,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-06-28T09:35:00.000Z",
-          "ModifiedAt": "2026-06-28T09:35:00.000Z",
+          "ModifiedAt": "2026-06-30T17:40:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-28T09:35:00.000Z",
-      "ModifiedAt": "2026-06-28T09:35:00.000Z",
+      "ModifiedAt": "2026-06-30T17:40:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -10958,7 +10990,7 @@
     {
       "Id": "94ce5b93-58b4-5353-aed5-2161adfb4a7b",
       "Name": "Reset Toggles",
-      "Description": "Restores normal Gunbreaker ACR toggles while safely out of combat. Regular UseAOE stays enabled; ForceAOE is manual-only and is never changed by this profile.",
+      "Description": "Restores normal Gunbreaker ACR defaults while safely out of combat. Regular UseAOE and ranged pull support stay enabled; ForceAOE is manual-only and is never changed by this profile.",
       "LogicType": 0,
       "ConditionIds": [
         "4570f77b-07e5-42f1-83c8-075f8460ae89"
@@ -11391,7 +11423,7 @@
         }
       ],
       "CreatedAt": "2026-06-26T18:00:00.000Z",
-      "ModifiedAt": "2026-06-28T11:05:00.000Z",
+      "ModifiedAt": "2026-06-30T17:40:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
     },
@@ -11459,6 +11491,437 @@
       "ModifiedAt": "2026-06-26T11:05:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggle Management"
+    },
+    {
+      "Id": "jps-gnb-logic-dps-toggle-safety",
+      "Name": "DPS Toggle Safety",
+      "Description": "Keeps Gunbreaker AoE, ranged pull, ammo, Gnashing/Fated helper toggles healthy without overriding optional No Mercy/Bloodfest cooldown holds.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "6809a916-b6e8-4aaa-9849-8bca4cecfc4f"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-gnb-trigger-safety-savecd-off",
+          "ActionId": 0,
+          "SkillbarId": "SaveCD",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 8,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-gnb-trigger-safety-burnboss-off",
+          "ActionId": 0,
+          "SkillbarId": "BurnBoss",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 8,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-gnb-trigger-safety-lockface-off",
+          "ActionId": 0,
+          "SkillbarId": "LockFace",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 8,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-gnb-trigger-safety-useaoe-on",
+          "ActionId": 0,
+          "SkillbarId": "UseAOE",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-gnb-trigger-safety-range-on",
+          "ActionId": 0,
+          "SkillbarId": "RangeAttack",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-gnb-trigger-safety-ammo-on",
+          "ActionId": 0,
+          "SkillbarId": "UseAmmoSkills",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-gnb-trigger-safety-gnashing-on",
+          "ActionId": 0,
+          "SkillbarId": "GnashingFang",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-gnb-trigger-safety-burngnashing-on",
+          "ActionId": 0,
+          "SkillbarId": "BurnGnashing",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-gnb-trigger-safety-fatedcircle-on",
+          "ActionId": 0,
+          "SkillbarId": "FatedCircle",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-gnb-trigger-safety-interject-on",
+          "ActionId": 0,
+          "SkillbarId": "Interject",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-30T17:40:00.000Z",
+      "ModifiedAt": "2026-06-30T17:40:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Toggles"
+    },
+    {
+      "Id": "jps-gnb-logic-pack-aoe-release",
+      "Name": "AoE Pack Toggle Release",
+      "Description": "Keeps normal GNB AoE and ammo/helper toggles enabled during 3+ mob pulls without touching ForceAOE or overriding optional burst holds.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "307cb39d-0d33-4dc5-9255-413e1f2ae6f4",
+        "6809a916-b6e8-4aaa-9849-8bca4cecfc4f"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-gnb-trigger-pack-savecd-off",
+          "ActionId": 0,
+          "SkillbarId": "SaveCD",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 8,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-gnb-trigger-pack-useaoe-on",
+          "ActionId": 0,
+          "SkillbarId": "UseAOE",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-gnb-trigger-pack-range-on",
+          "ActionId": 0,
+          "SkillbarId": "RangeAttack",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-gnb-trigger-pack-ammo-on",
+          "ActionId": 0,
+          "SkillbarId": "UseAmmoSkills",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-gnb-trigger-pack-fatedcircle-on",
+          "ActionId": 0,
+          "SkillbarId": "FatedCircle",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-gnb-trigger-pack-gnashing-on",
+          "ActionId": 0,
+          "SkillbarId": "GnashingFang",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-30T17:40:00.000Z",
+      "ModifiedAt": "2026-06-30T17:40:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Toggles"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
@@ -11466,114 +11929,160 @@
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
-    "NumberOfColumns": 1,
-    "HorizontalSpacing": 0,
-    "VerticalSpacing": 0,
-    "ButtonWidth": 120,
-    "ButtonHeight": 35,
+    "NumberOfColumns": 3,
+    "HorizontalSpacing": 4,
+    "VerticalSpacing": 4,
+    "ButtonWidth": 82,
+    "ButtonHeight": 28,
     "Transparency": 255,
     "Items": [
       {
-        "Id": "550eac98-fe17-4b97-898c-36ad70a9de68",
-        "Name": "Mitigation",
-        "Description": "",
+        "Id": "jps-gnb-qt-boss-hold",
+        "Name": "Boss Hold",
+        "Description": "Optional routing helper that saves No Mercy, Bloodfest, Bow Shock, and Double Down near the end of a boss. Leave off for normal play.",
         "EventIds": [
-          "f2daaf1d-c477-42b2-9db1-baa49330bfe3",
-          "09325808-4e89-4c09-a62e-5ea2aec65eac",
-          "732a7c9a-5487-474b-bb80-91bf92cd7e74",
-          "565fe51c-9d06-4338-bb4e-ad1d0cba3e32",
-          "1b066cf9-12d8-450d-866e-677d61da153d",
-          "a6cdc6d2-6171-4f55-8f53-dbde09c85e86",
-          "f6a9ba02-bb93-406b-b7ad-b171fc3aa3d0",
-          "abbafd47-f2d3-497a-927e-dd8525c758df",
-          "c3f48c29-96d2-417e-8faa-94b7cdf8bff7",
-          "2d9f0cb7-16be-4d7b-ac54-14d8b773c47e",
-          "fbc2cea7-a2de-443d-8c3e-17b155de744b",
-          "jps-gnb-event-interject",
-          "6e5dc482-9416-446e-b2eb-ac48cb8898de",
-          "99ec2b38-d004-4782-bbc9-c950c6241dd6"
+          "08c75b56-6f6e-4b0c-88f7-7f58282253c4",
+          "3a059363-4f6e-4a38-9938-fa80d6e5f67d"
         ],
         "Enabled": true,
         "Position": 0
       },
       {
-        "Id": "87846795-71ca-48e1-a1fd-4230a0787c8c",
-        "Name": "Cooldown Holds",
-        "Description": "",
+        "Id": "jps-gnb-qt-pack-hold",
+        "Name": "Pack Hold",
+        "Description": "Optional routing helper that saves No Mercy, Bloodfest, Bow Shock, and Double Down near the end of a trash pack. Leave off for normal play.",
         "EventIds": [
           "5a47325b-00d5-4e36-8843-040393757b89",
-          "08c75b56-6f6e-4b0c-88f7-7f58282253c4",
-          "f97dfcaf-0ec7-4a05-aa20-89d26a48e419",
-          "6a4390ec-d0b2-4ca3-9470-1f7fd21bbcb8",
-          "3a059363-4f6e-4a38-9938-fa80d6e5f67d"
+          "6a4390ec-d0b2-4ca3-9470-1f7fd21bbcb8"
         ],
         "Enabled": true,
         "Position": 1
       },
       {
-        "Id": "9424d3f5-62a4-5d07-bd8e-bb66fe0553f2",
-        "Name": "Reset Toggles",
-        "Description": "",
+        "Id": "jps-gnb-qt-last-boss",
+        "Name": "Last Boss",
+        "Description": "Optional last-boss burn helper.",
         "EventIds": [
-          "1f7fee8b-014d-568a-9a31-a5fd2d3fc199",
-          "jps-gnb-event-reset-zone",
-          "jps-gnb-event-reset-wipe"
+          "f97dfcaf-0ec7-4a05-aa20-89d26a48e419"
         ],
         "Enabled": true,
         "Position": 2
       },
       {
-        "Id": "03c57f58-a312-41cb-9243-d86dd54ca27a",
-        "Name": "QOL Tweaks",
-        "Description": "Sprint OOC, Aggro Manager",
+        "Id": "jps-gnb-qt-raid-mit",
+        "Name": "Raid Mit",
+        "Description": "Uses Reprisal and Heart of Light for raidwide damage.",
         "EventIds": [
-          "19363f9b-8028-4e73-8a6b-005b9470ce4e"
+          "732a7c9a-5487-474b-bb80-91bf92cd7e74",
+          "09325808-4e89-4c09-a62e-5ea2aec65eac"
         ],
         "Enabled": true,
         "Position": 3
       },
       {
-        "Id": "9b0065c5-e840-47be-9e9b-41eb02184f16",
-        "Name": "Core",
-        "Description": "",
+        "Id": "jps-gnb-qt-pack-mit",
+        "Name": "Pack Mit",
+        "Description": "Uses dungeon-pack mitigation, Aurora, Heart of Corundum, and Arm's Length recovery.",
         "EventIds": [
-          "78f2c611-1379-41d2-a2bd-26f59e78abb9",
-          "b1a53fa1-f7f0-433b-ab95-0a01e86b12dd",
-          "0f848527-2363-4851-9ca7-73666e9414b1"
+          "1b066cf9-12d8-450d-866e-677d61da153d",
+          "565fe51c-9d06-4338-bb4e-ad1d0cba3e32",
+          "a6cdc6d2-6171-4f55-8f53-dbde09c85e86",
+          "f6a9ba02-bb93-406b-b7ad-b171fc3aa3d0",
+          "abbafd47-f2d3-497a-927e-dd8525c758df",
+          "2d9f0cb7-16be-4d7b-ac54-14d8b773c47e"
         ],
         "Enabled": true,
         "Position": 4
       },
       {
-        "Id": "jps-gnb-qt-stance-ot",
-        "Name": "Stance OT",
-        "Description": "Optional off-tank stance release for raids/trials.",
+        "Id": "jps-gnb-qt-stun-int",
+        "Name": "Stun/Int",
+        "Description": "Uses Low Blow and Interject for dungeon utility.",
         "EventIds": [
-          "b14f1b3c-1603-4c32-bc6f-9759e6b68265"
+          "fbc2cea7-a2de-443d-8c3e-17b155de744b",
+          "jps-gnb-event-interject"
+        ],
+        "Enabled": true,
+        "Position": 5
+      },
+      {
+        "Id": "jps-gnb-qt-auto-tb",
+        "Name": "Auto TB",
+        "Description": "Automatically handles incoming tankbuster mitigation.",
+        "EventIds": [
+          "c3f48c29-96d2-417e-8faa-94b7cdf8bff7"
         ],
         "Enabled": true,
         "Position": 6
       },
       {
+        "Id": "jps-gnb-qt-invuln",
+        "Name": "Invuln",
+        "Description": "Uses Superbolide in emergencies.",
+        "EventIds": [
+          "f2daaf1d-c477-42b2-9db1-baa49330bfe3"
+        ],
+        "Enabled": true,
+        "Position": 7
+      },
+      {
+        "Id": "jps-gnb-qt-buddy",
+        "Name": "Buddy Mit",
+        "Description": "Optional HoC/Aurora support for low-health allies or co-tank.",
+        "EventIds": [
+          "78f2c611-1379-41d2-a2bd-26f59e78abb9",
+          "b1a53fa1-f7f0-433b-ab95-0a01e86b12dd",
+          "6e5dc482-9416-446e-b2eb-ac48cb8898de",
+          "99ec2b38-d004-4782-bbc9-c950c6241dd6"
+        ],
+        "Enabled": true,
+        "Position": 8
+      },
+      {
         "Id": "jps-gnb-qt-stance-mt",
-        "Name": "Stance MT",
+        "Name": "MT Stance",
         "Description": "Main-tank stance setup for dungeons and roulettes.",
         "EventIds": [
           "jps-gnb-event-stance-mt",
           "jps-gnb-event-stance-mt-zone"
         ],
         "Enabled": true,
-        "Position": 5
+        "Position": 9
+      },
+      {
+        "Id": "jps-gnb-qt-stance-ot",
+        "Name": "OT Stance",
+        "Description": "Off-tank stance setup for raids.",
+        "EventIds": [
+          "b14f1b3c-1603-4c32-bc6f-9759e6b68265"
+        ],
+        "Enabled": true,
+        "Position": 10
+      },
+      {
+        "Id": "jps-gnb-qt-sprint",
+        "Name": "Sprint",
+        "Description": "Optional out-of-combat Sprint between pulls.",
+        "EventIds": [
+          "19363f9b-8028-4e73-8a6b-005b9470ce4e"
+        ],
+        "Enabled": true,
+        "Position": 11
       }
     ],
     "ToggleStates": {
-      "550eac98-fe17-4b97-898c-36ad70a9de68": true,
-      "87846795-71ca-48e1-a1fd-4230a0787c8c": false,
-      "03c57f58-a312-41cb-9243-d86dd54ca27a": false,
-      "9b0065c5-e840-47be-9e9b-41eb02184f16": true,
-      "9424d3f5-62a4-5d07-bd8e-bb66fe0553f2": true,
+      "jps-gnb-qt-boss-hold": false,
+      "jps-gnb-qt-pack-hold": false,
+      "jps-gnb-qt-last-boss": false,
+      "jps-gnb-qt-raid-mit": true,
+      "jps-gnb-qt-pack-mit": true,
+      "jps-gnb-qt-stun-int": true,
+      "jps-gnb-qt-auto-tb": true,
+      "jps-gnb-qt-invuln": true,
+      "jps-gnb-qt-buddy": false,
+      "jps-gnb-qt-stance-mt": true,
       "jps-gnb-qt-stance-ot": false,
-      "jps-gnb-qt-stance-mt": true
+      "jps-gnb-qt-sprint": false
     }
   }
 }
