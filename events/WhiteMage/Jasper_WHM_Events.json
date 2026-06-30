@@ -1,9 +1,9 @@
 {
   "Id": "Jasper_WHM_Events",
   "Name": "Jasper WHM Events",
-  "Description": "Damage-forward White Mage event profile for general PvE. Lets ACR DPS flow, then uses earlier oGCD tank support, dungeon-pull shielding, and emergency GCD heals when recovery is actually needed.",
+  "Description": "Damage-forward White Mage event profile for general PvE. Lets ACR DPS flow, then uses earlier Regen/Benison upkeep, oGCD-first tank recovery, dungeon-pull shielding, and emergency GCD heals only when recovery is actually needed.",
   "CreatedAt": "2026-06-25T00:31:21.892963Z",
-  "ModifiedAt": "2026-06-29T19:00:00.000Z",
+  "ModifiedAt": "2026-06-30T14:45:00.000Z",
   "Events": [
     {
       "Id": "whm-event-01",
@@ -120,7 +120,7 @@
     {
       "Id": "whm-event-09",
       "Name": "[09] Divine Benison (2 Charges)",
-      "Description": "Use on tank at 85% HP if in combat and 2 charges are available",
+      "Description": "Use on tank at 90% HP if in combat and 2 charges are available.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-09",
       "ThrottleSameEvent": 0.5,
@@ -129,7 +129,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-02T05:48:46.0606293Z",
-      "ModifiedAt": "2026-06-25T00:33:56.7114294Z"
+      "ModifiedAt": "2026-06-30T14:45:00.000Z"
     },
     {
       "Id": "whm-event-10",
@@ -176,7 +176,7 @@
     {
       "Id": "whm-event-13",
       "Name": "[13] Tetragrammaton (MT)",
-      "Description": "Tank HP < 70% and does not have tank invuln",
+      "Description": "Tank HP <= 75% and does not have tank invuln.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-13",
       "ThrottleSameEvent": 0.5,
@@ -185,7 +185,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-02T05:48:46.0606396Z",
-      "ModifiedAt": "2026-06-28T12:15:00.000Z"
+      "ModifiedAt": "2026-06-30T14:45:00.000Z"
     },
     {
       "Id": "whm-event-14",
@@ -204,7 +204,7 @@
     {
       "Id": "whm-event-15",
       "Name": "[15] Benediction",
-      "Description": "Any target HP < 25% AND target has no invuln buff",
+      "Description": "Any target HP <= 35% AND target has no invuln buff.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-15",
       "ThrottleSameEvent": 0.5,
@@ -213,7 +213,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-02T05:48:46.0606443Z",
-      "ModifiedAt": "2026-06-28T12:15:00.000Z"
+      "ModifiedAt": "2026-06-30T14:45:00.000Z"
     },
     {
       "Id": "whm-event-16",
@@ -316,7 +316,7 @@
     {
       "Id": "6b03390f-7efa-4f33-b480-fa97520c4904",
       "Name": "[21] Afflatus Solace (MT, Misery Ready)",
-      "Description": "Uses Afflatus Solace on the main tank at 70% HP even when Afflatus Misery is ready.",
+      "Description": "Uses Afflatus Solace on the main tank at 75% HP even when Afflatus Misery is ready.",
       "EventType": "OnTick",
       "LogicId": "5ab3c9e9-88cd-4295-b898-a9837ce4e379",
       "ThrottleSameEvent": 2.5,
@@ -325,12 +325,12 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-02T21:38:58.3138215Z",
-      "ModifiedAt": "2026-06-26T23:15:00.000Z"
+      "ModifiedAt": "2026-06-30T14:45:00.000Z"
     },
     {
       "Id": "whm-event-21",
       "Name": "[21] Afflatus Solace (MT)",
-      "Description": "Tank HP < 70% AND Tetragrammaton on cooldown",
+      "Description": "Tank HP <= 75% and Tetragrammaton is on cooldown.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-21",
       "ThrottleSameEvent": 2.5,
@@ -339,7 +339,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-02T05:48:46.0606592Z",
-      "ModifiedAt": "2026-06-25T00:33:56.7114361Z"
+      "ModifiedAt": "2026-06-30T14:45:00.000Z"
     },
     {
       "Id": "691f898f-31bb-41cf-ae2b-2a1bef80aae8",
@@ -386,7 +386,7 @@
     {
       "Id": "whm-event-24",
       "Name": "[24] Regen",
-      "Description": "Tank <= 85% HP and missing Regen",
+      "Description": "Tank <= 90% HP and missing Regen.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-24",
       "ThrottleSameEvent": 2.5,
@@ -395,7 +395,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-02T05:48:46.060666Z",
-      "ModifiedAt": "2026-06-25T00:33:56.7114385Z"
+      "ModifiedAt": "2026-06-30T14:45:00.000Z"
     },
     {
       "Id": "whm-event-25",
@@ -648,6 +648,22 @@
       "Filters": {},
       "CreatedAt": "2026-06-28T12:15:00.000Z",
       "ModifiedAt": "2026-06-28T12:15:00.000Z"
+    },
+    {
+      "Id": "jps-whm-event-asylum-tank-pull",
+      "Name": "[12B] Asylum (Tank Pull)",
+      "Description": "Drops Asylum for tank-only pressure during 3+ enemy pulls once the main tank reaches 80% HP.",
+      "EventType": "OnTick",
+      "LogicId": "jps-whm-logic-asylum-tank-pull",
+      "ThrottleSameEvent": 5,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-30T14:45:00.000Z",
+      "ModifiedAt": "2026-06-30T14:45:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Healing"
     }
   ],
   "Conditions": [
@@ -11707,12 +11723,12 @@
     },
     {
       "Id": "jps-whm-cond-st-benediction-25",
-      "Name": "[ST] <= 25% HP",
-      "Description": "For Benediction emergency recovery.",
+      "Name": "[ST] <= 35% HP",
+      "Description": "Benediction emergency recovery before the true danger floor.",
       "SubConditions": [
         {
           "Id": "jps-whm-cond-st-benediction-25-sub-1",
-          "Name": "[ST] <= 25% HP",
+          "Name": "[ST] <= 35% HP",
           "Description": "",
           "TargetType": 5,
           "ConditionType": 1,
@@ -11735,7 +11751,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 25,
+              "Percentage": 35,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -11837,16 +11853,16 @@
               "IsEnabled": true
             },
             "PartyHpAverageParams": {
-              "Percentage": 25,
+              "Percentage": 35,
               "Comparison": 1,
               "IsEnabled": true
             },
             "PartyHpLowestParams": {
-              "Percentage": 25,
+              "Percentage": 35,
               "Comparison": 1,
               "LowestMemberCount": 4,
               "UseLowestMemberPercentage": false,
-              "LowestMemberPercentage": 25,
+              "LowestMemberPercentage": 35,
               "IsEnabled": true
             },
             "PartyHpBandsParams": {
@@ -11913,22 +11929,22 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-01-01T00:00:00Z",
-          "ModifiedAt": "2026-06-28T12:15:00.000Z",
+          "ModifiedAt": "2026-06-30T14:45:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-28T12:15:00.000Z",
-      "ModifiedAt": "2026-06-28T12:15:00.000Z",
+      "ModifiedAt": "2026-06-30T14:45:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
       "Id": "jps-whm-cond-mt-hp-85",
-      "Name": "MT <= 85%",
-      "Description": "Main tank HP threshold for earlier Regen and Benison upkeep.",
+      "Name": "MT <= 90%",
+      "Description": "Main tank HP threshold for proactive Regen and Benison upkeep.",
       "SubConditions": [
         {
           "Id": "jps-whm-subcond-mt-hp-85",
-          "Name": "MT <= 85%",
+          "Name": "MT <= 90%",
           "Description": "",
           "TargetType": 3,
           "ConditionType": 1,
@@ -11951,7 +11967,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 85,
+              "Percentage": 90,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -12053,16 +12069,16 @@
               "IsEnabled": true
             },
             "PartyHpAverageParams": {
-              "Percentage": 50,
+              "Percentage": 90,
               "Comparison": 1,
               "IsEnabled": true
             },
             "PartyHpLowestParams": {
-              "Percentage": 50,
+              "Percentage": 90,
               "Comparison": 1,
               "LowestMemberCount": 4,
               "UseLowestMemberPercentage": false,
-              "LowestMemberPercentage": 50,
+              "LowestMemberPercentage": 90,
               "IsEnabled": true
             },
             "PartyHpBandsParams": {
@@ -12129,12 +12145,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-01-01T00:00:00Z",
-          "ModifiedAt": "2026-01-01T00:00:00Z",
+          "ModifiedAt": "2026-06-30T14:45:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-01-02T21:42:23.5081988Z",
-      "ModifiedAt": "2026-01-02T21:42:53.573194Z",
+      "ModifiedAt": "2026-06-30T14:45:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -12568,6 +12584,222 @@
       "CreatedAt": "2026-06-29T19:00:00.000Z",
       "ModifiedAt": "2026-06-29T19:00:00.000Z",
       "ExcludeFromTargetAccumulation": false
+    },
+    {
+      "Id": "jps-whm-cond-mt-hp-75",
+      "Name": "MT <= 75%",
+      "Description": "Main tank HP threshold for earlier oGCD/lily recovery.",
+      "SubConditions": [
+        {
+          "Id": "jps-whm-subcond-mt-hp-75",
+          "Name": "MT <= 75%",
+          "Description": "",
+          "TargetType": 3,
+          "ConditionType": 1,
+          "Parameters": {
+            "BuffParams": {
+              "StatusId": 0,
+              "StatusIds": [],
+              "UseMultipleStatuses": false,
+              "StatusLogic": 1,
+              "CheckDuration": false,
+              "MinDuration": 0,
+              "DurationComparison": 3,
+              "CheckStacks": false,
+              "RequiredStacks": 1,
+              "StackComparison": 3,
+              "InvertCheck": false,
+              "RequiredBuffCount": 2,
+              "BuffCountComparison": 3,
+              "StatusTargetOverrides": {},
+              "IsEnabled": true
+            },
+            "HealthParams": {
+              "Percentage": 75,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "DistanceParams": {
+              "Distance": 0,
+              "Comparison": 1,
+              "CheckLineOfSight": false,
+              "IsEnabled": true
+            },
+            "GaugeParams": {
+              "PropertyName": "",
+              "ValueType": 0,
+              "NumericValue": 0,
+              "BooleanValue": false,
+              "StringValue": "",
+              "Comparison": 3,
+              "IsEnabled": true
+            },
+            "MpParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "LastAbilityParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0.5,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "LastGcdParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0.5,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "CooldownParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0,
+              "TimeComparison": 2,
+              "CheckCharges": false,
+              "RequiredCharges": 1,
+              "IsEnabled": true
+            },
+            "ComboParams": {
+              "ComboId": 1,
+              "TimeRemaining": 0,
+              "TimeComparison": 3,
+              "IsEnabled": true
+            },
+            "MovementParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "ChannelingParams": {
+              "IsChanneling": true,
+              "SpecificAbilityId": 0,
+              "IsEnabled": true
+            },
+            "AggroParams": {
+              "HasAggro": true,
+              "AggroPosition": 1,
+              "PositionComparison": 2,
+              "IsEnabled": true
+            },
+            "AlwaysParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "InCombatParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "ActionHighlightedParams": {
+              "ActionId": 1,
+              "IsEnabled": true
+            },
+            "IsCastingParams": {
+              "IsCasting": true,
+              "SpecificActionId": 0,
+              "CheckSpecific": false,
+              "IsEnabled": true
+            },
+            "GcdTimeRemainingParams": {
+              "TimeThreshold": 2.5,
+              "Comparison": 1,
+              "IsEnabled": true
+            },
+            "CanInterruptParams": {
+              "CanInterrupt": true,
+              "IsEnabled": true
+            },
+            "EntityIdParams": {
+              "EntityId": 0,
+              "Comparison": 2,
+              "IsEnabled": true
+            },
+            "PartyHpAverageParams": {
+              "Percentage": 75,
+              "Comparison": 1,
+              "IsEnabled": true
+            },
+            "PartyHpLowestParams": {
+              "Percentage": 75,
+              "Comparison": 1,
+              "LowestMemberCount": 4,
+              "UseLowestMemberPercentage": false,
+              "LowestMemberPercentage": 75,
+              "IsEnabled": true
+            },
+            "PartyHpBandsParams": {
+              "CriticalThreshold": 30,
+              "LowThreshold": 50,
+              "ModerateThreshold": 70,
+              "RequiredCritical": 1,
+              "RequiredLow": 3,
+              "RequiredModerate": 5,
+              "BandLogic": 0,
+              "IsEnabled": true
+            },
+            "ActionChargesParams": {
+              "ActionId": 1,
+              "RequiredCharges": 1,
+              "Comparison": 3,
+              "CheckType": 0,
+              "TimeThreshold": 0,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "AggroCountParams": {
+              "RequiredCount": 1,
+              "CountComparison": 3,
+              "IsEnabled": true
+            },
+            "ShieldParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "PartyShieldAverageParams": {
+              "Percentage": 20,
+              "Comparison": 3,
+              "IsEnabled": true
+            },
+            "VariableParams": {
+              "VariableName": "",
+              "VariableType": 0,
+              "ExpectedBoolValue": true,
+              "ExpectedStringValue": "",
+              "ExpectedNumberValue": 0,
+              "Comparison": 2,
+              "StringComparison": 0,
+              "InvertCheck": false,
+              "CheckExists": false,
+              "IsEnabled": true
+            },
+            "DataIdParams": {
+              "DataId": 0,
+              "Comparison": 2,
+              "IsEnabled": true
+            },
+            "TargetNameParams": {
+              "Name": "",
+              "Comparison": 0,
+              "IsEnabled": true
+            }
+          },
+          "RequiredTargetCount": 1,
+          "TargetCountComparison": 3,
+          "UsePercentageMode": true,
+          "RequiredTargetPercentage": 50,
+          "CreatedAt": "2026-06-30T14:45:00.000Z",
+          "ModifiedAt": "2026-06-30T14:45:00.000Z",
+          "ShouldUseTargetCount": false
+        }
+      ],
+      "CreatedAt": "2026-06-30T14:45:00.000Z",
+      "ModifiedAt": "2026-06-30T14:45:00.000Z",
+      "ExcludeFromTargetAccumulation": false
     }
   ],
   "Logics": [
@@ -12907,7 +13139,7 @@
     {
       "Id": "whm-logic-09",
       "Name": "[09] Divine Benison (2 Charges)",
-      "Description": "Use on tank at 85% HP if in combat and 2 charges are available",
+      "Description": "Use on tank at 90% HP if in combat and 2 charges are available.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
@@ -12943,7 +13175,7 @@
         }
       ],
       "CreatedAt": "2026-01-02T05:36:33.5920037Z",
-      "ModifiedAt": "2026-01-02T21:40:26.9606843Z",
+      "ModifiedAt": "2026-06-30T14:45:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": ""
     },
@@ -13074,11 +13306,11 @@
     {
       "Id": "whm-logic-13",
       "Name": "[13] Tetragrammaton (MT)",
-      "Description": "Tank HP < 70% and does not have tank invuln",
+      "Description": "Tank HP <= 75% and does not have tank invuln.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
-        "02ae717d-df5d-40b8-93c4-95cff3a05a68",
+        "jps-whm-cond-mt-hp-75",
         "419a3819-f0a4-4d96-9a9f-e2f6941ff04d"
       ],
       "ActionTriggers": [
@@ -13109,7 +13341,7 @@
         }
       ],
       "CreatedAt": "2026-01-02T05:36:33.5920193Z",
-      "ModifiedAt": "2026-06-28T12:15:00.000Z",
+      "ModifiedAt": "2026-06-30T14:45:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": ""
     },
@@ -13158,7 +13390,7 @@
     {
       "Id": "whm-logic-15",
       "Name": "[15] Benediction",
-      "Description": "Any target HP < 25% AND target has no invuln buff",
+      "Description": "Any target HP <= 35% AND target has no invuln buff.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
@@ -13193,7 +13425,7 @@
         }
       ],
       "CreatedAt": "2026-01-02T05:36:33.5920266Z",
-      "ModifiedAt": "2026-06-28T12:15:00.000Z",
+      "ModifiedAt": "2026-06-30T14:45:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": ""
     },
@@ -13495,12 +13727,12 @@
     {
       "Id": "whm-logic-21",
       "Name": "[21.1] Afflatus Solace (MT)",
-      "Description": "Tank HP < 70% AND Tetragrammaton on cooldown",
+      "Description": "Tank HP <= 75% and Tetragrammaton is on cooldown.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
         "a4ca2c78-863b-4205-907e-f4df3d8c284f",
-        "02ae717d-df5d-40b8-93c4-95cff3a05a68",
+        "jps-whm-cond-mt-hp-75",
         "c5124ed3-822e-417b-b66e-7084be14e81a",
         "0949cc70-c6fb-4520-a886-df59fac158a3"
       ],
@@ -13532,19 +13764,19 @@
         }
       ],
       "CreatedAt": "2026-01-02T05:36:33.5920504Z",
-      "ModifiedAt": "2026-01-02T21:37:12.933886Z",
+      "ModifiedAt": "2026-06-30T14:45:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": ""
     },
     {
       "Id": "5ab3c9e9-88cd-4295-b898-a9837ce4e379",
       "Name": "[21] Afflatus Solace (MT, Misery Ready)",
-      "Description": "Uses Afflatus Solace on the main tank at 70% HP even when Afflatus Misery is ready.",
+      "Description": "Uses Afflatus Solace on the main tank at 75% HP even when Afflatus Misery is ready.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
         "a4ca2c78-863b-4205-907e-f4df3d8c284f",
-        "02ae717d-df5d-40b8-93c4-95cff3a05a68",
+        "jps-whm-cond-mt-hp-75",
         "c5124ed3-822e-417b-b66e-7084be14e81a",
         "f764ce3b-de9f-473a-8ffd-86839d2cb265"
       ],
@@ -13576,7 +13808,7 @@
         }
       ],
       "CreatedAt": "2026-01-02T21:35:26.3660632Z",
-      "ModifiedAt": "2026-06-26T23:15:00.000Z",
+      "ModifiedAt": "2026-06-30T14:45:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": ""
     },
@@ -13712,7 +13944,7 @@
     {
       "Id": "whm-logic-24",
       "Name": "[24] Regen",
-      "Description": "Keeps Regen on the main tank earlier during active combat.",
+      "Description": "Keeps Regen on the main tank earlier during active combat at 90% HP.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
@@ -13747,7 +13979,7 @@
         }
       ],
       "CreatedAt": "2026-01-02T05:36:33.5920617Z",
-      "ModifiedAt": "2026-01-02T21:17:59.3681266Z",
+      "ModifiedAt": "2026-06-30T14:45:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": ""
     },
@@ -14927,6 +15159,48 @@
       "ModifiedAt": "2026-06-28T12:15:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Tank Support"
+    },
+    {
+      "Id": "jps-whm-logic-asylum-tank-pull",
+      "Name": "[12B] Asylum (Tank Pull)",
+      "Description": "Drops Asylum for tank-only pressure during 3+ enemy pulls once the main tank reaches 80% HP.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
+        "97ede2e5-d6c7-48cb-ae30-d786cada1cb2",
+        "c388f426-866b-4dfb-b3f6-67f2f7d0dcf8"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-whm-trigger-asylum-tank-pull",
+          "ActionId": 3569,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 0,
+          "TargetType": 28,
+          "TargetSelectionStrategy": 0,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-30T14:45:00.000Z",
+      "ModifiedAt": "2026-06-30T14:45:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Healing"
     }
   ],
   "QTBarConfig": {
@@ -15077,5 +15351,5 @@
       "jps-whm-qt-reset-toggles": true
     }
   },
-  "Version": "1.0.33"
+  "Version": "1.0.34"
 }
