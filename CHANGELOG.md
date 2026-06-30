@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Polished Dragoon, Monk, Ninja, and Samurai with default damage-toggle safety, normal 2+ target AoE/helper release without ForceAOE, earlier Second Wind recovery, and compact manual quick-toggle controls.
+- Preserved melee optional burst-hold behavior while moving Feint, self-guard, stun, DOT, and job-specific defensive support into compact default-on controls.
 - Polished Bard and Machinist with default damage-toggle safety, normal 2+ target AoE/helper release without ForceAOE, earlier Second Wind recovery, and compact manual quick-toggle controls.
 - Tightened Bard support controls with compact Minne, cleanse, DOT, interrupt, and self-guard toggles while preserving optional song/burst cooldown holds.
 - Retuned Dark Knight and Gunbreaker dungeon tanking so first mitigation starts around 80% HP instead of 90%, second mitigation stays around 65%, invuln panic starts around 30%, and both tanks use compact manual quick-toggle controls.
