@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Polished Paladin sustain and AoE behavior: dungeon mitigation now staggers around 80%/65% HP, Hallowed Ground starts around 30% HP, normal UseAOE/CD toggles are released on 3+ enemy pulls without touching ForceAOE, and the quick-toggle overlay now matches the compact Warrior-style manual controls.
 - Retuned Warrior sustain so AoE-pack Bloodwhetting/Raw Intuition starts around 90% HP, dungeon mitigation staggers around 80%/65% HP, Equilibrium/Thrill/Shake recover earlier without blowing everything at full HP, and Holmgang no longer waits as deep.
 - Added Warrior spender safety so Inner Release, Infuriate, Upheaval, Onslaught, and primal spender toggles stay enabled in combat, while Save CD is released during 3+ enemy pulls to reduce Beast Gauge overcap.
 - Slimmed the Warrior quick-toggle overlay to visible manual controls only, keeping safety helpers active while reducing on-screen button clutter.
