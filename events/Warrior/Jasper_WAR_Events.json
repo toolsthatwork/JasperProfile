@@ -1,9 +1,9 @@
 {
   "Id": "Jasper_WAR_Events",
   "Name": "Jasper WAR Events",
-  "Description": "General-purpose Warrior event profile for PvE. Keeps dungeon mitigation, Bloodwhetting recovery, emergency Holmgang support, MT/OT stance controls, wipe/zone reset scaffolding, raidwide/tankbuster mitigation, Interject utility, and optional co-tank support. Includes earlier dungeon mitigation retuning for public roulette-safe pulls. ForceAOE is manual-only; this profile does not reset it. Adds earlier Equilibrium, Thrill, Shake, and optional Nascent support thresholds.",
+  "Description": "General-purpose Warrior event profile for PvE. Keeps dungeon mitigation, Bloodwhetting recovery, emergency Holmgang support, MT/OT stance controls, wipe/zone reset scaffolding, raidwide/tankbuster mitigation, Interject utility, and optional co-tank support. Includes earlier dungeon mitigation retuning for public roulette-safe pulls. ForceAOE is manual-only; this profile does not reset it. Safety helpers stay active while the quick-toggle bar is kept compact for normal play.",
   "CreatedAt": "2026-06-25T02:45:00.000Z",
-  "ModifiedAt": "2026-06-28T11:25:00.000Z",
+  "ModifiedAt": "2026-06-30T12:00:00.000Z",
   "Events": [
     {
       "Id": "f2daaf1d-c477-42b2-9db1-baa49330bfe3",
@@ -10634,17 +10634,17 @@
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
-    "NumberOfColumns": 2,
-    "HorizontalSpacing": 5,
-    "VerticalSpacing": 5,
-    "ButtonWidth": 95,
-    "ButtonHeight": 30,
+    "NumberOfColumns": 3,
+    "HorizontalSpacing": 4,
+    "VerticalSpacing": 4,
+    "ButtonWidth": 82,
+    "ButtonHeight": 28,
     "Transparency": 255,
     "Items": [
       {
         "Id": "80e5a42f-7cce-4607-877d-67ca6248a5df",
-        "Name": "Boss Cooldown Hold",
-        "Description": "At low boss HP, saves major damage cooldowns for the next pull or boss. Optional dungeon-routing helper; leave it off for normal play.",
+        "Name": "Boss Hold",
+        "Description": "Optional dungeon-routing helper that saves major damage cooldowns near the end of a boss. Leave off for normal play.",
         "EventIds": [
           "08c75b56-6f6e-4b0c-88f7-7f58282253c4"
         ],
@@ -10653,8 +10653,8 @@
       },
       {
         "Id": "969c86f4-4076-445b-8f68-b16cb511e458",
-        "Name": "Pack Cooldown Hold",
-        "Description": "When a trash pack is nearly dead, saves major damage cooldowns for the next pull or boss. Optional dungeon-routing helper; leave it off for normal play.",
+        "Name": "Pack Hold",
+        "Description": "Optional dungeon-routing helper that saves major damage cooldowns when a trash pack is nearly dead. Leave off for normal play.",
         "EventIds": [
           "5a47325b-00d5-4e36-8843-040393757b89"
         ],
@@ -10672,19 +10672,19 @@
         "Position": 2
       },
       {
-        "Id": "f089a7bc-df0c-4c1f-b344-caf606ed5afd",
-        "Name": "Enable CDs",
-        "Description": "Reenables cooldowns on target of a full HP enemy. Use this in conjunction with Boss Hold and Group Hold for best results in dungeons.",
+        "Id": "6794c678-5c6f-45a5-88c6-d4f19b40bdf8",
+        "Name": "Opener",
+        "Description": "Optional automatic opener reset support after wipes.",
         "EventIds": [
-          "2d80ee64-f724-4599-9e89-1e3cc4569aec"
+          "0f848527-2363-4851-9ca7-73666e9414b1"
         ],
         "Enabled": true,
         "Position": 3
       },
       {
         "Id": "79c843e7-8227-4e36-98e5-a45c40f19ffd",
-        "Name": "Stun Mob",
-        "Description": "Uses low blow in packs, turn off for boss fights.",
+        "Name": "Stun/Int",
+        "Description": "Uses Low Blow and Interject for roulette-safe dungeon utility.",
         "EventIds": [
           "72510d39-8a10-4784-a025-4d7880118358",
           "jps-war-event-interject"
@@ -10694,35 +10694,13 @@
       },
       {
         "Id": "cdb8cb17-9aac-49bd-a715-d1ae2279dd43",
-        "Name": "Automit TB",
-        "Description": "Automatically executes the best mitigation to handle an incoming tank buster.",
+        "Name": "Auto TB",
+        "Description": "Automatically handles incoming tankbuster mitigation.",
         "EventIds": [
           "234d97cf-7897-447a-9f17-846f4e8b23d3"
         ],
         "Enabled": true,
         "Position": 5
-      },
-      {
-        "Id": "56cf3809-9dfd-4c06-a4c8-f6a3378d019c",
-        "Name": "Bloodwhetting",
-        "Description": "Uses Bloodwhetting, with Raw Intuition fallback for synced content.",
-        "EventIds": [
-          "6faa69f2-c15d-4fdc-850e-76823035610f"
-        ],
-        "Enabled": true,
-        "Position": 6
-      },
-      {
-        "Id": "60e01806-6ece-41ba-8a5f-c98a1bb6d548",
-        "Name": "Panic Heal",
-        "Description": "Uses Equilibrium, Thrill of Battle, and Shake It Off during emergency recovery windows.",
-        "EventIds": [
-          "4a1a57d1-548b-493e-b997-a5f4834de436",
-          "jps-war-event-thrill-emergency",
-          "jps-war-event-shake-emergency"
-        ],
-        "Enabled": true,
-        "Position": 7
       },
       {
         "Id": "cf6a5960-5035-4f57-9561-d6f8846ae131",
@@ -10732,156 +10710,64 @@
           "f2daaf1d-c477-42b2-9db1-baa49330bfe3"
         ],
         "Enabled": true,
-        "Position": 8
-      },
-      {
-        "Id": "072fc9c0-2923-42c1-90e4-8aa220eba0a0",
-        "Name": "Reprisal RW",
-        "Description": "Uses Reprisal to mitigate incoming raidwide damage.",
-        "EventIds": [
-          "732a7c9a-5487-474b-bb80-91bf92cd7e74"
-        ],
-        "Enabled": true,
-        "Position": 9
-      },
-      {
-        "Id": "9f65fecb-9378-499c-9c4f-88bd603bb1c5",
-        "Name": "Shake RW",
-        "Description": "Uses Shake it Off to mitigate incoming raidwide damage.",
-        "EventIds": [
-          "09325808-4e89-4c09-a62e-5ea2aec65eac"
-        ],
-        "Enabled": true,
-        "Position": 10
-      },
-      {
-        "Id": "64f18124-b422-43d8-b2fd-fc359af1a6d7",
-        "Name": "Double Mit AoE",
-        "Description": "Uses a second mitigation under 40 percent HP in pulls with 3 or more enemies. Use in conjunction with Single Mit AoE.",
-        "EventIds": [
-          "565fe51c-9d06-4338-bb4e-ad1d0cba3e32"
-        ],
-        "Enabled": true,
-        "Position": 11
-      },
-      {
-        "Id": "d81f6bcd-392e-4561-a03f-2c2989e6fb45",
-        "Name": "Single Mit AoE",
-        "Description": "Uses 1 mitigation while tanking a group of 3 or more enemies.",
-        "EventIds": [
-          "1b066cf9-12d8-450d-866e-677d61da153d"
-        ],
-        "Enabled": true,
-        "Position": 12
+        "Position": 6
       },
       {
         "Id": "016f904b-11db-4135-9de6-25bd4634bca7",
-        "Name": "Buddymit",
-        "Description": "Will use Nascent Flash on CoTank automatically in raids/trials at certain HP levels. TURN OFF BLOODWHETTING TO USE THIS.",
+        "Name": "Buddy Mit",
+        "Description": "Optional Nascent Flash co-tank/ally support. Leave off when you want Bloodwhetting reserved for yourself.",
         "EventIds": [
           "78f2c611-1379-41d2-a2bd-26f59e78abb9",
           "jps-war-event-flash-lowest"
         ],
         "Enabled": true,
-        "Position": 13
-      },
-      {
-        "Id": "6794c678-5c6f-45a5-88c6-d4f19b40bdf8",
-        "Name": "Auto Opener",
-        "Description": "Onwipe opener enabled automatically",
-        "EventIds": [
-          "0f848527-2363-4851-9ca7-73666e9414b1"
-        ],
-        "Enabled": true,
-        "Position": 14
-      },
-      {
-        "Id": "a8eef397-9faa-4bd2-bbd1-85cd9bddbfd6",
-        "Name": "Stance OT",
-        "Description": "Will manage stance automatically for Off-Tanks in raids. Enable stance in the end of your opener to use this effectively.",
-        "EventIds": [
-          "7b40e31b-cb13-4075-9cb6-7e6583968814"
-        ],
-        "Enabled": true,
-        "Position": 16
-      },
-      {
-        "Id": "366f7219-a969-4371-a44a-5c3a2393ec7a",
-        "Name": "Reprisal Mobs",
-        "Description": "Uses Reprisal in dungeon trash pulls.",
-        "EventIds": [
-          "9cd8885c-cd2d-4a19-8796-cbd02a30fd38"
-        ],
-        "Enabled": true,
-        "Position": 17
-      },
-      {
-        "Id": "4c7aedd3-441d-417f-93c4-a9d12f7ab128",
-        "Name": "Arm's Length",
-        "Description": "Uses Arm's Length for dungeon trash mitigation.",
-        "EventIds": [
-          "4a055ecd-3859-40b8-8b7b-aa0bae7dfdac"
-        ],
-        "Enabled": true,
-        "Position": 18
-      },
-      {
-        "Id": "8e8ed715-37bf-5a02-ac28-adf8dd192c1a",
-        "Name": "Reset Toggles",
-        "Description": "",
-        "EventIds": [
-          "a1ab7d6e-333b-5d19-9f0b-9b30f27fe8c1",
-          "jps-war-event-reset-zone",
-          "jps-war-event-reset-wipe"
-        ],
-        "Enabled": true,
-        "Position": 19
-      },
-      {
-        "Id": "667aee03-347a-45dc-b89b-d0c67380b46b",
-        "Name": "Sprint OOC",
-        "Description": "Optional out-of-combat Sprint between pulls.",
-        "EventIds": [
-          "b0373abb-c4d5-4594-9f26-0083ad8855f5"
-        ],
-        "Enabled": true,
-        "Position": 20
+        "Position": 7
       },
       {
         "Id": "jps-war-qt-stance-mt",
-        "Name": "Stance MT",
+        "Name": "MT Stance",
         "Description": "Main-tank stance setup for dungeons and roulettes.",
         "EventIds": [
           "jps-war-event-stance-mt",
           "jps-war-event-stance-mt-zone"
         ],
         "Enabled": true,
-        "Position": 15
+        "Position": 8
+      },
+      {
+        "Id": "a8eef397-9faa-4bd2-bbd1-85cd9bddbfd6",
+        "Name": "OT Stance",
+        "Description": "Will manage stance automatically for Off-Tanks in raids. Enable stance in the end of your opener to use this effectively.",
+        "EventIds": [
+          "7b40e31b-cb13-4075-9cb6-7e6583968814"
+        ],
+        "Enabled": true,
+        "Position": 9
+      },
+      {
+        "Id": "667aee03-347a-45dc-b89b-d0c67380b46b",
+        "Name": "Sprint",
+        "Description": "Optional out-of-combat Sprint between pulls.",
+        "EventIds": [
+          "b0373abb-c4d5-4594-9f26-0083ad8855f5"
+        ],
+        "Enabled": true,
+        "Position": 10
       }
     ],
     "ToggleStates": {
       "cf6a5960-5035-4f57-9561-d6f8846ae131": true,
-      "072fc9c0-2923-42c1-90e4-8aa220eba0a0": true,
-      "9f65fecb-9378-499c-9c4f-88bd603bb1c5": true,
-      "64f18124-b422-43d8-b2fd-fc359af1a6d7": true,
-      "d81f6bcd-392e-4561-a03f-2c2989e6fb45": true,
       "80e5a42f-7cce-4607-877d-67ca6248a5df": false,
       "969c86f4-4076-445b-8f68-b16cb511e458": false,
       "73595275-5d4a-47ef-b3fb-b958d824781f": false,
       "016f904b-11db-4135-9de6-25bd4634bca7": false,
       "6794c678-5c6f-45a5-88c6-d4f19b40bdf8": false,
-      "56cf3809-9dfd-4c06-a4c8-f6a3378d019c": true,
-      "f089a7bc-df0c-4c1f-b344-caf606ed5afd": true,
-      "60e01806-6ece-41ba-8a5f-c98a1bb6d548": true,
       "a8eef397-9faa-4bd2-bbd1-85cd9bddbfd6": false,
       "79c843e7-8227-4e36-98e5-a45c40f19ffd": true,
       "cdb8cb17-9aac-49bd-a715-d1ae2279dd43": true,
-      "366f7219-a969-4371-a44a-5c3a2393ec7a": true,
-      "4c7aedd3-441d-417f-93c4-a9d12f7ab128": true,
       "667aee03-347a-45dc-b89b-d0c67380b46b": false,
-      "8e8ed715-37bf-5a02-ac28-adf8dd192c1a": true,
       "jps-war-qt-stance-mt": true
     }
   },
-  "Version": "0.1.15"
+  "Version": "0.1.16"
 }

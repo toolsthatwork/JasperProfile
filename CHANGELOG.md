@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Slimmed the Warrior quick-toggle overlay to visible manual controls only, keeping safety helpers active while reducing on-screen button clutter.
 - Tightened the White Mage Holy nudge to require three nearby targets within Holy range and stopped resetting the generic Holy toggle, preventing Holy on spread-out pulls.
 - Added a White Mage dungeon-trash Holy nudge so stationary 3+ enemy pulls use Holy as the AoE GCD instead of falling into long Glare stretches, without touching ForceAOE.
 - Retuned White Mage tank recovery so Regen and two-charge Divine Benison start at 85% HP, while Tetragrammaton, Afflatus Solace, and Cure II fallback now start at 70% HP.
