@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Hardened Warrior spender recovery so 3+ enemy pulls also re-enable Inner Release, Infuriate, Upheaval, Onslaught, and primal spender toggles while forcing Save CD/Save 1 Jump off, reducing Beast Gauge overcap from bad local toggle state.
 - Polished Red Mage general behavior with in-combat DPS/raise/melee toggle safety, SmartAOE release for multi-target pulls, earlier emergency Vercure support, and a compact manual quick-toggle overlay.
 - Tightened White Mage dungeon recovery: Regen/Benison upkeep now starts around 90% tank HP, Tetragrammaton/Afflatus Solace move to 75% without making Cure II earlier, Benediction starts at 35%, and Asylum can drop for tank-only pressure in 3+ enemy pulls.
 - Polished Paladin sustain and AoE behavior: dungeon mitigation now staggers around 80%/65% HP, Hallowed Ground starts around 30% HP, normal UseAOE/CD toggles are released on 3+ enemy pulls without touching ForceAOE, and the quick-toggle overlay now matches the compact Warrior-style manual controls.
