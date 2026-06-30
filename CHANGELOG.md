@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Polished Viper with default damage-toggle safety, normal 2+ target AoE/helper release without ForceAOE, earlier Second Wind recovery, and compact manual quick-toggle controls.
+- Polished Dancer with AutoPartner/default damage-toggle safety, normal 2+ target AoE release without ForceAOE, earlier Second Wind recovery, and compact manual quick-toggle controls.
 - Hardened Warrior spender recovery so 3+ enemy pulls also re-enable Inner Release, Infuriate, Upheaval, Onslaught, and primal spender toggles while forcing Save CD/Save 1 Jump off, reducing Beast Gauge overcap from bad local toggle state.
 - Polished Red Mage general behavior with in-combat DPS/raise/melee toggle safety, SmartAOE release for multi-target pulls, earlier emergency Vercure support, and a compact manual quick-toggle overlay.
 - Tightened White Mage dungeon recovery: Regen/Benison upkeep now starts around 90% tank HP, Tetragrammaton/Afflatus Solace move to 75% without making Cure II earlier, Benediction starts at 35%, and Asylum can drop for tank-only pressure in 3+ enemy pulls.

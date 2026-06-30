@@ -17,7 +17,7 @@
   "events/BlackMage/Jasper_BLM_Events.json": "0.1.8",
   "timelines/BlackMage/Jasper_BLM_Timeline.json": "0.1.0",
   "openers/BlackMage/Jasper_BLM_Starter_Opener.json": "0.1.0",
-  "events/Dancer/Jasper_DNC_Events.json": "0.1.8",
+  "events/Dancer/Jasper_DNC_Events.json": "0.1.9",
   "timelines/Dancer/Jasper_DNC_Timeline.json": "0.1.0",
   "openers/Dancer/Jasper_DNC_Starter_Opener.json": "0.1.0",
   "events/DarkKnight/Jasper_DRK_Events.json": "0.1.12",
@@ -59,7 +59,7 @@
   "events/Scholar/Jasper_SCH_Events.json": "0.1.12",
   "timelines/Scholar/Jasper_SCH_Timeline.json": "0.1.0",
   "openers/Scholar/Jasper_SCH_Starter_Opener.json": "0.1.0",
-  "events/Viper/Jasper_VPR_Events.json": "0.1.9",
+  "events/Viper/Jasper_VPR_Events.json": "0.1.10",
   "timelines/Viper/Jasper_VPR_Timeline.json": "0.1.0",
   "openers/Viper/Jasper_VPR_Starter_Opener.json": "0.1.0"
 }
