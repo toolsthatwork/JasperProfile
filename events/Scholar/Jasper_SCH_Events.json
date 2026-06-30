@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_SCH_Events",
   "Name": "Jasper SCH Events",
-  "Description": "General-purpose Scholar event profile for PvE. Keeps fairy/Aetherflow recovery, earlier main-tank oGCD rescue, emergency GCD fallbacks for synced content, roulette-safe mitigation, cleanse support, and wipe/zone reset scaffolding.",
-  "Version": "0.1.12",
+  "Description": "General-purpose Scholar event profile for PvE. Keeps fairy/Aetherflow recovery, earlier main-tank oGCD rescue, emergency GCD fallbacks for synced content, roulette-safe mitigation, cleanse support, compact controls, and wipe/zone reset scaffolding.",
+  "Version": "0.1.13",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -456,7 +456,7 @@
     {
       "Id": "jps-sch-event-lustrate-mt-emergency",
       "Name": "[MT] Lustrate Emergency",
-      "Description": "Uses Lustrate on the main tank below 60 percent HP when Aetherflow is available.",
+      "Description": "Uses Lustrate on the main tank below 65 percent HP when Aetherflow is available.",
       "EventType": "OnTick",
       "LogicId": "jps-sch-logic-lustrate-mt-emergency",
       "ThrottleSameEvent": 0.5,
@@ -465,7 +465,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-27T03:10:00.000Z",
-      "ModifiedAt": "2026-06-28T13:25:00.000Z"
+      "ModifiedAt": "2026-06-30T19:05:00.000Z"
     }
   ],
   "Conditions": [
@@ -6756,12 +6756,12 @@
     },
     {
       "Id": "jps-sch-cond-mt-hp-50",
-      "Name": "MT <= 60%",
+      "Name": "MT <= 65%",
       "Description": "Main tank HP threshold for Lustrate emergency recovery.",
       "SubConditions": [
         {
           "Id": "jps-sch-cond-mt-hp-50-sub",
-          "Name": "MT <= 60%",
+          "Name": "MT <= 65%",
           "Description": "",
           "TargetType": 3,
           "ConditionType": 1,
@@ -6784,7 +6784,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 60,
+              "Percentage": 65,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -6962,12 +6962,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-06-27T03:10:00.000Z",
-          "ModifiedAt": "2026-06-28T13:25:00.000Z",
+          "ModifiedAt": "2026-06-30T19:05:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-27T03:10:00.000Z",
-      "ModifiedAt": "2026-06-28T13:25:00.000Z",
+      "ModifiedAt": "2026-06-30T19:05:00.000Z",
       "ExcludeFromTargetAccumulation": false
     }
   ],
@@ -8919,7 +8919,7 @@
     {
       "Id": "jps-sch-logic-lustrate-mt-emergency",
       "Name": "[MT] Lustrate Emergency",
-      "Description": "Uses Lustrate on the main tank below 60 percent HP when Aetherflow is available.",
+      "Description": "Uses Lustrate on the main tank below 65 percent HP when Aetherflow is available.",
       "LogicType": 0,
       "ConditionIds": [
         "958d055a-815f-485d-bb98-b5b7348da94c",
@@ -8954,7 +8954,7 @@
         }
       ],
       "CreatedAt": "2026-06-27T03:10:00.000Z",
-      "ModifiedAt": "2026-06-28T13:25:00.000Z",
+      "ModifiedAt": "2026-06-30T19:05:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Aetherflow"
     }
@@ -8964,16 +8964,16 @@
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
-    "NumberOfColumns": 1,
-    "HorizontalSpacing": 0,
-    "VerticalSpacing": 0,
-    "ButtonWidth": 120,
-    "ButtonHeight": 35,
+    "NumberOfColumns": 3,
+    "HorizontalSpacing": 4,
+    "VerticalSpacing": 4,
+    "ButtonWidth": 104,
+    "ButtonHeight": 30,
     "Transparency": 255,
     "Items": [
       {
         "Id": "b94606b9-58c8-4a03-b809-8b4259e3d274",
-        "Name": "GCD Heals",
+        "Name": "GCD Heal",
         "Description": "Emergency GCD heals and cleanse fallback.",
         "EventIds": [
           "34dafcb2-efac-42d0-a28c-4badcb0cefa6",
@@ -9022,7 +9022,7 @@
       },
       {
         "Id": "bf390085-8f14-4732-8683-30421793db34",
-        "Name": "Variable Holds",
+        "Name": "Holds",
         "Description": "",
         "EventIds": [
           "dc792b67-0953-4600-a7e6-fbc2fada1e27",
@@ -9037,7 +9037,7 @@
       },
       {
         "Id": "1acfda39-667c-50d6-880b-0c7ec84424b3",
-        "Name": "Reset Toggles",
+        "Name": "Reset",
         "Description": "",
         "EventIds": [
           "2e8adeeb-fbda-5768-a65d-0a8125420882",
@@ -9049,7 +9049,7 @@
       },
       {
         "Id": "9dde1e60-3f72-4e33-a96d-ddc4e680da4b",
-        "Name": "QOL Tweaks",
+        "Name": "QOL",
         "Description": "",
         "EventIds": [
           "a100e20d-12ce-447b-a1c5-d01228d9c5b4",

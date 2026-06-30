@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_AST_Events",
   "Name": "Jasper AST Events",
-  "Description": "General-purpose Astrologian event profile for PvE. Keeps damage-forward default toggles, earlier oGCD-first single-target recovery, emergency-only GCD heals, roulette-safe mitigation, cleanse support, and wipe/zone reset scaffolding.",
-  "Version": "0.1.12",
+  "Description": "General-purpose Astrologian event profile for PvE. Keeps damage-forward default toggles, earlier oGCD-first main-tank recovery, emergency-only GCD heals, roulette-safe mitigation, cleanse support, compact controls, and wipe/zone reset scaffolding.",
+  "Version": "0.1.13",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -428,7 +428,7 @@
     {
       "Id": "jps-ast-event-regen-mt-combat",
       "Name": "[ST] Regen MT Combat",
-      "Description": "Keeps Aspected Benefic/Regen on the main tank during real damage.",
+      "Description": "Keeps Aspected Benefic/Regen on the main tank during real damage once HP reaches 80 percent.",
       "EventType": "OnTick",
       "LogicId": "jps-ast-logic-regen-mt-combat",
       "ThrottleSameEvent": 2.5,
@@ -437,12 +437,12 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-26T23:15:00.000Z",
-      "ModifiedAt": "2026-06-26T23:15:00.000Z"
+      "ModifiedAt": "2026-06-30T19:05:00.000Z"
     },
     {
       "Id": "jps-ast-event-intersection-mt-recovery",
       "Name": "[MT] Celestial Intersection Recovery",
-      "Description": "Uses Celestial Intersection on the main tank during sustained damage.",
+      "Description": "Uses Celestial Intersection on the main tank below 80 percent HP when shielding is not already active.",
       "EventType": "OnTick",
       "LogicId": "jps-ast-logic-intersection-mt-recovery",
       "ThrottleSameEvent": 2,
@@ -451,7 +451,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-27T02:30:00.000Z",
-      "ModifiedAt": "2026-06-27T02:30:00.000Z"
+      "ModifiedAt": "2026-06-30T19:05:00.000Z"
     },
     {
       "Id": "jps-ast-event-reset-toggles",
@@ -498,7 +498,7 @@
     {
       "Id": "jps-ast-event-essential-mt-emergency",
       "Name": "[MT] Essential Dignity Emergency",
-      "Description": "Uses Essential Dignity on the main tank below 60 percent HP.",
+      "Description": "Uses Essential Dignity on the main tank below 70 percent HP.",
       "EventType": "OnTick",
       "LogicId": "jps-ast-logic-essential-mt-emergency",
       "ThrottleSameEvent": 2,
@@ -507,7 +507,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-27T01:45:00.000Z",
-      "ModifiedAt": "2026-06-28T13:25:00.000Z"
+      "ModifiedAt": "2026-06-30T19:05:00.000Z"
     }
   ],
   "Conditions": [
@@ -6824,7 +6824,7 @@
     {
       "Id": "jps-ast-cond-mt-hp-70",
       "Name": "MT <= 70%",
-      "Description": "Main tank needs regen support in combat.",
+      "Description": "Main tank HP threshold for Essential Dignity recovery.",
       "SubConditions": [
         {
           "Id": "jps-ast-cond-mt-hp-70-sub-1",
@@ -8290,11 +8290,11 @@
     {
       "Id": "jps-ast-logic-regen-mt-combat",
       "Name": "[ST] Regen MT Combat",
-      "Description": "Keeps Aspected Benefic/Regen on the main tank during real damage.",
+      "Description": "Keeps Aspected Benefic/Regen on the main tank during real damage once HP reaches 80 percent.",
       "LogicType": 0,
       "ConditionIds": [
         "3201f0a2-cee1-4abe-81ac-e5ac20bc8a59",
-        "jps-ast-cond-mt-hp-70",
+        "47671976-ce2b-4023-b585-ac7a3da1bd3c",
         "958d055a-815f-485d-bb98-b5b7348da94c"
       ],
       "ActionTriggers": [
@@ -8325,18 +8325,18 @@
         }
       ],
       "CreatedAt": "2026-06-26T23:15:00.000Z",
-      "ModifiedAt": "2026-06-26T23:15:00.000Z",
+      "ModifiedAt": "2026-06-30T19:05:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Single Target"
     },
     {
       "Id": "jps-ast-logic-intersection-mt-recovery",
       "Name": "[MT] Celestial Intersection Recovery",
-      "Description": "Uses Celestial Intersection on the main tank below 70 percent HP when shielding is not already active.",
+      "Description": "Uses Celestial Intersection on the main tank below 80 percent HP when shielding is not already active.",
       "LogicType": 0,
       "ConditionIds": [
         "jps-ast-cond-mt-no-intersection",
-        "jps-ast-cond-mt-hp-70",
+        "47671976-ce2b-4023-b585-ac7a3da1bd3c",
         "958d055a-815f-485d-bb98-b5b7348da94c"
       ],
       "ActionTriggers": [
@@ -8367,7 +8367,7 @@
         }
       ],
       "CreatedAt": "2026-06-27T02:30:00.000Z",
-      "ModifiedAt": "2026-06-27T02:30:00.000Z",
+      "ModifiedAt": "2026-06-30T19:05:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Single Target"
     },
@@ -8889,11 +8889,11 @@
     {
       "Id": "jps-ast-logic-essential-mt-emergency",
       "Name": "[MT] Essential Dignity Emergency",
-      "Description": "Uses Essential Dignity on the main tank below 60 percent HP.",
+      "Description": "Uses Essential Dignity on the main tank below 70 percent HP.",
       "LogicType": 0,
       "ConditionIds": [
         "958d055a-815f-485d-bb98-b5b7348da94c",
-        "de19e6a1-a995-42f9-b6a4-580ea14fcc44"
+        "jps-ast-cond-mt-hp-70"
       ],
       "ActionTriggers": [
         {
@@ -8923,7 +8923,7 @@
         }
       ],
       "CreatedAt": "2026-06-27T01:45:00.000Z",
-      "ModifiedAt": "2026-06-28T13:25:00.000Z",
+      "ModifiedAt": "2026-06-30T19:05:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "ST Heal"
     }
@@ -8933,16 +8933,16 @@
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
-    "NumberOfColumns": 2,
+    "NumberOfColumns": 3,
     "HorizontalSpacing": 4,
     "VerticalSpacing": 4,
-    "ButtonWidth": 101,
+    "ButtonWidth": 104,
     "ButtonHeight": 30,
     "Transparency": 255,
     "Items": [
       {
         "Id": "fb398c26-789d-4026-9af7-42407e6c4e22",
-        "Name": "Single Target",
+        "Name": "ST Heal",
         "Description": "oGCD-first recovery with emergency-only GCD fallbacks.",
         "EventIds": [
           "76901b77-2e7f-440f-8c81-73b933e512d0",
@@ -8962,7 +8962,7 @@
       },
       {
         "Id": "64f83670-b596-4bfd-88d0-526690c85f6f",
-        "Name": "AOE",
+        "Name": "AOE Heal",
         "Description": "AoE recovery and raidwide healing support.",
         "EventIds": [
           "c3ed6500-66c4-4ec4-b925-5edb070a9d35",
@@ -8978,7 +8978,7 @@
       },
       {
         "Id": "b077cba4-9d0a-408f-9c6c-71ee7fe49c21",
-        "Name": "Heal Cards",
+        "Name": "Cards",
         "Description": "",
         "EventIds": [
           "1ba77ea1-6135-432e-ae73-ad0d7f87418c",
@@ -9019,7 +9019,7 @@
       },
       {
         "Id": "2640132f-786c-4003-87ba-8c986d15f9e6",
-        "Name": "QOL Tweaks",
+        "Name": "QOL",
         "Description": "",
         "EventIds": [
           "b2d34e09-75b1-4d7c-b4df-fa72f6f3f90e"
@@ -9029,7 +9029,7 @@
       },
       {
         "Id": "jps-ast-qt-reset-toggles",
-        "Name": "Reset Toggles",
+        "Name": "Reset",
         "Description": "",
         "EventIds": [
           "jps-ast-event-reset-toggles",

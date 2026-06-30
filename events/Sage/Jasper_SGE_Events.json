@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_SGE_Events",
   "Name": "Jasper SGE Events",
-  "Description": "General-purpose Sage event profile for PvE. Keeps Kardia/Addersgall recovery, earlier oGCD-first tank and party recovery, emergency GCD fallbacks, roulette-safe mitigation, cleanse support, and wipe/zone reset scaffolding.",
-  "Version": "0.1.10",
+  "Description": "General-purpose Sage event profile for PvE. Keeps Kardia/Addersgall recovery, earlier oGCD-first tank and party recovery, emergency GCD fallbacks, roulette-safe mitigation, cleanse support, compact controls, and wipe/zone reset scaffolding.",
+  "Version": "0.1.11",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -232,7 +232,7 @@
     {
       "Id": "7cbcf3c9-a892-415e-b152-613eaa7d9199",
       "Name": "[MT] Taurochole",
-      "Description": "Uses Taurochole on the main tank around 70 percent HP so the mitigation-heal lands before panic recovery.",
+      "Description": "Uses Taurochole on the main tank around 75 percent HP so the mitigation-heal lands before panic recovery.",
       "EventType": "OnTick",
       "LogicId": "448f7e43-3dbf-4bcf-a789-6bbb7329dbd8",
       "ThrottleSameEvent": 0.5,
@@ -241,7 +241,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-28T13:25:00.000Z"
+      "ModifiedAt": "2026-06-30T19:05:00.000Z"
     },
     {
       "Id": "8dc400a8-adf3-4567-87d6-118790db9551",
@@ -372,7 +372,7 @@
     {
       "Id": "jps-sge-event-druochole-mt-recovery",
       "Name": "[MT] Druochole Recovery",
-      "Description": "Uses Druochole on the main tank below 70 percent HP.",
+      "Description": "Uses Druochole on the main tank below 75 percent HP.",
       "EventType": "OnTick",
       "LogicId": "jps-sge-logic-druochole-mt-recovery",
       "ThrottleSameEvent": 2,
@@ -381,7 +381,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-27T01:45:00.000Z",
-      "ModifiedAt": "2026-06-28T13:25:00.000Z"
+      "ModifiedAt": "2026-06-30T19:05:00.000Z"
     }
   ],
   "Conditions": [
@@ -1467,12 +1467,12 @@
     },
     {
       "Id": "c730821c-9f63-4df2-affc-d1016de4c615",
-      "Name": "MT <= 70%",
+      "Name": "MT <= 75%",
       "Description": "Main tank HP threshold for Taurochole mitigation-heal recovery.",
       "SubConditions": [
         {
           "Id": "8959250e-e459-49e0-b138-3935e3796b40",
-          "Name": "MT <= 70%",
+          "Name": "MT <= 75%",
           "Description": "",
           "TargetType": 3,
           "ConditionType": 1,
@@ -1495,7 +1495,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 70,
+              "Percentage": 75,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -1673,12 +1673,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2025-08-17T01:40:25.4446542Z",
-          "ModifiedAt": "2026-06-28T13:25:00.000Z",
+          "ModifiedAt": "2026-06-30T19:05:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-28T13:25:00.000Z",
+      "ModifiedAt": "2026-06-30T19:05:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -4727,12 +4727,12 @@
     },
     {
       "Id": "jps-sge-cond-mt-hp-65",
-      "Name": "MT <= 70%",
+      "Name": "MT <= 75%",
       "Description": "Main tank HP threshold for Druochole recovery.",
       "SubConditions": [
         {
           "Id": "jps-sge-cond-mt-hp-65-sub",
-          "Name": "MT <= 70%",
+          "Name": "MT <= 75%",
           "Description": "",
           "TargetType": 3,
           "ConditionType": 1,
@@ -4755,7 +4755,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 70,
+              "Percentage": 75,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -4933,12 +4933,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-06-27T01:45:00.000Z",
-          "ModifiedAt": "2026-06-28T13:25:00.000Z",
+          "ModifiedAt": "2026-06-30T19:05:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-27T01:45:00.000Z",
-      "ModifiedAt": "2026-06-28T13:25:00.000Z",
+      "ModifiedAt": "2026-06-30T19:05:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -5775,7 +5775,7 @@
     {
       "Id": "448f7e43-3dbf-4bcf-a789-6bbb7329dbd8",
       "Name": "[MT] Taurochole",
-      "Description": "Uses Taurochole on the main tank around 70 percent HP so the mitigation-heal lands before panic recovery.",
+      "Description": "Uses Taurochole on the main tank around 75 percent HP so the mitigation-heal lands before panic recovery.",
       "LogicType": 0,
       "ConditionIds": [
         "c730821c-9f63-4df2-affc-d1016de4c615",
@@ -5809,7 +5809,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-28T13:25:00.000Z",
+      "ModifiedAt": "2026-06-30T19:05:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": ""
     },
@@ -6757,7 +6757,7 @@
     {
       "Id": "jps-sge-logic-druochole-mt-recovery",
       "Name": "[MT] Druochole Recovery",
-      "Description": "Uses Druochole on the main tank below 70 percent HP.",
+      "Description": "Uses Druochole on the main tank below 75 percent HP.",
       "LogicType": 0,
       "ConditionIds": [
         "72280623-b8cb-4182-a19c-1fd14f3a7608",
@@ -6791,7 +6791,7 @@
         }
       ],
       "CreatedAt": "2026-06-27T01:45:00.000Z",
-      "ModifiedAt": "2026-06-28T13:25:00.000Z",
+      "ModifiedAt": "2026-06-30T19:05:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "ST Heal"
     }
@@ -6802,15 +6802,15 @@
     "BarEnabled": true,
     "LockBar": false,
     "NumberOfColumns": 3,
-    "HorizontalSpacing": 7,
-    "VerticalSpacing": 9,
-    "ButtonWidth": 120,
+    "HorizontalSpacing": 4,
+    "VerticalSpacing": 4,
+    "ButtonWidth": 104,
     "ButtonHeight": 30,
     "Transparency": 191,
     "Items": [
       {
         "Id": "16966b65-c437-4d7e-b2c8-c4d4b890ee76",
-        "Name": "Esuna",
+        "Name": "Cleanse",
         "Description": "",
         "EventIds": [
           "2821e66d-3f32-41f5-b237-d91d21a73151"
@@ -6832,36 +6832,6 @@
         "Position": 1
       },
       {
-        "Id": "fc075f2b-2f6f-49fc-9145-f96fed115fb3",
-        "Name": "Holos",
-        "Description": "",
-        "EventIds": [
-          "e45fe110-e278-44f6-900e-54965c6f9ef5"
-        ],
-        "Enabled": true,
-        "Position": 2
-      },
-      {
-        "Id": "2216afde-f66d-4ea7-bc8b-b40416d69417",
-        "Name": "Panhaima",
-        "Description": "",
-        "EventIds": [
-          "0e3be84c-4a22-4391-b890-f1dd1e91e5aa"
-        ],
-        "Enabled": true,
-        "Position": 3
-      },
-      {
-        "Id": "4953c19c-be3e-4fd2-9fde-2a4702541189",
-        "Name": "Pneuma",
-        "Description": "",
-        "EventIds": [
-          "e335bd95-62b4-44a8-bc72-3b636b968a50"
-        ],
-        "Enabled": true,
-        "Position": 4
-      },
-      {
         "Id": "7bb0fffe-ca66-46c9-bc72-8e5d5831e908",
         "Name": "AOE Heal",
         "Description": "",
@@ -6874,7 +6844,7 @@
           "f47288a8-0e59-47c3-990b-19a7b06bf92d"
         ],
         "Enabled": true,
-        "Position": 5
+        "Position": 2
       },
       {
         "Id": "bf9a5d11-052f-4ae4-baab-9469157ef28d",
@@ -6886,11 +6856,11 @@
           "9049f92f-66d2-4d85-8853-6bf59d4333af"
         ],
         "Enabled": true,
-        "Position": 6
+        "Position": 3
       },
       {
         "Id": "1c834de2-35de-4e3b-930e-d230f2dfa047",
-        "Name": "[MT] ST Heal",
+        "Name": "MT Heal",
         "Description": "",
         "EventIds": [
           "a65bd34b-0873-4c48-9123-652eb39d7367",
@@ -6899,11 +6869,11 @@
           "jps-sge-event-druochole-mt-recovery"
         ],
         "Enabled": true,
-        "Position": 7
+        "Position": 4
       },
       {
         "Id": "653586dc-999c-4164-bcef-933add4ea019",
-        "Name": "[MT] TB Mit",
+        "Name": "MT TB",
         "Description": "",
         "EventIds": [
           "90afbafd-3e3c-4a69-ab60-623bba85eadc",
@@ -6911,17 +6881,7 @@
           "jps-sge-event-taurochole-tb"
         ],
         "Enabled": true,
-        "Position": 8
-      },
-      {
-        "Id": "e46491fc-e5f3-4158-abd0-0e22393bf4d8",
-        "Name": "Philosophia",
-        "Description": "",
-        "EventIds": [
-          "621b659d-19d3-418a-9a7d-decf8a52f91e"
-        ],
-        "Enabled": true,
-        "Position": 9
+        "Position": 5
       },
       {
         "Id": "6dbb603c-becc-42e2-b8aa-b4bd1cd63059",
@@ -6934,7 +6894,7 @@
           "9049f92f-66d2-4d85-8853-6bf59d4333af"
         ],
         "Enabled": true,
-        "Position": 10
+        "Position": 6
       },
       {
         "Id": "9464b3c3-5e1f-48fb-8df4-1fefba59407f",
@@ -6945,21 +6905,21 @@
           "dc990015-34c0-4990-9671-4eddfb7f23bd"
         ],
         "Enabled": true,
-        "Position": 11
+        "Position": 7
       },
       {
         "Id": "75da0901-8e0d-4ec9-b197-f2525f2c8fe2",
-        "Name": "QOL Tweaks",
+        "Name": "QOL",
         "Description": "",
         "EventIds": [
           "65611d5b-6bed-4a20-b49e-8eea35508a5b"
         ],
         "Enabled": true,
-        "Position": 12
+        "Position": 8
       },
       {
         "Id": "jps-sge-qt-reset-toggles",
-        "Name": "Reset Toggles",
+        "Name": "Reset",
         "Description": "",
         "EventIds": [
           "jps-sge-event-reset-toggles",
@@ -6967,7 +6927,7 @@
           "jps-sge-event-reset-wipe"
         ],
         "Enabled": true,
-        "Position": 13
+        "Position": 9
       }
     ],
     "ToggleStates": {

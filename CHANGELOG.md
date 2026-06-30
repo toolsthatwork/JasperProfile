@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+- Polished Astrologian recovery timing so main-tank Aspected Benefic/Celestial Intersection begin around 80% HP and Essential Dignity supports at 70% HP, with a compact three-column quick bar.
+- Polished Scholar recovery timing and controls: main-tank Lustrate now starts around 65% HP, while the quick bar is compacted into grouped three-column controls.
+- Polished Sage recovery timing and controls: main-tank Taurochole/Druochole now start around 75% HP, and duplicate one-off quick-toggle buttons were folded into grouped controls.
 - Polished Paladin add-pickup behavior so two-or-more target pulls release normal UseAOE/Save CD without touching ForceAOE, while keeping heavier mitigation logic on larger pulls.
 - Retuned White Mage main-tank recovery so Tetragrammaton and lily single-target recovery begin around 80% HP instead of waiting deeper into the damage curve.
 - Raised Red Mage emergency Vercure support thresholds slightly for self, main tank, and low party members while preserving damage-first behavior.
