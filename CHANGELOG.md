@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Polished Black Mage, Pictomancer, and Summoner with default damage-toggle safety, normal 2+ target AoE/helper release without ForceAOE, compact manual quick-toggle controls, and preserved optional burst cooldown holds.
+- Tightened caster support controls so Addle, personal shields, Rekindle, DOT helpers, and sprint are exposed cleanly while reset/safety helpers run quietly.
 - Polished Dragoon, Monk, Ninja, and Samurai with default damage-toggle safety, normal 2+ target AoE/helper release without ForceAOE, earlier Second Wind recovery, and compact manual quick-toggle controls.
 - Preserved melee optional burst-hold behavior while moving Feint, self-guard, stun, DOT, and job-specific defensive support into compact default-on controls.
 - Polished Bard and Machinist with default damage-toggle safety, normal 2+ target AoE/helper release without ForceAOE, earlier Second Wind recovery, and compact manual quick-toggle controls.
