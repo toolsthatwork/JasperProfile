@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+- Polished Paladin add-pickup behavior so two-or-more target pulls release normal UseAOE/Save CD without touching ForceAOE, while keeping heavier mitigation logic on larger pulls.
+- Retuned White Mage main-tank recovery so Tetragrammaton and lily single-target recovery begin around 80% HP instead of waiting deeper into the damage curve.
+- Raised Red Mage emergency Vercure support thresholds slightly for self, main tank, and low party members while preserving damage-first behavior.
 - Tightened Warrior gauge management so Beast Gauge at 80+ releases Save CD/Save 1 Jump and re-enables spender toggles, while 3+ pulls also restore normal UseAOE without touching ForceAOE.
 
 - Polished Black Mage, Pictomancer, and Summoner with default damage-toggle safety, normal 2+ target AoE/helper release without ForceAOE, compact manual quick-toggle controls, and preserved optional burst cooldown holds.

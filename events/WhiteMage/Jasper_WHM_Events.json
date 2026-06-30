@@ -1,7 +1,7 @@
 {
   "Id": "Jasper_WHM_Events",
   "Name": "Jasper WHM Events",
-  "Description": "Damage-forward White Mage event profile for general PvE. Lets ACR DPS flow, then uses earlier Regen/Benison upkeep, oGCD-first tank recovery, dungeon-pull shielding, and emergency GCD heals only when recovery is actually needed.",
+  "Description": "Damage-forward White Mage event profile for general PvE. Lets ACR DPS flow, then uses earlier Regen/Benison upkeep, oGCD-first tank recovery, dungeon-pull shielding, in-range Holy for stacked packs, and emergency GCD heals only when recovery is actually needed.",
   "CreatedAt": "2026-06-25T00:31:21.892963Z",
   "ModifiedAt": "2026-06-30T14:45:00.000Z",
   "Events": [
@@ -176,7 +176,7 @@
     {
       "Id": "whm-event-13",
       "Name": "[13] Tetragrammaton (MT)",
-      "Description": "Tank HP <= 75% and does not have tank invuln.",
+      "Description": "Tank HP <= 80% and does not have tank invuln.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-13",
       "ThrottleSameEvent": 0.5,
@@ -185,7 +185,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-02T05:48:46.0606396Z",
-      "ModifiedAt": "2026-06-30T14:45:00.000Z"
+      "ModifiedAt": "2026-06-30T18:35:00.000Z"
     },
     {
       "Id": "whm-event-14",
@@ -316,7 +316,7 @@
     {
       "Id": "6b03390f-7efa-4f33-b480-fa97520c4904",
       "Name": "[21] Afflatus Solace (MT, Misery Ready)",
-      "Description": "Uses Afflatus Solace on the main tank at 75% HP even when Afflatus Misery is ready.",
+      "Description": "Uses Afflatus Solace on the main tank at 80% HP even when Afflatus Misery is ready.",
       "EventType": "OnTick",
       "LogicId": "5ab3c9e9-88cd-4295-b898-a9837ce4e379",
       "ThrottleSameEvent": 2.5,
@@ -325,12 +325,12 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-02T21:38:58.3138215Z",
-      "ModifiedAt": "2026-06-30T14:45:00.000Z"
+      "ModifiedAt": "2026-06-30T18:35:00.000Z"
     },
     {
       "Id": "whm-event-21",
       "Name": "[21] Afflatus Solace (MT)",
-      "Description": "Tank HP <= 75% and Tetragrammaton is on cooldown.",
+      "Description": "Tank HP <= 80% and Tetragrammaton is on cooldown.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-21",
       "ThrottleSameEvent": 2.5,
@@ -339,7 +339,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-02T05:48:46.0606592Z",
-      "ModifiedAt": "2026-06-30T14:45:00.000Z"
+      "ModifiedAt": "2026-06-30T18:35:00.000Z"
     },
     {
       "Id": "691f898f-31bb-41cf-ae2b-2a1bef80aae8",
@@ -12587,12 +12587,12 @@
     },
     {
       "Id": "jps-whm-cond-mt-hp-75",
-      "Name": "MT <= 75%",
+      "Name": "MT <= 80%",
       "Description": "Main tank HP threshold for earlier oGCD/lily recovery.",
       "SubConditions": [
         {
           "Id": "jps-whm-subcond-mt-hp-75",
-          "Name": "MT <= 75%",
+          "Name": "MT <= 80%",
           "Description": "",
           "TargetType": 3,
           "ConditionType": 1,
@@ -12615,7 +12615,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 75,
+              "Percentage": 80,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -12793,12 +12793,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-06-30T14:45:00.000Z",
-          "ModifiedAt": "2026-06-30T14:45:00.000Z",
+          "ModifiedAt": "2026-06-30T18:35:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-30T14:45:00.000Z",
-      "ModifiedAt": "2026-06-30T14:45:00.000Z",
+      "ModifiedAt": "2026-06-30T18:35:00.000Z",
       "ExcludeFromTargetAccumulation": false
     }
   ],
@@ -13306,7 +13306,7 @@
     {
       "Id": "whm-logic-13",
       "Name": "[13] Tetragrammaton (MT)",
-      "Description": "Tank HP <= 75% and does not have tank invuln.",
+      "Description": "Tank HP <= 80% and does not have tank invuln.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
@@ -13341,7 +13341,7 @@
         }
       ],
       "CreatedAt": "2026-01-02T05:36:33.5920193Z",
-      "ModifiedAt": "2026-06-30T14:45:00.000Z",
+      "ModifiedAt": "2026-06-30T18:35:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": ""
     },
@@ -13727,7 +13727,7 @@
     {
       "Id": "whm-logic-21",
       "Name": "[21.1] Afflatus Solace (MT)",
-      "Description": "Tank HP <= 75% and Tetragrammaton is on cooldown.",
+      "Description": "Tank HP <= 80% and Tetragrammaton is on cooldown.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
@@ -13764,14 +13764,14 @@
         }
       ],
       "CreatedAt": "2026-01-02T05:36:33.5920504Z",
-      "ModifiedAt": "2026-06-30T14:45:00.000Z",
+      "ModifiedAt": "2026-06-30T18:35:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": ""
     },
     {
       "Id": "5ab3c9e9-88cd-4295-b898-a9837ce4e379",
       "Name": "[21] Afflatus Solace (MT, Misery Ready)",
-      "Description": "Uses Afflatus Solace on the main tank at 75% HP even when Afflatus Misery is ready.",
+      "Description": "Uses Afflatus Solace on the main tank at 80% HP even when Afflatus Misery is ready.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
@@ -13808,7 +13808,7 @@
         }
       ],
       "CreatedAt": "2026-01-02T21:35:26.3660632Z",
-      "ModifiedAt": "2026-06-30T14:45:00.000Z",
+      "ModifiedAt": "2026-06-30T18:35:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": ""
     },
@@ -15351,5 +15351,5 @@
       "jps-whm-qt-reset-toggles": true
     }
   },
-  "Version": "1.0.34"
+  "Version": "1.0.35"
 }

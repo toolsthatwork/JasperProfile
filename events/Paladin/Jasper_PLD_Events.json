@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_PLD_Events",
   "Name": "Jasper PLD Events",
-  "Description": "General-purpose Paladin event profile for PvE. Keeps proactive Holy Sheltron smoothing, staggered dungeon mitigation around the 80/65 percent pressure points, earlier Hallowed Ground emergency support, Clemency fallback, raidwide/tankbuster mitigation, normal AoE/add-pickup toggle safety, Interject utility, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only; this profile does not reset it.",
-  "Version": "0.1.17",
+  "Description": "General-purpose Paladin event profile for PvE. Keeps proactive Holy Sheltron smoothing, staggered dungeon mitigation around the 80/65 percent pressure points, earlier Hallowed Ground emergency support, Clemency fallback, raidwide/tankbuster mitigation, normal 2+ target AoE/add-pickup toggle safety, Interject utility, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only; this profile does not reset it.",
+  "Version": "0.1.18",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -388,7 +388,7 @@
     {
       "Id": "jps-pld-event-pack-aoe-release",
       "Name": "AoE Pack Toggle Release",
-      "Description": "Keeps normal UseAOE enabled and Save CD disabled during three-or-more enemy pulls without touching ForceAOE.",
+      "Description": "Keeps normal UseAOE enabled and Save CD disabled during two-or-more target pulls without touching ForceAOE.",
       "EventType": "OnTick",
       "LogicId": "jps-pld-logic-pack-aoe-release",
       "ThrottleSameEvent": 2,
@@ -397,7 +397,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-30T14:15:00.000Z",
-      "ModifiedAt": "2026-06-30T14:15:00.000Z",
+      "ModifiedAt": "2026-06-30T18:35:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
     }
@@ -10435,10 +10435,10 @@
     {
       "Id": "jps-pld-logic-pack-aoe-release",
       "Name": "AoE Pack Toggle Release",
-      "Description": "Keeps normal UseAOE enabled and Save CD disabled during three-or-more enemy pulls so Paladin uses AoE and damage tools without forcing ForceAOE.",
+      "Description": "Keeps normal UseAOE enabled and Save CD disabled during two-or-more target pulls so Paladin picks up adds and uses AoE without forcing ForceAOE.",
       "LogicType": 0,
       "ConditionIds": [
-        "307cb39d-0d33-4dc5-9255-413e1f2ae6f4",
+        "a8569323-a9d5-4446-9fb7-565317311ea8",
         "2b47e9e7-c7f3-42a3-a397-718b14200121"
       ],
       "ActionTriggers": [
@@ -10519,7 +10519,7 @@
         }
       ],
       "CreatedAt": "2026-06-30T14:15:00.000Z",
-      "ModifiedAt": "2026-06-30T14:15:00.000Z",
+      "ModifiedAt": "2026-06-30T18:35:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
     }
