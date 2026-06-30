@@ -1,7 +1,7 @@
 {
   "Id": "Jasper_WAR_Events",
   "Name": "Jasper WAR Events",
-  "Description": "General-purpose Warrior event profile for PvE. Keeps staggered dungeon mitigation around the 80 percent pressure point, proactive AoE-pack Bloodwhetting/Raw Intuition recovery, earlier Equilibrium sustain, pack-focused Thrill/Shake recovery, emergency Holmgang support, MT/OT stance controls, wipe/zone reset scaffolding, raidwide/tankbuster mitigation, Interject utility, high Beast Gauge spender release, aggressive spender-toggle safety, and optional co-tank support. ForceAOE is manual-only; this profile does not reset it. Safety helpers stay active while the quick-toggle bar is kept compact for normal play.",
+  "Description": "General-purpose Warrior event profile for PvE. Keeps staggered dungeon mitigation around the 80 percent pressure point, proactive AoE-pack Bloodwhetting/Raw Intuition recovery, earlier Equilibrium sustain, pack-focused Thrill/Shake recovery, emergency Holmgang support, MT/OT stance controls, wipe/zone reset scaffolding, raidwide/tankbuster mitigation, Interject utility, high Beast Gauge spender release, aggressive spender-toggle safety, and optional co-tank support. ForceAOE is manual-only; this profile does not reset it. MT stance controls also include add-pickup support based on Arche-style aggro coverage. Safety helpers stay active while the quick-toggle bar is kept compact for normal play.",
   "CreatedAt": "2026-06-25T02:45:00.000Z",
   "ModifiedAt": "2026-06-30T13:30:00.000Z",
   "Events": [
@@ -368,6 +368,22 @@
       "Filters": {},
       "CreatedAt": "2026-06-27T02:00:00.000Z",
       "ModifiedAt": "2026-06-27T02:00:00.000Z"
+    },
+    {
+      "Id": "jps-war-event-mt-add-pickup",
+      "Name": "MT Add Pickup",
+      "Description": "Helps pick up loose adds with Provoke and the job ranged pull action while MT stance support is enabled.",
+      "EventType": "OnTick",
+      "LogicId": "jps-war-logic-mt-add-pickup",
+      "ThrottleSameEvent": 3,
+      "ThrottleAllEvents": 0.5,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-30T20:05:00.000Z",
+      "ModifiedAt": "2026-06-30T20:05:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "QOL"
     },
     {
       "Id": "jps-war-event-thrill-emergency",
@@ -2133,6 +2149,212 @@
       ],
       "CreatedAt": "2025-08-12T19:56:20.6184621Z",
       "ModifiedAt": "2025-08-13T05:37:45.669637Z",
+      "ExcludeFromTargetAccumulation": false
+    },
+    {
+      "Id": "jps-war-cond-aggro-2plus",
+      "Name": "[Aggro] >= 2 Mob",
+      "Description": "Tank has at least two active enemies for add-pickup support.",
+      "SubConditions": [
+        {
+          "Id": "jps-war-cond-aggro-2plus-sub",
+          "Name": ">= 2 Mob Aggro",
+          "Description": "",
+          "TargetType": 0,
+          "ConditionType": 24,
+          "Parameters": {
+            "BuffParams": {
+              "StatusId": 0,
+              "StatusIds": [],
+              "UseMultipleStatuses": false,
+              "StatusLogic": 1,
+              "CheckDuration": false,
+              "MinDuration": 0,
+              "DurationComparison": 3,
+              "CheckStacks": false,
+              "RequiredStacks": 1,
+              "StackComparison": 3,
+              "InvertCheck": false,
+              "RequiredBuffCount": 2,
+              "BuffCountComparison": 3,
+              "StatusTargetOverrides": {},
+              "IsEnabled": true
+            },
+            "HealthParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "DistanceParams": {
+              "Distance": 0,
+              "Comparison": 1,
+              "CheckLineOfSight": false,
+              "IsEnabled": true
+            },
+            "GaugeParams": {
+              "PropertyName": "",
+              "ValueType": 0,
+              "NumericValue": 0,
+              "BooleanValue": false,
+              "StringValue": "",
+              "Comparison": 3,
+              "IsEnabled": true
+            },
+            "MpParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "LastAbilityParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0.5,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "LastGcdParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0.5,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "CooldownParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0,
+              "TimeComparison": 2,
+              "CheckCharges": false,
+              "RequiredCharges": 1,
+              "IsEnabled": true
+            },
+            "ComboParams": {
+              "ComboId": 1,
+              "TimeRemaining": 0,
+              "TimeComparison": 3,
+              "IsEnabled": true
+            },
+            "MovementParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "ChannelingParams": {
+              "IsChanneling": true,
+              "SpecificAbilityId": 0,
+              "IsEnabled": true
+            },
+            "AggroParams": {
+              "HasAggro": true,
+              "AggroPosition": 1,
+              "PositionComparison": 2,
+              "IsEnabled": true
+            },
+            "AlwaysParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "InCombatParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "ActionHighlightedParams": {
+              "ActionId": 1,
+              "IsEnabled": true
+            },
+            "IsCastingParams": {
+              "IsCasting": true,
+              "SpecificActionId": 0,
+              "CheckSpecific": false,
+              "IsEnabled": true
+            },
+            "GcdTimeRemainingParams": {
+              "TimeThreshold": 2.5,
+              "Comparison": 1,
+              "IsEnabled": true
+            },
+            "CanInterruptParams": {
+              "CanInterrupt": true,
+              "IsEnabled": true
+            },
+            "EntityIdParams": {
+              "EntityId": 0,
+              "Comparison": 2,
+              "IsEnabled": true
+            },
+            "PartyHpAverageParams": {
+              "Percentage": 50,
+              "Comparison": 1,
+              "IsEnabled": true
+            },
+            "PartyHpLowestParams": {
+              "Percentage": 50,
+              "Comparison": 1,
+              "LowestMemberCount": 4,
+              "UseLowestMemberPercentage": false,
+              "LowestMemberPercentage": 50,
+              "IsEnabled": true
+            },
+            "PartyHpBandsParams": {
+              "CriticalThreshold": 30,
+              "LowThreshold": 50,
+              "ModerateThreshold": 70,
+              "RequiredCritical": 1,
+              "RequiredLow": 3,
+              "RequiredModerate": 5,
+              "BandLogic": 0,
+              "IsEnabled": true
+            },
+            "ActionChargesParams": {
+              "ActionId": 1,
+              "RequiredCharges": 1,
+              "Comparison": 3,
+              "CheckType": 0,
+              "TimeThreshold": 0,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "AggroCountParams": {
+              "RequiredCount": 2,
+              "CountComparison": 3,
+              "IsEnabled": true
+            },
+            "ShieldParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "PartyShieldAverageParams": {
+              "Percentage": 20,
+              "Comparison": 3,
+              "IsEnabled": true
+            },
+            "VariableParams": {
+              "VariableName": "",
+              "VariableType": 0,
+              "ExpectedBoolValue": true,
+              "ExpectedStringValue": "",
+              "ExpectedNumberValue": 0,
+              "Comparison": 2,
+              "StringComparison": 0,
+              "InvertCheck": false,
+              "CheckExists": false,
+              "IsEnabled": true
+            }
+          },
+          "RequiredTargetCount": 1,
+          "TargetCountComparison": 3,
+          "UsePercentageMode": true,
+          "RequiredTargetPercentage": 50,
+          "CreatedAt": "2026-06-30T20:05:00.000Z",
+          "ModifiedAt": "2026-06-30T20:05:00.000Z",
+          "ShouldUseTargetCount": false
+        }
+      ],
+      "CreatedAt": "2026-06-30T20:05:00.000Z",
+      "ModifiedAt": "2026-06-30T20:05:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -9014,6 +9236,222 @@
       "CreatedAt": "2026-06-28T09:35:00.000Z",
       "ModifiedAt": "2026-06-30T13:30:00.000Z",
       "ExcludeFromTargetAccumulation": false
+    },
+    {
+      "Id": "jps-war-cond-not-top-aggro",
+      "Name": "Not Top Aggro",
+      "Description": "Current enemy target is not locked to the tank, used for MT add pickup.",
+      "SubConditions": [
+        {
+          "Id": "jps-war-cond-not-top-aggro-sub",
+          "Name": "Not Top Aggro",
+          "Description": "",
+          "TargetType": 0,
+          "ConditionType": 12,
+          "Parameters": {
+            "BuffParams": {
+              "StatusId": 0,
+              "StatusIds": [],
+              "UseMultipleStatuses": false,
+              "StatusLogic": 1,
+              "CheckDuration": false,
+              "MinDuration": 0,
+              "DurationComparison": 3,
+              "CheckStacks": false,
+              "RequiredStacks": 1,
+              "StackComparison": 3,
+              "InvertCheck": false,
+              "RequiredBuffCount": 2,
+              "BuffCountComparison": 3,
+              "StatusTargetOverrides": {},
+              "IsEnabled": true
+            },
+            "HealthParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "DistanceParams": {
+              "Distance": 0,
+              "Comparison": 1,
+              "CheckLineOfSight": false,
+              "IsEnabled": true
+            },
+            "GaugeParams": {
+              "PropertyName": "",
+              "ValueType": 0,
+              "NumericValue": 0,
+              "BooleanValue": false,
+              "StringValue": "",
+              "Comparison": 3,
+              "IsEnabled": true
+            },
+            "MpParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "LastAbilityParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0.5,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "LastGcdParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0.5,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "CooldownParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0,
+              "TimeComparison": 2,
+              "CheckCharges": false,
+              "RequiredCharges": 1,
+              "IsEnabled": true
+            },
+            "ComboParams": {
+              "ComboId": 1,
+              "TimeRemaining": 0,
+              "TimeComparison": 3,
+              "IsEnabled": true
+            },
+            "MovementParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "ChannelingParams": {
+              "IsChanneling": true,
+              "SpecificAbilityId": 0,
+              "IsEnabled": true
+            },
+            "AggroParams": {
+              "HasAggro": false,
+              "AggroPosition": 2,
+              "PositionComparison": 1,
+              "IsEnabled": true
+            },
+            "AlwaysParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "InCombatParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "ActionHighlightedParams": {
+              "ActionId": 1,
+              "IsEnabled": true
+            },
+            "IsCastingParams": {
+              "IsCasting": true,
+              "SpecificActionId": 0,
+              "CheckSpecific": false,
+              "IsEnabled": true
+            },
+            "GcdTimeRemainingParams": {
+              "TimeThreshold": 2.5,
+              "Comparison": 1,
+              "IsEnabled": true
+            },
+            "CanInterruptParams": {
+              "CanInterrupt": true,
+              "IsEnabled": true
+            },
+            "EntityIdParams": {
+              "EntityId": 0,
+              "Comparison": 2,
+              "IsEnabled": true
+            },
+            "PartyHpAverageParams": {
+              "Percentage": 50,
+              "Comparison": 1,
+              "IsEnabled": true
+            },
+            "PartyHpLowestParams": {
+              "Percentage": 50,
+              "Comparison": 1,
+              "LowestMemberCount": 4,
+              "UseLowestMemberPercentage": false,
+              "LowestMemberPercentage": 50,
+              "IsEnabled": true
+            },
+            "PartyHpBandsParams": {
+              "CriticalThreshold": 30,
+              "LowThreshold": 50,
+              "ModerateThreshold": 70,
+              "RequiredCritical": 1,
+              "RequiredLow": 3,
+              "RequiredModerate": 5,
+              "BandLogic": 0,
+              "IsEnabled": true
+            },
+            "ActionChargesParams": {
+              "ActionId": 1,
+              "RequiredCharges": 1,
+              "Comparison": 3,
+              "CheckType": 0,
+              "TimeThreshold": 0,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "AggroCountParams": {
+              "RequiredCount": 1,
+              "CountComparison": 3,
+              "IsEnabled": true
+            },
+            "ShieldParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "PartyShieldAverageParams": {
+              "Percentage": 20,
+              "Comparison": 3,
+              "IsEnabled": true
+            },
+            "VariableParams": {
+              "VariableName": "",
+              "VariableType": 0,
+              "ExpectedBoolValue": true,
+              "ExpectedStringValue": "",
+              "ExpectedNumberValue": 0,
+              "Comparison": 2,
+              "StringComparison": 0,
+              "InvertCheck": false,
+              "CheckExists": false,
+              "IsEnabled": true
+            },
+            "DataIdParams": {
+              "DataId": 0,
+              "Comparison": 2,
+              "IsEnabled": true
+            },
+            "TargetNameParams": {
+              "Name": "",
+              "Comparison": 0,
+              "IsEnabled": true
+            }
+          },
+          "RequiredTargetCount": 1,
+          "TargetCountComparison": 3,
+          "UsePercentageMode": true,
+          "RequiredTargetPercentage": 50,
+          "CreatedAt": "2026-06-30T20:05:00.000Z",
+          "ModifiedAt": "2026-06-30T20:05:00.000Z",
+          "ShouldUseTargetCount": false
+        }
+      ],
+      "CreatedAt": "2026-06-30T20:05:00.000Z",
+      "ModifiedAt": "2026-06-30T20:05:00.000Z",
+      "ExcludeFromTargetAccumulation": false
     }
   ],
   "Logics": [
@@ -11757,6 +12195,73 @@
       "ModifiedAt": "2026-06-30T18:05:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
+    },
+    {
+      "Id": "jps-war-logic-mt-add-pickup",
+      "Name": "MT Add Pickup",
+      "Description": "Uses Provoke plus Warrior's ranged pull action to help pick up loose adds while the MT stance helper is enabled.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "jps-war-cond-not-top-aggro",
+        "jps-war-cond-aggro-2plus",
+        "309a790a-240d-4e2f-a0b3-7282cf6b717a"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-war-trigger-add-pickup-provoke",
+          "ActionId": 7533,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 1,
+          "TargetType": 9,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-war-trigger-add-pickup-ranged",
+          "ActionId": 46,
+          "SkillbarId": "",
+          "TTSText": "",
+          "TriggerType": 0,
+          "LogicOperator": 0,
+          "TargetType": 9,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-30T20:05:00.000Z",
+      "ModifiedAt": "2026-06-30T20:05:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "QOL"
     }
   ],
   "QTBarConfig": {
@@ -11854,10 +12359,11 @@
       {
         "Id": "jps-war-qt-stance-mt",
         "Name": "MT Stance",
-        "Description": "Main-tank stance setup for dungeons and roulettes.",
+        "Description": "Main-tank stance setup for dungeons and roulettes, with add-pickup support.",
         "EventIds": [
           "jps-war-event-stance-mt",
-          "jps-war-event-stance-mt-zone"
+          "jps-war-event-stance-mt-zone",
+          "jps-war-event-mt-add-pickup"
         ],
         "Enabled": true,
         "Position": 8
@@ -11897,5 +12403,5 @@
       "jps-war-qt-stance-mt": true
     }
   },
-  "Version": "0.1.19"
+  "Version": "0.1.20"
 }
