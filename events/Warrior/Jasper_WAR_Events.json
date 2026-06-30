@@ -1,14 +1,14 @@
 {
   "Id": "Jasper_WAR_Events",
   "Name": "Jasper WAR Events",
-  "Description": "General-purpose Warrior event profile for PvE. Keeps dungeon mitigation, Bloodwhetting recovery, emergency Holmgang support, MT/OT stance controls, wipe/zone reset scaffolding, raidwide/tankbuster mitigation, Interject utility, and optional co-tank support. Includes earlier dungeon mitigation retuning for public roulette-safe pulls. ForceAOE is manual-only; this profile does not reset it. Safety helpers stay active while the quick-toggle bar is kept compact for normal play.",
+  "Description": "General-purpose Warrior event profile for PvE. Keeps staggered dungeon mitigation around the 80 percent pressure point, proactive AoE-pack Bloodwhetting/Raw Intuition recovery, earlier Equilibrium sustain, pack-focused Thrill/Shake recovery, emergency Holmgang support, MT/OT stance controls, wipe/zone reset scaffolding, raidwide/tankbuster mitigation, Interject utility, spender-toggle safety to reduce Beast Gauge overcap, and optional co-tank support. ForceAOE is manual-only; this profile does not reset it. Safety helpers stay active while the quick-toggle bar is kept compact for normal play.",
   "CreatedAt": "2026-06-25T02:45:00.000Z",
-  "ModifiedAt": "2026-06-30T12:00:00.000Z",
+  "ModifiedAt": "2026-06-30T13:30:00.000Z",
   "Events": [
     {
       "Id": "f2daaf1d-c477-42b2-9db1-baa49330bfe3",
       "Name": "Emergency Holmgang",
-      "Description": "Uses invulnerability before lethal low-HP windows.",
+      "Description": "Uses Holmgang before lethal low-HP windows.",
       "EventType": "OnTick",
       "LogicId": "b5bbb2da-d7e4-4af7-ac76-6737828c6c62",
       "ThrottleSameEvent": 0.5,
@@ -17,7 +17,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2025-08-12T20:28:34.9132756Z",
-      "ModifiedAt": "2026-06-28T09:35:00.000Z"
+      "ModifiedAt": "2026-06-30T13:30:00.000Z"
     },
     {
       "Id": "732a7c9a-5487-474b-bb80-91bf92cd7e74",
@@ -50,7 +50,7 @@
     {
       "Id": "565fe51c-9d06-4338-bb4e-ad1d0cba3e32",
       "Name": "2 Mit <= 65% HP, >= 3 mobs",
-      "Description": "Uses a second mitigation layer earlier in multi-target pulls when pressure is already building.",
+      "Description": "Adds a second mitigation layer only once a large pull is still pressuring HP, keeping mitigation staggered.",
       "EventType": "OnTick",
       "LogicId": "55ed34e5-8b06-4b99-a618-dadcfbb56e10",
       "ThrottleSameEvent": 2,
@@ -59,12 +59,12 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2025-08-12T20:28:17.4766558Z",
-      "ModifiedAt": "2026-06-28T09:35:00.000Z"
+      "ModifiedAt": "2026-06-30T13:30:00.000Z"
     },
     {
       "Id": "1b066cf9-12d8-450d-866e-677d61da153d",
-      "Name": "1 Mit <= 90% HP, >= 3 mobs",
-      "Description": "Starts dungeon mitigation early on three-or-more enemy pulls instead of waiting for emergency HP.",
+      "Name": "1 Mit <= 80% HP, >= 3 mobs",
+      "Description": "Starts dungeon mitigation around 80 percent HP on three-or-more enemy pulls, leaving room to stagger tools.",
       "EventType": "OnTick",
       "LogicId": "b7d72611-1464-4b11-ab8a-1902d092d9e1",
       "ThrottleSameEvent": 2,
@@ -73,7 +73,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2025-08-12T20:27:33.1643991Z",
-      "ModifiedAt": "2026-06-28T09:35:00.000Z"
+      "ModifiedAt": "2026-06-30T13:30:00.000Z"
     },
     {
       "Id": "08c75b56-6f6e-4b0c-88f7-7f58282253c4",
@@ -148,7 +148,7 @@
     {
       "Id": "6faa69f2-c15d-4fdc-850e-76823035610f",
       "Name": "Bloodwhetting / Raw Intuition",
-      "Description": "Uses Bloodwhetting, with Raw Intuition fallback for synced content.",
+      "Description": "Uses Bloodwhetting or Raw Intuition proactively around 90 percent HP on 3+ enemy AoE packs.",
       "EventType": "OnTick",
       "LogicId": "2557472d-f661-4368-9eb2-1059343fcf12",
       "ThrottleSameEvent": 0.5,
@@ -157,12 +157,12 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-03T20:13:35.6221496Z",
-      "ModifiedAt": "2026-06-26T12:00:00.000Z"
+      "ModifiedAt": "2026-06-30T13:30:00.000Z"
     },
     {
       "Id": "2d80ee64-f724-4599-9e89-1e3cc4569aec",
-      "Name": "Enable CDs",
-      "Description": "Cooldown hold helper for dungeon routing.",
+      "Name": "Release Cooldown Hold",
+      "Description": "Releases Save CD once the current target is above end-of-pack/end-of-boss range.",
       "EventType": "OnTick",
       "LogicId": "cdf210ee-6701-4012-b3e5-1be407e197b1",
       "ThrottleSameEvent": 0.5,
@@ -175,8 +175,8 @@
     },
     {
       "Id": "4a1a57d1-548b-493e-b997-a5f4834de436",
-      "Name": "Panic Heal",
-      "Description": "Uses Equilibrium around 65 percent HP as an oGCD recovery layer before emergency-only windows.",
+      "Name": "Equilibrium Recovery",
+      "Description": "Uses Equilibrium around 70 percent HP as an oGCD recovery layer before emergency windows.",
       "EventType": "OnTick",
       "LogicId": "ab041c02-24ba-4078-8ec5-66cea860df61",
       "ThrottleSameEvent": 0.5,
@@ -185,7 +185,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-03T20:20:18.3895338Z",
-      "ModifiedAt": "2026-06-28T11:25:00.000Z"
+      "ModifiedAt": "2026-06-30T13:30:00.000Z"
     },
     {
       "Id": "7b40e31b-cb13-4075-9cb6-7e6583968814",
@@ -371,8 +371,8 @@
     },
     {
       "Id": "jps-war-event-thrill-emergency",
-      "Name": "Thrill Emergency",
-      "Description": "Uses Thrill of Battle around 70 percent HP as a proactive sustain layer when no invuln is active.",
+      "Name": "Thrill Pack Recovery",
+      "Description": "Uses Thrill of Battle around 70 percent HP as a pack-sustain layer on 3+ enemy pulls.",
       "EventType": "OnTick",
       "LogicId": "jps-war-logic-thrill-emergency",
       "ThrottleSameEvent": 1.5,
@@ -381,12 +381,12 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-27T01:15:00.000Z",
-      "ModifiedAt": "2026-06-28T11:25:00.000Z"
+      "ModifiedAt": "2026-06-30T13:30:00.000Z"
     },
     {
       "Id": "jps-war-event-shake-emergency",
-      "Name": "Shake Emergency",
-      "Description": "Uses Shake It Off around 65 percent HP as a sustain shield when no invuln is active.",
+      "Name": "Shake Pack Recovery",
+      "Description": "Uses Shake It Off around 65 percent HP as a pack-sustain shield on 3+ enemy pulls.",
       "EventType": "OnTick",
       "LogicId": "jps-war-logic-shake-emergency",
       "ThrottleSameEvent": 1.5,
@@ -395,7 +395,39 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-27T01:15:00.000Z",
-      "ModifiedAt": "2026-06-28T11:25:00.000Z"
+      "ModifiedAt": "2026-06-30T13:30:00.000Z"
+    },
+    {
+      "Id": "jps-war-event-spender-toggles",
+      "Name": "Spender Toggle Safety",
+      "Description": "Keeps Warrior spender toggles enabled in combat so Beast Gauge and primal spenders do not sit unused.",
+      "EventType": "OnTick",
+      "LogicId": "jps-war-logic-spender-toggles",
+      "ThrottleSameEvent": 3,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-30T09:45:00.000Z",
+      "ModifiedAt": "2026-06-30T09:45:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Toggles"
+    },
+    {
+      "Id": "jps-war-event-pack-savecd-release",
+      "Name": "AoE Pack Save CD Release",
+      "Description": "Turns Save CD off during three-or-more enemy pulls so Warrior does not hoard gauge through trash packs.",
+      "EventType": "OnTick",
+      "LogicId": "jps-war-logic-pack-savecd-release",
+      "ThrottleSameEvent": 2,
+      "ThrottleAllEvents": 0.1,
+      "Timeout": 5,
+      "RecheckDuration": 0,
+      "Filters": {},
+      "CreatedAt": "2026-06-30T09:45:00.000Z",
+      "ModifiedAt": "2026-06-30T09:45:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Toggles"
     }
   ],
   "Conditions": [
@@ -1677,12 +1709,12 @@
     },
     {
       "Id": "bbe2306a-5240-45a6-a4e7-8cb66a47095a",
-      "Name": "[Self] HP <= 25",
-      "Description": "",
+      "Name": "[Self] HP <= 30%",
+      "Description": "[Self] HP <= 30%",
       "SubConditions": [
         {
           "Id": "2ed9608a-73eb-46de-8e3b-4b8d5638c46b",
-          "Name": "HP <= 25%",
+          "Name": "[Self] HP <= 30%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -1705,7 +1737,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 25,
+              "Percentage": 30,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -1873,12 +1905,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2025-08-12T19:55:56.107224Z",
-          "ModifiedAt": "2026-06-28T09:35:00.000Z",
+          "ModifiedAt": "2026-06-30T13:30:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2025-08-12T19:55:50.5904126Z",
-      "ModifiedAt": "2026-06-28T09:35:00.000Z",
+      "ModifiedAt": "2026-06-30T13:30:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -3131,12 +3163,12 @@
     },
     {
       "Id": "9b3df71d-1a8a-45d3-9066-9c755d71f3d8",
-      "Name": "Full HP Target",
-      "Description": "",
+      "Name": "[Target] HP >= 45%",
+      "Description": "Releases cooldown holds once the current target is no longer in end-of-pack/end-of-boss range.",
       "SubConditions": [
         {
           "Id": "fa04f8d9-e6a6-4707-8b79-5559b0fb87dc",
-          "Name": "Full HP Target",
+          "Name": "Target HP >= 45%",
           "Description": "",
           "TargetType": 1,
           "ConditionType": 1,
@@ -3159,7 +3191,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 90,
+              "Percentage": 45,
               "Comparison": 3,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -4759,8 +4791,8 @@
     },
     {
       "Id": "5af14793-c6c0-47cd-957c-eb8799f1fb15",
-      "Name": "Bloodwhetting <= 90%",
-      "Description": "",
+      "Name": "Bloodwhetting Pack <= 90%",
+      "Description": "AoE-pack HP threshold for proactive Bloodwhetting or Raw Intuition.",
       "SubConditions": [
         {
           "Id": "a85c9602-2c66-4997-a698-0581f75f3b48",
@@ -5151,12 +5183,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-01-03T19:30:52.8942985Z",
-          "ModifiedAt": "2026-06-27T01:15:00.000Z",
+          "ModifiedAt": "2026-06-30T13:30:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-01-03T19:28:47.5787577Z",
-      "ModifiedAt": "2026-06-27T01:15:00.000Z",
+      "ModifiedAt": "2026-06-30T13:30:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -7492,12 +7524,12 @@
     },
     {
       "Id": "jps-war-cond-self-hp-50",
-      "Name": "Self HP <= 65%",
-      "Description": "",
+      "Name": "Self HP <= 70%",
+      "Description": "Self HP <= 70%",
       "SubConditions": [
         {
           "Id": "jps-war-cond-self-hp-50-sub",
-          "Name": "Self HP <= 65%",
+          "Name": "Self HP <= 70%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -7520,7 +7552,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 65,
+              "Percentage": 70,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -7698,18 +7730,18 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-06-27T01:15:00.000Z",
-          "ModifiedAt": "2026-06-28T11:25:00.000Z",
+          "ModifiedAt": "2026-06-30T13:30:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-27T01:15:00.000Z",
-      "ModifiedAt": "2026-06-28T11:25:00.000Z",
+      "ModifiedAt": "2026-06-30T13:30:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
       "Id": "jps-war-cond-self-hp-55",
       "Name": "Self HP <= 65%",
-      "Description": "",
+      "Description": "Self HP <= 65%",
       "SubConditions": [
         {
           "Id": "jps-war-cond-self-hp-55-sub",
@@ -7914,18 +7946,18 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-06-27T01:15:00.000Z",
-          "ModifiedAt": "2026-06-28T11:25:00.000Z",
+          "ModifiedAt": "2026-06-30T13:30:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-27T01:15:00.000Z",
-      "ModifiedAt": "2026-06-28T11:25:00.000Z",
+      "ModifiedAt": "2026-06-30T13:30:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
       "Id": "jps-war-cond-self-hp-60",
       "Name": "Self HP <= 70%",
-      "Description": "",
+      "Description": "Self HP <= 70%",
       "SubConditions": [
         {
           "Id": "jps-war-cond-self-hp-60-sub",
@@ -8130,12 +8162,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-06-27T01:15:00.000Z",
-          "ModifiedAt": "2026-06-28T11:25:00.000Z",
+          "ModifiedAt": "2026-06-30T13:30:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-27T01:15:00.000Z",
-      "ModifiedAt": "2026-06-28T11:25:00.000Z",
+      "ModifiedAt": "2026-06-30T13:30:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -8351,12 +8383,12 @@
     },
     {
       "Id": "jps-war-cond-self-hp-90",
-      "Name": "[Self] HP <= 90",
-      "Description": "",
+      "Name": "[Self] HP <= 80%",
+      "Description": "[Self] HP <= 80%",
       "SubConditions": [
         {
           "Id": "jps-war-cond-self-hp-90-sub",
-          "Name": "HP <= 90%",
+          "Name": "[Self] HP <= 80%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -8379,7 +8411,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 90,
+              "Percentage": 80,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -8547,22 +8579,22 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-06-28T09:35:00.000Z",
-          "ModifiedAt": "2026-06-28T09:35:00.000Z",
+          "ModifiedAt": "2026-06-30T13:30:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-28T09:35:00.000Z",
-      "ModifiedAt": "2026-06-28T09:35:00.000Z",
+      "ModifiedAt": "2026-06-30T13:30:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
       "Id": "jps-war-cond-self-hp-65",
-      "Name": "[Self] HP <= 65",
-      "Description": "",
+      "Name": "[Self] HP <= 65%",
+      "Description": "[Self] HP <= 65%",
       "SubConditions": [
         {
           "Id": "jps-war-cond-self-hp-65-sub",
-          "Name": "HP <= 65%",
+          "Name": "[Self] HP <= 65%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -8753,12 +8785,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-06-28T09:35:00.000Z",
-          "ModifiedAt": "2026-06-28T09:35:00.000Z",
+          "ModifiedAt": "2026-06-30T13:30:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-28T09:35:00.000Z",
-      "ModifiedAt": "2026-06-28T09:35:00.000Z",
+      "ModifiedAt": "2026-06-30T13:30:00.000Z",
       "ExcludeFromTargetAccumulation": false
     }
   ],
@@ -8907,8 +8939,8 @@
     },
     {
       "Id": "b5bbb2da-d7e4-4af7-ac76-6737828c6c62",
-      "Name": "Emergency Invuln",
-      "Description": "Uses Holmgang before lethal low-HP windows.",
+      "Name": "Emergency Holmgang",
+      "Description": "Uses Holmgang around 30 percent HP before lethal low-HP windows.",
       "LogicType": 0,
       "ConditionIds": [
         "bbe2306a-5240-45a6-a4e7-8cb66a47095a",
@@ -8944,7 +8976,7 @@
         }
       ],
       "CreatedAt": "2025-08-12T20:16:53.4840465Z",
-      "ModifiedAt": "2026-06-28T09:45:00.000Z",
+      "ModifiedAt": "2026-06-30T13:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Mitigation"
     },
@@ -9088,14 +9120,14 @@
         }
       ],
       "CreatedAt": "2025-08-12T20:19:14.0787708Z",
-      "ModifiedAt": "2026-06-28T09:35:00.000Z",
+      "ModifiedAt": "2026-06-30T13:30:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
     },
     {
       "Id": "b7d72611-1464-4b11-ab8a-1902d092d9e1",
       "Name": "Single Mit",
-      "Description": "1 Mit <= 90% HP, >= 3 mobs",
+      "Description": "1 Mit <= 80% HP, >= 3 mobs",
       "LogicType": 0,
       "ConditionIds": [
         "d2859eb1-badb-4baf-9898-36452e6bd3da",
@@ -9232,7 +9264,7 @@
         }
       ],
       "CreatedAt": "2025-08-12T20:17:16.0236881Z",
-      "ModifiedAt": "2026-06-28T09:35:00.000Z",
+      "ModifiedAt": "2026-06-30T13:30:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
     },
@@ -9323,8 +9355,8 @@
     },
     {
       "Id": "cdf210ee-6701-4012-b3e5-1be407e197b1",
-      "Name": "Enable CDs",
-      "Description": "Automatically reenables cooldowns when detecting an enemy with nearly full HP.\nSet to 90% default.",
+      "Name": "Release Cooldown Hold",
+      "Description": "Releases Save CD once the current target is above end-of-pack/end-of-boss range, so Warrior resumes spending before gauge overcaps.",
       "LogicType": 0,
       "ConditionIds": [
         "9b3df71d-1a8a-45d3-9066-9c755d71f3d8",
@@ -9569,11 +9601,11 @@
     {
       "Id": "2557472d-f661-4368-9eb2-1059343fcf12",
       "Name": "Bloodwhetting / Raw Intuition",
-      "Description": "Uses Bloodwhetting earlier for recovery, with Raw Intuition fallback for synced content, while avoiding late-target waste.",
+      "Description": "Uses Bloodwhetting or Raw Intuition proactively around 90 percent HP on 3+ enemy AoE packs, without blocking on the current target HP.",
       "LogicType": 0,
       "ConditionIds": [
         "5af14793-c6c0-47cd-957c-eb8799f1fb15",
-        "47e03440-afe9-4e97-b8ca-df4c4271ad08"
+        "307cb39d-0d33-4dc5-9255-413e1f2ae6f4"
       ],
       "ActionTriggers": [
         {
@@ -9628,14 +9660,14 @@
         }
       ],
       "CreatedAt": "2026-01-03T20:08:36.0381395Z",
-      "ModifiedAt": "2026-06-27T01:15:00.000Z",
+      "ModifiedAt": "2026-06-30T13:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Mitigation"
     },
     {
       "Id": "ab041c02-24ba-4078-8ec5-66cea860df61",
-      "Name": "Panic Heal",
-      "Description": "Uses Equilibrium around 65 percent HP as an oGCD recovery layer before emergency-only windows.",
+      "Name": "Equilibrium Recovery",
+      "Description": "Uses Equilibrium around 70 percent HP as an oGCD recovery layer before emergency windows.",
       "LogicType": 0,
       "ConditionIds": [
         "jps-war-cond-self-hp-50",
@@ -9669,7 +9701,7 @@
         }
       ],
       "CreatedAt": "2026-01-05T23:14:07.7045013Z",
-      "ModifiedAt": "2026-06-28T11:25:00.000Z",
+      "ModifiedAt": "2026-06-30T13:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Mitigation"
     },
@@ -10546,11 +10578,12 @@
     },
     {
       "Id": "jps-war-logic-thrill-emergency",
-      "Name": "Thrill Emergency",
-      "Description": "Uses Thrill of Battle around 70 percent HP as a proactive sustain layer when no invuln is active.",
+      "Name": "Thrill Pack Recovery",
+      "Description": "Uses Thrill of Battle around 70 percent HP as a pack-sustain layer on 3+ enemy pulls, avoiding unnecessary boss/TB overlap.",
       "LogicType": 0,
       "ConditionIds": [
         "309a790a-240d-4e2f-a0b3-7282cf6b717a",
+        "307cb39d-0d33-4dc5-9255-413e1f2ae6f4",
         "jps-war-cond-self-hp-60",
         "a5f16623-4bb1-4d16-a42b-96cd9bccb5aa",
         "jps-war-cond-no-thrill"
@@ -10583,17 +10616,18 @@
         }
       ],
       "CreatedAt": "2026-06-27T01:15:00.000Z",
-      "ModifiedAt": "2026-06-28T11:25:00.000Z",
+      "ModifiedAt": "2026-06-30T13:30:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
     },
     {
       "Id": "jps-war-logic-shake-emergency",
-      "Name": "Shake Emergency",
-      "Description": "Uses Shake It Off around 65 percent HP as a sustain shield when no invuln is active.",
+      "Name": "Shake Pack Recovery",
+      "Description": "Uses Shake It Off around 65 percent HP as a pack-sustain shield on 3+ enemy pulls, avoiding unnecessary boss/TB overlap.",
       "LogicType": 0,
       "ConditionIds": [
         "309a790a-240d-4e2f-a0b3-7282cf6b717a",
+        "307cb39d-0d33-4dc5-9255-413e1f2ae6f4",
         "jps-war-cond-self-hp-55",
         "151fa217-58a8-4665-a1ce-d3b3e8cb40a0",
         "a5f16623-4bb1-4d16-a42b-96cd9bccb5aa"
@@ -10626,9 +10660,315 @@
         }
       ],
       "CreatedAt": "2026-06-27T01:15:00.000Z",
-      "ModifiedAt": "2026-06-28T11:25:00.000Z",
+      "ModifiedAt": "2026-06-30T13:30:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
+    },
+    {
+      "Id": "jps-war-logic-spender-toggles",
+      "Name": "Spender Toggle Safety",
+      "Description": "Keeps Warrior spender toggles enabled in combat and disables Save 1 Jump so Beast Gauge and primal spenders do not sit unused.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "309a790a-240d-4e2f-a0b3-7282cf6b717a"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-war-trigger-spender-save-one-jump-off",
+          "ActionId": 0,
+          "SkillbarId": "SaveOneJump",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 8,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-war-trigger-spender-inner-on",
+          "ActionId": 0,
+          "SkillbarId": "InnerRelease",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-war-trigger-spender-infuriate-on",
+          "ActionId": 0,
+          "SkillbarId": "Infuriate",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-war-trigger-spender-upheaval-on",
+          "ActionId": 0,
+          "SkillbarId": "Upheaval",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-war-trigger-spender-jumps-on",
+          "ActionId": 0,
+          "SkillbarId": "EnableJumps",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-war-trigger-spender-onslaught-on",
+          "ActionId": 0,
+          "SkillbarId": "Onslaught",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-war-trigger-spender-jump-safety-on",
+          "ActionId": 0,
+          "SkillbarId": "JumpRangeSafety",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-war-trigger-spender-primal-rend-on",
+          "ActionId": 0,
+          "SkillbarId": "PrimalRend",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-war-trigger-spender-primal-ruination-on",
+          "ActionId": 0,
+          "SkillbarId": "PrimalRuination",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-war-trigger-spender-primal-wrath-on",
+          "ActionId": 0,
+          "SkillbarId": "PrimalWrath",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-30T09:45:00.000Z",
+      "ModifiedAt": "2026-06-30T09:45:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Toggles"
+    },
+    {
+      "Id": "jps-war-logic-pack-savecd-release",
+      "Name": "AoE Pack Save CD Release",
+      "Description": "Turns Save CD off during three-or-more enemy pulls so Warrior spends gauge and oGCD damage instead of hoarding through trash packs.",
+      "LogicType": 0,
+      "ConditionIds": [
+        "307cb39d-0d33-4dc5-9255-413e1f2ae6f4",
+        "309a790a-240d-4e2f-a0b3-7282cf6b717a"
+      ],
+      "ActionTriggers": [
+        {
+          "Id": "jps-war-trigger-pack-savecd-off",
+          "ActionId": 0,
+          "SkillbarId": "SaveCD",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 8,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        }
+      ],
+      "CreatedAt": "2026-06-30T09:45:00.000Z",
+      "ModifiedAt": "2026-06-30T09:45:00.000Z",
+      "ExecuteFirstOnly": false,
+      "Category": "Toggles"
     }
   ],
   "QTBarConfig": {
@@ -10769,5 +11109,5 @@
       "jps-war-qt-stance-mt": true
     }
   },
-  "Version": "0.1.16"
+  "Version": "0.1.17"
 }

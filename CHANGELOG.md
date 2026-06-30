@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Retuned Warrior sustain so AoE-pack Bloodwhetting/Raw Intuition starts around 90% HP, dungeon mitigation staggers around 80%/65% HP, Equilibrium/Thrill/Shake recover earlier without blowing everything at full HP, and Holmgang no longer waits as deep.
+- Added Warrior spender safety so Inner Release, Infuriate, Upheaval, Onslaught, and primal spender toggles stay enabled in combat, while Save CD is released during 3+ enemy pulls to reduce Beast Gauge overcap.
 - Slimmed the Warrior quick-toggle overlay to visible manual controls only, keeping safety helpers active while reducing on-screen button clutter.
 - Tightened the White Mage Holy nudge to require three nearby targets within Holy range and stopped resetting the generic Holy toggle, preventing Holy on spread-out pulls.
 - Added a White Mage dungeon-trash Holy nudge so stationary 3+ enemy pulls use Holy as the AoE GCD instead of falling into long Glare stretches, without touching ForceAOE.
