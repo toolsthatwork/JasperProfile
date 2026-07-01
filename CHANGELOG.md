@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+- Added manual-Provoke tank-swap handling for PLD/WAR/DRK/GNB: Provoke now turns MT stance back on and uses one short swap defensive while OT add-pickup remains stance-guarded.
 - Guarded tank MT add-pickup with active tank-stance checks so OT mode with stance off will not Provoke or ranged-pull loose mobs.
 - Added Arche-style MT add-pickup support for Paladin, Warrior, Dark Knight, and Gunbreaker: the existing MT Stance control now also enables Provoke plus ranged-pull recovery on loose adds without touching ForceAOE.
 - Polished Astrologian recovery timing so main-tank Aspected Benefic/Celestial Intersection begin around 80% HP and Essential Dignity supports at 70% HP, with a compact three-column quick bar.
