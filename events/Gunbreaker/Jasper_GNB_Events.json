@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_GNB_Events",
   "Name": "Jasper GNB Events",
-  "Description": "General-purpose Gunbreaker event profile for PvE. Keeps staggered 80/65 dungeon mitigation, Aurora/Heart of Corundum recovery, raidwide/tankbuster mitigation, Interject utility, Superbolide emergency support around 30 percent HP, MT/OT stance controls, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. MT stance controls also include add-pickup support based on Arche-style aggro coverage.",
-  "Version": "0.1.15",
+  "Description": "General-purpose Gunbreaker event profile for PvE. Keeps staggered 80/65 dungeon mitigation, Aurora/Heart of Corundum recovery, raidwide/tankbuster mitigation, Interject utility, Superbolide emergency support around 30 percent HP, MT/OT stance controls, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. MT stance controls also include add-pickup support based on Arche-style aggro coverage, guarded by active tank stance so OT mode with stance off will not taunt.",
+  "Version": "0.1.16",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -414,7 +414,7 @@
     {
       "Id": "jps-gnb-event-mt-add-pickup",
       "Name": "MT Add Pickup",
-      "Description": "Helps pick up loose adds with Provoke and the job ranged pull action while MT stance support is enabled.",
+      "Description": "MT-only loose add pickup. Requires Royal Guard active so OT mode with stance off will not Provoke.",
       "EventType": "OnTick",
       "LogicId": "jps-gnb-logic-mt-add-pickup",
       "ThrottleSameEvent": 3,
@@ -423,7 +423,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-30T20:05:00.000Z",
-      "ModifiedAt": "2026-06-30T20:05:00.000Z",
+      "ModifiedAt": "2026-07-01T00:20:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "QOL"
     },
@@ -2651,6 +2651,224 @@
       ],
       "CreatedAt": "2026-06-30T20:05:00.000Z",
       "ModifiedAt": "2026-06-30T20:05:00.000Z",
+      "ExcludeFromTargetAccumulation": false
+    },
+    {
+      "Id": "jps-gnb-cond-tank-stance-active",
+      "Name": "Royal Guard Active",
+      "Description": "Requires Royal Guard to be active so OT mode with stance off cannot Provoke or ranged-pull loose adds.",
+      "SubConditions": [
+        {
+          "Id": "jps-gnb-cond-tank-stance-active-sub",
+          "Name": "Royal Guard Active",
+          "Description": "",
+          "TargetType": 0,
+          "ConditionType": 5,
+          "Parameters": {
+            "BuffParams": {
+              "StatusId": 1833,
+              "StatusIds": [
+                1833
+              ],
+              "UseMultipleStatuses": true,
+              "StatusLogic": 1,
+              "CheckDuration": false,
+              "MinDuration": 0,
+              "DurationComparison": 3,
+              "CheckStacks": false,
+              "RequiredStacks": 1,
+              "StackComparison": 3,
+              "InvertCheck": false,
+              "RequiredBuffCount": 1,
+              "BuffCountComparison": 3,
+              "StatusTargetOverrides": {},
+              "IsEnabled": true
+            },
+            "HealthParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "DistanceParams": {
+              "Distance": 0,
+              "Comparison": 1,
+              "CheckLineOfSight": false,
+              "IsEnabled": true
+            },
+            "GaugeParams": {
+              "PropertyName": "",
+              "ValueType": 0,
+              "NumericValue": 0,
+              "BooleanValue": false,
+              "StringValue": "",
+              "Comparison": 3,
+              "IsEnabled": true
+            },
+            "MpParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "LastAbilityParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0.5,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "LastGcdParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0.5,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "CooldownParams": {
+              "AbilityId": 1,
+              "TimeThreshold": 0,
+              "TimeComparison": 2,
+              "CheckCharges": false,
+              "RequiredCharges": 1,
+              "IsEnabled": true
+            },
+            "ComboParams": {
+              "ComboId": 1,
+              "TimeRemaining": 0,
+              "TimeComparison": 3,
+              "IsEnabled": true
+            },
+            "MovementParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "ChannelingParams": {
+              "IsChanneling": true,
+              "SpecificAbilityId": 0,
+              "IsEnabled": true
+            },
+            "AggroParams": {
+              "HasAggro": true,
+              "AggroPosition": 1,
+              "PositionComparison": 2,
+              "IsEnabled": true
+            },
+            "AlwaysParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "InCombatParams": {
+              "ExpectedState": true,
+              "IsEnabled": true
+            },
+            "ActionHighlightedParams": {
+              "ActionId": 1,
+              "IsEnabled": true
+            },
+            "IsCastingParams": {
+              "IsCasting": true,
+              "SpecificActionId": 0,
+              "CheckSpecific": false,
+              "IsEnabled": true
+            },
+            "GcdTimeRemainingParams": {
+              "TimeThreshold": 2.5,
+              "Comparison": 1,
+              "IsEnabled": true
+            },
+            "CanInterruptParams": {
+              "CanInterrupt": true,
+              "IsEnabled": true
+            },
+            "EntityIdParams": {
+              "EntityId": 0,
+              "Comparison": 2,
+              "IsEnabled": true
+            },
+            "PartyHpAverageParams": {
+              "Percentage": 50,
+              "Comparison": 1,
+              "IsEnabled": true
+            },
+            "PartyHpLowestParams": {
+              "Percentage": 50,
+              "Comparison": 1,
+              "LowestMemberCount": 4,
+              "UseLowestMemberPercentage": false,
+              "LowestMemberPercentage": 50,
+              "IsEnabled": true
+            },
+            "PartyHpBandsParams": {
+              "CriticalThreshold": 30,
+              "LowThreshold": 50,
+              "ModerateThreshold": 70,
+              "RequiredCritical": 1,
+              "RequiredLow": 3,
+              "RequiredModerate": 5,
+              "BandLogic": 0,
+              "IsEnabled": true
+            },
+            "ActionChargesParams": {
+              "ActionId": 1,
+              "RequiredCharges": 1,
+              "Comparison": 3,
+              "CheckType": 0,
+              "TimeThreshold": 0,
+              "TimeComparison": 1,
+              "IsEnabled": true
+            },
+            "AggroCountParams": {
+              "RequiredCount": 1,
+              "CountComparison": 3,
+              "IsEnabled": true
+            },
+            "ShieldParams": {
+              "Percentage": 100,
+              "Comparison": 1,
+              "UseRawValue": false,
+              "RawValue": 1000,
+              "IsEnabled": true
+            },
+            "PartyShieldAverageParams": {
+              "Percentage": 20,
+              "Comparison": 3,
+              "IsEnabled": true
+            },
+            "VariableParams": {
+              "VariableName": "",
+              "VariableType": 0,
+              "ExpectedBoolValue": true,
+              "ExpectedStringValue": "",
+              "ExpectedNumberValue": 0,
+              "Comparison": 2,
+              "StringComparison": 0,
+              "InvertCheck": false,
+              "CheckExists": false,
+              "IsEnabled": true
+            },
+            "DataIdParams": {
+              "DataId": 0,
+              "Comparison": 2,
+              "IsEnabled": true
+            },
+            "TargetNameParams": {
+              "Name": "",
+              "Comparison": 0,
+              "IsEnabled": true
+            }
+          },
+          "RequiredTargetCount": 1,
+          "TargetCountComparison": 3,
+          "UsePercentageMode": true,
+          "RequiredTargetPercentage": 50,
+          "CreatedAt": "2026-07-01T00:20:00.000Z",
+          "ModifiedAt": "2026-07-01T00:20:00.000Z",
+          "ShouldUseTargetCount": false
+        }
+      ],
+      "CreatedAt": "2026-07-01T00:20:00.000Z",
+      "ModifiedAt": "2026-07-01T00:20:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -12158,12 +12376,13 @@
     {
       "Id": "jps-gnb-logic-mt-add-pickup",
       "Name": "MT Add Pickup",
-      "Description": "Uses Provoke plus Gunbreaker's ranged pull action to help pick up loose adds while the MT stance helper is enabled.",
+      "Description": "Uses Provoke plus Gunbreaker's ranged pull action to help pick up loose adds only while Royal Guard is active; OT mode with stance off will not taunt.",
       "LogicType": 0,
       "ConditionIds": [
         "jps-gnb-cond-not-top-aggro",
         "c45258d6-ab8c-4ad9-ba91-3017648b64bb",
-        "6809a916-b6e8-4aaa-9849-8bca4cecfc4f"
+        "6809a916-b6e8-4aaa-9849-8bca4cecfc4f",
+        "jps-gnb-cond-tank-stance-active"
       ],
       "ActionTriggers": [
         {
@@ -12218,7 +12437,7 @@
         }
       ],
       "CreatedAt": "2026-06-30T20:05:00.000Z",
-      "ModifiedAt": "2026-06-30T20:05:00.000Z",
+      "ModifiedAt": "2026-07-01T00:20:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "QOL"
     }

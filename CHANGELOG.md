@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- Guarded tank MT add-pickup with active tank-stance checks so OT mode with stance off will not Provoke or ranged-pull loose mobs.
 - Added Arche-style MT add-pickup support for Paladin, Warrior, Dark Knight, and Gunbreaker: the existing MT Stance control now also enables Provoke plus ranged-pull recovery on loose adds without touching ForceAOE.
 - Polished Astrologian recovery timing so main-tank Aspected Benefic/Celestial Intersection begin around 80% HP and Essential Dignity supports at 70% HP, with a compact three-column quick bar.
 - Polished Scholar recovery timing and controls: main-tank Lustrate now starts around 65% HP, while the quick bar is compacted into grouped three-column controls.
