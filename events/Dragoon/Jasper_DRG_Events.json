@@ -1,13 +1,13 @@
 {
   "Id": "Jasper_DRG_Events",
   "Name": "Jasper DRG Events",
-  "Description": "General-purpose Dragoon event profile for PvE. Keeps role mitigation, earlier self-heal recovery, normal 2+ target AoE/helper and burst-spender release, jump/DOT toggle safety, Leg Sweep/Arm's Length utility, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. Special thanks to Arche for the general reaction profile foundation and broad coverage; Jasper adds public-duty safety tuning and xSalice compatibility polish.",
-  "Version": "0.1.13",
+  "Description": "Dragoon public event profile for general PvE. It maintains Feint, Second Wind, Bloodbath, Leg Sweep, Arm's Length, jump helpers, DoT support, and normal pack AoE release while leaving ForceAOE manual. Lineage note: Arche supplied the general reaction groundwork and coverage; Jasper reshapes it here for public-duty safety, job controls, and xSalice compatibility.",
+  "Version": "0.1.14",
   "AIOEventVersion": "2.0",
   "Events": [
     {
       "Id": "1e5788fa-a2b0-41e9-b42c-33534572704d",
-      "Name": "Boss No Hold",
+      "Name": "Release Boss Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "5c7f34fd-357f-4af7-abb0-a262913ac4c8",
@@ -21,7 +21,7 @@
     },
     {
       "Id": "7764b049-de59-4f7e-ad7b-4aefc9f5b84d",
-      "Name": "Boss Hold",
+      "Name": "Hold Boss Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "f8b4eacf-ccff-40d8-8077-12e9433dfc9c",
@@ -35,7 +35,7 @@
     },
     {
       "Id": "270d9ec0-ddf3-4b91-842f-2a5e057af828",
-      "Name": "Group No Hold",
+      "Name": "Release Pack Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "05483244-bea2-401f-b69d-a101956e2460",
@@ -49,7 +49,7 @@
     },
     {
       "Id": "f0b1c14c-d207-4841-9a1d-1c1ec04f3c95",
-      "Name": "Group Hold",
+      "Name": "Hold Pack Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "91155285-4e48-4bb4-b9ef-e6b5da10f892",
@@ -63,7 +63,7 @@
     },
     {
       "Id": "2bdba591-89e8-4217-8bc7-da7dfd8356b0",
-      "Name": "Sprint OOC",
+      "Name": "Sprint Between Pulls",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "e56911c4-6f17-4e8c-8b12-af11bec08cd3",
@@ -91,8 +91,8 @@
     },
     {
       "Id": "950dc890-a9f9-4b75-ba7d-2fc6662fddec",
-      "Name": "Bloodbath",
-      "Description": "Uses Bloodbath around 70 percent HP for steadier melee recovery.",
+      "Name": "Bloodbath Recovery",
+      "Description": "Uses Bloodbath near 70 percent HP to smooth melee self-recovery.",
       "EventType": "OnTick",
       "LogicId": "780726b0-b3b9-4627-8b4f-6fd0ee06a28c",
       "ThrottleSameEvent": 0.5,
@@ -105,8 +105,8 @@
     },
     {
       "Id": "35953639-89ea-47d5-82f7-6641f5e474e9",
-      "Name": "Second Wind",
-      "Description": "Uses Second Wind at 60 percent HP for earlier self-recovery.",
+      "Name": "Second Wind Recovery",
+      "Description": "Uses Second Wind once personal HP falls near 60 percent.",
       "EventType": "OnTick",
       "LogicId": "434eb29d-7abe-466b-bd66-d47151266b42",
       "ThrottleSameEvent": 0.5,
@@ -119,8 +119,8 @@
     },
     {
       "Id": "jps-drg-event-leg-sweep",
-      "Name": "Leg Sweep Stun",
-      "Description": "Uses Leg Sweep on casting enemies in melee range.",
+      "Name": "Leg Sweep Interrupt",
+      "Description": "Stuns interruptible enemy casts when Leg Sweep is in melee range.",
       "EventType": "OnTick",
       "LogicId": "jps-drg-logic-leg-sweep",
       "ThrottleSameEvent": 0.5,
@@ -133,8 +133,8 @@
     },
     {
       "Id": "jps-drg-event-arms-length-emergency",
-      "Name": "Arm's Length Emergency",
-      "Description": "Uses Arm's Length when you are stationary, low on HP, and holding multiple mobs.",
+      "Name": "Arm's Length Self-Guard",
+      "Description": "Triggers Arm's Length only when you are stationary, pressured, and several mobs are on you.",
       "EventType": "OnTick",
       "LogicId": "jps-drg-logic-arms-length-emergency",
       "ThrottleSameEvent": 0.5,
@@ -147,8 +147,8 @@
     },
     {
       "Id": "775e0e7d-6b83-58bf-a940-a3800ba82dca",
-      "Name": "Reset Toggles",
-      "Description": "Restores normal Dragoon ACR toggles while safely out of combat.",
+      "Name": "Out-of-Combat Reset",
+      "Description": "Returns Dragoon ACR toggles to their standard out-of-combat state.",
       "EventType": "OnTick",
       "LogicId": "d92e691d-0c06-5932-8704-70cd5e7158db",
       "ThrottleSameEvent": 0.5,
@@ -161,8 +161,8 @@
     },
     {
       "Id": "jps-drg-event-reset-zone",
-      "Name": "Reset Toggles Zone Change",
-      "Description": "Restores default Dragoon toggles after zone changes.",
+      "Name": "Zone Reset",
+      "Description": "Dragoon defaults are reapplied after changing zones.",
       "EventType": "OnZoneChange",
       "LogicId": "d92e691d-0c06-5932-8704-70cd5e7158db",
       "ThrottleSameEvent": 0.5,
@@ -175,8 +175,8 @@
     },
     {
       "Id": "jps-drg-event-reset-wipe",
-      "Name": "Reset Toggles Wipe",
-      "Description": "Restores default Dragoon toggles after wipes.",
+      "Name": "Wipe Reset",
+      "Description": "Dragoon defaults are reapplied after a wipe.",
       "EventType": "OnWipe",
       "LogicId": "d92e691d-0c06-5932-8704-70cd5e7158db",
       "ThrottleSameEvent": 0.5,
@@ -189,8 +189,8 @@
     },
     {
       "Id": "jps-drg-event-feint-tb",
-      "Name": "Feint TB",
-      "Description": "Uses Feint for incoming tankbusters when the target is not already debuffed.",
+      "Name": "Feint Tankbuster",
+      "Description": "Applies Feint to tankbusters when the target is not already covered.",
       "EventType": "OnAllTankBuster",
       "LogicId": "jps-drg-logic-feint-tb",
       "ThrottleSameEvent": 0.5,
@@ -203,8 +203,8 @@
     },
     {
       "Id": "jps-drg-event-dps-toggle-safety",
-      "Name": "DPS Toggle Safety",
-      "Description": "Keeps Dragoon burst, AoE, jump safety, DOT, ranged, and gauge/spender helper toggles healthy in combat so imported or held states do not leave the job passive.",
+      "Name": "Damage State Guard",
+      "Description": "Maintains Dragoon burst, AoE, jump safety, DOT, ranged, and gauge/spender helper toggles in combat so imported or held toggle states cannot strand the job in a passive state.",
       "EventType": "OnTick",
       "LogicId": "jps-drg-logic-dps-toggle-safety",
       "ThrottleSameEvent": 1,
@@ -219,8 +219,8 @@
     },
     {
       "Id": "jps-drg-event-pack-aoe-release",
-      "Name": "Multi-Target AoE Release",
-      "Description": "Keeps normal Dragoon AoE, jump, burst, and spender helper toggles enabled on 2+ enemy pulls without touching ForceAOE.",
+      "Name": "Pack Damage Release",
+      "Description": "Maintains standard Dragoon AoE, jump, burst, and spender helper toggles on 2+ enemy pulls while leaving ForceAOE manual.",
       "EventType": "OnTick",
       "LogicId": "jps-drg-logic-pack-aoe-release",
       "ThrottleSameEvent": 1,
@@ -4101,7 +4101,7 @@
     {
       "Id": "780726b0-b3b9-4627-8b4f-6fd0ee06a28c",
       "Name": "Bloodbath",
-      "Description": "Uses Bloodbath around 70 percent HP for steadier melee recovery.",
+      "Description": "Uses Bloodbath near 70 percent HP to smooth melee self-recovery.",
       "LogicType": 0,
       "ConditionIds": [
         "7fd80584-4e12-4209-a7c6-1bfb2faa43b3",
@@ -4142,7 +4142,7 @@
     {
       "Id": "434eb29d-7abe-466b-bd66-d47151266b42",
       "Name": "Second Wind",
-      "Description": "Uses Second Wind at 60 percent HP for earlier self-recovery.",
+      "Description": "Uses Second Wind once personal HP falls near 60 percent.",
       "LogicType": 0,
       "ConditionIds": [
         "7fd80584-4e12-4209-a7c6-1bfb2faa43b3",
@@ -4224,7 +4224,7 @@
     {
       "Id": "d92e691d-0c06-5932-8704-70cd5e7158db",
       "Name": "Reset Toggles",
-      "Description": "Restores normal Dragoon ACR defaults out of combat, including AoE, jump safety, DOT, ranged, and positional helper toggles. ForceAOE is untouched.",
+      "Description": "Returns Dragoon ACR settings to their normal out-of-combat state, including AoE, jump safety, DOT, ranged, and positional helper toggles. ForceAOE remains manual.",
       "LogicType": 0,
       "ConditionIds": [
         "34651e59-5df2-4098-84f0-e1305142c3bc"
@@ -4764,7 +4764,7 @@
     {
       "Id": "jps-drg-logic-feint-tb",
       "Name": "Feint TB",
-      "Description": "Uses Feint for incoming tankbusters when the target is not already debuffed.",
+      "Description": "Applies Feint to tankbusters when the target is not already covered.",
       "LogicType": 0,
       "ConditionIds": [
         "7fd80584-4e12-4209-a7c6-1bfb2faa43b3",
@@ -4805,7 +4805,7 @@
     {
       "Id": "jps-drg-logic-leg-sweep",
       "Name": "Leg Sweep Stun",
-      "Description": "Uses Leg Sweep on casting enemies in melee range.",
+      "Description": "Stuns interruptible enemy casts when Leg Sweep is in melee range.",
       "LogicType": 0,
       "ConditionIds": [
         "jps-drg-cond-leg-sweep-cast-range",
@@ -4889,7 +4889,7 @@
     {
       "Id": "jps-drg-logic-dps-toggle-safety",
       "Name": "DPS Toggle Safety",
-      "Description": "Keeps Dragoon burst, AoE, jump safety, DOT, ranged, and gauge/spender helper toggles healthy in combat so imported or held states do not leave the job passive.",
+      "Description": "Maintains Dragoon burst, AoE, jump safety, DOT, ranged, and gauge/spender helper toggles in combat so imported or held toggle states cannot strand the job in a passive state.",
       "LogicType": 0,
       "ConditionIds": [
         "7fd80584-4e12-4209-a7c6-1bfb2faa43b3"
@@ -5379,7 +5379,7 @@
     {
       "Id": "jps-drg-logic-pack-aoe-release",
       "Name": "Multi-Target AoE Release",
-      "Description": "Keeps normal Dragoon AoE, jump, burst, and spender helper toggles enabled on 2+ enemy pulls without touching ForceAOE.",
+      "Description": "Maintains standard Dragoon AoE, jump, burst, and spender helper toggles on 2+ enemy pulls while leaving ForceAOE manual.",
       "LogicType": 0,
       "ConditionIds": [
         "7fd80584-4e12-4209-a7c6-1bfb2faa43b3",
@@ -5805,7 +5805,7 @@
       {
         "Id": "jps-drg-qt-feint",
         "Name": "Feint",
-        "Description": "Uses Feint for raidwide and tankbuster mitigation windows.",
+        "Description": "Applies Feint during raidwide and tankbuster mitigation windows.",
         "EventIds": [
           "d482f107-367b-4517-8d69-83797ecd4b74",
           "jps-drg-event-feint-tb"
@@ -5816,7 +5816,7 @@
       {
         "Id": "jps-drg-qt-self",
         "Name": "Self Guard",
-        "Description": "Uses Bloodbath, Second Wind, and Arm's Length for personal recovery.",
+        "Description": "Uses personal recovery tools through Bloodbath, Second Wind, and Arm's Length.",
         "EventIds": [
           "950dc890-a9f9-4b75-ba7d-2fc6662fddec",
           "35953639-89ea-47d5-82f7-6641f5e474e9",
@@ -5828,7 +5828,7 @@
       {
         "Id": "jps-drg-qt-stun",
         "Name": "Stun",
-        "Description": "Uses Leg Sweep on cast targets in melee range.",
+        "Description": "Stuns cast targets that are inside Leg Sweep range.",
         "EventIds": [
           "jps-drg-event-leg-sweep"
         ],
@@ -5838,7 +5838,7 @@
       {
         "Id": "jps-drg-qt-sprint",
         "Name": "Sprint",
-        "Description": "Optional out-of-combat Sprint between pulls.",
+        "Description": "Optional between-pull Sprint.",
         "EventIds": [
           "2bdba591-89e8-4217-8bc7-da7dfd8356b0"
         ],

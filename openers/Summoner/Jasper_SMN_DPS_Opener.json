@@ -4,7 +4,7 @@
     {
       "SkillId": 3579,
       "IsGCD": true,
-      "Description": "Ruin III prepull",
+      "Description": "Prepull Ruin III",
       "HasPreDelay": false,
       "PreDelayTime": 0,
       "UseSpecificPrePullTime": true,

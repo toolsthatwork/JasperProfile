@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_SCH_Events",
   "Name": "Jasper SCH Events",
-  "Description": "General-purpose Scholar event profile for PvE. Keeps fairy/Aetherflow recovery, in-combat toggle recovery, earlier main-tank oGCD rescue, emergency GCD fallbacks for synced content, roulette-safe mitigation, cleanse support, compact controls, and wipe/zone reset scaffolding. Special thanks to Arche for the general reaction profile foundation and broad coverage; Jasper adds public-duty safety tuning and xSalice compatibility polish.",
-  "Version": "0.1.16",
+  "Description": "Scholar public event profile for everyday PvE healing. It keeps fairy and Aetherflow recovery available, repairs combat toggles, answers tank dips with oGCD tools first, and keeps emergency GCD shields for synced fallback windows. Lineage note: Arche supplied the general reaction groundwork and coverage; Jasper reshapes it here for public-duty safety, job controls, and xSalice compatibility.",
+  "Version": "0.1.17",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -217,7 +217,7 @@
     },
     {
       "Id": "a100e20d-12ce-447b-a1c5-d01228d9c5b4",
-      "Name": "Sprint OOC",
+      "Name": "Sprint Between Pulls",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "53b43d2b-3fd1-4f83-9ac6-05fea50939a0",
@@ -273,7 +273,7 @@
     },
     {
       "Id": "44eaa3b9-934f-4ecf-82d3-ba12498a2fcb",
-      "Name": "Group Hold",
+      "Name": "Hold Pack Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "ade6f88a-7991-4ba7-b05c-733e5515891a",
@@ -287,7 +287,7 @@
     },
     {
       "Id": "5a981111-ad37-47c3-8191-e4a12cf626a7",
-      "Name": "Boss Hold",
+      "Name": "Hold Boss Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "04a95aa3-5a9a-4cb1-a1dd-1920df30c021",
@@ -301,7 +301,7 @@
     },
     {
       "Id": "6385295e-a126-4344-8521-2669f74da042",
-      "Name": "Dot On",
+      "Name": "DoT Helper On",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "b81b68ca-9f32-4434-8ae1-425ace64aec9",
@@ -315,7 +315,7 @@
     },
     {
       "Id": "dc792b67-0953-4600-a7e6-fbc2fada1e27",
-      "Name": "Dot Off",
+      "Name": "DoT Helper Off",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "16df2dac-b094-4b6c-a968-4d560ceb773d",
@@ -329,7 +329,7 @@
     },
     {
       "Id": "6e061b51-b65a-4543-8c7a-1f6b7367acac",
-      "Name": "Group No Hold",
+      "Name": "Release Pack Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "158e3e74-6b5d-449a-a801-b9dc92aeae44",
@@ -343,7 +343,7 @@
     },
     {
       "Id": "3842c258-1131-41f7-8962-e52d8b8878b1",
-      "Name": "Boss No Hold",
+      "Name": "Release Boss Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "7458fea8-3d98-4f18-9b21-a41558aa9889",
@@ -358,7 +358,7 @@
     {
       "Id": "jps-sch-event-esuna",
       "Name": "Esuna",
-      "Description": "Cleanses removable party debuffs when safe.",
+      "Description": "Cleanses removable party debuffs when the window is safe.",
       "EventType": "OnTick",
       "LogicId": "jps-sch-logic-esuna",
       "ThrottleSameEvent": 0.5,
@@ -385,8 +385,8 @@
     },
     {
       "Id": "2e8adeeb-fbda-5768-a65d-0a8125420882",
-      "Name": "Reset Toggles",
-      "Description": "Restores normal Scholar ACR toggles while safely out of combat.",
+      "Name": "Out-of-Combat Reset",
+      "Description": "Returns Scholar ACR toggles to their standard out-of-combat state.",
       "EventType": "OnTick",
       "LogicId": "f4585998-2f40-5751-821b-8b6a999a9de8",
       "ThrottleSameEvent": 0.5,
@@ -399,8 +399,8 @@
     },
     {
       "Id": "jps-sch-event-reset-zone",
-      "Name": "Reset Toggles Zone Change",
-      "Description": "Restores default Scholar toggles after zone changes.",
+      "Name": "Zone Reset",
+      "Description": "Scholar defaults are reapplied after changing zones.",
       "EventType": "OnZoneChange",
       "LogicId": "f4585998-2f40-5751-821b-8b6a999a9de8",
       "ThrottleSameEvent": 0.5,
@@ -413,8 +413,8 @@
     },
     {
       "Id": "jps-sch-event-reset-wipe",
-      "Name": "Reset Toggles Wipe",
-      "Description": "Restores default Scholar toggles after wipes.",
+      "Name": "Wipe Reset",
+      "Description": "Scholar defaults are reapplied after a wipe.",
       "EventType": "OnWipe",
       "LogicId": "f4585998-2f40-5751-821b-8b6a999a9de8",
       "ThrottleSameEvent": 0.5,
@@ -469,8 +469,8 @@
     },
     {
       "Id": "jps-sch-event-combat-toggle-safety",
-      "Name": "Combat Toggle Safety",
-      "Description": "Keeps SCH damage, healing, raise, movement, and Aetherflow-ready toggles healthy in combat without forcing Energy Drain or Dissipation.",
+      "Name": "Combat State Guard",
+      "Description": "Maintains SCH damage, healing, raise, movement, and Aetherflow-ready toggles in combat without forcing Energy Drain or Dissipation.",
       "EventType": "OnTick",
       "LogicId": "jps-sch-logic-combat-toggle-safety",
       "ThrottleSameEvent": 1,
@@ -1568,7 +1568,7 @@
     {
       "Id": "96226940-776b-44c2-a4dd-dfbc790db24c",
       "Name": "[ST] <= 60% HP",
-      "Description": "Lowest HP party member at 60% or below",
+      "Description": "Lowest-health party member is at or below 60 percent HP.",
       "SubConditions": [
         {
           "Id": "91160f09-c49d-4e5e-83ca-825f373b1e2e",
@@ -6323,7 +6323,7 @@
     {
       "Id": "jps-sch-cond-esuna",
       "Name": "Esuna",
-      "Description": "Cleansable debuff present on a party member.",
+      "Description": "A party member has a removable debuff.",
       "SubConditions": [
         {
           "Id": "jps-sch-cond-esuna-sub",
@@ -8363,7 +8363,7 @@
     {
       "Id": "f4585998-2f40-5751-821b-8b6a999a9de8",
       "Name": "Reset Toggles",
-      "Description": "Restores normal Scholar ACR toggles while safely out of combat.",
+      "Description": "Returns Scholar ACR toggles to their standard out-of-combat state.",
       "LogicType": 0,
       "ConditionIds": [
         "9437ab7f-4322-4fb8-93fe-10d9eefd5405"
@@ -8977,7 +8977,7 @@
     {
       "Id": "jps-sch-logic-combat-toggle-safety",
       "Name": "Combat Toggle Safety",
-      "Description": "Keeps SCH damage, healing, raise, movement, and Aetherflow-ready toggles healthy in combat without forcing Energy Drain or Dissipation back on during recovery windows.",
+      "Description": "Maintains Scholar damage, healing, raise, movement, and Aetherflow-ready toggles in combat while leaving Energy Drain and Dissipation alone during recovery windows.",
       "LogicType": 0,
       "ConditionIds": [
         "958d055a-815f-485d-bb98-b5b7348da94c"

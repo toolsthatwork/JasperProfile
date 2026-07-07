@@ -1,13 +1,13 @@
 {
   "Id": "Jasper_DNC_Events",
   "Name": "Jasper DNC Events",
-  "Description": "General-purpose Dancer event profile for PvE. Keeps Shield Samba/Curing Waltz support, earlier self-heal recovery, AutoPartner/default damage-toggle safety, normal 2+ target AoE and dance-burst release, Head Graze interrupts, Arm's Length self-defense, optional cooldown holds, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. Special thanks to Arche for the general reaction profile foundation and broad coverage; Jasper adds public-duty safety tuning and xSalice compatibility polish.",
-  "Version": "0.1.12",
+  "Description": "Dancer public event profile for normal-duty play. It keeps partnering, dance burst, Shield Samba, Curing Waltz, interrupts, personal recovery, and standard AoE flow available without turning on ForceAOE. Lineage note: Arche supplied the general reaction groundwork and coverage; Jasper reshapes it here for public-duty safety, job controls, and xSalice compatibility.",
+  "Version": "0.1.13",
   "AIOEventVersion": "2.0",
   "Events": [
     {
       "Id": "dc6834a8-5eec-4bbe-ba02-2856e3b501ce",
-      "Name": "Boss Hold",
+      "Name": "Hold Boss Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "f8b4eacf-ccff-40d8-8077-12e9433dfc9c",
@@ -21,7 +21,7 @@
     },
     {
       "Id": "fece004c-2a6a-4379-b434-db3ae90c35e3",
-      "Name": "Group Hold",
+      "Name": "Hold Pack Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "91155285-4e48-4bb4-b9ef-e6b5da10f892",
@@ -35,8 +35,8 @@
     },
     {
       "Id": "d86f996b-32dc-47a1-8853-a1326deb7331",
-      "Name": "Second Wind",
-      "Description": "Uses Second Wind at 60 percent HP for earlier self-recovery.",
+      "Name": "Second Wind Recovery",
+      "Description": "Uses Second Wind once personal HP falls near 60 percent.",
       "EventType": "OnTick",
       "LogicId": "3b335e22-eda0-4a2c-b368-912c93fbb5e0",
       "ThrottleSameEvent": 0.5,
@@ -49,7 +49,7 @@
     },
     {
       "Id": "b777fcc6-8bba-4be2-8773-158a6ac1a609",
-      "Name": "Sprint OOC",
+      "Name": "Sprint Between Pulls",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "bfda8a79-14a1-49e7-ae2f-2cf0f342078d",
@@ -91,7 +91,7 @@
     },
     {
       "Id": "61bb19c2-6785-4d47-ab82-ec3e712ee1d0",
-      "Name": "Boss No Hold",
+      "Name": "Release Boss Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "613aeda2-f6de-473e-b14b-63162bf769fd",
@@ -105,7 +105,7 @@
     },
     {
       "Id": "91c8677f-9790-4a78-b9fa-8fbb83903f6a",
-      "Name": "Group No Hold",
+      "Name": "Release Pack Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "d69f4a5a-cce6-4e92-a1ec-e3a77dd543b7",
@@ -119,8 +119,8 @@
     },
     {
       "Id": "cd312eaa-3ae4-59c7-94d9-c54f45504656",
-      "Name": "Reset Toggles",
-      "Description": "Restores normal Dancer ACR toggles while safely out of combat.",
+      "Name": "Out-of-Combat Reset",
+      "Description": "Returns Dancer ACR toggles to their standard out-of-combat state.",
       "EventType": "OnTick",
       "LogicId": "b8cdcf95-0c6e-50ec-aac7-b78407a8968b",
       "ThrottleSameEvent": 0.5,
@@ -133,8 +133,8 @@
     },
     {
       "Id": "jps-dnc-event-reset-zone",
-      "Name": "Reset Toggles Zone Change",
-      "Description": "Restores default Dancer toggles after zone changes.",
+      "Name": "Zone Reset",
+      "Description": "Dancer defaults are reapplied after changing zones.",
       "EventType": "OnZoneChange",
       "LogicId": "b8cdcf95-0c6e-50ec-aac7-b78407a8968b",
       "ThrottleSameEvent": 0.5,
@@ -147,8 +147,8 @@
     },
     {
       "Id": "jps-dnc-event-reset-wipe",
-      "Name": "Reset Toggles Wipe",
-      "Description": "Restores default Dancer toggles after wipes.",
+      "Name": "Wipe Reset",
+      "Description": "Dancer defaults are reapplied after a wipe.",
       "EventType": "OnWipe",
       "LogicId": "b8cdcf95-0c6e-50ec-aac7-b78407a8968b",
       "ThrottleSameEvent": 0.5,
@@ -175,8 +175,8 @@
     },
     {
       "Id": "jps-dnc-event-head-graze",
-      "Name": "Head Graze Interrupt",
-      "Description": "Uses Head Graze on casting enemies in range.",
+      "Name": "Head Graze Cast Stop",
+      "Description": "Stops interruptible enemy casts with Head Graze when in range.",
       "EventType": "OnTick",
       "LogicId": "jps-dnc-logic-head-graze",
       "ThrottleSameEvent": 0.5,
@@ -189,8 +189,8 @@
     },
     {
       "Id": "jps-dnc-event-arms-length-emergency",
-      "Name": "Arm's Length Emergency",
-      "Description": "Uses Arm's Length when you are stationary, low on HP, and holding multiple mobs.",
+      "Name": "Arm's Length Self-Guard",
+      "Description": "Triggers Arm's Length only when you are stationary, pressured, and several mobs are on you.",
       "EventType": "OnTick",
       "LogicId": "jps-dnc-logic-arms-length-emergency",
       "ThrottleSameEvent": 0.5,
@@ -203,8 +203,8 @@
     },
     {
       "Id": "jps-dnc-event-dps-toggle-safety",
-      "Name": "DPS Toggle Safety",
-      "Description": "Keeps AutoPartner, dance burst, AoE, fan spending, and general Dancer damage toggles in a sane public-duty state.",
+      "Name": "Damage State Guard",
+      "Description": "Maintains AutoPartner, dance burst, AoE, fan spending, and general Dancer damage toggles in a ready public-duty state.",
       "EventType": "OnTick",
       "LogicId": "jps-dnc-logic-dps-toggle-safety",
       "ThrottleSameEvent": 1,
@@ -219,8 +219,8 @@
     },
     {
       "Id": "jps-dnc-event-pack-aoe-release",
-      "Name": "Multi-Target AoE Release",
-      "Description": "Keeps normal Dancer AoE, step, burst, and spender toggles enabled on 2+ enemy pulls without touching ForceAOE.",
+      "Name": "Pack Damage Release",
+      "Description": "Maintains standard Dancer AoE, step, burst, and spender toggles on 2+ enemy pulls while leaving ForceAOE manual.",
       "EventType": "OnTick",
       "LogicId": "jps-dnc-logic-pack-aoe-release",
       "ThrottleSameEvent": 1,
@@ -5023,7 +5023,7 @@
     {
       "Id": "3b335e22-eda0-4a2c-b368-912c93fbb5e0",
       "Name": "Second Wind",
-      "Description": "Uses Second Wind at 60 percent HP for earlier self-recovery.",
+      "Description": "Uses Second Wind once personal HP falls near 60 percent.",
       "LogicType": 0,
       "ConditionIds": [
         "2deb9cfc-deb8-4619-9dff-5d393fa4cf36",
@@ -5398,7 +5398,7 @@
     {
       "Id": "b8cdcf95-0c6e-50ec-aac7-b78407a8968b",
       "Name": "Reset Toggles",
-      "Description": "Restores normal Dancer ACR defaults out of combat, including AutoPartner and standard damage toggles, while keeping ForceAOE untouched.",
+      "Description": "Returns Dancer ACR settings to their normal out-of-combat state, including AutoPartner and standard damage toggles, while keeping ForceAOE untouched.",
       "LogicType": 0,
       "ConditionIds": [
         "284fb006-ebab-4c48-98b6-21a671379d61"
@@ -5879,7 +5879,7 @@
     {
       "Id": "jps-dnc-logic-head-graze",
       "Name": "Head Graze Interrupt",
-      "Description": "Uses Head Graze on casting enemies in range.",
+      "Description": "Stops interruptible enemy casts with Head Graze when in range.",
       "LogicType": 0,
       "ConditionIds": [
         "jps-dnc-cond-interruptible-cast",
@@ -5963,7 +5963,7 @@
     {
       "Id": "jps-dnc-logic-dps-toggle-safety",
       "Name": "DPS Toggle Safety",
-      "Description": "Keeps Dancer AutoPartner, steps, flourish/devilment, AoE, fan spending, and utility toggles healthy in combat so imported or held states do not leave the job passive.",
+      "Description": "Maintains Dancer AutoPartner, steps, flourish/devilment, AoE, fan spending, and utility toggles in combat so imported or held toggle states cannot strand the job in a passive state.",
       "LogicType": 0,
       "ConditionIds": [
         "2754cead-1b3b-4b63-b6a9-be369288fb38"
@@ -6353,7 +6353,7 @@
     {
       "Id": "jps-dnc-logic-pack-aoe-release",
       "Name": "Multi-Target AoE Release",
-      "Description": "Keeps normal Dancer AoE, step, burst, and spender toggles enabled on 2+ enemy pulls without touching ForceAOE.",
+      "Description": "Maintains standard Dancer AoE, step, burst, and spender toggles on 2+ enemy pulls while leaving ForceAOE manual.",
       "LogicType": 0,
       "ConditionIds": [
         "2754cead-1b3b-4b63-b6a9-be369288fb38",
@@ -6721,7 +6721,7 @@
       {
         "Id": "jps-dnc-qt-sprint",
         "Name": "Sprint",
-        "Description": "Optional out-of-combat Sprint between pulls.",
+        "Description": "Optional between-pull Sprint.",
         "EventIds": [
           "b777fcc6-8bba-4be2-8773-158a6ac1a609"
         ],

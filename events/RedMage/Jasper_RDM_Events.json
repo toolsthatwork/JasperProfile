@@ -1,14 +1,14 @@
 {
   "Id": "Jasper_RDM_Events",
   "Name": "Jasper RDM Events",
-  "Description": "General-purpose Red Mage event profile for PvE. Keeps Addle/Magick Barrier support, true emergency self/party/MT Vercure, smart AoE and melee/mana spender toggle safety, optional cooldown holds, wipe/zone reset scaffolding, raise toggles, and optional out-of-combat Sprint for roulette-safe play. Special thanks to Arche for the general reaction profile foundation and broad coverage; Jasper adds public-duty safety tuning and xSalice compatibility polish.",
-  "Version": "0.1.16",
+  "Description": "Red Mage public event profile for roulettes and normal duties. It keeps Addle, Magick Barrier, raise support, movement/melee helpers, smart AoE, mana spenders, and true emergency Vercure available without taking over routine damage flow. Lineage note: Arche supplied the general reaction groundwork and coverage; Jasper reshapes it here for public-duty safety, job controls, and xSalice compatibility.",
+  "Version": "0.1.17",
   "AIOEventVersion": "2.0",
   "Events": [
     {
       "Id": "7517acbf-fbca-4f56-aad4-f168daf301ad",
       "Name": "Addle & Magick Barrier",
-      "Description": "Uses Addle plus job mitigation on raidwide damage.",
+      "Description": "Pairs Addle with job mitigation for raidwide damage.",
       "EventType": "OnAllAOE",
       "LogicId": "920528a4-0b3c-4088-901c-8f4502e6048d",
       "ThrottleSameEvent": 0.5,
@@ -21,7 +21,7 @@
     },
     {
       "Id": "5eb657d5-4560-46e1-97db-c438b5c75f86",
-      "Name": "Sprint OOC",
+      "Name": "Sprint Between Pulls",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "1fec4a8c-eb6b-4c06-ba73-f65c5c107ada",
@@ -35,7 +35,7 @@
     },
     {
       "Id": "81c74a13-6a61-4d32-9186-0f4a32951de6",
-      "Name": "Boss Hold",
+      "Name": "Hold Boss Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "b90f0d94-f740-48d0-b1d0-723c5cefbe49",
@@ -49,7 +49,7 @@
     },
     {
       "Id": "37856e45-1ff5-4f17-8272-5bd6b9aca0b7",
-      "Name": "Group Hold",
+      "Name": "Hold Pack Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "98f196af-9653-4a47-9527-aad629fcbc8d",
@@ -63,8 +63,8 @@
     },
     {
       "Id": "1c451d36-4a20-4090-90e5-61340b085928",
-      "Name": "Reset Toggles",
-      "Description": "Restores normal Red Mage toggles while safely out of combat.",
+      "Name": "Out-of-Combat Reset",
+      "Description": "Returns Red Mage toggles to their standard out-of-combat state.",
       "EventType": "OnTick",
       "LogicId": "f2edb669-a487-46fb-b893-9bbe587caadb",
       "ThrottleSameEvent": 0.5,
@@ -77,8 +77,8 @@
     },
     {
       "Id": "jps-rdm-event-reset-zone",
-      "Name": "Reset Toggles Zone Change",
-      "Description": "Restores default Red Mage toggles after zone changes.",
+      "Name": "Zone Reset",
+      "Description": "Red Mage defaults are reapplied after changing zones.",
       "EventType": "OnZoneChange",
       "LogicId": "f2edb669-a487-46fb-b893-9bbe587caadb",
       "ThrottleSameEvent": 0.5,
@@ -91,8 +91,8 @@
     },
     {
       "Id": "jps-rdm-event-reset-wipe",
-      "Name": "Reset Toggles Wipe",
-      "Description": "Restores default Red Mage toggles after wipes.",
+      "Name": "Wipe Reset",
+      "Description": "Red Mage defaults are reapplied after a wipe.",
       "EventType": "OnWipe",
       "LogicId": "f2edb669-a487-46fb-b893-9bbe587caadb",
       "ThrottleSameEvent": 0.5,
@@ -105,7 +105,7 @@
     },
     {
       "Id": "8806e218-3db4-4d05-962a-32b278f297c5",
-      "Name": "Group No Hold",
+      "Name": "Release Pack Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "4542988e-2f34-4db8-a7d5-2298d3e322c6",
@@ -119,7 +119,7 @@
     },
     {
       "Id": "ac618123-4888-4e68-9f5c-9b933c227a84",
-      "Name": "Boss No Hold",
+      "Name": "Release Boss Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "0c73496b-1d71-4510-bc4c-8ad126205953",
@@ -161,8 +161,8 @@
     },
     {
       "Id": "jps-rdm-event-addle-tb",
-      "Name": "Addle TB",
-      "Description": "Uses Addle for incoming tankbusters when the target is not already debuffed.",
+      "Name": "Addle Tankbuster",
+      "Description": "Applies Addle to tankbusters when the target is not already covered.",
       "EventType": "OnAllTankBuster",
       "LogicId": "jps-rdm-logic-addle-tb",
       "ThrottleSameEvent": 0.5,
@@ -189,8 +189,8 @@
     },
     {
       "Id": "jps-rdm-event-dps-toggle-safety",
-      "Name": "DPS Toggle Safety",
-      "Description": "Keeps Red Mage core damage, melee-combo, movement, and raise toggles enabled in combat.",
+      "Name": "Damage State Guard",
+      "Description": "Maintains Red Mage core damage, melee-combo, movement, and raise toggles enabled in combat.",
       "EventType": "OnTick",
       "LogicId": "jps-rdm-logic-dps-toggle-safety",
       "ThrottleSameEvent": 3,
@@ -205,8 +205,8 @@
     },
     {
       "Id": "jps-rdm-event-pack-aoe-release",
-      "Name": "AoE Pack Toggle Release",
-      "Description": "Keeps normal UseAOE/SmartAOE, melee combo, mana spenders, and core burst toggles enabled during multi-target pulls without forcing AoE mode.",
+      "Name": "Pack AoE Release",
+      "Description": "Maintains standard UseAOE/SmartAOE, melee combo, mana spenders, and core burst toggles during multi-target pulls without forcing AoE mode.",
       "EventType": "OnTick",
       "LogicId": "jps-rdm-logic-pack-aoe-release",
       "ThrottleSameEvent": 2,
@@ -3979,7 +3979,7 @@
     {
       "Id": "f2edb669-a487-46fb-b893-9bbe587caadb",
       "Name": "Reset Toggles",
-      "Description": "Restores normal Red Mage ACR toggles while safely out of combat.",
+      "Description": "Returns Red Mage ACR toggles to their standard out-of-combat state.",
       "LogicType": 0,
       "ConditionIds": [
         "2b75c1d7-3894-4f5e-b6ca-c2f0073c09b0"
@@ -4810,7 +4810,7 @@
     {
       "Id": "jps-rdm-logic-addle-tb",
       "Name": "Addle TB",
-      "Description": "Uses Addle for incoming tankbusters when the target is not already debuffed.",
+      "Description": "Applies Addle to tankbusters when the target is not already covered.",
       "LogicType": 0,
       "ConditionIds": [
         "b702ada1-facb-4cd3-906f-e1c29c1f390c",
@@ -4892,7 +4892,7 @@
     {
       "Id": "jps-rdm-logic-dps-toggle-safety",
       "Name": "DPS Toggle Safety",
-      "Description": "Keeps Red Mage damage, melee-combo, movement, raise, and burst toggles enabled in combat so imported or held states do not leave the job passive.",
+      "Description": "Maintains Red Mage damage, melee-combo, movement, raise, and burst toggles enabled in combat so imported or held toggle states cannot strand the job in a passive state.",
       "LogicType": 0,
       "ConditionIds": [
         "b702ada1-facb-4cd3-906f-e1c29c1f390c"
@@ -5332,7 +5332,7 @@
     {
       "Id": "jps-rdm-logic-pack-aoe-release",
       "Name": "AoE Pack Toggle Release",
-      "Description": "Keeps normal UseAOE/SmartAOE, melee combo, mana spenders, and core burst toggles enabled during multi-target pulls without forcing AoE mode.",
+      "Description": "Maintains standard UseAOE/SmartAOE, melee combo, mana spenders, and core burst toggles during multi-target pulls without forcing AoE mode.",
       "LogicType": 0,
       "ConditionIds": [
         "b702ada1-facb-4cd3-906f-e1c29c1f390c",
@@ -5586,7 +5586,7 @@
       {
         "Id": "jps-rdm-qt-boss-hold",
         "Name": "Boss Hold",
-        "Description": "Optional dungeon-routing helper that saves major damage cooldowns near the end of a boss. Leave off for normal play.",
+        "Description": "Optional routing helper that holds major damage cooldowns near the end of a boss. Leave it off for normal play.",
         "EventIds": [
           "81c74a13-6a61-4d32-9186-0f4a32951de6",
           "ac618123-4888-4e68-9f5c-9b933c227a84"
@@ -5597,7 +5597,7 @@
       {
         "Id": "jps-rdm-qt-group-hold",
         "Name": "Group Hold",
-        "Description": "Optional dungeon-routing helper that saves major damage cooldowns when a trash pack is nearly dead. Leave off for normal play.",
+        "Description": "Optional routing helper that holds major damage cooldowns as a trash pack is ending. Leave it off for normal play.",
         "EventIds": [
           "37856e45-1ff5-4f17-8272-5bd6b9aca0b7",
           "8806e218-3db4-4d05-962a-32b278f297c5"
@@ -5649,7 +5649,7 @@
       {
         "Id": "jps-rdm-qt-sprint",
         "Name": "Sprint",
-        "Description": "Optional out-of-combat Sprint between pulls.",
+        "Description": "Optional between-pull Sprint.",
         "EventIds": [
           "5eb657d5-4560-46e1-97db-c438b5c75f86"
         ],

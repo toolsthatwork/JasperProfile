@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_AST_Events",
   "Name": "Jasper AST Events",
-  "Description": "General-purpose Astrologian event profile for PvE. Keeps damage-forward default toggles, in-combat toggle recovery, earlier oGCD-first main-tank recovery, emergency-only GCD heals, roulette-safe mitigation, cleanse support, compact controls, and wipe/zone reset scaffolding. Special thanks to Arche for the general reaction profile foundation and broad coverage; Jasper adds public-duty safety tuning and xSalice compatibility polish.",
-  "Version": "0.1.16",
+  "Description": "Astrologian public event profile for everyday PvE. It keeps ACR damage flow active, repairs stuck combat toggles, answers tank dips with oGCD tools first, and reserves GCD heals for real recovery windows. Lineage note: Arche supplied the general reaction groundwork and coverage; Jasper reshapes it here for public-duty safety, job controls, and xSalice compatibility.",
+  "Version": "0.1.17",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -246,7 +246,7 @@
     {
       "Id": "c6eb8980-a2bb-486f-94bd-32c5a0f9652d",
       "Name": "[ST] Benefic II",
-      "Description": "Emergency-only GCD fallback after oGCD recovery windows.",
+      "Description": "GCD healing is held for emergencies after oGCD options have had room to work.",
       "EventType": "OnTick",
       "LogicId": "1df1a9b0-890e-475b-8320-77e020a578bc",
       "ThrottleSameEvent": 2.5,
@@ -260,7 +260,7 @@
     {
       "Id": "76901b77-2e7f-440f-8c81-73b933e512d0",
       "Name": "[ST] Regen MT",
-      "Description": "Keeps Aspected Benefic on the main tank between pulls.",
+      "Description": "Maintains Aspected Benefic on the main tank between pulls.",
       "EventType": "OnTick",
       "LogicId": "194f2e2b-db47-4e3e-8268-6ead963d613a",
       "ThrottleSameEvent": 3,
@@ -274,7 +274,7 @@
     {
       "Id": "a6b1851d-2344-44f8-b001-c7a56005019d",
       "Name": "[ST] Benefic",
-      "Description": "Low-level emergency GCD fallback for synced content.",
+      "Description": "Emergency GCD fallback for level-synced content.",
       "EventType": "OnTick",
       "LogicId": "acc0d19e-2dff-40e1-83d7-2543241c036c",
       "ThrottleSameEvent": 2.5,
@@ -386,7 +386,7 @@
     {
       "Id": "jps-ast-event-esuna",
       "Name": "Esuna",
-      "Description": "Cleanses removable party debuffs when safe.",
+      "Description": "Cleanses removable party debuffs when the window is safe.",
       "EventType": "OnTick",
       "LogicId": "jps-ast-logic-esuna",
       "ThrottleSameEvent": 0.5,
@@ -399,8 +399,8 @@
     },
     {
       "Id": "b2d34e09-75b1-4d7c-b4df-fa72f6f3f90e",
-      "Name": "Sprint OOC",
-      "Description": "Optional out-of-combat Sprint while moving.",
+      "Name": "Sprint Between Pulls",
+      "Description": "Optional Sprint between pulls while you are moving.",
       "EventType": "OnTick",
       "LogicId": "584af79e-1b05-4226-91cb-4fb4b2cf29fa",
       "ThrottleSameEvent": 0.5,
@@ -428,7 +428,7 @@
     {
       "Id": "jps-ast-event-regen-mt-combat",
       "Name": "[ST] Regen MT Combat",
-      "Description": "Keeps Aspected Benefic/Regen on the main tank during real damage once HP reaches 80 percent.",
+      "Description": "Maintains Aspected Benefic/Regen on the main tank during real damage once HP reaches 80 percent.",
       "EventType": "OnTick",
       "LogicId": "jps-ast-logic-regen-mt-combat",
       "ThrottleSameEvent": 2.5,
@@ -455,8 +455,8 @@
     },
     {
       "Id": "jps-ast-event-reset-toggles",
-      "Name": "Reset Toggles",
-      "Description": "Restores normal Astrologian ACR toggles while safely out of combat.",
+      "Name": "Out-of-Combat Reset",
+      "Description": "Returns Astrologian ACR toggles to their standard out-of-combat state.",
       "EventType": "OnTick",
       "LogicId": "jps-ast-logic-reset-toggles",
       "ThrottleSameEvent": 0.5,
@@ -469,8 +469,8 @@
     },
     {
       "Id": "jps-ast-event-reset-zone",
-      "Name": "Reset Toggles Zone Change",
-      "Description": "Restores default Astrologian toggles after zone changes.",
+      "Name": "Zone Reset",
+      "Description": "Astrologian defaults are reapplied after changing zones.",
       "EventType": "OnZoneChange",
       "LogicId": "jps-ast-logic-reset-toggles",
       "ThrottleSameEvent": 0.5,
@@ -483,8 +483,8 @@
     },
     {
       "Id": "jps-ast-event-reset-wipe",
-      "Name": "Reset Toggles Wipe",
-      "Description": "Restores default Astrologian toggles after wipes.",
+      "Name": "Wipe Reset",
+      "Description": "Astrologian defaults are reapplied after a wipe.",
       "EventType": "OnWipe",
       "LogicId": "jps-ast-logic-reset-toggles",
       "ThrottleSameEvent": 0.5,
@@ -511,8 +511,8 @@
     },
     {
       "Id": "jps-ast-event-combat-toggle-safety",
-      "Name": "Combat Toggle Safety",
-      "Description": "Keeps AST damage, healing, raise, movement, and resource toggles in a sane public-duty state.",
+      "Name": "Combat State Guard",
+      "Description": "Maintains AST damage, healing, raise, movement, and resource toggles in a ready public-duty state.",
       "EventType": "OnTick",
       "LogicId": "jps-ast-logic-combat-toggle-safety",
       "ThrottleSameEvent": 1,
@@ -5954,7 +5954,7 @@
     {
       "Id": "jps-ast-cond-esuna",
       "Name": "Esuna",
-      "Description": "Cleansable debuff present on a party member.",
+      "Description": "A party member has a removable debuff.",
       "SubConditions": [
         {
           "Id": "jps-ast-cond-esuna-sub",
@@ -8306,7 +8306,7 @@
     {
       "Id": "jps-ast-logic-regen-mt-combat",
       "Name": "[ST] Regen MT Combat",
-      "Description": "Keeps Aspected Benefic/Regen on the main tank during real damage once HP reaches 80 percent.",
+      "Description": "Refreshes Aspected Benefic/Regen on the main tank once real damage brings HP near 80 percent.",
       "LogicType": 0,
       "ConditionIds": [
         "3201f0a2-cee1-4abe-81ac-e5ac20bc8a59",
@@ -8390,7 +8390,7 @@
     {
       "Id": "jps-ast-logic-reset-toggles",
       "Name": "Reset Toggles",
-      "Description": "Restores normal Astrologian ACR toggles while safely out of combat.",
+      "Description": "Returns Astrologian ACR toggles to their standard out-of-combat state.",
       "LogicType": 0,
       "ConditionIds": [
         "9437ab7f-4322-4fb8-93fe-10d9eefd5405"
@@ -8946,7 +8946,7 @@
     {
       "Id": "jps-ast-logic-combat-toggle-safety",
       "Name": "Combat Toggle Safety",
-      "Description": "Keeps AST damage, healing, raise, movement, and resource toggles healthy in combat so imported or held states do not leave the job passive.",
+      "Description": "Maintains Astrologian damage, healing, raise, movement, and resource toggles in combat so imported or held states cannot leave the job passive.",
       "LogicType": 0,
       "ConditionIds": [
         "958d055a-815f-485d-bb98-b5b7348da94c"

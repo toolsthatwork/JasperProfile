@@ -1,14 +1,14 @@
 {
   "Id": "Jasper_WHM_Events",
   "Name": "Jasper WHM Events",
-  "Description": "Damage-forward White Mage event profile for general PvE. Lets ACR DPS flow, keeps combat toggles healthy, then uses earlier Regen/Benison upkeep, oGCD-first tank recovery, dungeon-pull shielding, in-range Holy for stacked packs, and emergency GCD heals only when recovery is actually needed. Special thanks to Arche for the general reaction profile foundation and broad coverage; Jasper adds public-duty safety tuning and xSalice compatibility polish.",
+  "Description": "White Mage public event profile for damage-forward general healing. It keeps ACR DPS flow intact, repairs combat toggles, starts Regen/Benison upkeep earlier, uses oGCD recovery before GCD fallback, and only nudges Holy when enemies are actually stacked. Lineage note: Arche supplied the general reaction groundwork and coverage; Jasper reshapes it here for public-duty safety, job controls, and xSalice compatibility.",
   "CreatedAt": "2026-06-25T00:31:21.892963Z",
   "ModifiedAt": "2026-07-07T10:30:00.000Z",
   "Events": [
     {
       "Id": "whm-event-01",
       "Name": "[01] Temperance",
-      "Description": "Before AoE/Raidwide and don't have plenary",
+      "Description": "Pre-raidwide check when Plenary Indulgence is not active.",
       "EventType": "OnAllAOE",
       "LogicId": "whm-logic-01",
       "ThrottleSameEvent": 1,
@@ -22,7 +22,7 @@
     {
       "Id": "whm-event-02",
       "Name": "[02] Divine Caress",
-      "Description": "Before AoE/Raidwide AND Temperance active",
+      "Description": "Pre-raidwide check while Temperance is active.",
       "EventType": "OnAllAOE",
       "LogicId": "whm-logic-02",
       "ThrottleSameEvent": 1,
@@ -36,7 +36,7 @@
     {
       "Id": "whm-event-03",
       "Name": "[03] Plenary Indulgence",
-      "Description": "Before AoE/Raidwide AND don't have divine caress or temperance",
+      "Description": "Pre-raidwide check when Divine Caress and Temperance are unavailable.",
       "EventType": "OnAllAOE",
       "LogicId": "whm-logic-03",
       "ThrottleSameEvent": 1,
@@ -50,7 +50,7 @@
     {
       "Id": "whm-event-04",
       "Name": "[04] Liturgy of the Bell",
-      "Description": "Party hp average <= 60% HP",
+      "Description": "Average party HP is at or below 60 percent.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-04",
       "ThrottleSameEvent": 1,
@@ -64,7 +64,7 @@
     {
       "Id": "whm-event-05",
       "Name": "[05] Liturgy of the Bell (Pre-Damage)",
-      "Description": "Before AoE/Raidwide if off cooldown and party avg hp <= 80%",
+      "Description": "Pre-raidwide bell setup when ready and party average HP is at or below 80 percent.",
       "EventType": "OnAllAOE",
       "LogicId": "whm-logic-05",
       "ThrottleSameEvent": 1,
@@ -92,7 +92,7 @@
     {
       "Id": "whm-event-07",
       "Name": "[07] Divine Benison (Aggro)",
-      "Description": "Tank if >= 3 aggro",
+      "Description": "Tank-only check for three or more enemies on you.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-07",
       "ThrottleSameEvent": 0.5,
@@ -148,7 +148,7 @@
     {
       "Id": "whm-event-11",
       "Name": "[11] Aquaveil (Aggro)",
-      "Description": "Tank if >= 3 aggro",
+      "Description": "Tank-only check for three or more enemies on you.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-11",
       "ThrottleSameEvent": 0.5,
@@ -162,7 +162,7 @@
     {
       "Id": "whm-event-12",
       "Name": "[12] Asylum",
-      "Description": "Place center if party average hp <= 80%",
+      "Description": "Places the field centrally when party average HP is near 80 percent or lower.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-12",
       "ThrottleSameEvent": 1,
@@ -176,7 +176,7 @@
     {
       "Id": "whm-event-13",
       "Name": "[13] Tetragrammaton (MT)",
-      "Description": "Tank HP <= 80% and does not have tank invuln.",
+      "Description": "Tank HP is at or below 80 percent and no tank invulnerability is active.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-13",
       "ThrottleSameEvent": 0.5,
@@ -190,7 +190,7 @@
     {
       "Id": "whm-event-14",
       "Name": "[14] Tetragrammaton (ST)",
-      "Description": "Any party member HP < 50%",
+      "Description": "A party member has dropped below 50 percent HP.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-14",
       "ThrottleSameEvent": 0.5,
@@ -204,7 +204,7 @@
     {
       "Id": "whm-event-15",
       "Name": "[15] Benediction",
-      "Description": "Any target HP <= 35% AND target has no invuln buff.",
+      "Description": "Target is at or below 35 percent HP and has no invulnerability buff.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-15",
       "ThrottleSameEvent": 0.5,
@@ -218,7 +218,7 @@
     {
       "Id": "whm-event-16",
       "Name": "[16] Divine Caress (Post-AoE)",
-      "Description": "After AoE/Raidwide AND Temperance active (applies regen)",
+      "Description": "Post-raidwide follow-up while Temperance can extend recovery.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-16",
       "ThrottleSameEvent": 1,
@@ -232,7 +232,7 @@
     {
       "Id": "whm-event-17",
       "Name": "[17] Liturgy of the Bell (Pop)",
-      "Description": "Manually pop if party average below <= 45% hp",
+      "Description": "Manual detonation helper for severe party damage around 45 percent average HP.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-17",
       "ThrottleSameEvent": 1,
@@ -288,7 +288,7 @@
     {
       "Id": "whm-event-19",
       "Name": "[19] Afflatus Rapture",
-      "Description": "Party HP <= 70%",
+      "Description": "Party HP is at or below 70 percent.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-19",
       "ThrottleSameEvent": 2.5,
@@ -330,7 +330,7 @@
     {
       "Id": "whm-event-21",
       "Name": "[21] Afflatus Solace (MT)",
-      "Description": "Tank HP <= 80% and Tetragrammaton is on cooldown.",
+      "Description": "Tank HP is at or below 80 percent while Tetragrammaton is unavailable.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-21",
       "ThrottleSameEvent": 2.5,
@@ -358,7 +358,7 @@
     {
       "Id": "whm-event-22",
       "Name": "[22] Afflatus Solace (ST)",
-      "Description": "Any party member HP < 50% AND Tetragrammaton on cooldown",
+      "Description": "A party member is below 50 percent HP while Tetragrammaton is unavailable.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-22",
       "ThrottleSameEvent": 2.5,
@@ -372,7 +372,7 @@
     {
       "Id": "whm-event-23",
       "Name": "[23] Regen (Downtime)",
-      "Description": "Tank if no target (during downtime)",
+      "Description": "Tank target fallback during downtime.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-23",
       "ThrottleSameEvent": 2.5,
@@ -484,7 +484,7 @@
     {
       "Id": "22e234f0-d558-4328-be41-93012a6941a5",
       "Name": "[31] ST Regen",
-      "Description": "DPS-forward ST Regen fallback; low HP only.",
+      "Description": "Single-target Regen fallback for low-HP moments while keeping damage flow favored.",
       "EventType": "OnTick",
       "LogicId": "a812e238-1913-4035-9800-aace892e04f9",
       "ThrottleSameEvent": 2.5,
@@ -498,7 +498,7 @@
     {
       "Id": "ae7d8440-d132-42cf-b2b7-5bd984f8387d",
       "Name": "[32] ST Cure II",
-      "Description": "Emergency-only ST Cure II fallback.",
+      "Description": "Single-target Cure II is reserved for emergency recovery.",
       "EventType": "OnTick",
       "LogicId": "cf18aa66-27ec-4298-9d8e-845995dbf748",
       "ThrottleSameEvent": 2.5,
@@ -512,7 +512,7 @@
     {
       "Id": "whm-event-33",
       "Name": "[33] Cure (MT Emergency)",
-      "Description": "Low-level Cure fallback for critical tank HP.",
+      "Description": "Low-level Cure fallback for critical tank recovery.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-33",
       "ThrottleSameEvent": 2.5,
@@ -526,7 +526,7 @@
     {
       "Id": "whm-event-34",
       "Name": "[34] Cure (ST Emergency)",
-      "Description": "Low-level Cure fallback for critical party HP.",
+      "Description": "Low-level Cure fallback for critical party recovery.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-34",
       "ThrottleSameEvent": 2.5,
@@ -540,7 +540,7 @@
     {
       "Id": "whm-event-35",
       "Name": "[35] Medica (Low Level Emergency)",
-      "Description": "Low-level Medica fallback for critical party damage.",
+      "Description": "Low-level Medica fallback for severe party damage.",
       "EventType": "OnTick",
       "LogicId": "whm-logic-35",
       "ThrottleSameEvent": 2.5,
@@ -554,7 +554,7 @@
     {
       "Id": "jps-whm-event-esuna",
       "Name": "Esuna",
-      "Description": "Cleanses removable party debuffs when safe.",
+      "Description": "Cleanses removable party debuffs when the window is safe.",
       "EventType": "OnTick",
       "LogicId": "jps-whm-logic-esuna",
       "ThrottleSameEvent": 0.5,
@@ -581,8 +581,8 @@
     },
     {
       "Id": "3ebc1edd-7f5e-4f7a-9e40-d4fc451d8be4",
-      "Name": "Sprint OOC",
-      "Description": "Optional out-of-combat Sprint while moving.",
+      "Name": "Sprint Between Pulls",
+      "Description": "Optional Sprint between pulls while you are moving.",
       "EventType": "OnTick",
       "LogicId": "04072cd9-6969-46da-a6d0-4cf277889775",
       "ThrottleSameEvent": 0.5,
@@ -595,8 +595,8 @@
     },
     {
       "Id": "jps-whm-event-reset-toggles",
-      "Name": "Reset Toggles",
-      "Description": "Restores normal White Mage ACR toggles while safely out of combat.",
+      "Name": "Out-of-Combat Reset",
+      "Description": "Returns White Mage ACR toggles to their standard out-of-combat state.",
       "EventType": "OnTick",
       "LogicId": "jps-whm-logic-reset-toggles",
       "ThrottleSameEvent": 0.5,
@@ -609,8 +609,8 @@
     },
     {
       "Id": "jps-whm-event-reset-zone",
-      "Name": "Reset Toggles Zone Change",
-      "Description": "Restores default White Mage toggles after zone changes.",
+      "Name": "Zone Reset",
+      "Description": "White Mage defaults are reapplied after changing zones.",
       "EventType": "OnZoneChange",
       "LogicId": "jps-whm-logic-reset-toggles",
       "ThrottleSameEvent": 0.5,
@@ -623,8 +623,8 @@
     },
     {
       "Id": "jps-whm-event-reset-wipe",
-      "Name": "Reset Toggles Wipe",
-      "Description": "Restores default White Mage toggles after wipes.",
+      "Name": "Wipe Reset",
+      "Description": "White Mage defaults are reapplied after a wipe.",
       "EventType": "OnWipe",
       "LogicId": "jps-whm-logic-reset-toggles",
       "ThrottleSameEvent": 0.5,
@@ -667,8 +667,8 @@
     },
     {
       "Id": "jps-whm-event-combat-toggle-safety",
-      "Name": "Combat Toggle Safety",
-      "Description": "Keeps White Mage damage, healing, raise, movement, and resource toggles in a sane public-duty state without touching ForceAOE.",
+      "Name": "Combat State Guard",
+      "Description": "Maintains White Mage damage, healing, raise, movement, and resource toggles in a ready public-duty state while leaving ForceAOE manual.",
       "EventType": "OnTick",
       "LogicId": "jps-whm-logic-combat-toggle-safety",
       "ThrottleSameEvent": 1,
@@ -3916,7 +3916,7 @@
     {
       "Id": "02ae717d-df5d-40b8-93c4-95cff3a05a68",
       "Name": "MT <= 70%",
-      "Description": "For Divine Benison before AOE",
+      "Description": "Divine Benison pre-raidwide gate.",
       "SubConditions": [
         {
           "Id": "7893abc5-f6e6-4ef6-b4a4-53ee3bf3c6d9",
@@ -4132,7 +4132,7 @@
     {
       "Id": "c388f426-866b-4dfb-b3f6-67f2f7d0dcf8",
       "Name": "MT <= 80%",
-      "Description": "For Divine Benison before AOE",
+      "Description": "Divine Benison pre-raidwide gate.",
       "SubConditions": [
         {
           "Id": "9c393c5a-7e00-451a-b8cc-186a61180423",
@@ -5216,7 +5216,7 @@
     {
       "Id": "bd3585cd-b6a8-4ec1-9b5e-21516952fbb0",
       "Name": "MT No Regen",
-      "Description": "Main Tank does NOT have Regen buff",
+      "Description": "Main tank does not currently have Regen.",
       "SubConditions": [
         {
           "Id": "b3b65aba-9c7a-483f-a41d-132a002113ea",
@@ -8255,7 +8255,7 @@
     {
       "Id": "96c2c2c4-9365-4305-809d-12e02e8a1378",
       "Name": "ST No Regen",
-      "Description": "Main Tank does NOT have Regen buff",
+      "Description": "Main tank does not currently have Regen.",
       "SubConditions": [
         {
           "Id": "5aa870b0-fb8d-430e-92da-296edb831ea2",
@@ -9340,7 +9340,7 @@
     {
       "Id": "ce4c5ebf-a5da-42e7-988a-eb0c7fb94e92",
       "Name": "[ST] <= 60% HP",
-      "Description": "Lowest HP party member at 60% or below",
+      "Description": "Lowest-health party member is at or below 60 percent HP.",
       "SubConditions": [
         {
           "Id": "5c352795-6c62-4eea-a66a-e78dc1bf4285",
@@ -10426,7 +10426,7 @@
     {
       "Id": "jps-whm-cond-esuna",
       "Name": "Esuna",
-      "Description": "Cleansable debuff present on a party member.",
+      "Description": "A party member has a removable debuff.",
       "SubConditions": [
         {
           "Id": "jps-whm-cond-esuna-sub",
@@ -12988,7 +12988,7 @@
     {
       "Id": "whm-logic-05",
       "Name": "[05] Liturgy of the Bell (Pre-Damage)",
-      "Description": "Before AoE/Raidwide if off cooldown and party avg hp <= 80%",
+      "Description": "Pre-raidwide bell setup when ready and party average HP is at or below 80 percent.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
@@ -13071,7 +13071,7 @@
     {
       "Id": "whm-logic-07",
       "Name": "[07] Divine Benison (Aggro)",
-      "Description": "Tank if >= 3 aggro",
+      "Description": "Tank-only check for three or more enemies on you.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
@@ -13239,7 +13239,7 @@
     {
       "Id": "whm-logic-11",
       "Name": "[11] Aquaveil (Aggro)",
-      "Description": "Tank if >= 3 aggro",
+      "Description": "Tank-only check for three or more enemies on you.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
@@ -13322,7 +13322,7 @@
     {
       "Id": "whm-logic-13",
       "Name": "[13] Tetragrammaton (MT)",
-      "Description": "Tank HP <= 80% and does not have tank invuln.",
+      "Description": "Tank HP is at or below 80 percent and no tank invulnerability is active.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
@@ -13406,7 +13406,7 @@
     {
       "Id": "whm-logic-15",
       "Name": "[15] Benediction",
-      "Description": "Any target HP <= 35% AND target has no invuln buff.",
+      "Description": "Target is at or below 35 percent HP and has no invulnerability buff.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
@@ -13743,7 +13743,7 @@
     {
       "Id": "whm-logic-21",
       "Name": "[21.1] Afflatus Solace (MT)",
-      "Description": "Tank HP <= 80% and Tetragrammaton is on cooldown.",
+      "Description": "Tank HP is at or below 80 percent while Tetragrammaton is unavailable.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
@@ -13919,7 +13919,7 @@
     {
       "Id": "whm-logic-23",
       "Name": "[23] Regen (Downtime)",
-      "Description": "Tank if no target (during downtime)",
+      "Description": "Tank target fallback during downtime.",
       "LogicType": 0,
       "ConditionIds": [
         "bd3585cd-b6a8-4ec1-9b5e-21516952fbb0",
@@ -13960,7 +13960,7 @@
     {
       "Id": "whm-logic-24",
       "Name": "[24] Regen",
-      "Description": "Keeps Regen on the main tank earlier during active combat at 90% HP.",
+      "Description": "Refreshes Regen on the main tank earlier in combat once HP is near 90 percent.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1",
@@ -14596,7 +14596,7 @@
     {
       "Id": "jps-whm-logic-reset-toggles",
       "Name": "Reset Toggles",
-      "Description": "Restores normal White Mage ACR toggles while safely out of combat. Holy is managed by the guarded Jasper event instead of the generic ACR toggle.",
+      "Description": "Returns White Mage ACR toggles to their standard out-of-combat state. Holy is managed by the guarded Jasper event instead of the generic ACR toggle.",
       "LogicType": 0,
       "ConditionIds": [
         "154dbde9-1744-4983-ab9d-61585f0a7108"
@@ -15221,7 +15221,7 @@
     {
       "Id": "jps-whm-logic-combat-toggle-safety",
       "Name": "Combat Toggle Safety",
-      "Description": "Keeps White Mage damage, healing, raise, movement, and resource toggles enabled in combat while leaving Holy controlled by the guarded in-range event.",
+      "Description": "Maintains White Mage damage, healing, raise, movement, and resource toggles in combat while Holy stays controlled by the guarded in-range event.",
       "LogicType": 0,
       "ConditionIds": [
         "023c7b86-0f79-4a93-9ba4-f0fe5ac834b1"
@@ -15882,5 +15882,5 @@
       "jps-whm-qt-reset-toggles": true
     }
   },
-  "Version": "1.0.38"
+  "Version": "1.0.39"
 }

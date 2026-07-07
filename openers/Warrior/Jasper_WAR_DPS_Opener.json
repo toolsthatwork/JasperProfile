@@ -4,7 +4,7 @@
     {
       "SkillId": 46,
       "IsGCD": true,
-      "Description": "Tomahawk pull",
+      "Description": "Opening Tomahawk",
       "HasPreDelay": false,
       "PreDelayTime": 0,
       "UseSpecificPrePullTime": true,

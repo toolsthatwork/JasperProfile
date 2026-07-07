@@ -8,7 +8,7 @@ Use this repository URL:
 https://github.com/toolsthatwork/JasperProfile
 ```
 
-Special thanks to Arche for the general reaction profile foundation and broad coverage used by these event profiles. JasperProfile adds Jasper's public-duty safety tuning, job-specific controls, xSalice compatibility cleanup, and ongoing roulette-focused polish.
+Credit note: Arche provided the general reaction groundwork and wide coverage behind these event profiles. JasperProfile adds Jasper's public-duty safety layer, job controls, xSalice cleanup, and roulette-focused tuning.
 
 ## Add the Repository
 
@@ -43,7 +43,7 @@ Special thanks to Arche for the general reaction profile foundation and broad co
 - Passive timeline profiles for all combat jobs
 - Potion-free opener files for all combat jobs
 
-Openers do not use potions. Dungeons and routine duties are primarily handled by event reactions; timeline profiles provide broad duty coverage without forcing potion, weave-toggle, or DPS actions.
+Openers do not use potions. Dungeons and routine duties are primarily handled by event reactions; timeline profiles mark broad duty coverage without forcing potion, weave-toggle, or DPS actions.
 
 ## Troubleshooting
 

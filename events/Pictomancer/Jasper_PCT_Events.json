@@ -1,14 +1,14 @@
 {
   "Id": "Jasper_PCT_Events",
   "Name": "Jasper PCT Events",
-  "Description": "General-purpose Pictomancer event profile for PvE. Keeps Addle/Tempera Coat support, earlier personal shielding, normal 2+ target AoE/helper and muse/motif release, palette/muse movement-toggle safety, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. Special thanks to Arche for the general reaction profile foundation and broad coverage; Jasper adds public-duty safety tuning and xSalice compatibility polish.",
-  "Version": "0.1.13",
+  "Description": "Pictomancer public event profile for normal-duty play. It supports Addle and Tempera Coat, repairs palette/muse/motif helper states, releases standard AoE on packs, and leaves ForceAOE to the player. Lineage note: Arche supplied the general reaction groundwork and coverage; Jasper reshapes it here for public-duty safety, job controls, and xSalice compatibility.",
+  "Version": "0.1.14",
   "AIOEventVersion": "2.0",
   "Events": [
     {
       "Id": "7517acbf-fbca-4f56-aad4-f168daf301ad",
       "Name": "Addle & Tempera Coat",
-      "Description": "Uses Addle plus job mitigation on raidwide damage.",
+      "Description": "Pairs Addle with job mitigation for raidwide damage.",
       "EventType": "OnAllAOE",
       "LogicId": "920528a4-0b3c-4088-901c-8f4502e6048d",
       "ThrottleSameEvent": 0.5,
@@ -21,7 +21,7 @@
     },
     {
       "Id": "5eb657d5-4560-46e1-97db-c438b5c75f86",
-      "Name": "Sprint OOC",
+      "Name": "Sprint Between Pulls",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "1fec4a8c-eb6b-4c06-ba73-f65c5c107ada",
@@ -35,7 +35,7 @@
     },
     {
       "Id": "81c74a13-6a61-4d32-9186-0f4a32951de6",
-      "Name": "Boss Hold",
+      "Name": "Hold Boss Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "b90f0d94-f740-48d0-b1d0-723c5cefbe49",
@@ -49,7 +49,7 @@
     },
     {
       "Id": "37856e45-1ff5-4f17-8272-5bd6b9aca0b7",
-      "Name": "Group Hold",
+      "Name": "Hold Pack Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "98f196af-9653-4a47-9527-aad629fcbc8d",
@@ -63,7 +63,7 @@
     },
     {
       "Id": "4661d422-1095-44f4-99d5-011c9574ac42",
-      "Name": "Boss No Hold",
+      "Name": "Release Boss Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "438a67ba-ffa4-4b8d-864a-ffdc77127f09",
@@ -77,7 +77,7 @@
     },
     {
       "Id": "e911c2f4-8d56-410a-b7e5-350ea4630e04",
-      "Name": "Group No Hold",
+      "Name": "Release Pack Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "030d150a-dd41-4f4d-9d0b-a3a2a92ac0da",
@@ -91,8 +91,8 @@
     },
     {
       "Id": "51ae44cf-7a89-5abf-92d0-af7ecd09f9b2",
-      "Name": "Reset Toggles",
-      "Description": "Restores normal Pictomancer ACR toggles while safely out of combat.",
+      "Name": "Out-of-Combat Reset",
+      "Description": "Returns Pictomancer ACR toggles to their standard out-of-combat state.",
       "EventType": "OnTick",
       "LogicId": "800110c7-6bdf-5a91-b93c-d0861e532851",
       "ThrottleSameEvent": 0.5,
@@ -105,8 +105,8 @@
     },
     {
       "Id": "jps-pct-event-reset-zone",
-      "Name": "Reset Toggles Zone Change",
-      "Description": "Restores default Pictomancer toggles after zone changes.",
+      "Name": "Zone Reset",
+      "Description": "Pictomancer defaults are reapplied after changing zones.",
       "EventType": "OnZoneChange",
       "LogicId": "800110c7-6bdf-5a91-b93c-d0861e532851",
       "ThrottleSameEvent": 0.5,
@@ -119,8 +119,8 @@
     },
     {
       "Id": "jps-pct-event-reset-wipe",
-      "Name": "Reset Toggles Wipe",
-      "Description": "Restores default Pictomancer toggles after wipes.",
+      "Name": "Wipe Reset",
+      "Description": "Pictomancer defaults are reapplied after a wipe.",
       "EventType": "OnWipe",
       "LogicId": "800110c7-6bdf-5a91-b93c-d0861e532851",
       "ThrottleSameEvent": 0.5,
@@ -133,8 +133,8 @@
     },
     {
       "Id": "jps-pct-event-addle-tb",
-      "Name": "Addle TB",
-      "Description": "Uses Addle for incoming tankbusters when the target is not already debuffed.",
+      "Name": "Addle Tankbuster",
+      "Description": "Applies Addle to tankbusters when the target is not already covered.",
       "EventType": "OnAllTankBuster",
       "LogicId": "jps-pct-logic-addle-tb",
       "ThrottleSameEvent": 0.5,
@@ -161,8 +161,8 @@
     },
     {
       "Id": "jps-pct-event-dps-toggle-safety",
-      "Name": "DPS Toggle Safety",
-      "Description": "Keeps Pictomancer AoE, palette, muse, motif, movement, and shield helper toggles healthy in combat so imported or held states do not leave the job passive.",
+      "Name": "Damage State Guard",
+      "Description": "Maintains Pictomancer AoE, palette, muse, motif, movement, and shield helper toggles in combat so imported or held toggle states cannot strand the job in a passive state.",
       "EventType": "OnTick",
       "LogicId": "jps-pct-logic-dps-toggle-safety",
       "ThrottleSameEvent": 1,
@@ -177,8 +177,8 @@
     },
     {
       "Id": "jps-pct-event-pack-aoe-release",
-      "Name": "Multi-Target AoE Release",
-      "Description": "Keeps normal Pictomancer AoE, palette, muse, motif, and movement helper toggles enabled on 2+ enemy pulls without touching ForceAOE.",
+      "Name": "Pack Damage Release",
+      "Description": "Maintains standard Pictomancer AoE, palette, muse, motif, and movement helper toggles on 2+ enemy pulls while leaving ForceAOE manual.",
       "EventType": "OnTick",
       "LogicId": "jps-pct-logic-pack-aoe-release",
       "ThrottleSameEvent": 1,
@@ -3387,7 +3387,7 @@
     {
       "Id": "800110c7-6bdf-5a91-b93c-d0861e532851",
       "Name": "Reset Toggles",
-      "Description": "Restores normal Pictomancer ACR defaults out of combat, including AoE, palette, muse, shield, and movement helper toggles. ForceAOE is untouched.",
+      "Description": "Returns Pictomancer ACR settings to their normal out-of-combat state, including AoE, palette, muse, shield, and movement helper toggles. ForceAOE remains manual.",
       "LogicType": 0,
       "ConditionIds": [
         "2b75c1d7-3894-4f5e-b6ca-c2f0073c09b0"
@@ -3777,7 +3777,7 @@
     {
       "Id": "jps-pct-logic-addle-tb",
       "Name": "Addle TB",
-      "Description": "Uses Addle for incoming tankbusters when the target is not already debuffed.",
+      "Description": "Applies Addle to tankbusters when the target is not already covered.",
       "LogicType": 0,
       "ConditionIds": [
         "b702ada1-facb-4cd3-906f-e1c29c1f390c",
@@ -3859,7 +3859,7 @@
     {
       "Id": "jps-pct-logic-dps-toggle-safety",
       "Name": "DPS Toggle Safety",
-      "Description": "Keeps Pictomancer AoE, palette, muse, motif, movement, and shield helper toggles healthy in combat so imported or held states do not leave the job passive.",
+      "Description": "Maintains Pictomancer AoE, palette, muse, motif, movement, and shield helper toggles in combat so imported or held toggle states cannot strand the job in a passive state.",
       "LogicType": 0,
       "ConditionIds": [
         "b702ada1-facb-4cd3-906f-e1c29c1f390c"
@@ -4224,7 +4224,7 @@
     {
       "Id": "jps-pct-logic-pack-aoe-release",
       "Name": "Multi-Target AoE Release",
-      "Description": "Keeps normal Pictomancer AoE, palette, muse, motif, and movement helper toggles enabled on 2+ enemy pulls without touching ForceAOE.",
+      "Description": "Maintains standard Pictomancer AoE, palette, muse, motif, and movement helper toggles on 2+ enemy pulls while leaving ForceAOE manual.",
       "LogicType": 0,
       "ConditionIds": [
         "b702ada1-facb-4cd3-906f-e1c29c1f390c",
@@ -4562,7 +4562,7 @@
       {
         "Id": "jps-pct-qt-sprint",
         "Name": "Sprint",
-        "Description": "Optional out-of-combat Sprint between pulls.",
+        "Description": "Optional between-pull Sprint.",
         "EventIds": [
           "5eb657d5-4560-46e1-97db-c438b5c75f86"
         ],

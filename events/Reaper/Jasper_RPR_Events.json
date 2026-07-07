@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_RPR_Events",
   "Name": "Jasper RPR Events",
-  "Description": "General-purpose Reaper event profile for PvE. Keeps Feint/Arcane Crest support, proactive self-heal recovery, normal 2+ target AoE/spender release, damage-toggle safety, Leg Sweep/Arm's Length utility, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. Arcane Crest waits for real damage instead of firing at full HP. Special thanks to Arche for the general reaction profile foundation and broad coverage; Jasper adds public-duty safety tuning and xSalice compatibility polish.",
-  "Version": "0.1.18",
+  "Description": "Reaper public event profile for general PvE. It keeps Feint, Arcane Crest, Second Wind, Bloodbath, Leg Sweep, Arm's Length, Enshroud/Gluttony helpers, and normal AoE release ready while ForceAOE stays manual. Lineage note: Arche supplied the general reaction groundwork and coverage; Jasper reshapes it here for public-duty safety, job controls, and xSalice compatibility.",
+  "Version": "0.1.19",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -35,7 +35,7 @@
     },
     {
       "Id": "dc3da58d-3ab3-494e-ae38-326a2cdfdb48",
-      "Name": "OnWipe Opener",
+      "Name": "Wipe Opener Reset",
       "Description": "",
       "EventType": "OnWipe",
       "LogicId": "0650ee7b-641f-4461-8170-48a02778df47",
@@ -49,8 +49,8 @@
     },
     {
       "Id": "63cdfec9-a8cc-45a0-a11d-4903d9381aad",
-      "Name": "Second Wind",
-      "Description": "Uses Second Wind at 60 percent HP for earlier self-recovery.",
+      "Name": "Second Wind Recovery",
+      "Description": "Uses Second Wind once personal HP falls near 60 percent.",
       "EventType": "OnTick",
       "LogicId": "faea22ca-5c00-47b0-8cf7-17f4b37957bf",
       "ThrottleSameEvent": 0.5,
@@ -63,8 +63,8 @@
     },
     {
       "Id": "jps-rpr-event-leg-sweep",
-      "Name": "Leg Sweep Stun",
-      "Description": "Uses Leg Sweep on casting enemies in melee range.",
+      "Name": "Leg Sweep Interrupt",
+      "Description": "Stuns interruptible enemy casts when Leg Sweep is in melee range.",
       "EventType": "OnTick",
       "LogicId": "jps-rpr-logic-leg-sweep",
       "ThrottleSameEvent": 0.5,
@@ -77,8 +77,8 @@
     },
     {
       "Id": "jps-rpr-event-arms-length-emergency",
-      "Name": "Arm's Length Emergency",
-      "Description": "Uses Arm's Length when you are stationary, low on HP, and holding multiple mobs.",
+      "Name": "Arm's Length Self-Guard",
+      "Description": "Triggers Arm's Length only when you are stationary, pressured, and several mobs are on you.",
       "EventType": "OnTick",
       "LogicId": "jps-rpr-logic-arms-length-emergency",
       "ThrottleSameEvent": 0.5,
@@ -91,8 +91,8 @@
     },
     {
       "Id": "7b3857d9-5452-4ef8-af7a-26e09c771a8d",
-      "Name": "Bloodbath",
-      "Description": "Uses Bloodbath around 70 percent HP for steadier melee recovery.",
+      "Name": "Bloodbath Recovery",
+      "Description": "Uses Bloodbath near 70 percent HP to smooth melee self-recovery.",
       "EventType": "OnTick",
       "LogicId": "f844ec77-e521-4188-bb7b-f1cd6b80e6c0",
       "ThrottleSameEvent": 0.5,
@@ -105,8 +105,8 @@
     },
     {
       "Id": "6a2935af-82b0-41f0-a5c7-abc61f52eacb",
-      "Name": "Reset Toggles Wipe",
-      "Description": "Restores default Reaper toggles after wipes.",
+      "Name": "Wipe Reset",
+      "Description": "Reaper defaults are reapplied after a wipe.",
       "EventType": "OnWipe",
       "LogicId": "ede20970-ebb9-4c97-a2b4-b2a154dd300b",
       "ThrottleSameEvent": 0.5,
@@ -119,8 +119,8 @@
     },
     {
       "Id": "f226eba3-c083-4051-8d71-8cdb9cf3b2a2",
-      "Name": "Sprint OOC",
-      "Description": "Optional out-of-combat Sprint while moving.",
+      "Name": "Sprint Between Pulls",
+      "Description": "Optional Sprint between pulls while you are moving.",
       "EventType": "OnTick",
       "LogicId": "646300aa-64e6-4171-ba06-af69da3d9a61",
       "ThrottleSameEvent": 0.5,
@@ -133,8 +133,8 @@
     },
     {
       "Id": "d888a382-f099-5b4e-86dd-421e0fcd4c2b",
-      "Name": "Reset Toggles OOC",
-      "Description": "Restores normal Reaper ACR toggles while safely out of combat.",
+      "Name": "Out-of-Combat Reset",
+      "Description": "Returns Reaper ACR toggles to their standard out-of-combat state.",
       "EventType": "OnTick",
       "LogicId": "5d7a4498-43f5-578c-9738-da13b0714ef0",
       "ThrottleSameEvent": 0.5,
@@ -147,8 +147,8 @@
     },
     {
       "Id": "jps-rpr-event-reset-zone",
-      "Name": "Reset Toggles Zone Change",
-      "Description": "Restores default Reaper toggles after zone changes.",
+      "Name": "Zone Reset",
+      "Description": "Reaper defaults are reapplied after changing zones.",
       "EventType": "OnZoneChange",
       "LogicId": "5d7a4498-43f5-578c-9738-da13b0714ef0",
       "ThrottleSameEvent": 0.5,
@@ -161,7 +161,7 @@
     },
     {
       "Id": "2d4749d2-d3ce-5199-8fee-1d5132fea885",
-      "Name": "Boss Hold",
+      "Name": "Hold Boss Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "36b353c2-1948-5b3f-9576-1e99ac8b44a1",
@@ -175,7 +175,7 @@
     },
     {
       "Id": "cfd4d3a1-bf73-5ef1-8b13-1f2377ee2933",
-      "Name": "Group Hold",
+      "Name": "Hold Pack Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "3f8c3489-ac1b-5061-8ee0-42bd94790a7a",
@@ -189,7 +189,7 @@
     },
     {
       "Id": "91013a0a-924e-5c57-9cab-28b3f60adf69",
-      "Name": "Group No Hold",
+      "Name": "Release Pack Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "637c19ac-8e88-5c5f-a1fe-31e8b16c3e9f",
@@ -203,7 +203,7 @@
     },
     {
       "Id": "c5b0b1fc-8e81-54a3-96b7-a318f26b29c2",
-      "Name": "Boss No Hold",
+      "Name": "Release Boss Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "85ad5075-27be-5ea7-bea4-c2cc5e34cff5",
@@ -217,8 +217,8 @@
     },
     {
       "Id": "jps-rpr-event-feint-tb",
-      "Name": "Feint TB",
-      "Description": "Uses Feint for incoming tankbusters when the target is not already debuffed.",
+      "Name": "Feint Tankbuster",
+      "Description": "Applies Feint to tankbusters when the target is not already covered.",
       "EventType": "OnAllTankBuster",
       "LogicId": "jps-rpr-logic-feint-tb",
       "ThrottleSameEvent": 0.5,
@@ -232,7 +232,7 @@
     {
       "Id": "jps-rpr-event-arcane-crest-emergency",
       "Name": "Arcane Crest Emergency",
-      "Description": "Fallback Arcane Crest branch for lower-HP personal safety windows.",
+      "Description": "Backup Arcane Crest branch for lower-HP personal safety windows.",
       "EventType": "OnTick",
       "LogicId": "jps-rpr-logic-arcane-crest-emergency",
       "ThrottleSameEvent": 2.5,
@@ -245,8 +245,8 @@
     },
     {
       "Id": "jps-rpr-event-dps-toggle-safety",
-      "Name": "DPS Toggle Safety",
-      "Description": "Keeps Reaper AoE, Enshroud, Gluttony, Arcane, ranged, DOT/debuff, and spender toggles in a sane public-duty state.",
+      "Name": "Damage State Guard",
+      "Description": "Maintains Reaper AoE, Enshroud, Gluttony, Arcane, ranged, DOT/debuff, and spender toggles in a ready public-duty state.",
       "EventType": "OnTick",
       "LogicId": "jps-rpr-logic-dps-toggle-safety",
       "ThrottleSameEvent": 1,
@@ -261,8 +261,8 @@
     },
     {
       "Id": "jps-rpr-event-pack-aoe-release",
-      "Name": "Multi-Target AoE Release",
-      "Description": "Keeps normal Reaper AoE, Enshroud, Gluttony, Arcane, and spender toggles enabled on 2+ enemy pulls without touching ForceAOE.",
+      "Name": "Pack Damage Release",
+      "Description": "Maintains standard Reaper AoE, Enshroud, Gluttony, Arcane, and spender toggles on 2+ enemy pulls while leaving ForceAOE manual.",
       "EventType": "OnTick",
       "LogicId": "jps-rpr-logic-pack-aoe-release",
       "ThrottleSameEvent": 1,
@@ -5790,7 +5790,7 @@
     {
       "Id": "faea22ca-5c00-47b0-8cf7-17f4b37957bf",
       "Name": "Second Wind",
-      "Description": "Uses Second Wind at 60 percent HP for earlier self-recovery.",
+      "Description": "Uses Second Wind once personal HP falls near 60 percent.",
       "LogicType": 0,
       "ConditionIds": [
         "2deb9cfc-deb8-4619-9dff-5d393fa4cf36",
@@ -5831,7 +5831,7 @@
     {
       "Id": "f844ec77-e521-4188-bb7b-f1cd6b80e6c0",
       "Name": "Bloodbath",
-      "Description": "Uses Bloodbath around 70 percent HP for steadier melee recovery.",
+      "Description": "Uses Bloodbath near 70 percent HP to smooth melee self-recovery.",
       "LogicType": 0,
       "ConditionIds": [
         "b635c655-1351-487a-9042-6b4ed9b363ec",
@@ -5872,7 +5872,7 @@
     {
       "Id": "ede20970-ebb9-4c97-a2b4-b2a154dd300b",
       "Name": "Reset Toggles",
-      "Description": "Restores normal Reaper ACR toggles while safely out of combat.",
+      "Description": "Returns Reaper ACR toggles to their standard out-of-combat state.",
       "LogicType": 0,
       "ConditionIds": [
         "c8223fac-ae83-4e84-9993-c5fb9465426e"
@@ -6378,7 +6378,7 @@
     {
       "Id": "5d7a4498-43f5-578c-9738-da13b0714ef0",
       "Name": "Reset Toggles OOC",
-      "Description": "Restores normal Reaper ACR toggles while safely out of combat.",
+      "Description": "Returns Reaper ACR toggles to their standard out-of-combat state.",
       "LogicType": 0,
       "ConditionIds": [
         "7c9d06c4-d37d-49e0-8f09-f2a48940f720"
@@ -7311,7 +7311,7 @@
     {
       "Id": "jps-rpr-logic-feint-tb",
       "Name": "Feint TB",
-      "Description": "Uses Feint for incoming tankbusters when the target is not already debuffed.",
+      "Description": "Applies Feint to tankbusters when the target is not already covered.",
       "LogicType": 0,
       "ConditionIds": [
         "762e3654-d518-4e6c-a3d2-b41ad3a2cd2c",
@@ -7394,7 +7394,7 @@
     {
       "Id": "jps-rpr-logic-leg-sweep",
       "Name": "Leg Sweep Stun",
-      "Description": "Uses Leg Sweep on casting enemies in melee range.",
+      "Description": "Stuns interruptible enemy casts when Leg Sweep is in melee range.",
       "LogicType": 0,
       "ConditionIds": [
         "jps-rpr-cond-leg-sweep-cast-range",
@@ -7478,7 +7478,7 @@
     {
       "Id": "jps-rpr-logic-dps-toggle-safety",
       "Name": "DPS Toggle Safety",
-      "Description": "Keeps Reaper AoE, Enshroud, Gluttony, Arcane, ranged, DOT/debuff, and spender toggles healthy in combat so imported or held states do not leave the job passive.",
+      "Description": "Maintains Reaper AoE, Enshroud, Gluttony, Arcane, ranged, DOT/debuff, and spender toggles in combat so imported or held toggle states cannot strand the job in a passive state.",
       "LogicType": 0,
       "ConditionIds": [
         "63aeb655-dc76-4402-b9cd-78c96f869ee7"
@@ -7918,7 +7918,7 @@
     {
       "Id": "jps-rpr-logic-pack-aoe-release",
       "Name": "Multi-Target AoE Release",
-      "Description": "Keeps normal Reaper AoE, Enshroud, Gluttony, Arcane, and spender toggles enabled on 2+ enemy pulls without touching ForceAOE.",
+      "Description": "Maintains standard Reaper AoE, Enshroud, Gluttony, Arcane, and spender toggles on 2+ enemy pulls while leaving ForceAOE manual.",
       "LogicType": 0,
       "ConditionIds": [
         "63aeb655-dc76-4402-b9cd-78c96f869ee7",

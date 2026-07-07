@@ -1,13 +1,13 @@
 {
   "Id": "Jasper_SMN_Events",
   "Name": "Jasper SMN Events",
-  "Description": "General-purpose Summoner event profile for PvE. Keeps Addle/Radiant Aegis support, smoother Rekindle recovery, normal 2+ target AoE/helper and Demi/Searing release, raise/movement/summon toggle safety, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. Special thanks to Arche for the general reaction profile foundation and broad coverage; Jasper adds public-duty safety tuning and xSalice compatibility polish.",
-  "Version": "0.1.15",
+  "Description": "Summoner public event profile for roulettes and general duties. It keeps Addle, Radiant Aegis, Rekindle, raise/movement helpers, summon/Demi support, Searing Light, and normal AoE release ready without forcing ForceAOE. Lineage note: Arche supplied the general reaction groundwork and coverage; Jasper reshapes it here for public-duty safety, job controls, and xSalice compatibility.",
+  "Version": "0.1.16",
   "AIOEventVersion": 1,
   "Events": [
     {
       "Id": "dc3da58d-3ab3-494e-ae38-326a2cdfdb48",
-      "Name": "OnWipe Opener",
+      "Name": "Wipe Opener Reset",
       "Description": "",
       "EventType": "OnWipe",
       "LogicId": "0650ee7b-641f-4461-8170-48a02778df47",
@@ -35,8 +35,8 @@
     },
     {
       "Id": "00d16d04-f207-4f24-b009-d93fd5b0e383",
-      "Name": "Reset Toggles Zone Change",
-      "Description": "Restores default Summoner toggles after zone changes.",
+      "Name": "Zone Reset",
+      "Description": "Summoner defaults are reapplied after changing zones.",
       "EventType": "OnZoneChange",
       "LogicId": "fa2c21ae-44e7-4acf-8452-21a9f1357e7e",
       "ThrottleSameEvent": 0.5,
@@ -49,8 +49,8 @@
     },
     {
       "Id": "cd39fad5-295b-4496-b5fe-c2a95e854171",
-      "Name": "Reset Toggles OOC",
-      "Description": "Restores normal Summoner ACR toggles while safely out of combat.",
+      "Name": "Out-of-Combat Reset",
+      "Description": "Returns Summoner ACR toggles to their standard out-of-combat state.",
       "EventType": "OnTick",
       "LogicId": "fa2c21ae-44e7-4acf-8452-21a9f1357e7e",
       "ThrottleSameEvent": 0.5,
@@ -63,8 +63,8 @@
     },
     {
       "Id": "jps-smn-event-reset-wipe",
-      "Name": "Reset Toggles Wipe",
-      "Description": "Restores default Summoner toggles after wipes.",
+      "Name": "Wipe Reset",
+      "Description": "Summoner defaults are reapplied after a wipe.",
       "EventType": "OnWipe",
       "LogicId": "fa2c21ae-44e7-4acf-8452-21a9f1357e7e",
       "ThrottleSameEvent": 0.5,
@@ -77,7 +77,7 @@
     },
     {
       "Id": "5eb657d5-4560-46e1-97db-c438b5c75f86",
-      "Name": "Sprint OOC",
+      "Name": "Sprint Between Pulls",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "1fec4a8c-eb6b-4c06-ba73-f65c5c107ada",
@@ -91,7 +91,7 @@
     },
     {
       "Id": "81c74a13-6a61-4d32-9186-0f4a32951de6",
-      "Name": "Boss Hold",
+      "Name": "Hold Boss Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "b90f0d94-f740-48d0-b1d0-723c5cefbe49",
@@ -105,7 +105,7 @@
     },
     {
       "Id": "37856e45-1ff5-4f17-8272-5bd6b9aca0b7",
-      "Name": "Group Hold",
+      "Name": "Hold Pack Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "98f196af-9653-4a47-9527-aad629fcbc8d",
@@ -120,7 +120,7 @@
     {
       "Id": "815e56f3-03bc-4769-83d0-8cfde286f778",
       "Name": "Rekindle MT (<=70% HP)",
-      "Description": "Avoids spending Rekindle on light tank chip damage.",
+      "Description": "Holds Rekindle through minor tank chip damage.",
       "EventType": "OnTick",
       "LogicId": "97d344c7-3f39-4ef0-ae8e-ddb2ce34e6c4",
       "ThrottleSameEvent": 2.5,
@@ -133,7 +133,7 @@
     },
     {
       "Id": "0cf0081a-914a-4ccd-81c9-1562f042b5f5",
-      "Name": "Boss No Hold",
+      "Name": "Release Boss Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "092b4f45-71dc-4c3f-9e29-60ed880e004c",
@@ -147,7 +147,7 @@
     },
     {
       "Id": "7ded2bec-379e-4bfc-9adf-00e51f13217e",
-      "Name": "Group No Hold",
+      "Name": "Release Pack Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "5041256d-b960-4ab3-8692-720f8fd05413",
@@ -161,8 +161,8 @@
     },
     {
       "Id": "jps-smn-event-addle-tb",
-      "Name": "Addle TB",
-      "Description": "Uses Addle for incoming tankbusters when the target is not already debuffed.",
+      "Name": "Addle Tankbuster",
+      "Description": "Applies Addle to tankbusters when the target is not already covered.",
       "EventType": "OnAllTankBuster",
       "LogicId": "jps-smn-logic-addle-tb",
       "ThrottleSameEvent": 0.5,
@@ -203,8 +203,8 @@
     },
     {
       "Id": "jps-smn-event-dps-toggle-safety",
-      "Name": "DPS Toggle Safety",
-      "Description": "Keeps Summoner AoE, raise, movement, summon, Demi, Searing Light, and support helper toggles healthy in combat so imported or held states do not leave the job passive.",
+      "Name": "Damage State Guard",
+      "Description": "Maintains Summoner AoE, raise, movement, summon, Demi, Searing Light, and support helper toggles in combat so imported or held toggle states cannot strand the job in a passive state.",
       "EventType": "OnTick",
       "LogicId": "jps-smn-logic-dps-toggle-safety",
       "ThrottleSameEvent": 1,
@@ -219,8 +219,8 @@
     },
     {
       "Id": "jps-smn-event-pack-aoe-release",
-      "Name": "Multi-Target AoE Release",
-      "Description": "Keeps normal Summoner AoE, summon, Demi, Searing Light, and movement helper toggles enabled on 2+ enemy pulls without touching ForceAOE.",
+      "Name": "Pack Damage Release",
+      "Description": "Maintains standard Summoner AoE, summon, Demi, Searing Light, and movement helper toggles on 2+ enemy pulls while leaving ForceAOE manual.",
       "EventType": "OnTick",
       "LogicId": "jps-smn-logic-pack-aoe-release",
       "ThrottleSameEvent": 1,
@@ -4024,7 +4024,7 @@
     {
       "Id": "fa2c21ae-44e7-4acf-8452-21a9f1357e7e",
       "Name": "Reset Toggles",
-      "Description": "Restores normal Summoner ACR defaults out of combat, including AoE, raise, summon, movement, and support toggles. ForceAOE is untouched.",
+      "Description": "Returns Summoner ACR settings to their normal out-of-combat state, including AoE, raise, summon, movement, and support toggles. ForceAOE remains manual.",
       "LogicType": 0,
       "ConditionIds": [
         "9a41c4f6-0ed5-4d3f-8b8b-ff2c2b90a070"
@@ -4739,7 +4739,7 @@
     {
       "Id": "jps-smn-logic-addle-tb",
       "Name": "Addle TB",
-      "Description": "Uses Addle for incoming tankbusters when the target is not already debuffed.",
+      "Description": "Applies Addle to tankbusters when the target is not already covered.",
       "LogicType": 0,
       "ConditionIds": [
         "b702ada1-facb-4cd3-906f-e1c29c1f390c",
@@ -4862,7 +4862,7 @@
     {
       "Id": "jps-smn-logic-dps-toggle-safety",
       "Name": "DPS Toggle Safety",
-      "Description": "Keeps Summoner AoE, raise, movement, summon, Demi, Searing Light, and support helper toggles healthy in combat so imported or held states do not leave the job passive.",
+      "Description": "Maintains Summoner AoE, raise, movement, summon, Demi, Searing Light, and support helper toggles in combat so imported or held toggle states cannot strand the job in a passive state.",
       "LogicType": 0,
       "ConditionIds": [
         "b702ada1-facb-4cd3-906f-e1c29c1f390c"
@@ -5202,7 +5202,7 @@
     {
       "Id": "jps-smn-logic-pack-aoe-release",
       "Name": "Multi-Target AoE Release",
-      "Description": "Keeps normal Summoner AoE, summon, Demi, Searing Light, and movement helper toggles enabled on 2+ enemy pulls without touching ForceAOE.",
+      "Description": "Maintains standard Summoner AoE, summon, Demi, Searing Light, and movement helper toggles on 2+ enemy pulls while leaving ForceAOE manual.",
       "LogicType": 0,
       "ConditionIds": [
         "b702ada1-facb-4cd3-906f-e1c29c1f390c",
@@ -5511,7 +5511,7 @@
       {
         "Id": "jps-smn-qt-sprint",
         "Name": "Sprint",
-        "Description": "Optional out-of-combat Sprint between pulls.",
+        "Description": "Optional between-pull Sprint.",
         "EventIds": [
           "5eb657d5-4560-46e1-97db-c438b5c75f86"
         ],

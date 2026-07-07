@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_PLD_Events",
   "Name": "Jasper PLD Events",
-  "Description": "General-purpose Paladin event profile for PvE. Keeps proactive Holy Sheltron smoothing, staggered dungeon mitigation around the 80/65 percent pressure points, earlier Hallowed Ground emergency support, Clemency fallback, raidwide/tankbuster mitigation, normal 2+ target AoE/add-pickup toggle safety, Interject utility, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only; this profile does not reset it. MT stance controls also include add-pickup support with stance-guarded aggro coverage, so OT mode with stance off will not taunt. Manual Provoke is treated as a tank-swap signal, turning MT stance back on and using one short swap defensive. Special thanks to Arche for the general reaction profile foundation and broad coverage; Jasper adds public-duty safety tuning and xSalice compatibility polish.",
-  "Version": "0.1.24",
+  "Description": "Paladin public event profile for dungeon and raid basics. It smooths Holy Sheltron, staggers pack mitigation, supports Hallowed/Clemency recovery, covers tankbusters/raidwides, respects OT stance-off play, and treats manual Provoke as a swap cue. Lineage note: Arche supplied the general reaction groundwork and coverage; Jasper reshapes it here for public-duty safety, job controls, and xSalice compatibility.",
+  "Version": "0.1.25",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -77,8 +77,8 @@
     },
     {
       "Id": "565fe51c-9d06-4338-bb4e-ad1d0cba3e32",
-      "Name": "2 Mit <= 65% HP, >= 3 mobs",
-      "Description": "Adds a second mitigation layer only once a large pull is still pressuring HP, keeping mitigation staggered.",
+      "Name": "Second Pack Mitigation",
+      "Description": "Adds the second mitigation layer only if a large pull keeps pressuring HP, preserving staggered coverage.",
       "EventType": "OnTick",
       "LogicId": "55ed34e5-8b06-4b99-a618-dadcfbb56e10",
       "ThrottleSameEvent": 2,
@@ -91,8 +91,8 @@
     },
     {
       "Id": "1b066cf9-12d8-450d-866e-677d61da153d",
-      "Name": "1 Mit <= 80% HP, >= 3 mobs",
-      "Description": "Starts dungeon mitigation around 80 percent HP on three-or-more enemy pulls, leaving room to stagger tools.",
+      "Name": "First Pack Mitigation",
+      "Description": "Begins the dungeon mitigation ladder near 80 percent HP on 3+ enemy pulls, leaving room for later tools.",
       "EventType": "OnTick",
       "LogicId": "b7d72611-1464-4b11-ab8a-1902d092d9e1",
       "ThrottleSameEvent": 2,
@@ -105,7 +105,7 @@
     },
     {
       "Id": "a6cdc6d2-6171-4f55-8f53-dbde09c85e86",
-      "Name": "Mit Low HP <= 60% HP",
+      "Name": "Low-HP Mitigation",
       "Description": "Adds mitigation when HP is falling and no major mitigation is active.",
       "EventType": "OnTick",
       "LogicId": "3ab5f523-2117-4442-99e1-dc46376c8d25",
@@ -119,8 +119,8 @@
     },
     {
       "Id": "08c75b56-6f6e-4b0c-88f7-7f58282253c4",
-      "Name": "Boss Cooldown Hold",
-      "Description": "At low boss HP, saves major damage cooldowns for the next pull or boss. Optional dungeon-routing helper; leave it off for normal play.",
+      "Name": "Boss Burst Hold",
+      "Description": "Optional routing helper that holds major damage cooldowns near the end of a boss so they are ready for the next pull. Leave it off for normal play.",
       "EventType": "OnTick",
       "LogicId": "32b92184-c156-43a9-a727-ddacf1700a85",
       "ThrottleSameEvent": 0.5,
@@ -133,8 +133,8 @@
     },
     {
       "Id": "5a47325b-00d5-4e36-8843-040393757b89",
-      "Name": "Pack Cooldown Hold",
-      "Description": "When a trash pack is nearly dead, saves major damage cooldowns for the next pull or boss. Optional dungeon-routing helper; leave it off for normal play.",
+      "Name": "Pack Burst Hold",
+      "Description": "Optional routing helper that holds major damage cooldowns as a trash pack is ending. Leave it off for normal play.",
       "EventType": "OnTick",
       "LogicId": "dd7b2b9f-2dd9-4727-bb92-aa51f5b78dbe",
       "ThrottleSameEvent": 0.5,
@@ -147,8 +147,8 @@
     },
     {
       "Id": "f97dfcaf-0ec7-4a05-aa20-89d26a48e419",
-      "Name": "Last Boss",
-      "Description": "Enables burn boss at 5% hp.",
+      "Name": "Final Boss Check",
+      "Description": "Allows final burn behavior once the boss is near 5 percent HP.",
       "EventType": "OnTick",
       "LogicId": "2fe93ae9-ec9c-463a-b57f-731c026de339",
       "ThrottleSameEvent": 0.5,
@@ -161,7 +161,7 @@
     },
     {
       "Id": "78f2c611-1379-41d2-a2bd-26f59e78abb9",
-      "Name": "Auto Buddymit",
+      "Name": "Co-tank Support",
       "Description": "Uses Intervention on the lowest-health party member around 55 percent HP for earlier buddy mitigation support.",
       "EventType": "OnTick",
       "LogicId": "3c5df484-39e7-4776-aa19-b24dfad7cf18",
@@ -175,7 +175,7 @@
     },
     {
       "Id": "6096b962-0a04-41f7-bfc0-361d76183c83",
-      "Name": "Stun Mob",
+      "Name": "Mob Stun",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "3de5c30c-7a72-4556-9e0c-08644031cd34",
@@ -189,8 +189,8 @@
     },
     {
       "Id": "jps-pld-event-interject",
-      "Name": "Interject Interrupt",
-      "Description": "Uses Interject on interruptible enemy casts in range.",
+      "Name": "Interject Cast Stop",
+      "Description": "Stops interruptible enemy casts with Interject when in range.",
       "EventType": "OnTick",
       "LogicId": "jps-pld-logic-interject",
       "ThrottleSameEvent": 0.5,
@@ -203,7 +203,7 @@
     },
     {
       "Id": "d52feb04-a7b6-40de-95be-ee550fab81f2",
-      "Name": "Automit TB",
+      "Name": "Tankbuster Automit",
       "Description": "",
       "EventType": "OnAllTankBuster",
       "LogicId": "4484f332-074f-4fc0-a854-36ceca3c398c",
@@ -217,7 +217,7 @@
     },
     {
       "Id": "f2cf7f39-da49-47fe-9abc-f42d72bc6a03",
-      "Name": "Sprint OOC",
+      "Name": "Sprint Between Pulls",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "661b624b-0785-4336-8c52-4112b59e1559",
@@ -245,8 +245,8 @@
     },
     {
       "Id": "f5a1dd49-91d4-40ed-8515-2a642235183a",
-      "Name": "Arm's Length, >= 3 mobs",
-      "Description": "Uses Arm's Length on normal dungeon-size pulls when standing still and targets will live long enough.",
+      "Name": "Arm's Length Pack Slow",
+      "Description": "Uses Arm's Length on normal dungeon pulls when you are stationary and the targets should live long enough.",
       "EventType": "OnTick",
       "LogicId": "a1158a21-6753-4ae3-b6dd-045d47a65fa0",
       "ThrottleSameEvent": 0.5,
@@ -259,8 +259,8 @@
     },
     {
       "Id": "9d3ae40b-bfcc-4ed3-968c-fb9c49b862fa",
-      "Name": "Boss Hold Release",
-      "Description": "Re-enables major damage cooldowns after the low-boss-HP hold window ends.",
+      "Name": "Boss Burst Release",
+      "Description": "Releases major damage cooldowns after the low-boss-HP hold window ends.",
       "EventType": "OnTick",
       "LogicId": "6b7a7363-2b08-43d0-bee0-99aad764b8d1",
       "ThrottleSameEvent": 0.5,
@@ -273,8 +273,8 @@
     },
     {
       "Id": "4d074361-b17a-4ea5-8a21-20a477294696",
-      "Name": "Pack Hold Release",
-      "Description": "Re-enables major damage cooldowns after the low-pack-HP hold window ends.",
+      "Name": "Pack Burst Release",
+      "Description": "Releases major damage cooldowns after the low-pack-HP hold window ends.",
       "EventType": "OnTick",
       "LogicId": "a7834a16-6cba-4ad4-810a-4f273c35a3b0",
       "ThrottleSameEvent": 0.5,
@@ -287,8 +287,8 @@
     },
     {
       "Id": "jps-pld-event-stance",
-      "Name": "[OnWipe] Stance OT",
-      "Description": "Optional off-tank stance release. Disabled by default.",
+      "Name": "Wipe Reset OT Stance",
+      "Description": "Optional off-tank stance release, left disabled by default.",
       "EventType": "OnWipe",
       "LogicId": "jps-pld-logic-stance",
       "ThrottleSameEvent": 0.5,
@@ -301,8 +301,8 @@
     },
     {
       "Id": "38302ecc-8c9c-5ed9-91b9-177e0b21d6c7",
-      "Name": "Reset Toggles",
-      "Description": "Restores normal Paladin ACR toggles while safely out of combat.",
+      "Name": "Out-of-Combat Reset",
+      "Description": "Returns Paladin ACR toggles to their standard out-of-combat state.",
       "EventType": "OnTick",
       "LogicId": "4d659241-53e4-5150-840a-ebc81e1a285b",
       "ThrottleSameEvent": 0.5,
@@ -315,8 +315,8 @@
     },
     {
       "Id": "jps-pld-event-reset-zone",
-      "Name": "Reset Toggles Zone Change",
-      "Description": "Restores default Paladin toggles after zone changes.",
+      "Name": "Zone Reset",
+      "Description": "Paladin defaults are reapplied after changing zones.",
       "EventType": "OnZoneChange",
       "LogicId": "4d659241-53e4-5150-840a-ebc81e1a285b",
       "ThrottleSameEvent": 0.5,
@@ -329,8 +329,8 @@
     },
     {
       "Id": "jps-pld-event-reset-wipe",
-      "Name": "Reset Toggles Wipe",
-      "Description": "Restores default Paladin toggles after wipes.",
+      "Name": "Wipe Reset",
+      "Description": "Paladin defaults are reapplied after a wipe.",
       "EventType": "OnWipe",
       "LogicId": "4d659241-53e4-5150-840a-ebc81e1a285b",
       "ThrottleSameEvent": 0.5,
@@ -343,8 +343,8 @@
     },
     {
       "Id": "jps-pld-event-stance-mt",
-      "Name": "[OnWipe] Stance MT",
-      "Description": "Main-tank stance setup for dungeons and roulettes.",
+      "Name": "Wipe Reset MT Stance",
+      "Description": "Main-tank stance setup for roulettes and dungeon pulls.",
       "EventType": "OnWipe",
       "LogicId": "jps-pld-logic-stance-mt",
       "ThrottleSameEvent": 0.5,
@@ -357,8 +357,8 @@
     },
     {
       "Id": "jps-pld-event-stance-mt-zone",
-      "Name": "Stance MT Zone Change",
-      "Description": "Restores main-tank stance setup after zone changes.",
+      "Name": "Zone Reset MT Stance",
+      "Description": "Reapplies main-tank stance setup after changing zones.",
       "EventType": "OnZoneChange",
       "LogicId": "jps-pld-logic-stance-mt",
       "ThrottleSameEvent": 0.5,
@@ -371,8 +371,8 @@
     },
     {
       "Id": "jps-pld-event-manual-provoke-mt",
-      "Name": "Manual Provoke Tank Swap",
-      "Description": "Manual Provoke switches the profile into MT behavior by enabling Iron Will and pressing Holy Sheltron as a light swap defensive.",
+      "Name": "Manual Provoke Swap",
+      "Description": "Manual Provoke moves the profile into MT behavior, enables Iron Will, and spends Holy Sheltron as a light swap defensive.",
       "EventType": "OnTick",
       "LogicId": "jps-pld-logic-manual-provoke-mt",
       "ThrottleSameEvent": 2,
@@ -385,8 +385,8 @@
     },
     {
       "Id": "jps-pld-event-mt-add-pickup",
-      "Name": "MT Add Pickup",
-      "Description": "MT-only loose add pickup. Requires Iron Will active so OT mode with stance off will not Provoke.",
+      "Name": "MT Loose-Add Pickup",
+      "Description": "Main-tank loose-add pickup. Requires Iron Will, so stance-off OT play will not Provoke.",
       "EventType": "OnTick",
       "LogicId": "jps-pld-logic-mt-add-pickup",
       "ThrottleSameEvent": 3,
@@ -401,8 +401,8 @@
     },
     {
       "Id": "jps-pld-event-dps-toggle-safety",
-      "Name": "DPS Toggle Safety",
-      "Description": "Keeps Paladin damage/range/magic finisher toggles enabled in combat so the routine resumes normal damage after holds or imports.",
+      "Name": "Damage State Guard",
+      "Description": "Maintains Paladin damage/range/magic finisher toggles enabled in combat so the routine resumes normal damage after holds or imports.",
       "EventType": "OnTick",
       "LogicId": "jps-pld-logic-dps-toggle-safety",
       "ThrottleSameEvent": 3,
@@ -417,8 +417,8 @@
     },
     {
       "Id": "jps-pld-event-pack-aoe-release",
-      "Name": "AoE Pack Toggle Release",
-      "Description": "Keeps normal UseAOE enabled and Save CD disabled during two-or-more target pulls without touching ForceAOE.",
+      "Name": "Pack AoE Release",
+      "Description": "Maintains standard UseAOE and Save CD disabled during two-or-more target pulls while leaving ForceAOE manual.",
       "EventType": "OnTick",
       "LogicId": "jps-pld-logic-pack-aoe-release",
       "ThrottleSameEvent": 2,
@@ -2206,12 +2206,12 @@
     },
     {
       "Id": "bbe2306a-5240-45a6-a4e7-8cb66a47095a",
-      "Name": "[Self] HP <= 30%",
+      "Name": "Self HP <= 30%",
       "Description": "[Self] HP <= 30%",
       "SubConditions": [
         {
           "Id": "2ed9608a-73eb-46de-8e3b-4b8d5638c46b",
-          "Name": "[Self] HP <= 30%",
+          "Name": "Self HP <= 30%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -8039,12 +8039,12 @@
     },
     {
       "Id": "jps-pld-cond-self-hp-90",
-      "Name": "[Self] HP <= 80%",
+      "Name": "Self HP <= 80%",
       "Description": "[Self] HP <= 80%",
       "SubConditions": [
         {
           "Id": "jps-pld-cond-self-hp-90-sub",
-          "Name": "[Self] HP <= 80%",
+          "Name": "Self HP <= 80%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -9100,7 +9100,7 @@
     {
       "Id": "55ed34e5-8b06-4b99-a618-dadcfbb56e10",
       "Name": "Double Mit",
-      "Description": "2 Mit <= 65% HP, >= 3 mobs",
+      "Description": "Second pack mitigation gate: HP near 65 percent with 3+ enemies.",
       "LogicType": 0,
       "ConditionIds": [
         "307cb39d-0d33-4dc5-9255-413e1f2ae6f4",
@@ -9219,7 +9219,7 @@
     {
       "Id": "b7d72611-1464-4b11-ab8a-1902d092d9e1",
       "Name": "Single Mit",
-      "Description": "1 Mit <= 80% HP, >= 3 mobs",
+      "Description": "First pack mitigation gate: HP near 80 percent with 3+ enemies.",
       "LogicType": 0,
       "ConditionIds": [
         "d2859eb1-badb-4baf-9898-36452e6bd3da",
@@ -9338,7 +9338,7 @@
     {
       "Id": "3ab5f523-2117-4442-99e1-dc46376c8d25",
       "Name": "Panic Mit",
-      "Description": "Mit Low HP <= 60% HP",
+      "Description": "Low-HP mitigation gate at 60 percent.",
       "LogicType": 0,
       "ConditionIds": [
         "d2859eb1-badb-4baf-9898-36452e6bd3da",
@@ -9538,7 +9538,7 @@
     {
       "Id": "6b7a7363-2b08-43d0-bee0-99aad764b8d1",
       "Name": "Boss Hold Release",
-      "Description": "Re-enables major damage cooldowns after the low-boss-HP hold window ends.",
+      "Description": "Releases major damage cooldowns after the low-boss-HP hold window ends.",
       "LogicType": 0,
       "ConditionIds": [
         "91279a2b-af3e-4b97-a64a-f69792211f89",
@@ -9673,7 +9673,7 @@
     {
       "Id": "a7834a16-6cba-4ad4-810a-4f273c35a3b0",
       "Name": "Pack Hold Release",
-      "Description": "Re-enables major damage cooldowns after the low-pack-HP hold window ends.",
+      "Description": "Releases major damage cooldowns after the low-pack-HP hold window ends.",
       "LogicType": 0,
       "ConditionIds": [
         "6bbe06a6-2b6b-4939-a845-284fea9dee25",
@@ -10025,7 +10025,7 @@
     {
       "Id": "jps-pld-logic-interject",
       "Name": "Interject Interrupt",
-      "Description": "Uses Interject on interruptible enemy casts in range.",
+      "Description": "Stops interruptible enemy casts with Interject when in range.",
       "LogicType": 0,
       "ConditionIds": [
         "7c0e7a12-97a2-41c0-88c2-9c79dfa31438",
@@ -10108,7 +10108,7 @@
     {
       "Id": "a1158a21-6753-4ae3-b6dd-045d47a65fa0",
       "Name": "Arms Length",
-      "Description": "Arm's Length on three-or-more enemy pulls",
+      "Description": "Arm's Length gate for 3+ enemy pulls.",
       "LogicType": 0,
       "ConditionIds": [
         "307cb39d-0d33-4dc5-9255-413e1f2ae6f4",
@@ -10195,7 +10195,7 @@
     {
       "Id": "jps-pld-logic-stance",
       "Name": "Stance OT",
-      "Description": "Optional off-tank stance release. Disabled by default.",
+      "Description": "Optional off-tank stance release, left disabled by default.",
       "LogicType": 0,
       "ConditionIds": [
         "jps-pld-cond-stance"
@@ -10260,7 +10260,7 @@
     {
       "Id": "4d659241-53e4-5150-840a-ebc81e1a285b",
       "Name": "Reset Toggles",
-      "Description": "Restores normal Paladin ACR toggles while safely out of combat. Regular UseAOE stays enabled; ForceAOE is manual-only and is never changed by this profile.",
+      "Description": "Returns Paladin ACR toggles to their standard out-of-combat state. Regular UseAOE stays enabled; ForceAOE remains manual and is not changed by this profile.",
       "LogicType": 0,
       "ConditionIds": [
         "2f32695f-a200-43cd-8f8b-386ad31e5ba1"
@@ -10725,7 +10725,7 @@
     {
       "Id": "jps-pld-logic-stance-mt",
       "Name": "[OnWipe] Stance MT",
-      "Description": "Main-tank stance setup for dungeons and roulettes.",
+      "Description": "Main-tank stance setup for roulettes and dungeon pulls.",
       "LogicType": 0,
       "ConditionIds": [
         "jps-pld-cond-stance"
@@ -10790,7 +10790,7 @@
     {
       "Id": "jps-pld-logic-dps-toggle-safety",
       "Name": "DPS Toggle Safety",
-      "Description": "Keeps Paladin damage, range, gap-closer, and magic finisher toggles enabled in combat so the routine resumes normal damage after holds or imports.",
+      "Description": "Maintains Paladin damage, range, gap-closer, and magic-finisher toggles so the routine resumes normal damage after holds or imports.",
       "LogicType": 0,
       "ConditionIds": [
         "2b47e9e7-c7f3-42a3-a397-718b14200121"
@@ -11105,7 +11105,7 @@
     {
       "Id": "jps-pld-logic-pack-aoe-release",
       "Name": "AoE Pack Toggle Release",
-      "Description": "Keeps normal UseAOE enabled and Save CD disabled during two-or-more target pulls so Paladin picks up adds and uses AoE without forcing ForceAOE.",
+      "Description": "Maintains standard UseAOE and Save CD disabled during two-or-more target pulls so Paladin picks up adds and uses AoE without forcing ForceAOE.",
       "LogicType": 0,
       "ConditionIds": [
         "a8569323-a9d5-4446-9fb7-565317311ea8",
@@ -11344,7 +11344,7 @@
       {
         "Id": "jps-pld-qt-boss-hold",
         "Name": "Boss Hold",
-        "Description": "Optional dungeon-routing helper that saves major damage cooldowns near the end of a boss. Leave off for normal play.",
+        "Description": "Optional routing helper that holds major damage cooldowns near the end of a boss. Leave it off for normal play.",
         "EventIds": [
           "08c75b56-6f6e-4b0c-88f7-7f58282253c4",
           "9d3ae40b-bfcc-4ed3-968c-fb9c49b862fa"
@@ -11355,7 +11355,7 @@
       {
         "Id": "jps-pld-qt-pack-hold",
         "Name": "Pack Hold",
-        "Description": "Optional dungeon-routing helper that saves major damage cooldowns when a trash pack is nearly dead. Leave off for normal play.",
+        "Description": "Optional routing helper that holds major damage cooldowns as a trash pack is ending. Leave it off for normal play.",
         "EventIds": [
           "5a47325b-00d5-4e36-8843-040393757b89",
           "4d074361-b17a-4ea5-8a21-20a477294696"
@@ -11376,7 +11376,7 @@
       {
         "Id": "jps-pld-qt-stun-int",
         "Name": "Stun/Int",
-        "Description": "Uses Low Blow and Interject for roulette-safe dungeon utility.",
+        "Description": "Uses Low Blow and Interject for general-duty dungeon utility.",
         "EventIds": [
           "6096b962-0a04-41f7-bfc0-361d76183c83",
           "jps-pld-event-interject"
@@ -11387,7 +11387,7 @@
       {
         "Id": "jps-pld-qt-auto-tb",
         "Name": "Auto TB",
-        "Description": "Automatically handles incoming tankbuster mitigation.",
+        "Description": "Selects tankbuster mitigation for the incoming hit.",
         "EventIds": [
           "d52feb04-a7b6-40de-95be-ee550fab81f2"
         ],
@@ -11417,7 +11417,7 @@
       {
         "Id": "jps-pld-qt-stance-mt",
         "Name": "MT Stance",
-        "Description": "Main-tank stance setup for dungeons and roulettes, with add-pickup support. Manual Provoke also switches into this MT behavior.",
+        "Description": "Main-tank stance setup for roulettes and dungeons, with loose-add pickup included. Manual Provoke also switches into this MT behavior.",
         "EventIds": [
           "jps-pld-event-stance-mt",
           "jps-pld-event-stance-mt-zone",
@@ -11430,7 +11430,7 @@
       {
         "Id": "jps-pld-qt-stance-ot",
         "Name": "OT Stance",
-        "Description": "Optional off-tank stance release. Manual Provoke is treated as a tank swap and turns MT stance back on.",
+        "Description": "Optional off-tank stance release; manual Provoke is treated as a tank swap and turns MT stance back on.",
         "EventIds": [
           "jps-pld-event-stance",
           "jps-pld-event-manual-provoke-mt"
@@ -11441,7 +11441,7 @@
       {
         "Id": "jps-pld-qt-sprint",
         "Name": "Sprint",
-        "Description": "Optional out-of-combat Sprint between pulls.",
+        "Description": "Optional between-pull Sprint.",
         "EventIds": [
           "f2cf7f39-da49-47fe-9abc-f42d72bc6a03"
         ],

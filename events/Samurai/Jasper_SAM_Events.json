@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_SAM_Events",
   "Name": "Jasper SAM Events",
-  "Description": "General-purpose Samurai event profile for PvE. Keeps role mitigation, Tengentsu recovery, earlier self-heal recovery, normal 2+ target AoE/helper release, Kenki/Iaijutsu/Meikyo toggle safety, optional cooldown holds, Leg Sweep/Arm's Length utility, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint/Hagakure for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. Special thanks to Arche for the general reaction profile foundation and broad coverage; Jasper adds public-duty safety tuning and xSalice compatibility polish.",
-  "Version": "0.1.15",
+  "Description": "Samurai public event profile for routine PvE. It keeps Feint, Tengentsu recovery, Second Wind, Bloodbath, Leg Sweep, Arm's Length, Kenki/Iaijutsu helpers, and normal AoE release available while ForceAOE remains manual. Lineage note: Arche supplied the general reaction groundwork and coverage; Jasper reshapes it here for public-duty safety, job controls, and xSalice compatibility.",
+  "Version": "0.1.16",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -21,8 +21,8 @@
     },
     {
       "Id": "63cdfec9-a8cc-45a0-a11d-4903d9381aad",
-      "Name": "Second Wind",
-      "Description": "Uses Second Wind at 60 percent HP for earlier self-recovery.",
+      "Name": "Second Wind Recovery",
+      "Description": "Uses Second Wind once personal HP falls near 60 percent.",
       "EventType": "OnTick",
       "LogicId": "faea22ca-5c00-47b0-8cf7-17f4b37957bf",
       "ThrottleSameEvent": 0.5,
@@ -35,8 +35,8 @@
     },
     {
       "Id": "jps-sam-event-leg-sweep",
-      "Name": "Leg Sweep Stun",
-      "Description": "Uses Leg Sweep on casting enemies in melee range.",
+      "Name": "Leg Sweep Interrupt",
+      "Description": "Stuns interruptible enemy casts when Leg Sweep is in melee range.",
       "EventType": "OnTick",
       "LogicId": "jps-sam-logic-leg-sweep",
       "ThrottleSameEvent": 0.5,
@@ -49,8 +49,8 @@
     },
     {
       "Id": "jps-sam-event-arms-length-emergency",
-      "Name": "Arm's Length Emergency",
-      "Description": "Uses Arm's Length when you are stationary, low on HP, and holding multiple mobs.",
+      "Name": "Arm's Length Self-Guard",
+      "Description": "Triggers Arm's Length only when you are stationary, pressured, and several mobs are on you.",
       "EventType": "OnTick",
       "LogicId": "jps-sam-logic-arms-length-emergency",
       "ThrottleSameEvent": 0.5,
@@ -63,8 +63,8 @@
     },
     {
       "Id": "7b3857d9-5452-4ef8-af7a-26e09c771a8d",
-      "Name": "Bloodbath",
-      "Description": "Uses Bloodbath around 70 percent HP for steadier melee recovery.",
+      "Name": "Bloodbath Recovery",
+      "Description": "Uses Bloodbath near 70 percent HP to smooth melee self-recovery.",
       "EventType": "OnTick",
       "LogicId": "f844ec77-e521-4188-bb7b-f1cd6b80e6c0",
       "ThrottleSameEvent": 0.5,
@@ -119,7 +119,7 @@
     },
     {
       "Id": "2e434c4d-b5ef-473b-9dcd-7b11b5419e11",
-      "Name": "Boss Hold",
+      "Name": "Hold Boss Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "3196f51a-411a-4439-b0eb-e665bff07484",
@@ -133,7 +133,7 @@
     },
     {
       "Id": "eb55984e-b7cd-4554-8301-ba7d1eec92c4",
-      "Name": "Group Hold",
+      "Name": "Hold Pack Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "f31f0476-0a6d-416e-bd74-1b76b41982ee",
@@ -147,7 +147,7 @@
     },
     {
       "Id": "fbbc11cd-bc64-48f6-9fd1-cdf8401f0542",
-      "Name": "Sprint OOC",
+      "Name": "Sprint Between Pulls",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "de2f5e0e-6a27-42b6-a6d0-7c01166d283c",
@@ -189,7 +189,7 @@
     },
     {
       "Id": "8aa99caf-f8f9-423b-a97e-51d5a4369736",
-      "Name": "Boss No Hold",
+      "Name": "Release Boss Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "2d89a894-efd9-4fb7-bc86-41c2d6427f68",
@@ -203,7 +203,7 @@
     },
     {
       "Id": "c3949bf1-d2e6-4135-81f0-adb88ff26653",
-      "Name": "Group No Hold",
+      "Name": "Release Pack Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "7f6779d7-0203-4e9e-85ba-b3a8ca1c9da0",
@@ -217,8 +217,8 @@
     },
     {
       "Id": "b61265b1-4881-5be6-a2ec-70d825afb6ed",
-      "Name": "Reset Toggles",
-      "Description": "Restores normal Samurai ACR toggles while safely out of combat.",
+      "Name": "Out-of-Combat Reset",
+      "Description": "Returns Samurai ACR toggles to their standard out-of-combat state.",
       "EventType": "OnTick",
       "LogicId": "d8d6e27f-665b-52ba-8f1a-d5ea00020bcd",
       "ThrottleSameEvent": 0.5,
@@ -231,8 +231,8 @@
     },
     {
       "Id": "jps-sam-event-reset-zone",
-      "Name": "Reset Toggles Zone Change",
-      "Description": "Restores default Samurai toggles after zone changes.",
+      "Name": "Zone Reset",
+      "Description": "Samurai defaults are reapplied after changing zones.",
       "EventType": "OnZoneChange",
       "LogicId": "d8d6e27f-665b-52ba-8f1a-d5ea00020bcd",
       "ThrottleSameEvent": 0.5,
@@ -245,8 +245,8 @@
     },
     {
       "Id": "jps-sam-event-reset-wipe",
-      "Name": "Reset Toggles Wipe",
-      "Description": "Restores default Samurai toggles after wipes.",
+      "Name": "Wipe Reset",
+      "Description": "Samurai defaults are reapplied after a wipe.",
       "EventType": "OnWipe",
       "LogicId": "d8d6e27f-665b-52ba-8f1a-d5ea00020bcd",
       "ThrottleSameEvent": 0.5,
@@ -259,8 +259,8 @@
     },
     {
       "Id": "jps-sam-event-feint-tb",
-      "Name": "Feint TB",
-      "Description": "Uses Feint for incoming tankbusters when the target is not already debuffed.",
+      "Name": "Feint Tankbuster",
+      "Description": "Applies Feint to tankbusters when the target is not already covered.",
       "EventType": "OnAllTankBuster",
       "LogicId": "jps-sam-logic-feint-tb",
       "ThrottleSameEvent": 0.5,
@@ -287,8 +287,8 @@
     },
     {
       "Id": "jps-sam-event-dps-toggle-safety",
-      "Name": "DPS Toggle Safety",
-      "Description": "Keeps Samurai AoE, Kenki, Iaijutsu, Meikyo/Ikishoten, positional, ranged, and utility helper toggles healthy.",
+      "Name": "Damage State Guard",
+      "Description": "Maintains Samurai AoE, Kenki, Iaijutsu, Meikyo/Ikishoten, positional, ranged, and utility helper toggles healthy.",
       "EventType": "OnTick",
       "LogicId": "jps-sam-logic-dps-toggle-safety",
       "ThrottleSameEvent": 1,
@@ -303,8 +303,8 @@
     },
     {
       "Id": "jps-sam-event-pack-aoe-release",
-      "Name": "Multi-Target AoE Release",
-      "Description": "Keeps normal Samurai AoE, Kenki, Iaijutsu, Meikyo, and pack-spender helper toggles enabled on 2+ enemy pulls without touching ForceAOE.",
+      "Name": "Pack Damage Release",
+      "Description": "Maintains standard Samurai AoE, Kenki, Iaijutsu, Meikyo, and pack-spender helper toggles on 2+ enemy pulls while leaving ForceAOE manual.",
       "EventType": "OnTick",
       "LogicId": "jps-sam-logic-pack-aoe-release",
       "ThrottleSameEvent": 1,
@@ -5616,7 +5616,7 @@
     {
       "Id": "faea22ca-5c00-47b0-8cf7-17f4b37957bf",
       "Name": "Second Wind",
-      "Description": "Uses Second Wind at 60 percent HP for earlier self-recovery.",
+      "Description": "Uses Second Wind once personal HP falls near 60 percent.",
       "LogicType": 0,
       "ConditionIds": [
         "2deb9cfc-deb8-4619-9dff-5d393fa4cf36",
@@ -5657,7 +5657,7 @@
     {
       "Id": "f844ec77-e521-4188-bb7b-f1cd6b80e6c0",
       "Name": "Bloodbath",
-      "Description": "Uses Bloodbath around 70 percent HP for steadier melee recovery.",
+      "Description": "Uses Bloodbath near 70 percent HP to smooth melee self-recovery.",
       "LogicType": 0,
       "ConditionIds": [
         "b635c655-1351-487a-9042-6b4ed9b363ec",
@@ -6174,7 +6174,7 @@
     {
       "Id": "d8d6e27f-665b-52ba-8f1a-d5ea00020bcd",
       "Name": "Reset Toggles",
-      "Description": "Restores normal Samurai ACR defaults out of combat, including AoE, Kenki, Iaijutsu, ranged, positional, Tengentsu, and utility helper toggles. ForceAOE is untouched.",
+      "Description": "Returns Samurai ACR settings to their normal out-of-combat state, including AoE, Kenki, Iaijutsu, ranged, positional, Tengentsu, and utility helper toggles. ForceAOE remains manual.",
       "LogicType": 0,
       "ConditionIds": [
         "a6169a92-4e09-4e9a-a6eb-82f6e3cb9bcd"
@@ -6714,7 +6714,7 @@
     {
       "Id": "jps-sam-logic-feint-tb",
       "Name": "Feint TB",
-      "Description": "Uses Feint for incoming tankbusters when the target is not already debuffed.",
+      "Description": "Applies Feint to tankbusters when the target is not already covered.",
       "LogicType": 0,
       "ConditionIds": [
         "762e3654-d518-4e6c-a3d2-b41ad3a2cd2c",
@@ -6821,7 +6821,7 @@
     {
       "Id": "jps-sam-logic-leg-sweep",
       "Name": "Leg Sweep Stun",
-      "Description": "Uses Leg Sweep on casting enemies in melee range.",
+      "Description": "Stuns interruptible enemy casts when Leg Sweep is in melee range.",
       "LogicType": 0,
       "ConditionIds": [
         "jps-sam-cond-leg-sweep-cast-range",
@@ -6905,7 +6905,7 @@
     {
       "Id": "jps-sam-logic-dps-toggle-safety",
       "Name": "DPS Toggle Safety",
-      "Description": "Keeps Samurai AoE, Kenki, Iaijutsu, Meikyo/Ikishoten, positional, ranged, and utility helper toggles healthy without overriding DOT manager behavior.",
+      "Description": "Maintains Samurai AoE, Kenki, Iaijutsu, Meikyo/Ikishoten, positional, ranged, and utility helper toggles healthy without overriding DOT manager behavior.",
       "LogicType": 0,
       "ConditionIds": [
         "87584ab8-e847-4d6e-b3d4-b8881894894e"
@@ -7395,7 +7395,7 @@
     {
       "Id": "jps-sam-logic-pack-aoe-release",
       "Name": "Multi-Target AoE Release",
-      "Description": "Keeps normal Samurai AoE, Kenki, Iaijutsu, Meikyo, and pack-spender helper toggles enabled on 2+ enemy pulls without touching ForceAOE.",
+      "Description": "Maintains standard Samurai AoE, Kenki, Iaijutsu, Meikyo, and pack-spender helper toggles on 2+ enemy pulls while leaving ForceAOE manual.",
       "LogicType": 0,
       "ConditionIds": [
         "87584ab8-e847-4d6e-b3d4-b8881894894e",
@@ -7796,7 +7796,7 @@
       {
         "Id": "jps-sam-qt-feint",
         "Name": "Feint",
-        "Description": "Uses Feint for raidwide and tankbuster mitigation windows.",
+        "Description": "Applies Feint during raidwide and tankbuster mitigation windows.",
         "EventIds": [
           "b1f3010e-2c9f-49fa-b595-9c6554f543d2",
           "jps-sam-event-feint-tb"
@@ -7818,7 +7818,7 @@
       {
         "Id": "jps-sam-qt-self",
         "Name": "Self Guard",
-        "Description": "Uses Bloodbath, Second Wind, and Arm's Length for personal recovery.",
+        "Description": "Uses personal recovery tools through Bloodbath, Second Wind, and Arm's Length.",
         "EventIds": [
           "7b3857d9-5452-4ef8-af7a-26e09c771a8d",
           "63cdfec9-a8cc-45a0-a11d-4903d9381aad",
@@ -7830,7 +7830,7 @@
       {
         "Id": "jps-sam-qt-stun",
         "Name": "Stun",
-        "Description": "Uses Leg Sweep on cast targets in melee range.",
+        "Description": "Stuns cast targets that are inside Leg Sweep range.",
         "EventIds": [
           "jps-sam-event-leg-sweep"
         ],

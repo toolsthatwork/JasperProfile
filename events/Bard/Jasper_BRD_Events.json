@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_BRD_Events",
   "Name": "Jasper BRD Events",
-  "Description": "General-purpose Bard event profile for PvE. Keeps Troubadour/Minne support, Warden's Paean cleanse support, earlier self-heal recovery, normal 2+ target AoE/DOT and song-burst release, damage-toggle safety, Head Graze interrupts, Arm's Length self-defense, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. Special thanks to Arche for the general reaction profile foundation and broad coverage; Jasper adds public-duty safety tuning and xSalice compatibility polish.",
-  "Version": "0.1.15",
+  "Description": "Bard public event profile for roulettes and general duties. It keeps songs, DoTs, interrupts, Minne/Paean support, personal recovery, and normal multi-target damage helpers ready without forcing ForceAOE. Lineage note: Arche supplied the general reaction groundwork and coverage; Jasper reshapes it here for public-duty safety, job controls, and xSalice compatibility.",
+  "Version": "0.1.16",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -21,8 +21,8 @@
     },
     {
       "Id": "ca2c12e5-d077-44aa-8e82-2bb82b270656",
-      "Name": "Second Wind",
-      "Description": "Uses Second Wind at 60 percent HP for earlier self-recovery.",
+      "Name": "Second Wind Recovery",
+      "Description": "Uses Second Wind once personal HP falls near 60 percent.",
       "EventType": "OnTick",
       "LogicId": "5b2ac3cc-d8d6-4d72-ab98-036032ec6905",
       "ThrottleSameEvent": 0.5,
@@ -35,7 +35,7 @@
     },
     {
       "Id": "d6adbb06-b080-43fc-899b-08573440b826",
-      "Name": "Boss Hold",
+      "Name": "Hold Boss Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "6cc6a7c6-3625-4294-9dbb-9fa7d267d6d7",
@@ -49,7 +49,7 @@
     },
     {
       "Id": "dbcc630a-9543-43d1-9118-707b3183d9f3",
-      "Name": "Group Hold",
+      "Name": "Hold Pack Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "ad612f3f-4c1d-465c-96e2-c76424ffd46f",
@@ -77,7 +77,7 @@
     },
     {
       "Id": "8f171d37-5954-422d-b04e-9c134168a97a",
-      "Name": "Sprint OOC",
+      "Name": "Sprint Between Pulls",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "02e444d1-b934-40d2-84df-3db191a8bef6",
@@ -91,7 +91,7 @@
     },
     {
       "Id": "70462e08-82a7-464a-83df-c5bb709bfc0e",
-      "Name": "Dots On",
+      "Name": "DoT Helpers On",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "d12e2b20-4fbc-4038-990a-f6fcca7d9049",
@@ -105,7 +105,7 @@
     },
     {
       "Id": "1a776910-34fa-470a-90f5-87b78105e2d7",
-      "Name": "Dots Off",
+      "Name": "DoT Helpers Off",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "1c8e9b77-d65f-4d6e-b3f1-61dbabbdc1ad",
@@ -119,7 +119,7 @@
     },
     {
       "Id": "a79ae8fb-2e22-4e3c-b92f-b0d3d9521301",
-      "Name": "Group No Hold",
+      "Name": "Release Pack Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "6ca687ba-f7a6-44c4-8c89-1c614fcc1be2",
@@ -133,7 +133,7 @@
     },
     {
       "Id": "1f74093e-4731-4a06-b097-603d93f8c6e4",
-      "Name": "Boss No Hold",
+      "Name": "Release Boss Burst",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "fd52d846-aa19-4664-a1d2-7ef0d3f59849",
@@ -161,8 +161,8 @@
     },
     {
       "Id": "f938d1a9-786e-534b-ad8f-cfab52eb5cfd",
-      "Name": "Reset Toggles",
-      "Description": "Restores normal Bard ACR toggles while safely out of combat.",
+      "Name": "Out-of-Combat Reset",
+      "Description": "Returns Bard ACR toggles to their standard out-of-combat state.",
       "EventType": "OnTick",
       "LogicId": "27953790-e12c-5bd0-8f0a-e1c4180cfa56",
       "ThrottleSameEvent": 0.5,
@@ -175,8 +175,8 @@
     },
     {
       "Id": "jps-brd-event-reset-zone",
-      "Name": "Reset Toggles Zone Change",
-      "Description": "Restores default Bard toggles after zone changes.",
+      "Name": "Zone Reset",
+      "Description": "Bard defaults are reapplied after changing zones.",
       "EventType": "OnZoneChange",
       "LogicId": "27953790-e12c-5bd0-8f0a-e1c4180cfa56",
       "ThrottleSameEvent": 0.5,
@@ -189,8 +189,8 @@
     },
     {
       "Id": "jps-brd-event-reset-wipe",
-      "Name": "Reset Toggles Wipe",
-      "Description": "Restores default Bard toggles after wipes.",
+      "Name": "Wipe Reset",
+      "Description": "Bard defaults are reapplied after a wipe.",
       "EventType": "OnWipe",
       "LogicId": "27953790-e12c-5bd0-8f0a-e1c4180cfa56",
       "ThrottleSameEvent": 0.5,
@@ -231,8 +231,8 @@
     },
     {
       "Id": "jps-brd-event-head-graze",
-      "Name": "Head Graze Interrupt",
-      "Description": "Uses Head Graze on casting enemies in range.",
+      "Name": "Head Graze Cast Stop",
+      "Description": "Stops interruptible enemy casts with Head Graze when in range.",
       "EventType": "OnTick",
       "LogicId": "jps-brd-logic-head-graze",
       "ThrottleSameEvent": 0.5,
@@ -245,8 +245,8 @@
     },
     {
       "Id": "jps-brd-event-arms-length-emergency",
-      "Name": "Arm's Length Emergency",
-      "Description": "Uses Arm's Length when you are stationary, low on HP, and holding multiple mobs.",
+      "Name": "Arm's Length Self-Guard",
+      "Description": "Triggers Arm's Length only when you are stationary, pressured, and several mobs are on you.",
       "EventType": "OnTick",
       "LogicId": "jps-brd-logic-arms-length-emergency",
       "ThrottleSameEvent": 0.5,
@@ -259,8 +259,8 @@
     },
     {
       "Id": "jps-brd-event-dps-toggle-safety",
-      "Name": "DPS Toggle Safety",
-      "Description": "Keeps Bard songs, burst, AoE, DOT, Apex, utility, and support-helper toggles healthy in combat so imported or held states do not leave the job passive.",
+      "Name": "Damage State Guard",
+      "Description": "Maintains Bard songs, burst, AoE, DOT, Apex, utility, and support-helper toggles in combat so imported or held toggle states cannot strand the job in a passive state.",
       "EventType": "OnTick",
       "LogicId": "jps-brd-logic-dps-toggle-safety",
       "ThrottleSameEvent": 1,
@@ -275,8 +275,8 @@
     },
     {
       "Id": "jps-brd-event-pack-aoe-release",
-      "Name": "Multi-Target AoE Release",
-      "Description": "Keeps normal Bard AoE, DOT, songs, burst, and Apex helper toggles enabled on 2+ enemy pulls without touching ForceAOE.",
+      "Name": "Pack Damage Release",
+      "Description": "Maintains standard Bard AoE, DOT, songs, burst, and Apex helper toggles on 2+ enemy pulls while leaving ForceAOE manual.",
       "EventType": "OnTick",
       "LogicId": "jps-brd-logic-pack-aoe-release",
       "ThrottleSameEvent": 1,
@@ -5486,7 +5486,7 @@
     {
       "Id": "5b2ac3cc-d8d6-4d72-ab98-036032ec6905",
       "Name": "Second Wind",
-      "Description": "Uses Second Wind at 60 percent HP for earlier self-recovery.",
+      "Description": "Uses Second Wind once personal HP falls near 60 percent.",
       "LogicType": 0,
       "ConditionIds": [
         "009192b6-1f6a-4a03-9c70-04c5284c0ab5",
@@ -6350,7 +6350,7 @@
     {
       "Id": "27953790-e12c-5bd0-8f0a-e1c4180cfa56",
       "Name": "Reset Toggles",
-      "Description": "Restores normal Bard ACR defaults out of combat, including AoE, DOT, song, and support toggles. ForceAOE is untouched.",
+      "Description": "Returns Bard ACR settings to their normal out-of-combat state, including AoE, DOT, song, and support toggles. ForceAOE remains manual.",
       "LogicType": 0,
       "ConditionIds": [
         "701a6c61-ab1b-4799-a551-0f866790a426"
@@ -6946,7 +6946,7 @@
     {
       "Id": "jps-brd-logic-head-graze",
       "Name": "Head Graze Interrupt",
-      "Description": "Uses Head Graze on casting enemies in range.",
+      "Description": "Stops interruptible enemy casts with Head Graze when in range.",
       "LogicType": 0,
       "ConditionIds": [
         "jps-brd-cond-interruptible-cast",
@@ -7030,7 +7030,7 @@
     {
       "Id": "jps-brd-logic-dps-toggle-safety",
       "Name": "DPS Toggle Safety",
-      "Description": "Keeps Bard songs, burst, AoE, DOT, Apex, utility, and support-helper toggles healthy in combat so imported or held states do not leave the job passive.",
+      "Description": "Maintains Bard songs, burst, AoE, DOT, Apex, utility, and support-helper toggles in combat so imported or held toggle states cannot strand the job in a passive state.",
       "LogicType": 0,
       "ConditionIds": [
         "b38231b8-8597-4485-b5a7-a396626acf57"
@@ -7470,7 +7470,7 @@
     {
       "Id": "jps-brd-logic-pack-aoe-release",
       "Name": "Multi-Target AoE Release",
-      "Description": "Keeps normal Bard AoE, DOT, songs, burst, and Apex helper toggles enabled on 2+ enemy pulls without touching ForceAOE.",
+      "Description": "Maintains standard Bard AoE, DOT, songs, burst, and Apex helper toggles on 2+ enemy pulls while leaving ForceAOE manual.",
       "LogicType": 0,
       "ConditionIds": [
         "b38231b8-8597-4485-b5a7-a396626acf57",
@@ -7910,7 +7910,7 @@
       {
         "Id": "jps-brd-qt-sprint",
         "Name": "Sprint",
-        "Description": "Optional out-of-combat Sprint between pulls.",
+        "Description": "Optional between-pull Sprint.",
         "EventIds": [
           "8f171d37-5954-422d-b04e-9c134168a97a"
         ],

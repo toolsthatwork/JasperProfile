@@ -2,19 +2,20 @@
 
 ## Unreleased
 
+- Reworked public-facing wording across docs, event profile metadata, opener notes, and passive timeline metadata while leaving profile behavior unchanged.
 - Strengthened public credits and imported-profile descriptions with a clearer thank-you to Arche for the general reaction profile foundation used by the Jasper event profiles.
 - Upgraded the remaining public combat profiles with broader normal-play recovery: DRG/MNK/NIN/VPR/BRD/MCH/BLM/PCT/SMN now recover burst/spender helpers during normal pulls, RPR gained the same DPS toggle and pack-release safety layer, and AST/SCH/SGE gained in-combat toggle recovery without adding forced timeline damage or ForceAOE automation.
-- Ultra-polished White Mage, tanks, Red Mage, Dancer, and Samurai: White Mage now has in-combat toggle recovery, PLD/WAR short mitigation waits for real pull damage, DRK/GNB threshold text matches current 80/65 behavior, Red Mage Vercure is stricter emergency support, and DNC/SAM release normal burst/spender helpers on packs without touching ForceAOE.
+- Ultra-polished White Mage, tanks, Red Mage, Dancer, and Samurai: White Mage now has in-combat toggle recovery, PLD/WAR short mitigation waits for real pull damage, DRK/GNB threshold text matches current 80/65 behavior, Red Mage Vercure is stricter emergency support, and DNC/SAM release normal burst/spender helpers on packs while leaving ForceAOE manual.
 - Added manual-Provoke tank-swap handling for PLD/WAR/DRK/GNB: Provoke now turns MT stance back on and uses one short swap defensive while OT add-pickup remains stance-guarded.
 - Guarded tank MT add-pickup with active tank-stance checks so OT mode with stance off will not Provoke or ranged-pull loose mobs.
-- Added MT add-pickup support for Paladin, Warrior, Dark Knight, and Gunbreaker using Arche's general aggro-coverage foundation: the existing MT Stance control now also enables Provoke plus ranged-pull recovery on loose adds without touching ForceAOE.
+- Added MT add-pickup support for Paladin, Warrior, Dark Knight, and Gunbreaker using Arche's general aggro-coverage foundation: the existing MT Stance control now also enables Provoke plus ranged-pull recovery on loose adds while leaving ForceAOE manual.
 - Polished Astrologian recovery timing so main-tank Aspected Benefic/Celestial Intersection begin around 80% HP and Essential Dignity supports at 70% HP, with a compact three-column quick bar.
 - Polished Scholar recovery timing and controls: main-tank Lustrate now starts around 65% HP, while the quick bar is compacted into grouped three-column controls.
 - Polished Sage recovery timing and controls: main-tank Taurochole/Druochole now start around 75% HP, and duplicate one-off quick-toggle buttons were folded into grouped controls.
-- Polished Paladin add-pickup behavior so two-or-more target pulls release normal UseAOE/Save CD without touching ForceAOE, while keeping heavier mitigation logic on larger pulls.
+- Polished Paladin add-pickup behavior so two-or-more target pulls release normal UseAOE/Save CD while leaving ForceAOE manual, while keeping heavier mitigation logic on larger pulls.
 - Retuned White Mage main-tank recovery so Tetragrammaton and lily single-target recovery begin around 80% HP instead of waiting deeper into the damage curve.
 - Raised Red Mage emergency Vercure support thresholds slightly for self, main tank, and low party members while preserving damage-first behavior.
-- Tightened Warrior gauge management so Beast Gauge at 80+ releases Save CD/Save 1 Jump and re-enables spender toggles, while 3+ pulls also restore normal UseAOE without touching ForceAOE.
+- Tightened Warrior gauge management so Beast Gauge at 80+ releases Save CD/Save 1 Jump and restores spender toggles, while 3+ pulls also restore normal UseAOE while leaving ForceAOE manual.
 
 - Polished Black Mage, Pictomancer, and Summoner with default damage-toggle safety, normal 2+ target AoE/helper release without ForceAOE, compact manual quick-toggle controls, and preserved optional burst cooldown holds.
 - Tightened caster support controls so Addle, personal shields, Rekindle, DOT helpers, and sprint are exposed cleanly while reset/safety helpers run quietly.
@@ -30,19 +31,19 @@
 - Hardened Warrior spender recovery so 3+ enemy pulls also re-enable Inner Release, Infuriate, Upheaval, Onslaught, and primal spender toggles while forcing Save CD/Save 1 Jump off, reducing Beast Gauge overcap from bad local toggle state.
 - Polished Red Mage general behavior with in-combat DPS/raise/melee toggle safety, SmartAOE release for multi-target pulls, earlier emergency Vercure support, and a compact manual quick-toggle overlay.
 - Tightened White Mage dungeon recovery: Regen/Benison upkeep now starts around 90% tank HP, Tetragrammaton/Afflatus Solace move to 75% without making Cure II earlier, Benediction starts at 35%, and Asylum can drop for tank-only pressure in 3+ enemy pulls.
-- Polished Paladin sustain and AoE behavior: dungeon mitigation now staggers around 80%/65% HP, Hallowed Ground starts around 30% HP, normal UseAOE/CD toggles are released on 3+ enemy pulls without touching ForceAOE, and the quick-toggle overlay now matches the compact Warrior-style manual controls.
+- Polished Paladin sustain and AoE behavior: dungeon mitigation now staggers around 80%/65% HP, Hallowed Ground starts around 30% HP, normal UseAOE/CD toggles are released on 3+ enemy pulls while leaving ForceAOE manual, and the quick-toggle overlay now matches the compact Warrior-style manual controls.
 - Retuned Warrior sustain so AoE-pack Bloodwhetting/Raw Intuition starts around 90% HP, dungeon mitigation staggers around 80%/65% HP, Equilibrium/Thrill/Shake recover earlier without blowing everything at full HP, and Holmgang no longer waits as deep.
 - Added Warrior spender safety so Inner Release, Infuriate, Upheaval, Onslaught, and primal spender toggles stay enabled in combat, while Save CD is released during 3+ enemy pulls to reduce Beast Gauge overcap.
 - Slimmed the Warrior quick-toggle overlay to visible manual controls only, keeping safety helpers active while reducing on-screen button clutter.
 - Tightened the White Mage Holy nudge to require three nearby targets within Holy range and stopped resetting the generic Holy toggle, preventing Holy on spread-out pulls.
-- Added a White Mage dungeon-trash Holy nudge so stationary 3+ enemy pulls use Holy as the AoE GCD instead of falling into long Glare stretches, without touching ForceAOE.
+- Added a White Mage dungeon-trash Holy nudge so stationary 3+ enemy pulls use Holy as the AoE GCD instead of falling into long Glare stretches, while leaving ForceAOE manual.
 - Retuned White Mage tank recovery so Regen and two-charge Divine Benison start at 85% HP, while Tetragrammaton, Afflatus Solace, and Cure II fallback now start at 70% HP.
 - Added Reaper as the focused melee DPS ultra-polish follow-up: Arcane Crest now waits for actual damage at 90% HP instead of firing at full HP, while the lower emergency Crest fallback remains available.
 - Retuned healer oGCD rescue timing: Astrologian main-tank Essential Dignity and Scholar main-tank Lustrate now start at 60% HP, while Sage main-tank Taurochole and Druochole start at 70% HP with emergency GCD fallbacks unchanged.
 - Polished caster public-duty survival: Black Mage, Pictomancer, and Summoner personal shields now start at 75% HP, Summoner self Rekindle starts at 60% HP, and Red Mage emergency Vercure support starts earlier while remaining DPS-first.
 - Standardized physical DPS public-duty recovery: Bard, Machinist, Dragoon, Monk, Ninja, Samurai, Reaper, and Viper now use Second Wind at 60% HP, and Reaper Bloodbath now matches the 70% melee recovery standard.
 - Ultra-polished White Mage, Paladin, Red Mage, and Dancer public safety: White Mage now adds Aquaveil support during 3+ mob pulls and starts tank rescue earlier, Paladin Holy Sheltron no longer waits for near-cap Oath, Red Mage emergency Vercure no longer waits as deep, and Dancer personal recovery starts sooner.
-- Polished tank recovery toward the White Mage-style oGCD-first standard: Paladin Sheltron/Intervention, Warrior Equilibrium/Thrill/Shake/Nascent, Dark Knight Oblation/self-TBN, and Gunbreaker HoC/Aurora now respond earlier without touching ForceAOE.
+- Polished tank recovery toward the White Mage reference-style oGCD-first standard: Paladin Sheltron/Intervention, Warrior Equilibrium/Thrill/Shake/Nascent, Dark Knight Oblation/self-TBN, and Gunbreaker HoC/Aurora now respond earlier while leaving ForceAOE manual.
 - Removed ForceAOE from all tank reset toggles so Jasper profiles never turn forced AoE on before pulls; regular UseAOE remains enabled and ForceAOE is manual-only.
 - Corrected Paladin AoE defaults so normal UseAOE remains enabled while ForceAOE stays off by default, preventing forced AoE spam on single-target or low-target situations.
 - Clarified tank cooldown-hold UI copy: renamed Variable Holds to Cooldown Holds and rewrote boss/pack hold descriptions so they read as optional damage-cooldown routing helpers, not mitigation thresholds.
@@ -50,9 +51,9 @@
 - Retuned Warrior, Dark Knight, and Gunbreaker dungeon-pull safety to match the earlier Paladin mitigation ladder, with invulns no longer waiting for near-death HP and Arm's Length normalized for three-mob pulls where needed.
 - Retuned Paladin dungeon and boss safety: mitigation now starts earlier in pulls, Hallowed Ground/Clemency no longer wait for critical HP, and Arm's Length can fire on three-mob pulls.
 - Added conservative Arm's Length emergency self-defense to melee and physical ranged DPS when stationary, low on HP, and holding multiple mobs.
-- Added Paladin emergency self-Clemency support, now retuned to cover 26% to 55% HP for roulette-safe tank recovery without overlapping the Hallowed Ground panic floor.
+- Added Paladin emergency self-Clemency support, now retuned to cover 26% to 55% HP for general-duty tank recovery without overlapping the Hallowed Ground panic floor.
 - Added Scholar main-tank Lustrate emergency recovery below 50% HP so Aetherflow can cover sudden tank dips after Excogitation windows.
-- Added Leg Sweep stun utility to Dragoon, Monk, Ninja, Samurai, Reaper, and Viper using casting/range/combat guards for roulette-safe melee dungeon support.
+- Added Leg Sweep stun utility to Dragoon, Monk, Ninja, Samurai, Reaper, and Viper using casting/range/combat guards for general-duty melee dungeon support.
 - Raised Reaper's Second Wind recovery threshold to 50% HP to match the other melee public recovery defaults.
 - Added explicit tank Interject interrupt events for Warrior, Dark Knight, Gunbreaker, and Paladin using existing cast/range/combat guards.
 - Added a conservative Red Mage self Vercure emergency branch at low HP to improve solo/roulette recovery without changing normal damage flow.

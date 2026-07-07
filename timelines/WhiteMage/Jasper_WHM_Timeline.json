@@ -1,14 +1,14 @@
 {
   "Id": "Jasper_WHM_Timeline",
   "Name": "Jasper WHM Timeline",
-  "Description": "Jasper WHM passive timeline shell for general PvE. General duties are handled by the event profile and normal ACR priorities; scripted fight plans should live in separate encounter-specific timelines.",
-  "Version": "1.1.13",
+  "Description": "Passive White Mage duty-coverage map for public xSalice use. It marks eligible content only; healer decisions stay with the event profile and ACR unless a separate encounter script is validated.",
+  "Version": "1.1.14",
   "AIOTimelineVersion": "2.0",
   "Timelines": {
     "142": {
       "Id": "3d6b5dbf-21f9-4239-8a8f-75e2f4bee0d3",
       "Name": "the Dragon's Neck",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 142,
       "CreatedAt": "2026-06-24T17:01:09.1329191Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -28,7 +28,7 @@
     "151": {
       "Id": "ccaa9dd6-dd43-4c5e-be82-bd057699f3ce",
       "Name": "the World of Darkness",
-      "Description": "Jasper scope: 24-man alliance raid",
+      "Description": "Coverage marker: 24-player alliance raid; no scripted rotation actions are attached.",
       "ZoneId": 151,
       "CreatedAt": "2026-06-24T17:01:09.3734518Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -48,7 +48,7 @@
     "159": {
       "Id": "39c16733-a170-444a-b5a8-01e1dbadb9cd",
       "Name": "the Wanderer's Palace",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 159,
       "CreatedAt": "2026-06-24T17:01:08.7164238Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -68,7 +68,7 @@
     "160": {
       "Id": "e83724dd-4e9c-4a8c-b629-e65f04d01917",
       "Name": "Pharos Sirius",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 160,
       "CreatedAt": "2026-06-24T17:01:08.7578385Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -88,7 +88,7 @@
     "167": {
       "Id": "b409fb33-b768-472e-aa27-56be8dcb89cb",
       "Name": "Amdapor Keep",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 167,
       "CreatedAt": "2026-06-24T17:01:08.7626487Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -108,7 +108,7 @@
     "174": {
       "Id": "8a254f1a-2b3a-482c-bb7e-41088ddc3c3a",
       "Name": "the Labyrinth of the Ancients",
-      "Description": "Jasper scope: 24-man alliance raid",
+      "Description": "Coverage marker: 24-player alliance raid; no scripted rotation actions are attached.",
       "ZoneId": 174,
       "CreatedAt": "2026-06-24T17:01:09.3754419Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -128,7 +128,7 @@
     "188": {
       "Id": "8c176581-aed8-436d-a700-efa7ed3fb4f3",
       "Name": "the Wanderer's Palace (Hard)",
-      "Description": "Jasper scope: 4-man hard dungeon",
+      "Description": "Coverage marker: 4-player hard-mode dungeon; no scripted rotation actions are attached.",
       "ZoneId": 188,
       "CreatedAt": "2026-06-24T17:01:08.7661918Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -148,7 +148,7 @@
     "189": {
       "Id": "dda268cb-61f5-4334-9bd7-3c32649890fd",
       "Name": "Amdapor Keep (Hard)",
-      "Description": "Jasper scope: 4-man hard dungeon",
+      "Description": "Coverage marker: 4-player hard-mode dungeon; no scripted rotation actions are attached.",
       "ZoneId": 189,
       "CreatedAt": "2026-06-24T17:01:08.7696294Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -168,7 +168,7 @@
     "190": {
       "Id": "3b3bcb2e-0217-406e-af1b-1fdc96e0bd29",
       "Name": "Under the Armor",
-      "Description": "Jasper scope: 4-man guildhest",
+      "Description": "Coverage marker: 4-player guildhest; no scripted rotation actions are attached.",
       "ZoneId": 190,
       "CreatedAt": "2026-06-24T17:01:09.1015115Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -188,7 +188,7 @@
     "191": {
       "Id": "3c18cd1a-829c-4ef4-96c8-06898d51a9f4",
       "Name": "Pulling Poison Posies",
-      "Description": "Jasper scope: 4-man guildhest",
+      "Description": "Coverage marker: 4-player guildhest; no scripted rotation actions are attached.",
       "ZoneId": 191,
       "CreatedAt": "2026-06-24T17:01:09.1036539Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -208,7 +208,7 @@
     "192": {
       "Id": "1aa18b09-311c-4f89-b3d9-9896c1401836",
       "Name": "Stinging Back",
-      "Description": "Jasper scope: 4-man guildhest",
+      "Description": "Coverage marker: 4-player guildhest; no scripted rotation actions are attached.",
       "ZoneId": 192,
       "CreatedAt": "2026-06-24T17:01:09.105869Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -228,7 +228,7 @@
     "193": {
       "Id": "8b6f0792-7794-4819-aa5e-1e5d6f4cc92d",
       "Name": "the Final Coil of Bahamut - Turn 1",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 193,
       "CreatedAt": "2026-06-24T17:01:09.3774925Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -248,7 +248,7 @@
     "194": {
       "Id": "e75e3f93-231a-4719-8378-b7aaddf53400",
       "Name": "the Final Coil of Bahamut - Turn 2",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 194,
       "CreatedAt": "2026-06-24T17:01:09.3796222Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -268,7 +268,7 @@
     "195": {
       "Id": "4b081db0-228b-4d34-89a4-1543613c46d4",
       "Name": "the Final Coil of Bahamut - Turn 3",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 195,
       "CreatedAt": "2026-06-24T17:01:09.3824583Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -288,7 +288,7 @@
     "196": {
       "Id": "c2c690fd-39c0-49e4-9188-a873fe05a223",
       "Name": "the Final Coil of Bahamut - Turn 4",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 196,
       "CreatedAt": "2026-06-24T17:01:09.3845728Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -308,7 +308,7 @@
     "214": {
       "Id": "c7cdf7a9-52cd-4d9d-8ae0-329949e1b46d",
       "Name": "Basic Training: Enemy Parties",
-      "Description": "Jasper scope: 4-man guildhest",
+      "Description": "Coverage marker: 4-player guildhest; no scripted rotation actions are attached.",
       "ZoneId": 214,
       "CreatedAt": "2026-06-24T17:01:09.1091456Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -328,7 +328,7 @@
     "215": {
       "Id": "8ad277b4-b6bf-4d66-a539-3be5f1a46faa",
       "Name": "Basic Training: Enemy Strongholds",
-      "Description": "Jasper scope: 4-man guildhest",
+      "Description": "Coverage marker: 4-player guildhest; no scripted rotation actions are attached.",
       "ZoneId": 215,
       "CreatedAt": "2026-06-24T17:01:09.1112922Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -348,7 +348,7 @@
     "216": {
       "Id": "c544617b-effd-4db7-a1f8-e54586fcca68",
       "Name": "Hero on the Half Shell",
-      "Description": "Jasper scope: 4-man guildhest",
+      "Description": "Coverage marker: 4-player guildhest; no scripted rotation actions are attached.",
       "ZoneId": 216,
       "CreatedAt": "2026-06-24T17:01:09.1134065Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -368,7 +368,7 @@
     "219": {
       "Id": "b4fafa60-0b9d-4d59-9b15-e3fa73b4bea8",
       "Name": "Flicking Sticks and Taking Names",
-      "Description": "Jasper scope: 4-man guildhest",
+      "Description": "Coverage marker: 4-player guildhest; no scripted rotation actions are attached.",
       "ZoneId": 219,
       "CreatedAt": "2026-06-24T17:01:09.1154005Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -388,7 +388,7 @@
     "220": {
       "Id": "e8c2e827-aaab-4b01-b603-50900040f7c8",
       "Name": "All's Well that Ends in the Well",
-      "Description": "Jasper scope: 4-man guildhest",
+      "Description": "Coverage marker: 4-player guildhest; no scripted rotation actions are attached.",
       "ZoneId": 220,
       "CreatedAt": "2026-06-24T17:01:09.117621Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -408,7 +408,7 @@
     "221": {
       "Id": "6126e800-03dc-4e94-a730-eaa8ae60e524",
       "Name": "More than a Feeler",
-      "Description": "Jasper scope: 4-man guildhest",
+      "Description": "Coverage marker: 4-player guildhest; no scripted rotation actions are attached.",
       "ZoneId": 221,
       "CreatedAt": "2026-06-24T17:01:09.1200679Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -428,7 +428,7 @@
     "222": {
       "Id": "efba6e71-e30d-4868-9045-d9c59c9cfb04",
       "Name": "Annoy the Void",
-      "Description": "Jasper scope: 4-man guildhest",
+      "Description": "Coverage marker: 4-player guildhest; no scripted rotation actions are attached.",
       "ZoneId": 222,
       "CreatedAt": "2026-06-24T17:01:09.1221174Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -448,7 +448,7 @@
     "223": {
       "Id": "772ceb52-b62c-416b-90dd-c9191112256b",
       "Name": "Shadow and Claw",
-      "Description": "Jasper scope: 4-man guildhest",
+      "Description": "Coverage marker: 4-player guildhest; no scripted rotation actions are attached.",
       "ZoneId": 223,
       "CreatedAt": "2026-06-24T17:01:09.124241Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -468,7 +468,7 @@
     "241": {
       "Id": "bc4a3469-bba8-45fa-9c2b-d62d5b437431",
       "Name": "the Binding Coil of Bahamut - Turn 1",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 241,
       "CreatedAt": "2026-06-24T17:01:09.3890734Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -488,7 +488,7 @@
     "242": {
       "Id": "c26a19a1-bcad-430b-920b-328c86f4bf2f",
       "Name": "the Binding Coil of Bahamut - Turn 2",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 242,
       "CreatedAt": "2026-06-24T17:01:09.391353Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -508,7 +508,7 @@
     "243": {
       "Id": "6693ddb1-1e4b-4d34-9670-be18822d7848",
       "Name": "the Binding Coil of Bahamut - Turn 3",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 243,
       "CreatedAt": "2026-06-24T17:01:09.394209Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -528,7 +528,7 @@
     "244": {
       "Id": "b4a84122-66ee-4c07-94c6-adaeff3c96c4",
       "Name": "the Binding Coil of Bahamut - Turn 4",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 244,
       "CreatedAt": "2026-06-24T17:01:09.3969741Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -548,7 +548,7 @@
     "245": {
       "Id": "a1ff4fd2-b152-4be6-b212-1e4b0c45a15e",
       "Name": "the Binding Coil of Bahamut - Turn 5",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 245,
       "CreatedAt": "2026-06-24T17:01:09.3993502Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -568,7 +568,7 @@
     "281": {
       "Id": "5dec75e7-c717-423a-9ff6-3755e1c0ba36",
       "Name": "the Whorleater (Hard)",
-      "Description": "Jasper scope: 8-man Hard trial",
+      "Description": "Coverage marker: 8-player hard trial; no scripted rotation actions are attached.",
       "ZoneId": 281,
       "CreatedAt": "2026-06-24T17:01:09.1350865Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -588,7 +588,7 @@
     "292": {
       "Id": "1628da7a-6046-4671-abc0-c78aa75a32cc",
       "Name": "the Bowl of Embers (Hard)",
-      "Description": "Jasper scope: 8-man Hard trial",
+      "Description": "Coverage marker: 8-player hard trial; no scripted rotation actions are attached.",
       "ZoneId": 292,
       "CreatedAt": "2026-06-24T17:01:09.1370601Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -608,7 +608,7 @@
     "293": {
       "Id": "d3df12a2-ebbb-494f-a4ee-a9d238fc2c45",
       "Name": "the Navel (Hard)",
-      "Description": "Jasper scope: 8-man Hard trial",
+      "Description": "Coverage marker: 8-player hard trial; no scripted rotation actions are attached.",
       "ZoneId": 293,
       "CreatedAt": "2026-06-24T17:01:09.1391724Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -628,7 +628,7 @@
     "294": {
       "Id": "e9c314b7-9962-49f5-8fb6-263b2849b54b",
       "Name": "the Howling Eye (Hard)",
-      "Description": "Jasper scope: 8-man Hard trial",
+      "Description": "Coverage marker: 8-player hard trial; no scripted rotation actions are attached.",
       "ZoneId": 294,
       "CreatedAt": "2026-06-24T17:01:09.1412759Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -648,7 +648,7 @@
     "295": {
       "Id": "803c02a5-e204-4692-ab01-f7579b64d5f0",
       "Name": "the Bowl of Embers (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 295,
       "CreatedAt": "2026-06-24T17:01:09.1435736Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -668,7 +668,7 @@
     "296": {
       "Id": "39b87faa-c7d8-4149-8a7b-884413ad34ad",
       "Name": "the Navel (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 296,
       "CreatedAt": "2026-06-24T17:01:09.1459349Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -688,7 +688,7 @@
     "297": {
       "Id": "2f6aa1e8-c43e-492b-85e1-dbcaeec636ed",
       "Name": "the Howling Eye (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 297,
       "CreatedAt": "2026-06-24T17:01:09.1479127Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -708,7 +708,7 @@
     "298": {
       "Id": "e44d7198-d521-44b9-bc17-4138d4bb0bf5",
       "Name": "Long Live the Queen",
-      "Description": "Jasper scope: 4-man guildhest",
+      "Description": "Coverage marker: 4-player guildhest; no scripted rotation actions are attached.",
       "ZoneId": 298,
       "CreatedAt": "2026-06-24T17:01:09.1262426Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -728,7 +728,7 @@
     "299": {
       "Id": "c81134ef-f48b-45c5-8b91-73ac93521e8a",
       "Name": "Ward Up",
-      "Description": "Jasper scope: 4-man guildhest",
+      "Description": "Coverage marker: 4-player guildhest; no scripted rotation actions are attached.",
       "ZoneId": 299,
       "CreatedAt": "2026-06-24T17:01:09.1283641Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -748,7 +748,7 @@
     "300": {
       "Id": "5722f684-5d01-4467-8f2c-dd9379f9df65",
       "Name": "Solemn Trinity",
-      "Description": "Jasper scope: 8-man guildhest",
+      "Description": "Coverage marker: 8-player guildhest; no scripted rotation actions are attached.",
       "ZoneId": 300,
       "CreatedAt": "2026-06-24T17:01:09.1304917Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -768,7 +768,7 @@
     "348": {
       "Id": "5cdcd07e-6e1f-4f30-857d-fbe23830bee0",
       "Name": "the Minstrel's Ballad: Ultima's Bane",
-      "Description": "Jasper scope: 8-man high-end trial",
+      "Description": "Coverage marker: 8-player high-end trial; no scripted rotation actions are attached.",
       "ZoneId": 348,
       "CreatedAt": "2026-06-24T17:01:09.1499437Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -788,7 +788,7 @@
     "349": {
       "Id": "4ff4c03d-287a-46c3-9dbf-e86095ec575b",
       "Name": "Copperbell Mines (Hard)",
-      "Description": "Jasper scope: 4-man hard dungeon",
+      "Description": "Coverage marker: 4-player hard-mode dungeon; no scripted rotation actions are attached.",
       "ZoneId": 349,
       "CreatedAt": "2026-06-24T17:01:08.7727593Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -808,7 +808,7 @@
     "350": {
       "Id": "9e6780ce-fd42-4bba-ac5a-401dd89c1ea0",
       "Name": "Haukke Manor (Hard)",
-      "Description": "Jasper scope: 4-man hard dungeon",
+      "Description": "Coverage marker: 4-player hard-mode dungeon; no scripted rotation actions are attached.",
       "ZoneId": 350,
       "CreatedAt": "2026-06-24T17:01:08.8171486Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -828,7 +828,7 @@
     "355": {
       "Id": "7e3bed73-ce5a-4bd5-868e-6aa7c27ecc81",
       "Name": "the Second Coil of Bahamut - Turn 1",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 355,
       "CreatedAt": "2026-06-24T17:01:09.401748Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -848,7 +848,7 @@
     "356": {
       "Id": "25167cbc-3472-49f8-9085-53e06eb85b4f",
       "Name": "the Second Coil of Bahamut - Turn 2",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 356,
       "CreatedAt": "2026-06-24T17:01:09.404234Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -868,7 +868,7 @@
     "357": {
       "Id": "de0fa2bb-a3cf-4037-9e63-f78ab90c34a0",
       "Name": "the Second Coil of Bahamut - Turn 3",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 357,
       "CreatedAt": "2026-06-24T17:01:09.4070292Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -888,7 +888,7 @@
     "358": {
       "Id": "53476044-b75f-4102-8945-57662cdcdfcf",
       "Name": "the Second Coil of Bahamut - Turn 4",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 358,
       "CreatedAt": "2026-06-24T17:01:09.4092989Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -908,7 +908,7 @@
     "359": {
       "Id": "76f0378e-b1f9-43e9-a05d-03bf08480088",
       "Name": "the Whorleater (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 359,
       "CreatedAt": "2026-06-24T17:01:09.1519654Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -928,7 +928,7 @@
     "360": {
       "Id": "d13637a9-44f2-4783-a758-49a5dba53edd",
       "Name": "Halatali (Hard)",
-      "Description": "Jasper scope: 4-man hard dungeon",
+      "Description": "Coverage marker: 4-player hard-mode dungeon; no scripted rotation actions are attached.",
       "ZoneId": 360,
       "CreatedAt": "2026-06-24T17:01:08.8290733Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -948,7 +948,7 @@
     "361": {
       "Id": "b2ad0982-67b8-45ea-a471-e5adf94ef604",
       "Name": "Hullbreaker Isle",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 361,
       "CreatedAt": "2026-06-24T17:01:08.8446183Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -968,7 +968,7 @@
     "362": {
       "Id": "386197f0-0e88-47d4-a8f0-ae715753c84f",
       "Name": "Brayflox's Longstop (Hard)",
-      "Description": "Jasper scope: 4-man hard dungeon",
+      "Description": "Coverage marker: 4-player hard-mode dungeon; no scripted rotation actions are attached.",
       "ZoneId": 362,
       "CreatedAt": "2026-06-24T17:01:08.8478094Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -988,7 +988,7 @@
     "363": {
       "Id": "077f1d95-9c67-4b1a-9010-f1109fc4a8ac",
       "Name": "the Lost City of Amdapor",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 363,
       "CreatedAt": "2026-06-24T17:01:08.8504751Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1008,7 +1008,7 @@
     "364": {
       "Id": "bdddab4f-b8ab-4b75-9502-884a17b11efc",
       "Name": "Thornmarch (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 364,
       "CreatedAt": "2026-06-24T17:01:09.1541096Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1028,7 +1028,7 @@
     "365": {
       "Id": "ffec8a1d-f82f-4136-b5db-de7cec8053c0",
       "Name": "the Stone Vigil (Hard)",
-      "Description": "Jasper scope: 4-man hard dungeon",
+      "Description": "Coverage marker: 4-player hard-mode dungeon; no scripted rotation actions are attached.",
       "ZoneId": 365,
       "CreatedAt": "2026-06-24T17:01:08.8531031Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1048,7 +1048,7 @@
     "366": {
       "Id": "77861329-705f-4163-9f4a-34ca41dfe0ce",
       "Name": "Battle on the Big Bridge",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 366,
       "CreatedAt": "2026-06-24T17:01:09.1567222Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1068,7 +1068,7 @@
     "367": {
       "Id": "dc127139-c9e7-4cf2-b511-6d0fe1cbe5cb",
       "Name": "the Sunken Temple of Qarn (Hard)",
-      "Description": "Jasper scope: 4-man hard dungeon",
+      "Description": "Coverage marker: 4-player hard-mode dungeon; no scripted rotation actions are attached.",
       "ZoneId": 367,
       "CreatedAt": "2026-06-24T17:01:08.8555057Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1088,7 +1088,7 @@
     "368": {
       "Id": "b626039b-ce83-4515-a75b-5df3b0c90662",
       "Name": "A Relic Reborn: the Chimera",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 368,
       "CreatedAt": "2026-06-24T17:01:09.1588461Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1108,7 +1108,7 @@
     "369": {
       "Id": "43ceb0ef-5841-4e98-b934-575d414965ef",
       "Name": "A Relic Reborn: the Hydra",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 369,
       "CreatedAt": "2026-06-24T17:01:09.1608489Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1128,7 +1128,7 @@
     "372": {
       "Id": "34609af4-f5f3-4529-83d6-12b77ad1049e",
       "Name": "Syrcus Tower",
-      "Description": "Jasper scope: 24-man alliance raid",
+      "Description": "Coverage marker: 24-player alliance raid; no scripted rotation actions are attached.",
       "ZoneId": 372,
       "CreatedAt": "2026-06-24T17:01:09.4114739Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1148,7 +1148,7 @@
     "373": {
       "Id": "4b4d92ac-c1a1-4987-9560-23b1311adf3c",
       "Name": "the Tam-Tara Deepcroft (Hard)",
-      "Description": "Jasper scope: 4-man hard dungeon",
+      "Description": "Coverage marker: 4-player hard-mode dungeon; no scripted rotation actions are attached.",
       "ZoneId": 373,
       "CreatedAt": "2026-06-24T17:01:08.8582549Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1168,7 +1168,7 @@
     "374": {
       "Id": "f077a9e1-199b-480d-a459-797fc342abdc",
       "Name": "the Striking Tree (Hard)",
-      "Description": "Jasper scope: 8-man Hard trial",
+      "Description": "Coverage marker: 8-player hard trial; no scripted rotation actions are attached.",
       "ZoneId": 374,
       "CreatedAt": "2026-06-24T17:01:09.1630443Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1188,7 +1188,7 @@
     "375": {
       "Id": "ce43eea6-9c55-4e38-a1d6-5549f6e2339c",
       "Name": "the Striking Tree (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 375,
       "CreatedAt": "2026-06-24T17:01:09.165025Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1208,7 +1208,7 @@
     "377": {
       "Id": "18d91f4a-0d54-40a1-b345-14c7dfcba71e",
       "Name": "the Akh Afah Amphitheatre (Hard)",
-      "Description": "Jasper scope: 8-man Hard trial",
+      "Description": "Coverage marker: 8-player hard trial; no scripted rotation actions are attached.",
       "ZoneId": 377,
       "CreatedAt": "2026-06-24T17:01:09.1671157Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1228,7 +1228,7 @@
     "378": {
       "Id": "472696c9-edfa-4985-be9e-dc012398fdee",
       "Name": "the Akh Afah Amphitheatre (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 378,
       "CreatedAt": "2026-06-24T17:01:09.1698619Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1248,7 +1248,7 @@
     "380": {
       "Id": "cb7876b6-c33e-4ca1-ad7d-21252e6ce792",
       "Name": "the Second Coil of Bahamut (Savage) - Turn 1",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 380,
       "CreatedAt": "2026-06-24T17:01:09.4137924Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1268,7 +1268,7 @@
     "381": {
       "Id": "51abb5f5-0bb3-4e31-a8f3-4fdd866ab5e1",
       "Name": "the Second Coil of Bahamut (Savage) - Turn 2",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 381,
       "CreatedAt": "2026-06-24T17:01:09.4164954Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1288,7 +1288,7 @@
     "382": {
       "Id": "873015e4-4aa7-410b-ac89-839b06f989a7",
       "Name": "the Second Coil of Bahamut (Savage) - Turn 3",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 382,
       "CreatedAt": "2026-06-24T17:01:09.4187446Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1308,7 +1308,7 @@
     "383": {
       "Id": "9c7bc6b3-b8cf-4d1e-89fd-a1629b2b4334",
       "Name": "the Second Coil of Bahamut (Savage) - Turn 4",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 383,
       "CreatedAt": "2026-06-24T17:01:09.4210085Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1328,7 +1328,7 @@
     "387": {
       "Id": "9c933ebb-c503-4118-83c6-3b3748307ebb",
       "Name": "Sastasha (Hard)",
-      "Description": "Jasper scope: 4-man hard dungeon",
+      "Description": "Coverage marker: 4-player hard-mode dungeon; no scripted rotation actions are attached.",
       "ZoneId": 387,
       "CreatedAt": "2026-06-24T17:01:08.8613797Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1348,7 +1348,7 @@
     "394": {
       "Id": "557f4792-5ad0-423e-960e-6942f875ef66",
       "Name": "Urth's Fount",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 394,
       "CreatedAt": "2026-06-24T17:01:09.1720392Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1368,7 +1368,7 @@
     "396": {
       "Id": "d5a53c9c-89cf-4117-88dc-bb012266fcfd",
       "Name": "Battle in the Big Keep",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 396,
       "CreatedAt": "2026-06-24T17:01:09.1740055Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1388,7 +1388,7 @@
     "420": {
       "Id": "504a7a14-dd20-4797-a78e-977d68e4bde8",
       "Name": "Neverreap",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 420,
       "CreatedAt": "2026-06-24T17:01:08.8636241Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1408,7 +1408,7 @@
     "426": {
       "Id": "2e6e620a-8738-43c9-87bb-74f09cf48b5d",
       "Name": "the Chrysalis",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 426,
       "CreatedAt": "2026-06-24T17:01:09.1760258Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1428,7 +1428,7 @@
     "430": {
       "Id": "73a72daf-b1f9-43e7-b8a4-04e4307d7bad",
       "Name": "the Fractal Continuum",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 430,
       "CreatedAt": "2026-06-24T17:01:08.8658503Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1448,7 +1448,7 @@
     "432": {
       "Id": "6ebff58b-d469-4719-9c7a-73aab7b45f1a",
       "Name": "Thok ast Thok (Hard)",
-      "Description": "Jasper scope: 8-man Hard trial",
+      "Description": "Coverage marker: 8-player hard trial; no scripted rotation actions are attached.",
       "ZoneId": 432,
       "CreatedAt": "2026-06-24T17:01:09.1793552Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1468,7 +1468,7 @@
     "436": {
       "Id": "6310eb69-826e-42a2-8d24-4871f3e1d318",
       "Name": "the Limitless Blue (Hard)",
-      "Description": "Jasper scope: 8-man Hard trial",
+      "Description": "Coverage marker: 8-player hard trial; no scripted rotation actions are attached.",
       "ZoneId": 436,
       "CreatedAt": "2026-06-24T17:01:09.1817866Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1488,7 +1488,7 @@
     "437": {
       "Id": "d8e16812-f493-4088-9496-efeda4b38649",
       "Name": "the Singularity Reactor",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 437,
       "CreatedAt": "2026-06-24T17:01:09.1838563Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1508,7 +1508,7 @@
     "442": {
       "Id": "a8968d16-dff0-441f-a9d4-7d3f94f6e4c6",
       "Name": "Alexander - The Fist of the Father",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 442,
       "CreatedAt": "2026-06-24T17:01:09.4231855Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1528,7 +1528,7 @@
     "443": {
       "Id": "de43779c-a256-4772-898d-e4ab34e16e26",
       "Name": "Alexander - The Cuff of the Father",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 443,
       "CreatedAt": "2026-06-24T17:01:09.4252999Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1548,7 +1548,7 @@
     "444": {
       "Id": "d83d77da-8e34-4545-8d4b-f2cb05bd156f",
       "Name": "Alexander - The Arm of the Father",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 444,
       "CreatedAt": "2026-06-24T17:01:09.4275916Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1568,7 +1568,7 @@
     "445": {
       "Id": "a3291e06-7aa2-43c8-a688-a84cfa3c3104",
       "Name": "Alexander - The Burden of the Father",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 445,
       "CreatedAt": "2026-06-24T17:01:09.4298331Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1588,7 +1588,7 @@
     "446": {
       "Id": "84b1ba37-e19a-468a-b8e3-ed81fca75445",
       "Name": "Thok ast Thok (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 446,
       "CreatedAt": "2026-06-24T17:01:09.1860293Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1608,7 +1608,7 @@
     "447": {
       "Id": "e24db4f4-4a09-4a32-88da-8cf0e72aa56b",
       "Name": "the Limitless Blue (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 447,
       "CreatedAt": "2026-06-24T17:01:09.1882335Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1628,7 +1628,7 @@
     "448": {
       "Id": "1df62c51-fc74-425d-8288-1f7cce97e38f",
       "Name": "the Minstrel's Ballad: Thordan's Reign",
-      "Description": "Jasper scope: 8-man high-end trial",
+      "Description": "Coverage marker: 8-player high-end trial; no scripted rotation actions are attached.",
       "ZoneId": 448,
       "CreatedAt": "2026-06-24T17:01:09.1903176Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1648,7 +1648,7 @@
     "449": {
       "Id": "faeef4b1-61a6-42da-a229-b8781717a357",
       "Name": "Alexander - The Fist of the Father (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 449,
       "CreatedAt": "2026-06-24T17:01:09.4319251Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1668,7 +1668,7 @@
     "450": {
       "Id": "f2e908f7-799e-47c5-9c6a-72e338c3578c",
       "Name": "Alexander - The Cuff of the Father (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 450,
       "CreatedAt": "2026-06-24T17:01:09.4341388Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1688,7 +1688,7 @@
     "451": {
       "Id": "a4148cb2-c6fc-461d-b3d2-2226366a6e84",
       "Name": "Alexander - The Arm of the Father (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 451,
       "CreatedAt": "2026-06-24T17:01:09.4366997Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1708,7 +1708,7 @@
     "452": {
       "Id": "3a988e8c-382b-4c71-a236-52735db410b7",
       "Name": "Alexander - The Burden of the Father (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 452,
       "CreatedAt": "2026-06-24T17:01:09.4392379Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1728,7 +1728,7 @@
     "508": {
       "Id": "5640e8a6-5f42-46ee-87b7-15d22a8aab64",
       "Name": "the Void Ark",
-      "Description": "Jasper scope: 24-man alliance raid",
+      "Description": "Coverage marker: 24-player alliance raid; no scripted rotation actions are attached.",
       "ZoneId": 508,
       "CreatedAt": "2026-06-24T17:01:09.4415764Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1748,7 +1748,7 @@
     "509": {
       "Id": "e3081cd3-5cfb-42c0-8caf-59818c6e46d9",
       "Name": "The Gilded Araya",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 509,
       "CreatedAt": "2026-06-24T17:01:09.1933854Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1768,7 +1768,7 @@
     "510": {
       "Id": "e8735396-a9dc-4224-b8f9-a8e111adf689",
       "Name": "Pharos Sirius (Hard)",
-      "Description": "Jasper scope: 4-man hard dungeon",
+      "Description": "Coverage marker: 4-player hard-mode dungeon; no scripted rotation actions are attached.",
       "ZoneId": 510,
       "CreatedAt": "2026-06-24T17:01:08.8685645Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1788,7 +1788,7 @@
     "511": {
       "Id": "4f4bef91-77fc-4160-ab38-a13fbd2a1e30",
       "Name": "Saint Mocianne's Arboretum",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 511,
       "CreatedAt": "2026-06-24T17:01:08.8714342Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1808,7 +1808,7 @@
     "517": {
       "Id": "641abcc0-e500-46af-bacf-bdbd28787126",
       "Name": "Containment Bay S1T7",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 517,
       "CreatedAt": "2026-06-24T17:01:09.1962489Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1828,7 +1828,7 @@
     "519": {
       "Id": "dcb8437c-2033-45ca-a7c3-4db38ecc6b97",
       "Name": "the Lost City of Amdapor (Hard)",
-      "Description": "Jasper scope: 4-man hard dungeon",
+      "Description": "Coverage marker: 4-player hard-mode dungeon; no scripted rotation actions are attached.",
       "ZoneId": 519,
       "CreatedAt": "2026-06-24T17:01:08.8740328Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1848,7 +1848,7 @@
     "520": {
       "Id": "612a03f4-8122-44b9-968c-ae51fe85d788",
       "Name": "Alexander - The Fist of the Son",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 520,
       "CreatedAt": "2026-06-24T17:01:09.4436392Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1868,7 +1868,7 @@
     "521": {
       "Id": "d71aa9e3-691f-43ad-8c54-d1f6bff2d504",
       "Name": "Alexander - The Cuff of the Son",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 521,
       "CreatedAt": "2026-06-24T17:01:09.4457447Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1888,7 +1888,7 @@
     "522": {
       "Id": "200e8042-a9ee-419c-974c-9aa79d99f3b4",
       "Name": "Alexander - The Arm of the Son",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 522,
       "CreatedAt": "2026-06-24T17:01:09.4480013Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1908,7 +1908,7 @@
     "523": {
       "Id": "cf297a68-9596-41f8-8fe8-09ffde51ef29",
       "Name": "Alexander - The Burden of the Son",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 523,
       "CreatedAt": "2026-06-24T17:01:09.4502294Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1928,7 +1928,7 @@
     "524": {
       "Id": "ed2b200f-a636-460c-95c0-16ae32622e9b",
       "Name": "Containment Bay S1T7 (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 524,
       "CreatedAt": "2026-06-24T17:01:09.1983303Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1948,7 +1948,7 @@
     "529": {
       "Id": "f348085a-e4a7-41b5-8a66-234f6edb74cf",
       "Name": "Alexander - The Fist of the Son (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 529,
       "CreatedAt": "2026-06-24T17:01:09.4530729Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1968,7 +1968,7 @@
     "530": {
       "Id": "8117689d-f901-49c0-90fc-e7c784995cae",
       "Name": "Alexander - The Cuff of the Son (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 530,
       "CreatedAt": "2026-06-24T17:01:09.4552571Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -1988,7 +1988,7 @@
     "531": {
       "Id": "b5cac1d6-5831-4abf-bfec-b9b3e11d99b2",
       "Name": "Alexander - The Arm of the Son (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 531,
       "CreatedAt": "2026-06-24T17:01:09.4574893Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2008,7 +2008,7 @@
     "532": {
       "Id": "cfdde499-ec73-4add-810f-64fe2d22c1dc",
       "Name": "Alexander - The Burden of the Son (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 532,
       "CreatedAt": "2026-06-24T17:01:09.4596661Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2028,7 +2028,7 @@
     "556": {
       "Id": "7cb2d5ae-311b-410c-af1c-9727aa8bee8f",
       "Name": "the Weeping City of Mhach",
-      "Description": "Jasper scope: 24-man alliance raid",
+      "Description": "Coverage marker: 24-player alliance raid; no scripted rotation actions are attached.",
       "ZoneId": 556,
       "CreatedAt": "2026-06-24T17:01:09.4619233Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2048,7 +2048,7 @@
     "557": {
       "Id": "cda71931-3432-4050-988d-894f6f7b171a",
       "Name": "Hullbreaker Isle (Hard)",
-      "Description": "Jasper scope: 4-man hard dungeon",
+      "Description": "Coverage marker: 4-player hard-mode dungeon; no scripted rotation actions are attached.",
       "ZoneId": 557,
       "CreatedAt": "2026-06-24T17:01:08.8762861Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2068,7 +2068,7 @@
     "559": {
       "Id": "ac256925-f39b-4587-aa1b-997e67420f87",
       "Name": "the Final Steps of Faith",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 559,
       "CreatedAt": "2026-06-24T17:01:09.2003804Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2088,7 +2088,7 @@
     "566": {
       "Id": "daec8da6-2a69-4ddb-8b98-cea59d3eeb38",
       "Name": "the Minstrel's Ballad: Nidhogg's Rage",
-      "Description": "Jasper scope: 8-man high-end trial",
+      "Description": "Coverage marker: 8-player high-end trial; no scripted rotation actions are attached.",
       "ZoneId": 566,
       "CreatedAt": "2026-06-24T17:01:09.2029711Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2108,7 +2108,7 @@
     "576": {
       "Id": "04292e02-b2cb-4774-8d98-6dd3fbebe61d",
       "Name": "Containment Bay P1T6",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 576,
       "CreatedAt": "2026-06-24T17:01:09.2052778Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2128,7 +2128,7 @@
     "577": {
       "Id": "1518065e-07c7-46c0-a428-95b0b7548cff",
       "Name": "ContainmentBayP1T6Extreme",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 577,
       "CreatedAt": "2025-12-30T16:29:56.5442646Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2148,7 +2148,7 @@
     "578": {
       "Id": "bebdc6e5-5621-4678-b65c-af0d2602339e",
       "Name": "the Great Gubal Library (Hard)",
-      "Description": "Jasper scope: 4-man hard dungeon",
+      "Description": "Coverage marker: 4-player hard-mode dungeon; no scripted rotation actions are attached.",
       "ZoneId": 578,
       "CreatedAt": "2026-06-24T17:01:08.8785188Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2168,7 +2168,7 @@
     "580": {
       "Id": "fd7be6a7-870e-4715-95ee-4c2cd67c8681",
       "Name": "Alexander - The Eyes of the Creator",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 580,
       "CreatedAt": "2026-06-24T17:01:09.4643296Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2188,7 +2188,7 @@
     "581": {
       "Id": "ea735abb-62ae-4f0f-aec1-5f5b71cac97a",
       "Name": "Alexander - The Breath of the Creator",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 581,
       "CreatedAt": "2026-06-24T17:01:09.4669232Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2208,7 +2208,7 @@
     "582": {
       "Id": "ac034e65-0971-44f1-b76e-0b8f8025650a",
       "Name": "Alexander - The Heart of the Creator",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 582,
       "CreatedAt": "2026-06-24T17:01:09.469195Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2228,7 +2228,7 @@
     "583": {
       "Id": "f1d164ad-9891-4d4c-93b8-94a6be56a208",
       "Name": "Alexander - The Soul of the Creator",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 583,
       "CreatedAt": "2026-06-24T17:01:09.4717331Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2248,7 +2248,7 @@
     "584": {
       "Id": "2f8c8431-1253-41a7-b1a6-4a9940fe53e5",
       "Name": "Alexander - The Eyes of the Creator (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 584,
       "CreatedAt": "2026-06-24T17:01:09.4742805Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2268,7 +2268,7 @@
     "585": {
       "Id": "7c629b72-29ed-42cc-802c-3362440ace2d",
       "Name": "Alexander - The Breath of the Creator (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 585,
       "CreatedAt": "2026-06-24T17:01:09.476971Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2288,7 +2288,7 @@
     "586": {
       "Id": "3ceea21d-6160-47e4-99e6-ae2b4c68f0e3",
       "Name": "Alexander - The Heart of the Creator (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 586,
       "CreatedAt": "2026-06-24T17:01:09.4801021Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2308,7 +2308,7 @@
     "587": {
       "Id": "b791221d-b7cd-453b-aefd-b2ea4b2f45ac",
       "Name": "Alexander - The Soul of the Creator (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 587,
       "CreatedAt": "2026-06-24T17:01:09.4824787Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2328,7 +2328,7 @@
     "617": {
       "Id": "5427be4e-20b9-4995-a3b8-9138e8cdb1f8",
       "Name": "Sohm Al (Hard)",
-      "Description": "Jasper scope: 4-man hard dungeon",
+      "Description": "Coverage marker: 4-player hard-mode dungeon; no scripted rotation actions are attached.",
       "ZoneId": 617,
       "CreatedAt": "2026-06-24T17:01:08.8807787Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2348,7 +2348,7 @@
     "627": {
       "Id": "364a83c9-96c7-459e-bd0b-cdeae0bf8c13",
       "Name": "Dun Scaith",
-      "Description": "Jasper scope: 24-man alliance raid",
+      "Description": "Coverage marker: 24-player alliance raid; no scripted rotation actions are attached.",
       "ZoneId": 627,
       "CreatedAt": "2026-06-24T17:01:09.4851007Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2368,7 +2368,7 @@
     "637": {
       "Id": "51958fe3-334d-4883-ad04-5c50821075e9",
       "Name": "Containment Bay Z1T9",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 637,
       "CreatedAt": "2026-06-24T17:01:09.2099567Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2388,7 +2388,7 @@
     "638": {
       "Id": "5b0db6ec-091d-4e13-adcf-de3aff254dfd",
       "Name": "Containment Bay Z1T9 (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 638,
       "CreatedAt": "2026-06-24T17:01:09.2120027Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2408,7 +2408,7 @@
     "662": {
       "Id": "03eb418d-2155-4001-bbd4-8348ca103463",
       "Name": "Kugane Castle",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 662,
       "CreatedAt": "2026-06-24T17:01:08.8832714Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2428,7 +2428,7 @@
     "663": {
       "Id": "bf3d4593-362e-4f1a-ac36-3c785ce22d77",
       "Name": "the Temple of the Fist",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 663,
       "CreatedAt": "2026-06-24T17:01:08.8857045Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2448,7 +2448,7 @@
     "674": {
       "Id": "5cb56b5d-ac14-4344-820e-5b68f1d3c21e",
       "Name": "the Pool of Tribute",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 674,
       "CreatedAt": "2026-06-24T17:01:09.215368Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2468,7 +2468,7 @@
     "677": {
       "Id": "dd0aa77b-c94c-4072-b26a-3dee1ae81572",
       "Name": "the Pool of Tribute (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 677,
       "CreatedAt": "2026-06-24T17:01:09.219753Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2488,7 +2488,7 @@
     "679": {
       "Id": "05d806b0-b5fd-4766-b790-2a3f2c08913c",
       "Name": "the Royal Menagerie",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 679,
       "CreatedAt": "2026-06-24T17:01:09.2228185Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2508,7 +2508,7 @@
     "691": {
       "Id": "ca6c05c5-7732-4089-b425-1ed618d5ce67",
       "Name": "Deltascape V1.0",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 691,
       "CreatedAt": "2026-06-24T17:01:09.4873034Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2528,7 +2528,7 @@
     "692": {
       "Id": "48d23378-1d01-438d-84d1-cf2258477de3",
       "Name": "Deltascape V2.0",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 692,
       "CreatedAt": "2026-06-24T17:01:09.4896525Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2548,7 +2548,7 @@
     "693": {
       "Id": "abf1902c-5e49-4170-b112-35e44fe6be5f",
       "Name": "Deltascape V3.0",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 693,
       "CreatedAt": "2026-06-24T17:01:09.4934945Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2568,7 +2568,7 @@
     "694": {
       "Id": "cb74e3c4-1983-4a72-875b-cb0b7456d461",
       "Name": "Deltascape V4.0",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 694,
       "CreatedAt": "2026-06-24T17:01:09.4956309Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2588,7 +2588,7 @@
     "695": {
       "Id": "37835839-7a4d-458e-9bc5-fc3118ba9005",
       "Name": "Deltascape V1.0 (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 695,
       "CreatedAt": "2026-06-24T17:01:09.498388Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2608,7 +2608,7 @@
     "696": {
       "Id": "1ab7bf51-dd79-4f5e-89ca-97ff4ee02e4b",
       "Name": "Deltascape V2.0 (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 696,
       "CreatedAt": "2026-06-24T17:01:09.5007967Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2628,7 +2628,7 @@
     "697": {
       "Id": "26c6792e-d541-477f-bffe-46a5cf325302",
       "Name": "Deltascape V3.0 (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 697,
       "CreatedAt": "2026-06-24T17:01:09.503228Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2648,7 +2648,7 @@
     "698": {
       "Id": "96a1e463-765c-4870-9aa5-525e20a3b48d",
       "Name": "Deltascape V4.0 (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 698,
       "CreatedAt": "2026-06-24T17:01:09.5054457Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2668,7 +2668,7 @@
     "719": {
       "Id": "f1a6b528-449f-4377-b1c6-a3e93c1d1a07",
       "Name": "Emanation",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 719,
       "CreatedAt": "2026-06-24T17:01:09.22631Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2688,7 +2688,7 @@
     "720": {
       "Id": "7fd42e7a-1767-4f88-840c-479ff1f4fe01",
       "Name": "Emanation (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 720,
       "CreatedAt": "2026-06-24T17:01:09.2292091Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2708,7 +2708,7 @@
     "730": {
       "Id": "fedd0bbd-1ab1-4908-a108-b0ee15405cd8",
       "Name": "the Minstrel's Ballad: Shinryu's Domain",
-      "Description": "Jasper scope: 8-man high-end trial",
+      "Description": "Coverage marker: 8-player high-end trial; no scripted rotation actions are attached.",
       "ZoneId": 730,
       "CreatedAt": "2026-06-24T17:01:09.2314138Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2728,7 +2728,7 @@
     "734": {
       "Id": "64b40d5a-f7fb-4581-b26a-10d51edb5df7",
       "Name": "the Royal City of Rabanastre",
-      "Description": "Jasper scope: 24-man alliance raid",
+      "Description": "Coverage marker: 24-player alliance raid; no scripted rotation actions are attached.",
       "ZoneId": 734,
       "CreatedAt": "2026-06-24T17:01:09.5075123Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2748,7 +2748,7 @@
     "742": {
       "Id": "94c03bab-9602-4299-a36b-a8662d8e054a",
       "Name": "Hells' Lid",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 742,
       "CreatedAt": "2026-06-24T17:01:08.8878941Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2768,7 +2768,7 @@
     "743": {
       "Id": "dbe2c989-daeb-4ee0-9929-3206a839ee2c",
       "Name": "the Fractal Continuum (Hard)",
-      "Description": "Jasper scope: 4-man hard dungeon",
+      "Description": "Coverage marker: 4-player hard-mode dungeon; no scripted rotation actions are attached.",
       "ZoneId": 743,
       "CreatedAt": "2026-06-24T17:01:08.8902492Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2788,7 +2788,7 @@
     "746": {
       "Id": "8061ee76-a000-40e4-939f-8f64f3ca9a44",
       "Name": "the Jade Stoa",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 746,
       "CreatedAt": "2026-06-24T17:01:09.2338984Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2808,7 +2808,7 @@
     "748": {
       "Id": "ed686685-a5f9-48e3-85d1-918383658f81",
       "Name": "Sigmascape V1.0",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 748,
       "CreatedAt": "2026-06-24T17:01:09.5096728Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2828,7 +2828,7 @@
     "749": {
       "Id": "7f9c446f-dd0d-48cf-929d-d214328e600b",
       "Name": "Sigmascape V2.0",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 749,
       "CreatedAt": "2026-06-24T17:01:09.5121107Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2848,7 +2848,7 @@
     "750": {
       "Id": "f898e2d3-c1d5-456a-bd6f-9cc6e453768f",
       "Name": "Sigmascape V3.0",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 750,
       "CreatedAt": "2026-06-24T17:01:09.5151606Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2868,7 +2868,7 @@
     "751": {
       "Id": "72eb6b76-295a-4f67-bcd5-99d713de693a",
       "Name": "Sigmascape V4.0",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 751,
       "CreatedAt": "2026-06-24T17:01:09.5179069Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2888,7 +2888,7 @@
     "752": {
       "Id": "4516b052-5bd6-47bd-b24a-4dec7f73b05d",
       "Name": "Sigmascape V1.0 (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 752,
       "CreatedAt": "2026-06-24T17:01:09.5202586Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2908,7 +2908,7 @@
     "753": {
       "Id": "380a71f3-ee91-406d-95cb-a67b8ab5e4ba",
       "Name": "Sigmascape V2.0 (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 753,
       "CreatedAt": "2026-06-24T17:01:09.5228542Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2928,7 +2928,7 @@
     "754": {
       "Id": "986e6a65-b0d3-4076-987f-7561df8bd7e3",
       "Name": "Sigmascape V3.0 (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 754,
       "CreatedAt": "2026-06-24T17:01:09.5252202Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2948,7 +2948,7 @@
     "755": {
       "Id": "3dc589ed-354d-4916-839d-e822c17e261e",
       "Name": "Sigmascape V4.0 (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 755,
       "CreatedAt": "2026-06-24T17:01:09.5283077Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2968,7 +2968,7 @@
     "758": {
       "Id": "ae66acc6-e119-429e-8b49-4c8a665b57b6",
       "Name": "the Jade Stoa (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 758,
       "CreatedAt": "2026-06-24T17:01:09.2367662Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -2988,7 +2988,7 @@
     "761": {
       "Id": "07e882a1-cbcd-4cb5-99cc-2a33841e6fcf",
       "Name": "the Great Hunt",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 761,
       "CreatedAt": "2026-06-24T17:01:09.2396503Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3008,7 +3008,7 @@
     "762": {
       "Id": "0b34aa9c-3105-4c2f-bab6-9e77648d6382",
       "Name": "the Great Hunt (Extreme)",
-      "Description": "Jasper scope: 4-man Extreme trial",
+      "Description": "Coverage marker: 4-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 762,
       "CreatedAt": "2026-06-24T17:01:09.2426648Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3028,7 +3028,7 @@
     "768": {
       "Id": "19c1e219-e71c-434d-9789-1e98c2d7d2a2",
       "Name": "the Swallow's Compass",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 768,
       "CreatedAt": "2026-06-24T17:01:08.8925328Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3048,7 +3048,7 @@
     "776": {
       "Id": "9827c821-9c00-4227-af17-9bf86cc6b502",
       "Name": "the Ridorana Lighthouse",
-      "Description": "Jasper scope: 24-man alliance raid",
+      "Description": "Coverage marker: 24-player alliance raid; no scripted rotation actions are attached.",
       "ZoneId": 776,
       "CreatedAt": "2026-06-24T17:01:09.5307041Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3068,7 +3068,7 @@
     "778": {
       "Id": "665e5d9b-6582-480d-b598-b971fa2f1dea",
       "Name": "Castrum Fluminis",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 778,
       "CreatedAt": "2026-06-24T17:01:09.2446875Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3088,7 +3088,7 @@
     "779": {
       "Id": "69abd3ea-a9ef-4fd8-989c-b670a6592491",
       "Name": "the Minstrel's Ballad: Tsukuyomi's Pain",
-      "Description": "Jasper scope: 8-man high-end trial",
+      "Description": "Coverage marker: 8-player high-end trial; no scripted rotation actions are attached.",
       "ZoneId": 779,
       "CreatedAt": "2026-06-24T17:01:09.2468344Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3108,7 +3108,7 @@
     "788": {
       "Id": "17e845d7-745c-441b-8e4c-ae5a73bd3d8c",
       "Name": "Saint Mocianne's Arboretum (Hard)",
-      "Description": "Jasper scope: 4-man hard dungeon",
+      "Description": "Coverage marker: 4-player hard-mode dungeon; no scripted rotation actions are attached.",
       "ZoneId": 788,
       "CreatedAt": "2026-06-24T17:01:08.8950333Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3128,7 +3128,7 @@
     "798": {
       "Id": "34217e41-d02f-4a96-9745-10f18e5ee0c3",
       "Name": "Alphascape V1.0",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 798,
       "CreatedAt": "2026-06-24T17:01:09.5332514Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3148,7 +3148,7 @@
     "799": {
       "Id": "d9ebbfc3-c63d-45ea-a1fd-fab86ac06930",
       "Name": "Alphascape V2.0",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 799,
       "CreatedAt": "2026-06-24T17:01:09.5358501Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3168,7 +3168,7 @@
     "800": {
       "Id": "d505e34f-9d8d-42df-8bae-4ef168fafe95",
       "Name": "Alphascape V3.0",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 800,
       "CreatedAt": "2026-06-24T17:01:09.5381536Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3188,7 +3188,7 @@
     "801": {
       "Id": "f89153a0-3a53-48b4-af81-11b7296421ab",
       "Name": "Alphascape V4.0",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 801,
       "CreatedAt": "2026-06-24T17:01:09.5412102Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3208,7 +3208,7 @@
     "802": {
       "Id": "67310eda-3223-4124-baf1-fe363dd34cb4",
       "Name": "Alphascape V1.0 (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 802,
       "CreatedAt": "2026-06-24T17:01:09.5442062Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3228,7 +3228,7 @@
     "803": {
       "Id": "d7186cd5-55a0-43b2-a124-80dcdbb702f3",
       "Name": "Alphascape V2.0 (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 803,
       "CreatedAt": "2026-06-24T17:01:09.5465671Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3248,7 +3248,7 @@
     "804": {
       "Id": "ac7fc316-87b7-404a-80c0-d766659e5054",
       "Name": "Alphascape V3.0 (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 804,
       "CreatedAt": "2026-06-24T17:01:09.5487982Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3268,7 +3268,7 @@
     "805": {
       "Id": "697a9714-cfb1-4503-9e89-d288c5fb3bef",
       "Name": "Alphascape V4.0 (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 805,
       "CreatedAt": "2026-06-24T17:01:09.5514374Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3288,7 +3288,7 @@
     "806": {
       "Id": "ef5e4d65-eed2-44bc-a2f3-db583e19ed48",
       "Name": "Kugane Ohashi",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 806,
       "CreatedAt": "2026-06-24T17:01:09.2501811Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3308,7 +3308,7 @@
     "810": {
       "Id": "87208b7c-c683-45ff-b212-a4029227d679",
       "Name": "Hells' Kier",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 810,
       "CreatedAt": "2026-06-24T17:01:09.2522055Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3328,7 +3328,7 @@
     "811": {
       "Id": "37b5e04c-d9a5-4740-b6c6-57104a8b34a4",
       "Name": "Hells' Kier (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 811,
       "CreatedAt": "2026-06-24T17:01:09.2541947Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3348,7 +3348,7 @@
     "821": {
       "Id": "f035df29-20d8-42fe-8ba6-8752fd0355f6",
       "Name": "Dohn Mheg",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 821,
       "CreatedAt": "2026-06-24T17:01:08.8974812Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3368,7 +3368,7 @@
     "822": {
       "Id": "e8abf424-7a71-4e61-b866-d7b326e0f7cb",
       "Name": "Mt. Gulg",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 822,
       "CreatedAt": "2026-06-24T17:01:08.8996322Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3388,7 +3388,7 @@
     "823": {
       "Id": "af860177-4525-4c12-8e72-9f1b059a71cf",
       "Name": "the Qitana Ravel",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 823,
       "CreatedAt": "2026-06-24T17:01:08.9018159Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3408,7 +3408,7 @@
     "824": {
       "Id": "d1b02238-ca47-4882-9fc4-04be0bab43f1",
       "Name": "the Wreath of Snakes",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 824,
       "CreatedAt": "2026-06-24T17:01:09.2562507Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3428,7 +3428,7 @@
     "825": {
       "Id": "05b0ac84-a327-45f3-9a96-3fb69e84f77d",
       "Name": "the Wreath of Snakes (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 825,
       "CreatedAt": "2026-06-24T17:01:09.2583354Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3448,7 +3448,7 @@
     "826": {
       "Id": "47e95ec8-c2c9-472e-af54-079a4cd1c4e8",
       "Name": "the Orbonne Monastery",
-      "Description": "Jasper scope: 24-man alliance raid",
+      "Description": "Coverage marker: 24-player alliance raid; no scripted rotation actions are attached.",
       "ZoneId": 826,
       "CreatedAt": "2026-06-24T17:01:09.5538998Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3468,7 +3468,7 @@
     "836": {
       "Id": "b8906b45-0051-4b26-b52d-f93384476509",
       "Name": "Malikah's Well",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 836,
       "CreatedAt": "2026-06-24T17:01:08.9041607Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3488,7 +3488,7 @@
     "837": {
       "Id": "f0bb5398-ccae-435d-9f23-69b62ea3f071",
       "Name": "Holminster Switch",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 837,
       "CreatedAt": "2026-06-24T17:01:08.9067723Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3508,7 +3508,7 @@
     "838": {
       "Id": "9f8cbc2d-36c7-4be8-bb85-434d8c16480d",
       "Name": "Amaurot",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 838,
       "CreatedAt": "2026-06-24T17:01:08.9090872Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3528,7 +3528,7 @@
     "840": {
       "Id": "9da6a41f-e8bc-476d-a1e1-066521d17cee",
       "Name": "the Twinning",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 840,
       "CreatedAt": "2026-06-24T17:01:08.9112234Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3548,7 +3548,7 @@
     "841": {
       "Id": "9f905f32-1cae-4980-9666-2442f18c2c99",
       "Name": "Akadaemia Anyder",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 841,
       "CreatedAt": "2026-06-24T17:01:08.9133402Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3568,7 +3568,7 @@
     "845": {
       "Id": "7f13701d-2784-4504-91f3-62c0a7c3783c",
       "Name": "TheDancingPlague",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 845,
       "CreatedAt": "2025-12-30T18:37:29.8758967Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3588,7 +3588,7 @@
     "846": {
       "Id": "591a4788-a60b-4131-83c6-23c06e338675",
       "Name": "the Crown of the Immaculate",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 846,
       "CreatedAt": "2026-06-24T17:01:09.2617674Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3608,7 +3608,7 @@
     "847": {
       "Id": "c3b9c4cf-84cd-4587-9e2c-6a5aac1c7ab5",
       "Name": "the Dying Gasp",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 847,
       "CreatedAt": "2026-06-24T17:01:09.2640216Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3628,7 +3628,7 @@
     "848": {
       "Id": "dd29db72-d715-4765-9c29-42d435cdb31c",
       "Name": "the Crown of the Immaculate (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 848,
       "CreatedAt": "2026-06-24T17:01:09.2659986Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3648,7 +3648,7 @@
     "849": {
       "Id": "c2539792-a17f-4a40-ac80-01b82123b68d",
       "Name": "Eden's Gate: Resurrection",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 849,
       "CreatedAt": "2026-06-24T17:01:09.5573193Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3668,7 +3668,7 @@
     "850": {
       "Id": "a877955d-533d-4ac6-b173-4f5ebcfddd52",
       "Name": "Eden's Gate: Descent",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 850,
       "CreatedAt": "2026-06-24T17:01:09.5600986Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3688,7 +3688,7 @@
     "851": {
       "Id": "4892e2c5-b7aa-4e1a-8259-57e2efccc497",
       "Name": "Eden's Gate: Inundation",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 851,
       "CreatedAt": "2026-06-24T17:01:09.5627779Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3708,7 +3708,7 @@
     "852": {
       "Id": "8ad6a0ae-3625-435b-9beb-a05367e0bb28",
       "Name": "Eden's Gate: Sepulture",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 852,
       "CreatedAt": "2026-06-24T17:01:09.5650941Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3728,7 +3728,7 @@
     "853": {
       "Id": "f6b0a527-f22f-4a71-8919-8e4522080aaa",
       "Name": "Eden's Gate: Resurrection (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 853,
       "CreatedAt": "2026-06-24T17:01:09.5673426Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3748,7 +3748,7 @@
     "854": {
       "Id": "e7bba699-3327-44bf-bceb-02d9b20c994b",
       "Name": "Eden's Gate: Descent (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 854,
       "CreatedAt": "2026-06-24T17:01:09.5700496Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3768,7 +3768,7 @@
     "855": {
       "Id": "b6109b53-e225-4f1f-abb4-01ba9d2e9ce3",
       "Name": "Eden's Gate: Inundation (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 855,
       "CreatedAt": "2026-06-24T17:01:09.572566Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3788,7 +3788,7 @@
     "856": {
       "Id": "a4e90fb9-25d2-4c9c-8fdd-9cdc296942ea",
       "Name": "Eden's Gate: Sepulture (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 856,
       "CreatedAt": "2026-06-24T17:01:09.5751483Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3808,7 +3808,7 @@
     "858": {
       "Id": "6413181c-1ee7-4cac-a62a-b2656ad7ab50",
       "Name": "TheDancingPlagueExtreme",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 858,
       "CreatedAt": "2025-12-30T18:37:29.8787263Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3828,7 +3828,7 @@
     "882": {
       "Id": "c8f1e6f9-37c5-44c2-8dbd-dd494af0f4c8",
       "Name": "the Copied Factory",
-      "Description": "Jasper scope: 24-man alliance raid",
+      "Description": "Coverage marker: 24-player alliance raid; no scripted rotation actions are attached.",
       "ZoneId": 882,
       "CreatedAt": "2026-06-24T17:01:09.5776657Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3848,7 +3848,7 @@
     "884": {
       "Id": "21703cfc-3741-4e38-aa2a-116838a6c810",
       "Name": "the Grand Cosmos",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 884,
       "CreatedAt": "2026-06-24T17:01:08.9154703Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3868,7 +3868,7 @@
     "885": {
       "Id": "7d74e7ab-676d-44c3-82f9-638fd79bf765",
       "Name": "the Minstrel's Ballad: Hades's Elegy",
-      "Description": "Jasper scope: 8-man high-end trial",
+      "Description": "Coverage marker: 8-player high-end trial; no scripted rotation actions are attached.",
       "ZoneId": 885,
       "CreatedAt": "2026-06-24T17:01:09.2690307Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3888,7 +3888,7 @@
     "897": {
       "Id": "5c71dc5f-492d-4060-aeca-e013dffc6169",
       "Name": "Cinder Drift",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 897,
       "CreatedAt": "2026-06-24T17:01:09.2715012Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3908,7 +3908,7 @@
     "898": {
       "Id": "3b82a5ae-6850-4b67-ae7f-59e375bd3245",
       "Name": "Anamnesis Anyder",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 898,
       "CreatedAt": "2026-06-24T17:01:08.9177297Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3928,7 +3928,7 @@
     "902": {
       "Id": "5a6b0cc0-262e-417b-a80e-1e2bc27ee714",
       "Name": "Eden's Verse: Fulmination",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 902,
       "CreatedAt": "2026-06-24T17:01:09.5803668Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3948,7 +3948,7 @@
     "903": {
       "Id": "da342695-cd28-4c93-b664-ff9dd4be5f4f",
       "Name": "Eden's Verse: Furor",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 903,
       "CreatedAt": "2026-06-24T17:01:09.5833215Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3968,7 +3968,7 @@
     "904": {
       "Id": "269a4830-71f8-4cca-ae82-665f654b59d2",
       "Name": "Eden's Verse: Iconoclasm",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 904,
       "CreatedAt": "2026-06-24T17:01:09.5855589Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -3988,7 +3988,7 @@
     "905": {
       "Id": "09c7ac89-c052-4022-8f22-84e6aac7971d",
       "Name": "Eden's Verse: Refulgence",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 905,
       "CreatedAt": "2026-06-24T17:01:09.588031Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4008,7 +4008,7 @@
     "906": {
       "Id": "ff2ee9e5-d5d2-4995-bb9f-8123d79c80ea",
       "Name": "Eden's Verse: Fulmination (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 906,
       "CreatedAt": "2026-06-24T17:01:09.5906747Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4028,7 +4028,7 @@
     "907": {
       "Id": "b60b7aff-72f6-4940-b676-550251d155e3",
       "Name": "Eden's Verse: Furor (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 907,
       "CreatedAt": "2026-06-24T17:01:09.593236Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4048,7 +4048,7 @@
     "908": {
       "Id": "41329356-9f76-43da-a002-b8cdec6d0dd0",
       "Name": "Eden's Verse: Iconoclasm (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 908,
       "CreatedAt": "2026-06-24T17:01:09.595711Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4068,7 +4068,7 @@
     "909": {
       "Id": "14246665-50e8-4988-b86d-e5f4dac19dfb",
       "Name": "Eden's Verse: Refulgence (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 909,
       "CreatedAt": "2026-06-24T17:01:09.5989218Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4088,7 +4088,7 @@
     "912": {
       "Id": "4da09105-7d8c-4afe-94fb-13f1e2617568",
       "Name": "Cinder Drift (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 912,
       "CreatedAt": "2026-06-24T17:01:09.2742174Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4108,7 +4108,7 @@
     "913": {
       "Id": "b3aa9f57-ec76-449c-8533-54bbdfd74cb3",
       "Name": "Memoria Misera (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 913,
       "CreatedAt": "2026-06-24T17:01:09.2763367Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4128,7 +4128,7 @@
     "916": {
       "Id": "310f3480-9f90-4be6-a9ca-93a26cd38012",
       "Name": "the Heroes' Gauntlet",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 916,
       "CreatedAt": "2026-06-24T17:01:08.9213986Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4148,7 +4148,7 @@
     "917": {
       "Id": "02629f85-8943-47ab-8cb5-df9dd98bc421",
       "Name": "the Puppets' Bunker",
-      "Description": "Jasper scope: 24-man alliance raid",
+      "Description": "Coverage marker: 24-player alliance raid; no scripted rotation actions are attached.",
       "ZoneId": 917,
       "CreatedAt": "2026-06-24T17:01:09.6033962Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4168,7 +4168,7 @@
     "922": {
       "Id": "5b943109-a554-4ef1-94bd-ce379cdc177a",
       "Name": "the Seat of Sacrifice",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 922,
       "CreatedAt": "2026-06-24T17:01:09.2793899Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4188,7 +4188,7 @@
     "923": {
       "Id": "427d6ee1-445a-4257-8160-23d76bbda1c4",
       "Name": "the Seat of Sacrifice (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 923,
       "CreatedAt": "2026-06-24T17:01:09.281465Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4208,7 +4208,7 @@
     "933": {
       "Id": "281e4564-bb4a-4c5a-bf08-6e50dc344a29",
       "Name": "Matoya's Relict",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 933,
       "CreatedAt": "2026-06-24T17:01:08.9241704Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4228,7 +4228,7 @@
     "934": {
       "Id": "2e654bf5-4169-477e-afd9-e3d7a279bad7",
       "Name": "Castrum Marinum",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 934,
       "CreatedAt": "2026-06-24T17:01:09.2838184Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4248,7 +4248,7 @@
     "935": {
       "Id": "e2fd2b70-7eb1-402b-bc5c-22acc42e585e",
       "Name": "Castrum Marinum (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 935,
       "CreatedAt": "2026-06-24T17:01:09.2863424Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4268,7 +4268,7 @@
     "938": {
       "Id": "0f0e243b-57cc-451f-8ecc-565d9a8d3a06",
       "Name": "Paglth'an",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 938,
       "CreatedAt": "2026-06-24T17:01:08.9263508Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4288,7 +4288,7 @@
     "942": {
       "Id": "e6bd78ae-f7c5-4a76-be4d-c7a2c773f6f7",
       "Name": "Eden's Promise: Umbra",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 942,
       "CreatedAt": "2026-06-24T17:01:09.6058291Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4308,7 +4308,7 @@
     "943": {
       "Id": "e5ebb288-0657-408c-a79a-cd86e07b4f6f",
       "Name": "Eden's Promise: Litany",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 943,
       "CreatedAt": "2026-06-24T17:01:09.6082789Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4328,7 +4328,7 @@
     "944": {
       "Id": "47290353-1962-41ee-b5e7-7fd081466360",
       "Name": "Eden's Promise: Anamorphosis",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 944,
       "CreatedAt": "2026-06-24T17:01:09.6113668Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4348,7 +4348,7 @@
     "945": {
       "Id": "5225e515-32e8-4d5f-8bf9-a2da75d77a6a",
       "Name": "Eden's Promise: Eternity",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 945,
       "CreatedAt": "2026-06-24T17:01:09.613893Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4368,7 +4368,7 @@
     "946": {
       "Id": "089a857b-44a7-4ed9-a69f-e41aa63fb829",
       "Name": "Eden's Promise: Umbra (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 946,
       "CreatedAt": "2026-06-24T17:01:09.6163191Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4388,7 +4388,7 @@
     "947": {
       "Id": "2144681c-3267-48b7-bc20-fdc3ea6efa6b",
       "Name": "Eden's Promise: Litany (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 947,
       "CreatedAt": "2026-06-24T17:01:09.6187215Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4408,7 +4408,7 @@
     "948": {
       "Id": "89ecfb64-9508-4e18-81ff-9aafaa430fcc",
       "Name": "Eden's Promise: Anamorphosis (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 948,
       "CreatedAt": "2026-06-24T17:01:09.6208224Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4428,7 +4428,7 @@
     "949": {
       "Id": "5240067c-d330-4b08-a555-def3fd987a74",
       "Name": "Eden's Promise: Eternity (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 949,
       "CreatedAt": "2026-06-24T17:01:09.6229849Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4448,7 +4448,7 @@
     "950": {
       "Id": "2f4cf85d-b8e5-47ef-af90-eff396381e85",
       "Name": "the Cloud Deck",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 950,
       "CreatedAt": "2026-06-24T17:01:09.2905812Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4468,7 +4468,7 @@
     "951": {
       "Id": "dfb1b68c-689e-4854-9a61-19c99910d332",
       "Name": "the Cloud Deck (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 951,
       "CreatedAt": "2026-06-24T17:01:09.2926199Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4488,7 +4488,7 @@
     "952": {
       "Id": "c92a046f-57a7-43ff-9fc2-b1663cbbec5a",
       "Name": "the Tower of Zot",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 952,
       "CreatedAt": "2026-06-24T17:01:08.9284733Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4508,7 +4508,7 @@
     "966": {
       "Id": "c6a59b1b-d7e6-4852-ac15-3431b7f2693f",
       "Name": "the Tower at Paradigm's Breach",
-      "Description": "Jasper scope: 24-man alliance raid",
+      "Description": "Coverage marker: 24-player alliance raid; no scripted rotation actions are attached.",
       "ZoneId": 966,
       "CreatedAt": "2026-06-24T17:01:09.6251378Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4528,7 +4528,7 @@
     "969": {
       "Id": "b5d97c32-10ef-4c96-9896-c552ff8fb064",
       "Name": "the Tower of Babil",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 969,
       "CreatedAt": "2026-06-24T17:01:08.9306176Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4548,7 +4548,7 @@
     "970": {
       "Id": "3a9da642-5bfc-4fa5-9c03-4002b6c699b2",
       "Name": "Vanaspati",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 970,
       "CreatedAt": "2026-06-24T17:01:08.9332597Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4568,7 +4568,7 @@
     "973": {
       "Id": "2c42f790-10d8-4b53-9354-938df65d8fdb",
       "Name": "the Dead Ends",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 973,
       "CreatedAt": "2026-06-24T17:01:08.9361798Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4588,7 +4588,7 @@
     "974": {
       "Id": "f4f19f1f-3119-41d5-a5fd-3260eeb66adc",
       "Name": "Ktisis Hyperboreia",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 974,
       "CreatedAt": "2026-06-24T17:01:08.9386521Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4608,7 +4608,7 @@
     "976": {
       "Id": "7152ebad-8294-428c-81e3-1fded297586e",
       "Name": "Smileton",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 976,
       "CreatedAt": "2026-06-24T17:01:08.9409422Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4628,7 +4628,7 @@
     "978": {
       "Id": "5c4417fd-8ce0-496e-8f91-2433d800c0b5",
       "Name": "the Aitiascope",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 978,
       "CreatedAt": "2026-06-24T17:01:08.9433058Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4648,7 +4648,7 @@
     "986": {
       "Id": "600c7da6-497b-479f-9e44-3d9a578f444f",
       "Name": "the Stigma Dreamscape",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 986,
       "CreatedAt": "2026-06-24T17:01:08.9458455Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4668,7 +4668,7 @@
     "992": {
       "Id": "36715a99-bfbd-44fa-8995-13c89553871c",
       "Name": "the Dark Inside",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 992,
       "CreatedAt": "2026-06-24T17:01:09.2947298Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4688,7 +4688,7 @@
     "993": {
       "Id": "95650189-8aed-4cb7-97b3-737cf3ef744b",
       "Name": "the Minstrel's Ballad: Zodiark's Fall",
-      "Description": "Jasper scope: 8-man high-end trial",
+      "Description": "Coverage marker: 8-player high-end trial; no scripted rotation actions are attached.",
       "ZoneId": 993,
       "CreatedAt": "2026-06-24T17:01:09.297127Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4708,7 +4708,7 @@
     "995": {
       "Id": "aefdc05e-061d-42ff-bb6b-afd17947779b",
       "Name": "the Mothercrystal",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 995,
       "CreatedAt": "2026-06-24T17:01:09.2993594Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4728,7 +4728,7 @@
     "996": {
       "Id": "7c770c9f-452c-4de2-bdd9-bebf63480f4d",
       "Name": "the Minstrel's Ballad: Hydaelyn's Call",
-      "Description": "Jasper scope: 8-man high-end trial",
+      "Description": "Coverage marker: 8-player high-end trial; no scripted rotation actions are attached.",
       "ZoneId": 996,
       "CreatedAt": "2026-06-24T17:01:09.3014975Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4748,7 +4748,7 @@
     "997": {
       "Id": "13cd2207-9903-4c86-9f71-3d93cf101e69",
       "Name": "the Final Day",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 997,
       "CreatedAt": "2026-06-24T17:01:09.3035393Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4768,7 +4768,7 @@
     "998": {
       "Id": "575458ad-33ec-48bd-ae4e-d5c2ebd4f2b3",
       "Name": "the Minstrel's Ballad: Endsinger's Aria",
-      "Description": "Jasper scope: 8-man high-end trial",
+      "Description": "Coverage marker: 8-player high-end trial; no scripted rotation actions are attached.",
       "ZoneId": 998,
       "CreatedAt": "2026-06-24T17:01:09.3056318Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4788,7 +4788,7 @@
     "1002": {
       "Id": "b4e010ec-bb7c-4b48-88f0-253d0384a4f8",
       "Name": "Asphodelos: The First Circle",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 1002,
       "CreatedAt": "2026-06-24T17:01:09.6275999Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4808,7 +4808,7 @@
     "1003": {
       "Id": "93990038-f359-4920-942f-4bb72c182374",
       "Name": "Asphodelos: The First Circle (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 1003,
       "CreatedAt": "2026-06-24T17:01:09.6299025Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4828,7 +4828,7 @@
     "1004": {
       "Id": "4df6cab3-6aa8-4e02-9629-58a7bde5624a",
       "Name": "Asphodelos: The Second Circle",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 1004,
       "CreatedAt": "2026-06-24T17:01:09.6320286Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4848,7 +4848,7 @@
     "1005": {
       "Id": "33b30d0d-861a-40f3-8470-ffa8faca443c",
       "Name": "Asphodelos: The Second Circle (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 1005,
       "CreatedAt": "2026-06-24T17:01:09.6341243Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4868,7 +4868,7 @@
     "1006": {
       "Id": "bd791c75-18ea-4ac4-a2bf-ea7c4c47fa85",
       "Name": "Asphodelos: The Third Circle",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 1006,
       "CreatedAt": "2026-06-24T17:01:09.6368372Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4888,7 +4888,7 @@
     "1007": {
       "Id": "4b495a21-5787-4ec2-86b7-f43d85f5e92d",
       "Name": "Asphodelos: The Third Circle (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 1007,
       "CreatedAt": "2026-06-24T17:01:09.6404168Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4908,7 +4908,7 @@
     "1008": {
       "Id": "df3134d8-449c-46cd-ad13-16f45ac1c09b",
       "Name": "Asphodelos: The Fourth Circle",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 1008,
       "CreatedAt": "2026-06-24T17:01:09.6428344Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4928,7 +4928,7 @@
     "1009": {
       "Id": "fc3ec35f-2f90-4e15-ac37-f21e359f4cd3",
       "Name": "Asphodelos: The Fourth Circle (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 1009,
       "CreatedAt": "2026-06-24T17:01:09.644898Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4948,7 +4948,7 @@
     "1036": {
       "Id": "c89e0655-a43d-4f01-835f-6f365acfe895",
       "Name": "Sastasha",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1036,
       "CreatedAt": "2026-06-24T17:01:08.9614775Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4968,7 +4968,7 @@
     "1037": {
       "Id": "a9c3ce66-c10e-4a90-abc6-317d4b7aed07",
       "Name": "the Tam-Tara Deepcroft",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1037,
       "CreatedAt": "2026-06-24T17:01:08.9638735Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -4988,7 +4988,7 @@
     "1038": {
       "Id": "29cd5cc4-a028-45de-805d-b17f3cd82559",
       "Name": "Copperbell Mines",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1038,
       "CreatedAt": "2026-06-24T17:01:08.9660726Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5008,7 +5008,7 @@
     "1039": {
       "Id": "f42bf67d-a564-4caf-9798-5b83913a4b28",
       "Name": "the Thousand Maws of Toto-Rak",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1039,
       "CreatedAt": "2026-06-24T17:01:08.9684981Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5028,7 +5028,7 @@
     "1040": {
       "Id": "fcf119c3-ea59-4ba4-b6d8-9be5bdfdf535",
       "Name": "Haukke Manor",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1040,
       "CreatedAt": "2026-06-24T17:01:08.9707777Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5048,7 +5048,7 @@
     "1041": {
       "Id": "824601cb-e2fd-444c-ae7e-7ace6f00ee1f",
       "Name": "Brayflox's Longstop",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1041,
       "CreatedAt": "2026-06-24T17:01:08.9732476Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5068,7 +5068,7 @@
     "1042": {
       "Id": "c1bf19b2-4160-494a-bd59-a3db5d2d6c3c",
       "Name": "the Stone Vigil",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1042,
       "CreatedAt": "2026-06-24T17:01:08.9754504Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5088,7 +5088,7 @@
     "1043": {
       "Id": "60e72c07-3dca-4ff9-9273-ed8220c02cf4",
       "Name": "Castrum Meridianum",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1043,
       "CreatedAt": "2026-06-24T17:01:08.9776567Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5108,7 +5108,7 @@
     "1044": {
       "Id": "c1ef0039-cfda-4fe0-873a-b748b55562c3",
       "Name": "the Praetorium",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1044,
       "CreatedAt": "2026-06-24T17:01:08.9797633Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5128,7 +5128,7 @@
     "1045": {
       "Id": "fe3a596a-57d8-4359-97ba-b9c5e4a3eb7e",
       "Name": "TheBowlOfEmbers",
-      "Description": "Jasper scope: 4-man normal trial",
+      "Description": "Coverage marker: 4-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 1045,
       "CreatedAt": "2025-12-30T16:29:56.6851046Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5148,7 +5148,7 @@
     "1046": {
       "Id": "f02cb2fa-0527-42d5-a740-5140dc1d056a",
       "Name": "the Navel",
-      "Description": "Jasper scope: 4-man normal trial",
+      "Description": "Coverage marker: 4-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 1046,
       "CreatedAt": "2026-06-24T17:01:09.3085229Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5168,7 +5168,7 @@
     "1047": {
       "Id": "ef4f98f0-9ab0-4db6-9464-58c79186d327",
       "Name": "the Howling Eye",
-      "Description": "Jasper scope: 4-man normal trial",
+      "Description": "Coverage marker: 4-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 1047,
       "CreatedAt": "2026-06-24T17:01:09.3109063Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5188,7 +5188,7 @@
     "1048": {
       "Id": "e5ff6673-d59d-45f5-ada6-12bffd656dbe",
       "Name": "the Porta Decumana",
-      "Description": "Jasper scope: 4-man normal trial",
+      "Description": "Coverage marker: 4-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 1048,
       "CreatedAt": "2026-06-24T17:01:09.31289Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5208,7 +5208,7 @@
     "1050": {
       "Id": "35537343-cc16-4698-85a9-f73ad3ddaeb0",
       "Name": "Alzadaal's Legacy",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1050,
       "CreatedAt": "2026-06-24T17:01:08.9822199Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5228,7 +5228,7 @@
     "1054": {
       "Id": "aa252cff-8ed2-4e9a-a1d4-4fdea6f1aef1",
       "Name": "Aglaia",
-      "Description": "Jasper scope: 24-man alliance raid",
+      "Description": "Coverage marker: 24-player alliance raid; no scripted rotation actions are attached.",
       "ZoneId": 1054,
       "CreatedAt": "2026-06-24T17:01:09.6470068Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5248,7 +5248,7 @@
     "1062": {
       "Id": "9ef91ed7-c6f1-4195-ac95-303c5ded86c3",
       "Name": "Snowcloak",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1062,
       "CreatedAt": "2026-06-24T17:01:08.9844878Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5268,7 +5268,7 @@
     "1063": {
       "Id": "ee1ab193-cf79-484c-925e-7b46f231e3dc",
       "Name": "the Keeper of the Lake",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1063,
       "CreatedAt": "2026-06-24T17:01:08.9870037Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5288,7 +5288,7 @@
     "1064": {
       "Id": "45c57601-397e-44d6-801d-c2995f94b8cb",
       "Name": "Sohm Al",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1064,
       "CreatedAt": "2026-06-24T17:01:08.9892828Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5308,7 +5308,7 @@
     "1065": {
       "Id": "a3ade9c3-6ed0-4cc6-8185-06093188a601",
       "Name": "the Aery",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1065,
       "CreatedAt": "2026-06-24T17:01:08.9915451Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5328,7 +5328,7 @@
     "1066": {
       "Id": "3fdaf61d-f6cb-47ec-9f2d-7828ebd59702",
       "Name": "the Vault",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1066,
       "CreatedAt": "2026-06-24T17:01:08.994368Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5348,7 +5348,7 @@
     "1067": {
       "Id": "a35b0237-8e73-4451-ae82-4a19a5bbc5a9",
       "Name": "Thornmarch (Hard)",
-      "Description": "Jasper scope: 8-man Hard trial",
+      "Description": "Coverage marker: 8-player hard trial; no scripted rotation actions are attached.",
       "ZoneId": 1067,
       "CreatedAt": "2026-06-24T17:01:09.3148648Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5368,7 +5368,7 @@
     "1070": {
       "Id": "1b37007d-a4a6-44f2-a1c4-22582d482cb9",
       "Name": "the Fell Court of Troia",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1070,
       "CreatedAt": "2026-06-24T17:01:08.9978127Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5388,7 +5388,7 @@
     "1071": {
       "Id": "028b0500-37f9-42ba-a66d-d41dada95eef",
       "Name": "Storm's Crown",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 1071,
       "CreatedAt": "2026-06-24T17:01:09.3168295Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5408,7 +5408,7 @@
     "1072": {
       "Id": "d16dbd13-f5ca-4352-8de5-610fcc9d4452",
       "Name": "Storm's Crown (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 1072,
       "CreatedAt": "2026-06-24T17:01:09.3190583Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5428,7 +5428,7 @@
     "1081": {
       "Id": "c5d2054f-7951-470a-8484-5351e824c8f0",
       "Name": "Abyssos: The Fifth Circle",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 1081,
       "CreatedAt": "2026-06-24T17:01:09.6491262Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5448,7 +5448,7 @@
     "1082": {
       "Id": "4bda08f1-2d72-4718-989a-d7b3b08de5fc",
       "Name": "Abyssos: The Fifth Circle (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 1082,
       "CreatedAt": "2026-06-24T17:01:09.6511928Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5468,7 +5468,7 @@
     "1083": {
       "Id": "89525c1b-48c1-4968-b3ac-37805cbb63c0",
       "Name": "Abyssos: The Sixth Circle",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 1083,
       "CreatedAt": "2026-06-24T17:01:09.653987Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5488,7 +5488,7 @@
     "1084": {
       "Id": "1c61d77e-7d8f-4f51-99d6-61e41254eed9",
       "Name": "Abyssos: The Sixth Circle (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 1084,
       "CreatedAt": "2026-06-24T17:01:09.6567029Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5508,7 +5508,7 @@
     "1085": {
       "Id": "f43fadff-cc0b-4958-85aa-bb83913f909c",
       "Name": "Abyssos: The Seventh Circle",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 1085,
       "CreatedAt": "2026-06-24T17:01:09.6590829Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5528,7 +5528,7 @@
     "1086": {
       "Id": "46406224-1a82-48c2-a4d0-bb7827ffbb4b",
       "Name": "Abyssos: The Seventh Circle (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 1086,
       "CreatedAt": "2026-06-24T17:01:09.6611716Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5548,7 +5548,7 @@
     "1087": {
       "Id": "1dc096c5-d371-4338-ba29-e7025428acde",
       "Name": "Abyssos: The Eighth Circle",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 1087,
       "CreatedAt": "2026-06-24T17:01:09.663248Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5568,7 +5568,7 @@
     "1088": {
       "Id": "7d1656c7-3524-468e-a058-0c7cace632c0",
       "Name": "Abyssos: The Eighth Circle (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 1088,
       "CreatedAt": "2026-06-24T17:01:09.6653031Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5588,7 +5588,7 @@
     "1095": {
       "Id": "d853a54e-f1bc-4882-9276-407d2fa0e7f6",
       "Name": "Mount Ordeals",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 1095,
       "CreatedAt": "2026-06-24T17:01:09.3215428Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5608,7 +5608,7 @@
     "1096": {
       "Id": "54c2e2d5-a333-42dc-9d47-ca6cd7636ba6",
       "Name": "Mount Ordeals (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 1096,
       "CreatedAt": "2026-06-24T17:01:09.3235353Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5628,7 +5628,7 @@
     "1097": {
       "Id": "3c1b289e-8177-4a7b-8734-ada8229d985b",
       "Name": "Lapis Manalis",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1097,
       "CreatedAt": "2026-06-24T17:01:09.0005099Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5648,7 +5648,7 @@
     "1109": {
       "Id": "5ff81703-c1e9-4a8b-87fd-ca5b11ea2e59",
       "Name": "the Great Gubal Library",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1109,
       "CreatedAt": "2026-06-24T17:01:09.0031269Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5668,7 +5668,7 @@
     "1110": {
       "Id": "06b64ad5-2eaf-44ef-8384-4d4c5f8e4e45",
       "Name": "the Aetherochemical Research Facility",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1110,
       "CreatedAt": "2026-06-24T17:01:09.0057307Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5688,7 +5688,7 @@
     "1111": {
       "Id": "52b4e367-84e5-4437-bda2-252aeae92230",
       "Name": "the Antitower",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1111,
       "CreatedAt": "2026-06-24T17:01:09.0084039Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5708,7 +5708,7 @@
     "1112": {
       "Id": "e6cbd884-482c-448e-8fbf-a60bf7304682",
       "Name": "Sohr Khai",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1112,
       "CreatedAt": "2026-06-24T17:01:09.0115213Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5728,7 +5728,7 @@
     "1113": {
       "Id": "85124ea9-053e-4307-859d-e83f7e8eaf8f",
       "Name": "Xelphatol",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1113,
       "CreatedAt": "2026-06-24T17:01:09.014537Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5748,7 +5748,7 @@
     "1114": {
       "Id": "78c6cf12-4ab2-4d81-aede-faedaba9a5b0",
       "Name": "Baelsar's Wall",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1114,
       "CreatedAt": "2026-06-24T17:01:09.017167Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5768,7 +5768,7 @@
     "1118": {
       "Id": "22ea2472-9459-4040-89b6-e1312d8b46af",
       "Name": "Euphrosyne",
-      "Description": "Jasper scope: 24-man alliance raid",
+      "Description": "Coverage marker: 24-player alliance raid; no scripted rotation actions are attached.",
       "ZoneId": 1118,
       "CreatedAt": "2026-06-24T17:01:09.6675634Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5788,7 +5788,7 @@
     "1126": {
       "Id": "af483045-2fcc-4542-b8d3-b2b544bbf0e4",
       "Name": "the Aetherfont",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1126,
       "CreatedAt": "2026-06-24T17:01:09.0195982Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5808,7 +5808,7 @@
     "1136": {
       "Id": "862a8893-d0cd-4539-b1b7-6216c035e5cc",
       "Name": "the Gilded Araya",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 1136,
       "CreatedAt": "2026-06-24T17:01:09.3256209Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5828,7 +5828,7 @@
     "1140": {
       "Id": "acc17137-0004-4d98-9827-77a82f3390f0",
       "Name": "TheVoidcastDais",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 1140,
       "CreatedAt": "2026-02-04T14:14:10.1230771Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5848,7 +5848,7 @@
     "1141": {
       "Id": "c679b4a1-6155-4791-a588-0d7dab2f8278",
       "Name": "TheVoidcastDaisExtreme",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 1141,
       "CreatedAt": "2026-01-28T15:43:26.9641607Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5868,7 +5868,7 @@
     "1142": {
       "Id": "8b92fdc5-b71e-46dc-925d-ca89cd9a8307",
       "Name": "the Sirensong Sea",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1142,
       "CreatedAt": "2026-06-24T17:01:09.0223111Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5888,7 +5888,7 @@
     "1143": {
       "Id": "201154c4-2e6b-488b-b613-a7189db66d69",
       "Name": "Bardam's Mettle",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1143,
       "CreatedAt": "2026-06-24T17:01:09.0251287Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5908,7 +5908,7 @@
     "1144": {
       "Id": "64b3a58c-5d52-4018-8fbb-4c80765c3f75",
       "Name": "Doma Castle",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1144,
       "CreatedAt": "2026-06-24T17:01:09.0274264Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5928,7 +5928,7 @@
     "1145": {
       "Id": "326f20b1-028e-457b-b6e2-2e205268440b",
       "Name": "Castrum Abania",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1145,
       "CreatedAt": "2026-06-24T17:01:09.0317653Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5948,7 +5948,7 @@
     "1146": {
       "Id": "fdb6fa45-c45e-4b51-803f-ee6ff23792a6",
       "Name": "Ala Mhigo",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1146,
       "CreatedAt": "2026-06-24T17:01:09.037345Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5968,7 +5968,7 @@
     "1147": {
       "Id": "e9aae966-933b-4408-9884-15bdb7365062",
       "Name": "Anabaseios: The Ninth Circle",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 1147,
       "CreatedAt": "2026-06-24T17:01:09.6698928Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -5988,7 +5988,7 @@
     "1148": {
       "Id": "1fe2f7bc-9d46-4011-ae6b-cdecbab222a6",
       "Name": "Anabaseios: The Ninth Circle (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 1148,
       "CreatedAt": "2026-06-24T17:01:09.6724746Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6008,7 +6008,7 @@
     "1149": {
       "Id": "6fdcc9c8-2591-4dbb-99cd-6b756db89609",
       "Name": "Anabaseios: The Tenth Circle",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 1149,
       "CreatedAt": "2026-06-24T17:01:09.6753941Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6028,7 +6028,7 @@
     "1150": {
       "Id": "b4872c06-aa4a-4f73-a3f5-f2acc8b57e87",
       "Name": "Anabaseios: The Tenth Circle (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 1150,
       "CreatedAt": "2026-06-24T17:01:09.6779916Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6048,7 +6048,7 @@
     "1151": {
       "Id": "b5144fa4-dbaa-4fc7-9e20-875647709f17",
       "Name": "Anabaseios: The Eleventh Circle",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 1151,
       "CreatedAt": "2026-06-24T17:01:09.6808657Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6068,7 +6068,7 @@
     "1152": {
       "Id": "e16fbec3-264c-4372-af02-97eaa7d76e50",
       "Name": "Anabaseios: The Eleventh Circle (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 1152,
       "CreatedAt": "2026-06-24T17:01:09.6834785Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6088,7 +6088,7 @@
     "1153": {
       "Id": "a8126f6d-3b48-4358-9a79-575e6066f4ac",
       "Name": "Anabaseios: The Twelfth Circle",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 1153,
       "CreatedAt": "2026-06-24T17:01:09.6857193Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6108,7 +6108,7 @@
     "1154": {
       "Id": "cea2677b-b6a4-4a0a-ada5-ef81e2173d27",
       "Name": "Anabaseios: The Twelfth Circle (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 1154,
       "CreatedAt": "2026-06-24T17:01:09.6882393Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6128,7 +6128,7 @@
     "1164": {
       "Id": "53a7acd6-9a05-4cbb-b859-687e4ae8d657",
       "Name": "the Lunar Subterrane",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1164,
       "CreatedAt": "2026-06-24T17:01:09.0394066Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6148,7 +6148,7 @@
     "1167": {
       "Id": "85ff42d7-fdff-44ce-9b0f-00246de4bac1",
       "Name": "Ihuykatumu",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1167,
       "CreatedAt": "2026-06-24T17:01:09.0419061Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6168,7 +6168,7 @@
     "1168": {
       "Id": "a2f97ba0-66c0-49fb-b399-14876d9b34f0",
       "Name": "the Abyssal Fracture",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 1168,
       "CreatedAt": "2026-06-24T17:01:09.3290496Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6188,7 +6188,7 @@
     "1169": {
       "Id": "2439edf9-bcac-4ea7-89e0-b13390df98a8",
       "Name": "the Abyssal Fracture (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 1169,
       "CreatedAt": "2026-06-24T17:01:09.3312791Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6208,7 +6208,7 @@
     "1172": {
       "Id": "e31acfbf-2c1f-430c-bf59-63bd261e9640",
       "Name": "the Drowned City of Skalla",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1172,
       "CreatedAt": "2026-06-24T17:01:09.0455119Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6228,7 +6228,7 @@
     "1173": {
       "Id": "d9b3efba-cfb9-49b1-bbf5-a0f48b24da61",
       "Name": "the Burn",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1173,
       "CreatedAt": "2026-06-24T17:01:09.0485529Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6248,7 +6248,7 @@
     "1174": {
       "Id": "e0a5a979-221b-460c-a521-4f774254e1de",
       "Name": "the Ghimlyt Dark",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1174,
       "CreatedAt": "2026-06-24T17:01:09.050946Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6268,7 +6268,7 @@
     "1178": {
       "Id": "2bb9db25-a032-4f59-aacc-648e55953c45",
       "Name": "Thaleia",
-      "Description": "Jasper scope: 24-man alliance raid",
+      "Description": "Coverage marker: 24-player alliance raid; no scripted rotation actions are attached.",
       "ZoneId": 1178,
       "CreatedAt": "2026-06-24T17:01:09.6906453Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6288,7 +6288,7 @@
     "1193": {
       "Id": "36134ea9-a408-4c41-af25-be452ef41bf2",
       "Name": "Worqor Zormor",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1193,
       "CreatedAt": "2026-06-24T17:01:09.0530068Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6308,7 +6308,7 @@
     "1194": {
       "Id": "d4900d5a-35b8-403a-aee0-ad73be596dc0",
       "Name": "the Skydeep Cenote",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1194,
       "CreatedAt": "2026-06-24T17:01:09.0553816Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6328,7 +6328,7 @@
     "1195": {
       "Id": "2d7953a4-d4b0-4ca8-9267-ce685d62e478",
       "Name": "Worqor Lar Dor",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 1195,
       "CreatedAt": "2026-06-24T17:01:09.3335919Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6348,7 +6348,7 @@
     "1196": {
       "Id": "f921a83b-c50c-408b-ab06-a0a72b73b22e",
       "Name": "Worqor Lar Dor (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 1196,
       "CreatedAt": "2026-06-24T17:01:09.3355582Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6368,7 +6368,7 @@
     "1198": {
       "Id": "f85c9896-1bc5-4e92-9e01-6c3471d7f89e",
       "Name": "Vanguard",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1198,
       "CreatedAt": "2026-06-24T17:01:09.0578051Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6388,7 +6388,7 @@
     "1199": {
       "Id": "3d835d97-a952-435f-8aaa-bd6d92fd8e7f",
       "Name": "Alexandria",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1199,
       "CreatedAt": "2026-06-24T17:01:09.0603803Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6408,7 +6408,7 @@
     "1200": {
       "Id": "249a8079-4cf6-46ef-8b1d-4408a62277ff",
       "Name": "Everkeep",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 1200,
       "CreatedAt": "2026-06-24T17:01:09.3377063Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6428,7 +6428,7 @@
     "1201": {
       "Id": "d6ffd8fd-dab8-470f-80f5-efc7987495fa",
       "Name": "Everkeep (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 1201,
       "CreatedAt": "2026-06-24T17:01:09.3398015Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6448,7 +6448,7 @@
     "1202": {
       "Id": "86ab1535-69eb-4062-9830-b6e2ea13a796",
       "Name": "the Interphos",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 1202,
       "CreatedAt": "2026-06-24T17:01:09.3419908Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6468,7 +6468,7 @@
     "1203": {
       "Id": "f73fa415-ec3b-4427-99fc-6c5e95c3f7ac",
       "Name": "Tender Valley",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1203,
       "CreatedAt": "2026-06-24T17:01:09.0629332Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6488,7 +6488,7 @@
     "1204": {
       "Id": "4f9e9089-a0d3-4215-ae3d-61e657a5b984",
       "Name": "The Strayborough Deadwalk",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1204,
       "CreatedAt": "2026-06-24T17:01:09.0653049Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6508,7 +6508,7 @@
     "1208": {
       "Id": "7828ff80-ca4c-4d34-980d-3f98fad45e09",
       "Name": "Origenics",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1208,
       "CreatedAt": "2026-06-24T17:01:09.068381Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6528,7 +6528,7 @@
     "1225": {
       "Id": "4ad162b1-e6c6-4df2-8ebb-0e6b5b0be2ff",
       "Name": "AAC Light-heavyweight M1",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 1225,
       "CreatedAt": "2026-06-24T17:01:09.6936763Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6548,7 +6548,7 @@
     "1226": {
       "Id": "9f27eb82-ff89-4961-83d7-a986430334e8",
       "Name": "AAC Light-heavyweight M1 (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 1226,
       "CreatedAt": "2026-06-24T17:01:09.696305Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6568,7 +6568,7 @@
     "1227": {
       "Id": "1b97c867-4261-45f4-a74b-77aa66da0b10",
       "Name": "AAC Light-heavyweight M2",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 1227,
       "CreatedAt": "2026-06-24T17:01:09.6986695Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6588,7 +6588,7 @@
     "1228": {
       "Id": "d8355904-4f24-4333-8a53-de0f77bff2fd",
       "Name": "AAC Light-heavyweight M2 (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 1228,
       "CreatedAt": "2026-06-24T17:01:09.7018136Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6608,7 +6608,7 @@
     "1229": {
       "Id": "bcbf5122-f0d5-4533-98e8-41026d987d81",
       "Name": "AAC Light-heavyweight M3",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 1229,
       "CreatedAt": "2026-06-24T17:01:09.7049299Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6628,7 +6628,7 @@
     "1230": {
       "Id": "526b98f1-8a6a-4b88-9a8d-9ba90ff2ba29",
       "Name": "AAC Light-heavyweight M3 (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 1230,
       "CreatedAt": "2026-06-24T17:01:09.7105922Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6648,7 +6648,7 @@
     "1231": {
       "Id": "a86d1dc3-1645-41b8-894b-e2acf4a9a463",
       "Name": "AAC Light-heavyweight M4",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 1231,
       "CreatedAt": "2026-06-24T17:01:09.7127453Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6668,7 +6668,7 @@
     "1232": {
       "Id": "0dd2f63f-5ebc-49c3-9560-7b6ba0812c77",
       "Name": "AAC Light-heavyweight M4 (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 1232,
       "CreatedAt": "2026-06-24T17:01:09.714915Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6688,7 +6688,7 @@
     "1241": {
       "Id": "962c8cf8-0682-4cd5-a271-715136752045",
       "Name": "the Cloud of Darkness (Chaotic)",
-      "Description": "Jasper scope: 24-man Chaotic alliance raid",
+      "Description": "Coverage marker: 24-player chaotic alliance raid; no scripted rotation actions are attached.",
       "ZoneId": 1241,
       "CreatedAt": "2026-06-24T17:01:09.7607023Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6708,7 +6708,7 @@
     "1242": {
       "Id": "fb0b2ec6-35d7-429e-8d3a-140a22299280",
       "Name": "Yuweyawata Field Station",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1242,
       "CreatedAt": "2026-06-24T17:01:09.0711867Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6728,7 +6728,7 @@
     "1243": {
       "Id": "0e01c053-7b7e-4dec-ad1a-8fb5255d7076",
       "Name": "the Minstrel's Ballad: Sphene's Burden",
-      "Description": "Jasper scope: 8-man high-end trial",
+      "Description": "Coverage marker: 8-player high-end trial; no scripted rotation actions are attached.",
       "ZoneId": 1243,
       "CreatedAt": "2026-06-24T17:01:09.3445393Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6748,7 +6748,7 @@
     "1245": {
       "Id": "4527dd3d-6569-40a5-b6d7-46692e0c39a6",
       "Name": "Halatali",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1245,
       "CreatedAt": "2026-06-24T17:01:09.0737814Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6768,7 +6768,7 @@
     "1248": {
       "Id": "5c60743a-52e9-4f7b-9b7f-44d677497bfd",
       "Name": "Jeuno: The First Walk",
-      "Description": "Jasper scope: 24-man alliance raid",
+      "Description": "Coverage marker: 24-player alliance raid; no scripted rotation actions are attached.",
       "ZoneId": 1248,
       "CreatedAt": "2026-06-24T17:01:09.7169675Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6788,7 +6788,7 @@
     "1256": {
       "Id": "876bb78b-cd42-4ef0-8f02-5476345900b9",
       "Name": "AAC Cruiserweight M1",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 1256,
       "CreatedAt": "2026-06-24T17:01:09.7190047Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6808,7 +6808,7 @@
     "1257": {
       "Id": "cc8c34af-5df8-461d-9f0a-995c9acf8091",
       "Name": "AAC Cruiserweight M1 (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 1257,
       "CreatedAt": "2026-06-24T17:01:09.7212654Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6828,7 +6828,7 @@
     "1258": {
       "Id": "ab8528f5-5b55-4e20-90e2-4be74f5da0f5",
       "Name": "AAC Cruiserweight M2",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 1258,
       "CreatedAt": "2026-06-24T17:01:09.723784Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6848,7 +6848,7 @@
     "1259": {
       "Id": "e53566cf-f093-4208-90c6-a76b381a3af3",
       "Name": "AAC Cruiserweight M2 (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 1259,
       "CreatedAt": "2026-06-24T17:01:09.725827Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6868,7 +6868,7 @@
     "1260": {
       "Id": "7d765c95-db13-4150-a711-0c3125654fba",
       "Name": "AAC Cruiserweight M3",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 1260,
       "CreatedAt": "2026-06-24T17:01:09.727931Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6888,7 +6888,7 @@
     "1261": {
       "Id": "32a53eec-494a-4c31-ae48-58759ad73510",
       "Name": "AAC Cruiserweight M3 (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 1261,
       "CreatedAt": "2026-06-24T17:01:09.7304625Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6908,7 +6908,7 @@
     "1262": {
       "Id": "95733ce0-2a80-4ef7-8aa8-28b1c38bb689",
       "Name": "AAC Cruiserweight M4",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 1262,
       "CreatedAt": "2026-06-24T17:01:09.7337737Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6928,7 +6928,7 @@
     "1263": {
       "Id": "e5e6201e-1fe7-4147-9e14-05f7daf1201f",
       "Name": "AAC Cruiserweight M4 (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 1263,
       "CreatedAt": "2026-06-24T17:01:09.7361636Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6948,7 +6948,7 @@
     "1266": {
       "Id": "6e5be807-7b24-492f-9c4a-a546cb307325",
       "Name": "the Underkeep",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1266,
       "CreatedAt": "2026-06-24T17:01:09.0765289Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6968,7 +6968,7 @@
     "1267": {
       "Id": "3cb9bdc3-441b-4a49-9c23-2955d4310fed",
       "Name": "the Sunken Temple of Qarn",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1267,
       "CreatedAt": "2026-06-24T17:01:09.080369Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -6988,7 +6988,7 @@
     "1270": {
       "Id": "440e61d1-0698-4544-9bc5-23eec4b1bf9e",
       "Name": "Recollection",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 1270,
       "CreatedAt": "2026-06-24T17:01:09.3467124Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7008,7 +7008,7 @@
     "1271": {
       "Id": "12b2ef1f-0259-40b2-93a4-47d44bbe9e54",
       "Name": "Recollection (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 1271,
       "CreatedAt": "2026-06-24T17:01:09.3488056Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7028,7 +7028,7 @@
     "1292": {
       "Id": "a1168337-44ae-42e7-bb56-560cff4cf9ce",
       "Name": "the Meso Terminal",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1292,
       "CreatedAt": "2026-06-24T17:01:09.0827051Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7048,7 +7048,7 @@
     "1295": {
       "Id": "3f5089ab-c77f-4375-befe-5e98105d4d7a",
       "Name": "the Ageless Necropolis",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 1295,
       "CreatedAt": "2026-06-24T17:01:09.3507903Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7068,7 +7068,7 @@
     "1296": {
       "Id": "37f478bd-4ef5-4c95-80eb-a74604299edb",
       "Name": "the Minstrel's Ballad: Necron's Embrace",
-      "Description": "Jasper scope: 8-man high-end trial",
+      "Description": "Coverage marker: 8-player high-end trial; no scripted rotation actions are attached.",
       "ZoneId": 1296,
       "CreatedAt": "2026-06-24T17:01:09.3529187Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7088,7 +7088,7 @@
     "1300": {
       "Id": "d5fe3f87-0d0f-4a68-b1a0-df2c047e349b",
       "Name": "the Windward Wilds",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 1300,
       "CreatedAt": "2026-06-24T17:01:09.3550397Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7108,7 +7108,7 @@
     "1303": {
       "Id": "098342e5-94a8-4f8e-954c-8765cec438eb",
       "Name": "Cutter's Cry",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1303,
       "CreatedAt": "2026-06-24T17:01:09.0849777Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7128,7 +7128,7 @@
     "1304": {
       "Id": "16914da3-fe43-4c69-8c8e-8fd2ccb7f98d",
       "Name": "San d'Oria: The Second Walk",
-      "Description": "Jasper scope: 24-man alliance raid",
+      "Description": "Coverage marker: 24-player alliance raid; no scripted rotation actions are attached.",
       "ZoneId": 1304,
       "CreatedAt": "2026-06-24T17:01:09.7385157Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7148,7 +7148,7 @@
     "1306": {
       "Id": "92044e2c-e140-4773-9544-145834d2bb99",
       "Name": "the Windward Wilds (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 1306,
       "CreatedAt": "2026-06-24T17:01:09.3581265Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7168,7 +7168,7 @@
     "1307": {
       "Id": "3fb668fa-08d1-4ccd-bd1d-e2419c98363f",
       "Name": "Hell on Rails",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 1307,
       "CreatedAt": "2026-06-24T17:01:09.3608521Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7188,7 +7188,7 @@
     "1308": {
       "Id": "29c4b99d-d4c0-416e-b61f-c69f704217db",
       "Name": "HellOnRailsExtreme",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 1308,
       "CreatedAt": "2025-12-23T16:43:59.8671631Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7208,7 +7208,7 @@
     "1320": {
       "Id": "cf0ef711-0748-4cb9-b5f0-97bdb6950f1a",
       "Name": "AAC Heavyweight M1",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 1320,
       "CreatedAt": "2026-06-24T17:01:09.7405966Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7228,7 +7228,7 @@
     "1321": {
       "Id": "c7d03233-666e-434a-a4c4-9123f1553cba",
       "Name": "AacHeavyweightM1Savage",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 1321,
       "CreatedAt": "2026-01-19T16:51:19.0585371Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7248,7 +7248,7 @@
     "1322": {
       "Id": "65485f3c-6a06-4c1b-8719-09e3c1d90eb8",
       "Name": "AAC Heavyweight M2",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 1322,
       "CreatedAt": "2026-06-24T17:01:09.7454164Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7268,7 +7268,7 @@
     "1323": {
       "Id": "4d3a60b6-f632-4b85-8755-e87829a1bd6b",
       "Name": "AacHeavyweightM2Savage",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 1323,
       "CreatedAt": "2026-01-19T19:47:52.7871847Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7288,7 +7288,7 @@
     "1324": {
       "Id": "6eedcfdb-3712-4820-a45b-9776f4b803e0",
       "Name": "AAC Heavyweight M3",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 1324,
       "CreatedAt": "2026-06-24T17:01:09.7509129Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7308,7 +7308,7 @@
     "1325": {
       "Id": "dc9c18a4-8178-4b1e-803d-cdb468240e92",
       "Name": "AacHeavyweightM3Savage",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 1325,
       "CreatedAt": "2026-01-28T15:43:26.4018014Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7328,7 +7328,7 @@
     "1326": {
       "Id": "71305e3c-20f7-4514-a935-c4a82a0f10a8",
       "Name": "AAC Heavyweight M4",
-      "Description": "Jasper scope: 8-man normal raid",
+      "Description": "Coverage marker: 8-player normal raid; no scripted rotation actions are attached.",
       "ZoneId": 1326,
       "CreatedAt": "2026-06-24T17:01:09.7542495Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7348,7 +7348,7 @@
     "1327": {
       "Id": "58736360-a7f4-4828-b53b-0101df5f276d",
       "Name": "AAC Heavyweight M4 (Savage)",
-      "Description": "Jasper scope: 8-man Savage raid",
+      "Description": "Coverage marker: 8-player savage raid; no scripted rotation actions are attached.",
       "ZoneId": 1327,
       "CreatedAt": "2026-06-24T17:01:09.7563104Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7368,7 +7368,7 @@
     "1330": {
       "Id": "9dd6d291-55d6-4897-a303-093f5bd7d574",
       "Name": "Dzemael Darkhold",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1330,
       "CreatedAt": "2026-06-24T17:01:09.089479Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7388,7 +7388,7 @@
     "1331": {
       "Id": "a2697ba0-4666-4d0b-96dc-4cec73afdef1",
       "Name": "the Aurum Vale",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1331,
       "CreatedAt": "2026-06-24T17:01:09.0917449Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7408,7 +7408,7 @@
     "1361": {
       "Id": "86aa8fc0-1464-4ca5-841d-9552c3ba8b99",
       "Name": "the Unmaking",
-      "Description": "Jasper scope: 8-man normal trial",
+      "Description": "Coverage marker: 8-player normal trial; no scripted rotation actions are attached.",
       "ZoneId": 1361,
       "CreatedAt": "2026-06-24T17:01:09.3650476Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7428,7 +7428,7 @@
     "1362": {
       "Id": "4486d232-f130-496a-8019-9e17f9960faf",
       "Name": "the Unmaking (Extreme)",
-      "Description": "Jasper scope: 8-man Extreme trial",
+      "Description": "Coverage marker: 8-player extreme trial; no scripted rotation actions are attached.",
       "ZoneId": 1362,
       "CreatedAt": "2026-06-24T17:01:09.3683914Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7448,7 +7448,7 @@
     "1366": {
       "Id": "80258051-c17b-4407-99d7-04d5a0cb283a",
       "Name": "the Dusk Vigil",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1366,
       "CreatedAt": "2026-06-24T17:01:09.0963663Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7468,7 +7468,7 @@
     "1367": {
       "Id": "6c2c525e-b144-4b30-84c8-71c91093a7ba",
       "Name": "Shisui of the Violet Tides",
-      "Description": "Jasper scope: 4-man dungeon",
+      "Description": "Coverage marker: 4-player dungeon; no scripted rotation actions are attached.",
       "ZoneId": 1367,
       "CreatedAt": "2026-06-24T17:01:09.0987309Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7488,7 +7488,7 @@
     "1368": {
       "Id": "8e4bfa93-67aa-44a2-b14c-d77232c44daf",
       "Name": "Windurst: The Third Walk",
-      "Description": "Jasper scope: 24-man alliance raid",
+      "Description": "Coverage marker: 24-player alliance raid; no scripted rotation actions are attached.",
       "ZoneId": 1368,
       "CreatedAt": "2026-06-24T17:01:09.7584122Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",
@@ -7508,7 +7508,7 @@
     "1372": {
       "Id": "5865b0dc-66ad-42cd-8273-710b2f564dc2",
       "Name": "Shinryu's Domain (Unreal)",
-      "Description": "Jasper scope: 8-man Unreal trial",
+      "Description": "Coverage marker: 8-player unreal trial; no scripted rotation actions are attached.",
       "ZoneId": 1372,
       "CreatedAt": "2026-06-24T17:01:09.3713386Z",
       "ModifiedAt": "2026-06-26T10:45:00.000Z",

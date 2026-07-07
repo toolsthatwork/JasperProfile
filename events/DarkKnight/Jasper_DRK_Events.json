@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_DRK_Events",
   "Name": "Jasper DRK Events",
-  "Description": "General-purpose Dark Knight event profile for PvE. Keeps staggered 80/65 dungeon mitigation, Abyssal Drain and Blackest Night pack recovery, raidwide/tankbuster mitigation, Interject utility, Living Dead emergency support around 30 percent HP, MT/OT stance controls, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. MT stance controls also include add-pickup support with stance-guarded aggro coverage, so OT mode with stance off will not taunt. Manual Provoke is treated as a tank-swap signal, turning MT stance back on and using one short swap defensive. Special thanks to Arche for the general reaction profile foundation and broad coverage; Jasper adds public-duty safety tuning and xSalice compatibility polish.",
-  "Version": "0.1.19",
+  "Description": "Dark Knight public event profile for dungeon and raid basics. It staggers pack mitigation, supports TBN/Abyssal recovery, covers tankbusters and raidwides, respects OT stance-off play, and treats manual Provoke as a swap signal. Lineage note: Arche supplied the general reaction groundwork and coverage; Jasper reshapes it here for public-duty safety, job controls, and xSalice compatibility.",
+  "Version": "0.1.20",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -21,8 +21,8 @@
     },
     {
       "Id": "565fe51c-9d06-4338-bb4e-ad1d0cba3e32",
-      "Name": "2 Mit <= 65% HP, >= 3 mobs",
-      "Description": "Uses a second mitigation layer earlier in multi-target pulls when pressure is already building.",
+      "Name": "Second Pack Mitigation",
+      "Description": "Adds the second mitigation layer earlier when multi-target pressure is already building.",
       "EventType": "OnTick",
       "LogicId": "55ed34e5-8b06-4b99-a618-dadcfbb56e10",
       "ThrottleSameEvent": 2,
@@ -35,8 +35,8 @@
     },
     {
       "Id": "1b066cf9-12d8-450d-866e-677d61da153d",
-      "Name": "1 Mit <= 80% HP, >= 3 mobs",
-      "Description": "Starts the first dungeon-pull mitigation layer around 80 percent HP on 3+ mob pulls.",
+      "Name": "First Pack Mitigation",
+      "Description": "Begins the first dungeon-pull mitigation layer near 80 percent HP on 3+ mob pulls.",
       "EventType": "OnTick",
       "LogicId": "b7d72611-1464-4b11-ab8a-1902d092d9e1",
       "ThrottleSameEvent": 2,
@@ -49,7 +49,7 @@
     },
     {
       "Id": "a6cdc6d2-6171-4f55-8f53-dbde09c85e86",
-      "Name": "Mit Low HP <= 60% HP",
+      "Name": "Low-HP Mitigation",
       "Description": "Adds mitigation when HP is falling and no major mitigation is active.",
       "EventType": "OnTick",
       "LogicId": "3ab5f523-2117-4442-99e1-dc46376c8d25",
@@ -63,8 +63,8 @@
     },
     {
       "Id": "08c75b56-6f6e-4b0c-88f7-7f58282253c4",
-      "Name": "Boss Cooldown Hold",
-      "Description": "At low boss HP, saves major damage cooldowns for the next pull or boss. Optional dungeon-routing helper; leave it off for normal play.",
+      "Name": "Boss Burst Hold",
+      "Description": "Optional routing helper that holds major damage cooldowns near the end of a boss so they are ready for the next pull. Leave it off for normal play.",
       "EventType": "OnTick",
       "LogicId": "32b92184-c156-43a9-a727-ddacf1700a85",
       "ThrottleSameEvent": 0.5,
@@ -77,8 +77,8 @@
     },
     {
       "Id": "5a47325b-00d5-4e36-8843-040393757b89",
-      "Name": "Pack Cooldown Hold",
-      "Description": "When a trash pack is nearly dead, saves major damage cooldowns for the next pull or boss. Optional dungeon-routing helper; leave it off for normal play.",
+      "Name": "Pack Burst Hold",
+      "Description": "Optional routing helper that holds major damage cooldowns as a trash pack is ending. Leave it off for normal play.",
       "EventType": "OnTick",
       "LogicId": "dd7b2b9f-2dd9-4727-bb92-aa51f5b78dbe",
       "ThrottleSameEvent": 0.5,
@@ -91,7 +91,7 @@
     },
     {
       "Id": "78f2c611-1379-41d2-a2bd-26f59e78abb9",
-      "Name": "Auto Buddymit",
+      "Name": "Co-tank Support",
       "Description": "Uses Oblation on the lowest-health party member around 60 percent HP for earlier support coverage.",
       "EventType": "OnTick",
       "LogicId": "3c5df484-39e7-4776-aa19-b24dfad7cf18",
@@ -119,7 +119,7 @@
     },
     {
       "Id": "cc1d539f-c249-4887-a23f-04a05e600984",
-      "Name": "Stun Mob",
+      "Name": "Mob Stun",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "fa383a66-ebbe-406a-817d-8b78baf5ab27",
@@ -133,8 +133,8 @@
     },
     {
       "Id": "jps-drk-event-interject",
-      "Name": "Interject Interrupt",
-      "Description": "Uses Interject on interruptible enemy casts in range.",
+      "Name": "Interject Cast Stop",
+      "Description": "Stops interruptible enemy casts with Interject when in range.",
       "EventType": "OnTick",
       "LogicId": "jps-drk-logic-interject",
       "ThrottleSameEvent": 0.5,
@@ -161,7 +161,7 @@
     },
     {
       "Id": "a1877f11-e252-4cbb-a58c-eaed0bc214d7",
-      "Name": "Automit TB",
+      "Name": "Tankbuster Automit",
       "Description": "",
       "EventType": "OnAllTankBuster",
       "LogicId": "ba5672cb-cc11-494b-ad31-90f80ee8a573",
@@ -175,7 +175,7 @@
     },
     {
       "Id": "2dce96a2-4c3e-4e4f-a3ff-69dcc051b02e",
-      "Name": "Sprint OOC",
+      "Name": "Sprint Between Pulls",
       "Description": "",
       "EventType": "OnTick",
       "LogicId": "6545d528-735b-4db3-9dcd-be1bb825b8d6",
@@ -203,8 +203,8 @@
     },
     {
       "Id": "922cdd98-49f7-4b1f-8870-ef4f7ad918c1",
-      "Name": "Arm's Length, >= 3 mobs",
-      "Description": "Uses Arm's Length on normal dungeon-size pulls when standing still and targets will live long enough.",
+      "Name": "Arm's Length Pack Slow",
+      "Description": "Uses Arm's Length on normal dungeon pulls when you are stationary and the targets should live long enough.",
       "EventType": "OnTick",
       "LogicId": "202b41a9-6219-47d8-81d7-1c2355d3d262",
       "ThrottleSameEvent": 0.5,
@@ -217,8 +217,8 @@
     },
     {
       "Id": "214dab8d-b3f1-4b30-8048-26251912c79f",
-      "Name": "Pack Hold Release",
-      "Description": "Re-enables major damage cooldowns after the low-pack-HP hold window ends.",
+      "Name": "Pack Burst Release",
+      "Description": "Releases major damage cooldowns after the low-pack-HP hold window ends.",
       "EventType": "OnTick",
       "LogicId": "ec5b96eb-2bc8-4624-9daf-987eb297dd66",
       "ThrottleSameEvent": 0.5,
@@ -231,8 +231,8 @@
     },
     {
       "Id": "ccd73bfa-72f2-458d-94db-dca3803d825f",
-      "Name": "Boss Hold Release",
-      "Description": "Re-enables major damage cooldowns after the low-boss-HP hold window ends.",
+      "Name": "Boss Burst Release",
+      "Description": "Releases major damage cooldowns after the low-boss-HP hold window ends.",
       "EventType": "OnTick",
       "LogicId": "3401f62a-faf8-4b7c-b2e0-aee7464e3ff2",
       "ThrottleSameEvent": 0.5,
@@ -245,8 +245,8 @@
     },
     {
       "Id": "jps-drk-event-stance",
-      "Name": "[OnWipe] Stance OT",
-      "Description": "Optional off-tank stance release. Disabled by default.",
+      "Name": "Wipe Reset OT Stance",
+      "Description": "Optional off-tank stance release, left disabled by default.",
       "EventType": "OnWipe",
       "LogicId": "jps-drk-logic-stance",
       "ThrottleSameEvent": 0.5,
@@ -259,8 +259,8 @@
     },
     {
       "Id": "100894a1-4ec8-5776-87ed-2ae0f6d72bd5",
-      "Name": "Reset Toggles",
-      "Description": "Restores normal Dark Knight ACR toggles while safely out of combat.",
+      "Name": "Out-of-Combat Reset",
+      "Description": "Returns Dark Knight ACR toggles to their standard out-of-combat state.",
       "EventType": "OnTick",
       "LogicId": "a29875b0-5ffa-5b21-878d-77cbdcceae99",
       "ThrottleSameEvent": 0.5,
@@ -273,8 +273,8 @@
     },
     {
       "Id": "jps-drk-event-reset-zone",
-      "Name": "Reset Toggles Zone Change",
-      "Description": "Restores default Dark Knight toggles after zone changes.",
+      "Name": "Zone Reset",
+      "Description": "Dark Knight defaults are reapplied after changing zones.",
       "EventType": "OnZoneChange",
       "LogicId": "a29875b0-5ffa-5b21-878d-77cbdcceae99",
       "ThrottleSameEvent": 0.5,
@@ -287,8 +287,8 @@
     },
     {
       "Id": "jps-drk-event-reset-wipe",
-      "Name": "Reset Toggles Wipe",
-      "Description": "Restores default Dark Knight toggles after wipes.",
+      "Name": "Wipe Reset",
+      "Description": "Dark Knight defaults are reapplied after a wipe.",
       "EventType": "OnWipe",
       "LogicId": "a29875b0-5ffa-5b21-878d-77cbdcceae99",
       "ThrottleSameEvent": 0.5,
@@ -301,8 +301,8 @@
     },
     {
       "Id": "jps-drk-event-stance-mt",
-      "Name": "[OnWipe] Stance MT",
-      "Description": "Main-tank stance setup for dungeons and roulettes.",
+      "Name": "Wipe Reset MT Stance",
+      "Description": "Main-tank stance setup for roulettes and dungeon pulls.",
       "EventType": "OnWipe",
       "LogicId": "jps-drk-logic-stance-mt",
       "ThrottleSameEvent": 0.5,
@@ -315,8 +315,8 @@
     },
     {
       "Id": "jps-drk-event-stance-mt-zone",
-      "Name": "Stance MT Zone Change",
-      "Description": "Restores main-tank stance setup after zone changes.",
+      "Name": "Zone Reset MT Stance",
+      "Description": "Reapplies main-tank stance setup after changing zones.",
       "EventType": "OnZoneChange",
       "LogicId": "jps-drk-logic-stance-mt",
       "ThrottleSameEvent": 0.5,
@@ -329,8 +329,8 @@
     },
     {
       "Id": "jps-drk-event-manual-provoke-mt",
-      "Name": "Manual Provoke Tank Swap",
-      "Description": "Manual Provoke switches the profile into MT behavior by enabling Grit and pressing The Blackest Night as a light swap defensive.",
+      "Name": "Manual Provoke Swap",
+      "Description": "Manual Provoke moves the profile into MT behavior, enables Grit, and spends The Blackest Night as a light swap defensive.",
       "EventType": "OnTick",
       "LogicId": "jps-drk-logic-manual-provoke-mt",
       "ThrottleSameEvent": 2,
@@ -343,8 +343,8 @@
     },
     {
       "Id": "jps-drk-event-mt-add-pickup",
-      "Name": "MT Add Pickup",
-      "Description": "MT-only loose add pickup. Requires Grit active so OT mode with stance off will not Provoke.",
+      "Name": "MT Loose-Add Pickup",
+      "Description": "Main-tank loose-add pickup. Requires Grit, so stance-off OT play will not Provoke.",
       "EventType": "OnTick",
       "LogicId": "jps-drk-logic-mt-add-pickup",
       "ThrottleSameEvent": 3,
@@ -373,8 +373,8 @@
     },
     {
       "Id": "jps-drk-event-dps-toggle-safety",
-      "Name": "DPS Toggle Safety",
-      "Description": "Keeps DRK AoE, ranged pull, MP-spender, and sustain-helper toggles sane in combat without enabling ForceAOE.",
+      "Name": "Damage State Guard",
+      "Description": "Maintains DRK AoE, ranged pull, MP-spender, and sustain-helper toggles sane in combat without switching on ForceAOE.",
       "EventType": "OnTick",
       "LogicId": "jps-drk-logic-dps-toggle-safety",
       "ThrottleSameEvent": 1,
@@ -389,8 +389,8 @@
     },
     {
       "Id": "jps-drk-event-pack-aoe-release",
-      "Name": "AoE Pack Toggle Release",
-      "Description": "Keeps normal DRK AoE/sustain toggles active on 3+ enemy pulls without enabling ForceAOE.",
+      "Name": "Pack AoE Release",
+      "Description": "Maintains standard DRK AoE/sustain toggles active on 3+ enemy pulls without switching on ForceAOE.",
       "EventType": "OnTick",
       "LogicId": "jps-drk-logic-pack-aoe-release",
       "ThrottleSameEvent": 1,
@@ -8908,7 +8908,7 @@
     {
       "Id": "ba5672cb-cc11-494b-ad31-90f80ee8a573",
       "Name": "Automit TB",
-      "Description": "Automatic Tankbuster Mitigation",
+      "Description": "Tankbuster mitigation selector.",
       "LogicType": 0,
       "ConditionIds": [
         "d2859eb1-badb-4baf-9898-36452e6bd3da",
@@ -9120,7 +9120,7 @@
     {
       "Id": "55ed34e5-8b06-4b99-a618-dadcfbb56e10",
       "Name": "Double Mit",
-      "Description": "2 Mit <= 65% HP, >= 3 mobs",
+      "Description": "Second pack mitigation gate: HP near 65 percent with 3+ enemies.",
       "LogicType": 0,
       "ConditionIds": [
         "307cb39d-0d33-4dc5-9255-413e1f2ae6f4",
@@ -9265,7 +9265,7 @@
     {
       "Id": "b7d72611-1464-4b11-ab8a-1902d092d9e1",
       "Name": "Single Mit",
-      "Description": "1 Mit <= 80% HP, >= 3 mobs",
+      "Description": "First pack mitigation gate: HP near 80 percent with 3+ enemies.",
       "LogicType": 0,
       "ConditionIds": [
         "d2859eb1-badb-4baf-9898-36452e6bd3da",
@@ -9495,7 +9495,7 @@
     {
       "Id": "3ab5f523-2117-4442-99e1-dc46376c8d25",
       "Name": "Panic Mit",
-      "Description": "Mit Low HP <= 60% HP",
+      "Description": "Low-HP mitigation gate at 60 percent.",
       "LogicType": 0,
       "ConditionIds": [
         "d2859eb1-badb-4baf-9898-36452e6bd3da",
@@ -9639,7 +9639,7 @@
     {
       "Id": "3401f62a-faf8-4b7c-b2e0-aee7464e3ff2",
       "Name": "Boss Hold Release",
-      "Description": "Re-enables major damage cooldowns after the low-boss-HP hold window ends.",
+      "Description": "Releases major damage cooldowns after the low-boss-HP hold window ends.",
       "LogicType": 0,
       "ConditionIds": [
         "f0fd98b9-1df6-462e-baee-7998b68e2745",
@@ -9874,7 +9874,7 @@
     {
       "Id": "ec5b96eb-2bc8-4624-9daf-987eb297dd66",
       "Name": "Pack Hold Release",
-      "Description": "Re-enables major damage cooldowns after the low-pack-HP hold window ends.",
+      "Description": "Releases major damage cooldowns after the low-pack-HP hold window ends.",
       "LogicType": 0,
       "ConditionIds": [
         "7030b489-be13-4c9a-b98d-295dd68d4514",
@@ -10192,7 +10192,7 @@
     {
       "Id": "jps-drk-logic-interject",
       "Name": "Interject Interrupt",
-      "Description": "Uses Interject on interruptible enemy casts in range.",
+      "Description": "Stops interruptible enemy casts with Interject when in range.",
       "LogicType": 0,
       "ConditionIds": [
         "7c68d44d-39d1-4d88-b265-a4627666ba0d",
@@ -10275,7 +10275,7 @@
     {
       "Id": "202b41a9-6219-47d8-81d7-1c2355d3d262",
       "Name": "Arms Length Mit",
-      "Description": "Arm's Length on three-or-more enemy pulls",
+      "Description": "Arm's Length gate for 3+ enemy pulls.",
       "LogicType": 0,
       "ConditionIds": [
         "307cb39d-0d33-4dc5-9255-413e1f2ae6f4",
@@ -10361,7 +10361,7 @@
     {
       "Id": "jps-drk-logic-stance",
       "Name": "Stance OT",
-      "Description": "Optional off-tank stance release. Disabled by default.",
+      "Description": "Optional off-tank stance release, left disabled by default.",
       "LogicType": 0,
       "ConditionIds": [
         "jps-drk-cond-stance"
@@ -10426,7 +10426,7 @@
     {
       "Id": "a29875b0-5ffa-5b21-878d-77cbdcceae99",
       "Name": "Reset Toggles",
-      "Description": "Restores normal Dark Knight ACR defaults while safely out of combat. Regular UseAOE and ranged pull support stay enabled; ForceAOE is manual-only and is never changed by this profile.",
+      "Description": "Returns Dark Knight ACR settings to their normal out-of-combat state. Regular UseAOE and ranged pull support stay enabled; ForceAOE remains manual and is not changed by this profile.",
       "LogicType": 0,
       "ConditionIds": [
         "92bd4493-23db-456b-afef-9baa15ba41db"
@@ -10866,7 +10866,7 @@
     {
       "Id": "jps-drk-logic-stance-mt",
       "Name": "Stance MT",
-      "Description": "Main-tank stance setup for dungeons and roulettes.",
+      "Description": "Main-tank stance setup for roulettes and dungeon pulls.",
       "LogicType": 0,
       "ConditionIds": [
         "jps-drk-cond-stance"
@@ -10975,7 +10975,7 @@
     {
       "Id": "jps-drk-logic-dps-toggle-safety",
       "Name": "DPS Toggle Safety",
-      "Description": "Keeps Dark Knight AoE, ranged pull, MP-spender, and sustain-helper toggles healthy without overriding optional Delirium/Living Shadow cooldown holds.",
+      "Description": "Maintains Dark Knight AoE, ranged pull, MP-spender, and sustain-helper toggles healthy without overriding optional Delirium/Living Shadow cooldown holds.",
       "LogicType": 0,
       "ConditionIds": [
         "e24876d3-fc3c-4a91-a500-a430fa934d9b"
@@ -11240,7 +11240,7 @@
     {
       "Id": "jps-drk-logic-pack-aoe-release",
       "Name": "AoE Pack Toggle Release",
-      "Description": "Keeps normal DRK AoE and sustain toggles enabled during 3+ mob pulls without touching ForceAOE or overriding optional burst holds.",
+      "Description": "Maintains standard DRK AoE and sustain toggles during 3+ mob pulls while leaving ForceAOE manual or overriding optional burst holds.",
       "LogicType": 0,
       "ConditionIds": [
         "307cb39d-0d33-4dc5-9255-413e1f2ae6f4",
@@ -11645,7 +11645,7 @@
       {
         "Id": "jps-drk-qt-stun-int",
         "Name": "Stun/Int",
-        "Description": "Uses Low Blow and Interject for dungeon utility.",
+        "Description": "Uses Low Blow and Interject for dungeon utility windows.",
         "EventIds": [
           "cc1d539f-c249-4887-a23f-04a05e600984",
           "jps-drk-event-interject"
@@ -11656,7 +11656,7 @@
       {
         "Id": "jps-drk-qt-auto-tb",
         "Name": "Auto TB",
-        "Description": "Automatically handles incoming tankbuster mitigation.",
+        "Description": "Selects tankbuster mitigation for the incoming hit.",
         "EventIds": [
           "a1877f11-e252-4cbb-a58c-eaed0bc214d7"
         ],
@@ -11686,7 +11686,7 @@
       {
         "Id": "jps-drk-qt-stance-mt",
         "Name": "MT Stance",
-        "Description": "Main-tank stance setup for dungeons and roulettes, with add-pickup support. Manual Provoke also switches into this MT behavior.",
+        "Description": "Main-tank stance setup for roulettes and dungeons, with loose-add pickup included. Manual Provoke also switches into this MT behavior.",
         "EventIds": [
           "jps-drk-event-stance-mt",
           "jps-drk-event-stance-mt-zone",
@@ -11699,7 +11699,7 @@
       {
         "Id": "jps-drk-qt-stance-ot",
         "Name": "OT Stance",
-        "Description": "Optional off-tank stance release. Manual Provoke is treated as a tank swap and turns MT stance back on.",
+        "Description": "Optional off-tank stance release; manual Provoke is treated as a tank swap and turns MT stance back on.",
         "EventIds": [
           "jps-drk-event-stance",
           "jps-drk-event-manual-provoke-mt"
@@ -11710,7 +11710,7 @@
       {
         "Id": "jps-drk-qt-sprint",
         "Name": "Sprint",
-        "Description": "Optional out-of-combat Sprint between pulls.",
+        "Description": "Optional between-pull Sprint.",
         "EventIds": [
           "2dce96a2-4c3e-4e4f-a3ff-69dcc051b02e"
         ],
