@@ -2,12 +2,12 @@
 
 ## Unreleased
 
-- Expanded public credits and profile-lineage notes thanking Arche for the general reaction profile foundation used by the Jasper event profiles.
+- Strengthened public credits and imported-profile descriptions with a clearer thank-you to Arche for the general reaction profile foundation used by the Jasper event profiles.
 - Upgraded the remaining public combat profiles with broader normal-play recovery: DRG/MNK/NIN/VPR/BRD/MCH/BLM/PCT/SMN now recover burst/spender helpers during normal pulls, RPR gained the same DPS toggle and pack-release safety layer, and AST/SCH/SGE gained in-combat toggle recovery without adding forced timeline damage or ForceAOE automation.
 - Ultra-polished White Mage, tanks, Red Mage, Dancer, and Samurai: White Mage now has in-combat toggle recovery, PLD/WAR short mitigation waits for real pull damage, DRK/GNB threshold text matches current 80/65 behavior, Red Mage Vercure is stricter emergency support, and DNC/SAM release normal burst/spender helpers on packs without touching ForceAOE.
 - Added manual-Provoke tank-swap handling for PLD/WAR/DRK/GNB: Provoke now turns MT stance back on and uses one short swap defensive while OT add-pickup remains stance-guarded.
 - Guarded tank MT add-pickup with active tank-stance checks so OT mode with stance off will not Provoke or ranged-pull loose mobs.
-- Added Arche-style MT add-pickup support for Paladin, Warrior, Dark Knight, and Gunbreaker: the existing MT Stance control now also enables Provoke plus ranged-pull recovery on loose adds without touching ForceAOE.
+- Added MT add-pickup support for Paladin, Warrior, Dark Knight, and Gunbreaker using Arche's general aggro-coverage foundation: the existing MT Stance control now also enables Provoke plus ranged-pull recovery on loose adds without touching ForceAOE.
 - Polished Astrologian recovery timing so main-tank Aspected Benefic/Celestial Intersection begin around 80% HP and Essential Dignity supports at 70% HP, with a compact three-column quick bar.
 - Polished Scholar recovery timing and controls: main-tank Lustrate now starts around 65% HP, while the quick bar is compacted into grouped three-column controls.
 - Polished Sage recovery timing and controls: main-tank Taurochole/Druochole now start around 75% HP, and duplicate one-off quick-toggle buttons were folded into grouped controls.

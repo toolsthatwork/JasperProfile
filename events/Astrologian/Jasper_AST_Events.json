@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_AST_Events",
   "Name": "Jasper AST Events",
-  "Description": "General-purpose Astrologian event profile for PvE. Keeps damage-forward default toggles, in-combat toggle recovery, earlier oGCD-first main-tank recovery, emergency-only GCD heals, roulette-safe mitigation, cleanse support, compact controls, and wipe/zone reset scaffolding. Based on Arche's general reaction profile foundation, with Jasper modifications for public-duty safety and xSalice compatibility.",
-  "Version": "0.1.15",
+  "Description": "General-purpose Astrologian event profile for PvE. Keeps damage-forward default toggles, in-combat toggle recovery, earlier oGCD-first main-tank recovery, emergency-only GCD heals, roulette-safe mitigation, cleanse support, compact controls, and wipe/zone reset scaffolding. Special thanks to Arche for the general reaction profile foundation and broad coverage; Jasper adds public-duty safety tuning and xSalice compatibility polish.",
+  "Version": "0.1.16",
   "AIOEventVersion": "2.0",
   "Events": [
     {

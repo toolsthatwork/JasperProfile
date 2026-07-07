@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_BRD_Events",
   "Name": "Jasper BRD Events",
-  "Description": "General-purpose Bard event profile for PvE. Keeps Troubadour/Minne support, Warden's Paean cleanse support, earlier self-heal recovery, normal 2+ target AoE/DOT and song-burst release, damage-toggle safety, Head Graze interrupts, Arm's Length self-defense, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. Based on Arche's general reaction profile foundation, with Jasper modifications for public-duty safety and xSalice compatibility.",
-  "Version": "0.1.14",
+  "Description": "General-purpose Bard event profile for PvE. Keeps Troubadour/Minne support, Warden's Paean cleanse support, earlier self-heal recovery, normal 2+ target AoE/DOT and song-burst release, damage-toggle safety, Head Graze interrupts, Arm's Length self-defense, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. Special thanks to Arche for the general reaction profile foundation and broad coverage; Jasper adds public-duty safety tuning and xSalice compatibility polish.",
+  "Version": "0.1.15",
   "AIOEventVersion": "2.0",
   "Events": [
     {

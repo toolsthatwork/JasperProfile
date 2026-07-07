@@ -8,7 +8,7 @@ Use this repository URL:
 https://github.com/toolsthatwork/JasperProfile
 ```
 
-Event profiles are based on Arche's general reaction profiles, with additional modifications and features by Jasper.
+Special thanks to Arche for the general reaction profile foundation and broad coverage used by these event profiles. JasperProfile adds Jasper's public-duty safety tuning, job-specific controls, xSalice compatibility cleanup, and ongoing roulette-focused polish.
 
 ## Add the Repository
 

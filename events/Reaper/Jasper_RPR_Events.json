@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_RPR_Events",
   "Name": "Jasper RPR Events",
-  "Description": "General-purpose Reaper event profile for PvE. Keeps Feint/Arcane Crest support, proactive self-heal recovery, normal 2+ target AoE/spender release, damage-toggle safety, Leg Sweep/Arm's Length utility, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. Arcane Crest waits for real damage instead of firing at full HP. Based on Arche's general reaction profile foundation, with Jasper modifications for public-duty safety and xSalice compatibility.",
-  "Version": "0.1.17",
+  "Description": "General-purpose Reaper event profile for PvE. Keeps Feint/Arcane Crest support, proactive self-heal recovery, normal 2+ target AoE/spender release, damage-toggle safety, Leg Sweep/Arm's Length utility, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. Arcane Crest waits for real damage instead of firing at full HP. Special thanks to Arche for the general reaction profile foundation and broad coverage; Jasper adds public-duty safety tuning and xSalice compatibility polish.",
+  "Version": "0.1.18",
   "AIOEventVersion": "2.0",
   "Events": [
     {

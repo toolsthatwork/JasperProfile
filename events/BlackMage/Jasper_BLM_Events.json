@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_BLM_Events",
   "Name": "Jasper BLM Events",
-  "Description": "General-purpose Black Mage event profile for PvE. Keeps Addle/Manaward support, earlier personal shielding, normal 2+ target AoE/helper and burst-resource release, movement/spender toggle safety, DOT helpers, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. Based on Arche's general reaction profile foundation, with Jasper modifications for public-duty safety and xSalice compatibility.",
-  "Version": "0.1.11",
+  "Description": "General-purpose Black Mage event profile for PvE. Keeps Addle/Manaward support, earlier personal shielding, normal 2+ target AoE/helper and burst-resource release, movement/spender toggle safety, DOT helpers, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. Special thanks to Arche for the general reaction profile foundation and broad coverage; Jasper adds public-duty safety tuning and xSalice compatibility polish.",
+  "Version": "0.1.12",
   "AIOEventVersion": "2.0",
   "Events": [
     {

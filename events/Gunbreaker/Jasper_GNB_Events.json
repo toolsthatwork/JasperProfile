@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_GNB_Events",
   "Name": "Jasper GNB Events",
-  "Description": "General-purpose Gunbreaker event profile for PvE. Keeps staggered 80/65 dungeon mitigation, Aurora/Heart of Corundum recovery, raidwide/tankbuster mitigation, Interject utility, Superbolide emergency support around 30 percent HP, MT/OT stance controls, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. MT stance controls also include add-pickup support based on Arche-style aggro coverage, guarded by active tank stance so OT mode with stance off will not taunt. Manual Provoke is treated as a tank-swap signal, turning MT stance back on and using one short swap defensive. Based on Arche's general reaction profile foundation, with Jasper modifications for public-duty safety and xSalice compatibility.",
-  "Version": "0.1.19",
+  "Description": "General-purpose Gunbreaker event profile for PvE. Keeps staggered 80/65 dungeon mitigation, Aurora/Heart of Corundum recovery, raidwide/tankbuster mitigation, Interject utility, Superbolide emergency support around 30 percent HP, MT/OT stance controls, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. MT stance controls also include add-pickup support with stance-guarded aggro coverage, so OT mode with stance off will not taunt. Manual Provoke is treated as a tank-swap signal, turning MT stance back on and using one short swap defensive. Special thanks to Arche for the general reaction profile foundation and broad coverage; Jasper adds public-duty safety tuning and xSalice compatibility polish.",
+  "Version": "0.1.20",
   "AIOEventVersion": "2.0",
   "Events": [
     {
