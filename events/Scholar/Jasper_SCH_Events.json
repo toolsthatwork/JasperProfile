@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_SCH_Events",
   "Name": "Jasper SCH Events",
-  "Description": "General-purpose Scholar event profile for PvE. Keeps fairy/Aetherflow recovery, in-combat toggle recovery, earlier main-tank oGCD rescue, emergency GCD fallbacks for synced content, roulette-safe mitigation, cleanse support, compact controls, and wipe/zone reset scaffolding.",
-  "Version": "0.1.14",
+  "Description": "General-purpose Scholar event profile for PvE. Keeps fairy/Aetherflow recovery, in-combat toggle recovery, earlier main-tank oGCD rescue, emergency GCD fallbacks for synced content, roulette-safe mitigation, cleanse support, compact controls, and wipe/zone reset scaffolding. Based on Arche's general reaction profile foundation, with Jasper modifications for public-duty safety and xSalice compatibility.",
+  "Version": "0.1.15",
   "AIOEventVersion": "2.0",
   "Events": [
     {

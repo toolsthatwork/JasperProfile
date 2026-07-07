@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_RDM_Events",
   "Name": "Jasper RDM Events",
-  "Description": "General-purpose Red Mage event profile for PvE. Keeps Addle/Magick Barrier support, true emergency self/party/MT Vercure, smart AoE and melee/mana spender toggle safety, optional cooldown holds, wipe/zone reset scaffolding, raise toggles, and optional out-of-combat Sprint for roulette-safe play.",
-  "Version": "0.1.14",
+  "Description": "General-purpose Red Mage event profile for PvE. Keeps Addle/Magick Barrier support, true emergency self/party/MT Vercure, smart AoE and melee/mana spender toggle safety, optional cooldown holds, wipe/zone reset scaffolding, raise toggles, and optional out-of-combat Sprint for roulette-safe play. Based on Arche's general reaction profile foundation, with Jasper modifications for public-duty safety and xSalice compatibility.",
+  "Version": "0.1.15",
   "AIOEventVersion": "2.0",
   "Events": [
     {

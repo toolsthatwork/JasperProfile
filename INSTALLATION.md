@@ -8,6 +8,8 @@ Use this repository URL:
 https://github.com/toolsthatwork/JasperProfile
 ```
 
+Event profiles are based on Arche's general reaction profiles, with additional modifications and features by Jasper.
+
 ## Add the Repository
 
 1. Open the xSalice Reactions Editor.

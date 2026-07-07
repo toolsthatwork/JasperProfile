@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_DNC_Events",
   "Name": "Jasper DNC Events",
-  "Description": "General-purpose Dancer event profile for PvE. Keeps Shield Samba/Curing Waltz support, earlier self-heal recovery, AutoPartner/default damage-toggle safety, normal 2+ target AoE and dance-burst release, Head Graze interrupts, Arm's Length self-defense, optional cooldown holds, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile.",
-  "Version": "0.1.10",
+  "Description": "General-purpose Dancer event profile for PvE. Keeps Shield Samba/Curing Waltz support, earlier self-heal recovery, AutoPartner/default damage-toggle safety, normal 2+ target AoE and dance-burst release, Head Graze interrupts, Arm's Length self-defense, optional cooldown holds, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. Based on Arche's general reaction profile foundation, with Jasper modifications for public-duty safety and xSalice compatibility.",
+  "Version": "0.1.11",
   "AIOEventVersion": "2.0",
   "Events": [
     {

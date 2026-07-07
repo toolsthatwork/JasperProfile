@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_PLD_Events",
   "Name": "Jasper PLD Events",
-  "Description": "General-purpose Paladin event profile for PvE. Keeps proactive Holy Sheltron smoothing, staggered dungeon mitigation around the 80/65 percent pressure points, earlier Hallowed Ground emergency support, Clemency fallback, raidwide/tankbuster mitigation, normal 2+ target AoE/add-pickup toggle safety, Interject utility, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only; this profile does not reset it. MT stance controls also include add-pickup support based on Arche-style aggro coverage, guarded by active tank stance so OT mode with stance off will not taunt. Manual Provoke is treated as a tank-swap signal, turning MT stance back on and using one short swap defensive.",
-  "Version": "0.1.22",
+  "Description": "General-purpose Paladin event profile for PvE. Keeps proactive Holy Sheltron smoothing, staggered dungeon mitigation around the 80/65 percent pressure points, earlier Hallowed Ground emergency support, Clemency fallback, raidwide/tankbuster mitigation, normal 2+ target AoE/add-pickup toggle safety, Interject utility, MT/OT stance controls, wipe/zone reset scaffolding, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only; this profile does not reset it. MT stance controls also include add-pickup support based on Arche-style aggro coverage, guarded by active tank stance so OT mode with stance off will not taunt. Manual Provoke is treated as a tank-swap signal, turning MT stance back on and using one short swap defensive. Based on Arche's general reaction profile foundation, with Jasper modifications for public-duty safety and xSalice compatibility.",
+  "Version": "0.1.23",
   "AIOEventVersion": "2.0",
   "Events": [
     {

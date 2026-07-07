@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Expanded public credits and profile-lineage notes thanking Arche for the general reaction profile foundation used by the Jasper event profiles.
 - Upgraded the remaining public combat profiles with broader normal-play recovery: DRG/MNK/NIN/VPR/BRD/MCH/BLM/PCT/SMN now recover burst/spender helpers during normal pulls, RPR gained the same DPS toggle and pack-release safety layer, and AST/SCH/SGE gained in-combat toggle recovery without adding forced timeline damage or ForceAOE automation.
 - Ultra-polished White Mage, tanks, Red Mage, Dancer, and Samurai: White Mage now has in-combat toggle recovery, PLD/WAR short mitigation waits for real pull damage, DRK/GNB threshold text matches current 80/65 behavior, Red Mage Vercure is stricter emergency support, and DNC/SAM release normal burst/spender helpers on packs without touching ForceAOE.
 - Added manual-Provoke tank-swap handling for PLD/WAR/DRK/GNB: Provoke now turns MT stance back on and uses one short swap defensive while OT add-pickup remains stance-guarded.

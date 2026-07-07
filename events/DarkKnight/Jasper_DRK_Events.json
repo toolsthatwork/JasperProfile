@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_DRK_Events",
   "Name": "Jasper DRK Events",
-  "Description": "General-purpose Dark Knight event profile for PvE. Keeps staggered 80/65 dungeon mitigation, Abyssal Drain and Blackest Night pack recovery, raidwide/tankbuster mitigation, Interject utility, Living Dead emergency support around 30 percent HP, MT/OT stance controls, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. MT stance controls also include add-pickup support based on Arche-style aggro coverage, guarded by active tank stance so OT mode with stance off will not taunt. Manual Provoke is treated as a tank-swap signal, turning MT stance back on and using one short swap defensive.",
-  "Version": "0.1.17",
+  "Description": "General-purpose Dark Knight event profile for PvE. Keeps staggered 80/65 dungeon mitigation, Abyssal Drain and Blackest Night pack recovery, raidwide/tankbuster mitigation, Interject utility, Living Dead emergency support around 30 percent HP, MT/OT stance controls, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. MT stance controls also include add-pickup support based on Arche-style aggro coverage, guarded by active tank stance so OT mode with stance off will not taunt. Manual Provoke is treated as a tank-swap signal, turning MT stance back on and using one short swap defensive. Based on Arche's general reaction profile foundation, with Jasper modifications for public-duty safety and xSalice compatibility.",
+  "Version": "0.1.18",
   "AIOEventVersion": "2.0",
   "Events": [
     {

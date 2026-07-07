@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_MCH_Events",
   "Name": "Jasper MCH Events",
-  "Description": "General-purpose Machinist event profile for PvE. Keeps Tactician/Dismantle support, earlier self-heal recovery, normal 2+ target AoE/tool and burst release, damage-toggle safety, Head Graze interrupts, Arm's Length self-defense, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile.",
-  "Version": "0.1.12",
+  "Description": "General-purpose Machinist event profile for PvE. Keeps Tactician/Dismantle support, earlier self-heal recovery, normal 2+ target AoE/tool and burst release, damage-toggle safety, Head Graze interrupts, Arm's Length self-defense, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. Based on Arche's general reaction profile foundation, with Jasper modifications for public-duty safety and xSalice compatibility.",
+  "Version": "0.1.13",
   "AIOEventVersion": "2.0",
   "Events": [
     {

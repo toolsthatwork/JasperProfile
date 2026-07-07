@@ -1,7 +1,7 @@
 {
   "Id": "Jasper_WHM_Events",
   "Name": "Jasper WHM Events",
-  "Description": "Damage-forward White Mage event profile for general PvE. Lets ACR DPS flow, keeps combat toggles healthy, then uses earlier Regen/Benison upkeep, oGCD-first tank recovery, dungeon-pull shielding, in-range Holy for stacked packs, and emergency GCD heals only when recovery is actually needed.",
+  "Description": "Damage-forward White Mage event profile for general PvE. Lets ACR DPS flow, keeps combat toggles healthy, then uses earlier Regen/Benison upkeep, oGCD-first tank recovery, dungeon-pull shielding, in-range Holy for stacked packs, and emergency GCD heals only when recovery is actually needed. Based on Arche's general reaction profile foundation, with Jasper modifications for public-duty safety and xSalice compatibility.",
   "CreatedAt": "2026-06-25T00:31:21.892963Z",
   "ModifiedAt": "2026-07-07T10:30:00.000Z",
   "Events": [
@@ -15882,5 +15882,5 @@
       "jps-whm-qt-reset-toggles": true
     }
   },
-  "Version": "1.0.36"
+  "Version": "1.0.37"
 }

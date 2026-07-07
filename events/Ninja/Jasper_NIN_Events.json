@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_NIN_Events",
   "Name": "Jasper NIN Events",
-  "Description": "General-purpose Ninja event profile for PvE. Keeps role mitigation, Shade Shift recovery, earlier self-heal recovery, normal 2+ target AoE/helper and burst release, ranged/Ninjutsu/Ninki toggle safety, Leg Sweep/Arm's Length utility, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile.",
-  "Version": "0.1.11",
+  "Description": "General-purpose Ninja event profile for PvE. Keeps role mitigation, Shade Shift recovery, earlier self-heal recovery, normal 2+ target AoE/helper and burst release, ranged/Ninjutsu/Ninki toggle safety, Leg Sweep/Arm's Length utility, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. Based on Arche's general reaction profile foundation, with Jasper modifications for public-duty safety and xSalice compatibility.",
+  "Version": "0.1.12",
   "AIOEventVersion": "2.0",
   "Events": [
     {

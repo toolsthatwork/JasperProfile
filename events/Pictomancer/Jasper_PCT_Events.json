@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_PCT_Events",
   "Name": "Jasper PCT Events",
-  "Description": "General-purpose Pictomancer event profile for PvE. Keeps Addle/Tempera Coat support, earlier personal shielding, normal 2+ target AoE/helper and muse/motif release, palette/muse movement-toggle safety, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile.",
-  "Version": "0.1.11",
+  "Description": "General-purpose Pictomancer event profile for PvE. Keeps Addle/Tempera Coat support, earlier personal shielding, normal 2+ target AoE/helper and muse/motif release, palette/muse movement-toggle safety, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. Based on Arche's general reaction profile foundation, with Jasper modifications for public-duty safety and xSalice compatibility.",
+  "Version": "0.1.12",
   "AIOEventVersion": "2.0",
   "Events": [
     {

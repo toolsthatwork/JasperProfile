@@ -8,6 +8,12 @@ General-purpose PvE reaction, timeline, and opener profiles for xSalice AIO.
 
 > Event profiles are based on Arche's general reaction profiles, with additional modifications and features by Jasper.
 
+## Credits And Lineage
+
+Thank you to Arche for providing the general reaction profile foundation and broad coverage that these public event profiles are based on.
+
+JasperProfile builds on that foundation with Jasper's public-duty safety tuning, job-specific controls, xSalice compatibility cleanup, general roulette testing, and ongoing profile polish. The public timelines and openers stay general-purpose and passive; fight-specific optimization belongs outside this public package until separately validated.
+
 Profiles are being built for synced duty compatibility from early leveling through level 100. The profiles avoid forcing cap-only damage actions in timelines, and low-level safety fallbacks are added where the job kit changes heavily while leveling.
 
 Profile files currently exist for all combat jobs:

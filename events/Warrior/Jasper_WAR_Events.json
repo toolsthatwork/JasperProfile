@@ -1,7 +1,7 @@
 {
   "Id": "Jasper_WAR_Events",
   "Name": "Jasper WAR Events",
-  "Description": "General-purpose Warrior event profile for PvE. Keeps staggered dungeon mitigation around the 80 percent pressure point, proactive AoE-pack Bloodwhetting/Raw Intuition recovery, earlier Equilibrium sustain, pack-focused Thrill/Shake recovery, emergency Holmgang support, MT/OT stance controls, wipe/zone reset scaffolding, raidwide/tankbuster mitigation, Interject utility, high Beast Gauge spender release, aggressive spender-toggle safety, and optional co-tank support. ForceAOE is manual-only; this profile does not reset it. MT stance controls also include add-pickup support based on Arche-style aggro coverage, guarded by active tank stance so OT mode with stance off will not taunt. Safety helpers stay active while the quick-toggle bar is kept compact for normal play. Manual Provoke is treated as a tank-swap signal, turning MT stance back on and using one short swap defensive.",
+  "Description": "General-purpose Warrior event profile for PvE. Keeps staggered dungeon mitigation around the 80 percent pressure point, proactive AoE-pack Bloodwhetting/Raw Intuition recovery, earlier Equilibrium sustain, pack-focused Thrill/Shake recovery, emergency Holmgang support, MT/OT stance controls, wipe/zone reset scaffolding, raidwide/tankbuster mitigation, Interject utility, high Beast Gauge spender release, aggressive spender-toggle safety, and optional co-tank support. ForceAOE is manual-only; this profile does not reset it. MT stance controls also include add-pickup support based on Arche-style aggro coverage, guarded by active tank stance so OT mode with stance off will not taunt. Safety helpers stay active while the quick-toggle bar is kept compact for normal play. Manual Provoke is treated as a tank-swap signal, turning MT stance back on and using one short swap defensive. Based on Arche's general reaction profile foundation, with Jasper modifications for public-duty safety and xSalice compatibility.",
   "CreatedAt": "2026-06-25T02:45:00.000Z",
   "ModifiedAt": "2026-07-07T10:30:00.000Z",
   "Events": [
@@ -12901,5 +12901,5 @@
       "jps-war-qt-stance-mt": true
     }
   },
-  "Version": "0.1.23"
+  "Version": "0.1.24"
 }
