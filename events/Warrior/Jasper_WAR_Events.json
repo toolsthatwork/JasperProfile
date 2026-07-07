@@ -3,7 +3,7 @@
   "Name": "Jasper WAR Events",
   "Description": "General-purpose Warrior event profile for PvE. Keeps staggered dungeon mitigation around the 80 percent pressure point, proactive AoE-pack Bloodwhetting/Raw Intuition recovery, earlier Equilibrium sustain, pack-focused Thrill/Shake recovery, emergency Holmgang support, MT/OT stance controls, wipe/zone reset scaffolding, raidwide/tankbuster mitigation, Interject utility, high Beast Gauge spender release, aggressive spender-toggle safety, and optional co-tank support. ForceAOE is manual-only; this profile does not reset it. MT stance controls also include add-pickup support based on Arche-style aggro coverage, guarded by active tank stance so OT mode with stance off will not taunt. Safety helpers stay active while the quick-toggle bar is kept compact for normal play. Manual Provoke is treated as a tank-swap signal, turning MT stance back on and using one short swap defensive.",
   "CreatedAt": "2026-06-25T02:45:00.000Z",
-  "ModifiedAt": "2026-07-01T02:20:00.000Z",
+  "ModifiedAt": "2026-07-07T10:30:00.000Z",
   "Events": [
     {
       "Id": "f2daaf1d-c477-42b2-9db1-baa49330bfe3",
@@ -148,7 +148,7 @@
     {
       "Id": "6faa69f2-c15d-4fdc-850e-76823035610f",
       "Name": "Bloodwhetting / Raw Intuition",
-      "Description": "Uses Bloodwhetting or Raw Intuition proactively around 90 percent HP on 3+ enemy AoE packs.",
+      "Description": "Uses Bloodwhetting or Raw Intuition proactively around 85 percent HP on 3+ enemy AoE packs.",
       "EventType": "OnTick",
       "LogicId": "2557472d-f661-4368-9eb2-1059343fcf12",
       "ThrottleSameEvent": 0.5,
@@ -157,7 +157,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-01-03T20:13:35.6221496Z",
-      "ModifiedAt": "2026-06-30T13:30:00.000Z"
+      "ModifiedAt": "2026-07-07T10:30:00.000Z"
     },
     {
       "Id": "2d80ee64-f724-4599-9e89-1e3cc4569aec",
@@ -5249,7 +5249,7 @@
     },
     {
       "Id": "5af14793-c6c0-47cd-957c-eb8799f1fb15",
-      "Name": "Bloodwhetting Pack <= 90%",
+      "Name": "Bloodwhetting Pack <= 85%",
       "Description": "AoE-pack HP threshold for proactive Bloodwhetting or Raw Intuition.",
       "SubConditions": [
         {
@@ -5450,7 +5450,7 @@
         },
         {
           "Id": "8acf1f63-9d17-4b01-86e8-45dd8a7ed94f",
-          "Name": "HP <= 90%",
+          "Name": "Bloodwhetting Pack <= 85%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -5473,7 +5473,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 90,
+              "Percentage": 85,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -5641,12 +5641,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-01-03T19:30:52.8942985Z",
-          "ModifiedAt": "2026-06-30T13:30:00.000Z",
+          "ModifiedAt": "2026-07-07T10:30:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-01-03T19:28:47.5787577Z",
-      "ModifiedAt": "2026-06-30T13:30:00.000Z",
+      "ModifiedAt": "2026-07-07T10:30:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -10689,7 +10689,7 @@
     {
       "Id": "2557472d-f661-4368-9eb2-1059343fcf12",
       "Name": "Bloodwhetting / Raw Intuition",
-      "Description": "Uses Bloodwhetting or Raw Intuition proactively around 90 percent HP on 3+ enemy AoE packs, without blocking on the current target HP.",
+      "Description": "Uses Bloodwhetting or Raw Intuition proactively around 85 percent HP on 3+ enemy AoE packs, without blocking on the current target HP.",
       "LogicType": 0,
       "ConditionIds": [
         "5af14793-c6c0-47cd-957c-eb8799f1fb15",
@@ -10748,7 +10748,7 @@
         }
       ],
       "CreatedAt": "2026-01-03T20:08:36.0381395Z",
-      "ModifiedAt": "2026-06-30T13:30:00.000Z",
+      "ModifiedAt": "2026-07-07T10:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Mitigation"
     },
@@ -12901,5 +12901,5 @@
       "jps-war-qt-stance-mt": true
     }
   },
-  "Version": "0.1.22"
+  "Version": "0.1.23"
 }

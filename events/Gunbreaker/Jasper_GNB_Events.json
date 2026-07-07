@@ -2,7 +2,7 @@
   "Id": "Jasper_GNB_Events",
   "Name": "Jasper GNB Events",
   "Description": "General-purpose Gunbreaker event profile for PvE. Keeps staggered 80/65 dungeon mitigation, Aurora/Heart of Corundum recovery, raidwide/tankbuster mitigation, Interject utility, Superbolide emergency support around 30 percent HP, MT/OT stance controls, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. MT stance controls also include add-pickup support based on Arche-style aggro coverage, guarded by active tank stance so OT mode with stance off will not taunt. Manual Provoke is treated as a tank-swap signal, turning MT stance back on and using one short swap defensive.",
-  "Version": "0.1.17",
+  "Version": "0.1.18",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -10141,7 +10141,7 @@
     {
       "Id": "b7d72611-1464-4b11-ab8a-1902d092d9e1",
       "Name": "Single Mit",
-      "Description": "1 Mit <= 90% HP, >= 3 mobs",
+      "Description": "1 Mit <= 80% HP, >= 3 mobs",
       "LogicType": 0,
       "ConditionIds": [
         "307cb39d-0d33-4dc5-9255-413e1f2ae6f4",
@@ -10278,7 +10278,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-28T09:35:00.000Z",
+      "ModifiedAt": "2026-07-07T10:30:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
     },
@@ -11464,7 +11464,7 @@
     {
       "Id": "98fb393d-eda4-444b-b9e4-326aa69ddc36",
       "Name": "HoC Self",
-      "Description": "Uses Heart of Corundum on self around 90 percent HP for proactive damage smoothing.",
+      "Description": "Uses Heart of Corundum on self around 80 percent HP for proactive damage smoothing.",
       "LogicType": 0,
       "ConditionIds": [
         "432d91a0-4b2f-4925-a825-7d54566cc917",
@@ -11498,7 +11498,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-28T11:25:00.000Z",
+      "ModifiedAt": "2026-07-07T10:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Mitigation"
     },
@@ -12740,7 +12740,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-07-01T02:20:00.000Z",
+  "ModifiedAt": "2026-07-07T10:30:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Ultra-polished White Mage, tanks, Red Mage, Dancer, and Samurai: White Mage now has in-combat toggle recovery, PLD/WAR short mitigation waits for real pull damage, DRK/GNB threshold text matches current 80/65 behavior, Red Mage Vercure is stricter emergency support, and DNC/SAM release normal burst/spender helpers on packs without touching ForceAOE.
 - Added manual-Provoke tank-swap handling for PLD/WAR/DRK/GNB: Provoke now turns MT stance back on and uses one short swap defensive while OT add-pickup remains stance-guarded.
 - Guarded tank MT add-pickup with active tank-stance checks so OT mode with stance off will not Provoke or ranged-pull loose mobs.
 - Added Arche-style MT add-pickup support for Paladin, Warrior, Dark Knight, and Gunbreaker: the existing MT Stance control now also enables Provoke plus ranged-pull recovery on loose adds without touching ForceAOE.

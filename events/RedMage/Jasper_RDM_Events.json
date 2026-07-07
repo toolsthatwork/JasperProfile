@@ -1,8 +1,8 @@
 {
   "Id": "Jasper_RDM_Events",
   "Name": "Jasper RDM Events",
-  "Description": "General-purpose Red Mage event profile for PvE. Keeps Addle/Magick Barrier support, earlier emergency self/party/MT Vercure, smart AoE and melee/mana spender toggle safety, optional cooldown holds, wipe/zone reset scaffolding, raise toggles, and optional out-of-combat Sprint for roulette-safe play.",
-  "Version": "0.1.13",
+  "Description": "General-purpose Red Mage event profile for PvE. Keeps Addle/Magick Barrier support, true emergency self/party/MT Vercure, smart AoE and melee/mana spender toggle safety, optional cooldown holds, wipe/zone reset scaffolding, raise toggles, and optional out-of-combat Sprint for roulette-safe play.",
+  "Version": "0.1.14",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -134,7 +134,7 @@
     {
       "Id": "jps-rdm-event-vercure-self-emergency",
       "Name": "Vercure Self Emergency",
-      "Description": "Uses Vercure on self at 60 percent HP for solo and public-duty recovery.",
+      "Description": "Uses Vercure on self at 50 percent HP for solo and public-duty recovery.",
       "EventType": "OnTick",
       "LogicId": "jps-rdm-logic-vercure-self-emergency",
       "ThrottleSameEvent": 2.5,
@@ -143,12 +143,12 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-27T01:30:00.000Z",
-      "ModifiedAt": "2026-06-30T18:35:00.000Z"
+      "ModifiedAt": "2026-07-07T10:30:00.000Z"
     },
     {
       "Id": "jps-rdm-event-vercure-emergency",
       "Name": "Vercure Emergency",
-      "Description": "Emergency Vercure for synced/general content at 45 percent HP; ACR damage remains primary.",
+      "Description": "Emergency Vercure for synced/general content at 40 percent HP; ACR damage remains primary.",
       "EventType": "OnTick",
       "LogicId": "jps-rdm-logic-vercure-emergency",
       "ThrottleSameEvent": 2.5,
@@ -157,7 +157,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-26T09:35:00.000Z",
-      "ModifiedAt": "2026-06-30T18:35:00.000Z"
+      "ModifiedAt": "2026-07-07T10:30:00.000Z"
     },
     {
       "Id": "jps-rdm-event-addle-tb",
@@ -176,7 +176,7 @@
     {
       "Id": "jps-rdm-event-vercure-mt-emergency",
       "Name": "Vercure MT Emergency",
-      "Description": "Uses Vercure on the main tank at 60 percent HP when healer recovery is behind.",
+      "Description": "Uses Vercure on the main tank at 50 percent HP when healer recovery is behind.",
       "EventType": "OnTick",
       "LogicId": "jps-rdm-logic-vercure-mt-emergency",
       "ThrottleSameEvent": 2.5,
@@ -185,7 +185,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-27T00:05:00.000Z",
-      "ModifiedAt": "2026-06-30T18:35:00.000Z"
+      "ModifiedAt": "2026-07-07T10:30:00.000Z"
     },
     {
       "Id": "jps-rdm-event-dps-toggle-safety",
@@ -206,7 +206,7 @@
     {
       "Id": "jps-rdm-event-pack-aoe-release",
       "Name": "AoE Pack Toggle Release",
-      "Description": "Keeps normal UseAOE/SmartAOE enabled and Save CD disabled during multi-target pulls without forcing AoE mode.",
+      "Description": "Keeps normal UseAOE/SmartAOE, melee combo, mana spenders, and core burst toggles enabled during multi-target pulls without forcing AoE mode.",
       "EventType": "OnTick",
       "LogicId": "jps-rdm-logic-pack-aoe-release",
       "ThrottleSameEvent": 2,
@@ -215,7 +215,7 @@
       "RecheckDuration": 0,
       "Filters": {},
       "CreatedAt": "2026-06-30T15:10:00.000Z",
-      "ModifiedAt": "2026-06-30T15:10:00.000Z",
+      "ModifiedAt": "2026-07-07T10:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
     }
@@ -2815,12 +2815,12 @@
     },
     {
       "Id": "jps-rdm-cond-party-emergency-25",
-      "Name": "[ST] <= 45% HP",
+      "Name": "[ST] <= 40% HP",
       "Description": "Single-target party emergency threshold for Vercure support.",
       "SubConditions": [
         {
           "Id": "jps-rdm-cond-party-emergency-25-sub",
-          "Name": "[ST] <= 45% HP",
+          "Name": "[ST] <= 40% HP",
           "Description": "",
           "TargetType": 5,
           "ConditionType": 1,
@@ -2843,7 +2843,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 45,
+              "Percentage": 40,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -3021,22 +3021,22 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-05-12T04:00:53.4883674Z",
-          "ModifiedAt": "2026-06-30T18:35:00.000Z",
+          "ModifiedAt": "2026-07-07T10:30:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-26T09:35:00.000Z",
-      "ModifiedAt": "2026-06-30T18:35:00.000Z",
+      "ModifiedAt": "2026-07-07T10:30:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
       "Id": "jps-rdm-cond-self-emergency-40",
-      "Name": "Self HP <= 60%",
+      "Name": "Self HP <= 50%",
       "Description": "Self HP threshold for conservative emergency Vercure.",
       "SubConditions": [
         {
           "Id": "jps-rdm-cond-self-emergency-40-sub-1",
-          "Name": "Self HP <= 60%",
+          "Name": "Self HP <= 50%",
           "Description": "",
           "TargetType": 0,
           "ConditionType": 1,
@@ -3059,7 +3059,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 60,
+              "Percentage": 50,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -3237,12 +3237,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-06-27T01:30:00.000Z",
-          "ModifiedAt": "2026-06-30T18:35:00.000Z",
+          "ModifiedAt": "2026-07-07T10:30:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-27T01:30:00.000Z",
-      "ModifiedAt": "2026-06-30T18:35:00.000Z",
+      "ModifiedAt": "2026-07-07T10:30:00.000Z",
       "ExcludeFromTargetAccumulation": false
     },
     {
@@ -3469,12 +3469,12 @@
     },
     {
       "Id": "jps-rdm-cond-mt-emergency-35",
-      "Name": "MT <= 60%",
+      "Name": "MT <= 50%",
       "Description": "Main tank emergency threshold for Vercure support.",
       "SubConditions": [
         {
           "Id": "jps-rdm-cond-mt-emergency-35-sub-1",
-          "Name": "MT <= 60%",
+          "Name": "MT <= 50%",
           "Description": "",
           "TargetType": 3,
           "ConditionType": 1,
@@ -3497,7 +3497,7 @@
               "IsEnabled": true
             },
             "HealthParams": {
-              "Percentage": 60,
+              "Percentage": 50,
               "Comparison": 1,
               "UseRawValue": false,
               "RawValue": 1000,
@@ -3675,12 +3675,12 @@
           "UsePercentageMode": true,
           "RequiredTargetPercentage": 50,
           "CreatedAt": "2026-06-27T00:05:00.000Z",
-          "ModifiedAt": "2026-06-30T18:35:00.000Z",
+          "ModifiedAt": "2026-07-07T10:30:00.000Z",
           "ShouldUseTargetCount": false
         }
       ],
       "CreatedAt": "2026-06-27T00:05:00.000Z",
-      "ModifiedAt": "2026-06-30T18:35:00.000Z",
+      "ModifiedAt": "2026-07-07T10:30:00.000Z",
       "ExcludeFromTargetAccumulation": false
     }
   ],
@@ -4728,7 +4728,7 @@
     {
       "Id": "jps-rdm-logic-vercure-self-emergency",
       "Name": "Vercure Self Emergency",
-      "Description": "Uses Vercure on self at 60 percent HP for solo and public-duty recovery.",
+      "Description": "Uses Vercure on self at 50 percent HP for solo and public-duty recovery.",
       "LogicType": 0,
       "ConditionIds": [
         "b702ada1-facb-4cd3-906f-e1c29c1f390c",
@@ -4762,14 +4762,14 @@
         }
       ],
       "CreatedAt": "2026-06-27T01:30:00.000Z",
-      "ModifiedAt": "2026-06-30T18:35:00.000Z",
+      "ModifiedAt": "2026-07-07T10:30:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Level Sync"
     },
     {
       "Id": "jps-rdm-logic-vercure-emergency",
       "Name": "Vercure Emergency",
-      "Description": "Emergency Vercure for synced/general content at 45 percent HP; ACR damage remains primary.",
+      "Description": "Emergency Vercure for synced/general content at 40 percent HP; ACR damage remains primary.",
       "LogicType": 0,
       "ConditionIds": [
         "b702ada1-facb-4cd3-906f-e1c29c1f390c",
@@ -4803,7 +4803,7 @@
         }
       ],
       "CreatedAt": "2026-06-26T09:35:00.000Z",
-      "ModifiedAt": "2026-06-30T18:35:00.000Z",
+      "ModifiedAt": "2026-07-07T10:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Level Sync"
     },
@@ -4851,7 +4851,7 @@
     {
       "Id": "jps-rdm-logic-vercure-mt-emergency",
       "Name": "Vercure MT Emergency",
-      "Description": "Uses Vercure on the main tank at 60 percent HP when healer recovery is behind.",
+      "Description": "Uses Vercure on the main tank at 50 percent HP when healer recovery is behind.",
       "LogicType": 0,
       "ConditionIds": [
         "b702ada1-facb-4cd3-906f-e1c29c1f390c",
@@ -4885,7 +4885,7 @@
         }
       ],
       "CreatedAt": "2026-06-27T00:05:00.000Z",
-      "ModifiedAt": "2026-06-30T18:35:00.000Z",
+      "ModifiedAt": "2026-07-07T10:30:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
     },
@@ -5332,7 +5332,7 @@
     {
       "Id": "jps-rdm-logic-pack-aoe-release",
       "Name": "AoE Pack Toggle Release",
-      "Description": "Keeps normal UseAOE/SmartAOE enabled and Save CD disabled during multi-target pulls without forcing AoE mode.",
+      "Description": "Keeps normal UseAOE/SmartAOE, melee combo, mana spenders, and core burst toggles enabled during multi-target pulls without forcing AoE mode.",
       "LogicType": 0,
       "ConditionIds": [
         "b702ada1-facb-4cd3-906f-e1c29c1f390c",
@@ -5438,16 +5438,141 @@
           "VariableStringValue": "",
           "VariableNumberValue": 0,
           "VariableOperation": 0
+        },
+        {
+          "Id": "jps-rdm-trigger-pack-meleecombo-on",
+          "ActionId": 0,
+          "SkillbarId": "MeleeCombo",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-rdm-trigger-pack-embolden-on",
+          "ActionId": 0,
+          "SkillbarId": "Embolden",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-rdm-trigger-pack-manafication-on",
+          "ActionId": 0,
+          "SkillbarId": "Manafication",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-rdm-trigger-pack-accel-on",
+          "ActionId": 0,
+          "SkillbarId": "Accel",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
+        },
+        {
+          "Id": "jps-rdm-trigger-pack-fleche-on",
+          "ActionId": 0,
+          "SkillbarId": "Fleche",
+          "TTSText": "",
+          "TriggerType": 1,
+          "LogicOperator": 4,
+          "TargetType": 1,
+          "TargetSelectionStrategy": 6,
+          "SkipBuffId": 0,
+          "TargetOperation": 0,
+          "TargetDataId": 0,
+          "TargetName": "",
+          "TargetX": 0,
+          "TargetY": 0,
+          "TargetZ": 0,
+          "OverlayText": "",
+          "OverlayDuration": 3,
+          "VariableName": "",
+          "VariableType": 0,
+          "VariableBoolValue": true,
+          "VariableStringValue": "",
+          "VariableNumberValue": 0,
+          "VariableOperation": 0
         }
       ],
       "CreatedAt": "2026-06-30T15:10:00.000Z",
-      "ModifiedAt": "2026-06-30T15:10:00.000Z",
+      "ModifiedAt": "2026-07-07T10:30:00.000Z",
       "ExecuteFirstOnly": false,
       "Category": "Toggles"
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-06-30T15:10:00.000Z",
+  "ModifiedAt": "2026-07-07T10:30:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,

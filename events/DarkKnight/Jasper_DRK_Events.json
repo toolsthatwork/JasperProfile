@@ -2,7 +2,7 @@
   "Id": "Jasper_DRK_Events",
   "Name": "Jasper DRK Events",
   "Description": "General-purpose Dark Knight event profile for PvE. Keeps staggered 80/65 dungeon mitigation, Abyssal Drain and Blackest Night pack recovery, raidwide/tankbuster mitigation, Interject utility, Living Dead emergency support around 30 percent HP, MT/OT stance controls, wipe/zone reset scaffolding, compact manual controls, and optional out-of-combat Sprint for roulette-safe play. ForceAOE is manual-only and is never reset by this profile. MT stance controls also include add-pickup support based on Arche-style aggro coverage, guarded by active tank stance so OT mode with stance off will not taunt. Manual Provoke is treated as a tank-swap signal, turning MT stance back on and using one short swap defensive.",
-  "Version": "0.1.16",
+  "Version": "0.1.17",
   "AIOEventVersion": "2.0",
   "Events": [
     {
@@ -9265,7 +9265,7 @@
     {
       "Id": "b7d72611-1464-4b11-ab8a-1902d092d9e1",
       "Name": "Single Mit",
-      "Description": "1 Mit <= 90% HP, >= 3 mobs",
+      "Description": "1 Mit <= 80% HP, >= 3 mobs",
       "LogicType": 0,
       "ConditionIds": [
         "d2859eb1-badb-4baf-9898-36452e6bd3da",
@@ -9403,7 +9403,7 @@
         }
       ],
       "CreatedAt": "2026-06-25T07:45:00.000Z",
-      "ModifiedAt": "2026-06-28T09:35:00.000Z",
+      "ModifiedAt": "2026-07-07T10:30:00.000Z",
       "ExecuteFirstOnly": true,
       "Category": "Mitigation"
     },
@@ -11582,7 +11582,7 @@
     }
   ],
   "CreatedAt": "2026-06-25T07:45:00.000Z",
-  "ModifiedAt": "2026-07-01T02:20:00.000Z",
+  "ModifiedAt": "2026-07-07T10:30:00.000Z",
   "QTBarConfig": {
     "BarEnabled": true,
     "LockBar": false,
